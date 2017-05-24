@@ -1,0 +1,36 @@
+% appendix1.tex
+\renewcommand{\baselinestretch}{1.0}
+\addchap{Appendix I UMAT Subroutine for ABAQUS}
+\sectionmark{Appendix I UMAT Subroutine for ABAQUS}    % correct section headings
+
+% body
+
+\tiny
+\ttfamily
+
+\lstinputlisting[language=fortran,
+%numbers=none,
+%firstnumber=41,
+%linerange={43-50,70-70,216-216},
+caption={Main programme call Subroutine KMKEM}.\label{tab:CALL_KMKEM},
+procnamekeys={def},
+style=highlight/edit-myfortran]{F:/UMAT/CurrentVersionForLatex/MAIN_IN718.for}
+
+\lstinputlisting[language=fortran,
+%firstnumber=2,
+%linerange={2-6},
+caption={Subroutine KMKEM to estimate elastic stiffness matrix}.\label{tab:KMKEM},
+procnamekeys={def},
+style=highlight/edit-myfortran]{F:/UMAT/CurrentVersionForLatex/SUBROUTINE_KMKEM.for}
+
+\lstinputlisting[language=fortran,
+%firstnumber=2,
+%linerange={2-6},
+caption={Subroutine KMKVEM to estimate deviatoric elastic stiffness matrix}.\label{tab:KMKVEM},
+procnamekeys={def},
+style=highlight/edit-myfortran]{F:/UMAT/CurrentVersionForLatex/SUBROUTINE_KMKVEM.for}
+
+
+\normalsize
+\rmfamily
+

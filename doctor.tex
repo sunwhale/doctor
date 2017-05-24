@@ -1,0 +1,169 @@
+\documentclass[a4paper,            % paper size
+               12pt,               % font size
+%              twoside,            % two-sided
+               oneside,
+               pointlessnumbers,   % avoid trailing "." for chapter and figure numbers
+               headinclude,        % include header and exclude
+               footexclude,        % footer from text body
+               headsepline,        % line separating the header
+%               normalheadings,     % middle-sized chapter headings
+               bibtotoc,           % include bibliography in contents
+               openany,            % chapters may start on any page
+%               openright,          % chapters may start on right side only
+               cleardoubleempty,   % free pages in empty style
+               tablecaptionabove,  % table caption above table
+%               draft               % draft/final
+               ]{scrbook}          % KOMA-Script book-class
+\usepackage[english,german]{babel} % load required languages
+\usepackage{graphicx}              % to include graphics
+\usepackage{epstopdf}              % to convert eps to pdf
+\usepackage[caption=false]{subfig} % allow subfigures (without destroying the KOMA-Script captions)
+\usepackage[intlimits]{amsmath}    % better maths
+\usepackage{amssymb,amsfonts}
+%\usepackage[automark]{scrpage2}    % better headers and footers
+%\usepackage[dvipdfm,               % generate pdf using dvipdfm
+\usepackage{url}
+\usepackage[%dvips,                 % generate pdf using dvips & ps2pdf
+            % pdf-meta-information here
+            pdftitle={Computation of Fluid Dynamics and Conjugate Heat Transfer in Rotating Cavity},
+            pdfauthor={Jingyu Sun},
+            pdfsubject={MSc. Thesis},
+            pdfkeywords={},
+            unicode=false,
+            pdfborder={0 0 0},     % no borders around links
+            colorlinks,            % true colored links
+            linkcolor = blue,
+            anchorcolor=blue,
+            citecolor=blue,
+            urlcolor=blue,
+            ]{hyperref}            % hypertext in the pdf-document
+\usepackage[sort&compress,square,comma,numbers]{natbib}
+                                   % better citations
+\usepackage{hypernat}              % ensure cooperation of natbib and hyperref
+\usepackage{booktabs}
+%\usepackage{subfig}
+\usepackage[below]{placeins}
+\usepackage{fancyhdr}
+\usepackage{mdwlist}
+\usepackage{CJK}
+\usepackage{indentfirst}
+\usepackage[Symbol]{upgreek}
+\usepackage{bm}
+%\usepackage{Times}
+\usepackage{framed}
+\input{package}
+\input{pythonlisting}
+
+\def\BigRoman {\uppercase\expandafter{\romannumeral\number\count255}}
+\def\Romannumeral{\afterassignment\BigRoman\count255=}
+
+\makeatletter
+\renewcommand{\p@figure}{\figurename\ }
+%\renewcommand{\p@chapter}{Chapter\ }
+\makeatother
+\sloppy                            % be a bit more tolerant
+\hbadness2000 \vbadness2000
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.65}
+\renewcommand{\floatpagefraction}{0.60}
+\renewcommand{\baselinestretch}{1.1}
+% after all packages are loaded, calculate page layout
+% with [xx] binding correction and {xx} DIV-factor
+\typearea[18mm]{19}                % VDI preference (rather large type area!)
+
+% adjust the page layout slightly (optional)
+%\clubpenalty=10000
+%\widowpenalty=10000
+%\interlinepenalty=1000
+
+%\newpagestyle{newchapter}{{\hfill}{\hfill}{\hfill}}{{\pagemark \hfill}{\hfill \pagemark}%
+%    {\hfill \pagemark \hfill}}     % new page style with no \headmark in header
+%\renewcommand*{\chapterpagestyle}{newchapter}
+                                   % page style of the first chapter page - VDI preference
+%\pagestyle{scrheadings}            % sophisticated headers and footers
+
+\addtokomafont{caption}{\sffamily} % captions in SansSerif
+\setkomafont{captionlabel}{\sffamily\bfseries}
+                                   % caption labels in SansSerif bold
+\setcapindent{0pt}                 % do not indent caption body relative to caption label
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+
+\selectlanguage{english}           % select English as primary language
+%\selectlanguage{german}            % select German as primary language
+\frontmatter
+\pagenumbering{Roman}              % capital Roman numbers (for German dissertations only!)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{title/title}                    % prescribed title page
+%\include{title/page2}                   % prescribed back side of the title page (if required)
+\cleardoublepage                         % move to the right
+\include{dedication/dedication}          % dedication/motto (if desired)
+\include{acknowledgements/acknowledgements}
+
+%\include{zusammenfassung}
+\include{abstract/abstract}              % abstract (if required)
+\cleardoublepage                         % move to the right for the table of contents
+\tableofcontents                         % table of contents
+\addcontentsline{toc}{chapter}
+{\listfigurename}
+\listoffigures
+\include{symbols/symbols}                % list of symbols (if required)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%set the pagestyle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}             %%
+\fancyhf{}                    %%
+\fancyhead[RE,RO]{\rightmark} %%
+\fancyfoot[CE,CO]{\thepage}   %%
+\fancypagestyle{plain}{       %%
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\renewcommand\chaptermark[1]{\markright{\chaptername \thechapter.
+#1}{}}
+\renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
+\renewcommand\subsectionmark[1]{\markright{\thesubsection\ #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapter1/chapter1}
+\include{chapter2/chapter2}
+\include{chapter3/chapter3}
+\include{chapter4/chapter4}
+\include{chapter5/chapter5}
+\include{chapter6/chapter6}
+\include{chapter7/chapter7}
+\include{chapter8/chapter8}
+\include{chapter9/chapter9}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\backmatter
+
+\bibliographystyle{unsrt}            % bibliography style
+\bibliography{bibliography}          % personal bibliography file
+
+%\include{myresume}                  % resume (if required)
+%\include{appendix1/appendix1}                  % preface/acknowledgements
+%\include{appendix2/appendix2}                  % preface/acknowledgements
+%\include{appendix3/appendix3}                  % preface/acknowledgements
+\end{CJK*}
+\end{document} 
