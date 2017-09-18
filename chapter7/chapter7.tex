@@ -8,6 +8,67 @@
 
 \graphicspath{{Chapter7/Chapter7Figs/PDF/}{Chapter7/Chapter7Figs/}}
 
+\section{Introduction of multiaxial fatigue assessment}
+国内外已有众多学者对多轴加载下如何预测构件的疲劳寿命进行了广泛研究，并提出许多适用于不同材料、不同载荷情况的疲劳破坏准则。
+Garud等[7-13]从不同角度，对不同时期的疲劳准则进行过回顾。
+依据材料疲劳破坏参量，可将疲劳破坏准则划分为三类：应力准则、应变准则和能量准则。
+\subsection{Stress based models}
+早期的研究者试图应用静强度理论解决多轴疲劳问题，其中常用的有最大正应力准则、最大剪应力准则（Tresca准则）以及Von Mises准则。
+但实际应用中发现，这些准则不能很好地描述试验数据，尤其是在非比例载荷情况下，预测的疲劳寿命偏于危险。
+
+Gough和Pollard\cite{gough1935strength}\cite{gough1936properties}针对弯扭复合加载情况，给出了适用于韧性材料的椭圆方程：
+\[{\left( {\frac{{{S_t}}}{t}} \right)^2} + {\left( {\frac{{{S_b}}}{b}} \right)^2} = 1\]
+和适用于脆性材料的椭圆弧方程：
+\[{\left( {\frac{{{S_t}}}{t}} \right)^2} + {\left( {\frac{{{S_b}}}{b}} \right)^2}\left( {\frac{b}{t} - 1} \right) + \left( {\frac{{{S_b}}}{b}} \right)\left( {2 - \frac{b}{t}} \right) = 1\]
+其中，${S_t}$和${S_b}$分别为扭转应力幅值及弯曲应力幅值，$t$和$b$分别是扭转疲劳极限和弯曲疲劳极限。
+
+Sines\cite{sines1959behavior}考虑了静水压力的影响，将Von Mises应力准则修改为：
+\[\frac{{\Delta {\tau _{oct}}}}{2} + f\left( {2{\sigma _h}} \right) = C\]
+其中，${\Delta {\tau _{oct}}}$是八面体剪应力变幅，${\sigma _h}$为静水应力，$k$和$C$是材料常数。
+
+Gough准则和Sines准则的共同特征是它们均与材料的弯曲疲劳极限和扭转疲劳极限的比$b/t$相关，而$b/t$的值不仅随着材料、试件几何形状而改变，而且随着耐久极限的改变而改变。
+Findley\cite{findley1953combined}\cite{findley1954modified}\cite{findley1956theory}\cite{findley1958theory}对大量的疲劳数据进行分析后，提出不断变化的剪应力是导致疲劳的主要原因，而临界平面上的正应力对材料抵抗不断变化应力的能力有很大影响。
+提出了一个剪应力与正应力的线性组合式作为疲劳判据：
+\[{\left( {\frac{{\Delta \tau }}{2} + k{\sigma _n}} \right)_{\max }} = C\]
+其中，${\Delta \tau }$为平面上的剪应力变幅，${\sigma _n}$为平面上的法向应力幅，$k$和$C$是材料常数。
+临界面定义为正应力和剪应力的线性组合（式(1.4)中括号内部分）
+达到最大值的面。单元内任意截面上的应力状态如图1.2所示。
+
+MicDiarmid\cite{mcdiarmid1991general}考虑了裂纹的不同开裂模式，将临界面定义为剪应力幅达到最大值的面，提出：
+\[\frac{{\Delta {\tau _{\max }}}}{{2{t_{A,B}}}} + \frac{{{\sigma _{n,\max }}}}{{2{\sigma _u}}} = 1\]
+其中，${\Delta {\tau _{\max }}}$为临界面上的最大剪应力变幅，${\sigma _{n,\max }}$是临界面上的最大法向应力，${t_{A,B}}$为相对应于A，B两种不同裂纹开裂模式的剪切疲劳强度，${\sigma _u}$是材料的拉伸强度。
+
+Dang Van\cite{van1986criterion}\cite{van1999introduction}从微观角度出发，观察到疲劳裂纹萌生是一个局部过程，通常发生在那些经历塑性变形并形成典型滑移带的晶粒处，认为一个
+晶粒内的微观剪应力$\tau$是主要参数，同样，微观静水应力$\sigma_h$将影响裂纹的开裂和滑移带的形成，建立如下关系式：
+\[\tau  + k\sigma  = C\]
+其中，$k$和$C$是材料常数。
+
+Carpenteri和Spagnoli\cite{carpinteri2001multiaxial}应用临界面的概念将Gough准则进行如下修改：
+\[{\left( {\frac{{\Delta \tau }}{{2t}}} \right)^2} + \left( {\frac{{{\sigma _{n,\max }}}}{b}} \right) \le 1\]
+其中，临界面方向定义为应用权重函数法计算出的平均主应力方向。${\Delta \tau }$为临界面上的剪应力变幅，${\sigma _{n,\max }}$
+是临界面上的最大法向应力，t和b分别是扭转疲劳极限和弯曲疲劳极限。
+
+
+\subsection{Strain based models}
+与应力准则相对应，早期的研究者Yokobori等将静强度理论应用到多轴应变准则中来。
+采用最大法向应变、最大剪应变、Von Mises等效应变等代替Manson-Coffin公式的应变，与单轴低周疲劳估算相似，进行多轴疲劳寿命预算。
+由于该方法没有考虑不同应力路径对材料响应和疲劳寿命的影响，因而不能用于预测多轴非比例加载下的疲劳寿命。
+
+Brown和Miller[31]根据疲劳裂纹萌生和扩展的物理解释提出了一种多轴疲劳理论，与Findley[17-20]提出的应力准则相类似，Brown和Miller认为
+最大剪平面上的剪应变和法向应变这两个参数都应该考虑。他们提出裂纹第一阶段沿最大剪切面生成，第二阶段沿垂直于最大拉应变方向扩展。
+Brown和Miller准则由一系列由最大剪应变${\gamma _{\max }}$和最大剪应变平面上的法向应变${\varepsilon _n}$为坐标所组成的$\Gamma$平面上的等寿命曲线组成，对于给定寿命有
+\[{\gamma _{\max }} = f\left( {{\varepsilon _n}} \right)\]
+
+上式对于A、B两类裂纹有着不同的表达式。Brown和Miller将裂纹分为两种情况。在复合拉伸和扭转中，主应变${\varepsilon _1}$和${\varepsilon _3}$平行于表面，裂纹沿着表面扩展称为A类裂纹；对于正的双向拉伸，应变${\varepsilon _3}$垂直于自由表面，裂纹在自由表面上萌生进而沿纵深方向扩展称为B类裂纹。Kandil，Brown和Miller[32]给出A类裂纹表达式的简化形式：
+\[\frac{{\Delta {\gamma _{\max }}}}{2} + k\Delta {\varepsilon _n} = C\]
+其中，$\Delta {\varepsilon _n}$是临界面上的法向应变变幅，$k$和$C$是材料常数。这一准则被广泛讨论及应用[33-36]。
+
+Wang和Brown[37]用相邻两个最大剪应变折返点之间的法向应变变程${\varepsilon _n^*}$来代替法向应变变程$\Delta {\varepsilon _n}$，给出疲劳破坏模型
+
+
+
+\subsection{Energy based models}
+
 \section{Isothermal low cycle fatigue assessment}
 
 \subsection{Uniaxial fatigue life}
