@@ -767,3 +767,58 @@ The elongation is read from the dial scale of the micrometer head. This can be u
 \caption{.}
 \label{Fig:}
 \end{figure}
+
+\section{Forced convection in turbulent pipe flow}
+试件的内部直径为6.5mm，并没有找到合适的方法在试验过程中测量内壁的温度。
+因此我们将试件简化为圆管，根据圆管内部的强制对流换热公式计算试件内表面的对流换热系数，通过数值计算得到试件内壁的温度分布。
+
+Gnielinski's correlation for turbulent flow in tubes:
+\[{\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}}\]
+where f is the Darcy friction factor that can either be obtained from the Moody chart or for smooth tubes from correlation developed by Petukhov
+\[f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}}\]
+
+\[0.5 \le {\rm{Pr}} \le 2000\]
+\[3000 \le {\rm{R}}{{\rm{e}}_D} \le 5 \times {10^6}\]
+
+temperature $T=15+273.15=288.15\rm{K}$
+
+pressure $p=6.5\rm{bar}$
+
+density $\rho_0= 1.293\rm{kg/m^3}$
+
+Dynamic viscosity $\mu$ of an ideal gas is a function of the temperature. It can be derived as Sutherland's formula:
+\[\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}}\]
+where $\mu$ is dynamic viscosity at input temperature $T$,
+$\mu_0$ is reference viscosity at reference temperature $T_0$,
+$C$ is Sutherland's constant dependent on the gaseous material.
+Table \ref{tab:SutherlandConstant} shows the Sutherland's constant and reference values of the air.
+\begin{table}[htbp]
+  \centering
+  \caption{Sutherland's constant and reference values of the air.}
+    \begin{tabular}{p{2cm}p{2cm}p{2cm}p{3cm}}
+    \toprule
+    Gas   & $C$(K) & $T_0$(K) & $\mu_0$($\rm{Pa\cdot s}$) \\
+    \midrule
+    air   & 120   & 291.15 & $1.827\times 10^{-5}$ \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:SutherlandConstant}%
+\end{table}%
+
+The density of dry air $\rho$ can be calculated using the ideal gas law, expressed as a function of temperature and pressure:
+\begin{equation}
+\rho  = \frac{p}{{RT}}
+\label{Equ:AirDensity}
+\end{equation}
+where 
+$p$ is absolute pressure in Pa,
+$T$ is absolute temperature in K,
+$R$ is specific gas constant and for dry air $R = 287.058 \rm{J/(kg\cdot K)}$.
+
+The average pressure of inner cooling air is 6.5 bar. With Equation \ref{Equ:AirDensity}, we obtain the air density at 6.5 bar is 7.858 $\rm{kg/m^3}$.
+
+
+inner diameter of specimen $d_{in} = 0.0065\rm{mm}$
+
+volume flow ${\dot V} = 25\rm{l/min}$
+
