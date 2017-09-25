@@ -769,6 +769,18 @@ The elongation is read from the dial scale of the micrometer head. This can be u
 \end{figure}
 
 \section{Forced convection in turbulent pipe flow}
+
+\begin{figure}[!htp]
+\centering\scalebox{0.6}{\includegraphics{inner_cooling.pdf}}
+\caption{Schematic of inner cooling air system.}
+\label{Fig:}
+\end{figure}
+
+Because of the small inner diameter 6.5mm of the specimen, it is difficult to measure the temperature of the specimen inner surface during the tests.
+A variety of measurement options were tried to measure the inner surface temperature.
+Due to the impact of cooling air, the accuracy of temperature measurement is not meet the requirements.
+Therefore we tried to calculate the temperature distribution of the specimen inner surface using FEM method.
+
 试件的内部直径为6.5mm，并没有找到合适的方法在试验过程中测量内壁的温度。
 因此我们将试件简化为圆管，根据圆管内部的强制对流换热公式计算试件内表面的对流换热系数，通过数值计算得到试件内壁的温度分布。
 
@@ -810,7 +822,7 @@ The density of dry air $\rho$ can be calculated using the ideal gas law, express
 \rho  = \frac{p}{{RT}}
 \label{Equ:AirDensity}
 \end{equation}
-where 
+where
 $p$ is absolute pressure in Pa,
 $T$ is absolute temperature in K,
 $R$ is specific gas constant and for dry air $R = 287.058 \rm{J/(kg\cdot K)}$.
