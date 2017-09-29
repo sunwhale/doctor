@@ -778,28 +778,47 @@ The elongation is read from the dial scale of the micrometer head. This can be u
 
 Because of the small inner diameter 6.5mm of the specimen, it is difficult to measure the temperature of the specimen inner surface during the tests.
 A variety of measurement options were tried to measure the inner surface temperature.
-Due to the impact of cooling air, the accuracy of temperature measurement is not meet the requirements.
-Therefore we tried to calculate the temperature distribution of the specimen inner surface using FEM method.
+It was found that the internal cooling air has a significant effect on the temperature measurement of the inner surface of the specimen.
+%内部冷却空气对试件内壁的温度测量有很大的影响。
+The measured temperature is not the temperature of the inner surface, but the average temperature of the wall and the cooling air flow.
+%测量得到的温度不是壁面的温度，而是壁面和冷却气流的平均温度。
+Therefore we tried to calculate the temperature distribution of the specimen inner surface using the FEM method.
 
-试件的内部直径为6.5mm，并没有找到合适的方法在试验过程中测量内壁的温度。
-因此我们将试件简化为圆管，根据圆管内部的强制对流换热公式计算试件内表面的对流换热系数，通过数值计算得到试件内壁的温度分布。
+%The internal diameter of the specimen is 6.5 mm, and .
+%试件的内部直径为6.5mm,。
 
-Gnielinski's correlation for turbulent flow in tubes:
-\[{\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}}\]
-where f is the Darcy friction factor that can either be obtained from the Moody chart or for smooth tubes from correlation developed by Petukhov
-\[f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}}\]
+The inner surface of the hollow specimen can be considers as a pipe.
+%空心试件可以简化为圆管.
+According to the formula of convection in turbulent pipe flow, the convective heat transfer coefficient of the inner surface of the specimen can be calculated.
+%根据圆管内部的强制对流换热公式，我们计算试件内表面的对流换热系数。
 
-\[0.5 \le {\rm{Pr}} \le 2000\]
-\[3000 \le {\rm{R}}{{\rm{e}}_D} \le 5 \times {10^6}\]
+Nusselt number (Nu) is a dimensionless number, defined as the ratio of convective to conductive heat transfer across (normal to) the boundary.
+The Nusselt number is given as:
+\[{\rm{N}}{{\rm{u}}_L} = \frac{{hL}}{k},\]
+where $h$ is the convective heat transfer coefficient of the fluid, $L$ is the characteristic length, $k$ is the thermal conductivity of the fluid.
 
-temperature $T=15+273.15=288.15\rm{K}$
+Gnielinski's correlation for turbulent flow in tubes is given as:
+\[{\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}},\]
+where $f$ is the Darcy friction factor that can either be obtained from the Moody chart or for smooth tubes from correlation developed by Petukhov:
+\[f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}},\]
+with
+\[0.5 \le {\rm{Pr}} \le 2000,\]
+\[3000 \le {\rm{R}}{{\rm{e}}_D} \le 5 \times {10^6},\]
 
-pressure $p=6.5\rm{bar}$
+The Prandtl number (Pr) is a dimensionless number, defined as the ratio of momentum diffusivity to thermal diffusivity.
+The Prandtl number is given as:
+\[{\rm{Pr}} = \frac{{{c_p}\mu }}{k},\]
+where
+$c_{p}$ is specific heat, $\mu$ is dynamic viscosity and $k$ is thermal conductivity.
 
-density $\rho_0= 1.293\rm{kg/m^3}$
+The Reynolds number (Re) is a dimensionless number, defined as the ratio of inertial forces to viscous forces within a fluid.
+The Reynolds number is given as:
+\[{\rm{Re}} = \frac{{\rho uL}}{\mu },\]
+where
+$\rho$ is density of the fluid, $u$ is the velocity of the fluid with respect to the object, $\mu$ is the dynamic viscosity of the fluid and $L$ is a characteristic dimension.
 
-Dynamic viscosity $\mu$ of an ideal gas is a function of the temperature. It can be derived as Sutherland's formula:
-\[\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}}\]
+It is noted that the dynamic viscosity $\mu$ of an ideal gas is a function of the temperature. It can be derived as Sutherland's formula:
+\[\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}},\]
 where $\mu$ is dynamic viscosity at input temperature $T$,
 $\mu_0$ is reference viscosity at reference temperature $T_0$,
 $C$ is Sutherland's constant dependent on the gaseous material.
@@ -819,18 +838,54 @@ Table \ref{tab:SutherlandConstant} shows the Sutherland's constant and reference
 
 The density of dry air $\rho$ can be calculated using the ideal gas law, expressed as a function of temperature and pressure:
 \begin{equation}
-\rho  = \frac{p}{{RT}}
+\rho  = \frac{p}{{RT}},
 \label{Equ:AirDensity}
 \end{equation}
 where
-$p$ is absolute pressure in Pa,
-$T$ is absolute temperature in K,
-$R$ is specific gas constant and for dry air $R = 287.058 \rm{J/(kg\cdot K)}$.
+$p$ is absolute pressure,
+$T$ is absolute temperature,
+$R$ is specific gas constant.
 
-The average pressure of inner cooling air is 6.5 bar. With Equation \ref{Equ:AirDensity}, we obtain the air density at 6.5 bar is 7.858 $\rm{kg/m^3}$.
+According to the measurement results of the sensors, the average pressure and temperature of the cooling air are 6.5 bar and 288.15K, respectively.
+
+\begin{table}[htbp]
+  \begin{threeparttable}
+  \centering
+  \caption{Heat convection coefficients of the inner surface of the specimen.}
+    \begin{tabular}{llrrrr}
+    \toprule
+    $T$   & ${\rm{K}}$ & 288.15  & 288.15  & 288.15  & 288.15  \\
+    $p$   & ${\rm{bar}}$ & 6.5   & 6.5   & 6.5   & 6.5  \\
+    $\rho  = \frac{p}{{RT}}$ \tnote{*1} & ${\rm{kg/}}{{\rm{m}}^{\rm{3}}}$ & 7.724 & 7.724 & 7.724 & 7.724 \\
+    $\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}}$ \tnote{*2} & -     & 1.81E-05 & 1.81E-05 & 1.81E-05 & 1.81E-05 \\
+    ${\dot V}$ & ${\rm{l/min}}$ & 10    & 20    & 30    & 40  \\
+    $u = \frac{{4\dot V}}{{\pi {D^2}}}$ \tnote{*3} & ${\rm{m/}}{{\rm{s}}^2}$ & 5.02  & 10.05  & 15.07  & 20.09  \\
+    ${\rm{Re}} = \frac{{\rho uL}}{\mu }$ \tnote{*4} & -     & 13906  & 27812  & 41718  & 55624  \\
+    ${\rm{Pr}} = \frac{{{c_p}\mu }}{k}$ \tnote{*5} & -     & 0.63  & 0.63  & 0.63  & 0.63  \\
+    $f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}}$ & -     & 0.0288  & 0.0241  & 0.0219  & 0.0205  \\
+    ${\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}}$ & -     & 36.76  & 62.61  & 85.39  & 106.50  \\
+    $h = \frac{k}{{D{\rm{N}}{{\rm{u}}_D}}}$ & ${\rm{W/(}}{{\rm{m}}^{\rm{2}}} \cdot {\rm{K)}}$ & 146.03  & 248.74  & 339.24  & 423.10  \\
+    \bottomrule
+    \end{tabular}%
+    \begin{tablenotes}
+    \item[*1] $R = 287.058 {\rm{J/(kg}} \cdot {\rm{K}})$ for dry air.
+    \item[*2] Sutherland's constant and reference values of the air (see Table \ref{tab:SutherlandConstant}).
+    \item[*3] $D=0.65$mm.
+    \item[*4] $L=D$.
+    \item[*5] $c_{p}=903.3 {\rm{J/(kg}} \cdot {\rm{K}})$ and $k=0.0258 {\rm{W/(m}} \cdot {\rm{K}})$ at $288.15{\rm{K}}$.
+    \end{tablenotes}
+    \end{threeparttable}
+  \label{tab:addlabel}%
+\end{table}%
 
 
-inner diameter of specimen $d_{in} = 0.0065\rm{mm}$
 
-volume flow ${\dot V} = 25\rm{l/min}$
+
+
+%temperature $T=15+273.15=288.15\rm{K}$
+%pressure $p=6.5\rm{bar}$
+%density $\rho_0= 1.293\rm{kg/m^3}$
+%The average pressure of inner cooling air is 6.5 bar. With Equation \ref{Equ:AirDensity}, we obtain the air density at 6.5 bar is 7.858 $\rm{kg/m^3}$.
+%inner diameter of specimen $d_{in} = 0.0065\rm{mm}$
+%volume flow ${\dot V} = 25\rm{l/min}$
 
