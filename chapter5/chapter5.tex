@@ -1,15 +1,5 @@
 \chapter{Multi-Axial Constitutive Modeling under Theromechanical Fatigue Loading in Finite Deformation Framework}
 
-%\ifpdf
-%    \graphicspath{{Chapter5/Chapter5Figs/PDF/}{Chapter5/Chapter5Figs/}}
-%\else
-%    \graphicspath{{Chapter5/Chapter5Figs/EPS/}{Chapter5/Chapter5Figs/}}
-%\fi
-
-%\graphicspath{{Chapter5/Chapter5Figs/PDF/}{Chapter5/Chapter5Figs1/}{Chapter5/Chapter5Figs2/}}
-
-\graphicspath{{Chapter5/Chapter5Figs/PDF/}{Chapter5/Chapter5Figs/}}
-
 \section{Continuous formulation of the constitutive model}
 \label{}
 \subsection{Kinematics}
@@ -549,7 +539,7 @@ The two steps radial return map method is the same as which introduced in the la
 {{\mathbf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {r_{n + 1}^k{\mathbf{b}}_{n + 1}^k}
 \end{equation}
 \begin{figure}[!htp]
-\centering\scalebox{0.8}{\includegraphics{radial_return_map.pdf}}
+\centering\scalebox{0.8}{\includegraphics{radial_return_map_finite_strain.pdf}}
 \caption{Schematics of the two steps radial return map method.}
 \label{Fig:radial_return_map}
 \end{figure}
@@ -601,7 +591,7 @@ Substitution of Equation \ref{Equ:Fn+1}-\ref{Equ:nn+1} and \ref{Equ:sminusa2} in
 {{\bm{\uptau }}'_{n + 1} - {{\mathbf{a}}_{n + 1}}} = \frac{{{Y_{n + 1}}\left[ {{\mathbf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k \Delta {\mathbf{R}}_{n + 1}^{}{\mathbf{b}}_n^k{\left( {\Delta {\mathbf{R}}_{n + 1}^{}} \right)^{\rm{T}}}} } \right]}}{{\sqrt {\frac{3}{2}} \left\| {{\mathbf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k \Delta {\mathbf{R}}_{n + 1}^{}{\mathbf{b}}_n^k{\left( {\Delta {\mathbf{R}}_{n + 1}^{}} \right)^{\rm{T}}}} } \right\|}}
 \end{equation}
 \begin{figure}[!htp]
-\centering\scalebox{0.7}{\includegraphics{successive_substitution.pdf}}
+\centering\scalebox{0.7}{\includegraphics{successive_substitution_finite_strain.pdf}}
 \caption{Successive substitution return mapping algorithm.}
 \label{Fig:radial_return_map}
 \end{figure}
