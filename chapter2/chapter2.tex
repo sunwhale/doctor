@@ -177,3 +177,321 @@ df = \frac{\partial f}{\partial \boldsymbol{\sigma}}:d\boldsymbol{\sigma} + \fra
 \end{equation}
 
 \section{Kinematics} 
+
+\subsection{Mechanisms of heat transfer}
+Heat transfer describes the exchange of thermal energy and it is normally from a high temperature object to a lower temperature object.
+%The exchange of kinetic energy of particles through the boundary between two systems which are at different temperatures from each other or from their surroundings.
+%Heat transfer always occurs from a region of high temperature to another region of lower temperature.
+Heat transfer changes the internal energy of both systems involved according to the First Law of Thermodynamics.
+And the Second Law of Thermodynamics defines the concept of thermodynamic entropy, by measurable heat transfer.
+Thermal equilibrium is reached when all involved bodies and the surroundings reach the same temperature.
+%Thermal expansion is the tendency of matter to change in volume in response to a change in temperature.
+The fundamental modes of heat transfer are conduction, convection and radiation.
+In the engineering sciences, heat transfer includes the processes of thermal conduction, radiation, convection, and sometimes mass transfer.
+Usually more than one of these processes occurs in a given situation as shown in \ref{Fig:HeatTransfer}.
+% shows a high temperature object cooling in air,
+%Common case is transfer of heat by a combination of the three modes.
+\begin{figure}[!htp]
+\centering\scalebox{0.8}{\includegraphics{Heat_Convection.pdf}}
+\caption{The fundamental modes of heat transfer.}
+\label{Fig:HeatTransfer}
+\end{figure}
+
+\subsubsection{Thermal conduction}
+Thermal conduction is the transfer of internal energy by microscopic diffusion and collisions of particles or quasi-particles within a body.
+%The microscopically diffusing and colliding objects include molecules, atoms, and electrons.
+%They transfer disorganized microscopic kinetic and potential energy, which are jointly known as internal energy.
+Conduction can only take place within an object or material, or between two objects that are in contact with each other.
+%Conduction takes place in all phases of ponderable matter, such as solids, liquids, gases and plasmas, but it is distinctly recognizable only when the matter is undergoing neither chemical reaction nor differential local internal flows of distinct chemical constituents.
+%In the presence of such chemically defined contributory sub-processes, only the flow of internal energy is recognizable, as distinct from thermal conduction. When the processes of conduction yield a net flow of energy across a boundary because of a temperature gradient, the process is characterized as a flow of heat.
+%Heat spontaneously flows from a hotter to a colder body. In the absence of external drivers, temperature differences decay over time, and the bodies approach thermal equilibrium.
+
+%In conduction, the heat flow is within and through the body itself.
+%In contrast, in heat transfer by thermal radiation, the transfer is often between bodies, which may be separated spatially.
+%Also possible is transfer of heat by a combination of conduction and thermal radiation.
+%In convection, internal energy is carried between bodies by a material carrier. In solids, conduction is mediated by the combination of vibrations and collisions of molecules, of propagation and collisions of phonons, and of diffusion and collisions of free electrons.
+%In gases and liquids, conduction is due to the collisions and diffusion of molecules during their random motion. Photons in this context do not collide with one another, and so heat transport by electromagnetic radiation is conceptually distinct from heat conduction by microscopic diffusion and collisions of material particles and phonons. In condensed matter, such as a solid or liquid, the distinction between conduction and radiative transfer of heat is clear in physical concept, but it is often not phenomenologically clear, unless the material is semi-transparent.
+
+%In the engineering sciences, heat transfer includes the processes of thermal radiation, convection, and sometimes mass transfer. Usually more than one of these processes occurs in a given situation. The conventional symbol for the material property, thermal conductivity, is $k$.
+
+%The law of heat conduction, also known as Fourier's law, states that the time rate of heat transfer through a material is proportional to the negative gradient in the temperature and to the area, at right angles to that gradient, through which the heat flows.
+
+An empirical relationship between the conduction rate in a material and the temperature gradient in the direction of energy flow, first formulated by Fourier who concluded that the heat flux resulting from thermal conduction is proportional to the magnitude of the temperature gradient and opposite to it in sign.
+For a three directional conduction, the differential form of Fourier's Law of thermal conduction may be expressed as:
+\begin{equation}
+{\bf{q}} =  - k\nabla T
+\end{equation}
+where $\bf{q}$ is the local heat flux density(W/m$^2$), $k$ is the material's conductivity(W/mK), $\nabla T$ is the temperature gradient(K/m).
+The heat flux density is the amount of energy that flows through a unit area per unit time.
+The thermal conductivity, k, is often treated as a constant, though this is not always true.
+While the thermal conductivity of a material generally varies with temperature, the variation can be small over a significant range of temperatures for some common materials.
+In anisotropic materials, the thermal conductivity typically varies with orientation; in this case k is represented by a second-order tensor. In non uniform materials, k varies with spatial location.
+
+\subsubsection{Thermal convection}
+
+Convective heat transfer, often referred to simply as convection, is the transfer of heat from one place to another by the movement of fluids.
+Two types of convective heat transfer may be distinguished: free convection and forced convection.
+Free convection describes when fluid motion is caused by buoyancy forces that result from the density variations due to variations of thermal temperature in the fluid.
+Forced convection describes when a fluid is forced to flow over the surface by an external source such as fans, by stirring, and pumps, creating an artificially induced convection current.
+
+    \begin{figure}[!htp]
+        \centering\scalebox{0.8}{\includegraphics{Thermal_boundary_layer.pdf}}
+        \caption{Thermal boundary layer.}
+        \label{Thermal_boundary_layer}
+    \end{figure}
+
+Convection is sometimes assumed to be described by Newton's law.
+Newton's law, which requires a heat transfer coefficient, states that the rate of heat loss of a body is proportional to the difference in temperatures between the body and its surroundings. %The constant of proportionality is the heat transfer coefficient.
+As shown in \ref{Thermal_boundary_layer}, the basic relationship for heat transfer by convection is:
+%The heat transfer rate can be written as,
+    \begin{equation}
+    q_y=hA(T_s-T_{\infty})
+    \end{equation}
+where $q_y$ is the heat transferred per unit time, $h$ is the heat transfer coefficient, $T_s$ is the object's surface temperature and $T_{\infty}$ is the fluid temperature.
+
+%And because heat transfer at the surface is by conduction,
+%    \begin{equation}
+%    q_y=-kA \frac{\partial}{\partial y} (T-T_{s})|_{y=0}
+%    \end{equation}
+%These two terms are equal; thus
+%    \begin{equation}
+%    -kA \frac{\partial}{\partial y} (T-T_{s})|_{y=0} = hA(T_s-T_{\infty})
+%    \end{equation}
+%Rearranging,
+%    \begin{equation}
+%    \frac{h}{k}=\frac{\frac{\partial (T_s-T)}{\partial y}|_{y=0}}{\frac{T_s-T_{\infty}}{L}}
+%    \end{equation}
+%Making it dimensionless by multiplying by representative length L,
+%    \begin{equation}
+%    \frac{hL}{k}=\frac{\frac{\partial (T_s-T)}{\partial y}|_{y=0}}{T_s-T_{\infty}}
+%    \label{tab:Nusselt1}
+%    \end{equation}
+
+
+%Convective heat transfer is one of the major modes of heat transfer and convection is also a major mode of mass transfer in fluids.  Therefore, influence of fluid field factors will impact the convective heat transfer. There are five aspects:
+%
+%
+%1.Natural convection and forced convection.
+%
+%
+%$\bullet$ Natural Convection.
+%
+%The onset of natural convection is determined by the Rayleigh number (Ra). This dimensionless number is given by:
+%
+%    \begin{equation}
+%        Ra=\frac{\Delta \rho g L^3}{D \mu}
+%        \label{tab:RayleighNumber}
+%    \end{equation}
+%
+%where
+%
+%    $\Delta \rho$ is the difference in density between the two parcels of material that are mixing,\par
+%    g is the local gravitational acceleration,\par
+%    L is the characteristic length-scale of convection,\par
+%    D is the diffusivity of the characteristic that is causing the convection,\par
+%    $\mu$ is the dynamic viscosity.\par
+%
+%$\bullet$ Forced convection.
+%
+%In general, natural convection flow rate is low, the natural convection heat transfer coefficient is usually lower than the forced convection heat transfer coefficient.
+%
+%2.Laminar flow and turbulent flow.
+%
+%$\bullet$ Limina flow.
+%
+%Laminar flow occurs when a fluid flows in parallel layers, with no disruption between the layers.In the perpendicular direction, the heat transfer depends mainly on molecular diffusion (ie, thermal conductivity).
+%
+%$\bullet$ Turbulent flow.
+%
+%There are strong pulsation and vortex. The fluids between various parts mix rapidly, so turbulent convection effect is stronger than laminar flow.
+%
+%3.Phase transition.
+%
+%$\bullet$ Boiling.
+%
+%$\bullet$ Condensation.
+%
+%4.The physical properties of the fluid.
+%
+%$\bullet$ Thermal conductivity k,$[W/(m \cdot K)]$. If the fluid thermal conductivity is larger, thermal resistance become smaller. Convective heat transfer is more intense.
+%
+%$\bullet$ Density $\rho$, $[kg/m^3]$.
+%
+%$\bullet$ Specific heat capacity c,$[J/(kg \cdot K)]$.
+%
+%$\rho c$ reflects the size of the heat capacity of unit volume of fluid. The greater its value is, the more heat is transferred by convection, and the convective heat transfer is more intense.
+%
+%
+%$\bullet$ Dynamic viscosity $\eta$, $[Pa \cdot s]$. Kinematic viscosity $\nu=\eta /\rho$, $[m^2/s]$. The viscosity of the fluid affect the velocity distribution and flow pattern, so it affects the convective heat transfer.
+%
+%$\bullet$ Volume expansion coefficient $\alpha_V$, $[K^{-1}]$. In the general case of a gas, liquid, or solid, the volumetric coefficient of thermal expansion is given by
+%
+%    \begin{equation}
+%        \alpha_V=\frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_p
+%        \label{tab:ExpansionCoefficient}
+%    \end{equation}
+%
+%For an ideal gas, the volumetric thermal expansivity (i.e. relative change in volume due to temperature change) depends on the type of process in which temperature is changed. Two known cases are isobaric change, where pressure is held constant, and adiabatic change, where no work is done and no change in entropy occurs.
+%
+%In an isobaric process, the volumetric thermal expansivity, which we denote $\beta_p$,(The index p denotes an isobaric process) is:
+%
+%    \begin{equation}
+%        PV = nRT
+%    \end{equation}
+%    \begin{equation}
+%        \ln\left(V\right) = \ln \left(T\right) + \ln\left(nR/P\right)
+%    \end{equation}
+%    \begin{equation}
+%        \beta_p = \bigg(\frac{1}{V} \frac{dV}{dT}\bigg)_p = \bigg(\frac{d(ln V)}{d T}\bigg)_p = \frac{d(ln T)}{d T} = \frac{1}{T}
+%    \end{equation}
+%
+%5.The geometric factors of the heat transfer surface.
+%
+%Geometry, size, relative position, roughness and other geometric factors will affect the flow of fluid, and therefore affect the fluid velocity distribution and the convective heat transfer. The surface heat transfer coefficient is a function of many variables.
+
+
+\subsubsection{Thermal radiation}
+Thermal radiation is the emission of electromagnetic waves from all matter that has a temperature greater than absolute zero.
+It represents a conversion of thermal energy into electromagnetic energy.
+All matter with a temperature greater than absolute zero emits thermal radiation. When the temperature of the body is greater than absolute zero, inter-atomic collisions cause the kinetic energy of the atoms or molecules to change. This results in charge-acceleration and/or dipole oscillation which produces electromagnetic radiation, and the wide spectrum of radiation reflects the wide spectrum of energies and accelerations that occur even at a single temperature.
+
+Thermal radiation power of a black body per unit area of radiating surface per unit of solid angle and per unit frequency $\nu$ is given by Planck's law as:
+\begin{equation}
+u(\nu,T)=\frac{2 h\nu^3}{c^2}\cdot\frac1{e^{h\nu/k_BT}-1},
+\end{equation}
+or in terms of wavelength
+\begin{equation}
+u(\lambda,T)=\frac{\beta}{\lambda^5}\cdot\frac1{e^{hc/k_BT\lambda}-1},
+\end{equation}
+where $h=6.626\times10^{-34}J \cdot s$ is Planck's constant, $b=2.898\times10^{-3}m \cdot K$ is Wien's displacement constant, $k_{B}=1.381\times10^{-23}J \cdot K^{-1}$ is Boltzmann constant and $c$ is the speed of light.
+
+This formula mathematically follows from calculation of spectral distribution of energy in Quantization (physics)|quantized electromagnetic field which is in complete thermal equilibrium with the radiating object. The equation is derived as an infinite sum over all possible frequencies. The energy, $E=h \nu$, of each photon is multiplied by the number of states available at that frequency, and the probability that each of those states will be occupied.
+
+Integrating the above equation over $\nu$ the power output given by the Stefan¨CBoltzmann law is obtained, as:
+\begin{equation}
+P = \sigma \cdot A \cdot T^4,
+\label{Equ:IntegratingOfStefanBoltzmann}
+\end{equation}
+where the constant of proportionality $\sigma=5.670\times10^{-8}\rm{W}\cdot \rm{m}^{-2}\cdot \rm{K}^{-1}$ is the Stefan¨CBoltzmann constant and $A$ is the radiating surface area.
+
+The wavelength $\lambda \,$, for which the emission intensity is highest, is given by Wien's displacement law as
+\begin{equation}
+\lambda_{max} = \frac{b}{T}.
+\end{equation}
+For surfaces which are not black bodies, one has to consider the (generally frequency dependent) emissivity factor $\epsilon(\nu)$. This factor has to be multiplied with the radiation spectrum formula before integration. If it is taken as a constant, the resulting formula for the power output can be written in a way that contains $\epsilon$ as a factor:
+\begin{equation}
+P = \epsilon \cdot \sigma \cdot A \cdot T^4.
+\end{equation}
+
+This type of theoretical model, with frequency-independent emissivity lower than that of a perfect black body, is often known as a 'grey body'. For frequency-dependent emissivity, the solution for the integrated power depends on the functional form of the dependence, though in general there is no simple expression for it. Practically speaking, if the emissivity of the body is roughly constant around the peak emission wavelength, the gray body model tends to work fairly well since the weight of the curve around the peak emission tends to dominate the integral.
+
+\subsection{Temperature Measurement}
+\subsubsection{Thermocouple}
+A thermocouple is a sensor for measuring temperature.
+It consists of two dissimilar metal wires, joined at one end.
+%When properly configured, thermocouples can provide temperature measurements over a wide range of temperatures.
+In contrast to most other methods of temperature measurement, thermocouples are self powered and require no external form of excitation.
+The physical principle of the thermocouple is Seebeck effect.
+
+\begin{figure}[!htp]
+\centering\scalebox{1.0}{\includegraphics{Seebeck_Voltage.pdf}}
+\caption{Schematic of Seebeck effect.}
+\label{Fig:Seebeck_Voltage}
+\end{figure}
+In 1821 the German physicist Thomas Johann Seebeck discovered the continuous current flow in the thermoelectric circuit when two wires of dissimilar metals are joined at both ends and one of the ends is heated, and that is the Seebeck effect.
+If this circuit is broken at the center (see \ref{Fig:Seebeck_Voltage}), the net open circuit voltage $e_{AB}$ (the Seebeck voltage) is a function of the junction temperature and the composition of the two metals.
+This was because the electron energy levels in each metal shifted differently and a voltage difference between the junctions.
+We can't measure the Seebeck voltage directly because we must first connect a voltmeter to the thermocouple, and the voltmeter leads themselves create a new thermoelectric circuit.
+
+A thermocouple is an electrical device consisting of two different conductors forming electrical junctions at differing temperatures. A thermocouple produces a temperature-dependent voltage as a result of the thermoelectric effect, and this voltage can be interpreted to measure temperature.
+The thermoelectric effect is the direct conversion of temperature differences to electric voltage and vice versa. A thermoelectric device creates voltage when there is a different temperature on each side. Conversely, when a voltage is applied to it, it creates a temperature difference. At the atomic scale, an applied temperature gradient causes charge carriers in the material to diffuse from the hot side to the cold side.
+\begin{figure}[!htp]
+\centering\scalebox{1.2}{\includegraphics{Thermocouple_circuit_Ktype_including_voltmeter_temperature.pdf}}
+\caption{K-type thermocouple in the standard thermocouple measurement configuration.}
+\label{Fig:Thermocouple_circuit_Ktype_including_voltmeter_temperature}
+\end{figure}
+
+\subsubsection{Thermocouple direct and inverse polynomials}
+Once we obtain the voltage from the thermocouple we have to convert the voltage to a temperature.
+As shown in \ref{Fig:Thermocouples}, output voltages for the type K, R and S thermocouples are plotted as a function of temperature.
+Unfortunately, the temperature-versus-voltage relationship of the thermocouple is not linear.
+\begin{figure}[!htp]
+\centering\scalebox{0.5}{\includegraphics{Thermocouples.pdf}}
+\caption{Characteristic functions for thermocouples types K, R, S.}
+\label{Fig:Thermocouples}
+\end{figure}
+Therefore, polynomials are used to present the temperature-versus-voltage and the inverse relationship.
+Direct polynomials (see Equation \ref{Equ:Direct_polynomials}) provide the thermoelectric voltage from a known temperature and inverse polynomials (see Equation \ref{Equ:Inverse_polynomials}) provide the temperature from a known thermoelectric voltage.
+\begin{equation}
+\label{Equ:Direct_polynomials}
+E = {c_0} + {c_1}T + {c_2}{T^2} + ... + {c_n}{T^n} = \sum\limits_{i = 0}^n {{c_i}{T^i}}
+\end{equation}
+\begin{equation}
+\label{Equ:Inverse_polynomials}
+T = {k_0} + {k_1}E + {k_2}{E^2} + ... + {k_n}{E^n} = \sum\limits_{i = 0}^n {{k_i}{E^i}}
+\end{equation}
+Where, $T$ is temperature in degrees Celsius ($^{\circ} \rm{C}$), $E$ is thermocouple electric potential in microvolts (${\rm{\mu V}}$), $c_i,k_i$ are polynomial coefficients unique to each type thermocouple, $n$ is the maximum order of the polynomial.
+As n increases, the accuracy of the polynomial improves.
+A representative number is $n = 9$ for $\pm 1 ^{\circ} \rm{C}$ accuracy.
+
+In order to obtain the higher accuracy and system speed, the polynomials may be divided into several small sectors over a narrow temperature range.
+In the software for our data acquisition system, the thermocouple characteristic curve is divided into three sectors, and each sector is approximated by a nine or ten order
+polynomial.
+%as well as used in our temperature measurement system.
+For example, type R thermocouples coefficients of the approximate direct/inverse polynomials are given in Table \ref{tab:TypeRDirectPolynomial} and \ref{tab:TypeRInversePolynomial}.
+%Further more, the similar coefficients wtype K and type S thermocouples are also used in our temperature measurement system.
+% Table generated by Excel2LaTeX from sheet 'R'
+
+Three types (K, R, S) of thermocouples are used in our temperature measurement system for different temperature ranges.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Direct polynomial coefficients of type R thermocouple.}
+    \begin{tabular}{llll}
+    \toprule
+    Range & -50 to 1064.18$^{\circ}$C & 1064.18 to 1664.5$^{\circ}$C & 1664.5 to 1768.1$^{\circ}$C \\
+    \midrule
+    $c_0=$ & 0     & 2.95157925316$\times10^{3}$ & 1.52232118209$\times10^{5}$ \\
+    $c_1=$ & 5.289617298 & -2.520612513 & -2.68819888545$\times10^{2}$ \\
+    $c_2=$ & 1.39166589782$\times10^{-2}$ & 1.59564501865$\times10^{-2}$ & 1.71280280471$\times10^{-1}$ \\
+    $c_3=$ & -2.38855693017$\times10^{-5}$ & -7.64085947576$\times10^{-6}$ & -3.45895706453$\times10^{-5}$ \\
+    $c_4=$ & 3.56916001063$\times10^{-8}$ & 2.05305291024$\times10^{-9}$ & -9.34633971046$\times10^{-12}$ \\
+    $c_5=$ & -4.62347666298$\times10^{-11}$ & -2.93359668173$\times10^{-13}$ &  \\
+    $c_6=$ & 5.00777441034$\times10^{-14}$ &       &  \\
+    $c_7=$ & -3.73105886191$\times10^{-17}$ &       &  \\
+    $c_8=$ & 1.57716482367$\times10^{-20}$ &       &  \\
+    $c_9=$ & -2.81038625251$\times10^{-24}$ &       &  \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:TypeRDirectPolynomial}%
+\end{table}%
+
+% Table generated by Excel2LaTeX from sheet 'R'
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Inverse polynomial coefficients of type R thermocouple.}
+    \begin{tabular}{lllr}
+    \toprule
+    Temperature range & -50 to 250$^{\circ}$C & 250 to 1200$^{\circ}$C & \multicolumn{1}{l}{1064 to 1664.5$^{\circ}$C} \\
+    \midrule
+    Voltage range & -226 to 1923$\mu$V & 1923 to 13228$\mu$V & \multicolumn{1}{l}{11361 to 19739$\mu$V} \\
+    \midrule
+    $k_{0}=$ & 0.0000000 & 1.334584505$\times 10^{1}$ & \multicolumn{1}{l}{-8.199599416$\times 10^{1}$} \\
+    $k_{1}=$ & 1.8891380$\times 10^{-1}$ & 1.472644573$\times 10^{-1}$ & 1.553962042$\times 10^{-1}$ \\
+    $k_{2}=$ & -9.3835290$\times 10^{-5}$ & -1.844024844$\times 10^{-5}$ & -8.342197663$\times 10^{-6}$ \\
+    $k_{3}=$ & 1.3068619$\times 10^{-7}$ & 4.031129726$\times 10^{-9}$ & 4.279433549$\times 10^{-10}$ \\
+    $k_{4}=$ & -2.2703580$\times 10^{-10}$ & -6.249428360$\times 10^{-13}$ & -1.19157791$\times 10^{-14}$ \\
+    $k_{5}=$ & 3.5145659$\times 10^{-13}$ & 6.468412046$\times 10^{-17}$ & 1.492290091$\times 10^{-19}$ \\
+    $k_{6}=$ & -3.8953900$\times 10^{-16}$ & -4.458750426$\times 10^{-21}$ & \multicolumn{1}{l}{} \\
+    $k_{7}=$ & 2.823.9471$\times 10^{-19}$ & 1.994710146$\times 10^{-25}$ & \multicolumn{1}{l}{} \\
+    $k_{8}=$ & -1.2607281$\times 10^{-22}$ & -5.313401790$\times 10^{-30}$ & \multicolumn{1}{l}{} \\
+    $k_{9}=$ & 3.1353611$\times 10^{-26}$ & 6.481976217$\times 10^{-35}$ & \multicolumn{1}{l}{} \\
+    $k_{10}=$ & -3.3187769$\times 10^{-30}$ &       & \multicolumn{1}{l}{} \\
+    \midrule
+    Error & 0.02 to -0.02$^{\circ}$C & 0.005 to -0.005$^{\circ}$C & \multicolumn{1}{l}{0.001 to -0.0005$^{\circ}$C} \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:TypeRInversePolynomial}%
+\end{table}%
