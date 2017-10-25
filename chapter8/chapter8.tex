@@ -71,15 +71,15 @@ Induction heating is convenient to match up an additional air cooling system, wh
 本节介绍了单盏卤素灯自由辐射的试验过程及数值计算结果。
 
 单盏卤素灯密封腔辐射试验装置设计如\ref{Fig:OneLightRadiation}(a)所示，包括圆柱形不锈钢壁面、上下盖板和灯头固定部件等，构成了一个圆柱形密封腔。
-所有零件使用SS304不锈钢通过数控加工中心制作，空腔内壁采用耐高温黑色涂料喷涂。
-根据温度的测量范围，我们选择K型热电偶测量圆柱壁面的温度分布。
-热电偶的位置分布如\ref{Fig:OneLightRadiation}(b)所示，内壁和外壁在垂直方向各五个。
-热电偶的数据采集，选取National Instruments公司的9213型16通道热电偶数据采集器（见\ref{Fig:OneLightRadiation}(c)），该数据采集器内置CJC冷端温度补偿，通过在PC端安装NI-DAQmx驱动软件实现与电脑之间的通信。 National Instruments同时提供了LabVIEW SignalExpress软件，用于实现数据在PC端的处理和存储。
-根据Equation \ref{Equ:Inverse_polynomials}，通过电脑程序将电压信号转换为温度信号，并按照顺序写入对应的文件，程序框图如\ref{Fig:OneLightRadiation}(e)所示。
+所有零件都使用SS304不锈钢通过数控加工中心制作，空腔内壁采用耐高温黑色涂料均匀喷涂，确保空腔内壁各处的辐射发射率相同。
+我们采用K型热电偶测量圆柱壁面的温度分布。
+根据该试验装置的对称性，选取其中一个轴对称截面放置热电偶，内壁面和外壁面在垂直方向各五个，热电偶的位置及编号如\ref{Fig:OneLightRadiation}(b)所示。
 
-为了保证实验的精度，在圆柱外表面的中心位置，我们额外增加了一个红外温度测量点。
-红外测温仪为Voltcraft IR 2200型（见\ref{Fig:OneLightRadiation}(d)），测量温度范围-50至2000$^{\circ}$C。
-如图\ref{Fig:OneLightRadiation}(b)所示，我们在圆柱外壁选取一个矩形区域进行喷涂，测温点位于矩形区域的中心。
+使用National Instruments公司的NI 9213型16通道热电偶数据采集器（见\ref{Fig:OneLightRadiation}(c)）对热电偶的测量结果进行采集，该数据采集器内置CJC冷端温度补偿，通过在PC端安装NI-DAQmx驱动软件实现与电脑之间的通信。 National Instruments公司同时提供了LabVIEW可编程软件，根据Equation \ref{Equ:Inverse_polynomials}编写程序，将K型热电偶的电压信号转换为温度值，并将试验结果按照合适的文件格式存储。
+
+为了保证实验的精度，我们在圆柱密封腔外表面中心位置（如\ref{Fig:OneLightRadiation}(a)所示）选取了一个矩形区域进行喷涂，并将矩形区域的中心作为红外温度测量点。
+采用Voltcraft IR 2200型红外测温仪（见\ref{Fig:OneLightRadiation}(d)）测量该点的温度。
+其中，该型号红外测温仪的温度测量范围是-50至2000$^{\circ}$C，测量精度为$\pm2^{\circ}$C。
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
@@ -92,7 +92,7 @@ Induction heating is convenient to match up an additional air cooling system, wh
   \begin{minipage}[t]{0.5\linewidth}
     \centering
     \includegraphics[width=3.0in]{OneLightRadiationShow.pdf}
-    \centerline{(b) Thermocouple measurement points.}
+    \centerline{(b) Thermocouple locations.}
     \label{Fig:OneLightRadiationPhoto}
   \end{minipage}
 
@@ -124,7 +124,7 @@ Induction heating is convenient to match up an additional air cooling system, wh
   \label{Fig:OneLightRadiation}
 \end{figure}
 
-将所有热电偶与数据采集器连接，标定每个热电偶的温度值并进行冷端补偿。
+试验开始前，将所有热电偶与数据采集器连接，标定每个热电偶的温度值并进行冷端补偿。
 将热电偶采集器和红外测温数据与PC端进行同步，定义数据采集程序。
 开启卤素灯加热一段时间后关闭电源，试验装置自然冷却至室温，记录升温与降温全过程。
 更换不同功率的卤素灯（240W，350W和400W），获取不同功率卤素灯的辐射加热和冷却曲线。
@@ -167,12 +167,6 @@ A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.31
 \end{equation}
 将灯芯等效为理想圆柱面，已知圆柱面的表面积93.16${\rm{mm}}^2$和长度68mm，因此，可以计算得出圆柱面的直径为0.436mm。
 
-已知环境温度25$^{\circ}$C，空气自然对流换热系数的范围是5到25W/(${\rm{m}}^2\cdot$K)。
-使用trial and error方法，可以得到内壁面的表面散射率为0.95，外壁面的表面散射率为0.68，对流换热系数5.6W/(${\rm{m}}^2\cdot$K)。
-使用相同的模型参数，分别对240W、350W和400W功率卤素灯的自由辐射传热进行计算，选取外壁面中心点的温度值进行对比，如\ref{Fig:OneLightRadiationSimulation}(d-f)所示。
-数值模拟结果、热电偶测量值和红外温度测量仪所得到的温度值在加热和冷却两个过程中都得到了很好的吻合，这说明我们使用的材料常数和传热学参数是正确的。
-
-
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
   \nonumber
@@ -185,37 +179,45 @@ A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.31
     \centering
     \includegraphics[width=3.0in]{Filament.pdf}
     \centerline{(b) Mesh of the filament.}
-    \label{Fig:Compare240W}
   \end{minipage}
+  \caption{Comparison of experimental and computational results of free radiation with single halogen lamp.}
+  \label{Fig:Filament}
+\end{figure}
 
+试验过程中环境温度为23$^{\circ}$C，空气自然对流换热系数的范围是5到25W/(${\rm{m}}^2\cdot$K)。
+使用trial and error方法，可以得到内壁面（黑色喷涂）的表面散射率为0.95，外壁面（金属表面）的表面散射率为0.68，对流换热系数5.6W/(${\rm{m}}^2\cdot$K)。
+使用得到的表面散射率和对流换热系数，分别对240W、350W和400W功率卤素灯的辐射传热进行计算，选取外壁面中心点的温度值进行对比，如\ref{Fig:OneLightRadiationSimulation}(b-d)所示。
+数值模拟结果、热电偶测量值和红外温度测量仪所得到的温度值在加热和冷却两个过程中都得到了很好的吻合，这说明我们使用的材料常数和传热学参数是正确的。
+
+\begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
   \nonumber
     \centering
     \includegraphics[width=2.5in]{OneLightRadiationTransient.pdf}
-    \centerline{(c) Simulation model in ABAQUS.}
+    \centerline{(a) FEM model.}
     \label{Fig:OneLightRadiationTransient}
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
-    \includegraphics[width=3.5in]{Compare240W.pdf}
-    \centerline{(d) Halogen lamp power 240W.}
+    \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_240W.pdf}
+    \centerline{(b) Halogen lamp power 240W.}
     \label{Fig:Compare240W}
   \end{minipage}
 
     \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
   \nonumber
     \centering
-    \includegraphics[width=3.5in]{Compare350W.pdf}
-    \centerline{(e) Halogen lamp power 350W.}
+    \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_350W.pdf}
+    \centerline{(c) Halogen lamp power 350W.}
     \label{Fig:Compare350W}
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
-    \includegraphics[width=3.5in]{Compare400W.pdf}
-    \centerline{(f) Halogen lamp power 400W.}
+    \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_400W.pdf}
+    \centerline{(d) Halogen lamp power 400W.}
     \label{Fig:Compare400W}
   \end{minipage}
-  \caption{Comparison of experimental and computational results of free radiation with single halogen lamp.}
+  \caption{Comparison of experimental and computational results of single halogen lamp radiation in the cylindrical cavity.}
   \label{Fig:OneLightRadiationSimulation}
 \end{figure}
 
@@ -245,20 +247,19 @@ Unfortunately, every real light source, such as a lamp arc, has some finite exte
 Rays a, b and c, shown in the top half of the ellipse, are all from F1 and pass through F2, the second focus of the ellipse. Rays A, B and C, in the bottom half of the ellipse are exact ray traces for rays from a point close to F1. They strike the ellipse at equivalent points to a, b and c, but do not pass through F2. For a small spot (image) at F2 you need a very small source.
 Because of this effect ellipsoids are most useful when coupled with a small source and a system that requires a lot of light without concern for particularly good imaging.
 
-根据灯丝形状不同光源可以被简化为点光源和直线光源两种。
+%根据灯丝形状不同光源可以被简化为点光源和直线光源两种。
 %点光源的聚光采用椭圆球面镜，将点光源放置于椭圆球面镜的其中一个焦点，经过反射光线会聚焦至另一个焦点。
-参考德宇航的设计，我们采用管状卤素灯作为光源。
-上一节根据灯丝的形状，将光源简化为理想中空圆柱面。
-如果我们使用椭圆柱面镜，将卤素灯放置在其中一个焦点处，则可以将光线全部反射到另一个焦点。
+%参考德宇航的设计，我们采用管状卤素灯作为光源。
 
-我们建立了单盏卤素灯通过镜面反射进行辐射传热的试验装置。
-试验装置包括灯头固定部件、椭圆柱面镜和受光平板等，各个部件的位置如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(a,b)所示。
-卤素灯位于椭圆柱面镜的其中一个焦点，它所发出的光线，经过椭圆柱面镜反射后，照射到通过椭圆柱面镜另一个焦点的平面上。
-灯丝的直径、灯丝与镜面的相对位置、镜面的表面粗糙度和镜面的轴线方向都会影响受光平面上的光强度分布。
+理想情况下，灯丝可简化为线光源，根据椭圆镜面的性质，如果线光源位于镜面其中一个焦点处，反射后的光线将全部通过另一个焦点。
+但是根据上一节的计算，如果我们将灯丝近似为一个圆柱面，则该圆柱面的直径约为0.5mm，光线经过镜面反射后会有一定的发散。
+真实的镜面无法保证完全光滑，光线会产生一定的漫反射，通过试验和计算，我们需要确定镜面的反射效率。
 
-受光平板的材料选取SS304不锈钢，表面采用耐高温黑色涂料喷涂。
-和上一节类似，我们选择K型热电偶测量平板表面的温度分布。
-热电偶的位置分布如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c)所示，共15个。
+单盏卤素灯镜面反射辐射传热试验装置，如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(a)所示，包括椭圆柱面镜、受光平板、温度传感器及数据采集系统等。
+卤素灯位于椭圆柱面镜的其中一个焦点，受光平板的向光面垂直于椭圆柱面的长轴，并通过其另一个焦点，光线经过椭圆柱面镜反射后聚焦在受光平面上，如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(b)所示。
+%灯丝的直径、灯丝与镜面的相对位置、镜面的表面粗糙度和镜面的轴线方向都会影响受光平面上的光强度分布。
+与上一节相同，受光平板材料为SS304不锈钢，表面采用同样的耐高温黑色涂料喷涂，因此可以认为该受光平板的表面发射率与上一节中的圆柱空腔内壁相同，为0.95。
+选择K型热电偶测量平板表面的温度分布，热电偶的位置分布如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c)所示，共15个。
 热电偶的数据采集，同样选取National Instruments公司的9213型16通道热电偶数据采集器，相应的编程和数据处理过程与上一节类似，采样频率为10Hz。
 
 \begin{figure}
@@ -266,13 +267,13 @@ Because of this effect ellipsoids are most useful when coupled with a small sour
   \nonumber
     \centering
     \includegraphics[width=2.5in]{OneLightWithEllipseMirrorReflectionShow.pdf}
-    \centerline{(a) 装置设计图.}
+    \centerline{(a) Schematic diagram of the test rig.}
     \label{Fig:OneLightWithEllipseMirrorReflectionShow}
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
     \includegraphics[width=3.5in]{OneLightWithEllipseMirrorReflectionShow2.pdf}
-    \centerline{(b) 椭圆镜面反射系统.}
+    \centerline{(b) A section of the ellipsoidal reflector.}
     \label{Fig:OneLightWithEllipseMirrorReflectionShow2}
   \end{minipage}
 
@@ -280,67 +281,63 @@ Because of this effect ellipsoids are most useful when coupled with a small sour
   \nonumber
     \centering
     \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow3.pdf}
-    \centerline{(c) NI9213热电偶信号变送器及数据采集装置.}
+    \centerline{(c) Thermocouple locations.}
     \label{Fig:OneLightWithEllipseMirrorReflectionShow3}
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
-    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow4.jpg}
-    \centerline{(d) 红外温度测量装置.}
-    \label{Fig:OneLightWithEllipseMirrorReflectionShow4}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow5.jpg}
-    \centerline{(c) NI9213热电偶信号变送器及数据采集装置.}
-    \label{Fig:OneLightWithEllipseMirrorReflectionShow5}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
     \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow6.jpg}
-    \centerline{(d) 红外温度测量装置.}
+    \centerline{(d) Experimental process.}
     \label{Fig:OneLightWithEllipseMirrorReflectionShow6}
   \end{minipage}
 
-  \caption{单卤素灯自由辐射加热测试装置.}
+%  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+%  \nonumber
+%    \centering
+%    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow5.jpg}
+%    \centerline{(e) Experimental process.}
+%    \label{Fig:OneLightWithEllipseMirrorReflectionShow5}
+%  \end{minipage}%
+%  \begin{minipage}[t]{0.5\linewidth}
+%    \centering
+%    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow6.jpg}
+%    \centerline{(f) Focused light.}
+%    \label{Fig:OneLightWithEllipseMirrorReflectionShow6}
+%  \end{minipage}
+
+  \caption{Test rig of single halogen lamp radiation with the reflect mirror.}
   \label{Fig:OneLightWithEllipseMirrorReflectionShow}
 \end{figure}
-
-
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
   \nonumber
     \centering
     \includegraphics[width=2.2in]{OneLightWithEllipseMirrorReflection.pdf}
-    \centerline{(a) Simulation model in ABAQUS.}
-    \label{Fig:OneLightWithEllipseMirrorReflection}
+    \centerline{(a) FEM model.}
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
-    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionSimulation1.png}
-    \centerline{(b) Halogen lamp power 240W.}
-    \label{Fig:OneLightWithEllipseMirrorReflectionSimulation1}
+    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionSimulation.png}
+    \centerline{(b) Simulation result.}
   \end{minipage}
 
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
   \nonumber
     \centering
-    \includegraphics[width=3.5in]{2013_08_20_B19h29m43s_E19h34m13s_400W_NI9213_HORIZONTALLINE.pdf}
-    \centerline{(a) Simulation model in ABAQUS.}
-    \label{Fig:2013_08_20_B19h29m43s_E19h34m13s_400W_NI9213_HORIZONTALLINE}
+    \includegraphics[width=3.0in]{plot_cmp_temperature_horizontal.pdf}
+    \centerline{(c) Temperature distribution along }
+    \centerline{the horizontal direction. }
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
-    \includegraphics[width=3.5in]{2013_08_20_B19h29m43s_E19h34m13s_400W_NI9213_VERTICALLINE.pdf}
-    \centerline{(b) Halogen lamp power 240W.}
-    \label{Fig:2013_08_20_B19h29m43s_E19h34m13s_400W_NI9213_VERTICALLINE}
+    \includegraphics[width=3.0in]{plot_cmp_temperature_vertical.pdf}
+    \centerline{(d) Temperature distribution along }
+    \centerline{the vertical direction. }
   \end{minipage}
 
-  \caption{单卤素灯自由辐射加热的试验结果与数值模拟比较.}
-  \label{Fig:OneLightRadiationSimulation}
+  \caption{Comparison of experimental and computational results of single halogen lamp radiation with the reflect mirror.}
+  \label{Fig:OneLightWithReflection}
 \end{figure}
 \newpage
 \subsection{Design of the radiation furnace}
