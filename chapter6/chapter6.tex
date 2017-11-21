@@ -18,19 +18,35 @@ The thermal strain was determined at the beginning of each TMF test by three cyc
 Accordingly, the TMF tests were performed in mechanical strain control by calculating total strain minus thermal strain.
 In this work three thermomechanical loading cases with a temperature phase shift to mechanical strain of 0$^{\circ}$ (in-phase IP) 90$^{\circ}$ phase and 180$^{\circ}$ (out-of-phase OP) were investigated.
 
-\begin{figure}[!htp]
-\centering\scalebox{0.5}{\includegraphics{Thermal_Stability.pdf}}
-\caption{Thermal Stability}
-\label{Fig:Thermal_Stability}
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=8.5cm]{plot_thermal_stability.pdf}
+      \put(84,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.5cm]{plot_thermal_stability_deviation.pdf}
+      \put(84,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+  \caption{Thermal stability during the tests. (a) Temperatures at three measurement points. (b) Temperature deviations between the upper and lower measurement points and the center measurement point.}
+  \label{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}
 \end{figure}
 
-\begin{figure}[!htp]
-\centering\scalebox{0.5}{\includegraphics{Thermal_Stability_Deviation.pdf}}
-\caption{Thermal Stability Deviation}
-\label{Fig:Thermal_Stability_Deviation}
-\end{figure}
-
-\newpage
+%\begin{figure}[!htp]
+%\centering\scalebox{0.5}{\includegraphics{Thermal_Stability.pdf}}
+%\caption{Thermal Stability}
+%\label{Fig:Thermal_Stability}
+%\end{figure}
+%
+%\begin{figure}[!htp]
+%\centering\scalebox{0.5}{\includegraphics{Thermal_Stability_Deviation.pdf}}
+%\caption{Thermal Stability Deviation}
+%\label{Fig:Thermal_Stability_Deviation}
+%\end{figure}
 
 \section{Identification of the model parameters}
 Table \ref{tab:1} lists the parameters of the constitutive model.
@@ -445,11 +461,11 @@ Meanwhile, the result also shows that the number of $r_0^k$ ($k=9$) is suitable.
 The uniaxial tension and torsion test can be modeled using a single axisymmetric tension-torsion element.
 Details of the ABAQUS use-defined material model UMAT has been reported in the previous sections.
 The stress-strain hysteresis loops of the uniaxial tests are simulated and predicted by the proposed model under the symmetrical strain path.
-Comparison between  computational stress-strain and  experimental loops is shown in Fig. \ref{Fig:200th_Exp_Sim}.
+Comparison between  computational stress-strain and  experimental loops is shown in \ref{Fig:200th_Exp_Sim}.
 The figure illustrates results for first loading cycles and the 200th cycles at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively.
 
 The first strain controlled loop consists of initial loading, unloading and reverse loading.
-As shown in Fig. \ref{Fig:200th_Exp_Sim}(a), in the initial loading cycle the predicted and experimental loops are in reasonable agreement, but deviations are observed during reverse plastic loading for the lower temperatures because the kinematic hardening variable $r^k$ approximates ${r_0^k}$ in the first loading loop.
+As shown in \ref{Fig:200th_Exp_Sim}(a), in the initial loading cycle the predicted and experimental loops are in reasonable agreement, but deviations are observed during reverse plastic loading for the lower temperatures because the kinematic hardening variable $r^k$ approximates ${r_0^k}$ in the first loading loop.
 Note that the kinematic hardening variable ${r_0^k}$ is obtained from monotonic tension tests and evolution of $r^k$ depends on the accumulated plastic strain $p$.
 During the first reverse plastic loading, the accumulated plastic strain $p$ is small so the first simulated stress-strain hysteresis loops are mainly based on the monotonic curve. It leads to the deviation of the computation from the experimental result in the initial loading cycle.
 Along loading and unloading cycles, with evolution of $r_s^k$ (see Equation (\ref{Equ:rsk})), the predicted responses approaches experimental curve and agreement at the 200th cycle becomes optimal, as shown in \ref{Fig:200th_Exp_Sim}(b). Since the fatigue is determined mainly by the peak and valley values, such deviations will not change fatigue life assessment.
@@ -468,31 +484,27 @@ Along loading and unloading cycles, with evolution of $r_s^k$ (see Equation (\re
     \begin{overpic}[width=8.5cm]{plot_cmp_1st_life_cycle_TCIF_Circle.pdf}
       \put(84,65){\fcolorbox{white}{white}{(a)}}
     \end{overpic}
-%    \includegraphics[width=8.5cm]{plot_cmp_1st_life_cycle_TCIF_Circle.pdf}
-%    \centerline{(a)}
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
     \begin{overpic}[width=8.5cm]{plot_cmp_150th_life_cycle_TCIF_Circle.pdf}
       \put(84,65){\fcolorbox{white}{white}{(b)}}
     \end{overpic}
-%    \includegraphics[width=8.5cm]{plot_cmp_150th_life_cycle_TCIF_Circle.pdf}
-%    \centerline{(b)}
   \end{minipage}
   \caption{Comparison between experiments and computations  under isothermal non-proportional loading conditions at  300, 550, 650$^{\circ}$C. (a) The first loading cycle. (b) The half life cycle.}
   \label{Fig:Circle_Exp_Sim}
 \end{figure}
 
-More details from the experiments and computations reveal that the material is cyclic softening, as shown in Fig. \ref{Fig:Compare_PACC-PV_stress_temperature}. The softening behavior becomes more severe as  temperature increases.
+More details from the experiments and computations reveal that the material is cyclic softening, as shown in \ref{Fig:Compare_PACC-PV_stress_temperature}. The softening behavior becomes more severe as  temperature increases.
 As mentioned earlier, in the present constitutive relation, cyclic softening is modeled by the kinematic hardening variable $r^k$, with its saturation value $r_s^k$ smaller than its initial value $r_0$.
 The figure confirms a good agreement between experiments and the model in the whole loading and unloading processes.
 
 
-The multi-axial non-proportional loading results are summarized in Fig. \ref{Fig:Circle_Exp_Sim}, for the circular tension-torsion loading cases at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively. The cyclic deformation curves were constructed by plotting the amplitudes from peak tensile to peak compressive stress for the first cycle and the 200th cycle with total strain range $\pm1\%$, respectively. At 650$^{\circ}$C the computational prediction shows slight over-estimate near the maximum normal stress, while others reveal optimal agreement for both initial and cyclic loading.
+The multi-axial non-proportional loading results are summarized in \ref{Fig:Circle_Exp_Sim}, for the circular tension-torsion loading cases at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively. The cyclic deformation curves were constructed by plotting the amplitudes from peak tensile to peak compressive stress for the first cycle and the 200th cycle with total strain range $\pm1\%$, respectively. At 650$^{\circ}$C the computational prediction shows slight over-estimate near the maximum normal stress, while others reveal optimal agreement for both initial and cyclic loading.
 
 \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1} depicts the peak stress from the circular loading at the different temperatures.
 The alloy exhibits an obvious continuous cyclic softening at higher temperature, while the cyclic softening may reach a saturation stage at low temperature. Such observation can be critical for mechanical components of high temperature.
-Fig. \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(a) illustrates effects of kinematic hardening variables. While the Fang's model \cite{fang2015cyclic} in Equation (\ref{Equ:fangrdeltak}) shows a clear disagreement to the experiments in \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(b), the present prediction in Equation (\ref{Equ:rdeltak}) provides a consistent cyclic behavior in the whole loading history. One term expression of Fang cannot describe the softening behavior properly.
+\ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(a) illustrates effects of kinematic hardening variables. While the Fang's model \cite{fang2015cyclic} in Equation (\ref{Equ:fangrdeltak}) shows a clear disagreement to the experiments in \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(b), the present prediction in Equation (\ref{Equ:rdeltak}) provides a consistent cyclic behavior in the whole loading history. One term expression of Fang cannot describe the softening behavior properly.
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
@@ -516,7 +528,7 @@ Fig. \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(a) illustrates effects 
   \label{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}
 \end{figure}
 
-To study effects of complex non-proportional loading path, an experiment with loading cross path (Fig. \ref{Fig:LoadPath}(d)) is plotted in Fig. \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}, together with computational predictions. Due to prompt changes in loading direction, the stress-strain curves become non-symmetric. In the figure both computational results with and without non-proportional hardening term are present. The obvious disagreement between computations and experiments is observed at the peaks. However, the improvement of the non-proportional hardening in the model is significant, as shown in Fig. \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}. The non-proportional hardening term is meaningful for the constitutive modeling.
+To study effects of complex non-proportional loading path, an experiment with loading cross path (\ref{Fig:LoadPath}(d)) is plotted in \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}, together with computational predictions. Due to prompt changes in loading direction, the stress-strain curves become non-symmetric. In the figure both computational results with and without non-proportional hardening term are present. The obvious disagreement between computations and experiments is observed at the peaks. However, the improvement of the non-proportional hardening in the model is significant, as shown in \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}. The non-proportional hardening term is meaningful for the constitutive modeling.
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
@@ -532,7 +544,7 @@ To study effects of complex non-proportional loading path, an experiment with lo
       \put(16,65){\fcolorbox{white}{white}{(b)}}
     \end{overpic}
   \end{minipage}
-  
+
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
   \nonumber
     \centering
@@ -546,7 +558,7 @@ To study effects of complex non-proportional loading path, an experiment with lo
       \put(16,65){\fcolorbox{white}{white}{(d)}}
     \end{overpic}
   \end{minipage}
-  
+
   \caption{Comparison between experiments at 300$^{\circ}$C under the cross loading path with computational predictions. (a) Without non-proportional hardening term. (b) With the non-proportional hardening factor $Y_{sat}$ = 200MPa.}
   \label{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}
 \end{figure}
@@ -619,13 +631,13 @@ To study effects of complex non-proportional loading path, an experiment with lo
 Under thermo-mechanical loading conditions both mechanical loads as well as specimen temperature vary, which cause different deformation and damage mechanisms in the material.
 In the present section both experimental and computational results for the varying temperature between 300-650$^{\circ}$C are considered, where tests are controlled by the tensile and shear strains simultaneously, by a constant given equivalent strain amplitude, 1\%. In the computations the model parameters have been determined from the isothermal analysis, that is, the thermo-mechanical coupling is not considered in the constitutive modeling explicitly.
 
-In Fig. \ref{Fig:TMF_IP} the hysteresis loops of the stabilized cycles are shown, in which the in-phase (IP), the out-of-phase (OP) and 90$^\circ$-phase temperature loads are considered, respectively.
+In \ref{Fig:TMF_IP} the hysteresis loops of the stabilized cycles are shown, in which the in-phase (IP), the out-of-phase (OP) and 90$^\circ$-phase temperature loads are considered, respectively.
 The IP-phase loops show similar features as those of the isothermal loading.
 The stress-strain curve reveals cyclic softening, as observed in isothermal tests.Interesting is the valley stress of the IP test seems higher than the computational prediction, which may be related to the thermo-mechanical effects. However, the effect seems not significant.
 
-As soon as the temperature does not change proportionally to the mechanical load, the stress-strain loops become asymmetric, as shown in Fig. \ref{Fig:TMF_IP}(a).
-%The stress-strain loops for the stabilized cycles, i.e. $N_f$/2th cycle, in Fig. \ref{Fig:TMF_IP}(a), \ref{Fig:TMF_OP}(a) and \ref{Fig:TMF_90}(a) confirm that the constitutive model can predict the thermo-mechanical behavior of the material properly.
-Furthermore, Fig. \ref{Fig:TMF_IP}(b) shows that the peak and valley stress of the computational prediction in comparing with the experiments.
+As soon as the temperature does not change proportionally to the mechanical load, the stress-strain loops become asymmetric, as shown in \ref{Fig:TMF_IP}(a).
+%The stress-strain loops for the stabilized cycles, i.e. $N_f$/2th cycle, in \ref{Fig:TMF_IP}(a), \ref{Fig:TMF_OP}(a) and \ref{Fig:TMF_90}(a) confirm that the constitutive model can predict the thermo-mechanical behavior of the material properly.
+Furthermore, \ref{Fig:TMF_IP}(b) shows that the peak and valley stress of the computational prediction in comparing with the experiments.
 The peak stresses of all temperature loading phases, i.e. IP, OP and 90$^\circ$-phase, are confirm a good agreement between the experiments and computations.
 However, for all valley stresses, the experimental results are observed approximately 50 MPa lower than the predictions.
 The reason is that the yield surface is assumed to be circular in the present constitutive model.
@@ -646,7 +658,7 @@ Because of the small deviations in the valley stresses, the yield surface is not
       \put(0,65){\fcolorbox{white}{white}{(b)}}
     \end{overpic}
   \end{minipage}
-  
+
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
   \nonumber
     \centering
@@ -660,7 +672,7 @@ Because of the small deviations in the valley stresses, the yield surface is not
       \put(0,65){\fcolorbox{white}{white}{(d)}}
     \end{overpic}
   \end{minipage}
-  
+
   \caption{Experimental and computational results under the proportional in-phase thermo-mechanical loading conditions with temperature of 300-650$^{\circ}$C. (a) The first loading cycle. (b) The half life loading cycle. (c) Axial peak-valley stresses as function of the loading cycles. (d) Torsional peak-valley stresses as function of the loading cycles.}
   \label{Fig:TMF_Prop45}
 \end{figure}
@@ -699,15 +711,15 @@ Because of the small deviations in the valley stresses, the yield surface is not
 \end{figure}
 
 \subsection{Multi-axial thermo-mechanical fatigue tests}
-Multi-axial thermo-mechanical material behavior have not been studied systematically in literature. Effects of multi-axial loads and temperature are not discussed. In the present work both proportional loading path (Fig. \ref{Fig:LoadPath}(b)) and non-proportional diamond loading path (Fig. \ref{Fig:LoadPath}(c)) are investgated. Experimental results are shown in Figs. \ref{Fig:TMF_Prop45} and \ref{Fig:TMF_Diamond}, together with computational predictions.
+Multi-axial thermo-mechanical material behavior have not been studied systematically in literature. Effects of multi-axial loads and temperature are not discussed. In the present work both proportional loading path (\ref{Fig:LoadPath}(b)) and non-proportional diamond loading path (\ref{Fig:LoadPath}(c)) are investgated. Experimental results are shown in Figs. \ref{Fig:TMF_Prop45} and \ref{Fig:TMF_Diamond}, together with computational predictions.
 
 In both tests, the temperature ranges between 300 and 650$^{\circ}$C, the equivalent mechanical strain amplitude $\varepsilon_{eq,a}=1\%$, the phase angle between axial strain and temperature is zero degree, the in-phase loading (IP).
 The torsional and axial stress curve reveals cyclic softening for all tested multi-axial loading cases.
 Computations were performed with the non-proportional hardening factor $Y_{sat}=0$MPa and $Y_{sat}=200$MPa, respectively, to demonstrate the influence of the non-proportional correction to the computational results.
 
-As shown in Fig. \ref{Fig:TMF_Prop45}, the proportional loading case provides good agreement between the computation and experiment in peak value distribution, while the valley show a similar deviation as observed in isothermal loading. The shifting in the shear stress-normal stress loop is caused by the under-estimate of the compressive normal stress. Generally, computations agree with the experiment reasonably. Additionally, the non-proportional hardening factor do not effect the computational results, as expected.
+As shown in \ref{Fig:TMF_Prop45}, the proportional loading case provides good agreement between the computation and experiment in peak value distribution, while the valley show a similar deviation as observed in isothermal loading. The shifting in the shear stress-normal stress loop is caused by the under-estimate of the compressive normal stress. Generally, computations agree with the experiment reasonably. Additionally, the non-proportional hardening factor do not effect the computational results, as expected.
 
-Under the non-proportional loading condition, the diamond loading path shows significant effects of the non-proportional hardening factor  in the constitutive model, as shown in Fig. \ref{Fig:TMF_Diamond}. The stress loops of the first loading cycles and the stabilized cycles are illustrated in Figs. \ref{Fig:TMF_Diamond}(a) and (b). In both first loading cycle and stabilized cycle the non-proportional hardening factor improves a much better computational prediction in comparing with the conventional model. Additional hardening due to the non-proportional loading can be observed and effects of the non-proportional hardening in the model are significant.
+Under the non-proportional loading condition, the diamond loading path shows significant effects of the non-proportional hardening factor  in the constitutive model, as shown in \ref{Fig:TMF_Diamond}. The stress loops of the first loading cycles and the stabilized cycles are illustrated in Figs. \ref{Fig:TMF_Diamond}(a) and (b). In both first loading cycle and stabilized cycle the non-proportional hardening factor improves a much better computational prediction in comparing with the conventional model. Additional hardening due to the non-proportional loading can be observed and effects of the non-proportional hardening in the model are significant.
 
 The axial and torsional peak-valley stresses are illustrated in  Figs. \ref{Fig:TMF_Diamond}(c) and (d).
 In both tests one observes slight deviations between computational predictions and experiments after  loading direction changes. The stress amplitude at the low temperature seems to be under-estimated in comparing with the higher temperature point. However, it confirm that the constitutive model can predict the thermo-mechanical behavior of the material properly.
