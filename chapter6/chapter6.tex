@@ -277,43 +277,28 @@ Then the parameters can be determined from the cyclic stress-strain curve, with 
 1 - \frac{{\sigma  - {\sigma _0}}}{{{\sigma _0} - {\sigma _{\min }}}} = 1 - a_1{e^{ - b_1 p}} - \left( {1 - a_1} \right){e^{ - b_2 p}}
 \end{equation}
 
-\begin{figure}[!htp]
-\centering\scalebox{0.5}{\includegraphics{EpVsPeakStress300C_7041.pdf}}
-\caption{Axial peak stress versus accumulated plastic strain at 300$^{\circ}$C.}
-\label{Fig:EpVsPeakStress300C_7041}
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=8.5cm]{plot_determination_of_rk_1.pdf}
+      \put(84,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.5cm]{plot_determination_of_rk_2.pdf}
+      \put(84,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+  \caption{Determination of $r_k$. (a) Axial peak stress versus accumulated plastic strain. (b) Kinematic hardening from the full reversed strain cycling tests with comparison to different hardening models of $r_k$.}
+  \label{Fig:plot_determination_of_rk}
 \end{figure}
-
-\begin{figure}[!htp]
-\centering\scalebox{0.5}{\includegraphics{Fitting300C_7041_Plot.pdf}}
-\caption{Applying kenematic hardening to the strain cycling tests: (a) fitting the relation of peak stress with accumulated plastic strain and (b) fitting the relation of saturated value Q with temperature.}
-\label{Fig:Fitting300C_7041_Plot}
-\end{figure}
-
-
-
-
-
-
-
-
-
-
-
-%Generally, half of a representative hysteresis loop, modified from range to amplitude, is employed to represent the stress-strain curve shown in
-
-%notes the plastic strain amplitude corresponding to the stress amplitude
-
-
-
-
-
-
-
 
 
 \subsection{Collection of material parameters }
 These material parameters of the constitutive model can be determined from the monotonic and cyclic experiments since several parameters are less interdependent of the others.
-Generally Young’s modulus $E$, Poisson’s ratio $\nu$ and initial yield stress $\sigma_{p=0.2}$ can be identified from monotonic tension and torsion tests;
+Generally Young's modulus $E$, Poisson's ratio $\nu$ and initial yield stress $\sigma_{p=0.2}$ can be identified from monotonic tension and torsion tests;
 parameters $\zeta^k$ and $r_0^k$ are determined from monotonic tension test using the method provided by Jiang and Kurath (1996)\cite{Jiang1996387};
 parameters $r^k$ is determined from the uniaxial stable hysteresis loop curve using the same method;
 parameters $a_1^k$, $b_1^k$, $a_2^k$, $b_2^k$, $b_3^k$ are determined from the history curve of peak stress under uniaxial cyclic loading;
@@ -441,18 +426,19 @@ Meanwhile, the result also shows that the number of $r_0^k$ ($k=9$) is suitable.
 
 \subsection{Simulations of isothermal fatigue tests}
 \label{}
-
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
   \nonumber
     \centering
-    \includegraphics[width=3.2in]{Chapter6Figs/IN718_Isothermal_1st.pdf}
-    \centerline{(a)}
+    \begin{overpic}[width=8.5cm]{plot_cmp_1st_life_cycle_TCIF_1d0.pdf}
+      \put(84,13){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
-    \includegraphics[width=3.2in]{Chapter6Figs/IN718_Isothermal_200th.pdf}
-    \centerline{(b)}
+    \begin{overpic}[width=8.5cm]{plot_cmp_half_life_cycle_TCIF_1d0.pdf}
+      \put(84,13){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
   \end{minipage}
   \caption{Comparison of the stress-strain hysteresis loops between experiments and computations  under isothermal uniaxial tensile loading conditions at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively. (a) The first loading cycle. (b) The 200th cycle.}
   \label{Fig:200th_Exp_Sim}
@@ -604,14 +590,14 @@ To study effects of complex non-proportional loading path, an experiment with lo
   \nonumber
     \centering
     \begin{overpic}[width=8.5cm]{plot_cmp_10th_cycle_TCTMF_1d0.pdf}
-      \put(84,13){\fcolorbox{white}{white}{(a)}}
+      \put(84,65){\fcolorbox{white}{white}{(a)}}
     \end{overpic}
     %\includegraphics[width=3.2in]{Chapter6Figs/All_TMF_+-1_IP_10th.pdf}
   \end{minipage}%
   \begin{minipage}[t]{0.5\linewidth}
     \centering
     \begin{overpic}[width=8.5cm]{plot_cmp_pv_TCTMF_1d0.pdf}
-      \put(84,13){\fcolorbox{white}{white}{(b)}}
+      \put(84,65){\fcolorbox{white}{white}{(b)}}
     \end{overpic}
     %\includegraphics[width=3.2in]{Chapter6Figs/IN718_TMF_Axial+-1_PV_Exp_vs_Sim_ALL.pdf}
   \end{minipage}
