@@ -464,34 +464,78 @@ As the name implies the multiaxial thermomechanical fatigue testing is combined 
 \section{Thermomechanical fatigue testing}
 Thermomechanical fatigue testing is a variant of fatigue testing designed to simulate real-world service conditions of engineered components.
 Specifically, TMF tests characterize the response of materials to both cyclic mechanical loading and fluctuating temperature, which produce a synergistic response that may not be well-predicted with isothermal fatigue testing.
-TMF tests are most frequently conducted on high-temperature alloys used injet engines, using a combination of in-phase and out-of-phase mechanical and thermal cycling.
-
-ASTM E2368-10 is the standard practice for thermomechanical fatigue testing under uniaxially loaded strain-controlled conditions.
-Unfortunately we do not have a standard for the TMF testing under biaxial loaded strain-controlled conditions.
-According to the standard, a thermomechanical fatigue cycle is here defined as a condition where uniform temperature and strain fields over the specimen gage section are simultaneously varied and independently controlled.
-Some concepts are defined as follows:
-\begin{itemize}
-  \item \textbf{Coefficient of thermal expansion} $\alpha$, the fractional change in free expansion strain for a unit change in temperature, as measured on the test specimen.
-  \item \textbf{Thermal strain} $\varepsilon_{th}$, the strain component resulting from a change in temperature under free expansion conditions.
-  \[\varepsilon_{th}=\alpha\Delta T\]
-  \item \textbf{Mechanical strain} $\varepsilon_{m}$, the strain component resulting when the free expansion thermal strain specimen is subtracted from the total strain.
-  \item \textbf{Total strain} $\varepsilon_t$, the strain component measured on the test specimen, and is the sum of the thermal strain and the mechanical strain.
-  \[\varepsilon_t=\varepsilon_m+\varepsilon_{th}\]
-  \item \textbf{Strain ratio} $R_{\varepsilon}$, the ratio of minimum mechanical strain to the maximum mechanical strain in a strain cycle.
-  \[R_{\varepsilon}=\varepsilon_{m,min}/\varepsilon_{m,max}\]
-  \item \textbf{Mechanical strain/temperature phase angle} $\varphi$, for the purpose of assessing phasing accuracy, this is defined as the waveform shift (expressed in degrees) between the maximum temperature response as measured on the specimen and the maximum mechanical strain response. For reference purpose, the angle $\varphi$ is considered positive if the temperature response maximum leads the mechanical strain response maximum by $180^\circ$ or less, otherwise the phase angle is considered to be negative.
-      The phase $\varphi$ between temperature and mechanical strain can be chosen between $-180^\circ$ and $180^\circ$.
-      One of the special case is $\varphi=0^\circ$ where the maximum and minimum of temperature and strain are reached at the same time. This is called in-phase TMF.
-      The other special case is $\varphi=180^\circ$ where the maximum value of temperature leads the maximum value of mechanical strain by a time value equal to $1/2$ the cycle period. This is called out-of-phase (anti-phase) TMF.
-      As shown in \ref{Fig:Thermomechanical_phase}, the vertical coordinates are strain $\varepsilon$ and temperature T.
-\end{itemize}
-
+TMF tests are most frequently conducted on high-temperature alloys used in jet engines, using a combination of in-phase and out-of-phase mechanical and thermal cycling.
 
 \begin{figure}[!htp]
 \centering\scalebox{0.6}{\includegraphics{thermomechanical_phase.pdf}}
 \caption{Schematics of mechanical strain and temperature for In-phase, Out-of-phase and $90^\circ$-phase TMF Tests.}
 \label{Fig:Thermomechanical_phase}
 \end{figure}
+
+ASTM E2368-10 is the standard practice for thermomechanical fatigue testing under uniaxially loaded strain-controlled conditions.
+Unfortunately we do not have a standard for the TMF testing under biaxial loaded strain-controlled conditions.
+According to the standard, a thermomechanical fatigue cycle is here defined as a condition where uniform temperature and strain fields over the specimen gage section are simultaneously varied and independently controlled.
+Some concepts are defined as follows:
+
+\begin{itemize}
+  \item \textbf{Coefficient of thermal expansion} $\alpha$, the fractional change in free expansion strain for a unit change in temperature, as measured on the test specimen.
+  \item \textbf{Thermal strain} $\varepsilon_{th}$, the strain component resulting from a change in temperature under free expansion conditions,
+  \begin{equation}
+  \varepsilon_{th}=\alpha\Delta T.
+  \label{Equ:thermal_strain}
+  \end{equation}
+  \item \textbf{Mechanical strain} $\varepsilon_{m}$, the strain component resulting when the free expansion thermal strain specimen is subtracted from the total strain.
+  \item \textbf{Total strain} $\varepsilon_t$, the strain component measured on the test specimen, and is the sum of the thermal strain and the mechanical strain,
+  \begin{equation}
+  \varepsilon_t=\varepsilon_m+\varepsilon_{th}.
+  \label{Equ:total_strain}
+  \end{equation}
+  \item \textbf{Strain ratio} $R_{\varepsilon}$, the ratio of minimum mechanical strain to the maximum mechanical strain in a strain cycle,
+  \begin{equation}
+  R_{\varepsilon}=\varepsilon_{m,min}/\varepsilon_{m,max}.
+  \end{equation}
+  \item \textbf{Mechanical strain/temperature phase angle} $\varphi$, for the purpose of assessing phasing accuracy, this is defined as the waveform shift (expressed in degrees) between the maximum temperature response as measured on the specimen and the maximum mechanical strain response. For reference purpose, the angle $\varphi$ is considered positive if the temperature response maximum leads the mechanical strain response maximum by $180^\circ$ or less, otherwise the phase angle is considered to be negative.
+      The phase $\varphi$ between temperature and mechanical strain can be chosen between $-180^\circ$ and $180^\circ$.
+      One of the special case is $\varphi=0^\circ$ where the maximum and minimum of temperature and strain are reached at the same time. This is called in-phase TMF.
+      The other special case is $\varphi=180^\circ$ where the maximum value of temperature leads the maximum value of mechanical strain by a time value equal to $1/2$ the cycle period. This is called out-of-phase (anti-phase) TMF.
+      As shown in \ref{Fig:Thermomechanical_phase}, the vertical coordinates are strain $\varepsilon$ and temperature $T$.
+\end{itemize}
+
+\ref{Fig:plot_schematic_thermal_strain}
+试验采用机械应变$\varepsilon_{m}$控制，根据方程\ref{Equ:thermal_strain}和\ref{Equ:total_strain}可知，机械应变$\varepsilon_{m}$可采用下式计算:
+\begin{equation}
+\varepsilon_{m}=\varepsilon_{t}-\varepsilon_{th}=\varepsilon_{t}-\alpha\Delta T,
+\end{equation}
+式中$\varepsilon_{t}$为引伸计测得的总应变，$\varepsilon_{th}$为热应变，$\alpha$为材料热膨胀系数，对于金属材料来说热膨胀系数$\alpha$是温度的函数，因此在试验中采用下式对热应变进行计算，
+\begin{equation}
+\varepsilon_{th}=a_0+a_1(T-T_0)+a_2(T-T_0)^2,
+\end{equation}
+式中$T$为试件温度，$T_0$为参考温度，$a_0,a_1,a_2$为用于曲线拟合的参数。
+
+热应变$\varepsilon_{th}$的大小由以下方法确定，在零载荷的作用下对试样进行300-650$^\circ$C的温度循环，测量并记录试样的应变随温度的变化关系。
+将此记录了应变与温度关系的数据进行二项式拟合，求出相关参数，将此参数输入计算机的实验控制程序中。
+这样在试验过程中，计算机根据实测的温度即可以算出当时的热应变量,代入(3.1)式即可得到机械应变,并可由此实现机械应变控制,如图3.2所示"
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=8.5cm]{plot_schematic_thermal_strain_IP.pdf}
+      \put(0,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.5cm]{plot_schematic_thermal_strain_OP.pdf}
+      \put(0,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+
+  \caption{Strain decomposition of thermomechanical fatigue tests in terms of total strain, mechanical strain and thermal strain. (a) TMF-IP, (b) TMF-OP.}
+  \label{Fig:plot_schematic_thermal_strain}
+\end{figure}
+
+
 
 %\begin{figure}[!htp]
 %\centering\scalebox{0.5}{\includegraphics{plot_exp_half_life_cycle_TCIP.pdf}}
