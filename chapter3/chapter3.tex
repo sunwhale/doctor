@@ -484,15 +484,15 @@ Some concepts are defined as follows:
   \varepsilon_{th}=\alpha\Delta T.
   \label{Equ:thermal_strain}
   \end{equation}
-  \item \textbf{Mechanical strain} $\varepsilon_{m}$, the strain component resulting when the free expansion thermal strain specimen is subtracted from the total strain.
+  \item \textbf{Mechanical strain} $\varepsilon_{mech}$, the strain component resulting when the free expansion thermal strain specimen is subtracted from the total strain.
   \item \textbf{Total strain} $\varepsilon_t$, the strain component measured on the test specimen, and is the sum of the thermal strain and the mechanical strain,
   \begin{equation}
-  \varepsilon_t=\varepsilon_m+\varepsilon_{th}.
+  \varepsilon_t=\varepsilon_{mech}+\varepsilon_{th}.
   \label{Equ:total_strain}
   \end{equation}
   \item \textbf{Strain ratio} $R_{\varepsilon}$, the ratio of minimum mechanical strain to the maximum mechanical strain in a strain cycle,
   \begin{equation}
-  R_{\varepsilon}=\varepsilon_{m,min}/\varepsilon_{m,max}.
+  R_{\varepsilon}=\varepsilon_{mech,min}/\varepsilon_{mech,max}.
   \end{equation}
   \item \textbf{Mechanical strain/temperature phase angle} $\varphi$, for the purpose of assessing phasing accuracy, this is defined as the waveform shift (expressed in degrees) between the maximum temperature response as measured on the specimen and the maximum mechanical strain response. For reference purpose, the angle $\varphi$ is considered positive if the temperature response maximum leads the mechanical strain response maximum by $180^\circ$ or less, otherwise the phase angle is considered to be negative.
       The phase $\varphi$ between temperature and mechanical strain can be chosen between $-180^\circ$ and $180^\circ$.
@@ -502,19 +502,23 @@ Some concepts are defined as follows:
 \end{itemize}
 
 \ref{Fig:plot_schematic_thermal_strain}
-试验采用机械应变$\varepsilon_{m}$控制，根据方程\ref{Equ:thermal_strain}和\ref{Equ:total_strain}可知，机械应变$\varepsilon_{m}$可采用下式计算:
+试验采用机械应变$\varepsilon_{mech}$控制，根据方程\ref{Equ:thermal_strain}和\ref{Equ:total_strain}可知，机械应变$\varepsilon_{mech}$可采用下式计算:
 \begin{equation}
-\varepsilon_{m}=\varepsilon_{t}-\varepsilon_{th}=\varepsilon_{t}-\alpha\Delta T,
+\varepsilon_{mech}=\varepsilon_{t}-\varepsilon_{th}=\varepsilon_{t}-\alpha\Delta T,
+\label{Equ:mech_strain}
 \end{equation}
 式中$\varepsilon_{t}$为引伸计测得的总应变，$\varepsilon_{th}$为热应变，$\alpha$为材料热膨胀系数，对于金属材料来说热膨胀系数$\alpha$是温度的函数，因此在试验中采用下式对热应变进行计算，
 \begin{equation}
 \varepsilon_{th}=a_0+a_1(T-T_0)+a_2(T-T_0)^2,
+\label{Equ:thermal_strain_fitting}
 \end{equation}
-式中$T$为试件温度，$T_0$为参考温度，$a_0,a_1,a_2$为用于曲线拟合的参数。
-
-热应变$\varepsilon_{th}$的大小由以下方法确定，在零载荷的作用下对试样进行300-650$^\circ$C的温度循环，测量并记录试样的应变随温度的变化关系。
-将此记录了应变与温度关系的数据进行二项式拟合，求出相关参数，将此参数输入计算机的实验控制程序中。
-这样在试验过程中，计算机根据实测的温度即可以算出当时的热应变量,代入(3.1)式即可得到机械应变,并可由此实现机械应变控制,如图3.2所示"
+式中$T$为试件温度，$T_0$为参考温度，这里我们认为热应变是温度的二次多项式函数，$a_0,a_1,a_2$为用于曲线拟合的参数。
+试验的温度循环为300-650$^\circ$C，我们选取循环的平均温度475$^\circ$C作为参考温度$T_0$。
+根据胡克定律可知，如果试件的载荷为零，则有$\varepsilon_{mech}=0$，即$\varepsilon_{t}=\varepsilon_{th}$。
+试验过程中我们保持试件的载荷为零，将试件加热至475$^\circ$C并保温一个小时，使试件的温度场进入稳态，记录此时的热应变$\varepsilon_{th,T_0}$为热应变零点。
+然后在零载荷的作用下，对试样进行300-650$^\circ$C的温度循环，测量并记录试样的热应变随温度的变化关系。
+将试验结果带入式\ref{Equ:thermal_strain_fitting}拟合，求出参数$a_0,a_1,a_2$，并将此参数输入计算机的实验控制程序中。
+在试验过程中，计算机根据实测的温度即可以算出当时的热应变量,代入式\ref{Equ:mech_strain}即可得到机械应变,并可由此实现机械应变控制,如图\ref{Fig:plot_schematic_thermal_strain}所示。
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
