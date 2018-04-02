@@ -5,7 +5,7 @@
 % (2)采用热障涂层，对基底材料起到隔热作用，降低基底温度；
 % (3)采用先进的冷却技术，以少量的冷却空气获得更好的降温效果。
 % 高温合金及单晶材料耐热性的提高远远无法满足目前的温度设计需求，即使采用陶瓷基复合材料等耐高温材料，也不能完全取消冷却，先进的冷却可使高温部件承受更高的工作温度，使发动机寿命更长、可靠性更高。
-The improvement of aircraft engine thrust is largely dependent on the improvement of the total temperature of the turbine front.
+The improvement of aircraft engine thrust is largely dependent on the increment of the turbine inlet temperature.
 For the high temperature caused by a series of problems, the solution is mainly the following three:
 (1) Improving heat resistance of materials, developing high-performance superalloy and manufacturing single crystal blades;
 (2) The thermal barrier coating is used to insulate the basement material and reduce the substrate temperature;
@@ -20,7 +20,7 @@ High temperature alloy and single crystal materials to improve the heat resistan
 % 实验过程中，采用的常规感应加热设备只会对内部金属层加热，使得内部金属层温度高于外部陶瓷层温度，这不符合热障涂层构件实际工作状态下的温度分布。
 % 实际发动机启动阶段升温过程只需要几秒钟的时间，而且降温也相当迅速，这些都对涂覆热障涂层的热梯度机械疲劳试验设备提出了更高的要求，同时也制约了这方面的研究。
 % 由于热梯度机械疲劳是试验室中最接近涡轮叶片服役状态的模拟试验，因而这方面的研究对于理解涂覆热障涂层的叶片损伤机理具有重要意义。
-The engine turbine blades are mainly made of air film cooling and internal flow cooling, and the roulette wheel is usually cooled with two times internal flow.
+The turbine blades are mainly cooled by air film cooling and internal flow cooling, and the turbine disk is usually cooled by the secondary internal flow.
 In the course of service, the turbine blades are not only subjected to large alternating loads, but also to the surface and interior of the blades under the influence of high temperature and high-pressure gas and the cooling gas, so the turbine blades suffer from the thermal mechanical fatigue damage caused by the change of load and temperature.
 In addition, in order to enhance the engine cooling effect and improve the engine efficiency, the advanced aero-engine and gas turbine blades are most of the thin-walled porous structures.
 Therefore, we have designed a thin-walled tube specimen to simulate the cooling structure of the parts, while the outer wall of the specimen is coated with a thermal barrier coating.
@@ -54,6 +54,26 @@ The test system needs to achieve high heating and cooling speed, so the power of
 %In addition, the heating and cooling rates achieved in the TGMF test apparatus allow very short test cycles so that the fatigue load of an entire flight can be applied to a test body within three to five minutes.
 
 \section{Design and development of the radiation furnace for TGMF tests}
+疲劳在结构及部件的安全评估中尤为重要，在实际工程中，很多疲劳损伤是由于机械载荷或热载荷引发的。传统的疲劳分析往往将热载荷转化为机械载荷加以分析，但这种方法无法考察温度和机械载荷叠加交互作用的影响。20世纪80年代后期，热机械疲劳试验系统的出现为该领域的发展提供了必要的条件，同时为了更好地定量研究材料在热机械疲劳下的损伤行为，国际上也普遍开展了热机械疲劳的试验研究工作。1995年5月在芬兰首次召开了国际热机械疲劳学术会议，就热机械疲劳试验方法、力学行为和寿命预测等问题进行了讨论。此后，ISO和ASTM等标准化组织也设置了专门的小组进行相关试验方法的研究，并且陆续推出了一些参考标准。
+
+热机械疲劳试验系统之中有两个相互独立的控制闭合回路, 即机械加载和温度循环加载闭合回路，对于机械加载系统, 力值(载荷)偏差和同轴度是试验机最重要的两个性能指标，以ASTM E2368-2017为例，对应的热机械疲劳试验方法标准引用了专门的检定标准：
+(1)力传感器需要满足ASTM E4和E467要求;
+(2)引伸计需要满足ASTM E83要求;
+(3)加热方式包括induction, direct resistance, radiant, or forced air heating等, 对于感应加热, 建议选择低频发热装置, 以降低集肤效应；
+(4)温度控制测温系统的标定满足ASTM E220规定, 控温变化≤±2 ℃
+(5)温度梯度
+
+与常规的等温疲劳试验所不同的是，热机械疲劳加载过程中，温度处于循环状态，目前常用的加热方式包括induction, direct resistance, radiant, and forced air heating等，而主流疲劳试验设备制造商(如MTS和INSTRON等)多数采用感应加热方式升温，配合以强制空冷降温，但无论采用何种方式，都必须满足温度加热系统所示的技术条件。
+
+对于目前普遍采用的感应加热方式，其感应线圈的布置方式也会对试样表面温度分布产生很大的影响。因为线圈的布置一方面需要考虑加热效果，另一方面要方便引伸计的安装\cite{Hahner2006}。因此，需要在试验初期首先对试样上、中、下及环向位置测温，并通过调整线圈形状、位置及冷却角度来降低试样的温度梯度，以满足ASTM或ISO热机械疲劳试验方法标准的相关规定。
+
+疲劳试验可以采用包括圆柱、空心圆管以及矩形等多种式样类型，从减少径向温度梯度角度出发，热机械疲劳试验方法标准中主要推荐采用圆管空心试样，其次为圆柱实心试样，而矩形试样相对较少。虽然圆管试样具有一定的优点，但其容易失稳屈曲以及内壁难以抛光的缺点限制了该类型试样的使用。此外，试样的加工工艺对试验结果也有直接的影响，试样的残余应力和粗糙度是影响其疲劳寿命的主要因素。
+
+通常意义上讲，热疲劳试验时被测试件的试验环境是高温且温度不恒定，甚至温度是急剧反复变化的，这样被测试件会由于温度的梯度循环引起热应力循环（或热应变循环），从而产生疲劳破坏现象。热疲劳试验中，试件的外形尺寸和试验温度是影响试件疲劳特性的主要因素。目前，常见的热疲劳试验箱的高温试验温度范围为200~500℃左右，具备温度梯度循环变化能力，有些超高温疲劳试验箱的温度可达几千摄氏度。传统的疲劳分析往往将热载荷转化为机械载荷加以分析，但这种方法无法考察温度和机械载荷叠加交互作用的影响，直至20世纪80年代后期才出现了热/机械疲劳试验系统。热/机械疲劳试验系统将热疲劳和机械疲劳耦合在一起，根据试件材料不同的应用环境，模拟试件实际的工作环境，更好地研究材料在热机疲劳下的损伤行为，从而得出更为准确的疲劳特性。在热/机械疲劳试验中，加载应力的大小和频率会直接影响到试件的断裂寿命，通常在试验频率范围内，疲劳寿命随着试验频率的降低而减少，高频时加载循环快，更容易出现疲劳损伤；低频时加载周期慢，除疲劳损伤外还容易出现蠕变损伤[11]。所以在疲劳试验时应根据需要选择合适的加载工况。
+
+热梯度机械疲劳试验由机械载荷循环，温度循环和内部冷却空气组成。机械循环由MTS液压伺服试验机实现，试件的轴对称安装由对中系统来保证。温度循环由聚光辐射加热系统来实现，卤素灯管发出的光线通过椭圆柱状镜面反射到试件的工作段。温度循环冷却由自然对流方式来实现，它较之强风冷却系统引起的温度梯度要小。图1给出了试件安装在试验机夹具上的示意图。高温应变测量系统和热电偶测温系统组成两个闭合回路，通过计算机控制软件，自动测量与控制应变和温度循环的幅度、频率及相位关系。应变的测量和控制是由高精度高温应变引伸计来实现的，为了避免高温的影响，引伸计主体安装在加热炉外侧，引伸计上的两根头部为楔形的陶瓷探棒穿过炉体，夹持在试件上。要想测量温度变化的每一个瞬态值并加以控制，必须采用高灵敏度的热电偶探头。我们选用了直径仅为0.25mm的Cr-Al合金快速响应热电偶，通过缠绕的方式将热电偶固定在试件外表面，热电偶两端点由弹簧构成稳定的拉力，在试件承受拉压载荷，其直径不断变化的情况下，热电偶工作段仍能够压紧在试件上，得到试件表面的真实温度。应变循环和温度循环的叠加构成相同频率的“同相位”和“反相位”两种形式，在同相位实验中，最大拉应变对应于最高温度;而在反相位实验中，最大压应变对应于最高温度。为了保证机械应变循环和温度循环频率相位上的精度，在控制程序中编入了时钟校对系统，以消除频率积累误差。所采用的温度循环范围有两种:250～500℃和250～650℃。所有试验的总应变控制范围(机械应变与温度产生的应变之和)均为±0。8\%，应变变化率为0。0002/秒。为了消除试件内壁由于温度迟滞产生的温度梯度效应，在最大和最小应变处有10秒的保持时间。图2给出了计算机控制的温度循环和机械循环两个闭路系统的示意图。
+
+
 In this section, the high temperature radiation furnace is applied.
 It is used to heat the single crystal specimens with thermal barrier coating up to a high temperature.
 The furnace is matching with the MTS 809 Axial/Torsional fatigue testing machine.
