@@ -61,34 +61,30 @@ Microstructure of the heat-treated alloys was characterized by a optical microsc
   \label{Fig:MicrostructureofInconel718}
 \end{figure}
 
-\section{Specimens and test facilities}
+\section{Specimen specification}
 \label{Sec:Specimens}
 \noindent Monotonic tensile and uniaxial isothermal fatigue tests were performed by using the solid cylindrical specimen.
 Its geometry is shown in \ref{Fig:Specimen}(a), a total length of 185mm, a outer diameter of the gauge section of 10mm and 35mm in gauge length.
 The outer surface roughness values of $R_a=0.1\rm{\mu m}$.
 The advantage of solid specimen is easy to be manufactured.
-%\begin{figure}[!htp]
-%\centering\scalebox{0.6}{\includegraphics{IN718_Axial_Specimen.pdf}}
-%\caption{Dimensions of solid specimen for axial test.}
-%\label{Fig:IN718_Axial_Specimen}
-%\end{figure}
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{IN718_Axial_Specimen.pdf}}
-\centering{\includegraphics[width=12cm]{IN718_Multiaxial_Specimen.pdf}}
-\caption{Geometry of the specimens investigated in the present work. (a) The solid cylindrical tensile bar. (b) The tubular specimen for tension-torsion tests.}
+\centering
+\begin{overpic}[width=12.0cm]{IN718_Axial_Specimen.pdf}
+\put(-10,0){\fcolorbox{white}{white}{(a)}}
+\end{overpic}
+\begin{overpic}[width=12.0cm]{IN718_Multiaxial_Specimen.pdf}
+\put(-10,0){\fcolorbox{white}{white}{(b)}}
+\end{overpic}
+\caption{Dimensions of the specimens investigated in the study: (a) The solid specimen for uniaxial tests, (b) The tubular specimen for biaxial tests.}
 \label{Fig:Specimen}
 \end{figure}
+
 All multiaxial fatigue testing specimens were in thin-walled tubular shape.
 The thin-walled tubular specimen geometry is shown in \ref{Fig:Specimen}(b), 185mm in the total length, a gauge length of 35mm, a outer diameter of the gage section of 12mm and a inner diameter of the specimen of 10mm.
 Thus the wall thickness of the tubular specimen in the gauge section is 1mm.
 Advantages of tubular specimens are that they offer a uniform stresses gage length, the stresses can be calculated directly from the applied loads.
 Moreover, uniform temperature distributions in the gage length of the tubular specimens are easily achieved by induction heating, since relatively simple shape induction coils can be employed.
-%\begin{figure}[!htp]
-%\centering\scalebox{0.6}{\includegraphics{IN718_Multiaxial_Specimen.pdf}}
-%\caption{Dimensions of tubular specimen for biaxial test.}
-%\label{Fig:IN718_Multiaxial_Specimen}
-%\end{figure}
 
 Both solid and thin-walled tubular specimens were designed by taking into the account of the available testing equipments and loading conditions, e.g. the gauge length of the extensometer, the height of the support frame of the extensometer, the height of the furnace and coil, and so on.
 The experiments confirmed that the specimen geometry influenced the temperature distribution in the gauge length.
@@ -108,18 +104,22 @@ All specimens were manufactured by a CNC machining center and the surfaces were 
 %Thirdly, we notice that the specimen geometries influence the temperature distribution of the whole specimen.
 %Consequently the final geometries are determined by the numerical analysis and temperature measurement.
 
+\section{Experimental apparatus}
 
 \begin{figure}[!htp]
 \centering\scalebox{0.6}{\includegraphics{equipment.pdf}}
 \caption{Induction heating system with biaxial test system MTS809.}
 \label{Fig:Equipment}
 \end{figure}
+本章所涉及的试验包括单调拉伸试验、等温疲劳试验和热机械疲劳试验。
+其中MTS-809轴向/扭转复合疲劳材料试验机可以实现复杂载荷路径的拉伸扭转复合疲劳试验
 
+提供，温度载荷由
 Experiments were performed in a servo controlled hydraulic system (MTS 809) with both a electric resistance furnace (MTS 653) and a induction heating system (TruHeat HF 3010).
 The system is capable of applying axial and biaxial loads with temperature controlled simultaneously.
 \begin{figure}[!htp]
 \centering\scalebox{0.1}{\includegraphics{MTS809.jpg}}
-\caption{MTS model 809 axial torsion materials testing system with induction heating device.}
+\caption{MTS model 809 axial torsional materials testing system with induction heating device.}
 %\caption{MTS-809 轴向/扭转复合疲劳材料试验机与感应加热系统.}
 \label{Fig:MTS809}
 \end{figure}
@@ -441,10 +441,10 @@ Shear stress $\tau$, refers to engineering shear stress, acting in the orthogona
 \end{equation}
 where, $\tau$ is the shear stress, $d_o$ and $d_i$ are the outer and inner diameters of the tubular test specimen, respectively.
 
-The experimental program consisted of axial, torsional and non-proportional cyclic tests with temperature range from 573K to 923K.
-%All experiments are strain controlled and the stress-strain hysteresis loops were recorded for each cycles.
+The experimental program consisted of axial, torsional and non-proportional cyclic tests within temperature range from 573K to 923K.
+All tests are strain controlled and the stress-strain hysteresis loops were recorded for each cycle.
 The loading conditions for each type of tests are summarized in Table \ref{tab:Loading-Conditions}.
-Strain path, is defined as the combination of axial strain $\varepsilon$ and shear strain $\gamma$ in a cycle under the biaxial loaded strain-controlled conditions. Such as uniaxial strain path (\ref{Fig:LoadPath}(a)), torsional strain path (\ref{Fig:LoadPath}(b)), proportional strain path (\ref{Fig:LoadPath}(c)) and non-proportional strain path (\ref{Fig:LoadPath}(d,e,f)).
+The strain path is defined as the combination of axial strain $\varepsilon$ and shear strain $\gamma$ in a cycle under the biaxial loaded strain-controlled conditions, such as tension-compression (\ref{Fig:LoadPath}(a)), pure torsion (\ref{Fig:LoadPath}(b)), proportional (\ref{Fig:LoadPath}(c)) and non-proportional strain path (\ref{Fig:LoadPath}(d,e,f)).
 
 %\begin{table}[htbp]
 %  \centering
@@ -539,20 +539,40 @@ As the name implies the multiaxial thermomechanical fatigue testing is combined 
   \label{Fig:plot_exp_pv_CIRC-IF}
 \end{figure}
 
-当进行疲劳试验时，在循环载荷作用下，循环开始的应力应变滞后回线是不封闭的，封闭的滞后回线只有经过一定循环次数后才形成。金属材料在由循环开始状态变成循环稳定状态的过程，与其在循环应力及应变作用下的形变抗力变化有关。
+% 当进行疲劳试验时，在循环载荷作用下，循环开始的应力应变滞后回线是不封闭的，封闭的滞后回线只有经过一定循环次数后才形成。金属材料在由循环开始状态变成循环稳定状态的过程，与其在循环应力及应变作用下的形变抗力变化有关。
+% 在低周疲劳的循环加载初期，材料对循环加载的响应是一个由不稳定向稳定过渡的过程。此过程可分别用应力控制下的应变-时间曲线和应变控制下的应力-时间曲线描述。循环硬化是材料在循环过程中变形抗力不断提高、应变逐渐减小的现象。循环软化则是材料在循环过程中变形抗力不断减小而应变逐渐增加的现象。
 
-在低周疲劳的循环加载初期，材料对循环加载的响应是一个由不稳定向稳定过渡的过程。此过程可分别用应力控制下的应变-时间曲线和应变控制下的应力-时间曲线描述。循环硬化是材料在循环过程中变形抗力不断提高、应变逐渐减小的现象。循环软化则是材料在循环过程中变形抗力不断减小而应变逐渐增加的现象。
-
+% 在低周疲劳的循环加载初期，材料对循环加载的响应是一个由不稳定向稳定过渡的过程。
+At the initial stage of cyclic loading of low cycle fatigue, the material's response to cyclic loading is a transition from instability to stability.
+% 此过程可分别用应力控制下的应变-时间曲线和应变控制下的应力-时间曲线描述。
+This process can be described by the strain-time curve under stress control or stress-time curve under strain control, respectively.
 % 金属材料在循环加载过程中的应力应变曲线通常有两种类型：循环硬化及循环软化。根据加载控制方式的不同，循环软化存在两种表现形式：当保持应力幅值恒定时，应变响应随循环次数不断增大；当保持应变幅值恒定时，应力响应随循环次数不断减小。
-There are usually two types of stress-strain curves for metal materials during cyclic loading: cyclic hardening and cyclic softening.
+There are usually two types of stress-strain responses for metal materials during cyclic loading: cyclic hardening and cyclic softening.
 According to different loading control methods, cycle softening has two manifestations: when the stress amplitude is kept constant, the strain response increases with the number of cycles; when the strain amplitude is kept constant, the stress response decreases with the number of cycles.
-\ref{Fig:plot_exp_TC-IF_2} and \ref{Fig:plot_exp_TOR-IF} show the experimental results of isothermal tension-compression and pure torsional tests at temperatures 573, 823 and 823K. It can be seen that the cyclic stress response is closely related to the temperature. For the same strain amplitude, the cycle softening is greater with increasing temperature. This is similar to the phenomenon observed by \cite{Fournier1977,Xiao2005,kim1988elevated,Schlesinger2017} when studying Inconel 718 under elevated temperature.
+\ref{Fig:plot_exp_TC-IF_2} and \ref{Fig:plot_exp_TOR-IF} show the stress-strain responses of isothermal tension-compression and pure torsional tests at temperatures 573, 823 and 823K. It can be seen that the cyclic stress response is closely related to the temperature. For the same strain amplitude, the cycle softening is greater with increasing temperature. This is similar to the phenomenon observed by \cite{Fournier1977,Xiao2005,kim1988elevated,Schlesinger2017} when studying Inconel 718 under elevated temperature.
 % 其中等温拉压试验的应变幅值为+-1\%，扭转试验的剪应变幅值为+-1.47\%。可以看出，循环应力响应与温度密切相关，对于相同的应变幅值，材料的循环软化程度更大。
 % 导致材料出现循环软化现象的微观因素有很多，比如沉淀剪切、析出相的溶解、共格的丧失以及位错退化与重排等。
 There are many microstructural evolutions that cause cyclic softening of materials, such as shearing of precipitate phases, dissolution of precipitates, degradation and rearrangement of dislocations.
 % 对于镍基高温合金Inconel 718循环软化现象的解释多为沉淀相的剪切机制。
-The explanation for the cyclic softening phenomenon of the nickel-based superalloy Inconel 718 is mostly the shearing  of the $\gamma ''$ precipitates.
+The explanation for the cyclic softening phenomenon of the nickel-based superalloy Inconel 718 is mostly the shearing of the $\gamma ''$ precipitates.
 
+As shown in \ref{Fig:plot_exp_TC-IF_650C}, cyclic softening occurred for all the strain amplitudes investigated at 923K.
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCIF_650C.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIF_650C.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+  \caption{Experimental results of isothermal torsional tests with shear strain range $\varepsilon = \pm1.47\%$ at temperatures 573, 823 and 823K: (a)stress-strain loops, (b)peak-valley stresses.}
+  \label{Fig:plot_exp_TC-IF_650C}
+\end{figure}
 
 \cite{Fournier1977}研究Inconel 718分别在293K和823K下低周疲劳性能，发现在常温下材料先出现硬化而后变为软化，在高温下仅出现循环软化现象。他们得出的结论是在循环应变过程中沉淀相被剪切。类似的，Xiao\cite{Xiao2005}等针对Inconel 718在室温以及高温920K下观察到了明显的循环软化以及平面滑移带，且共格和非共格的沉淀相$\gamma ''$移动的位错在{111}滑移面上剪切共格和非共格的沉淀相γ’’。此外，Xiao[46]等还研究了650oC时Inconel718中不同含量的硼元素对于材料的低周疲劳性能影响，结果发现四种不同含量硼元素的Inconel718合金均表现为循环软化，对此他们沿用之前的解释，沉淀相的剪切在开始阶段建立了位错移动的优先路径，这是Inconel718在650oC出现循环软化和平面滑移带的主要原因。E.HariKrishna[44]等研究了传统的和改进之后的Inconel718合金高温650oC下的低周疲劳性能，同样发现两种合金均出现了循环软化现象。他们指出，在载荷开始循环的几圈中由于短程有序的破坏而形成滑移带，且对于镍基高温合金随应变幅值增大滑移带数目增多。在γ’和γ’’作为强化相的镍基高温合金中通常会形成平面滑移带，这导致强化相受到剪切，推动了滑移带中的应变局部化。由于高应变幅值下平面滑移带数目更多，更多的强化相受到剪切而导致软化程度越高。
 
