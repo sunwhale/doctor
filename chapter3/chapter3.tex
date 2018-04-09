@@ -441,7 +441,7 @@ Shear stress $\tau$, refers to engineering shear stress, acting in the orthogona
 \end{equation}
 where, $\tau$ is the shear stress, $d_o$ and $d_i$ are the outer and inner diameters of the tubular test specimen, respectively.
 
-The experimental program consisted of axial, torsional and non-proportional cyclic tests with temperature range from 300$^{\circ}$C to 650$^{\circ}$C.
+The experimental program consisted of axial, torsional and non-proportional cyclic tests with temperature range from 573K to 923K.
 %All experiments are strain controlled and the stress-strain hysteresis loops were recorded for each cycles.
 The loading conditions for each type of tests are summarized in Table \ref{tab:Loading-Conditions}.
 Strain path, is defined as the combination of axial strain $\varepsilon$ and shear strain $\gamma$ in a cycle under the biaxial loaded strain-controlled conditions. Such as uniaxial strain path (\ref{Fig:LoadPath}(a)), torsional strain path (\ref{Fig:LoadPath}(b)), proportional strain path (\ref{Fig:LoadPath}(c)) and non-proportional strain path (\ref{Fig:LoadPath}(d,e,f)).
@@ -473,6 +473,88 @@ Strain path, is defined as the combination of axial strain $\varepsilon$ and she
 
 In this section we will introduce the multiaxial thermomechanical fatigue testing process.
 As the name implies the multiaxial thermomechanical fatigue testing is combined with the multiaxial mechanical testing and thermomechanical fatigue (TMF) testing.
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle-TC-IF_2.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_pv_TC-IF_2.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+  \caption{Experimental results of isothermal tension-compression tests with axial strain range $\gamma = \pm1.0\%$ at temperatures 573, 823 and 823K: (a)stress-strain loops, (b)peak-valley stresses.}
+  \label{Fig:plot_exp_TC-IF_2}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle-TOR-IF.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_pv_TOR-IF.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+  \caption{Experimental results of isothermal torsional tests with shear strain range $\varepsilon = \pm1.47\%$ at temperatures 573, 823 and 823K: (a)stress-strain loops, (b)peak-valley stresses.}
+  \label{Fig:plot_exp_TOR-IF}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_CIRC-IF_axial.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_pv_CIRC-IF_axial.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_CIRC-IF_torsional.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(c)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=8.0cm]{plot_exp_pv_CIRC-IF_torsional.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(d)}}
+    \end{overpic}
+  \end{minipage}
+
+  \caption{Experimental results of isothermal circle path tests at temperatures 573, 823 and 823K: (a)axial stress-strain loops, (b)axial peak-valley stresses, (c)torsional stress-strain loops, (d)torsional peak-valley stresses.}
+  \label{Fig:plot_exp_pv_CIRC-IF}
+\end{figure}
+
+当进行疲劳试验时，在循环载荷作用下，循环开始的应力应变滞后回线是不封闭的，封闭的滞后回线只有经过一定循环次数后才形成。金属材料在由循环开始状态变成循环稳定状态的过程，与其在循环应力及应变作用下的形变抗力变化有关。
+
+在低周疲劳的循环加载初期，材料对循环加载的响应是一个由不稳定向稳定过渡的过程。此过程可分别用应力控制下的应变-时间曲线和应变控制下的应力-时间曲线描述。循环硬化是材料在循环过程中变形抗力不断提高、应变逐渐减小的现象。循环软化则是材料在循环过程中变形抗力不断减小而应变逐渐增加的现象。
+
+% 金属材料在循环加载过程中的应力应变曲线通常有两种类型：循环硬化及循环软化。根据加载控制方式的不同，循环软化存在两种表现形式：当保持应力幅值恒定时，应变响应随循环次数不断增大；当保持应变幅值恒定时，应力响应随循环次数不断减小。
+There are usually two types of stress-strain curves for metal materials during cyclic loading: cyclic hardening and cyclic softening.
+According to different loading control methods, cycle softening has two manifestations: when the stress amplitude is kept constant, the strain response increases with the number of cycles; when the strain amplitude is kept constant, the stress response decreases with the number of cycles.
+\ref{Fig:plot_exp_TC-IF_2} and \ref{Fig:plot_exp_TOR-IF} show the experimental results of isothermal tension-compression and pure torsional tests at temperatures 573, 823 and 823K. It can be seen that the cyclic stress response is closely related to the temperature. For the same strain amplitude, the cycle softening is greater with increasing temperature. This is similar to the phenomenon observed by \cite{Fournier1977,Xiao2005,kim1988elevated,Schlesinger2017} when studying Inconel 718 under elevated temperature.
+% 其中等温拉压试验的应变幅值为+-1\%，扭转试验的剪应变幅值为+-1.47\%。可以看出，循环应力响应与温度密切相关，对于相同的应变幅值，材料的循环软化程度更大。
+% 导致材料出现循环软化现象的微观因素有很多，比如沉淀剪切、析出相的溶解、共格的丧失以及位错退化与重排等。
+There are many microstructural evolutions that cause cyclic softening of materials, such as shearing of precipitate phases, dissolution of precipitates, degradation and rearrangement of dislocations.
+% 对于镍基高温合金Inconel 718循环软化现象的解释多为沉淀相的剪切机制。
+The explanation for the cyclic softening phenomenon of the nickel-based superalloy Inconel 718 is mostly the shearing  of the $\gamma ''$ precipitates.
+
+
+\cite{Fournier1977}研究Inconel 718分别在293K和823K下低周疲劳性能，发现在常温下材料先出现硬化而后变为软化，在高温下仅出现循环软化现象。他们得出的结论是在循环应变过程中沉淀相被剪切。类似的，Xiao\cite{Xiao2005}等针对Inconel 718在室温以及高温920K下观察到了明显的循环软化以及平面滑移带，且共格和非共格的沉淀相$\gamma ''$移动的位错在{111}滑移面上剪切共格和非共格的沉淀相γ’’。此外，Xiao[46]等还研究了650oC时Inconel718中不同含量的硼元素对于材料的低周疲劳性能影响，结果发现四种不同含量硼元素的Inconel718合金均表现为循环软化，对此他们沿用之前的解释，沉淀相的剪切在开始阶段建立了位错移动的优先路径，这是Inconel718在650oC出现循环软化和平面滑移带的主要原因。E.HariKrishna[44]等研究了传统的和改进之后的Inconel718合金高温650oC下的低周疲劳性能，同样发现两种合金均出现了循环软化现象。他们指出，在载荷开始循环的几圈中由于短程有序的破坏而形成滑移带，且对于镍基高温合金随应变幅值增大滑移带数目增多。在γ’和γ’’作为强化相的镍基高温合金中通常会形成平面滑移带，这导致强化相受到剪切，推动了滑移带中的应变局部化。由于高应变幅值下平面滑移带数目更多，更多的强化相受到剪切而导致软化程度越高。
 
 \section{Thermomechanical fatigue testing}
 Thermomechanical fatigue testing is a variant of fatigue testing designed to simulate real-world service conditions of engineered components.
@@ -637,12 +719,12 @@ Some concepts are defined as follows:
   \end{minipage}
   
   \caption{Experimental results of thermomechanical fatigue tests with temperature range 350-600$^{\circ}$C.
-  (a) Half life stable hysteresis loops of In-Phase(IP) tests.
-  (b) Peak, valley and mean stresses of In-Phase(IP) tests.
-  (c) Half life stable hysteresis loops of In-Phase(OP) tests.
-  (d) Peak, valley and mean stresses of In-Phase(OP) tests.
-  (e) Half life stable hysteresis loops of 90$^{\circ}$C-Phase tests.
-  (f) Peak, valley and mean stresses of 90$^{\circ}$C-Phase tests.}
+  (a) Half life stable hysteresis loops of in-phase(IP) tests.
+  (b) Peak, valley and mean stresses of in-phase(IP) tests.
+  (c) Half life stable hysteresis loops of out-of-phase(OP) tests.
+  (d) Peak, valley and mean stresses of out-of-phase(OP) tests.
+  (e) Half life stable hysteresis loops of 90$^{\circ}$-phase tests.
+  (f) Peak, valley and mean stresses of 90$^{\circ}$-phase tests.}
   \label{Fig:plot_exp_TCTMF}
 \end{figure}
 
