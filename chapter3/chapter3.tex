@@ -593,9 +593,9 @@ The temperature rate (heating and cooling) of TMF tests is generally within 10K/
 
 \subsection{Process of thermo-mechanical fatigue tests}
 
-ASTM E2368-10\cite{ASTME2005} is a standard practice for thermo-mechanical fatigue tests under uniaxial strain-controlled conditions.
+ISO 12111 and ASTM E2368-10\cite{ASTME2005} are the standard practices for thermo-mechanical fatigue tests under uniaxial strain-controlled conditions.
 Unfortunately there are no relevant standards for multi-axial thermo-mechanical fatigue tests.
-Therefore, multi-axial TMF tests were conducted with reference to ASTM E2207-15, which is a standard practice for strain-controlled axial-torsional fatigue tests with thin-walled tubular specimens.
+Therefore, multi-axial TMF tests were conducted with reference to ASTM E2207-15, which is the standard practice for strain-controlled axial-torsional fatigue tests with thin-walled tubular specimens.
 According to these standards, some concepts are defined as follows:
 
 % a thermo-mechanical fatigue cycle is defined as a condition where uniform temperature and strain fields over the specimen gage section are simultaneously varied and independently controlled.
@@ -648,8 +648,41 @@ According to these standards, some concepts are defined as follows:
   \item {\em Phase angle of the thermal loading and mechanical loading}, $\theta_{T-\varepsilon}$, represents the time difference between maximum values of temperature and mechanical strain.
   \item {\em Phase angle of the thermal loading and torsinal loading}, $\theta_{T-\gamma}$, represents the time difference between maximum values of temperature and shear strain.
   \item {\em Phase angle of the mechanical loading and torsinal loading}, $\theta_{\varepsilon-\gamma}$, represents the time difference between maximum values of mechanical strain and shear strain.
-  \item {\em Equivalent mechanical strain}, $\varepsilon_{eq}=\sqrt {\varepsilon _m^2 + {\gamma ^2}/3}$, is calculated by the von Mises relation\cite{Pol1991Cyclic}.
+  \item {\em Equivalent mechanical strain}, $\varepsilon_{eq}$, is calculated by the von Mises relation\cite{Pol1991Cyclic},
+  \begin{equation}
+  \varepsilon_{eq}=\sqrt {\varepsilon _m^2 + {\gamma ^2}/3}.
+  \end{equation}
 \end{itemize}
+
+According to the standards discussed above, the implemented steps during the process of carrying out strain-controlled multi-axial TMF tests is shown in \ref{Fig:tmf_code}, in the form of a flow diagram.
+The implemented steps consist of calibration of the testing system, the setting up and performing procedures of strain-controlled test.
+The calibration of the testing system is necessary to ensure the accuracy and repeatability of the test results.
+As shown in \ref{Fig:tmf_code}, force transducer, extensometer and the temperature measurement are the three parts which have to be calibrated.
+The accuracy of the force transducer shall meet the ASTM E4 and E467 requirements ($\pm 1\%$) during the tmf test duration.
+During the tmf testing, the axial and shear strain in the gage section of the specimen are measured with the high temperature extensometers. 
+The extensometers are calibrated in accordance with the recommendations of ASTM E83.
+The specimen temperature was measured by thermocouples in contact with the specimen surface, and the temperature measurement system is calibrated in accordance with the recommendations of ASTM E220.
+
+After the step of calibration, the setting up procedures of TMF test is conducted. 
+As mentioned above, the MTS model 809 servo hydraulic testing machine is used in conjunction with the computer and controller to control the test and log the data obtained.
+The data is collected by the computerized system during the TMF test duration, such as cycle count, force, displacement, torque, rotation, mechanical strain, shear strain, temperature and so on. Sampling frequency is determined by the testing frequency to ensure more than 200 sampling points per cycle. At the same time, it is necessary to ensure that the temperature deviation between two sampling points is lower than 5K.
+
+The step of TMF test setting up consists of five parts: optimization of thermal stability, command/feedback phasing compensation, thermal strain compensation, thermal strain validation and preliminary measurements.
+
+
+Through out the duration of the test, the specimen should be heated uniformly in the gauge section by the specified temperature command. 
+% 对于感应加热方式，其感应线圈的布置方式会对试样表面温度分布产生很大的影响。因为线圈的布置不仅需要考虑加热效果，而且要方便引伸计的安装。\cite{Hahner2006}。
+Unfortunately, for the induction heating method, the configuration of the induction coils has a great influence on the temperature distribution of the specimen. Because the coil configuration not only the heating effect needs to be considered, but also has to facilitate the installation of the extensometer \cite{Hahner2006}. 
+
+% 因此，需要在试验初期首先对试样上、中、下及环向位置测温，并通过调整线圈形状、位置及冷却角度来降低试样的温度梯度，以满足ASTM或ISO热机械疲劳试验方法标准的相关规定。
+Therefore, in the initial stage of the test, the temperature at the upper, middle, lower, and circumferential positions of the sample needs to be measured first, and the temperature gradient of the sample is reduced by adjusting the coil shape, position, and cooling angle to meet the ASTM or ISO thermo-mechanical fatigue test method. The relevant regulations of the standard.
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[height=22.0cm]{tmf_code.pdf}
+\caption{A flow diagram outlining the various steps of the strain-controlled TMF test.}
+\label{Fig:tmf_code}
+\end{figure}
 
 试验采用机械应变$\varepsilon_{mech}$控制，根据方程\ref{Equ:thermal_strain}和\ref{Equ:total_strain}可知，机械应变$\varepsilon_{mech}$可采用下式计算:
 \begin{equation}
@@ -674,8 +707,7 @@ According to these standards, some concepts are defined as follows:
 在IP和OP条件下的载荷加载波形如图\ref{Fig:Thermomechanical_phase}所示。
 对于应变控制模式下的TMF试验，为了控制相位恒定并避免试样产生热应力，因此，在试验中的任意加载时刻都需要进行热应变补偿。补偿的方法分为两种：a）基于温度的闭环应变补偿；b）基于时间的开环应变补偿。其中，基于温度的补偿方式为目前试验所普遍采用，而基于时间的补偿方式则已较少采用。
 
-% 对于感应加热方式，其感应线圈的布置方式会对试样表面温度分布产生很大的影响。因为线圈的布置不仅需要考虑加热效果，而且要方便引伸计的安装。\cite{Hahner2006}。因此，需要在试验初期首先对试样上、中、下及环向位置测温，并通过调整线圈形状、位置及冷却角度来降低试样的温度梯度，以满足ASTM或ISO热机械疲劳试验方法标准的相关规定。
-For the induction heating method, the configuration of the induction coils has a great influence on the temperature distribution of the specimen. Because the coil configuration not only needs to consider the heating effect, but also to facilitate the installation of the extensometer \cite{Hahner2006}. Therefore, in the initial stage of the test, the temperature at the upper, middle, lower, and circumferential positions of the sample needs to be measured first, and the temperature gradient of the sample is reduced by adjusting the coil shape, position, and cooling angle to meet the ASTM or ISO thermo-mechanical fatigue test method. The relevant regulations of the standard.
+
 
 \begin{figure}
 \centering{\includegraphics[width=8.0cm]{plot_thermal_stability.pdf}}
@@ -694,12 +726,7 @@ For the induction heating method, the configuration of the induction coils has a
 (5)温度梯度
 
 
-\begin{figure}[!htp]
-\centering
-\includegraphics[height=22.0cm]{tmf_code.pdf}
-\caption{A flow diagram outlining the various steps of the strain-controlled TMF test.}
-\label{Fig:Thermomechanical_phase}
-\end{figure}
+
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
