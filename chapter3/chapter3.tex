@@ -655,25 +655,31 @@ According to these standards, some concepts are defined as follows:
 \end{itemize}
 
 According to the standards discussed above, the implemented steps during the process of carrying out strain-controlled multi-axial TMF tests is shown in \ref{Fig:tmf_code}, in the form of a flow diagram.
-The implemented steps consist of calibration of the testing system, the setting up and performing procedures of strain-controlled test.
+The implemented program consist of three steps: 
+%calibration of the testing system, the setting up and performing procedures of strain-controlled test.
+\begin{itemize}
+  \item Calibration,
+  \item TMF test setup,
+  \item TMF test.
+\end{itemize}
+
 The calibration of the testing system is necessary to ensure the accuracy and repeatability of the test results.
 As shown in \ref{Fig:tmf_code}, force transducer, extensometer and the temperature measurement are the three parts which have to be calibrated.
-The accuracy of the force transducer shall meet the ASTM E4 and E467 requirements ($\pm 1\%$) during the tmf test duration.
-During the tmf testing, the axial and shear strain in the gage section of the specimen are measured with the high temperature extensometers. 
+The accuracy of the force transducer shall meet the ASTM E4 and E467 requirements ($F_{error}\pm \leq 1\%$) during the tmf test duration.
+During the TMF testing, the axial and shear strain in the gage section of the specimen are measured with the high temperature extensometers. 
 The extensometers are calibrated in accordance with the recommendations of ASTM E83.
 The specimen temperature was measured by thermocouples in contact with the specimen surface, and the temperature measurement system is calibrated in accordance with the recommendations of ASTM E220.
 
 After the step of calibration, the setting up procedures of TMF test is conducted. 
-As mentioned above, the MTS model 809 servo hydraulic testing machine is used in conjunction with the computer and controller to control the test and log the data obtained.
+The TMF test setup consists of six steps: data acquisition, optimization of thermal stability, command/feedback phasing compensation, thermal strain compensation, thermal strain validation and preliminary measurements.
+
+As mentioned above, the MTS Model 809 servo hydraulic testing machine is used in conjunction with the computer and controller to control the test and log the data obtained.
 The data is collected by the computerized system during the TMF test duration, such as cycle count, force, displacement, torque, rotation, mechanical strain, shear strain, temperature and so on. Sampling frequency is determined by the testing frequency to ensure more than 200 sampling points per cycle. At the same time, it is necessary to ensure that the temperature deviation between two sampling points is lower than 5K.
 
-The step of TMF test setting up consists of five parts: optimization of thermal stability, command/feedback phasing compensation, thermal strain compensation, thermal strain validation and preliminary measurements.
-
-
-Through out the duration of the test, the specimen should be heated uniformly in the gauge section by the specified temperature command. 
+Through out the duration of the test, the specimen should be heated uniformly in the gauge section by the specified temperature command. In accordance with the recommendations of ASTM E2368-10\cite{ASTME2005}, the axial temperature gradient in the gauge section of the specimen not exceed $\pm$3K or $\pm$1\% of the
+maximum cyclic temperature given in K, and the maximum allowable transverse temperature gradient is $\pm$7K or $\pm$1\% of maximum cyclic temperature given in K.
 % 对于感应加热方式，其感应线圈的布置方式会对试样表面温度分布产生很大的影响。因为线圈的布置不仅需要考虑加热效果，而且要方便引伸计的安装。\cite{Hahner2006}。
 % Unfortunately, for the induction heating method, the configuration of the induction coils has a great influence on the temperature distribution of the specimen. Because the coil configuration not only the heating effect needs to be considered, but also has to facilitate the installation of the extensometer \cite{Hahner2006}. 
-
 Axial temperature gradients of specimen are influenced mainly by surface convection, heat conduction, electrical conductivity, induction frequency, water-cooled specimen grips, specimen geometry and coil configuration. Generally only the coil configuration and the specimen geometry are variable. As shown in \ref{Fig:Specimen}(b), turbular specimens are used in combination with the induction heating device. The coil configuration has a great influence on the temperature distribution of the specimen, at the same time, the installation of the extensometer has to be considered\cite{Hahner2006}. Therefore, the coil configuration is tuned iteratively to obtain minimum axial temperature gradients.
 
 % 因此，需要在试验初期首先对试样上、中、下及环向位置测温，并通过调整线圈形状、位置及冷却角度来降低试样的温度梯度，以满足ASTM或ISO热机械疲劳试验方法标准的相关规定。
