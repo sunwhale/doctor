@@ -373,19 +373,57 @@ Alternatively, we assume the other material parameters are temperature independe
 
 \section{Application to IN718 numerical calculations}
 
+\subsection{ABAQUS user interface UMAT}
+ABAQUS user subroutines are usually used to extend the ABAQU FEM solver to include user-defined functionalities not implemented in the ABAQUS source code.
+The UMAT (User MATerial)interface provided by the ABAQUS solver for user-defined material laws and plasticity models is described in detail in \cite{abaqus20106}. In the following, we briefly discuss important variables and functions.
+
+A UMAT routine is called at least once per time step during an FEM calculation for each integration point.
+Inputs of the UMAT routine are the stress-strain state at the current time, all state variables and constants of the plasticity model, and the strain increment to be applied in the current time step.
+Within the UMAT routine, the constitutive equations of the plasticity model are solved in the form of a differential equation system using a corresponding numerical solution method.
+Subsequently, the new stress-strain state and the updated state variables are returned to the ABAQUS solver.
+If the expansion increment is too large, and a solution of the constitutive equations with the necessary accuracy is not possible, the variable PNEWDT is returned to a new smaller step.
+A UMAT routine thus operates on an incremental basis.
+When it is viewed as a "black box," the corresponding conversion increment is simply expressed for each expansion increment entered into the UMAT routine:
+
+\begin{equation}
+\Delta \sigma_{ij}=UMAT(\Delta \varepsilon_{ij}).
+\end{equation}
+
+Since the present UMAT routines are programmed in FORTRAN and are not based on internal functions of the ABAQUS solver, it is possible to use these UMAT routines and thus also the included plasticity models "stand-alone" without the ABAQUS solver in a separate FORTRAN based environment.
+It is only necessary to ensure that the plasticity models receive the necessary input variables via the UMAT interface and the existing status variables and output variables are buffered accordingly.
+%This possibility is used here for multi-axial non-proportional notch strain simulation.
+Significant variables of the ABAQUS-UMAT interface used are listed in Table \ref{tab:ABAQUS-UMAT_interface}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Used variables of the ABAQUS-UMAT interface}
+    \begin{tabular}{p{2cm}p{2cm}p{2cm}p{8cm}}
+    \toprule
+    Variable & Type  & Dimension & Description \\
+    \midrule
+    NDI   & INTEGER & scalar & Number of direct stress components \\
+    NSHR  & INTEGER & scalar & Number of engineering shear stress components \\
+    NTENS & INTEGER & scalar & Size of the stress or strain component array (NDI+NSHR) \\
+    NSTATV & INTEGER & scalar & Number of solution-dependent state variables \\
+    NPROPS & INTEGER & scalar & User-defined number of material constants associated with this user material \\
+    DTIME & DOUBLE & scalar & Time increment $\Delta t$ \\
+    TEMP  & DOUBLE & scalar & Temperature at the start of the increment $T_n$ \\
+    DTEMP & DOUBLE & scalar & Increment of temperature $\Delta T$ \\
+    PNEWDT & DOUBLE & scalar & Ratio of suggested new time increment to the time increment being used \\
+    STRAN & DOUBLE & (NTENS) & Total mechanical strains at the beginning of the increment $\bm{\upepsilon}_n$ \\
+    DSTRAN & DOUBLE & (NTENS) & Mechanical strain increments $\Delta \bm{\upepsilon}$ \\
+    DDSDDE & DOUBLE & (NTENS, NTENS) & Jacobian matrix of the constitutive model $\partial\Delta {\bm{\upsigma }} /\partial\Delta {\bm{\upepsilon }}$ \\
+    STRESS & DOUBLE & (NTENS) & Stress tensor at the end of the increment $\bm{\upsigma}_{n+1}$ \\
+    STATEV & DOUBLE & (NSTATV) & Internal state variables of the model \\
+    PROPS & DOUBLE & (NPROPS) & Material constants and model parameters \\
+    DFGRD0 & DOUBLE & (3,3) & Deformation gradient at the beginning of the increment $\bm{F}_n$ \\
+    DFGRD1 & DOUBLE & (3,3) & Deformation gradient at the end of the increment $\bm{F}_{n+1}$ \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:ABAQUS-UMAT_interface}%
+\end{table}%
+
 \subsection{Uniaxial simulation under isothermal condition}
-\label{}
-
-%\begin{figure}
-%  \includegraphics[width=100pt]{"F:/Articles/20150310/eps/N-PV stress temperature.eps"}
-%  \caption{1}\label{Fig:1}
-%\end{figure}
-
-%\begin{figure}[!htp]
-%\centering\scalebox{0.5}{\includegraphics{eps/Monotonic_tension.eps}}
-%\caption{Monotonic tension.}
-%\label{Fig:MonotonicTension}
-%\end{figure}
 In this sub-section, we create the uniaxial tension calculation model and the axisymmetric tension-torsion calculation model in ABAQUS.
 Abaqus/Standard is a general-purpose finite element program and the user-defined material model is implemented in user subroutine UMAT.
 As introduced in Section 3, the user subroutine UMAT which implemented by the implicit integral algorithm is not only can be used in 1D elements but also can be used in 2D or 3D elements.

@@ -1,29 +1,45 @@
 \chapter{Multi-Axial Constitutive Modeling under Theromechanical Fatigue Loading}
 
-%µ±Ç°¹ú¼ÊÉÏÍ¨ÓÃµÄÑ­»·ËÜÐÔÄ£ÐÍ´ó¶àÔÚÇü·þÃæ·½³Ì¡¢Á÷¶¯·¨Ôò·½Ãæ¶¼²ÉÓÃÒ»°ãËÜÐÔÍ¨ÓÃµÄ·¨Ôò¡£
-%ÕâÐ©·¨Ôò¼ÈÊÊºÏÑ­»·ºÉÔØ£¬Ò²ÊÊºÏ·ÇÑ­»·ºÉÔØ¡£¸÷
-%ÖÖËÜÐÔÄ£ÐÍµÄÖ÷Òª²»Í¬µãÔÚÓÚÓ²»¯×¼Ôò¡£
-%²¢ÇÒËæ×Å¼ÓÔØ·½Ê½µÄÖð½¥¸´ÔÓ»¯£¬Ñ­»·ËÜÐÔÄ£ÐÍµÄÓ²»¯×¼ÔòÒ²±»²»¶ÏµÄÐÞÕý¡£
-%×î³õµÄÓ²»¯×¼ÔòÊÇÏßÐÔÓ²»¯×¼Ôò£¬Ëæ×ÅÑÐ¾¿µÄÉîÈë£¬Armstrong-FredericÌá³öÁËÖøÃûµÄ·ÇÏßÐÔÓ²»¯×¼Ôò¡£
-%Ëæ×Å¼ÓÔØµÄ¸´ÔÓ»¯£¬ºóÈËÓÖÔÚArmstrong-Frederick Ä£ÐÍ»ù´¡ÉÏ½øÐÐÁËÒ»ÏµÁÐµÄÐÞÕý£¬ÒÔÆÚÂú×ãÔÚÑ­»·¼ÓÔØ¹ý³ÌÖÐ³öÏÖµÄ¼¬ÂÖÐ§Ó¦ÒÔ¼°·Ç±ÈÀýÓ²»¯µÈÏÖÏó¡£
-%Ñ­»·ËÜÐÔµÄ»ù±¾Ä£ÐÍ°üº¬Èý¸ö²¿·Ö£º£¨1£©Çü·þ×¼Ôò£¬£¨2£©Á÷¶¯·¨Ôò£¬£¨3£©Ó²»¯×¼Ôò¡£
-%Ñ­»·ËÜÐÔÄ£ÐÍºÍµ¥µ÷ËÜÐÔÄ£ÐÍÏà±È£¬³ýÈ¥Ó²»¯×¼Ôò²»Í¬Íâ£¬ÆäÇü·þ×¼ÔòºÍÁ÷¶¯·¨ÔòÊÇÍêÈ«ÏàÍ¬µÄ¡£ÏÂ
-%Ãæ¾Í·Ö±ð¾ÍÈý¸ö×¼Ôò½øÐÐÂÛÊö¡£
-%ÎÒÃÇÒ»°ãÈÏÎª£¬µ±²ÄÁÏµÄËÜÐÔÓ¦±äÎªÁãÊ±Âú×ãµ¯ÐÔÓ¦Á¦-Ó¦±ä¹ØÏµ£¬Ö±ÖÁÓ¦Á¦´ïµ½Çü·þÌõ¼þ¡£
-%Á½¸ö×î³£ÓÃµÄÇü·þ×¼ÔòÊÇ£ºTresca Ó¦Á¦Çü·þ×¼ÔòºÍ Von MisesÓ¦Á¦Çü·þ×¼Ôò¡£
-%ÓÉÓÚ Tresca Ó¦Á¦Çü·þ×¼ÔòÔÚÊýÑ§ÃèÊöÉÏ³öÏÖÁË¹Õµã£¬ÆäÁ¬ÐøÐÔÊÜµ½Ó°Ïì£¬ËùÒÔÏÖÔÚ¶àÊýÑÐ¾¿ÕßÊ¹ÓÃ Von Mises Ó¦Á¦Çü·þ×¼Ôò¡£
+%ÂµÂ±Ã‡Â°Â¹ÃºÂ¼ÃŠÃ‰ÃÃÂ¨Ã“ÃƒÂµÃ„Ã‘Â­Â»Â·Ã‹ÃœÃÃ”Ã„Â£ÃÃÂ´Ã³Â¶Ã Ã”ÃšÃ‡Ã¼Â·Ã¾ÃƒÃ¦Â·Â½Â³ÃŒÂ¡Â¢ÃÃ·Â¶Â¯Â·Â¨Ã”Ã²Â·Â½ÃƒÃ¦Â¶Â¼Â²Ã‰Ã“ÃƒÃ’Â»Â°Ã£Ã‹ÃœÃÃ”ÃÂ¨Ã“ÃƒÂµÃ„Â·Â¨Ã”Ã²Â¡Â£
+%Ã•Ã¢ÃÂ©Â·Â¨Ã”Ã²Â¼ÃˆÃŠÃŠÂºÃÃ‘Â­Â»Â·ÂºÃ‰Ã”Ã˜Â£Â¬Ã’Â²ÃŠÃŠÂºÃÂ·Ã‡Ã‘Â­Â»Â·ÂºÃ‰Ã”Ã˜Â¡Â£Â¸Ã·
+%Ã–Ã–Ã‹ÃœÃÃ”Ã„Â£ÃÃÂµÃ„Ã–Ã·Ã’ÂªÂ²Â»ÃÂ¬ÂµÃ£Ã”ÃšÃ“ÃšÃ“Â²Â»Â¯Ã—Â¼Ã”Ã²Â¡Â£
+%Â²Â¢Ã‡Ã’Ã‹Ã¦Ã—Ã…Â¼Ã“Ã”Ã˜Â·Â½ÃŠÂ½ÂµÃ„Ã–Ã°Â½Â¥Â¸Â´Ã”Ã“Â»Â¯Â£Â¬Ã‘Â­Â»Â·Ã‹ÃœÃÃ”Ã„Â£ÃÃÂµÃ„Ã“Â²Â»Â¯Ã—Â¼Ã”Ã²Ã’Â²Â±Â»Â²Â»Â¶ÃÂµÃ„ÃÃžÃ•Ã½Â¡Â£
+%Ã—Ã®Â³ÃµÂµÃ„Ã“Â²Â»Â¯Ã—Â¼Ã”Ã²ÃŠÃ‡ÃÃŸÃÃ”Ã“Â²Â»Â¯Ã—Â¼Ã”Ã²Â£Â¬Ã‹Ã¦Ã—Ã…Ã‘ÃÂ¾Â¿ÂµÃ„Ã‰Ã®ÃˆÃ«Â£Â¬Armstrong-FredericÃŒÃ¡Â³Ã¶ÃÃ‹Ã–Ã¸ÃƒÃ»ÂµÃ„Â·Ã‡ÃÃŸÃÃ”Ã“Â²Â»Â¯Ã—Â¼Ã”Ã²Â¡Â£
+%Ã‹Ã¦Ã—Ã…Â¼Ã“Ã”Ã˜ÂµÃ„Â¸Â´Ã”Ã“Â»Â¯Â£Â¬ÂºÃ³ÃˆÃ‹Ã“Ã–Ã”ÃšArmstrong-Frederick Ã„Â£ÃÃÂ»Ã¹Â´Â¡Ã‰ÃÂ½Ã¸ÃÃÃÃ‹Ã’Â»ÃÂµÃÃÂµÃ„ÃÃžÃ•Ã½Â£Â¬Ã’Ã”Ã†ÃšÃ‚ÃºÃ—Ã£Ã”ÃšÃ‘Â­Â»Â·Â¼Ã“Ã”Ã˜Â¹Ã½Â³ÃŒÃ–ÃÂ³Ã¶ÃÃ–ÂµÃ„Â¼Â¬Ã‚Ã–ÃÂ§Ã“Â¦Ã’Ã”Â¼Â°Â·Ã‡Â±ÃˆÃ€Ã½Ã“Â²Â»Â¯ÂµÃˆÃÃ–ÃÃ³Â¡Â£
+%Ã‘Â­Â»Â·Ã‹ÃœÃÃ”ÂµÃ„Â»Ã¹Â±Â¾Ã„Â£ÃÃÂ°Ã¼ÂºÂ¬ÃˆÃ½Â¸Ã¶Â²Â¿Â·Ã–Â£ÂºÂ£Â¨1Â£Â©Ã‡Ã¼Â·Ã¾Ã—Â¼Ã”Ã²Â£Â¬Â£Â¨2Â£Â©ÃÃ·Â¶Â¯Â·Â¨Ã”Ã²Â£Â¬Â£Â¨3Â£Â©Ã“Â²Â»Â¯Ã—Â¼Ã”Ã²Â¡Â£
+%Ã‘Â­Â»Â·Ã‹ÃœÃÃ”Ã„Â£ÃÃÂºÃÂµÂ¥ÂµÃ·Ã‹ÃœÃÃ”Ã„Â£ÃÃÃÃ Â±ÃˆÂ£Â¬Â³Ã½ÃˆÂ¥Ã“Â²Â»Â¯Ã—Â¼Ã”Ã²Â²Â»ÃÂ¬ÃÃ¢Â£Â¬Ã†Ã¤Ã‡Ã¼Â·Ã¾Ã—Â¼Ã”Ã²ÂºÃÃÃ·Â¶Â¯Â·Â¨Ã”Ã²ÃŠÃ‡ÃÃªÃˆÂ«ÃÃ ÃÂ¬ÂµÃ„Â¡Â£ÃÃ‚
+%ÃƒÃ¦Â¾ÃÂ·Ã–Â±Ã°Â¾ÃÃˆÃ½Â¸Ã¶Ã—Â¼Ã”Ã²Â½Ã¸ÃÃÃ‚Ã›ÃŠÃ¶Â¡Â£
+%ÃŽÃ’ÃƒÃ‡Ã’Â»Â°Ã£ÃˆÃÃŽÂªÂ£Â¬ÂµÂ±Â²Ã„ÃÃÂµÃ„Ã‹ÃœÃÃ”Ã“Â¦Â±Ã¤ÃŽÂªÃÃ£ÃŠÂ±Ã‚ÃºÃ—Ã£ÂµÂ¯ÃÃ”Ã“Â¦ÃÂ¦-Ã“Â¦Â±Ã¤Â¹Ã˜ÃÂµÂ£Â¬Ã–Â±Ã–ÃÃ“Â¦ÃÂ¦Â´Ã¯ÂµÂ½Ã‡Ã¼Â·Ã¾ÃŒÃµÂ¼Ã¾Â¡Â£
+%ÃÂ½Â¸Ã¶Ã—Ã®Â³Â£Ã“ÃƒÂµÃ„Ã‡Ã¼Â·Ã¾Ã—Â¼Ã”Ã²ÃŠÃ‡Â£ÂºTresca Ã“Â¦ÃÂ¦Ã‡Ã¼Â·Ã¾Ã—Â¼Ã”Ã²ÂºÃ Von MisesÃ“Â¦ÃÂ¦Ã‡Ã¼Â·Ã¾Ã—Â¼Ã”Ã²Â¡Â£
+%Ã“Ã‰Ã“Ãš Tresca Ã“Â¦ÃÂ¦Ã‡Ã¼Â·Ã¾Ã—Â¼Ã”Ã²Ã”ÃšÃŠÃ½Ã‘Â§ÃƒÃ¨ÃŠÃ¶Ã‰ÃÂ³Ã¶ÃÃ–ÃÃ‹Â¹Ã•ÂµÃ£Â£Â¬Ã†Ã¤ÃÂ¬ÃÃ¸ÃÃ”ÃŠÃœÂµÂ½Ã“Â°ÃÃ¬Â£Â¬Ã‹Ã¹Ã’Ã”ÃÃ–Ã”ÃšÂ¶Ã ÃŠÃ½Ã‘ÃÂ¾Â¿Ã•ÃŸÃŠÂ¹Ã“Ãƒ Von Mises Ã“Â¦ÃÂ¦Ã‡Ã¼Â·Ã¾Ã—Â¼Ã”Ã²Â¡Â£
 %\begin{equation}
-%F = \sqrt {\frac{3}{2}\left( {{\mathbf{s}} - {\mathbf{a}}} \right):\left( {{\mathbf{s}} - {\mathbf{a}}} \right)}  - Y
+%F = \sqrt {\frac{3}{2}\left( {{\bf{s}} - {\bf{a}}} \right):\left( {{\bf{s}} - {\bf{a}}} \right)}  - Y
 %\end{equation}
-%µ±Çü·þ±íÃæµÄÐÎ×´²»±äÊ±£¬¼´±³Ó¦Á¦ÖµÎªÁã£¬Ö»ÓÐÇü·þ±íÃæµÄ°ë¾¶ÊÇ±ä»¯µÄÊ±ºò£¬Ò»°ã³ÆÎªµÈÏòÇ¿»¯¡£
-%µ±Çü·þ±íÃæµÄ°ë¾¶²»±äÊ±£¬Çü·þ±íÃæ¿ÉÒÔÒÆ¶¯µ«ÊÇ²»»á¸Ä±äÐÎ×´ºÍ´óÐ¡£¬¼´k ÊÇ²»±äµÄ£¬Éú±ä»¯Ê±£¬Ôò³ÆÎªËæ¶¯Ç¿»¯¡£
-%¶ÔÓÚÑ­»·ËÜÐÔÀ´Ëµ£¬Ò»°ã¼Ù¶¨Çü·þ±íÃæ¿ÉÒÔÒÆ¶¯µ«ÊÇ²»»á¸Ä±äÐÎ×´ºÍ´óÐ¡£¬¼´ÎªËæ¶¯Ç¿»¯¡£
-%¡°Á÷¶¯·¨Ôò¡±½«ËÜÐÔÓ¦±äÔöÁ¿ºÍÆ«Ó¦Á¦ÔöÁ¿ÁªÏµÆðÀ´¡£½ðÊô²ÄÁÏÍ¨³£Ó¦ÓÃµÄ·¨ÔòÊÇÏà¹ØµÄÁ÷¶¯·¨Ôò»òÕßÕýÌ¬Ìõ¼þ£¨Drucker¹«Éè£©¡£
-%¸ù¾Ý¼Ù¶¨£¬¸ÃÓ¦Á¦×´Ì¬ÏÂµÄËÜÐÔÓ¦±äÔöÁ¿ÊÇºÍ´ËÓ¦Á¦×´Ì¬ÏÂµÄÇü·þ±íÃæµÄÍâ·¨Ïò¹²ÏßµÄ¡£ÆäÊýÑ§±í´ïÊ½Îª£º
+%ÂµÂ±Ã‡Ã¼Â·Ã¾Â±Ã­ÃƒÃ¦ÂµÃ„ÃÃŽÃ—Â´Â²Â»Â±Ã¤ÃŠÂ±Â£Â¬Â¼Â´Â±Â³Ã“Â¦ÃÂ¦Ã–ÂµÃŽÂªÃÃ£Â£Â¬Ã–Â»Ã“ÃÃ‡Ã¼Â·Ã¾Â±Ã­ÃƒÃ¦ÂµÃ„Â°Ã«Â¾Â¶ÃŠÃ‡Â±Ã¤Â»Â¯ÂµÃ„ÃŠÂ±ÂºÃ²Â£Â¬Ã’Â»Â°Ã£Â³Ã†ÃŽÂªÂµÃˆÃÃ²Ã‡Â¿Â»Â¯Â¡Â£
+%ÂµÂ±Ã‡Ã¼Â·Ã¾Â±Ã­ÃƒÃ¦ÂµÃ„Â°Ã«Â¾Â¶Â²Â»Â±Ã¤ÃŠÂ±Â£Â¬Ã‡Ã¼Â·Ã¾Â±Ã­ÃƒÃ¦Â¿Ã‰Ã’Ã”Ã’Ã†Â¶Â¯ÂµÂ«ÃŠÃ‡Â²Â»Â»Ã¡Â¸Ã„Â±Ã¤ÃÃŽÃ—Â´ÂºÃÂ´Ã³ÃÂ¡Â£Â¬Â¼Â´k ÃŠÃ‡Â²Â»Â±Ã¤ÂµÃ„Â£Â¬Ã‰ÃºÂ±Ã¤Â»Â¯ÃŠÂ±Â£Â¬Ã”Ã²Â³Ã†ÃŽÂªÃ‹Ã¦Â¶Â¯Ã‡Â¿Â»Â¯Â¡Â£
+%Â¶Ã”Ã“ÃšÃ‘Â­Â»Â·Ã‹ÃœÃÃ”Ã€Â´Ã‹ÂµÂ£Â¬Ã’Â»Â°Ã£Â¼Ã™Â¶Â¨Ã‡Ã¼Â·Ã¾Â±Ã­ÃƒÃ¦Â¿Ã‰Ã’Ã”Ã’Ã†Â¶Â¯ÂµÂ«ÃŠÃ‡Â²Â»Â»Ã¡Â¸Ã„Â±Ã¤ÃÃŽÃ—Â´ÂºÃÂ´Ã³ÃÂ¡Â£Â¬Â¼Â´ÃŽÂªÃ‹Ã¦Â¶Â¯Ã‡Â¿Â»Â¯Â¡Â£
+%Â¡Â°ÃÃ·Â¶Â¯Â·Â¨Ã”Ã²Â¡Â±Â½Â«Ã‹ÃœÃÃ”Ã“Â¦Â±Ã¤Ã”Ã¶ÃÂ¿ÂºÃÃ†Â«Ã“Â¦ÃÂ¦Ã”Ã¶ÃÂ¿ÃÂªÃÂµÃ†Ã°Ã€Â´Â¡Â£Â½Ã°ÃŠÃ´Â²Ã„ÃÃÃÂ¨Â³Â£Ã“Â¦Ã“ÃƒÂµÃ„Â·Â¨Ã”Ã²ÃŠÃ‡ÃÃ Â¹Ã˜ÂµÃ„ÃÃ·Â¶Â¯Â·Â¨Ã”Ã²Â»Ã²Ã•ÃŸÃ•Ã½ÃŒÂ¬ÃŒÃµÂ¼Ã¾Â£Â¨DruckerÂ¹Â«Ã‰Ã¨Â£Â©Â¡Â£
+%Â¸Ã¹Â¾ÃÂ¼Ã™Â¶Â¨Â£Â¬Â¸ÃƒÃ“Â¦ÃÂ¦Ã—Â´ÃŒÂ¬ÃÃ‚ÂµÃ„Ã‹ÃœÃÃ”Ã“Â¦Â±Ã¤Ã”Ã¶ÃÂ¿ÃŠÃ‡ÂºÃÂ´Ã‹Ã“Â¦ÃÂ¦Ã—Â´ÃŒÂ¬ÃÃ‚ÂµÃ„Ã‡Ã¼Â·Ã¾Â±Ã­ÃƒÃ¦ÂµÃ„ÃÃ¢Â·Â¨ÃÃ²Â¹Â²ÃÃŸÂµÃ„Â¡Â£Ã†Ã¤ÃŠÃ½Ã‘Â§Â±Ã­Â´Ã¯ÃŠÂ½ÃŽÂªÂ£Âº
 %\begin{equation}
 %{{\bm{\dot \upepsilon }}^p} = \dot \lambda \frac{{\partial F}}{{\partial {\bm{\upsigma }}}}
 %\end{equation}
 
+\section{Introduction}
+\noindent Gas turbine components are exposed in high temperature and experience cyclic multi-axial thermo-mechanical loadings. The increasing performance requirements to modern gas turbines challenge  the material operating limits. Quantified characterization of deformation and fatigue behavior of materials under realistic conditions becomes increasingly of importance for industrial application \cite{harrison1996modelling}, including variations of structure temperature, mechanical loads as well as environmental conditions. Inconel 718 is the most popular nickel-based superalloy in turbine industry. It is an oxidation- and corrosion-resistant material possessing optimal thermal and mechanical property. It is used for both rotors and casings, so that the low cycle fatigue characterization of the material is of great significance for mechanical design. The operating temperature of Inconel 718 is limited to 650 $^{\circ}$C for the life limited parts, such as discs and shafts.
+A turbine suffers from high temperature low cycle fatigue (LCF) as well as thermo-mechanical fatigue (TMF).
+The LCF and TMF behaviors of the nickel-based superalloy are the major concern for the safety and reliability of gas turbine engines.
+
+Predicting fatigue performance of mechanical components needs a reliable constitutive description of the material. There were numerous studies on low cycle fatigue of the nickel-based superalloy published. In the past decades numerous constitutive models for cyclic inelasticity have been published \cite{ohno1993kinematic, Pun2014138, AbdelKarim2000225, Kang2004299}, based on the concept introduced by Armstrong and Frederick \cite{armstrong1966mathematical}. Kobayashi et al. \cite{Kobayashi2008389} and Pereira and Lerch \cite{Pereira2001715} studied Inconel 718 behavior using the Johnson-Cook constitutive relation and, however, did not take the cyclic softening behavior into account.
+Bai and Wierzbicki \cite{Bai20081071} modified the classical metal plasticity by taking the dependency of the Lode angle and stress triaxiality into account, which was extended by Algarni et al.  \cite{Algarni2015140} to describe the evolution of yield surface under monotonic loading conditions. Becker and Hackenberg \cite{Becker2011596} suggested a limit surface concept and described the material behavior for a wide temperature range under monotonic and cyclic loading.
+Farrahi  \cite{Farrahi2014245} applied two plasticity approaches including the spring-slider rule of Nagode and the hardening rule of Chaboche to simulate cyclic behaviors.
+Ohmenh\"{a}user (2014) \cite{Ohmenhauser2014631} adopted a two-layer rheological constitutive model for cyclic thermo-mechanical loading conditions.
+However, neither non-proportionality nor multi-axiality of the applied loads was considered under thermo-mechanical cyclic loading conditions.
+The alloy Inconel 718 exhibited a pronounced initial cyclic hardening then became continuous cyclic softening at high strain amplitudes. Experiments revealed that the conventional constitutive equations are not suitable to give correct stress and strain predictions for Inconel 718. The conventional constitutive models have to be improved to take the multi-axial, thermo-mechanical and cyclic loading conditions into account.
+
+Zhu et al. \cite{ZHU2016} introduced a cyclic elasto-viscoplastic constitutive model for thermo-mechanically coupled problems. The model introduced the energy conservation in viscoplastic deformations and considered heating exchange due to high strain rate as well as its effects to mechanical behavior of the material. The work is interesting for metal forming, but not related to thermo-mechanical fatigue, in which the description of materials mechanical behavior under complex loading condition is of importance. 
+Development of a reliable cyclic plasticity with experimental verification is necessary for predicting thermo-mechanical fatigue performance.
+
+The present work focuses on the multi-axial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 300 and 650$^{\circ}$C. Effects of non-proportional cyclic loading as well as thermo-mechanical coupling are studied. Inconel 718 was proven to be hardly influenced by the strain rate below 650$^{\circ}$C under realistic loading speed \cite{kim1988elevated, Schlesinger2017}, and the constitutive model is assumed to be rate-independent. However,  experiments reveal complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermo-mechanical phase effect, non-masing effect etc. Quantitative description of the material behavior needs a constitutive model based on extensive experimental investigation. In the present work a modified cyclic plasticity model is suggested for the nickel-based superalloy Inconel 718 under multi-axial thermo-mechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermo-mechanical fatigue loading components.
 
 \section{A review of some cyclic plasticity theories}
 \subsection{Kinematic hardening models}
@@ -35,9 +51,9 @@ kinematic hardening.
 In kinematic hardening, the yield surface translates in stress space, rather than expanding.
 The yield function describing the yield surface must now also depend on the location of the surface in stress space, i.e.,
 \begin{equation}
-F = \sqrt {\frac{3}{2}\left( {{\mathbf{s}} - {\mathbf{a}}} \right):\left( {{\mathbf{s}} - {\mathbf{a}}} \right)}  - Y,
+F = \sqrt {\frac{3}{2}\left( {{\bf{s}} - {\bf{a}}} \right):\left( {{\bf{s}} - {\bf{a}}} \right)}  - Y,
 \end{equation}
-in which $\mathbf{a}$ is the kinematic hardening variable and is often called a back stress.
+in which $\bf{a}$ is the kinematic hardening variable and is often called a back stress.
 Because it is a variable defined in stress space, it has the same components as stress.
 A kinematic hardening model must include the evolution functions of back stress.
 A review of some kinematic hardening models is introduced as following.
@@ -48,18 +64,18 @@ A review of some kinematic hardening models is introduced as following.
 \subsection{Prager model}
 Prager (1949) \cite{prager1949recent} introduce a simple linear kinematic hardening model, in which the evolution of the back-stress is collinear with the evolution of the plastic strain:
 \begin{equation}
-{\mathbf{\dot a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}_{}^p,
+{\dot{\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}_{}^p,
 \end{equation}
 and
 \begin{equation}
-{\mathbf{ a}} = \frac{2}{3}c{\bm{ \upepsilon }}_{}^p,
+{\bf{ a}} = \frac{2}{3}c{\bm{ \upepsilon }}_{}^p,
 \end{equation}
 in which $c$ is a material constant, the increment in kinematic hardening to be proportional to the increment
 in plastic strain.
 \subsection{Armstrong and Frederick model}
 A better description is given by the model proposed initially by Armstrong and Frederick (1966) \cite{armstrong1966mathematical} introducing a recall term, called dynamic recovery:
 \begin{equation}
-{\mathbf{\dot a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}_{}^p - \gamma {\bf{a}}\dot p,
+{\dot {\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}_{}^p - \gamma {\bf{a}}\dot p,
 \end{equation}
 in which $c,\gamma$ are material constants.
 The second term on the right hand side is called the recall term which is collinear with back stress $\bf{a}$ and is proportional to the norm of the plastic strain rate. The evolution of $\bf{a}$ instead of being linear, is then exponential for a monotonic uniaxial loading, with a saturation for a value $c/\gamma $.
@@ -67,16 +83,16 @@ The second term on the right hand side is called the recall term which is collin
 Nonlinear hardening rules based on the Armstrong and Frederick (A-F) relation have been expressed in the form of a series expansion of the back stress.
 It was postulated by Chaboche (1983) \cite{chaboche1983plastic} that the total back stress is composed of additive parts:
 \begin{equation}
-{\mathbf{a}} = \sum\limits_{i = 1}^M {{{\mathbf{a}}_i}},
+{\bf{a}} = \sum\limits_{i = 1}^M {{{\bf{a}}_i}},
 \end{equation}
-where ${\mathbf{a}}$ is the total back stress, ${{{\mathbf{a}}_i}}$ is a part of the total back stress, $i = 1\sim M$ , and $M$ is the number of back stress parts considered. Each back stress, ${{{\mathbf{a}}_i}}$ follows an A-F type relation:
+where ${\bf{a}}$ is the total back stress, ${{{\bf{a}}_i}}$ is a part of the total back stress, $i = 1\sim M$ , and $M$ is the number of back stress parts considered. Each back stress, ${{{\bf{a}}_i}}$ follows an A-F type relation:
 \begin{equation}
-{{\mathbf{\dot a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}{{\mathbf{a}}_i}\dot p.
+{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}{{\bf{a}}_i}\dot p.
 \end{equation}
 
 Instead of using a nonlinear dependency (of the back-stress norm) in the dynamic recovery term, it was proposed by Chaboche (1991) \cite{Chaboche1991661} to introduce a threshold. The structure of the additional back-stress evolution equation is then:
 \begin{equation}
-{\bf{\dot a}}_i = \frac{2}{3}c_i{{\bm{\dot \upepsilon }}^p} - {\gamma _i} \left\langle {1 - \frac{{\bf{a}}_i}{{\left\| {\bf{a}}_i \right\|}}} \right\rangle {\bf{a}}_i\dot p,
+{\dot{\bf a}}_i = \frac{2}{3}c_i{{\bm{\dot \upepsilon }}^p} - {\gamma _i} \left\langle {1 - \frac{{\bf{a}}_i}{{\left\| {\bf{a}}_i \right\|}}} \right\rangle {\bf{a}}_i\dot p,
 \end{equation}
 where
 \begin{equation}
@@ -86,7 +102,7 @@ where
 After the model with a threshold in the dynamic recovery term, it was proposed by Ohno and Wang (1993) \cite{ohno1993kinematic} a slightly different approach, introducing a critical state of dynamic recovery.
 The total back stress is composed of additive parts:
 \begin{equation}
-{\bf{\dot a}} = \sum\limits_{i = 1}^M {{{{\bf{\dot a}}}_i}},
+{\dot{\bf a}} = \sum\limits_{i = 1}^M {{{{\dot{\bf a}}}_i}},
 \end{equation}
 For each back stress, $\bf{a}_i$, it takes two forms as following.
 
@@ -96,7 +112,7 @@ The critical state is introduced by a surface ${f_i} = \left\| {{{\bf{a}}_i}} \r
 The recovery term operates only when the back stress attains this surface.
 In that case, under proportional loading, the back-stress rate vanishes. It writes:
 \begin{equation}
-{{\bf{\dot a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}H\left( {{f_i}} \right)\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle {{\bf{a}}_i}\dot p,
+{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}H\left( {{f_i}} \right)\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle {{\bf{a}}_i}\dot p,
 \end{equation}
 in which
 \begin{equation}
@@ -104,7 +120,7 @@ in which
 \end{equation}
 or
 \begin{equation}
-{{\bf{\dot a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - H\left( {{f_i}} \right)\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right],
+{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - H\left( {{f_i}} \right)\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right],
 \label{Eqn:Introduction2}
 \end{equation}
 where $H$ is the Heaviside step function, ${\bf{n}}$ the plastic strain rate direction.
@@ -113,38 +129,37 @@ This version will never predict ratchetting under stationary conditions.
 
 \textbf{Model II}, the smooth version, more realistic, replaces the Heaviside step function by a power function:
 \begin{equation}
-{{\bf{\dot a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}{\left( {\frac{{\left\| {{{\bf{a}}_i}} \right\|}}{{{c^k}/{\gamma ^k}}}} \right)^{{m_i}}}\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle {{\bf{a}}_i}\dot p,
+{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}{\left( {\frac{{\left\| {{{\bf{a}}_i}} \right\|}}{{{c^k}/{\gamma ^k}}}} \right)^{{m_i}}}\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle {{\bf{a}}_i}\dot p,
 \end{equation}
 or
 \begin{equation}
-{{\bf{\dot a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {{\left( {\frac{{{{\bar a}_i}}}{r}} \right)}^{{m_i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right].
+{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {{\left( {\frac{{{{\bar a}_i}}}{r}} \right)}^{{m_i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right].
 \end{equation}
 Though not necessary, the Macaulay bracket $\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle$ continues to operate in this smooth version, and will play a significant role in reducing ratchetting.
 
-
 \subsection{Karim and Ohno model}
-In the first version of the Ohno and Wang model, on the other hand, the dynamic recovery of ${{\bf{a}}_i}$ is assumed to take place only in a critical state, which is taken to be a hyper sphere of radius $r_i$ in the space of ${{\bf{a}}_i}$ such as
+In the first version of the Ohno and Wang's model, the dynamic recovery of ${{\bf{a}}_i}$ is assumed to take place only in a critical state, which is taken to be a hyper sphere of radius $r_i$ in the space of ${{\bf{a}}_i}$ such as
 \begin{equation}
 {f_i} = \frac{3}{2}{{\bf{a}}_i}:{{\bf{a}}_i} - r_i^2 = 0.
 \end{equation}
 Let us assume the two kinds of dynamic recovery terms mentioned above. Then, with Heaviside's step function and Macaulay bracket, the evolution equation of ${{\bf{a}}_i}$ can be expressed as
 \begin{equation}
-{{\bf{\dot a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {\mu _i}{{\bf{a}}_i}\dot p - H\left( {{f_i}} \right)\left\langle {{{\dot \lambda }_i}} \right\rangle {{\bf{a}}_i}} \right],
+{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {\mu _i}{{\bf{a}}_i}\dot p - H\left( {{f_i}} \right)\left\langle {{{\dot \lambda }_i}} \right\rangle {{\bf{a}}_i}} \right],
 \label{Equ:Introduction1}
 \end{equation}
 where $\zeta_i$ and $\mu_i$ are material parameters, and ${\dot \lambda }_i$ is determined to have the following form using the consistency condition ${\dot f_i} = 0$:
 \begin{equation}
-{\dot \lambda _i} = {{\bm{ \upepsilon }}^p}:\frac{{{{\bf{a}}_i}}}{{{r_i}}} - {\mu _i}\dot p
+{\dot \lambda _i} = {{\bm{ \upepsilon }}^p}:\frac{{{{\bf{a}}_i}}}{{{r_i}}} - {\mu _i}\dot p.
 \end{equation}
 The second and third terms in the right hand side in Equation \ref{Equ:Introduction1} express the dynamic recovery of $\bf{a}_i$ based on the Armstrong and Frederick model and the Ohno and Wang model, respectively, whereas the first term is responsible for strain hardening.
 \begin{equation}
-{{\bf{\dot a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{r_i}}}} \right\rangle {{\bf{a}}_i}} \right)
+{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{r_i}}}} \right\rangle {{\bf{a}}_i}} \right),
 \end{equation}
 where $0 \le {\mu _i} \le 1$ Critical examination for this rule indicates that continuous ratchetting with constant rate occurs as long as ${\mu _i} > 0$ while complete shakedown takes place as ${\mu _i} = 0$ since the rule reduces to the original Ohno-Wang multi-linear rule defined by Equation \ref{Eqn:Introduction2}.
 
 \subsection{Jiang and Sehitoglu model}
 \begin{equation}
-{{\bf{\dot a}}_i} = {c_i}{r_i}\left[ {{\bf{n}} - {{\left( {\frac{{\left\| {{{\bf{a}}_i}} \right\|}}{{{r_i}}}} \right)}^{{\chi _i} + 1}}{{\bf{L}}_i}} \right]\dot p,
+{{\dot{\bf a}}_i} = {c_i}{r_i}\left[ {{\bf{n}} - {{\left( {\frac{{\left\| {{{\bf{a}}_i}} \right\|}}{{{r_i}}}} \right)}^{{\chi _i} + 1}}{{\bf{L}}_i}} \right]\dot p,
 \end{equation}
 where ${{\bf{L}}_i} = \frac{{{{\bf{a}}_i}}}{{\left\| {{{\bf{a}}_i}} \right\|}}$.
 Cyclic hardening/softening, progressive elevation or decrease in flow strength with cycles results in cyclic hardening or softening, respectively.
@@ -160,154 +175,187 @@ When the material behavior is mixed hardening/softening, all three terms are nec
 \subsection{Kang model}
 Kang considered the Abdel-Karim and Ohno rule and incorporated the accumulated plastic strain increment within dynamic recovery term rather than the plastic strain increment:
 \begin{equation}
-{{\bf{\dot a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\dot p{{\bf{a}}_i}} \right)
+{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\dot p{{\bf{a}}_i}} \right)
 \end{equation}
 It is clear that, as $\mu_i=0$ this rule reduces to the modified Ohno-Wang rule defined by Equation \ref{Eqn:Introduction2} while it reduces to the Armstrong-Frederick rule when $\mu_i>0$.
 
 \subsection{Chen model}
 Chen et al. (2005) introduced a multiplying factor to the dynamic recovery term that considers non-proportionality of the plastic strain and back stress:
 \begin{equation}
-{{\bf{\dot a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {{\left( {\frac{{{{\bar a}_i}}}{{{r_i}}}} \right)}^{{m_i}}}{{\left\langle {{\bf{n}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle }^{{\chi _i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right)
+{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {{\left( {\frac{{{{\bar a}_i}}}{{{r_i}}}} \right)}^{{m_i}}}{{\left\langle {{\bf{n}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle }^{{\chi _i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right)
 \end{equation}
 
+\section{The cyclic plasticity model}
 
-
-
-
-
-\section{Constitutive model}
-\label{}
-\subsection{Continuous formulation of the constitutive model}
-The Continuous formulation of the constitutive model requires an initial yield condition, plastic flow rule and hardening rule.
-The initial yield condition determines whether plastic deformation will occur or not.
-The plastic flow rule is used to calculate the magnitude of the plastic strain increment tensor and its direction in the strain space.
-Hardening rule modifies the initial yield condition in the plastic flow direction based on the loading magnitude and direction.
-In framework of rate independent and initially isotropic elastic-plastic materials, we assume that strain is small and is additively decomposed into the elastic (${\bm{\upepsilon }}^e$) and plastic (${\bm{\upepsilon }}^p$) part:
+\subsection{Formulation of the constitutive model}
+\noindent
+In the framework of the rate independent and initially isotropic plasticity, the strain rate can be additively decomposed into the elastic and plastic  part, as
 \begin{equation}
-{\bm{\upepsilon }} = {{\bm{\upepsilon }}^e} + {{\bm{\upepsilon }}^p},
+\dotbfepsilon = {\dotbfepsilon}^e + {\dotbfepsilon}^p.
 \end{equation}
-which can be written in the rate form:
+The elastic strain and total stress are subjected to Hooke's law,
 \begin{equation}
-{\bm{\dot \upepsilon }} = {{\bm{\dot \upepsilon }}^e} + {{\bm{\dot \upepsilon }}^p}.
-\end{equation}
-The elastic strain and total stress are subjected to Hooke's law:
-\begin{equation}
-{\bm{\upsigma }} = {\mathbb{D}^e}:{{\bm{\upepsilon }}^e}
+{\dot\bfsigma} = {\mathbb{D}^e}:{\dot\bfepsilon^e},
 \label{Equ:HookesLaw}
 \end{equation}
-where ${\mathbb{D}^e}$ is the fourth-ordered isotropic elastic stiffness tensor. Hereafter, $(:)$ will indicate the inner product between two tensors, and the following symbols will be used: $(\cdot)$ the differentiation with respect to time, $H(\cdot)$ the Heaviside step function, $\parallel\cdot\parallel$ the Euclidean norm of second rank tensors, and $<\cdot>$ the Macauley bracket.
+where ${\mathbb{D}^e}$ is the fourth-order isotropic elastic stiffness tensor. Hereafter, $(:)$ indicates the inner product between two tensors. $(\dot{\quad})$ denotes the differentiation with respect to time.
 
-In the framework of rate-independent plasticity, the yield surface and the evolution equation for the plastic strain from the classical principle of maximum dissipation as:
+The evolution of the plastic strain can be determined from the flow rule as
 \begin{equation}
-{{\bm{\dot \upepsilon }}^p} = \dot \lambda \frac{{\partial F}}{{\partial {\bm{\upsigma }}}}
+{\dotbfepsilon}^p = \dot \lambda \frac{{\partial F}}{{\partial {\bfsigma}}},
 \end{equation}
+with
 \begin{equation}
-F = \sqrt {\frac{3}{2}\left( {{\mathbf{s}} - {\mathbf{a}}} \right):\left( {{\mathbf{s}} - {\mathbf{a}}} \right)}  - Y
+F = \sqrt {\frac{3}{2}\left( {\bfs - \bfa} \right):\left( {\bfs - \bfa} \right)}  - Y=0,
 \end{equation}
-where ${\mathbf{s}}$ denotes the deviatoric part of ${\bm{\upsigma }}$, deviatoric back stress ${\mathbf{a}}$ is the center of the yield surface in the deviatoric space, yield stress $Y$ is the radius of the yield surface and $\dot \lambda$ is the scalar to be determined using the consistency condition $\dot F = 0$.
+as the yield function, where $\bfs$ denotes the deviatoric part of the stress ${\bfsigma}$, the deviatoric backstress $\bfa$ describes the center of the yield surface $F$ in the deviatoric stress space, the yield stress $Y$ is the radius of the yield surface and $\dot \lambda$ is the scalar to be determined using the consistency condition $\dot F = 0$.
 
-The backstress formulation is an essential ingredient of the modeling of cyclic plasticity.
+The backstress is the essential ingredient of the cyclic plasticity, as initially introduced by Chaboche \cite{Chaboche1986149}, as
 \begin{equation}
-{\mathbf{a}} = \sum\limits_{k = 1}^M {{{\mathbf{a}}^k}}
+\bfa = \sum\limits_{k = 1}^M {{\bfa^k}},
 \end{equation}
+where $M$ denotes the number of partial backstresses.
 
-where $M$ denotes the number of parts of back stress.
-
-Moreover, we can justify considering strain hardening and dynamic recovery for the evolution of each ${{\mathbf{a}}^k} ( k = 1,2,3,...,M )$ :
+Following suggestions by D\"orring et al. \cite{Doerring2003} and Abdel Karim et al. \cite{AbdelKarim20051303}, Fang \cite{fang2015cyclic} suggested that the evolution equation of the backstress can be expressed as
 \begin{equation}
 \label{Equ:dotak1}
-{{\mathbf{\dot a}}^k} = {h^k}\frac{2}{3}{{\bm{\dot \upepsilon }}^p} - H\left( {{f^k}} \right){\dot \omega ^k}\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}
+{\dot\bfa^k} = {h^k}\frac{2}{3}{\dotbfepsilon^p} - H\left( {{f^k}} \right){\dot \omega ^k}\frac{{{\bfa^k}}}{{{r^k}}},
 \end{equation}
-where ${{{h}}^k} ( k = 1,2,3,...,M )$ and ${{{r}}^k} ( k = 1,2,3,...,M )$ are the material parameters, and ${{{f}}^k} ( k = 1,2,3,...,M )$ define a series of critical state surfaces in deviatoric stress space:
+where ${{{h}}^k} $ and ${{{r}}^k} $ are the state variables introduced to describe cyclic plasticity of the material, $r^k$ is a function of accumulated plastic strain, i.e. ${r^k} = {r^k}\left( p \right)$.  Note no summation convention is applied for $k$. ${{{f}}^k} $ defines a series of the critical state surface in the deviatoric stress space,
 \begin{equation}
 \label{Equ:fk}
-{f^k} = \frac{3}{2}{{\mathbf{a}}^k}:{{\mathbf{a}}^k} - {\left( {{r^k}} \right)^2}
+{f^k} = \frac{3}{2}{\bfa^k}:{\bfa^k} - {\left( {{r^k}} \right)^2}.
 \end{equation}
-According to Equation \ref{Equ:fk}, the recovery term is non-zero only when ${f^k} = 0$.
-
-In this work, we suggest that $r^k$ is a function of accumulated plastic strain, i.e. ${r^k} = {r^k}\left( p \right)$. We can derive ${\dot \omega ^k}$ with the consistent condition ${\dot f^k} = 0$ and it gives:
-\begin{equation}
+Above  $H(\cdot)$ denotes the Heaviside step function. According to Eq. (\ref{Equ:fk}), the recovery term is non-zero only when ${f^k} = 0$. In the article $r^k$ is assumed to be a function of the accumulated plastic strain and ${\dot \omega ^k}$ is derived from the consistent condition ${\dot f^k} = 0$. It follows
+\begin{eqnarray}
 \label{Equ:dotfk}
-{\dot f^k} = 3{{\mathbf{a}}^k}:{{\mathbf{\dot a}}^k} - 2{r^k}{\dot r^k} = 3{{\mathbf{a}}^k}\left[ {{h^k}\frac{2}{3}{{{\bm{\dot \upepsilon }}}^p} - H\left( {{f^k}} \right){{\dot \omega }^k}\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}} \right] - 2{r^k}{\dot r^k} = 0
-\end{equation}
-
-When $H\left( {{f^k}} \right) = 1$, we obtain:
+{\dot f^k} &=& 3{\bfa^k}:{\dot\bfa^k} - 2{r^k}{\dot r^k} \\ \nonumber
+&=& 3{\bfa^k}:\left[ {{h^k}\frac{2}{3}{{\dotbfepsilon}^p} - H\left( {{f^k}} \right){{\dot \omega }^k}\frac{{{\bfa^k}}}{{{r^k}}}} \right] - 2{r^k}{\dot r^k} = 0.
+\end{eqnarray}
+When $H\left( {{f^k}} \right) = 1$, it results in
 \begin{equation}
 \label{Equ:dotomegak}
-{\dot \omega ^k} = {h^k}\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}:{{\bm{\dot \upepsilon }}^p} - {\dot r^k}
+{\dot \omega ^k} = {h^k}\frac{{{\bfa^k}}}{{{r^k}}}:{\dotbfepsilon^p} - {\dot r^k}.
 \end{equation}
-
-Substituting ${\dot \omega ^k}$ in Equation \ref{Equ:dotak1}, we have:
-\begin{equation}
+Substituting ${\dot \omega ^k}$ into Eq. (\ref{Equ:dotak1}) follows
+\begin{eqnarray}
 \label{Equ:dotak2}
-{{\mathbf{\dot a}}^k} = {h^k}\frac{2}{3}{{\bm{\dot \upepsilon }}^p} - H\left( {{f^k}} \right){h^k}\left\langle {\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}:{{{\bm{\dot \upepsilon }}}^p}} \right\rangle \frac{{{{\mathbf{a}}^k}}}{{{r^k}}} + H\left( {{f^k}} \right)\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}{\dot r^k}
-\end{equation}
+{\dot\bfa^k} &=& \frac{2}{3}{h^k}{\dotbfepsilon^p} - H\left( {{f^k}} \right){h^k}\left\langle {\frac{{{\bfa^k}}}{{{r^k}}}:{{\dotbfepsilon}^p}} \right\rangle \frac{{{\bfa^k}}}{{{r^k}}} + H\left( {{f^k}} \right)\frac{{{\bfa^k}}}{{{r^k}}}{\dot r^k},
+\end{eqnarray}
+with $\left<\cdot\right>$ as the Macauley brackets.
 
-Combining Equation \ref{Equ:dotak2} with Armstrong and Frederick model as done by Adbel-Karim and Ohno, each ${{\mathbf{a}}^k}$ obeys the following evolution rule:
-\begin{equation}
+Combining Eq. (\ref{Equ:dotak2}) with Armstrong and Frederick model as suggested by Adbel-Karim and Ohno  \cite{AbdelKarim20051303},  ${\bfa^k}$ obeys the following evolution rule, as
+\begin{eqnarray}
 \label{Equ:dotak3}
-{{\mathbf{\dot a}}^k} = {r^k}{\zeta ^k}\left[ {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^p} - {\mu ^k}\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}\dot p - H\left( {{f^k}} \right)\left\langle {\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}:{{{\bm{\dot \upepsilon }}}^p} - {\mu ^k}\dot p} \right\rangle \frac{{{{\mathbf{a}}^k}}}{{{r^k}}}} \right] + H\left( {{f^k}} \right)\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}{\dot r^k}
-\end{equation}
-where ${\zeta ^k}( k = 1,2,3,...,M )$ are material constants and have the relation ${h^k} = {r^k}{\zeta ^k}$, ${\mu ^k}( k = 1,2,3,...,M )$ are the combination parameters with $0 \leqslant {\mu ^k} \leqslant 1$. When ${\dot r^k} = 0$ and ${\mu ^k} = 0$, the combined model above is reduced to the Ohno and Wang model. When ${\dot r^k} = 0$ and ${\mu ^k} = 1$, the combined model above is reduced to the Armstrong and Frederick model. Thus, if ${\mu ^k}$ are set larger, the combined model predicts more significant ratcheting and cyclic stress relaxation.
+{\dot\bfa^k} &=& {r^k}{\zeta ^k}\left[ \frac{2}{3}{{\dotbfepsilon}^p} - {\mu ^k}\frac{\bfa^k}{r^k}\dot p - H\left( {f^k} \right) \left\langle {\frac{\bfa^k}{r^k}:{\dotbfepsilon}^p} - {\mu ^k}\dot p \right\rangle \frac{\bfa^k}{r^k} \right]
++ H\left( {f^k} \right)\frac{\bfa^k}{r^k}{\dot r^k},
+\end{eqnarray}
+where ${\zeta ^k}$ is the material constant related to ${h^k} = {r^k}{\zeta ^k}$. ${\mu ^k}$ is the combination parameter with $0 \leqslant {\mu ^k} \leqslant 1$. When ${\dot r^k} = 0$ and ${\mu ^k} = 0$, the modified model here is reduced to the known Ohno and Wang model. For ${\dot r^k} = 0$ and ${\mu ^k} = 1$, the  model above is reduced to the Armstrong and Frederick model. Thus, for large ${\mu ^k}$, the present model predicts more significant ratcheting and cyclic stress relaxation.
 
-As shown by Kang, it is convenient to normalize by:
+As shown by Kang \cite{Kang2004299}, it is convenient to normalize the variable $\bfa_k$ by $r^k$ as
 \begin{equation}
 \label{Equ:ak1}
-{{\mathbf{a}}^k} = {r^k}{{\mathbf{b}}^k}
+{\bfa^k} = {r^k}{\bfb^k},
 \end{equation}
-
-Also the critical states are normalized into the unit form as:
+with
 \begin{equation}
-{f^k} = \frac{3}{2}{{\mathbf{b}}^k}:{{\mathbf{b}}^k} - 1 = 0
+{f^k} = \frac{3}{2}{\bfb^k}:{\bfb^k} - 1 = 0.
 \end{equation}
-
-Then we have:
+It follows
 \begin{equation}
-{{\mathbf{\dot b}}^k} = \frac{{{{{\mathbf{\dot a}}}^k}}}{{{r^k}}} - \frac{{{{\dot r}^k}}}{{{r^k}}}{{\mathbf{b}}^k}
+{\dot\bfb^k} = {\zeta ^k}\left( {\frac{2}{3}{\dotbfepsilon^p} - {\bfb^k}{{\dot p}^k}} \right) + \left[ {H\left( {{f^k}} \right) - 1} \right]\frac{{{{\dot r}^k}}}{{{r^k}}}{\bfb^k},
 \end{equation}
 \begin{equation}
-{{\mathbf{\dot b}}^k} = {\zeta ^k}\left( {\frac{2}{3}{{{\mathbf{\dot \varepsilon }}}^p} - {{\mathbf{b}}^k}{{\dot p}^k}} \right) + \left[ {H\left( {{f^k}} \right) - 1} \right]\frac{{{{\dot r}^k}}}{{{r^k}}}{{\mathbf{b}}^k}
-\end{equation}
-\begin{equation}
-{\dot p^k} = \left[ {{\mu ^k} + H\left( {{f^k}} \right)\left\langle {\sqrt {\frac{3}{2}} {{\mathbf{b}}^k}:{\mathbf{n}} - {\mu ^k}} \right\rangle } \right]\dot p
-\end{equation}
-where ${\mathbf{n}} = \frac{{{\mathbf{s}} - {\mathbf{a}}}}{{\left\| {{\mathbf{s}} - {\mathbf{a}}} \right\|}}$ is the normal direction of the yield surface.
-
-\subsection{Cyclic hard/softening}
-Metals subjected to alternating tensile and compressive loads during strain controlled experiments give characteristic stress-strain relationships. Observations on stress-strain hysteresis loops of austenite stainless steel have shown that the peak stresses of each loop are not monotonic increasing or decreasing. The peak stresses become larger at the beginning loops and reach the maximum value during around hundreds of cycles. However, after that the peak stresses become smaller until the steady state is achieved. We suggest that $r^k$ consists of two parts $r_0^k$ and $r_{\Delta}^k$ which can be estimated from the monotonic tension curve and cyclic tension-compression curve respectively:
-\begin{equation}
-\label{Equ:rk1}
-{r^k} = r_0^k + r_\Delta ^k
-\end{equation}
-
-In Equation \ref{Equ:rk1}, $r_\Delta ^k$ are assumed to dependent on the equivalent plastic strain $p$ via:
-\begin{equation}
-\label{Equ:rdeltak1}
-%r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} + a_2^k({e^{ - b_2^kp}} - {e^{ - b_3^kp}})} \right]
-r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right]
-\end{equation}
-
-\subsection{Dynamic recovery and plastic strain memorization}
-The plastic strain based memory surface proposed by Chaboche is defined as:
-\begin{equation}
-\label{Equ:g1}
-g = \sqrt {\frac{2}{3}\left( {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right):\left( {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right)}  - q
-\end{equation}
-where, $\bm{\upbeta}$ and $q$ represent the radius and center of the non-hardening surface respectively.
-Updating of the memory state is only available when the current plastic strain is on the surface (i.e. $g=0$) and the flow direction is towards out of the surface (i.e. $\frac{{\partial g}}{{\partial {{\bm{\upepsilon }}^p}}}:d{{\bm{\upepsilon }}^p} > 0$). $\bm{\upbeta}$ and $q$ respectively obey the following evolution rule:
-\begin{equation}
-\label{Equ:dotbeta1}
-\dot{\bm{\upbeta}}  = \left( {1 - \eta } \right)H\left( g \right)\left\langle {{\mathbf{n}}:{{\mathbf{n}}^*}} \right\rangle \sqrt {\frac{3}{2}} {{\mathbf{n}}^*}\dot p
-\end{equation}
-\begin{equation}
-\label{Equ:dotq1}
-\dot q = \eta H\left( g \right)\left\langle {{\mathbf{n}}:{{\mathbf{n}}^*}} \right\rangle \dot p
+{\dot p^k} = \left[ {{\mu ^k} + H\left( {{f^k}} \right)\left\langle {\sqrt {\frac{3}{2}} {\bfb^k}:\bfn - {\mu ^k}} \right\rangle } \right]\dot p,
 \end{equation}
 where
 \begin{equation}
-\label{Equ:nstar}
-{{\mathbf{n}}^*} = \frac{{\partial g}}{{\partial {{\bm{\upepsilon }}^p}}} = \frac{{{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}}}{{\left\| {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right\|}}
+\bfn = \frac{{\bfs - \bfa}}{{\left\| {\bfs - \bfa} \right\|}},
 \end{equation}
+is the normal direction of the yield surface. Here $\parallel\cdot\parallel$ is the Euclidean norm of a second rank tensor.
+
+
+\subsection{Cyclic hardening/softening}
+\noindent
+The characteristic stress-strain curve for cyclic loading is obtained from material testing subjected to alternating loads. Observations on stress-strain hysteresis loops of the austenite stainless steel showed that the peak stresses were not monotonic to plastic strain \cite{fang2015cyclic}. The steel demonstrated initial cyclic hardening behavior and then cyclic softening. Before the final failure occurs, the material showed secondary hardening. To describe such complex behavior $r^k$ should consist of two parts, $r_0^k$ and $r_{\Delta}^k$  \cite{fang2015cyclic}, that is,
+\begin{equation}
+\label{Equ:rk1}
+{r^k} = r_0^k + r_\Delta ^k,
+\end{equation}
+which can be identified from the monotonic tension curve and cyclic tension-compression curve, respectively.
+Above $r_\Delta ^k$ is assumed to depend on the accumulated plastic strain $p$,
+\begin{equation}
+\label{Equ:rdeltak1}
+%r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} + a_2^k({e^{ - b_2^kp}} - {e^{ - b_3^kp}})} \right]
+r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right].
+\label{Equ:rdeltak}
+\end{equation}
+The dependence on plastic strain allows more accurate description of the cyclic hardening as well as softening behavior of the material.
+
+\subsection{Dynamic recovery and plastic strain memorization}
+\noindent
+The plastic strain based memory surface proposed by Chaboche \cite{Chaboche1986149} is defined as
+\begin{equation}
+\label{Equ:g1}
+g = \sqrt {\frac{2}{3}\left( {{\bfepsilon^p} - \bfbeta} \right):\left( {{\bfepsilon^p} - \bfbeta} \right)}  - q,
+\end{equation}
+where $\bfbeta$ and $q$ represent the radius and center of the non-hardening surface, respectively.
+Updating of the memory state is only available when the current plastic strain is on the surface (i.e. $g=0$) and the flow direction is outwards of the surface, that is,
+\begin{equation}
+\frac{{\partial g}}{{\partial {\bfepsilon^p}}}:d{\bfepsilon^p} > 0.
+\end{equation}
+Above $\bfbeta$ and $q$ respectively obey the following evolution rules,
+\begin{equation}
+\label{Equ:dotbeta1}
+\dot\bfbeta  = \left( {1 - \eta } \right)H\left( g \right)\left\langle {\bfn:{\bfn^*}} \right\rangle \sqrt {\frac{3}{2}} {\bfn^*}\dot p,
+\end{equation}
+in which
+\begin{equation}
+\label{Equ:dotq1}
+\dot q = \eta H\left( g \right)\left\langle {\bfn:{\bfn^*}} \right\rangle \dot p,
+\end{equation}
+with
+\begin{equation}
+\label{Equ:nstar}
+{\bfn^*} = \frac{{\partial g}}{{\partial {\bfepsilon^p}}} = \frac{{{\bfepsilon^p} - \bfbeta}}{{\left\| {{\bfepsilon^p} - \bfbeta} \right\|}}.
+\end{equation}
+
+\subsection{Non-proportional hardening}
+\noindent
+In the article the non-proportional hardening is considered in an additional term of the isotropic hardening, as
+\begin{equation}
+Y = {Y_0} + {Y_{\Delta np}},
+\end{equation}
+where $Y_0$ denotes the yield stress for proportional loading and ${Y_{\Delta np}}$ is the non-proportional hardening defined by
+\begin{equation}
+{\dot Y_{\Delta np}} = {\gamma _p}\left( {{Y_{\rm sat}} - {Y_{\Delta np}}} \right)\dot p.
+\end{equation}
+Integrating the above equation with the initial condition ${Y_{\Delta np}}(0)=0$ follows
+\begin{equation}
+{Y_{\Delta np}} = Y_{\rm sat}\left( 1-e^{- \gamma_p p} \right),
+\end{equation}
+where $Y_{\rm sat}$ is the saturated value of ${Y_{\Delta np}}$ under a non-proportional loading path.
+Tanaka introduced a non-proportionality factor \cite{tanaka1994nonproportionality},
+\begin{equation}
+\phi  = \sqrt {1 - \frac{{\bfn:\mathbb{C}:\mathbb{C}:\bfn}}{{\mathbb{C}::\mathbb{C}}}}
+\end{equation}
+to quantify influence of the non-proportional load path to the material behavior.  $\mathbb{C}$ is a fourth-rank tensor and represents the internal dislocation structure \cite{tanaka1994nonproportionality}, as
+\begin{equation}
+\dot {\mathbb{C}} = {c_c}\left( {\bfn \otimes \bfn - \mathbb{C}} \right)\dot p.
+\end{equation}
+Assuming ${Y_{\rm sat}}$ depending on the loading path follows the simplest form as
+\begin{equation}
+{Y_{\rm sat}} = \phi {Y_{\Delta NS}},
+\end{equation}
+with $0 \leq \phi \leq 1$.
+For the proportional loading $\phi = 0$, there is no non-proportional hardening, while $\phi = 1$ means ${Y_{\rm sat}} = {Y_{\Delta NS}}$ for the maximum non-proportional hardening.
+
+According to Ref. \cite{fang2015cyclic}, the evolution of ${Y_{\Delta NS}}$ can be defined as
+\begin{equation}
+{\dot Y_{\Delta NS}} = {\gamma _q}\left( {{Y_{\Delta 0}} - {Y_{\Delta NS}}} \right)\dot q.
+\end{equation}
+Noting that the strain memory effect is taken into account, $q$ is the radius of strain memory surface, ${\gamma _q}$ is a rate parameter.
+If the material satisfies the Masing postulate,  ${\gamma _q}=0$. $Y_{\Delta 0} $ denotes the saturate value of $Y_{\Delta NS}$.
 
 \subsection{Non-proportional hardening}
 In this paper, we consider the non-proportional hardening as an additional term of isotropic hardening.
@@ -337,12 +385,12 @@ When $\phi = 1$, we have ${Y_{\Delta nps}} = {Y_{\Delta nonps}}$, then ${Y_{\Del
 
 We use the definition suggested by \cite{tanaka1994nonproportionality}:
 \begin{equation}
-\phi  = \sqrt {1 - \frac{{{\mathbf{n}}:\mathbb{C}:\mathbb{C}:{\mathbf{n}}}}{{\mathbb{C}::\mathbb{C}}}}
+\phi  = \sqrt {1 - \frac{{{\bf{n}}:\mathbb{C}:\mathbb{C}:{\bf{n}}}}{{\mathbb{C}::\mathbb{C}}}}
 \end{equation}
 where $\mathbb{C}$ is a fourth-rank tensor and it represents the internal dislocation structure.
 The evolution equation is defined as:
 \begin{equation}
-\dot {\mathbb{C}} = {c_c}\left( {{\mathbf{n}} \otimes {\mathbf{n}} - \mathbb{C}} \right)\dot p
+\dot {\mathbb{C}} = {c_c}\left( {{\bf{n}} \otimes {\bf{n}} - \mathbb{C}} \right)\dot p
 \end{equation}
 
 As discussed by \cite{fang2015cyclic}, the evolution of ${Y_{\Delta nonps}}$ can be provide as:
@@ -362,28 +410,28 @@ Box 1: Summary of the constitutive equations.
 \[{\bm{\upepsilon }} = {{\bm{\upepsilon }}^e} + {{\bm{\upepsilon }}^p}\]
 
 2. Total stress:
-\[{\bm{\upsigma }} = {\mathbf{s}} + \frac{1}{3}tr\left( {\bm{\upsigma }} \right){\mathbf{I}} = {\mathbb{D}^e}:{{\bm{\upepsilon }}^e}\]
+\[{\bm{\upsigma }} = {\bf{s}} + \frac{1}{3}tr\left( {\bm{\upsigma }} \right){\bf{I}} = {\mathbb{D}^e}:{{\bm{\upepsilon }}^e}\]
 
 3. Yield function:
-\[F = \sqrt {\frac{3}{2}\left( {{\mathbf{s}} - {\mathbf{a}}} \right):\left( {{\mathbf{s}} - {\mathbf{a}}} \right)}  - Y = 0\]
+\[F = \sqrt {\frac{3}{2}\left( {{\bf{s}} - {\bf{a}}} \right):\left( {{\bf{s}} - {\bf{a}}} \right)}  - Y = 0\]
 
 4. Plastic flow rule:
 \[{{\bm{\dot \upepsilon }}^p} = \dot \lambda \frac{{\partial F}}{{\partial {\bm{\upsigma }}}}\]
 
 5. Effective stress:
-\[{\mathbf{n}} = \frac{{{\mathbf{s}} - {\mathbf{a}}}}{{\left\| {{\mathbf{s}} - {\mathbf{a}}} \right\|}}\]
+\[{\bf{n}} = \frac{{{\bf{s}} - {\bf{a}}}}{{\left\| {{\bf{s}} - {\bf{a}}} \right\|}}\]
 
 6. Backstress:
-\[{\mathbf{a}} = \sum\limits_{k = 1}^M {{{\mathbf{a}}^k}} \]
-\[{{\mathbf{\dot a}}^k} = {r^k}{\zeta ^k}\left[ {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^p} - \mu \frac{{{{\mathbf{a}}^k}}}{{{r^k}}}\dot p - H\left( {{f^k}} \right)\left\langle {\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}:{{{\bm{\dot \upepsilon }}}^p} - \mu \dot p} \right\rangle \frac{{{{\mathbf{a}}^k}}}{{{r^k}}}} \right] + H\left( {{f^k}} \right)\frac{{{{\mathbf{a}}^k}}}{{{r^k}}}{\dot r^k}\]
+\[{\bf{a}} = \sum\limits_{k = 1}^M {{{\bf{a}}^k}} \]
+\[{{\dot{\bf a}}^k} = {r^k}{\zeta ^k}\left[ {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^p} - \mu \frac{{{{\bf{a}}^k}}}{{{r^k}}}\dot p - H\left( {{f^k}} \right)\left\langle {\frac{{{{\bf{a}}^k}}}{{{r^k}}}:{{{\bm{\dot \upepsilon }}}^p} - \mu \dot p} \right\rangle \frac{{{{\bf{a}}^k}}}{{{r^k}}}} \right] + H\left( {{f^k}} \right)\frac{{{{\bf{a}}^k}}}{{{r^k}}}{\dot r^k}\]
 
 Normalized form:
-\[{{\mathbf{\dot b}}^k} = {\zeta ^k}\left( {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^p} - {{\mathbf{b}}^k}{{\dot p}^k}} \right) + \left[ {H\left( {{f^k}} \right) - 1} \right]\frac{{{{\dot r}^k}}}{{{r^k}}}{{\mathbf{b}}^k}\]
+\[{{\dot{\bf b}}^k} = {\zeta ^k}\left( {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^p} - {{\bf{b}}^k}{{\dot p}^k}} \right) + \left[ {H\left( {{f^k}} \right) - 1} \right]\frac{{{{\dot r}^k}}}{{{r^k}}}{{\bf{b}}^k}\]
 
 where
-\[{{\mathbf{a}}^k} = {r^k}{{\mathbf{b}}^k}\]
-\[{f^k} = \frac{3}{2}{{\mathbf{b}}^k}:{{\mathbf{b}}^k} - 1\]
-\[{\dot p^k} = \left[ {\mu  + H\left( {{f^k}} \right)\left\langle {\sqrt {\frac{3}{2}} {{\mathbf{b}}^k}:{\mathbf{n}} - \mu } \right\rangle } \right]\dot p\]
+\[{{\bf{a}}^k} = {r^k}{{\bf{b}}^k}\]
+\[{f^k} = \frac{3}{2}{{\bf{b}}^k}:{{\bf{b}}^k} - 1\]
+\[{\dot p^k} = \left[ {\mu  + H\left( {{f^k}} \right)\left\langle {\sqrt {\frac{3}{2}} {{\bf{b}}^k}:{\bf{n}} - \mu } \right\rangle } \right]\dot p\]
 \end{framed}
 
 
@@ -393,9 +441,9 @@ Box 2: Specification of the material functions.
 
 1. Dynamic recovery:
 \[g = \sqrt {\frac{2}{3}\left( {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right):\left( {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right)}  - q\]
-\[\dot \beta  = \left( {1 - \eta } \right)H\left( g \right)\left\langle {{\mathbf{n}}:{{\mathbf{n}}^*}} \right\rangle \sqrt {\frac{3}{2}} {{\mathbf{n}}^*}\dot p\]
-\[\dot q = \eta H\left( g \right)\left\langle {{\mathbf{n}}:{{\mathbf{n}}^*}} \right\rangle \dot p\]
-\[{{\mathbf{n}}^*} = \frac{{\partial g}}{{\partial {{\bm{\upepsilon }}^p}}} = \frac{{{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}}}{{\left\| {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right\|}}\]
+\[\dot \beta  = \left( {1 - \eta } \right)H\left( g \right)\left\langle {{\bf{n}}:{{\bf{n}}^*}} \right\rangle \sqrt {\frac{3}{2}} {{\bf{n}}^*}\dot p\]
+\[\dot q = \eta H\left( g \right)\left\langle {{\bf{n}}:{{\bf{n}}^*}} \right\rangle \dot p\]
+\[{{\bf{n}}^*} = \frac{{\partial g}}{{\partial {{\bm{\upepsilon }}^p}}} = \frac{{{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}}}{{\left\| {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right\|}}\]
 
 2. Kinematic hard/softening:
 \[{r^k} = r_0^k + r_\Delta ^k\]
@@ -409,92 +457,85 @@ Box 2: Specification of the material functions.
 
 
 4. Non-proportionality parameter:
-\[\phi  = \sqrt {1 - \frac{{{\mathbf{n}}:\mathbb{C}:\mathbb{C}:{\mathbf{n}}}}{{\mathbb{C}::\mathbb{C}}}} \]
-\[\dot {\mathbb{C}} = {c_c}\left( {{\mathbf{n}} \otimes {\mathbf{n}} - \mathbb{C}} \right)\dot p\]
+\[\phi  = \sqrt {1 - \frac{{{\bf{n}}:\mathbb{C}:\mathbb{C}:{\bf{n}}}}{{\mathbb{C}::\mathbb{C}}}} \]
+\[\dot {\mathbb{C}} = {c_c}\left( {{\bf{n}} \otimes {\bf{n}} - \mathbb{C}} \right)\dot p\]
 
 \end{framed}
 
 \section{Algorithmic formulation of the constitutive model}
-In the following, a fully implicit strain driven integration algorithm is developed for the constitutive model discussed in the previous section. It is ready for an implementation in a general Finite Element (FE) context where the proposed algorithm is applied locally at every integration point during each global iteration step.
+% In the following, a fully implicit strain driven integration algorithm is developed for the constitutive model discussed in the previous section. It is ready for an implementation in a general Finite Element (FE) context where the proposed algorithm is applied locally at every integration point during each global iteration step.
+The present constitutive model has included Tanaka non-proportional term and modified backstress equations for complex thermo-mechanical loads. The implicit algorithm of the constitutive equation becomes necessary and should provide the stress increment and the plastic strain increment, based on the given strain increment. The integration method is to be implemented into the commercial finite element codes, such ABAQUS via the UMAT interface.
 
-\label{}
 \subsection{Backward Euler discretization}
-\label{}
-Backward Euler method is a first order fully implicit method. Consider the interval from a state $n$ to $n+1$, in the following, any quantity evaluated at state $n$ will be indicated by a subscript $n$, for quantities evaluated at state $n+1$ subscript $n+1$ are omitted, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$.. The backward Euler method allows our constitutive equations to be discretized as the following.
+The backward Euler method is a first order implicit method popularly used in the finite element computation. Considering the integration interval from Step $n$ to Step $n+1$, variables of Step $n$ are denoted by the index $n$. The symbol $\Delta$ indicates the increment of the variable from $n$ to $n+1$. The constitutive equations can be discretized as follows.
+% Backward Euler method is a first order fully implicit method. Consider the interval from a state $n$ to $n+1$, in the following, any quantity evaluated at state $n$ will be indicated by a subscript $n$, for quantities evaluated at state $n+1$ subscript $n+1$ are omitted, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$. The backward Euler method allows the constitutive equations to be discretized as the following.
 %Hereafter, the subscripts $n$ and $n+1$ signify the values at $n$ and $n+1$ respectively, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$.
-
 Strain decomposition and total stress:
 \begin{equation}
-{{\bm{\upepsilon }}_{n + 1}} = {\bm{\upepsilon }}_{n + 1}^e + {\bm{\upepsilon }}_{n + 1}^p
+{{\bm{\upepsilon }}_{n + 1}} = {\bm{\upepsilon }}_{n + 1}^e + {\bm{\upepsilon }}_{n + 1}^p,
 \end{equation}
 \begin{equation}
-{\bm{\upepsilon }}_{n + 1}^p = {\bm{\upepsilon }}_n^p + \Delta {\bm{\upepsilon }}_{n + 1}^p
+{\bm{\upepsilon }}_{n + 1}^p = {\bm{\upepsilon }}_n^p + \Delta {\bm{\upepsilon }}_{n + 1}^p,
 \end{equation}
 \begin{equation}
 \label{Equ:sigman+1}
-{{\bm{\upsigma }}_{n + 1}} = {\mathbb{D}^e}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_{n + 1}^p} \right)
+{{\bm{\upsigma }}_{n + 1}} = {\mathbb{D}^e}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_{n + 1}^p} \right).
 \end{equation}
-
 Yield function and plastic flow rule:
 \begin{equation}
 \label{Equ:Fn+1}
-{F_{n + 1}} = \sqrt {\frac{3}{2}\left( {{{\mathbf{s}}_{n + 1}} - {{\mathbf{a}}_{n + 1}}} \right):\left( {{{\mathbf{s}}_{n + 1}} - {{\mathbf{a}}_{n + 1}}} \right)}  - {Y_{n + 1}}
+{F_{n + 1}} = \sqrt {\frac{3}{2}\left( {{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}}} \right):\left( {{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}}} \right)}  - {Y_{n + 1}},
 \end{equation}
 \begin{equation}
 \label{Equ:epsilonpn+1}
-\Delta {\bm{\upepsilon }}_{n + 1}^p = \sqrt {\frac{3}{2}} \Delta {p_{n + 1}}{{\mathbf{n}}_{n + 1}}
+\Delta {\bm{\upepsilon }}_{n + 1}^p = \sqrt {\frac{3}{2}} \Delta {p_{n + 1}}{{\bf{n}}_{n + 1}},
 \end{equation}
 \begin{equation}
 \label{Equ:pn+1}
-\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}\Delta {\bm{\upepsilon }}_{n + 1}^p:\Delta {\bm{\upepsilon }}_{n + 1}^p}
+\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}\Delta {\bm{\upepsilon }}_{n + 1}^p:\Delta {\bm{\upepsilon }}_{n + 1}^p},
 \end{equation}
 \begin{equation}
 \label{Equ:nn+1}
-{{\mathbf{n}}_{n + 1}} = \frac{{{{\mathbf{s}}_{n + 1}} - {{\mathbf{a}}_{n + 1}}}}{{\left\| {{{\mathbf{s}}_{n + 1}} - {{\mathbf{a}}_{n + 1}}} \right\|}} = \sqrt {\frac{3}{2}} \frac{{{{\mathbf{s}}_{n + 1}} - {{\mathbf{a}}_{n + 1}}}}{{{Y_{n + 1}}}}
+{{\bf{n}}_{n + 1}} = \frac{{{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}}}}{{\left\| {{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}}} \right\|}} = \sqrt {\frac{3}{2}} \frac{{{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}}}}{{{Y_{n + 1}}}}.
 \end{equation}
-
 Back stress:
 \begin{equation}
 \label{Equ:an+1}
-{{\mathbf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {r_{n + 1}^k{\mathbf{b}}_{n + 1}^k}
+{{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {r_{n + 1}^k{\bf{b}}_{n + 1}^k},
 \end{equation}
 \begin{equation}
-{{\mathbf{b}}_{n + 1}^k = {\mathbf{b}}_n^k + {\zeta ^k}\left( {\frac{2}{3}\Delta {\bm{\upepsilon }}_{n + 1}^p - {\mathbf{b}}_{n + 1}^k\Delta p_{n + 1}^k} \right) + \left[ {H\left( {f_{n + 1}^k} \right) - 1} \right]{\frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}{\mathbf{b}}_{n + 1}^k}}
+{{\bf{b}}_{n + 1}^k = {\bf{b}}_n^k + {\zeta ^k}\left( {\frac{2}{3}\Delta {\bm{\upepsilon }}_{n + 1}^p - {\bf{b}}_{n + 1}^k\Delta p_{n + 1}^k} \right) + \left[ {H\left( {f_{n + 1}^k} \right) - 1} \right]{\frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}{\bf{b}}_{n + 1}^k}},
 \end{equation}
 \begin{equation}
-\Delta p_{n + 1}^k = \left[ {\mu  + H\left( {f_{n + 1}^k} \right)\left\langle {\sqrt {\frac{3}{2}} {{\mathbf{n}}_{n + 1}}:{\mathbf{b}}_{n + 1}^k - \mu } \right\rangle } \right]\Delta {p_{n + 1}}
+\Delta p_{n + 1}^k = \left[ {\mu  + H\left( {f_{n + 1}^k} \right)\left\langle {\sqrt {\frac{3}{2}} {{\bf{n}}_{n + 1}}:{\bf{b}}_{n + 1}^k - \mu } \right\rangle } \right]\Delta {p_{n + 1}}.
 \end{equation}
-
 Non-proportionality parameter:
 \begin{equation}
-{\phi _{n + 1}} = \sqrt {1 - \frac{{{{\mathbf{n}}_{n + 1}}:{\mathbb{C}_{n + 1}}:{\mathbb{C}_{n + 1}}:{{\mathbf{n}}_{n + 1}}}}{{{\mathbb{C}_{n + 1}}::{\mathbb{C}_{n + 1}}}}}
+{\phi _{n + 1}} = \sqrt {1 - \frac{{{{\bf{n}}_{n + 1}}:{\mathbb{C}_{n + 1}}:{\mathbb{C}_{n + 1}}:{{\bf{n}}_{n + 1}}}}{{{\mathbb{C}_{n + 1}}::{\mathbb{C}_{n + 1}}}}},
 \end{equation}
 \begin{equation}
-\Delta {\mathbb{C}_{n + 1}} = {c_c}\left( {{{\mathbf{n}}_{n + 1}} \otimes {{\mathbf{n}}_{n + 1}} - {\mathbb{C}_{n + 1}}} \right)\Delta {p_{n + 1}}
+\Delta {\mathbb{C}_{n + 1}} = {c_c}\left( {{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}} - {\mathbb{C}_{n + 1}}} \right)\Delta {p_{n + 1}}.
 \end{equation}
-
 Dynamic recovery:
 \begin{equation}
-{g_{n + 1}} = \sqrt {\frac{2}{3}\left( {{\bm{\upepsilon }}_{n + 1}^p - {{\bm{\upbeta }}_{n + 1}}} \right):\left( {{\bm{\upepsilon }}_{n + 1}^p - {{\bm{\upbeta }}_{n + 1}}} \right)}  - {q_{n + 1}}
+{g_{n + 1}} = \sqrt {\frac{2}{3}\left( {{\bm{\upepsilon }}_{n + 1}^p - {{\bm{\upbeta }}_{n + 1}}} \right):\left( {{\bm{\upepsilon }}_{n + 1}^p - {{\bm{\upbeta }}_{n + 1}}} \right)}  - {q_{n + 1}},
 \end{equation}
 \begin{equation}
-\Delta {q_{n + 1}} = \eta H\left( {{g_{n + 1}}} \right)\left\langle {{{\mathbf{n}}_{n + 1}}:{\mathbf{n}}_{n + 1}^*} \right\rangle \Delta {p_{n + 1}}
+\Delta {q_{n + 1}} = \eta H\left( {{g_{n + 1}}} \right)\left\langle {{{\bf{n}}_{n + 1}}:{\bf{n}}_{n + 1}^*} \right\rangle \Delta {p_{n + 1}},
 \end{equation}
 \begin{equation}
-\Delta {{\bm{\upbeta }}_{n + 1}} = \left( {1 - \eta } \right)H\left( {{g_{n + 1}}} \right)\left\langle {{{\mathbf{n}}_{n + 1}}:{\mathbf{n}}_{n + 1}^*} \right\rangle \sqrt {\frac{3}{2}} \Delta {p_{n + 1}}{\mathbf{n}}_{n + 1}^*
+\Delta {{\bm{\upbeta }}_{n + 1}} = \left( {1 - \eta } \right)H\left( {{g_{n + 1}}} \right)\left\langle {{{\bf{n}}_{n + 1}}:{\bf{n}}_{n + 1}^*} \right\rangle \sqrt {\frac{3}{2}} \Delta {p_{n + 1}}{\bf{n}}_{n + 1}^*,
 \end{equation}
 \begin{equation}
-{\mathbf{n}}_{n + 1}^* = \frac{{{\bm{\upepsilon }}_{n + 1}^p - {{\bm{\upbeta }}_{n + 1}}}}{{\left\| {{\bm{\upepsilon }}_{n + 1}^p - {{\bm{\upbeta }}_{n + 1}}} \right\|}}
+{\bf{n}}_{n + 1}^* = \frac{{{\bm{\upepsilon }}_{n + 1}^p - {{\bm{\upbeta }}_{n + 1}}}}{{\left\| {{\bm{\upepsilon }}_{n + 1}^p - {{\bm{\upbeta }}_{n + 1}}} \right\|}}.
 \end{equation}
-
-
 
 \subsection{Implicit stress integration}
 The problem considered here is stated as follows: given all constitutive variables at step $n$ and also $\Delta {{\bm{\upepsilon }}_{n + 1}}$, find $\bm{\upsigma}_{n+1}$  satisfying the discretized constitutive relations. Let us use return mapping, which consists of an elastic predictor and a plastic corrector. The elastic predictor is taken to be an elastic tentative stress:
 \begin{equation}
 {\bm{\upsigma }}_{n + 1}^{tr} = {\mathbb{D}^e}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_n^p} \right)
 \end{equation}
-where ${\mathbb{D}^e} = \kappa {\mathbf{I}} \otimes {\mathbf{I}} + 2G\mathbb{I}$, $G$ is shear modules of material and $\kappa$ is Lame constant $\kappa  = K - \frac{2}{3}G$, ${\mathbf{I}}$ and $\mathbb{I}$ respectively indicate the second and fourth order identity, given in component form as ${I_{ij}} = {\delta _{ij}}$ and ${\mathbb{I}_{ijkl}} = {\delta _{ik}}{\delta _{jl}}$.
+where ${\mathbb{D}^e} = \kappa {\bf{I}} \otimes {\bf{I}} + 2G\mathbb{I}$, $G$ is shear modules of material and $\kappa$ is Lame constant $\kappa  = K - \frac{2}{3}G$, ${\bf{I}}$ and $\mathbb{I}$ respectively indicate the second and fourth order identity, given in component form as ${I_{ij}} = {\delta _{ij}}$ and ${\mathbb{I}_{ijkl}} = {\delta _{ik}}{\delta _{jl}}$.
 
 Also we can derive the relation between stress and trial stress at state $n+1$ as:
 \begin{equation}
@@ -506,24 +547,24 @@ Note that, because of elastic isotropy and plastic incompressibility, $\Delta {\
 
 The stress deviator is given by:
 \begin{equation}
-{\mathbf{s}} \equiv {\bm{\upsigma }} - \frac{1}{3}\left( {{\bm{\upsigma }}:{\mathbf{I}}} \right){\mathbf{I}} = {\mathbb{I}_d}:{\bm{\upsigma }}
+{\bf{s}} \equiv {\bm{\upsigma }} - \frac{1}{3}\left( {{\bm{\upsigma }}:{\bf{I}}} \right){\bf{I}} = {\mathbb{I}_d}:{\bm{\upsigma }}
 \end{equation}
-where ${\mathbb{I}_d} = \mathbb{I} - \frac{1}{3}{\mathbf{I}} \otimes {\mathbf{I}}$ is the deviatoric projection tensor.
+where ${\mathbb{I}_d} = \mathbb{I} - \frac{1}{3}{\bf{I}} \otimes {\bf{I}}$ is the deviatoric projection tensor.
 
 Taking the deviatoric part of Equation \ref{Equ:sigma1}, we have:
 \begin{equation}
-{{\mathbf{s}}_{n + 1}} = {\mathbf{s}}_{n + 1}^{tr} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^p
+{{\bf{s}}_{n + 1}} = {\bf{s}}_{n + 1}^{tr} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Both sides minus ${{\mathbf{a}}_{n + 1}}$, we obtain:
+Both sides minus ${{\bf{a}}_{n + 1}}$, we obtain:
 \begin{equation}
 \label{Equ:sminusa1}
-{{\mathbf{s}}_{n + 1}} - {{\mathbf{a}}_{n + 1}} = {\mathbf{s}}_{n + 1}^{tr} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^p - {{\mathbf{a}}_{n + 1}}
+{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}} = {\bf{s}}_{n + 1}^{tr} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^p - {{\bf{a}}_{n + 1}}
 \end{equation}
 
-A two steps radial return map method (see \ref{Fig:radial_return_map}) proposed by Mineo Kobayashi and Nobutada Ohno (2002) \cite{kobayashi2002implementation} are employed. The backstress is written as:
+A two steps radial return map method (see \ref{Fig:radial_return_map}) proposed by Mineo Kobayashi and Nobutada Ohno (2002) \cite{kobayashi2002implementation} are employed for integrating the present constitutive model. The backstress is written as:
 \begin{equation}
-{{\mathbf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {r_{n + 1}^k{\mathbf{b}}_{n + 1}^k}
+{{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {r_{n + 1}^k{\bf{b}}_{n + 1}^k}
 \end{equation}
 \begin{figure}[!htp]
 \centering\scalebox{0.8}{\includegraphics{radial_return_map.pdf}}
@@ -531,16 +572,16 @@ A two steps radial return map method (see \ref{Fig:radial_return_map}) proposed 
 \label{Fig:radial_return_map}
 \end{figure}
 
-Then we define a tentative form of the backstress as:
+Then the tentative form of the backstress is determined from:
 \begin{equation}
 \label{Equ:btrn+1}
-{\mathbf{b}}_{n + 1}^{k,tr} = {\mathbf{b}}_n^k + \frac{2}{3}{\zeta ^k}\Delta {\bm{\upepsilon }}_{n + 1}^p
+{\bf{b}}_{n + 1}^{k,tr} = {\bf{b}}_n^k + \frac{2}{3}{\zeta ^k}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Therefore, the normalized backstress ${\mathbf{b}}_{n + 1}^k$ can be written as:
+Therefore, the normalized backstress ${\bf{b}}_{n + 1}^k$ can be written as:
 \begin{equation}
 \label{Equ:bn+1}
-{\mathbf{b}}_{n + 1}^k = \theta _{n + 1}^k\left( {{\mathbf{b}}_n^k + \frac{2}{3}{\zeta ^k}\Delta {\bm{\upepsilon }}_{n + 1}^p} \right) = \theta _{n + 1}^k{\mathbf{b}}_{n + 1}^{k,tr}
+{\bf{b}}_{n + 1}^k = \theta _{n + 1}^k\left( {{\bf{b}}_n^k + \frac{2}{3}{\zeta ^k}\Delta {\bm{\upepsilon }}_{n + 1}^p} \right) = \theta _{n + 1}^k{\bf{b}}_{n + 1}^{k,tr}
 \end{equation}
 where $\theta _{n + 1}^k$ is defined by the following equation and satisfies $0 < \theta _{n + 1}^k \leqslant 1$:
 \begin{equation}
@@ -556,26 +597,26 @@ c_{n + 1}^k = \frac{1}{{1 + {\zeta ^k}\mu \Delta {p_{n + 1}} - \frac{{\Delta r_{
 \end{equation}
 where
 \begin{equation}
-\bar b_{n + 1}^{k,tr} = \sqrt {\frac{3}{2}{\mathbf{b}}_{n + 1}^{k,tr}:{\mathbf{b}}_{n + 1}^{k,tr}}
+\bar b_{n + 1}^{k,tr} = \sqrt {\frac{3}{2}{\bf{b}}_{n + 1}^{k,tr}:{\bf{b}}_{n + 1}^{k,tr}}
 \end{equation}
 
-Substituting ${{\mathbf{a}}_{n + 1}}$ into Equation \ref{Equ:sminusa1}, we have:
+Substituting ${{\bf{a}}_{n + 1}}$ into Equation \ref{Equ:sminusa1}, we have:
 \begin{equation}
 \label{Equ:sminusa2}
 \begin{aligned}
-{{{\mathbf{s}}_{n + 1}} - {{\mathbf{a}}_{n + 1}}}=
-{\mathbf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\mathbf{b}}_n^k}
+{{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}}}=
+{\bf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k}
 - \left( {2G + \frac{2}{3}\sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}} } \right)\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{aligned}
 \end{equation}
 
 Substitution of Equation \ref{Equ:Fn+1}-\ref{Equ:nn+1} and \ref{Equ:sminusa2} into the yield function ${F_{n + 1}} = 0$ provides:
 \begin{equation}
-\Delta {p_{n + 1}} = \frac{{\sqrt {\frac{3}{2}} \left\| {{\mathbf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\mathbf{b}}_n^k} } \right\| - {Y_n}}}{{{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}} + 3G + \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}} }}
+\Delta {p_{n + 1}} = \frac{{\sqrt {\frac{3}{2}} \left\| {{\bf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right\| - {Y_n}}}{{{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}} + 3G + \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}} }}
 \end{equation}
 
 \begin{equation}
-{{\mathbf{s}}_{n + 1}} - {{\mathbf{a}}_{n + 1}} = \frac{{{Y_{n + 1}}\left( {{\mathbf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\mathbf{b}}_n^k} } \right)}}{{\sqrt {\frac{3}{2}} \left\| {{\mathbf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\mathbf{b}}_n^k} } \right\|}}
+{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}} = \frac{{{Y_{n + 1}}\left( {{\bf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right)}}{{\sqrt {\frac{3}{2}} \left\| {{\bf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right\|}}
 \end{equation}
 \begin{figure}[!htp]
 \centering\scalebox{0.8}{\includegraphics{successive_substitution.pdf}}
@@ -592,14 +633,14 @@ To complete the algorithmic scheme discussed above we derive in the following th
 Considering Equation \ref{Equ:dotak3}, we assume that the increment of deviatoric back stress has the following differential:
 \begin{equation}
 \label{Equ:dan+1}
-{\text{d}}\Delta {{\mathbf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} :{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
+{\text{d}}\Delta {{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} :{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 where $\mathbb{H}_{n + 1}^k( k = 1,2,3,...,M )$ are fourth-rank constitutive parameters.
 
-It is noted that, when ${F_{n + 1}} = 0$, ${\mathbf{n}}_{n + 1}$ defined by Equation \ref{Equ:nn+1} satisfies:
+It is noted that, when ${F_{n + 1}} = 0$, ${\bf{n}}_{n + 1}$ defined by Equation \ref{Equ:nn+1} satisfies:
 \begin{equation}
 \label{Equ:nn1}
-{{\mathbf{n}}_{n + 1}}:{{\mathbf{n}}_{n + 1}} = 1
+{{\bf{n}}_{n + 1}}:{{\bf{n}}_{n + 1}} = 1
 \end{equation}
 
 On the assumption that all constitutive variables are known at state $n$, and that $F_{n+1}=0$, let us differentiate Equations \ref{Equ:sigman+1}, \ref{Equ:epsilonpn+1}, \ref{Equ:nn+1} and \ref{Equ:nn1} to obtain:
@@ -609,43 +650,43 @@ On the assumption that all constitutive variables are known at state $n$, and th
 \end{equation}
 \begin{equation}
 \label{Equ:depsilon+1}
-{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p = \sqrt {\frac{3}{2}} \left( {{\text{d}}\Delta {p_{n + 1}}{{\mathbf{n}}_{n + 1}} + \Delta {p_{n + 1}}{\text{d}}{{\mathbf{n}}_{n + 1}}} \right)
+{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p = \sqrt {\frac{3}{2}} \left( {{\text{d}}\Delta {p_{n + 1}}{{\bf{n}}_{n + 1}} + \Delta {p_{n + 1}}{\text{d}}{{\bf{n}}_{n + 1}}} \right)
 \end{equation}
 \begin{equation}
 \label{Equ:dnn+1}
-{\text{d}}{{\mathbf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{{{\text{d}}\Delta {{\mathbf{s}}_{n + 1}} - {\text{d}}\Delta {{\mathbf{a}}_{n + 1}}}}{{{Y_{n + 1}}}} - \frac{{{{\mathbf{n}}_{n + 1}}}}{{{Y_{n + 1}}}}{\left( {\frac{{\partial Y}}{{\partial p}}} \right)_{n + 1}}{\text{d}}\Delta {p_{n + 1}}
+{\text{d}}{{\bf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{{{\text{d}}\Delta {{\bf{s}}_{n + 1}} - {\text{d}}\Delta {{\bf{a}}_{n + 1}}}}{{{Y_{n + 1}}}} - \frac{{{{\bf{n}}_{n + 1}}}}{{{Y_{n + 1}}}}{\left( {\frac{{\partial Y}}{{\partial p}}} \right)_{n + 1}}{\text{d}}\Delta {p_{n + 1}}
 \end{equation}
 \begin{equation}
-{{\mathbf{n}}_{n + 1}}:{\text{d}}{{\mathbf{n}}_{n + 1}} = 0
+{{\bf{n}}_{n + 1}}:{\text{d}}{{\bf{n}}_{n + 1}} = 0
 \end{equation}
 
 From Equation \ref{Equ:sigma1} we obtain:
 \begin{equation}
 \label{Equ:sn+1}
-{{\mathbf{s}}_{n + 1}} = 2G{\mathbb{I}_d}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_{n + 1}^p} \right)
+{{\bf{s}}_{n + 1}} = 2G{\mathbb{I}_d}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_{n + 1}^p} \right)
 \end{equation}
 
 Differentiating Equation \ref{Equ:sn+1}, we have:
 \begin{equation}
 \label{Equ:dsn+1}
-{\text{d}}\Delta {{\mathbf{s}}_{n + 1}} = 2G{\mathbb{I}_d}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - 2G{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
+{\text{d}}\Delta {{\bf{s}}_{n + 1}} = 2G{\mathbb{I}_d}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - 2G{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
 Substitution of Equations \ref{Equ:dan+1} and \ref{Equ:dsn+1} into \ref{Equ:dnn+1} provides:
 \begin{equation}
 \label{Equ:dnn+12}
 \begin{aligned}
-{\text{d}}{{\mathbf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{1}{{{Y_{n + 1}}}} \left[ {2G{\mathbb{I}_d}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - \left( {2G\mathbb{I} + \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} } \right):{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p} \right.\\
-\left. { - \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\mathbf{n}}_{n + 1}} \otimes {{\mathbf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p}\right]
+{\text{d}}{{\bf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{1}{{{Y_{n + 1}}}} \left[ {2G{\mathbb{I}_d}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - \left( {2G\mathbb{I} + \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} } \right):{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p} \right.\\
+\left. { - \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p}\right]
 \end{aligned}
 \end{equation}
 noting that
 \begin{equation}
 \label{Equ:dpn+1}
-{\text{d}}\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}} {{\mathbf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
+{\text{d}}\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}} {{\bf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Substituting Equations \ref{Equ:dnn+12} and \ref{Equ:dpn+1} into Equation \ref{Equ:depsilon+1} to eliminate ${\text{d}}{{\mathbf{n}}_{n + 1}}$ and ${\text{d}}\Delta {p_{n + 1}}$, and rearranging the resulting equation, we obtain:
+Substituting Equations \ref{Equ:dnn+12} and \ref{Equ:dpn+1} into Equation \ref{Equ:depsilon+1} to eliminate ${\text{d}}{{\bf{n}}_{n + 1}}$ and ${\text{d}}\Delta {p_{n + 1}}$, and rearranging the resulting equation, we obtain:
 \begin{equation}
 {\mathbb{L}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p = 2G{\mathbb{I}_d}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}}
 \end{equation}
@@ -653,8 +694,8 @@ where
 \begin{equation}
 \label{Equ:Ln+1}
 \begin{aligned}
-\mathbb{L}_{n + 1} = \frac{2}{3}\frac{Y_{n + 1}}{\Delta {p_{n + 1}}} \left( \mathbb{I} - \mathbf{n}_{n + 1} \otimes \mathbf{n}_{n + 1} \right) + 2G\mathbb{I} + \sum \limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} \\
-   + \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\mathbf{n}}_{n + 1}} \otimes {{\mathbf{n}}_{n + 1}}
+\mathbb{L}_{n + 1} = \frac{2}{3}\frac{Y_{n + 1}}{\Delta {p_{n + 1}}} \left( \mathbb{I} - \bf{n}_{n + 1} \otimes \bf{n}_{n + 1} \right) + 2G\mathbb{I} + \sum \limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} \\
+   + \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}}
 \end{aligned}
 \end{equation}
 
@@ -670,11 +711,11 @@ Therefore, consistent tangent modulus $\frac{{{\text{d}}\Delta {{\bm{\upsigma }}
 
 In order to obtain $\mathbb{H}_{n + 1}^k$, we differentiate Equations \ref{Equ:an+1} and \ref{Equ:bn+1}, so that:
 \begin{equation}
-{\text{d}}{{\mathbf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\left( {r_{n + 1}^k{\text{d}}{\mathbf{b}}_{n + 1}^k + {\mathbf{b}}_{n + 1}^k{\text{d}}r_{n + 1}^k} \right)}
+{\text{d}}{{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\left( {r_{n + 1}^k{\text{d}}{\bf{b}}_{n + 1}^k + {\bf{b}}_{n + 1}^k{\text{d}}r_{n + 1}^k} \right)}
 \end{equation}
 \begin{equation}
 \label{Equ:dbn+1}
-{\text{d}}{\mathbf{b}}_{n + 1}^k = \frac{{{\mathbf{b}}_{n + 1}^k}}{{\theta _{n + 1}^k}}{\text{d}}\theta _{n + 1}^k + \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
+{\text{d}}{\bf{b}}_{n + 1}^k = \frac{{{\bf{b}}_{n + 1}^k}}{{\theta _{n + 1}^k}}{\text{d}}\theta _{n + 1}^k + \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
 Considering Equation \ref{Equ:thetan+1}, we may derive $\theta _{n + 1}^k$ in two cases.
@@ -691,40 +732,465 @@ Therefore, $\mathbb{H}_{n + 1}^k$ in Equation \ref{Equ:dan+1} has an expression:
 \begin{equation}
 \begin{aligned}
 \mathbb{H}_{n + 1}^k = \frac{2}{3}r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mathbb{I} + \sqrt {\frac{2}{3}} \left[ {{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}} - r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mu \right.\\
-\left. + \theta _{n + 1}^k\left( {1 - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}} \right){{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}} \right]{\mathbf{b}}_{n + 1}^k \otimes {{\mathbf{n}}_{n + 1}}
+\left. + \theta _{n + 1}^k\left( {1 - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}} \right){{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}} \right]{\bf{b}}_{n + 1}^k \otimes {{\bf{n}}_{n + 1}}
 \end{aligned}
 \end{equation}
 
 II. When $H\left( {\bar f_{n + 1}^k} \right) = 1$, Equation \ref{Equ:thetan+1} becomes $\theta _{n + 1}^k = \frac{1}{{\bar b_{n + 1}^{k,tr}}}$, then:
 \begin{equation}
 \label{Equ:thetan+1}
-{\text{d}}\theta _{n + 1}^k =  - \frac{3}{2}{\left( {\theta _{n + 1}^k} \right)^3}{\mathbf{b}}_{n + 1}^{k,tr}:{\text{d}}{\mathbf{b}}_{n + 1}^{k,tr}
+{\text{d}}\theta _{n + 1}^k =  - \frac{3}{2}{\left( {\theta _{n + 1}^k} \right)^3}{\bf{b}}_{n + 1}^{k,tr}:{\text{d}}{\bf{b}}_{n + 1}^{k,tr}
 \end{equation}
 
 We differentiate Equation \ref{Equ:btrn+1}, so that:
 \begin{equation}
 \label{Equ:dbtrn+1}
-{\text{d}}{\mathbf{b}}_{n + 1}^{k,tr} = \frac{2}{3}{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
+{\text{d}}{\bf{b}}_{n + 1}^{k,tr} = \frac{2}{3}{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Eliminating ${\mathbf{b}}_{n + 1}^{k,tr}$ and ${\text{d}}{\mathbf{b}}_{n + 1}^{k,tr}$ in Equation \ref{Equ:thetan+1} by using Equations \ref{Equ:btrn+1} and \ref{Equ:dbtrn+1}, we obtain:
+Eliminating ${\bf{b}}_{n + 1}^{k,tr}$ and ${\text{d}}{\bf{b}}_{n + 1}^{k,tr}$ in Equation \ref{Equ:thetan+1} by using Equations \ref{Equ:btrn+1} and \ref{Equ:dbtrn+1}, we obtain:
 \begin{equation}
 \label{Equ:thetan+1}
-{\text{d}}\theta _{n + 1}^k =  - {\left( {\theta _{n + 1}^k} \right)^2}{\zeta ^k}{\mathbf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
+{\text{d}}\theta _{n + 1}^k =  - {\left( {\theta _{n + 1}^k} \right)^2}{\zeta ^k}{\bf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
 Substitution of Equation \ref{Equ:thetan+1} into \ref{Equ:dbn+1} provides:
 \begin{equation}
 \label{Equ:dbn+12}
-{\text{d}}{\mathbf{b}}_{n + 1}^k = \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p - {\zeta ^k}\theta _{n + 1}^k{\mathbf{b}}_{n + 1}^k \otimes {\mathbf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
+{\text{d}}{\bf{b}}_{n + 1}^k = \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p - {\zeta ^k}\theta _{n + 1}^k{\bf{b}}_{n + 1}^k \otimes {\bf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
 Therefore, $\mathbb{H}_{n + 1}^k$ in Equation \ref{Equ:dan+1} has an expression:
 \begin{equation}
 \begin{aligned}
-\mathbb{H}_{n + 1}^k = \frac{2}{3}r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mathbb{I} - r_{n + 1}^k{\zeta ^k}\theta _{n + 1}^k{\mathbf{b}}_{n + 1}^k \otimes {\mathbf{b}}_{n + 1}^k + \\
-\sqrt {\frac{2}{3}} {\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)_{n + 1}}{\mathbf{b}}_{n + 1}^k \otimes {{\mathbf{n}}_{n + 1}}
+\mathbb{H}_{n + 1}^k = \frac{2}{3}r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mathbb{I} - r_{n + 1}^k{\zeta ^k}\theta _{n + 1}^k{\bf{b}}_{n + 1}^k \otimes {\bf{b}}_{n + 1}^k + \\
+\sqrt {\frac{2}{3}} {\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)_{n + 1}}{\bf{b}}_{n + 1}^k \otimes {{\bf{n}}_{n + 1}}
 \end{aligned}
 \end{equation}
 
+\section{Parameter identification}
+\noindent
+The model parameters can be divided into the following categories: Elastic-plastic parameters, isotropic hardening parameters, kinematic hardening parameters and cyclic hardening/softening parameters. The parameters for non-proportional loading hardening is included in the isotropic hardening.
 
+\subsection{Determination of elastic-plastic constants}
+
+\noindent
+The elastic parameters were determined from the tensile tests directly. For the elastically isotropic material Hooke's law can be written as
+\begin{eqnarray}
+   \bfepsilon = \frac{1}{E}(\bfsigma - \nu[\mathrm{Tr}(\bfsigma)~\bf{I} - \bfsigma]),
+\label{Equ:HookesLawInEandNu}
+\end{eqnarray}
+where $E$ is  Young's modulus and $\nu$ is Poisson's ratio, depending on temperature.
+
+By neglecting the plastic strain amplitude effect, ${\zeta ^k}$ and  $r_0^k$ can be determined using the following equations \cite{Jiang1996387, jiang1996modeling}, if no isotropic hardening is assumed,
+\begin{equation}
+{\zeta ^k} = \frac{1}{{\varepsilon _p^k}},
+\label{Eqn:zetak}
+\end{equation}
+\begin{equation}
+r_0^k = \left( {\frac{{\sigma _{}^k - \sigma _{}^{k - 1}}}{{\varepsilon _p^k - \varepsilon _p^{k - 1}}} - \frac{{\sigma _{}^{k + 1} - \sigma _{}^k}}{{\varepsilon _p^{k + 1} - \varepsilon _p^k}}} \right)\varepsilon _p^k,
+\end{equation}
+where $\sigma^k$ and $\varepsilon_p^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$th point on the monotonic  stress-plastic strain curve, respectively. $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_p^0=0$. Generally, the uniaxial tensile stress-strain curve is represented in $M$ intervals.
+
+In the constitutive model, the saturated value of $r^k$ has to be determined from the cyclic stress-strain curve, which can be obtained form the experimental stabilized hysteresis loop.
+The half fatigue life cycle is assumed to be the stabilized hysteresis loop.
+
+By combining Eqs. (\ref{Equ:rk1}) and (\ref{Equ:rdeltak1}), $r^k$ can be expressed as
+\begin{equation}\label{rk}
+{r^k} = r_0^k + r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right],
+\end{equation}
+where $r_{\Delta s}^k$, $a_1^k$, $b_1^k$ and $b_2^k$ are constants and $p$ is the accumulated plastic strain.
+The saturated value of $r^k$ is denoted as $r^k_s$ and the saturated increment value of $r^k$ is denoted as $r^k_{\Delta s}$.
+A simple procedure for determining the material constants $r_{\Delta s}^k$ was by assuming that $p$ is infinitely large,
+\begin{equation}
+r_s^k=\mathop {\lim }\limits_{{\rm{p}} \to \infty } {r^k} = r_0^k + r_{\Delta s}^k.
+\label{Equ:rsk}
+\end{equation}
+Generally, when the cyclic hardening/softening is stabilized, the accumulated plastic strain is large.
+Consequently, the data in the stabilized hysteresis loop can be used to determine the saturated values $r^k_s$ and $r^k_{\Delta s}$.
+
+The calculated alternating stress-strain curve was  divided into $M=9$ segments with the same plastic strain for both monotonic and cyclic stress-strain curve.  $\zeta^k$ and $r_0^k$ can be determined from monotonic tension test as suggested by Jiang and Kurath \cite{Jiang1996387}. From the calculated alternating stress-strain curve the same procedure for $\zeta^k$ and $r_0^k$ is used to determine the saturated values $r^k_s$ and $r^k_{\Delta s}$.  $r^k$ is determined from the uniaxial stabilized hysteresis loop curve following Eq. (\ref{rk}). ${\zeta ^k}$ for the cyclic stress-strain relation is the same as that for the monotonic case.
+
+%\begin{figure}[!htp]
+%\centering{\includegraphics[width=8.0cm]{Determine_rsk.pdf}}
+%\caption{IN718 uniaxial monotonic tensile and calculated alternating stress versus plastic strain curves used to determine the material constants $r_s^k$ and $r_{\Delta s}^k$ at 650$^{\circ}$C.}
+%\label{Fig:Determine_rsk}
+%\end{figure}
+
+As discussed above, both monotonic tension curve and the stabilized alternating stress-strain curve are used for identifying the model parameters.
+$r_{\Delta s}^k$ is describing the deviation magnitude of the two curves and $a_{1}^k$, $b_{1}^k$ and $a_{2}^k$ are used to describe the softening rate of the material.
+$a_1^k$, $b_1^k$, $a_2^k$, $b_2^k$, $b_3^k$ are determined from the history curve of the peak stress under uniaxial cyclic loading. For simplicity, the cyclic softening is assumed to be purely kinematic under uniaxial loading conditions, as introduced by Ohno et al \cite{Ohno1993375}.
+$a_{1}^k$, $b_{1}^k$ and $b_{2}^k$ are independent of $k$, i.e. all segments share the same values, $a_1, b_2$ and $b_2$.
+Thus, the parameters can be determined from the cyclic stress-strain curve,
+\begin{equation}
+1 - \frac{{\sigma  - {\sigma _0}}}{{{\sigma _0} - {\sigma _{\min }}}} = 1 - a_1{e^{ - b_1 p}} - \left( {1 - a_1} \right){e^{ - b_2 p}}.
+\end{equation}
+The relation provides optimal agreement between experimental curve and model, as shown in Fig.  \ref{Fig:Fitting300C_7041_Plot}. Fang \cite{fang2015cyclic} proposed a simplified model as
+\begin{equation}
+r_\Delta ^k = r_{\Delta s}^k\left( 1 - a_1^k{e^{ - b_1^kp}}\right).
+\label{Equ:fangrdeltak}
+\end{equation}
+Results in Fig. \ref{Fig:Fitting300C_7041_Plot} reveal significant deviations between the two different expressions above at small plastic strain region.
+
+$Y_{\Delta NS}$, $\gamma_p$ and $\gamma_q$ are fitted from the stabilized non-proportional cyclic stress-strain curve.
+ $\mu$ and $c_c$ take the values proposed by Chaboche \cite{Chaboche1986149} and Tanaka \cite{tanaka1994nonproportionality}.
+
+%\begin{figure}[!htp]
+%\centering{\includegraphics[width=8.0cm]{EpVsPeakStress300C_7041.pdf}}
+%\caption{Axial peak stress versus accumulated plastic strain at 300$^{\circ}$C.}
+%\label{Fig:EpVsPeakStress300C_7041}
+%\end{figure}
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=8.0cm]{Fitting300C_7041_Plot.pdf}}
+\caption{Kinematic hardening from the full reversed strain cycling tests with comparison to different hardening models of $r^k$.}
+\label{Fig:Fitting300C_7041_Plot}
+\end{figure}
+
+\subsection{Temperature-dependent parameters}
+\noindent
+In this section, the model parameters are determined under isothermal conditions.
+According to isothermal uniaxial monotonic tension tests and  cyclic stress-strain hysteresis curves at different temperatures, the material constants at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C are identified and summarized in Table \ref{tab:Basic_property} and Table \ref{tab:3} with $M=9$. The temperature dependence of the parameters is linearly interpolated in intervals.
+
+\begin{table*}[htbp]
+  \centering
+  \caption{Model parameters (Stress unit: MPa, strain unit: mm/mm).}
+    \begin{tabular}{rrrrrrrrrrr}
+    \hline
+          & $k$   & 1     & 2     & 3     & 4     & 5     & 6     & 7     & 8     & 9 \\
+          & $\zeta^k$ & 20000 & 10000 & 5000  & 2000  & 1000  & 500   & 250   & 100   & 50 \\
+    \hline
+    300$^{\circ}$C & $r_0^k$ & 292.65  & 60.11  & 74.70  & 89.45  & 82.86  & 91.27  & 113.42  & 135.81  & 140.01  \\
+          & $r_{\Delta s}^k$ & -37.83  & -10.89  & -14.30  & -18.06  & -17.20  & -20.20  & -26.21  & -32.72  & -32.38  \\
+          & & \multicolumn{9}{l}{$a_1^k$=0.4, $b_1^k$=1.27, $b_2^k$=9.45, $k$=1 to 9} \\
+    \hline
+    550$^{\circ}$C & $r_0^k$ & 242.66  & 57.06  & 71.17  & 85.54  & 79.54  & 87.90  & 109.64  & 131.78  & 136.93  \\
+          & $r_{\Delta s}^k$ & -100.14  & -13.56  & -17.29  & -21.23  & -20.15  & -22.68  & -28.84  & -35.34  & -33.02  \\
+          & & \multicolumn{9}{l}{$a_1^k$=0.41, $b_1^k$=0.87, $b_2^k$=11.8, $k$=1 to 9} \\
+    \hline
+    650$^{\circ}$C & $r_0^k$ & 227.08  & 54.94  & 68.47  & 82.22  & 76.38  & 84.34  & 105.11  & 126.21  & 130.89  \\
+          & $r_{\Delta s}^k$ & -139.00  & -15.16  & -18.98  & -22.89  & -21.36  & -23.68  & -29.65  & -35.76  & -32.75  \\
+          & & \multicolumn{9}{l}{$a_1^k$=0.42, $b_1^k$=0.49, $b_2^k$=9.18, $k$=1 to 9} \\
+    \hline
+          & & \multicolumn{9}{l}{$\mu=0.2$,$\gamma_p$=10,$\gamma_q$=50,$Y_{\Delta NSs}$=100,$c_c$=50} \\
+    \hline
+    \end{tabular}%
+  \label{tab:3}%
+\end{table*}%
+
+\section{Computational analysis}
+
+\subsection{Simulations of isothermal fatigue tests}
+
+\begin{figure*}
+\centering{\begin{overpic}[width=8.0cm]{IN718_Isothermal_1st.pdf}
+\put(0,65){\fcolorbox{white}{white}{(a)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_Isothermal_200th.pdf}
+\put(0,65){\fcolorbox{white}{white}{(b)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\caption{Comparison of the stress-strain hysteresis loops from experiments and computations  under isothermal uniaxial tensile loading conditions at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively. (a) The first loading cycle. (b) The 200th. cycle.}
+\label{Fig:200th_Exp_Sim}
+\end{figure*}
+
+\noindent
+The constitutive model described in the previous sections has been implemented into the commercial finite element code  ABAQUS via the user-defined material model interface UMAT. 
+The stress-strain hysteresis loops of the uniaxial tests are simulated and predicted by the proposed model under the symmetrical strain path.
+Comparison between  computational  and  experimental stress-strain loops is shown in Fig. \ref{Fig:200th_Exp_Sim}. The uniaxial tension and torsion test can be modeled using a single axisymmetric tension-torsion element.
+The figure illustrates results for first loading cycles and the 200th cycles at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively.
+
+The strain controlled loop consists of initial loading, unloading and reverse loading.
+As shown in Fig. \ref{Fig:200th_Exp_Sim}(a), in the initial loading cycle the computational and experimental loops are in reasonable agreement, but deviations are observed during reverse plastic loading for the lower temperatures because the kinematic hardening variable $r^k$ approximates ${r_0^k}$ in the first loading loop.
+Note that the kinematic hardening variable ${r_0^k}$ is obtained from monotonic tension tests and evolution of $r^k$ depends on the accumulated plastic strain $p$.
+During the first reverse plastic loading, the accumulated plastic strain $p$ is small so the first simulated stress-strain hysteresis loops are mainly based on the monotonic curve. It leads to the deviation in the computation from the experimental result.
+Along loading and unloading cycles, with evolution of $r_s^k$ (Eq. (\ref{Equ:rsk})), the predicted responses approach the experimental curves and the agreement of the 200th cycle becomes optimal, as shown in \ref{Fig:200th_Exp_Sim}(b). Since the fatigue is determined mainly by the peak and valley values, such deviations will not change fatigue life assessment.
+
+
+\begin{figure}
+\centering{\includegraphics[width=8.0cm]{IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim.pdf}}
+\caption{Comparison of experimental and computational peak and valley stress values under isothermal cyclic uniaxial tensile loading conditions at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively.}
+\label{Fig:Compare_PACC-PV_stress_temperature}
+\end{figure}
+
+
+\begin{figure*}[!]
+\centering{\begin{overpic}[width=8.0cm]{Circle_1st.pdf}
+\put(0,65){\fcolorbox{white}{white}{(a)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{Circle_200th.pdf}
+\put(0,65){\fcolorbox{white}{white}{(b)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\caption{Comparison between experiments and computations  for the isothermal non-proportional cyclic loading path CIRC at  300, 550, 650$^{\circ}$C, respectively. (a) The first loading cycle. (b) The 200th cycle.}
+\label{Fig:Circle_Exp_Sim}
+\end{figure*}
+
+
+More details from the experiments and computations reveal that the material is cyclic softening, as shown in Fig. \ref{Fig:Compare_PACC-PV_stress_temperature}, where the stress peak and valley values from the uniaxial cyclic tension test are summarized. The softening behavior becomes more severe as  temperature increases.
+As mentioned earlier, in the present constitutive relation, cyclic softening is modeled by the kinematic hardening variable $r^k$, with its saturation value $r_s^k$ smaller than its initial value $r_0$.
+The figure confirms a good agreement between experiments and the constitutive model prediction in the whole loading and unloading cycles.
+
+
+The multi-axial non-proportional loading results are summarized in Fig. \ref{Fig:Circle_Exp_Sim} for the circular tension-torsion loading path CIRC under strain controlling at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively. The cyclic stress curves are constructed by plotting the shear stress versus the tensile stress in the first cycle and the 200th cycle with total strain amplitude of $1\%$, respectively. At 650$^{\circ}$C the computational prediction shows slight over-estimate near the maximum normal stress, while others reveal optimal agreement for both initial and cyclic loading.
+
+The present constitutive is able to build different cyclic softening features. Fig. \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(a) depicts the peak stress from the circular loading path at the different temperatures.
+The alloy exhibits an obvious continuous cyclic softening at higher temperature, while the cyclic softening may reach a saturation stage at low temperature. Such observation can be critical for mechanical components of high temperature.
+Fig. \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(a) illustrates effects of kinematic hardening variables. While the Fang's model  \cite{fang2015cyclic}  in Eq. (\ref{Equ:fangrdeltak}) disagrees to the experiment in high cycle regime, as shown in Fig. \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(b), the present model in Eq. (\ref{Equ:rdeltak}) provides a consistent cyclic behavior in the whole loading history. One term expression of Fang cannot describe the different softening  behavior properly.
+
+\begin{figure*}[!htp]
+\centering{\begin{overpic}[width=8.0cm]{IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_2.pdf}
+\put(0,65){\fcolorbox{white}{white}{(a)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1.pdf}
+\put(0,65){\fcolorbox{white}{white}{(b)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\caption{Peak stress variations for the circular loading path CIRC at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C, respectively. (a) The present model. (b) Prediction based on Eq. (\ref{Equ:fangrdeltak})  \cite{fang2015cyclic} .}
+\label{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}
+\end{figure*}
+
+To study effects of the complex non-proportional loading path, stress variations for the loading cross path CROS (Fig. \ref{Fig:LoadPath}(d)) are plotted in Fig. \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}. Symbols denote experimental record and solid curves stand for computational predictions. Due to prompt changes in loading direction, the curves become non-symmetric. In the figure both computational results with and without non-proportional hardening term are present. The obvious disagreement between computations and experiments is observed at the stress peaks. However, the improvement of the non-proportional hardening in the model is significant, as shown in Fig. \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}. The non-proportional hardening term is meaningful for the constitutive modeling.
+
+\begin{figure*}[!htp]
+\centering{\begin{overpic}[width=8.0cm]{IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim_0.pdf}
+\put(0,65){\fcolorbox{white}{white}{(a)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim_200.pdf}
+\put(0,65){\fcolorbox{white}{white}{(b)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\caption{Comparison between experimental results and computational predictions for the cross loading path CROS at 300$^{\circ}$C. (a) Without non-proportional hardening term. (b) With the non-proportional hardening factor $Y_{\Delta_0}$=200MPa.}
+\label{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}
+\end{figure*}
+
+%\begin{figure*}[!htp]
+%\centering{\includegraphics[width=8.0cm]{MisesStressWithoutNPHardening.pdf}}
+%\centering{\includegraphics[width=8.0cm]{MisesStressWithNPHardening.pdf}}
+%\caption{Comparison between experiment at 300$^{\circ}$C under the cross loading path and computations by using different non-proportional hardening factors. The Mises stress is compared directly. (a) Without non-proportional hardening. (b) Non-proportional hardening factor = 200MPa.}
+%\label{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim_MisesStress}
+%\end{figure*}
+
+%\begin{figure*}
+%  \begin{minipage}[t]{0.5\linewidth}
+%  \nonumber
+%    \centering
+%    \includegraphics[width=3.5in]{IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim_0.pdf}
+%    \centerline{(a) Without proportional hardening.}
+%    \label{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim_0}
+%  \end{minipage}%
+%  \begin{minipage}[t]{0.5\linewidth}
+%    \centering
+%    \includegraphics[width=3.5in]{IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim_200.pdf}
+%    \centerline{(b) Non-proportional hardening factor = 200MPa.}
+%    \label{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim_200}
+%  \end{minipage}
+%  \caption{Experiments at 300$^{\circ}$C under the cross loading path, comparing with computations by using different non-proportional hardening factors.}
+%  \label{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}
+%\end{figure*}
+
+%\begin{figure*}
+%  \begin{minipage}[t]{0.5\linewidth}
+%  \nonumber
+%    \centering
+%    \includegraphics[width=3.5in]{MisesStressWithoutNPHardening.pdf}
+%    \centerline{(a) Without non-proportional hardening.}
+%    \label{Fig:MisesStressWithoutNPHardening}
+%  \end{minipage}%
+%  \begin{minipage}[t]{0.5\linewidth}
+%    \centering
+%    \includegraphics[width=3.5in]{MisesStressWithNPHardening.pdf}
+%    \centerline{(b) Non-proportional hardening factor = 200MPa.}
+%    \label{Fig:MisesStressWithNPHardening}
+%  \end{minipage}
+%  \caption{Comparison between experiment at 300$^{\circ}$C under the cross loading path and computations by using different non-proportional hardening factors. The Mises stress is compared directly.}
+%  \label{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim_MisesStress}
+%\end{figure*}
+
+
+\begin{figure*}
+\centering{\begin{overpic}[width=8.0cm]{All_TMF_+-1_IP_10th.pdf}
+\put(0,65){\fcolorbox{white}{white}{(a)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_Axial+-1_PV_Exp_vs_Sim_ALL.pdf}
+\put(0,65){\fcolorbox{white}{white}{(b)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+% \centering{\includegraphics[width=8.0cm]{All_TMF_+-1_IP_10th.pdf}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_Axial+-1_PV_Exp_vs_Sim_ALL.pdf}}
+\caption{Experimental and computational results under the uniaxial thermo-mechanical loading conditions with varying temperature between 300 and 650$^{\circ}$C. Three different phase angles of the TMF loads are summarized. (a) The hysteresis loops. (b) Peak and valley stress values.}
+\label{Fig:TMF_IP}
+\end{figure*}
+
+
+\subsection{Uniaxial thermo-mechanical fatigue tests}
+\noindent
+Under thermo-mechanical loading conditions both mechanical loads as well as temperature vary, which cause different deformation and damage mechanisms in the material.
+In the present section both experimental and computational results for the varying temperature between 300 and 650$^{\circ}$C are considered. Tests are controlled by the tensile and shear strains simultaneously, by a constant given equivalent strain amplitude of 1\%. In computations the model parameters determined for the isothermal cyclic tests are used, that is, the thermo-mechanical coupling is assumed not to affect the constitutive model explicitly.
+
+In Fig. \ref{Fig:TMF_IP} the hysteresis loops of the stabilized stress-strain cycles are shown, in which the in-phase (IP), the out-of-phase (OP) and 90$^\circ$-phase temperature loads are considered, respectively.
+The IP-phase loops show similar features as those of the isothermal loading.
+The stress-strain curve reveals cyclic softening, as observed in isothermal tests. Interesting is the valley stress of the IP test seems higher than the computational prediction, which is related to the thermo-mechanical effects. However, the effect seems not significant.
+
+As soon as the temperature does not change proportionally to the mechanical load, the stress-strain loops become asymmetric, as shown in Fig. \ref{Fig:TMF_IP}(a).
+The stress-strain loops for the stabilized cycles, i.e. $N_f$/2th cycle, in Fig. \ref{Fig:TMF_IP}(a) confirm that the constitutive model can reasonably predict the thermo-mechanical behavior of the material properly.
+Furthermore, Fig. \ref{Fig:TMF_IP}(b) shows that the peak and valley stress of the computational prediction in comparing with the experiments.
+The peak stresses of all temperature loading phases, i.e. IP, OP and 90$^\circ$-phase, are confirm a good agreement between the experiments and computations.
+However, for all valley stresses, the experimental results are observed approximately 50 MPa lower than the predictions.
+The reason is that the yield surface is assumed to be circular in the present constitutive model and the yield surface seems to stiff.
+As shown by Gil \cite{Gil1998}, the yield surface of Inconel 718 is shift to the compression direction as temperature increase from room temperature to 650$^{\circ}$C.
+
+%The agreement between the experiments and the computations is obvious.
+
+%\begin{figure*}[!htp]
+%\centering{\includegraphics[width=8.0cm]{7018_TMF_+-1_IP_10th.pdf}}
+%\centering{\includegraphics[width=8.0cm]{IN718_TMF_Axial+-1_PV_Exp_vs_Sim_IP.pdf}}
+%\centering{\includegraphics[width=8.0cm]{7017_TMF_+-1_OP_10th.pdf}}
+%\centering{\includegraphics[width=8.0cm]{IN718_TMF_Axial+-1_PV_Exp_vs_Sim_OP.pdf}}
+%\centering{\includegraphics[width=8.0cm]{7025_TMF_+-1_90_10th.pdf}}
+%\centering{\includegraphics[width=8.0cm]{IN718_TMF_Axial+-1_PV_Exp_vs_Sim_90.pdf}}
+%\caption{Experimental and computational results under the multi-axial thermo-mechanical loading conditions with temperature between 300 and 650$^{\circ}$C. (a) The hysteresis loop in the in-phase loading. (b) Peak-valley stresses as function of the loading cycles in the in-phase loading. (c) The stress-strain hysteresis loop in the out-of-phase loading. (d) Peak-valley stress as a function of loading cycles in the out-of-phase loading. (e) The  stress-strain hysteresis loop with a phase angle of 90$^\circ$ . (f) Peak-valley stress as a function of loading cycles with a phase angle of 90$^\circ$ . \marked{(I would suggest to combine loops into one figure and peak-valleys into one figure. These 6 figures do not give so different informations. They are too similar to give explanations.)}}
+%\label{Fig:TMF_IP}
+%\end{figure*}
+
+%\begin{figure*}[!htp]
+%\centering{\includegraphics[width=8.0cm]{7017_TMF_+-1_OP_10th.pdf}}
+%\centering{\includegraphics[width=8.0cm]{IN718_TMF_Axial+-1_PV_Exp_vs_Sim_OP.pdf}}
+%\caption{Experimental and computational results under the out-of-phase multi-axial thermo-mechanical loading conditions with temperature 300-650$^{\circ}$C. (a) The stabilized stress-strain hysteresis loop. (b) Peak-valley stress as a function of loading cycles.}
+%\label{Fig:TMF_OP}
+%\end{figure*}
+
+%\begin{figure*}[!htp]
+%\centering{\includegraphics[width=8.0cm]{7025_TMF_+-1_90_10th.pdf}}
+%\centering{\includegraphics[width=8.0cm]{IN718_TMF_Axial+-1_PV_Exp_vs_Sim_90.pdf}}
+%\caption{Experimental and computational results under the multi-axial thermo-mechanical loading conditions with a phase angle of 90$^\circ$ and temperature of 300-650$^{\circ}$C. (a) The stabilized stress-strain hysteresis loop. (b) Peak-valley stress as a function of loading cycles.}
+%\label{Fig:TMF_90}
+%\end{figure*}
+
+
+\begin{figure*}[!htp]
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_IP_Prop45+-1_1st.pdf}
+\put(0,65){\fcolorbox{white}{white}{(a)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_IP_Prop45+-1_50th.pdf}
+\put(0,65){\fcolorbox{white}{white}{(b)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_IP_Prop45+-1_Exp_vs_Sim_PV_Axial.pdf}
+\put(0,65){\fcolorbox{white}{white}{(c)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_IP_Prop45+-1_Exp_vs_Sim_PV_Torsional.pdf}
+\put(0,65){\fcolorbox{white}{white}{(d)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_IP_Prop45+-1_1st.pdf}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_IP_Prop45+-1_50th.pdf}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_IP_Prop45+-1_Exp_vs_Sim_PV_Axial.pdf}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_IP_Prop45+-1_Exp_vs_Sim_PV_Torsional.pdf}}
+\caption{Experimental and computational results for the proportional in-phase thermo-mechanical loading with varying temperature between 300 and 650$^{\circ}$C. (a) The first loading cycle. (b) The half life loading cycle. (c) Axial peak-valley stresses as function of the loading cycles. (d) Torsional peak-valley stresses as function of the loading cycles.}
+\label{Fig:TMF_Prop45}
+\end{figure*}
+
+
+\begin{figure*}
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_7037_Diamond+-1_1st.pdf}
+\put(0,65){\fcolorbox{white}{white}{(a)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_7037_Diamond+-1_20th.pdf}
+\put(0,65){\fcolorbox{white}{white}{(b)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_IP_Diamond+-1_Exp_vs_Sim_PV_Axial.pdf}
+\put(0,65){\fcolorbox{white}{white}{(c)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+\centering{\begin{overpic}[width=8.0cm]{IN718_TMF_IP_Diamond+-1_Exp_vs_Sim_PV_Torsional.pdf}
+\put(0,65){\fcolorbox{white}{white}{(d)}}
+\put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+\end{overpic}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_7037_Diamond+-1_1st.pdf}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_7037_Diamond+-1_20th.pdf}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_IP_Diamond+-1_Exp_vs_Sim_PV_Axial.pdf}}
+% \centering{\includegraphics[width=8.0cm]{IN718_TMF_IP_Diamond+-1_Exp_vs_Sim_PV_Torsional.pdf}}
+\caption{Experimental and computational results for the diamond strain path under in-phase thermo-mechanical loading conditions with varying temperature between  300 and 650$^{\circ}$C. (a) The first loading cycle. (b) The half life loading cycle. (c) Axial peak-valley normal stress as function of loading cycles. (d) Torsional peak-valley shear stress as function of  loading cycles.}
+\label{Fig:TMF_Diamond}
+\end{figure*}
+
+\subsection{Multi-axial thermo-mechanical fatigue tests}
+\noindent
+Multi-axial thermo-mechanical material behavior were not studied systematically in literature. Effects of multi-axial loads and temperature were not discussed. In the article both proportional loading path PRO (Fig. \ref{Fig:LoadPath}(a)) and non-proportional diamond loading path DIAM (Fig. \ref{Fig:LoadPath}(c)) are investigated. Experimental results are shown in Figs. \ref{Fig:TMF_Prop45} and \ref{Fig:TMF_Diamond}, together with computational predictions.
+
+In both tests, the temperature varies between 300 and 650$^{\circ}$C, the equivalent mechanical strain amplitude $\varepsilon_{eq,a}=1\%$, the phase angle between axial strain and temperature is zero degree for the in-phase loading (IP).
+The torsional and axial stress curve reveals cyclic softening for all tested multi-axial loading cases.
+Computations were performed with the non-proportional hardening factor $Y_{\rm sat}=0$MPa and $Y_{\rm sat}=200$MPa, respectively, to demonstrate the influence of the non-proportional correction to the computational results.
+
+As shown in Fig. \ref{Fig:TMF_Prop45}, the proportional loading case provides good agreement between the computation and experiment in the peak value distribution, while the valley values show a similar deviation as observed in isothermal loading. The shifting in the shear stress-normal stress loop is caused by the under-estimate of the compressive normal stress. Generally, computations agree with the experiments reasonably. The non-proportional hardening factor does not effect the computational results, as expected.
+
+Under the non-proportional loading condition, the diamond loading path shows significant effects of the non-proportional hardening factor  in the constitutive model, as shown in Fig. \ref{Fig:TMF_Diamond}. The stress loops of the first loading cycles and the stabilized cycles are illustrated in Figs. \ref{Fig:TMF_Diamond}(a) and (b), respectively. In the figures both computational results with and without non-proportional hardening factor are illustrated. In the first loading cycle and the stabilized cycle the non-proportional hardening factor improves computational predictions obviously. Additional hardening due to the non-proportional loading can be described by the model.
+
+The axial and torsional peak-valley stresses are illustrated in  Figs. \ref{Fig:TMF_Diamond}(c) and (d).
+In both tests the slight deviations between computational predictions and experiments  change after  loading direction. The stress amplitude at the low temperature seems to be under-estimated in comparing with the higher temperature point. However, it is confirmed that the constitutive model can predict the thermo-mechanical behavior of the material properly.
+
+%\begin{figure*}
+%  \begin{minipage}[t]{0.5\linewidth}
+%    \centering
+%    \includegraphics[width=3.5in]{IN718_TMF_IP_Prop45+-1_1st.pdf}
+%    \centerline{(a) The first loading cycle.}
+%    \label{Fig:IN718_TMF_IP_Prop45+-1_1st}
+%  \end{minipage}
+%  \begin{minipage}[t]{0.5\linewidth}
+%  \nonumber
+%    \centering
+%    \includegraphics[width=3.5in]{IN718_TMF_IP_Prop45+-1_50th.pdf}
+%    \centerline{(b) The 50th loading cycle.}
+%    \label{Fig:IN718_TMF_IP_Prop45+-1_50th}
+%  \end{minipage}%
+%  \label{Fig:TMF_90}
+%  \caption{Experimental and computational results under the proportional in-phase thermo-mechanical loading conditions with temperature of 300-650$^{\circ}$C.}
+%\end{figure*}
+
+%\begin{figure*}
+%  \begin{minipage}[t]{0.5\linewidth}
+%    \centering
+%    \includegraphics[width=3.5in]{IN718_TMF_7037_Diamond+-1_1st.pdf}
+%    \centerline{(a) The first loading cycle.}
+%    \label{Fig:IN718_TMF_7037_Diamond+-1_1st}
+%  \end{minipage}
+%  \begin{minipage}[t]{0.5\linewidth}
+%  \nonumber
+%    \centering
+%    \includegraphics[width=3.5in]{IN718_TMF_7037_Diamond+-1_20th.pdf}
+%    \centerline{(b) The 50th loading cycle.}
+%    \label{Fig:IN718_TMF_7037_Diamond+-1_20th}
+%  \end{minipage}%
+%  \label{Fig:TMF_90}
+%  \caption{Experimental and computational results under the diamond strain path in-phase thermo-mechanical loading conditions with temperature of 300-650$^{\circ}$C.}
+%\end{figure*}
+
+\section{Conclusions (needs revision.)}
+\noindent
+In the article the multi-axial thermo-mechanical behavior of the nickel-based superalloy Inconel 718 has been investigated experimentally and computationally.
+Based on the the Ohno-Wang's model, a new constitutive model has been developed for multi-axial thermo-mechanical cyclic plasticity.
+An implicit computational integration algorithm for the constitutive model has been developed and implemented into the general purpose commercial finite element code ABAQUS. The computational predictions confirm that the model can describe elastic-plastic mechanical behavior under most different thermo-mechanical loading conditions.
+From the present experimental and computational investigation the following conclusions can be drawn:
+\begin{itemize}
+
+\item {The kinematic hardening can represent the cyclic loading and the isotropic hardening can consider the non-proportional loading path effects in the constitutive model.
+Complex variations in the peak and valley stresses can be described by the kinematic hardening model properly. The numerical predictions presents good agreement with the experiments in varying temperatures.}
+
+\item {Computations confirm the significance of the non-proportional hardening under multi-axial loading conditions and agree with experiments under different loading conditions. Generally, the prediction of the constitutive model is reasonable under both proportional and non-proportional loadings.}
+
+\item {The temperature-dependent material parameters are determined under isothermal conditions. The results reveal the constitutive model can approach thermo-mechanical behavior reasonably under both axial and multi-axial thermo-mechanical loadings.}
+
+
+\item{The complex loading path may induce additional strain hardening in the compressive normal stress, which cannot be caught by the present constitutive model. To quantify this effect, more detailed experiments are necessary.}
+
+\end{itemize}
