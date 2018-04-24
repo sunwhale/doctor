@@ -1,5 +1,841 @@
 \chapter{Conclusion}
 
+\section{概述}
+热障涂层涂覆于航空发动机和燃气轮机高温部件表面，具有防止高温腐蚀、延长热端部件使用寿命、提高发动机功率和减少燃油消耗等优点。
+通常典型的热障涂层包括表面陶瓷层(TC：top coat)和金属粘结层(BC：bond coat)。在服役过程中，粘结层会发生氧化，在粘结层和陶瓷层界面形成厚度为1~10$\mu$m的热生长氧化物(TGO：thermally grown oxide)。TGO的形成是一个体积膨胀过程，界面会限制这种体积变化，因而在TGO内部会随之产生应力。而且，陶瓷层与金属基底的热膨胀系数相
+差较大，在热循环过程中会在热载荷的作用下产生较大的热应力，从而在界面缺陷处引起应力集中，促进裂纹的萌生与扩展。
+\section{试验}
+
+发动机涡轮叶片主要采用气膜冷却和内部流冷却，轮盘通常采用内部二次流冷却。
+服役过程中，涡轮叶片不仅受到较大的交变载荷，而且在叶片表面和内部分别受到高温高压燃气的冲击和冷却气体的作用，这样涡轮叶片就遭受载荷和温度同时变化带来的热机械疲劳损伤。
+此外，为了增强发动机冷却效果，提高发动机效率，先进的航空发动机和燃气轮机热端涡轮叶片多为薄壁多孔结构。
+因此，我们设计了薄壁圆管试件来模拟零件的冷却结构，同时试件外壁涂覆有热障涂层。
+在内部冷却气体作用下，试件内表面与外表面之间会产生很大的温度梯度，同时导致额外的应力，在热表面上表现为多轴压缩载荷，而在冷却表面上表现为多轴拉伸载荷。
+
+对于薄壁圆管试件，我们可选择的加热方式有电阻炉、电磁感应、火焰喷射和辐射。
+电阻炉的优点在于温度稳定性好，但实际发动机启动阶段升温过程只需要几十秒钟的时间，而且降温也相当迅速，采用电阻炉无法实现试件的快速升温和降温。
+电磁感应加热的优点在于加热效率高，试件升温迅速，通常热机械疲劳试验采用高频电磁感应设备进行加热，其中高频电磁感应加热厚度约为1-2mm，这意味着试件的内外表面是同时加热的，在内部冷却过程中，不利于产生内外表面的温度梯度，同时电磁感应方式只会对内部金属层加热，使得内部金属层温度高于外部陶瓷层温度，这不符合热障涂层构件实际工作状态下的温度分布\cite{BRENDEL2008234}。
+火焰喷射的优点在于接近真实发动机涡轮叶片的工作环境，但火焰的稳定性差，火焰形状难以控制，很难形成均匀的温度场\cite{MAUGET2017225}。
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=10cm]{IN718_Axial_Specimen_TGMF.pdf}}
+\caption{TGMF试样示意图.}
+\label{Fig:Specimen}
+\end{figure}
+
+因此，参考德宇航的工作\cite{BAUFELD2008219}，我们为热梯度机械疲劳（TGMF）测试设计开发了聚光辐射加热系统，如\ref{Fig:Radiation_Furnace2}所示。
+该系统包括16根卤素灯管，灯丝的直径小于0.5mm，因此每根灯丝可以被抽象为一个线光源。
+每根灯管对应一面反射镜，反射镜的几何形状为椭圆柱面，每根灯管位于其对应的椭圆柱面其中一个焦点，试件位于所有椭圆柱面的公共焦点，通过镜面反射将光线聚焦在试件表面进行加热。
+通过聚光辐射的方法加热试件外表面，同时内表面通过压缩空气冷却来实现温度梯度。
+该系统可以在空心试件表上实现受控的温度梯度循环，同时施加机械载荷，适用于金属和非金属材料。
+
+在TMF和TGMF测试中，温度控制是实现每个测试的可重复加载条件的关键问题，两种试验采用相似的温度控制方法。
+在测试过程中，使用接触式K型电偶测量试件外表面的温度，考虑到试验过程中温度变化速率很快，需要传感器对温度变化有迅速的响应，传感器体积越小，对温度的响应越迅速，因此我们选取测量点直径为0.25mm的热电偶，将试件中心点的温度作为控制量，以实现良好的温度控制，精度为±5°C。
+对于试件内表面，考虑到气体流动，在TGMF期间，内部点焊热电偶是不可能的，因为它们的信号受到内部冷却的影响。
+同时由于试件的尺寸很小，内孔直径只有6.5mm，也无法使用热像仪进行测量，因此在这里采用计算的方法来确定时间内表面的温度。
+\begin{figure}[!htp]
+\centering{\includegraphics[width=10cm]{Radiation_Furnace2.pdf}}
+\caption{聚光辐射加热系统.}
+\label{Fig:Radiation_Furnace2}
+\end{figure}
+
+
+\begin{table}[htbp]
+  \centering
+  \caption{650$^{\circ}$C恒温疲劳试验、TMF与TGMF试验结果.}
+    \begin{tabular}{llllll}
+    \toprule
+    Test Type & $\pm \varepsilon _m$ & $\varepsilon _{eq}$ & $\dot \varepsilon _{eq}$ & $\theta_{T-\varepsilon}$ & $N_f$ \\
+          & [\%]  & [\%]  & [s$^{-1}$] & [$^\circ$] &  \\
+    \midrule
+    IF & 1.00  & 1.00  & $1\times 10^{-3}$ & -     & 131 \\
+          & 0.80  & 0.80  & $1\times 10^{-3}$ & -     & 326 \\
+          & 0.70  & 0.70  & $1\times 10^{-3}$ & -     & 592 \\
+          & 0.60  & 0.60  & $1\times 10^{-3}$ & -     & 1336 \\
+          & 0.50  & 0.50  & $1\times 10^{-3}$ & -     & 8449 \\
+          & 0.45  & 0.45  & $1\times 10^{-3}$ & -     & 15497 \\
+          & 0.40  & 0.40  & $6.4\times 10^{-3}$ & -     & 130585 \\
+    \midrule
+    TMF-IP & 1.00  & 1.00  & $2.22\times 10^{-4}$ & 0     & 58 \\
+          & 0.80  & 0.80  & $1.78\times 10^{-4}$ & 0     & 176 \\
+          & 0.70  & 0.70  & $1.56\times 10^{-4}$ & 0     & 248 \\
+          & 0.60  & 0.60  & $1.33\times 10^{-4}$ & 0     & 1297 \\
+    \midrule
+    TMF-OP & 1.00  & 1.00  & $2.22\times 10^{-4}$ & 180   & 209 \\
+          & 0.80  & 0.80  & $1.78\times 10^{-4}$ & 180   & 303 \\
+          & 0.70  & 0.70  & $1.56\times 10^{-4}$ & 180   & 429 \\
+          & 0.65  & 0.65  & $1.44\times 10^{-4}$ & 180   & 633 \\
+    \midrule
+    TGMF-IP & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 0     & 48 \\
+          & 0.60  & 0.60  & $1.33\times 10^{-4}$ & 0     & 50 \\
+          & 0.55  & 0.55  & $1.22\times 10^{-4}$ & 0     & 107 \\
+          & 0.50  & 0.50  & $1.11\times 10^{-4}$ & 0     & 208 \\
+          & 0.40  & 0.40  & $0.89\times 10^{-4}$ & 0     & 1066 \\
+    \midrule
+    TGMF-OP & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 180   & 128 \\
+          & 0.55  & 0.55  & $1.22\times 10^{-4}$ & 180   & 375 \\
+          & 0.50  & 0.50  & $1.11\times 10^{-4}$ & 180   & 864 \\
+          & 0.40  & 0.40  & $0.89\times 10^{-4}$ & 180   & 3387 \\
+    \midrule
+    TGMF-IP-TBC & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 0     & 147 \\
+          & 0.55  & 0.55  & $1.22\times 10^{-4}$ & 0     & 624 \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:test_matrix}%
+\end{table}%
+
+\section{试验结果}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{plot_exp_half_life_cycle_TCIPTGMF.pdf}
+      \put(0,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{plot_exp_half_life_cycle_TCOPTGMF.pdf}
+      \put(0,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+
+  \caption{TGMF稳定滞后回线：(a)同相位，(b)反相位.}
+  \label{Fig:plot_exp_half_life_cycle_TCTGMF}
+\end{figure}
+
+图\ref{Fig:plot_exp_half_life_cycle_TCTGMF}分别是同相位和反相位热梯度机械疲劳的稳定滞后回线。
+由于热梯度机械疲劳的温度循环与载荷循环之间有相位差,导致其拉伸半周和压缩半周具有不同的循环软化行为。
+对于同相位热梯度机械疲劳试验,合金在拉伸半周表现出较强的循环软化，而对于反相位热梯度机械疲劳试验则相反,合金在压缩半周表现出较强的循环软化。
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{plot_exp_pv_TCIPTGMF.pdf}
+      \put(0,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{plot_exp_pv_TCOPTGMF.pdf}
+      \put(0,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+
+  \caption{TGMF应力均值与峰谷值：(a)同相位，(b)反相位.}
+  \label{Fig:plot_exp_pv_TCTGMF}
+\end{figure}
+
+图\ref{Fig:plot_exp_pv_TCTGMF}分别是同相位和反相位热梯度机械疲劳的循环应力峰谷值和均值。
+在所有的试验条件下,合金在最终断裂前循环应力峰谷值快速下降,这实际上是宏观裂纹的形成以及随后的失稳扩展至断裂的结果。
+同相位和反相位热梯度机械疲劳试验均表现为循环软化，但温度循环与载荷循环之间的相位差，导致循环软化的程度不同，在300-650$^{\circ}$C范围内，温度越高，材料的循环软化越明显，因此对于同相位的情况，材料在拉伸半周的循环软化更强烈，反应在平均应力的演化上则表现为平均应力随着循环的增加，产生越来越大的平均压应力。
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{plot_exp_mean_TCIPTGMF.pdf}
+      \put(0,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{plot_exp_mean_TCOPTGMF.pdf}
+      \put(0,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  \end{minipage}
+
+  \caption{TGMF循环应力均值：(a)同相位，(b)反相位.}
+  \label{Fig:plot_exp_mean_TCTGMF}
+\end{figure}
+
+平均应力是高温低周疲劳中不可忽视的因素，尤其对于强度较高而韧性较低的镍基高温合金而言，平均应力是影响疲劳寿命的重要因素，图\ref{Fig:plot_exp_mean_TCTGMF}所示为Inconel 718合金在同相位和反相位TGMF试验条件下的平均应力响应曲线。可见，对于TGMF-IP，平均应力为压应力，机械应变幅的增加对平均应力的影响不大，对于不同的机械应变幅值，平均应力演化的速率相近，平均应力的数值随着循环数的增加而增大，
+，当$\Delta_{\varepsilon}=0.4\%$时，半寿命时的压缩平均应力为66.7MPa。对于TGMF-OP，平均应力为拉应力且随着机械应变幅的增加拉伸平均应力幅度变大，当$\Delta_{\varepsilon}=0.4\%$时，半寿命时的拉伸平均应力约为52.3MPa。TGMF中存在明显平均应力的原因是合金的强度随温度的不断变化，无论是同相位还是反相位热梯度机械疲劳都经历低温到高温的温度循环，当试验温度较高时合金的强度较低，而当试验温度较低时合金的强度较高，因此造成了滞后回线的应力不对称性，平均应力总是偏向低温半周，而平均应力随机械应变幅增加而增大的原因是随着机械应变幅的增加，合金在高温半周产生的塑性变形增加，这加剧了拉压应力的不对称性。此外，可以观察到在两种TGMF试验条件下平均应力幅值均随循环的进行而逐渐增大，这可认为是IN718合金在高温半周循环软化更为强烈的结果。等温疲劳试验，平均应力数值普遍较小，因此平均应力对等温疲劳试验的影响可以忽略。
+
+
+\section{Thermal gradient mechanical FE-analysis}
+
+\subsection{冷却系统}
+
+
+TGMF试验的试件内表面采用压缩空气进行冷却，冷却系统的结构如图\ref{Fig:inner_cooling}所示，包括空气压缩机、空气干燥器、流量计、压力表和流量控制器组成。
+Because of the small inner diameter 6.5mm of the specimen, it is difficult to measure the temperature of the specimen inner surface during the tests.
+A variety of measurement options were tried to measure the inner surface temperature.
+It was found that the internal cooling air has a significant effect on the temperature measurement of the inner surface of the specimen.
+% 内部冷却空气对试件内壁的温度测量有很大的影响。
+The measured temperature is not the temperature of the inner surface, but the average temperature of the wall and the cooling air flow.
+% 测量得到的温度不是壁面的温度，而是壁面和冷却气流的平均温度。
+Therefore we tried to calculate the temperature distribution of the specimen inner surface using the FEM method.
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=12cm]{inner_cooling.pdf}}
+\caption{Schematic of inner cooling air system.}
+\label{Fig:inner_cooling}
+\end{figure}
+
+\subsection{有限元模型}
+% \subsection{Model description}
+TGMF试件的几何形状如图\ref{Fig:Specimen}所示，由于几何形状和外部环境的对称性，我们取出试样的标距段部分，建立轴对称有限元模型，如图\ref{Fig:FEM}所示，标距段长度为12mm，取试件的中心界面作为轴对称面。
+用以下物理边界条件进行辐射加热的TGMF试样几何形状的有限元分析：
+试件外表面为温度边界，随时间变化的温度分布可由试验测得，试件内表面为对流边界条件，对流换热系数由圆管强制对流换热公式计算，需要试验测量冷却空气的密度、温度和体积流量。由于试件的对称性，中心对称界面可假设为绝热边界，试件的上边界认为是热传导边界，对于热辐射，取试件表面的发射率为$\varepsilon=0.75$。
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=12cm]{FEM.pdf}}
+\caption{Simulated temperature distribution and resulting axial stress component during heating of an inductively heated TMF specimen.}
+\label{Fig:FEM}
+\end{figure}
+
+\subsection{圆管内部的强制对流换热}
+The inner surface of the hollow specimen can be considers as a pipe.
+%空心试件可以简化为圆管.
+According to the formula of convection in turbulent pipe flow, the convective heat transfer coefficient of the inner surface of the specimen can be calculated.
+%根据圆管内部的强制对流换热公式，我们计算试件内表面的对流换热系数。
+
+Nusselt number (Nu) is a dimensionless number, defined as the ratio of convective to conductive heat transfer across (normal to) the boundary.
+The Nusselt number is given as:
+\[{\rm{N}}{{\rm{u}}_L} = \frac{{hL}}{k},\]
+where $h$ is the convective heat transfer coefficient of the fluid, $L$ is the characteristic length, $k$ is the thermal conductivity of the fluid.
+
+Gnielinski's correlation for turbulent flow in tubes is given as:
+\[{\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}},\]
+where $f$ is the Darcy friction factor that can either be obtained from the Moody chart or for smooth tubes from correlation developed by Petukhov:
+\[f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}},\]
+with
+\[0.5 \le {\rm{Pr}} \le 2000,\]
+\[3000 \le {\rm{R}}{{\rm{e}}_D} \le 5 \times {10^6},\]
+
+The Prandtl number (Pr) is a dimensionless number, defined as the ratio of momentum diffusivity to thermal diffusivity.
+The Prandtl number is given as:
+\[{\rm{Pr}} = \frac{{{c_p}\mu }}{k},\]
+where
+$c_{p}$ is specific heat, $\mu$ is dynamic viscosity and $k$ is thermal conductivity.
+
+The Reynolds number (Re) is a dimensionless number, defined as the ratio of inertial forces to viscous forces within a fluid.
+The Reynolds number is given as:
+\[{\rm{Re}} = \frac{{\rho uL}}{\mu },\]
+where
+$\rho$ is density of the fluid, $u$ is the velocity of the fluid with respect to the object, $\mu$ is the dynamic viscosity of the fluid and $L$ is a characteristic dimension.
+
+It is noted that the dynamic viscosity $\mu$ of an ideal gas is a function of the temperature. It can be derived as Sutherland's formula:
+\[\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}},\]
+where $\mu$ is dynamic viscosity at input temperature $T$,
+$\mu_0$ is reference viscosity at reference temperature $T_0$,
+$C$ is Sutherland's constant dependent on the gaseous material.
+Table \ref{tab:SutherlandConstant} shows the Sutherland's constant and reference values of the air.
+\begin{table}[htbp]
+  \centering
+  \caption{Sutherland's constant and reference values of the air.}
+    \begin{tabular}{p{2cm}p{2cm}p{2cm}p{3cm}}
+    \toprule
+    Gas   & $C$(K) & $T_0$(K) & $\mu_0$($\rm{Pa\cdot s}$) \\
+    \midrule
+    air   & 120   & 291.15 & $1.827\times 10^{-5}$ \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:SutherlandConstant}%
+\end{table}%
+
+The density of dry air $\rho$ can be calculated using the ideal gas law, expressed as a function of temperature and pressure:
+\begin{equation}
+\rho  = \frac{p}{{RT}},
+\label{Equ:AirDensity}
+\end{equation}
+where
+$p$ is absolute pressure,
+$T$ is absolute temperature,
+$R$ is specific gas constant.
+
+According to the measurement results of the sensors, the average pressure and temperature of the cooling air are 6.5 bar and 288.15K, respectively.
+
+\begin{table}[htbp]
+  \begin{threeparttable}
+  \centering
+  \caption{Heat convection coefficients of the inner surface of the specimen.}
+    \begin{tabular}{p{6cm}p{2.5cm}p{2.5cm}}
+    \toprule
+    Physical quantity   & Unit & Value  \\
+    \midrule
+    $T$   & ${\rm{K}}$ & 288.15  \\
+    $p$   & ${\rm{bar}}$ & 6.5   \\
+    $\rho  = \frac{p}{{RT}}$ \tnote{*1} & ${\rm{kg/}}{{\rm{m}}^{\rm{3}}}$ & 7.724 \\
+    $\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}}$ \tnote{*2} & -     & 1.81E-05 \\
+    ${\dot V}$ & ${\rm{l/min}}$ & 40  \\
+    $u = \frac{{4\dot V}}{{\pi {D^2}}}$ \tnote{*3} & ${\rm{m/}}{{\rm{s}}^2}$ & 20.09  \\
+    ${\rm{Re}} = \frac{{\rho uL}}{\mu }$ \tnote{*4} & -     & 55624  \\
+    ${\rm{Pr}} = \frac{{{c_p}\mu }}{k}$ \tnote{*5} & -     & 0.63  \\
+    $f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}}$ & -     & 0.0205  \\
+    ${\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}}$ & -     & 106.50  \\
+    $h = \frac{k}{{D{\rm{N}}{{\rm{u}}_D}}}$ & ${\rm{W/(}}{{\rm{m}}^{\rm{2}}} \cdot {\rm{K)}}$ & 423.10  \\
+    \bottomrule
+    \end{tabular}%
+    \begin{tablenotes}
+    \item[*1] $R = 287.058 {\rm{J/(kg}} \cdot {\rm{K}})$ for dry air.
+    \item[*2] Sutherland's constant and reference values of the air (see Table \ref{tab:SutherlandConstant}).
+    \item[*3] $D=0.65$mm.
+    \item[*4] $L=D$.
+    \item[*5] $c_{p}=903.3 {\rm{J/(kg}} \cdot {\rm{K}})$ and $k=0.0258 {\rm{W/(m}} \cdot {\rm{K}})$ at $288.15{\rm{K}}$.
+    \end{tablenotes}
+    \end{threeparttable}
+  \label{tab:addlabel}%
+\end{table}%
+
+\subsection{计算结果}
+图\ref{Fig:plot_temperature_along_gauge_length}为试件内、外表面温度和轴向应力在标距段内沿轴向的分布，横坐标为距离试件中心截面的距离，在TGMF-IP循环过程中，图中所示的温度与应变为温度最高点（650$^{\circ}$C）时的值。
+此时，试件外表面与内表面的温差为12.5$^{\circ}$C，
+
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=12cm]{plot_temperature_along_gauge_length.pdf}}
+\caption{Diagram of simulated axial temperature gradients and the resulting, thermally induced axial stress components at maximum temprature (650$^{\circ}$C) during TGMF tests.}
+\label{Fig:plot_temperature_along_gauge_length}
+\end{figure}
+
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=12cm]{plot_temperature_along_radial_direction.pdf}}
+\caption{Diagram of simulated radial temperature gradients and the resulting, thermally induced hoop stress components at maximum temprature (650$^{\circ}$C) during TGMF tests.}
+\label{Fig:plot_temperature_along_radial_direction}
+\end{figure}
+
+\section{试验结果}
+\subsection{疲劳寿命}
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=10cm]{plot_exp_fatigue_life.pdf}}
+\caption{恒温试验（IF）、热机械疲劳试验（TMF）和热梯度机械疲劳试验（TGMF）寿命比较.}
+\label{Fig:plot_exp_fatigue_life}
+\end{figure}
+
+在机械应变控制条件下，一般可以通过机械应变幅与疲劳寿命之间的关系来考查材料的热机械疲劳寿命行为。图\ref{Fig:plot_exp_fatigue_life}所示为300-650$^{\circ}$C同相位、反相位热机械疲劳和热梯度机械疲劳试验条件下机械应变与疲劳寿命之间的关系，图中黑色实线为650$^{\circ}$C等温疲劳的Coffin-Masson疲劳寿命曲线。可见300-650$^{\circ}$C的热机械疲劳与热梯度机械疲劳比650$^{\circ}$C等温疲劳具有更大的损伤。在同等机械应变幅下650$^{\circ}$C等温低周疲劳具有较高的疲劳寿命。
+对于热机械疲劳（TMF），同相位和反相位试验的机械应变幅-寿命关系曲线存在相互交叉，交叉点的位置大概在机械应变幅为0.6\%左右。
+当机械应变幅较高时，同相位热机械疲劳倾向于具有较低的疲劳寿命而当机械应变幅较低时,反相位热机械疲劳倾向于具有较低的疲劳寿命。
+而对于热梯度机械疲劳（TGMF），同相位和反相位试验的机械应变幅-寿命关系曲线并没有存在相互交叉的趋势，同相位热梯度机械疲劳一直具有较低的疲劳寿命。
+
+
+\subsection{断口形貌}
+通过裂纹扩展区域的形貌和疲劳辉纹的方向我们可以推测出裂纹萌生的位置，如图\ref{Fig:crack_initiation}所示，图中箭头所示为裂纹萌生的位置。我们可以观测到显著的稳态裂纹扩展和裂纹失稳扩展区域，对于650$^{\circ}$C等温疲劳（IF）试验，试样断口比TMF和TGMF断口更加平整，疲劳扩展区面积较大。
+对于所有的等温疲劳（IF）和热机械疲劳（TMF）试验，疲劳裂纹都萌生于试样表面或近表面的缺陷处以及优先氧化区域并以沿枝晶和穿晶混合的方式在晶粒内部扩展。
+虽然温度梯度导致了TGMF试样外表面附加了一定程度的压应力，但对于本文中的试验参数，所有的热梯度机械疲劳（TGMF）试验，疲劳裂纹都萌生于试样外表面。
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{7112-1.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(a)}}
+      \put(50,40){\color{white}\thicklines\vector(1,1){15.5}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{7047-1.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(b)}}
+      \put(50,40){\color{white}\thicklines\vector(3,1){25}}
+    \end{overpic}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{7033-1.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(c)}}
+      \put(45,40){\color{white}\thicklines\vector(1,0){18}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{7206-1.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(d)}}
+      \put(70,40){\color{white}\thicklines\vector(3,-1){20}}
+    \end{overpic}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{720719.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(e)}}
+      \put(60,40){\color{white}\thicklines\vector(1,2){13}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{720932.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(f)}}
+      \put(60,40){\color{white}\thicklines\vector(1,2){15}}
+    \end{overpic}
+  \end{minipage}
+
+  \caption{Locations of crack initiation: (a)IF 0.45\%, (b)TMF-IP 0.6\%, (c)TMF-OP 0.65\%, (d)TGMF-IP 0.55\%, (e)TGMF-OP 0.55\%, (f)TGMF-OP 0.45\%.}
+  \label{Fig:crack_initiation}
+\end{figure}
+
+对五种不同试验条件下疲劳断口的扩展区和瞬间断裂区进行观察，如图\ref{Fig:fatigue_striations}所示，图中箭头为裂纹扩展方向。结果表明，TMF-OP和TGMF-OP的疲劳辉纹最为清晰（图\ref{Fig:fatigue_striations}(c,e,f)），650$^{\circ}$C IF,TMF-IP和TGMF-IP并未看到明显的疲劳辉纹（图\ref{Fig:fatigue_striations}(a),(b),(d)），这是由于在650$^{\circ}$C IF,TMF-IP和TGMF-IP试验条件下裂纹张开扩展时处于较高温度，断口表面经受了较多
+高温氧化损伤的原因。
+而三种载荷条件下的瞬间失稳断裂区则非常相似，与拉伸试样的断口形貌相似。
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{7112-4.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(a)}}
+      \put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{7047-7.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(b)}}
+      \put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
+    \end{overpic}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{7033-103.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(c)}}
+      \put(50,50){\color{white}\thicklines\vector(-1,2){10}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{7206-2.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(d)}}
+      \put(50,50){\color{white}\thicklines\vector(-2,1){20}}
+    \end{overpic}
+  \end{minipage}
+
+  % \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  % \nonumber
+  %   \centering
+  %   \begin{overpic}[width=6.0cm]{720721.jpg}
+  %     \put(0,65){\fcolorbox{white}{white}{(e)}}
+  %     \put(50,50){\color{white}\thicklines\vector(-2,-3){15}}
+  %   \end{overpic}
+  % \end{minipage}%
+  % \begin{minipage}[t]{0.5\linewidth}
+  %   \centering
+  %   \begin{overpic}[width=6.0cm]{720935.jpg}
+  %     \put(0,65){\fcolorbox{white}{white}{(f)}}
+  %     \put(50,50){\color{white}\thicklines\vector(-2,-3){15}}
+  %   \end{overpic}
+  % \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+  \nonumber
+    \centering
+    \begin{overpic}[width=6.0cm]{7207-103.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(e)}}
+      \put(50,50){\color{white}\thicklines\vector(-1,1){15}}
+    \end{overpic}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \begin{overpic}[width=6.0cm]{7209-105.jpg}
+      \put(0,65){\fcolorbox{white}{white}{(f)}}
+      \put(50,50){\color{white}\thicklines\vector(0,-3){15}}
+    \end{overpic}
+  \end{minipage}
+
+  \caption{Observation of fatigue striations on fractures surface: (a)IF 0.45\%, (b)TMF-IP 0.6\%, (c)TMF-OP 0.65\%, (d)TGMF-IP 0.55\%, (e)TGMF-OP 0.55\%, (f)TGMF-OP 0.45\%.}
+  \label{Fig:fatigue_striations}
+\end{figure}
+
+
+\section{疲劳模型}
+
+\subsection{Brown-Miller Model}
+Based on the critical plane concepts \cite{Brown1973}, Wang and Brown \cite{Wang1993} proposed that the Kandil, Brown and Miller fatigue parameter \cite{Kandil1982} can be reformulated as the equivalent shear strain amplitude:
+\begin{equation}
+\frac{{\Delta \hat \gamma }}{2} = \frac{{\Delta {\gamma _{max}}}}{2} + S\Delta {\varepsilon _n},
+\label{Equ:ShearStrainBM}
+\end{equation}
+where $\frac{{\Delta \hat \gamma }}{2}$ is the equivalent shear strain range, $\Delta {\varepsilon _n}$ represents the normal strain excursion on the on the plane with the maximum strain range $\Delta {\gamma _{max}}$. The material dependent parameter S represents the influence of the normal strain on the crack propagation.
+The fatigue endurance is suggested as:
+\begin{equation}
+\frac{{\Delta \hat \gamma }}{2} = A\frac{{{{\sigma '}_f}}}{E}{\left( {2{N_f}} \right)^b} + B{{\varepsilon '}_f}{\left( {2{N_f}} \right)^c},
+\end{equation}
+with
+\[A = 1 + {\nu _e} + \left( {1 - {\nu _e}} \right)S,\]
+and
+\[B = 1 + {\nu _p} + \left( {1 - {\nu _p}} \right)S.\]
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-BM.pdf}}
+\caption{Brown-Miller Model.}
+\label{Fig:NF-NP-TGMF-BM}
+\end{figure}
+
+\subsection{Fatemi-Socie Model}
+Based on the work of Brown and Miller, Fatemi and Socie \cite{Fatemi1988} proposed that the normal strain term in Equation (\ref{Equ:ShearStrainBM}) should be replaced by the normal stress.
+The equivalent shear strain amplitude is developed as:
+\begin{equation}
+\frac{{\Delta \hat \gamma }}{2} = \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,max}}}}{{{\sigma _y}}}} \right),
+\end{equation}
+where
+$\sigma _{n,max}$ is the maximum normal stress on the critical plane suffering the maximum strain range $\Delta {\gamma _{max}}$, $k$ is a material parameter, the sensitivity of the material to normal stress is reflected in the ratio $k/\sigma_y$.
+They developed a damaging model oriented on the shear-based damage initiation:
+\begin{equation}
+\frac{{\Delta \hat \gamma }}{2} = \frac{{{{\tau '}_f}}}{G}{\left( {2{N_f}} \right)^{{b_0}}} + {{\gamma '}_f}{\left( {2{N_f}} \right)^{{c_0}}}.
+\end{equation}
+Furthermore, McClaflin and Fatemi \cite{McClaflin2004} proposed that the sensitivity parameter $k$ is varied with fatigue life and can be expressed by tension and torsion data, as
+\begin{equation}
+k =  \frac{{k_0 {\sigma _y}}}{{{{\sigma '}_f}{{\left( {2{N_f}} \right)}^b}}}
+\end{equation}
+with
+\[
+k_0 =  {\frac{{\frac{{{{\tau '}_f}}}{G}{{\left( {2{N_f}} \right)}^{{b_0}}} + {{\gamma '}_f}{{\left( {2{N_f}} \right)}^{{c_0}}}}}{{\left( {1 + {\nu _e}} \right)\frac{{{{\sigma '}_f}}}{E}{{\left( {2{N_f}} \right)}^b} + \left( {1 + {\nu _p}} \right){{\varepsilon '}_f}{{\left( {2{N_f}} \right)}^c}}} - 1} .
+\]
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-FS.pdf}}
+\caption{Fatemi-Socie Model.}
+\label{Fig:NF-NP-TGMF-FS}
+\end{figure}
+
+\subsection{Smith-Watson-Topper Model}
+\[{\sigma _{n,max}}\frac{{\Delta \varepsilon }}{2} = \frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + {\sigma '_f}{\varepsilon '_f}{\left( {2{N_f}} \right)^{b + c}}\]
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-SWT.pdf}}
+\caption{Smith-Watson-Topper Model.}
+\label{Fig:NF-NP-TGMF-SWT}
+\end{figure}
+
+\subsection{Liu’s Strain Energy Models}
+\begin{eqnarray*}
+{\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) &=& \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}}
+\\
+& & + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
+\end{eqnarray*}
+\begin{figure}[!htp]
+\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-Liu1.pdf}}
+\caption{Liu Tension Strain Energy Model.}
+\label{Fig:NF-NP-TGMF-Liu1}
+\end{figure}
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-Liu2.pdf}}
+\caption{Liu Shear Strain Energy Model.}
+\label{Fig:NF-NP-TGMF-Liu2}
+\end{figure}
+
+\subsection{Chu Strain Energy Model}
+
+\begin{eqnarray*}
+{\left( {{\tau _{n,\max }}\frac{{\Delta \gamma }}{2} + {\sigma _{n,\max }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }} &=& 1.02\frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} \\
+&& + 1.04{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
+\end{eqnarray*}
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-Chu.pdf}}
+\caption{Chu Strain Energy Model.}
+\label{Fig:NF-NP-TGMF-Chu}
+\end{figure}
+
+\section{温度梯度的影响}
+图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}分别比较了TMF和TGMF在同相位和反相位时的疲劳寿命。
+可以发现，同相位和反相位的情况下TGMF寿命都要低于TMF寿命，由于两组试验的温度循环相同，唯一不同的是试件径向方向的温度梯度，因此可以认为温度梯度对材料寿命有不利的影响，同时比较图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(a)和(b)，在同相位的情况下，温度梯度导致的寿命减少比反向位试验更加明显。
+根据上一节的分析可知，Chu能量模型在TMF-IP,TMF-OP和TGMF-OP的预测上有比较好的结果，表\ref{Tab:FatigueCoefficient}列举出了Chu模型计算过程中的参数，其中$\phi$为临界面与中心截面的夹角，$\sigma_{n,max}$为该临界面上在循环过程中的最大正应力，$T$,$\partial T/\partial y$和$\partial T/\partial r$为最大正应力处所对应的温度与温度梯度。
+在Chu能量模型的基础上，增加温度梯度的修正项，新的寿命模型如下：
+\begin{eqnarray*}
+f\left( {T,\nabla T} \right) {\left( {{\tau _{n,\max }}\frac{{\Delta \gamma }}{2} + {\sigma _{n,\max }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }} &=& 1.02\frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} \\
+&& + 1.04{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
+\end{eqnarray*}
+其中
+\begin{equation}
+f\left( {T,\nabla T} \right) = \left( {1 + \frac{{t\left\| {\nabla T} \right\|}}{{{T_{\max }} - {T_{{\sigma _{n,\max }}}} + {T_0}}}} \right),
+\end{equation}
+为温度梯度修正项，$T_{max}$为热机械循环中的最高温度，${T_{{\sigma _{n,\max }}}}$为临界面最大正应力时刻对应的温度，$T_0$为参考温度，可以通过寿命预测得到，$t$为试件特征长度，这里取试件的厚度$t=1$mm，用于无量纲化，${\left\| {\nabla T} \right\|}$为温度梯度的模，计算方式如下：
+\begin{equation}
+\left\| {\nabla T} \right\| = \sqrt {{{\left( {\frac{{\partial T}}{{\partial x}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial y}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial z}}} \right)}^2}}.
+\end{equation}
+图\ref{Fig:NF-NP-TGMF-Our}为修正的Chu模型的预测结果，TMF和TGMF的结果都在3倍线以内。
+
+\begin{figure}
+  \centering{
+    \begin{overpic}[width=8.0cm]{plot_exp_fatigue_life_IP.pdf}
+      \put(15,65){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+
+    \begin{overpic}[width=8.0cm]{plot_exp_fatigue_life_OP.pdf}
+      \put(15,65){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+  }
+  \caption{TGMF寿命与TMF寿命的比较：(a)同相位，(b)反相位.}
+  \label{Fig:plot_exp_fatigue_life_TMF_TGMF}
+\end{figure}
+
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{table}[htbp]
+  \centering
+  \caption{Fatemi-Socie模型计算数值}
+    \begin{tabular}{rrrrrrrrrr}
+    \toprule
+    Load Type & $\Delta\varepsilon/2$ & $\phi$ & $\Delta\gamma$ & $\sigma_{n,max}$ & $T$   & $\partial T/\partial y$ & $\partial T/\partial r$ & $N_f$ & $N_p$ \\
+          & [\%]  & [$^{\circ}$] & [\%]  & [MPa] & [$^{\circ}$C] & [$^{\circ}$C/mm] & [$^{\circ}$C/mm] & [cycle] & [cycle] \\
+    \midrule
+    TGMF-IP & 0.4   & 45    & 1.09  & 262.9  & 642.0  & -11.6  & 0.092  & 1066  & 72333 \\
+    TGMF-IP & 0.5   & 45    & 1.36  & 350.6  & 642.0  & -11.6  & 0.092  & 208   & 6938 \\
+    TGMF-IP & 0.65  & 45    & 1.50  & 396.3  & 642.0  & -11.6  & 0.092  & 107   & 3443 \\
+    TGMF-IP & 0.7   & 45    & 1.65  & 407.9  & 642.0  & -11.6  & 0.092  & 48    & 1957 \\
+    TGMF-IP & 0.9   & 45    & 2.42  & 432.5  & 647.2  & -11.7  & 0.093  & 48    & 369 \\
+    TGMF-OP & 0.4   & 45    & 1.00  & 419.1  & 308.0  & -6.5  & 0.044  & 3387  & 145692 \\
+    TGMF-OP & 0.5   & 45    & 1.18  & 524.7  & 316.2  & -7.1  & 0.045  & 864   & 20077 \\
+    TGMF-OP & 0.65  & 45    & 1.82  & 511.6  & 302.8  & -6.4  & 0.044  & 375   & 1083 \\
+    TGMF-OP & 0.9   & 45    & 2.58  & 543.5  & 302.8  & -6.4  & 0.044  & 128   & 273 \\
+    \bottomrule
+    \end{tabular}%
+  \label{Tab:FatigueCoefficient}%
+\end{table}%
+
+\begin{figure}[!htp]
+\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-Our.pdf}}
+\caption{Our Strain Energy Model.}
+\label{Fig:NF-NP-TGMF-Our}
+\end{figure}
+
+\section{结论}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7033-1.jpg}
+    \centerline{(a)500X.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7033-12.jpg}
+    \centerline{(b)850.}
+  \end{minipage}
+  \caption{TC-OP.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7036-1.jpg}
+    \centerline{(a)$\Delta \varepsilon_{m}/2=0.5\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7036-7.jpg}
+    \centerline{(b)$\Delta \varepsilon_{m}/2=0.5\%$.}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7046-1.jpg}
+    \centerline{(C)$\Delta \varepsilon_{m}/2=0.7\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7046-6.jpg}
+    \centerline{(D)$\Delta \varepsilon_{m}/2=0.7\%$.}
+  \end{minipage}
+
+  \caption{NRP-IP.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7047-1.jpg}
+    \centerline{(a)500X.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7047-12.jpg}
+    \centerline{(b)1000X.}
+  \end{minipage}
+  \caption{TC-IP.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7112-1.jpg}
+    \centerline{(a)500X.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7112-3.jpg}
+    \centerline{(b)1000X.}
+  \end{minipage}
+  \caption{TC-IF.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7040-3.jpg}
+    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.6\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7040-5.jpg}
+    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.6\%$.}
+  \end{minipage}
+  \caption{PRO-IP.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7206-1.jpg}
+    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7206-3.jpg}
+    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}
+  \caption{TC-IP-TGMF.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{720719.jpg}
+    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{720721.jpg}
+    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{720932.jpg}
+    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.45\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{720935.jpg}
+    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.45\%$.}
+  \end{minipage}
+
+  \caption{TC-OP-TGMF.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7301-7.jpg}
+    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7301-4.jpg}
+    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{730109.jpg}
+    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{730116.jpg}
+    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}
+
+  \caption{TC-IP-TGMF-TBC.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7112-4.jpg}
+    \centerline{(a)TC-IF-650$^{\circ}$ $\Delta \varepsilon_{eq}/2=0.45\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7047-7.jpg}
+    \centerline{(b)TC-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7033-11.jpg}
+    \centerline{(c)TC-OP $\Delta \varepsilon_{eq}/2=0.65\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7040-5.jpg}
+    \centerline{(d)PRO-IP $\Delta \varepsilon_{eq}/2=0.6\%$.}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7036-3.jpg}
+    \centerline{(e)NPR-IP $\Delta \varepsilon_{eq}/2=0.5\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{7046-8.jpg}
+    \centerline{(f)NPR-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
+  \end{minipage}
+  \caption{Observation of fatigue striations on fractures surface.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{720935.jpg}
+    \centerline{(d)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.50\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{720721.jpg}
+    \centerline{(c)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\linewidth}
+  \nonumber
+    \centering
+    \includegraphics[width=6cm]{7206-2.jpg}
+    \centerline{(d)TC-IP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\linewidth}
+    \centering
+    \includegraphics[width=6cm]{730112.jpg}
+    \centerline{(c)TC-IP-TGMF-TBC $\Delta \varepsilon_{eq}/2=0.55\%$.}
+  \end{minipage}
+
+  \caption{Observation of fatigue striations on fractures surface.}
+  \label{Fig:MicrostructureofInconel718}
+\end{figure}
+
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth}
   \nonumber
@@ -314,15 +1150,15 @@
 %The inlet and rotating conditions are $Re_z$ up to $1.4 \times 10^5$ and $Re_{\phi}$ up to $1.53 \times 10^7$.
 %Conclusions are dependent on the computational results:
 %
-%%    ���������
+%%    ¶¨Òå¼ÆÊýÆ÷
 %\newcounter{Lcount}
-%%   ��ǩ������ʾΪ��������
+%%   ±êÇ©¼ÆÊýÏÔÊ¾ÎªÂÞÂíÊý×Ö
 %\begin{list}{\arabic{Lcount}.}
-%%    ʹ�ü�����
+%%    Ê¹ÓÃ¼ÆÊýÆ÷
 %  {\usecounter{Lcount}
-%%    ���ҶԳ�
+%%    ×óÓÒ¶Ô³Æ
 %  \setlength{\rightmargin}{\leftmargin}}
-%%    ��ʼ
+%%    ¿ªÊ¼
 %    \item \textbf{Pressure distribution. }Air pressure in the rotating cavities increases with the normalized radial coordinate and it is a linear relation between the pressure and radial coordinate. A pressure coefficient is suggested to describe the pressure distribution.
 %        The pressure coefficient, which is assumed by pressure and radial coordinate, grows squarely with the rotational Reynolds number.
 %        Gap ratio influences the pressure coefficient.

@@ -55,9 +55,9 @@ According to the functions of these parameters, they can be divided into the fol
 \begin{table}[htbp]
   \centering
   \caption{Material parameters of the proposed constitutive model.}
-    \begin{tabular}{llll}
+    \begin{tabular}{p{1.5cm}p{3.5cm}p{3.5cm}p{3.5cm}}
     \toprule
-    General & Kinematic hardening & Isotropic hardening & Cyclic hard/softening \\
+    General & Kinematic hardening & Isotropic hardening & Cyclic hardening \\
     \midrule
     $E$   & $\zeta^k$ & $c_c$ & $r_{\Delta s}^k$ \\
     $\nu$ & $r_0^k$ & $Y_{\Delta nonps}$,$\gamma_p$,$\gamma_q$ & $a_1^k$,$b_1^k$ \\
@@ -174,9 +174,10 @@ noting that Young's modulus $E$ is in the unit of MPa.
 \begin{table}[htbp]
   \centering
   \caption{Young's modulus $E$, shear modulus $G$ and Poisson's ratio at different temperatures.}
-    \begin{tabular}{cccc}
+    \begin{tabular}{p{3cm}p{3cm}p{3cm}p{3cm}}
     \toprule
-    Temperature [$^{\circ}$C] & Young's modulus $E$ [GPa] & Shear modulus $G$ [GPa] & Poisson's ratio $\mu$ \\
+    Temperature & Young's modulus & Shear modulus & Poisson's ratio \\
+    $T$ [$^{\circ}$C] & $E$ [GPa] & $G$ [GPa] & $\mu$ [-] \\
     \midrule
     16    & 208.2  & 80.8  & 0.289 \\
     100   & 205.7  & 79.7  & 0.290 \\
@@ -343,7 +344,7 @@ According to the isothermal uniaxial monotonic tension tests and the cyclic stre
 \begin{table}[htbp]
   \centering
   \caption{Material properties of the proposed constitutive model.}
-    \begin{tabular}{rr|rr|rr|rr}
+    \begin{tabular}{p{1.5cm}p{1.5cm}|p{1.5cm}p{1.5cm}|p{1.5cm}p{1.5cm}|p{1.5cm}p{1.5cm}}
     \toprule
           &       & \multicolumn{2}{c}{300$^{\circ}$C} & \multicolumn{2}{c}{550$^{\circ}$C} & \multicolumn{2}{c}{650$^{\circ}$C} \\
     \midrule
