@@ -107,15 +107,35 @@ All specimens were manufactured by a CNC machining center and the surfaces were 
 \label{Fig:Equipment}
 \end{figure}
 
-本章的单调拉伸试验、等温疲劳试验和热机械疲劳试验均是在MTS Model 809液压伺服疲劳试验机进行的，如图\ref{Fig:MTS809}所示。MTS Model 809为轴向/扭转复合疲劳材料试验机，力加载量程为+-250kN，扭矩加载量程为2200Nm，在软件系统的配合下可以实现复杂的加载路径。
+% 本章的单调拉伸试验、等温疲劳试验和热机械疲劳试验均是在MTS Model 809液压伺服疲劳试验机进行的，如图\ref{Fig:MTS809}所示。MTS Model 809为轴向/扭转复合疲劳材料试验机，力加载量程为+-250kN，扭矩加载量程为2200Nm，在软件系统的配合下可以实现复杂的加载路径。
 
-
-Experiments were performed in a servo controlled hydraulic system (MTS 809) with both a electric resistance furnace (MTS 653) and a induction heating system (TruHeat HF 3010).
+Experiments were conducted in a servo controlled hydraulic system (MTS Model 809) with both a electric resistance furnace (MTS 653) and a induction heating system (TruHeat HF 3010).
 The system is capable of applying axial and biaxial loads with temperature controlled simultaneously.
+% Experiments were conducted in a servo controlled hydraulic system MTS Model 809.
+MTS Model 809 is a axial/torsional test rig for fatigue tests. It has the axial and rotational actuator which are independent to each other. 
+A axial/torsional coupler can ensure precise alignment during testing and its testing capacity is $\pm$250kN in axial direction and $\pm$2200N$\cdot$m in torsional direction. 
+The test rig are controlled by the MTS Flextest 40 digital controller. And the controller are connected with a host computer, which provides commands and acquires data.
+The crosshead of the test rig can be moved to accommodate the dimensions of heating device and strain measuring equipments.
+During the tests, the axial actuator can be controlled in displacement, load or strain mode and the torsional actuator can be controlled in torque, twist angle or angle strain mode. 
+At the same time, only one control method can be active for each actuator.
+Load cells are attached on the crosshead, it can measure the axial force as well as the rotational torque.
+The axial displacement and twist angle are measured by the linear-variable displacement transducers (LVDT) which are attached on the actuators.
+
+\begin{figure}
+  \centering
+    \begin{overpic}[width=8.0cm]{uniaxial_extensometer.jpg}
+      \put(90,5){\fcolorbox{white}{white}{(a)}}
+    \end{overpic}
+    \begin{overpic}[width=8.0cm]{biaxial_extensometer.jpg}
+      \put(90,5){\fcolorbox{white}{white}{(b)}}
+    \end{overpic}
+\caption{caption}
+\label{Fig:extensometer}
+\end{figure}
+
 \begin{figure}[!htp]
 \centering\scalebox{0.1}{\includegraphics{MTS809.jpg}}
 \caption{MTS model 809 axial torsional materials testing system with induction heating device.}
-%\caption{MTS-809 轴向/扭转复合疲劳材料试验机与感应加热系统.}
 \label{Fig:MTS809}
 \end{figure}
 Thus, uniaxial and biaxial stress states can be generated under a certain temperature in the gauge length of the specimen.
@@ -128,7 +148,6 @@ Induction heating efficiency is dependent on the coil density and the distance b
 Concentrated coil density and short distance to the specimen surface result in high heat flux, vice versa.
 We need to adjustment the coil to optimize the axial temperature distribution.
 The maximum temperature deviations along the 12mm gauge length were $\pm5^{\circ}$C and along the 25mm gauge length were $\pm8^{\circ}$C.
-
 
 
 \section{Monotonic tensile tests}
