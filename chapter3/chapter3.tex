@@ -121,6 +121,25 @@ At the same time, only one control method can be active for each actuator.
 Load cells are attached on the crosshead, it can measure the axial force as well as the rotational torque.
 The axial displacement and twist angle are measured by the linear-variable displacement transducers (LVDT) which are attached on the actuators.
 
+\begin{figure}[!htp]
+\centering\scalebox{0.1}{\includegraphics{MTS809.jpg}}
+\caption{MTS model 809 axial torsional materials testing system with induction heating device.}
+\label{Fig:MTS809}
+\end{figure}
+
+During the uniaxial tests, the strain within the gauge length of the specimen was measured using a high temperature axial extensometer (see \ref{Fig:extensometer}(a)).
+The gauge length of the extensometer is 12mm and the extensometer was calibrated in accordance with the recommendations of ASTM E83.
+The extensometer has two ceramic rods which contact to the specimen.
+The contact force of the extensometer has to be as low as possible to avoid damage of the specimen surface leading to premature crack initiation at the contact edges of the extensometer.
+
+An water cooled axial/torsional extensometer (see \ref{Fig:extensometer}(b)) was used to measure the deformation in the gage section of the specimen at high temperature.
+The extensometer can measure the axial strain and shear strain simultaneously without coupling effect.
+
+The control loop feedback mechanism of the test rig is a proportional–integral–derivative controller (PID controller).
+The PID controller continuously calculates an error value as the difference between a desired setpoint (SP) and a measured process variable (PV) and applies a correction based on proportional, integral, and derivative terms.
+PID tuning is the process of finding the values of proportional, integral, and derivative gains of a PID controller to achieve desired performance and meet design requirements.
+https://www.mathworks.com/discovery/pid-tuning.html
+
 \begin{figure}
   \centering
     \begin{overpic}[width=8.0cm]{uniaxial_extensometer.jpg}
@@ -129,15 +148,11 @@ The axial displacement and twist angle are measured by the linear-variable displ
     \begin{overpic}[width=8.0cm]{biaxial_extensometer.jpg}
       \put(90,5){\fcolorbox{white}{white}{(b)}}
     \end{overpic}
-\caption{caption}
+\caption{High temperature extensometers were used to measure the strain within the gauge length of the specimen. (a) Axial extensometer. (b) Axial/torsional extensometer.}
 \label{Fig:extensometer}
 \end{figure}
 
-\begin{figure}[!htp]
-\centering\scalebox{0.1}{\includegraphics{MTS809.jpg}}
-\caption{MTS model 809 axial torsional materials testing system with induction heating device.}
-\label{Fig:MTS809}
-\end{figure}
+
 Thus, uniaxial and biaxial stress states can be generated under a certain temperature in the gauge length of the specimen.
 \ref{Fig:Equipment} shows the induction heating system.
 The strains were measured by the high temperature axial and biaxial extensometers which contact the specimen surface with two ceramic rods.
