@@ -1,31 +1,32 @@
-\chapter{Multi-Axial Constitutive Modeling under Theromechanical Fatigue Loading}
+\chapter{Constitutive Modeling under Theromechanical Fatigue Loading}
 
-%µ±Ç°¹ú¼ÊÉÏÍ¨ÓÃµÄÑ­»·ËÜÐÔÄ£ÐÍ´ó¶àÔÚÇü·þÃæ·½³Ì¡¢Á÷¶¯·¨Ôò·½Ãæ¶¼²ÉÓÃÒ»°ãËÜÐÔÍ¨ÓÃµÄ·¨Ôò¡£
-%ÕâÐ©·¨Ôò¼ÈÊÊºÏÑ­»·ºÉÔØ£¬Ò²ÊÊºÏ·ÇÑ­»·ºÉÔØ¡£¸÷
-%ÖÖËÜÐÔÄ£ÐÍµÄÖ÷Òª²»Í¬µãÔÚÓÚÓ²»¯×¼Ôò¡£
-%²¢ÇÒËæ×Å¼ÓÔØ·½Ê½µÄÖð½¥¸´ÔÓ»¯£¬Ñ­»·ËÜÐÔÄ£ÐÍµÄÓ²»¯×¼ÔòÒ²±»²»¶ÏµÄÐÞÕý¡£
-%×î³õµÄÓ²»¯×¼ÔòÊÇÏßÐÔÓ²»¯×¼Ôò£¬Ëæ×ÅÑÐ¾¿µÄÉîÈë£¬Armstrong-FredericÌá³öÁËÖøÃûµÄ·ÇÏßÐÔÓ²»¯×¼Ôò¡£
-%Ëæ×Å¼ÓÔØµÄ¸´ÔÓ»¯£¬ºóÈËÓÖÔÚArmstrong-Frederick Ä£ÐÍ»ù´¡ÉÏ½øÐÐÁËÒ»ÏµÁÐµÄÐÞÕý£¬ÒÔÆÚÂú×ãÔÚÑ­»·¼ÓÔØ¹ý³ÌÖÐ³öÏÖµÄ¼¬ÂÖÐ§Ó¦ÒÔ¼°·Ç±ÈÀýÓ²»¯µÈÏÖÏó¡£
-%Ñ­»·ËÜÐÔµÄ»ù±¾Ä£ÐÍ°üº¬Èý¸ö²¿·Ö£º£¨1£©Çü·þ×¼Ôò£¬£¨2£©Á÷¶¯·¨Ôò£¬£¨3£©Ó²»¯×¼Ôò¡£
-%Ñ­»·ËÜÐÔÄ£ÐÍºÍµ¥µ÷ËÜÐÔÄ£ÐÍÏà±È£¬³ýÈ¥Ó²»¯×¼Ôò²»Í¬Íâ£¬ÆäÇü·þ×¼ÔòºÍÁ÷¶¯·¨ÔòÊÇÍêÈ«ÏàÍ¬µÄ¡£ÏÂ
-%Ãæ¾Í·Ö±ð¾ÍÈý¸ö×¼Ôò½øÐÐÂÛÊö¡£
-%ÎÒÃÇÒ»°ãÈÏÎª£¬µ±²ÄÁÏµÄËÜÐÔÓ¦±äÎªÁãÊ±Âú×ãµ¯ÐÔÓ¦Á¦-Ó¦±ä¹ØÏµ£¬Ö±ÖÁÓ¦Á¦´ïµ½Çü·þÌõ¼þ¡£
-%Á½¸ö×î³£ÓÃµÄÇü·þ×¼ÔòÊÇ£ºTresca Ó¦Á¦Çü·þ×¼ÔòºÍ Von MisesÓ¦Á¦Çü·þ×¼Ôò¡£
-%ÓÉÓÚ Tresca Ó¦Á¦Çü·þ×¼ÔòÔÚÊýÑ§ÃèÊöÉÏ³öÏÖÁË¹Õµã£¬ÆäÁ¬ÐøÐÔÊÜµ½Ó°Ïì£¬ËùÒÔÏÖÔÚ¶àÊýÑÐ¾¿ÕßÊ¹ÓÃ Von Mises Ó¦Á¦Çü·þ×¼Ôò¡£
+%当前国际上通用的循环塑性模型大多在屈服面方程、流动法则方面都采用一般塑性通用的法则。
+%这些法则既适合循环荷载，也适合非循环荷载。各
+%种塑性模型的主要不同点在于硬化准则。
+%并且随着加载方式的逐渐复杂化，循环塑性模型的硬化准则也被不断的修正。
+%最初的硬化准则是线性硬化准则，随着研究的深入，Armstrong-Frederic提出了著名的非线性硬化准则。
+%随着加载的复杂化，后人又在Armstrong-Frederick 模型基础上进行了一系列的修正，以期满足在循环加载过程中出现的棘轮效应以及非比例硬化等现象。
+%循环塑性的基本模型包含三个部分：（1）屈服准则，（2）流动法则，（3）硬化准则。
+%循环塑性模型和单调塑性模型相比，除去硬化准则不同外，其屈服准则和流动法则是完全相同的。下
+%面就分别就三个准则进行论述。
+%我们一般认为，当材料的塑性应变为零时满足弹性应力-应变关系，直至应力达到屈服条件。
+%两个最常用的屈服准则是：Tresca 应力屈服准则和 Von Mises应力屈服准则。
+%由于 Tresca 应力屈服准则在数学描述上出现了拐点，其连续性受到影响，所以现在多数研究者使用 Von Mises 应力屈服准则。
 %\begin{equation}
-%F = \sqrt {\frac{3}{2}\left( {{\bf{s}} - {\bf{a}}} \right):\left( {{\bf{s}} - {\bf{a}}} \right)}  - Y
+%F = \sqrt {\frac{3}{2}\left( {{\mathbf{s}} - {\mathbf{a}}} \right):\left( {{\mathbf{s}} - {\mathbf{a}}} \right)}  - Y
 %\end{equation}
-%µ±Çü·þ±íÃæµÄÐÎ×´²»±äÊ±£¬¼´±³Ó¦Á¦ÖµÎªÁã£¬Ö»ÓÐÇü·þ±íÃæµÄ°ë¾¶ÊÇ±ä»¯µÄÊ±ºò£¬Ò»°ã³ÆÎªµÈÏòÇ¿»¯¡£
-%µ±Çü·þ±íÃæµÄ°ë¾¶²»±äÊ±£¬Çü·þ±íÃæ¿ÉÒÔÒÆ¶¯µ«ÊÇ²»»á¸Ä±äÐÎ×´ºÍ´óÐ¡£¬¼´k ÊÇ²»±äµÄ£¬Éú±ä»¯Ê±£¬Ôò³ÆÎªËæ¶¯Ç¿»¯¡£
-%¶ÔÓÚÑ­»·ËÜÐÔÀ´Ëµ£¬Ò»°ã¼Ù¶¨Çü·þ±íÃæ¿ÉÒÔÒÆ¶¯µ«ÊÇ²»»á¸Ä±äÐÎ×´ºÍ´óÐ¡£¬¼´ÎªËæ¶¯Ç¿»¯¡£
-%¡°Á÷¶¯·¨Ôò¡±½«ËÜÐÔÓ¦±äÔöÁ¿ºÍÆ«Ó¦Á¦ÔöÁ¿ÁªÏµÆðÀ´¡£½ðÊô²ÄÁÏÍ¨³£Ó¦ÓÃµÄ·¨ÔòÊÇÏà¹ØµÄÁ÷¶¯·¨Ôò»òÕßÕýÌ¬Ìõ¼þ£¨Drucker¹«Éè£©¡£
-%¸ù¾Ý¼Ù¶¨£¬¸ÃÓ¦Á¦×´Ì¬ÏÂµÄËÜÐÔÓ¦±äÔöÁ¿ÊÇºÍ´ËÓ¦Á¦×´Ì¬ÏÂµÄÇü·þ±íÃæµÄÍâ·¨Ïò¹²ÏßµÄ¡£ÆäÊýÑ§±í´ïÊ½Îª£º
+%当屈服表面的形状不变时，即背应力值为零，只有屈服表面的半径是变化的时候，一般称为等向强化。
+%当屈服表面的半径不变时，屈服表面可以移动但是不会改变形状和大小，即k 是不变的，生变化时，则称为随动强化。
+%对于循环塑性来说，一般假定屈服表面可以移动但是不会改变形状和大小，即为随动强化。
+%“流动法则”将塑性应变增量和偏应力增量联系起来。金属材料通常应用的法则是相关的流动法则或者正态条件（Drucker公设）。
+%根据假定，该应力状态下的塑性应变增量是和此应力状态下的屈服表面的外法向共线的。其数学表达式为：
 %\begin{equation}
 %{{\bm{\dot \upepsilon }}^p} = \dot \lambda \frac{{\partial F}}{{\partial {\bm{\upsigma }}}}
 %\end{equation}
 
 \section{Introduction}
-\noindent Gas turbine components are exposed in high temperature and experience cyclic multi-axial thermo-mechanical loadings. The increasing performance requirements to modern gas turbines challenge  the material operating limits. Quantified characterization of deformation and fatigue behavior of materials under realistic conditions becomes increasingly of importance for industrial application \cite{harrison1996modelling}, including variations of structure temperature, mechanical loads as well as environmental conditions. Inconel 718 is the most popular nickel-based superalloy in turbine industry. It is an oxidation- and corrosion-resistant material possessing optimal thermal and mechanical property. It is used for both rotors and casings, so that the low cycle fatigue characterization of the material is of great significance for mechanical design. The operating temperature of Inconel 718 is limited to 650 $^{\circ}$C for the life limited parts, such as discs and shafts.
+\noindent
+Gas turbine components are exposed in high temperature and experience cyclic multi-axial thermo-mechanical loadings. The increasing performance requirements to modern gas turbines challenge  the material operating limits. Quantified characterization of deformation and fatigue behavior of materials under realistic conditions becomes increasingly of importance for industrial application \cite{harrison1996modelling}, including variations of structure temperature, mechanical loads as well as environmental conditions. Inconel 718 is the most popular nickel-based superalloy in turbine industry. It is an oxidation- and corrosion-resistant material possessing optimal thermal and mechanical property. It is used for both rotors and casings, so that the low cycle fatigue characterization of the material is of great significance for mechanical design. The operating temperature of Inconel 718 is limited to 650 $^{\circ}$C for the life limited parts, such as discs and shafts.
 A turbine suffers from high temperature low cycle fatigue (LCF) as well as thermo-mechanical fatigue (TMF).
 The LCF and TMF behaviors of the nickel-based superalloy are the major concern for the safety and reliability of gas turbine engines.
 
@@ -40,6 +41,222 @@ Zhu et al. \cite{ZHU2016} introduced a cyclic elasto-viscoplastic constitutive m
 Development of a reliable cyclic plasticity with experimental verification is necessary for predicting thermo-mechanical fatigue performance.
 
 The present work focuses on the multi-axial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 300 and 650$^{\circ}$C. Effects of non-proportional cyclic loading as well as thermo-mechanical coupling are studied. Inconel 718 was proven to be hardly influenced by the strain rate below 650$^{\circ}$C under realistic loading speed \cite{kim1988elevated, Schlesinger2017}, and the constitutive model is assumed to be rate-independent. However,  experiments reveal complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermo-mechanical phase effect, non-masing effect etc. Quantitative description of the material behavior needs a constitutive model based on extensive experimental investigation. In the present work a modified cyclic plasticity model is suggested for the nickel-based superalloy Inconel 718 under multi-axial thermo-mechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermo-mechanical fatigue loading components.
+
+\section{Continuum plasticity}
+\noindent
+Continuum plasticity is a solid mechanics theory that is used to describe the plastic behavior of materials.
+It is characterized by the assumption that a flow rule exists that can be used to determine the amount of plastic strain in the material.
+In the section, the fundamentals of time-independent phenomenological plasticity are introduced, such as invariants of the stress tensor, strain decomposition, yield surface, flow rule, Drucker postulates, consistency condition, isotropic and kinematic hardening.
+
+\subsection{Invariants of the stress tensor}
+\noindent
+In continuum mechanics, the stress state at any material point can be represented by the stress tensor $\bm{\sigma}$.
+The stress tensor can be represented by a matrix of second order in an arbitrary coordinate system as:
+\begin{equation}
+\bm{\sigma} =
+  \begin{bmatrix}
+    \sigma_{1\,1}& \sigma_{1\,2}& \sigma_{1\,3}\\
+    \sigma_{2\,1}& \sigma_{2\,2}& \sigma_{2\,3}\\
+    \sigma_{3\,1}& \sigma_{3\,2}& \sigma_{3\,3}
+  \end{bmatrix}.
+\end{equation}
+Since the stress tensor is symmetric, only six stress components axe independent.
+Thus, six independent stress components determine a stress state uniquely and visa versa.
+Using the above stress tensor, the three principal stresses can be determined using the characteristic equation
+\begin{equation}
+\det \left( {{\bm{\sigma }} - \sigma {\bf{I}}} \right) = 0,
+\end{equation}
+which can be expanded to
+\begin{equation}
+{\sigma ^3} - {I_1}{\sigma ^2} + {I_2}\sigma  - {I_3} = 0.
+\end{equation}
+where $\bf{I}$ is the second order identity tensor, ${I_1}$, ${I_2}$, and ${I_3}$ are the invariants of the stress tensor.
+In terms of the principal stresses, $\sigma_1$, $\sigma_2$ and $\sigma_3$, the invariants are
+\begin{equation}
+\begin{array}{*{20}{l}}
+{{I_1} = {\sigma _1} + {\sigma _2} + {\sigma _3}},\\
+{{I_2} = {\sigma _1}{\sigma _2} + {\sigma _2}{\sigma _3} + {\sigma _3}{\sigma _1}},\\
+{{I_3} = {\sigma _1}{\sigma _2}{\sigma _3}}.
+\end{array}
+\end{equation}
+In plasticity theory, it is customary to decompose the stress tensor as
+\begin{equation}
+{\bm{\sigma }} = {\bf{s}} + {\sigma _m}{\bf{I}},
+\end{equation}
+where $\sigma_m$ is the hydrostatic stress given by
+\begin{equation}
+{\sigma _m} = {\rm{Tr}}\left( {\bm{\sigma }} \right) = \frac{1}{3}\left( {{\sigma _1} + {\sigma _2} + {\sigma _3}} \right),
+\end{equation}
+and $\bf{s}$ is the deviatoric stress tensor.
+Using the deviatoric stress tensor, the deviatoric stress invariants can be defined as
+\begin{equation}
+\begin{array}{*{20}{l}}
+{{J_1} = {\rm{Tr}}\left( {\bf{s}} \right) = 0},\\
+{{J_2} = \frac{1}{2}{\bf{s}}:{\bf{s}} = \frac{1}{6}\left[ {{{\left( {{\sigma _1} - {\sigma _2}} \right)}^2} + {{\left( {{\sigma _2} - {\sigma _3}} \right)}^2} + {{\left( {{\sigma _3} - {\sigma _1}} \right)}^2}} \right]},\\
+{{J_3} = \det \left( {\bf{s}} \right) = {s_1}{s_2}{s_3}}.
+\end{array}
+\end{equation}
+
+In plasticity mechanics, the first principal invariant $I_1$ of the Cauchy stress $\boldsymbol{\sigma}$, and the second and third principal invariants $J_2$, $J_3$ of the deviatoric part $\boldsymbol{s}$ of the Cauchy stress are usually used to express the yield surface.
+
+
+\subsection{Strain decomposition}
+\noindent
+It is shown in \ref{Fig:Strain_decomposition} that the stress-strain curve can be obtained from a uniaxial tensile test.
+Both elastic and inelastic regions are indicated.
+In elastic region, the stress is proportional to the strain if the stress in the specimen is below a certain value, i.e. the yield stress $\sigma_{y0}$, which is the elastic limit.
+As a material is loaded beyond its elastic limit, Hooke's law does not apply, the material no longer exhibits elastic behavior and the stress-strain relation becomes nonlinear. The material yields, begins to flow and residual, permanent deformation results after unloading.
+
+For strain hardening materials the yield stress increases with increasing plastic deformation to a value of $\sigma_y$.
+It is called hardening because the stress is increasing relative to perfect plastic behavior, also shown in the figure.
+\begin{figure}[!htp]
+\centering\scalebox{1.0}{\includegraphics{Rock_plasticity_compression_plain.pdf}}
+\caption{The classical decomposition of strain into elastic and plastic parts.}
+\label{Fig:Strain_decomposition}
+\end{figure}
+If, at a strain of $\varepsilon$, the loading were to be reversed, the material would cease to deform plastically (at least in the absence of time-dependent effects) and would show a linearly decreasing stress with strain such that the gradient of this part of the stress-strain curve would again be the Young's modulus, E, shown in \ref{Fig:Strain_decomposition}.
+Once a stress of zero is achieved (provided the material remains elastic on full reversal of the load), the strain remaining in the test specimen is the plastic strain, $\varepsilon_p$.
+The recovered strain, $\varepsilon_e$, is the elastic strain and it can be seen that the total strain, $\varepsilon$, is the sum of the two
+\begin{equation}
+\varepsilon = \varepsilon^e + \varepsilon^p
+\end{equation}
+This is called the classical additive decomposition of strain.
+It is also apparent from \ref{Fig:Strain_decomposition} that the stress achieved at a strain of $\varepsilon$ is given by
+\begin{equation}
+\sigma = E\varepsilon^e = E(\varepsilon - \varepsilon^p)
+\end{equation}
+
+\subsection{Yield criterion}
+\noindent
+A yield criterion is a hypothesis defining the limit of elasticity in a material and the onset of plastic deformation under any possible combination of stresses.
+The yield criterion can be described by a yield surface which is a super surface in the space of stresses.
+The yield surface is usually convex and the state of stress of inside the yield surface is elastic.
+When the stress state lies on the surface the material is said to have reached its yield point and the material is said to have become plastic.
+Further deformation of the material causes the stress state to remain on the yield surface, even though the shape and size of the surface may change as the plastic deformation evolves.
+
+In the stress space, the yield surface can be expressed as
+\begin{equation}
+F\left( {{\sigma _{ij}}} \right) = k,
+\label{Equ:yield_function_1}
+\end{equation}
+where $F\left( {{\sigma _{ij}}} \right)$ is a function of the stress tensor and $k$ is a critical value. Generally, Eq. (\ref{Equ:yield_function_1}) is called yield function. In the principal stress space, the Eq. (\ref{Equ:yield_function_1}) can be expressed as
+\begin{equation}
+F\left( {{\sigma _1},{\sigma _2},{\sigma _3}} \right) = k,
+\end{equation}
+where ${\sigma _1},{\sigma _2},{\sigma _3}$ are the principal stresses.
+
+There are several possible yield criteria. The Tresca and von Mises yield criterions are commonly used for metallic materials. The Tresca yield criterion is also known as the maximum shear stress theory. It suggests that yielding of a ductile material begins when the maximum shear stress reaches a critical value. In terms of the principal stresses, the Tresca criterion is expressed as
+\begin{equation}
+\frac{1}{2}\max \left( {\left| {{\sigma _1} - {\sigma _2}} \right|,\left| {{\sigma _2} - {\sigma _3}} \right|,\left| {{\sigma _3} - {\sigma _1}} \right|} \right) = \tau_y,
+\end{equation}
+where $\tau_y$ is the yield strength in shear.
+
+The von Mises yield criterion is also known as the maximum distortion energy criterion. It suggests that yielding of a ductile material begins when the second deviatoric stress invariant $J_2$ reaches a critical value. In terms of the principal stresses, the von Mises yield criterion is expressed as
+\begin{equation}
+{\left( {{\sigma _1} - {\sigma _2}} \right)^2} + {\left( {{\sigma _2} - {\sigma _3}} \right)^2} + {\left( {{\sigma _3} - {\sigma _1}} \right)^2} = 2\sigma _y^2,
+\end{equation}
+where $\sigma_y$ is the yield strength in tension.
+
+\ref{Fig:YieldSurface3D} shows the Tresca and von Mises yield surfaces in principal stress coordinates. 
+% There are many others including that of Drucker and the Gurson model for porous materials.
+In the study, the von Mises yield criteriona are used.
+
+\begin{figure}[!htp]
+\centering
+\includegraphics[width=8cm]{yield_surface_2D.pdf}
+\caption{The von Mises and Tresca yield surfaces in principal stress coordinates.}
+\label{Fig:YieldSurface3D}
+\end{figure}
+
+% \begin{figure}[!htp]
+% \centering\scalebox{0.5}{\includegraphics{yield_surface_3D.pdf}}
+% \caption{The von Mises and Tresca yield surfaces in principal stress coordinates.}
+% \label{Fig:YieldSurface2D}
+% \end{figure}
+
+% Let $f$ be a yield function such that $f = 0$ is our yield criterion. Then:
+
+% 1.Yield is independent of the hydrostatic stress.
+% Since $f$ is independent of hydrostatic stress, it must be expressible in terms of the deviatoric stresses alone.
+
+% 2.Yield in polycrystalline metals can be taken to be isotropic (provided we are concerned with yield in a volume of material containing many grains) and must therefore be independent of the labelling of the axes.
+
+% 3.Yield stresses measured in compression have the same magnitude as yield stresses measured in tension.
+
+% The von Mises yield function is defined by
+% \begin{equation}
+% f = \sigma_e-\sigma_y =\sqrt{3J_2}-\sigma_y
+% \end{equation}
+
+% The von Mises yield criterion suggests that the yielding of materials begins when the second deviatoric stress invariant $J_2$ reaches a critical value.
+% For this reason, it is sometimes called the $J_2$-plasticity or $J_2$ flow theory.
+% The yield criterion is given by
+% \[f<0\rm{: Elastic\ deformation}\]
+% \[f=0\rm{: Plastic\ deformation}\]
+
+%Let us consider the yield function in two-dimensional principal stress space by putting $\sigma_3 = 0$ and so imposing conditions of plane stress.
+%Geometrically, this corresponds to finding the intersection between the von Mises cylinder and the plane $\sigma_3 = 0$.
+
+\subsection{Flow rule}
+\noindent
+The general mathematical treatment of the constitutive equation for plastic deformation was proposed by von Mises in 1928.
+He noticed that in elasticity theory, the strain tensor was related to the stress through an elastic potential function, the complementary strain energy $U$ such that
+\begin{equation}
+{\bm{\upepsilon }} = \frac{{\partial U}}{{\partial {\bm{\sigma }}}}
+\end{equation}
+
+By generalizing and applying this idea to plasticity theory, Mises proposed that there exists a plastic potential $g(\bm{\sigma})$, such that the plastic strain rate $\dot{{\bm{\upepsilon }}^p}$ could be derived from the following flow rule:
+\begin{equation}
+\dot{{\bm{\upepsilon }}^p} = \dot\lambda \frac{\partial g}{\partial \bm{\sigma}}
+\label{Equ:dgdsigma}
+\end{equation}
+where $\dot\lambda$ is a proportional positive scalar factor which can be determined from the yield criterion. Plasticity theory based on the above flow rule is called plastic potential theory.
+The following remarks should be noted about the above flow rule:
+
+Geometrically, the plastic potential $g(\bm{\sigma})=0$, represents a surface in the stress space and $\dot{{\bm{\upepsilon }}^p}$ can be represented by a vector in this space.
+The plastic strain rate vector is normal to $g(\bm{\sigma})=0$.
+Therefore, Equation \ref{Equ:dgdsigma} is also referred to as the normality flow rule in plasticity theory.
+
+Common approach in plasticity theory is to assume that the plastic potential function $g(\bm{\sigma})$ is the same as the yield function $f(\bm{\sigma})$.
+It is typically assumed that the plastic strain increment and the normal to the yield surface have the same direction, so that the flow rule can be written as:
+
+%In metal plasticity, the assumption that the plastic strain increment and deviatoric stress tensor have the same principal directions is encapsulated in a relation called the flow rule.
+
+\begin{equation}
+\dot{{\bm{\varepsilon }}^p} = \dot\lambda \frac{\partial f}{\partial \bm{\sigma}}
+\end{equation}
+This is called the associated flow rule.
+On the other hand, if $g \neq f$, the flow rule is called nonassociated.
+In general, experimental observations show that inelastic deformation of metals can be characterized quite well by an associated flow rule, but for some porous materials a nonassociated flow rule provides a better representation of inelastic deformation.
+
+The above flow rule is easily justified for perfectly plastic deformations for which $d\boldsymbol{\sigma} = 0$  when $d{{\bm{\upepsilon }}^p} > 0$, i.e., the yield surface remains constant under increasing plastic deformation. This implies that the increment of elastic strain is also zero, $d{{\bm{\upepsilon }}^e} = 0$, because of Hooke's law.
+Therefore,
+\begin{equation}
+d\boldsymbol{\sigma}:\frac{\partial f}{\partial \boldsymbol{\sigma}} = 0 \quad \text{and} \quad d\boldsymbol{\sigma}:d{{\bm{\upepsilon }}^p} = 0 \,.
+\end{equation}
+Hence, both the normal to the yield surface and the plastic strain tensor are perpendicular to the stress tensor and must have the same direction.
+For a work hardening material, the yield surface can expand with increasing stress.
+We assume Drucker's second stability postulate which states that for an infinitesimal stress cycle this plastic work is positive, i.e.,
+\begin{equation}
+d\boldsymbol{\sigma}: d{{\bm{\upepsilon }}^p} \ge 0 \,.
+\end{equation}
+The above quantity is equal to zero for purely elastic cycles.
+Examination of the work done over a cycle of plastic loading-unloading can be used to justify the validity of the associated flow rule.
+The Prager consistency condition is needed to close the set of constitutive equations and to eliminate the unknown parameter $d\lambda$ from the system of equations.
+The consistency condition states that $df = 0$  at yield because  $f(\boldsymbol{\sigma},{{\bm{\upepsilon }}^p}) = 0$ , and hence
+\begin{equation}
+df = \frac{\partial f}{\partial \boldsymbol{\sigma}}:d\boldsymbol{\sigma} + \frac{\partial f}{\partial \boldsymbol{\varepsilon}_p}:d\boldsymbol{\varepsilon}_p = 0 \,.
+\end{equation}
+
+\subsection{Hardening rule}
+The hardening rule describes how the yield surface changes in position and size.
+Evolution equations of the back stress tensor allows by the change in position of the kinematic hardening into account.
+With this shift in the yield surface, the size and shape of the yield surface remain unchanged.
+
+In material models in which isotropic hardening is depicted, it is done by evolution equations describing an increase in the radius $k$ of the yield surface.
+A modeling that represents isotropic hardening is not suitable for cyclic stresses.
+In such cases, the yield surface is expanded as far as it finally only purely elastic state occurs (elastic "Shake Down").
+The differences of the material models described in the next section consist kinematic hardening only in the respectively used hardening rules to take into account.
 
 \section{A review of some cyclic plasticity theories}
 \subsection{Kinematic hardening models}
@@ -285,7 +502,7 @@ The characteristic stress-strain curve for cyclic loading is obtained from mater
 which can be identified from the monotonic tension curve and cyclic tension-compression curve, respectively.
 Above $r_\Delta ^k$ is assumed to depend on the accumulated plastic strain $p$,
 \begin{equation}
-\label{Equ:rdeltak1}
+% \label{Equ:rdeltak1}
 %r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} + a_2^k({e^{ - b_2^kp}} - {e^{ - b_3^kp}})} \right]
 r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right].
 \label{Equ:rdeltak}
@@ -767,5 +984,3 @@ Therefore, $\mathbb{H}_{n + 1}^k$ in Equation \ref{Equ:dan+1} has an expression:
 \sqrt {\frac{2}{3}} {\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)_{n + 1}}{\bf{b}}_{n + 1}^k \otimes {{\bf{n}}_{n + 1}}
 \end{aligned}
 \end{equation}
-
-\end{itemize}

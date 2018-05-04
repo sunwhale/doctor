@@ -60,12 +60,12 @@ The advantage of solid specimen is easy to be manufactured.
 \begin{figure}[!htp]
 \centering
 \begin{overpic}[width=12.0cm]{IN718_Axial_Specimen.pdf}
-\put(-10,0){\fcolorbox{white}{white}{(a)}}
+\put(-10,20){\fcolorbox{white}{white}{(a)}}
 \end{overpic}
 \begin{overpic}[width=12.0cm]{IN718_Multiaxial_Specimen.pdf}
-\put(-10,0){\fcolorbox{white}{white}{(b)}}
+\put(-10,20){\fcolorbox{white}{white}{(b)}}
 \end{overpic}
-\caption{Dimensions of the specimens investigated in the study: (a) The solid specimen for uniaxial tests, (b) The tubular specimen for biaxial tests.}
+\caption{Dimensions of the specimens investigated in the study: (a) The solid specimen for uniaxial tests, (b) The tubular specimen for axial-torsional tests.}
 \label{Fig:Specimen}
 \end{figure}
 
@@ -169,14 +169,16 @@ The gauge lengths of the axial and biaxial extensometers are 12mm and 25mm, resp
 
 \section{Monotonic tensile tests}
 \noindent Monotonic tensile test is the fundamental material test in which a specimen is subjected to a controlled tension until failure.
-The purpose of this portion of the testing program was to develop the Inconel 718 mechanical property data for use in the finite-element calculations.
+The purpose of the monotonic tensile tests is to determine the basic mechanical properties of Inconel 718 for using in the finite element calculations.
+The monotonic tensile tests were performed at 20$^{\circ}$C, 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C.
+The experimental procedure was in accordance with the standard ASTM E21.
+The heating device was a electric resistance furnace (MTS Model 653) and the temperature was measured by the type K thermocouple which was sufficiently sensitive and reliable.
+The specimens were in the air at atmospheric pressure.
+Prior to the start of the test, the specimen was heated to the intended temperature and held on for an hour under zero force condition.
+The aim is to ensure the temperature distribution of the specimen has reached equilibrium.
 
-The monotonic tensile tests were performed under four temperatures 20$^{\circ}$C, 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C.
-All tests procedures followed the ASTM standard E21.09.
-The heating apparatus was the electric resistance furnace (MTS Model 653) and the specimens were in the air at atmospheric pressure.
-Temperature was measured by the type K thermocouples which were sufficiently sensitive and reliable.
-%The temperature measurement sensor was the type K thermocouple which was sufficiently sensitive and reliable to ensure that the temperature of the specimen is within the limits specified in the gauge length.
-At the beginning of each test with force kept constant at zero and the specimen was heated to the set temperature and held on for an hour to ensure the temperature distribution of the specimen became stabilization.
+% The temperature measurement sensor was the type K thermocouple which was sufficiently sensitive and reliable to ensure that the temperature of the specimen is within the limits specified in the gauge length.
+% At the beginning of each test with force kept constant at zero and the specimen was heated to the intended temperature and held on for an hour to ensure the temperature distribution of the specimen became stabilization.
 
 \begin{figure}[!htp]
 \centering{\includegraphics[width=12cm]{Furnace653_1.jpg}}
@@ -186,9 +188,9 @@ At the beginning of each test with force kept constant at zero and the specimen 
 
 %Before the mechanical tension load applied, all specimens were heated to the set temperature by the resistance furnace and held the temperature for an hour until the temperature distribution of the specimen became to the steady state.
 For the duration of each test, the temperature deviations between the indicated and nominal values were less than $\pm1.5^{\circ}$C.
-The tensile tests were performed in strain control at the predetermined strain rate $1.0\times 10^{-4}\rm{s}^{-1}$.
-The extensometer was removed after the axial strain reached 6\% and then the tests were changed to displacement control mode.
-The test program is listed in Table \ref{tab:TensionLoadingConditions}.
+The tensile tests were performed in displacement controlled and strain rates were about $1.0\times 10^{-4}\rm{s}^{-1}$.
+The extensometer was removed after the axial strain had reached 6\%.
+The monotonic tensile test conditions are listed in Table \ref{tab:TensionLoadingConditions}.
 \begin{table}[htbp]
   \centering
   \caption{Monotonic tensile test program.}
@@ -225,9 +227,9 @@ Noting that, it is recommended to use true stress $\sigma$ and logarithmic strai
 \varepsilon=\ln(1+\varepsilon_{eng}).
 \end{equation}
 
-\ref{Fig:IN718_Monotonic_Tension} shows the variation of the Inconel 718 tension stress-strain curves with different test temperatures 20$^{\circ}$C, 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C.
-The material properties of different temperatures can be determined from the experimental data, e.g. Young's modulus, yield strength, ultimate stress and fracture elongation (see Table \ref{tab:General_material_mechanical_properties}).
-There was a considerable decline in Young's modulus, yield strength and ultimate stress with the increase of temperature.
+\ref{Fig:IN718_Monotonic_Tension} shows the variation of the Inconel 718 tension stress-strain curves with different temperatures 20$^{\circ}$C, 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C.
+The basic material properties of Inconel 718 at different temperatures can be determined from the experimental data, such as Young's modulus, yield strength, ultimate stress and fracture elongation (see Table \ref{tab:General_material_mechanical_properties}).
+There is a considerable decline in Young's modulus, yield strength and ultimate stress with the increase of temperature.
 %With the increase of temperature, the Young's modulus, yield strength shows a certain decline.
 However, the fracture elongation was insensitivity with the temperature.
 As a result, the material still retains reasonable strength at 650$^{\circ}$C.
@@ -292,81 +294,112 @@ As a result, the material still retains reasonable strength at 650$^{\circ}$C.
 %\end{equation}
 
 \section{Isothermal fatigue tests}
-\noindent Both uniaxial and multi-axial strain controlled isothermal low cycle fatigue (LCF) tests were performed with the inductive heating device.
-The temperatures were measured and controlled by thermocouples wrapped around the specimen surface at the center of the gauge section of the specimen.
-The strain were measured and controlled by the uniaxial extensometer MTS model 632.53 and the biaxial extensometer MTS model 632.68.
+\noindent
+In this section, both uniaixal and axial-torsional isothermal fatigue tests are introduced.
+\subsection{Introduction of axial-torsional fatigue testing}
+\noindent
+Axial-torsional fatigue tests involved axial and torsional loading simultaneously with the predetermined phase relationship.
+The test procedure was in accordance with the standard ASTM E2207.
+The standard deals with strain-controlled, axial, torsional, and combined in-phase and out-of-phase axial/torsional fatigue tests with thin-walled, circular cross-section, tubular specimens at isothermal, ambient and elevated temperature.
+Some concepts are defined as follows:
 
-All isothermal fatigue tests were carried out with a given loading ratio $R_{\varepsilon}=\varepsilon_{\min}/\varepsilon_{\max}=-1$.
-Six fully reversed stain paths were illustrated in \ref{Fig:LoadPath}.
-The tension compression strain path is shown in \ref{Fig:LoadPath}(a) and denoted as 'TC' for short.
-All tension compression tests were performed on solid specimens (see \ref{Fig:Specimen}(a)).
-Pure torsional, proportional and non-proportional tests were performed on tubular specimens (see \ref{Fig:Specimen}(b)).
-The strain path torsional, proportional, corss, diamond and circle are shown in \ref{Fig:LoadPath}(b)-(f) and they are respectively denoted as 'TOR', 'CROSS', 'PRO', 'DIAMOND' and 'CIRCLE'.
+Axial strain $\varepsilon$, refers to engineering axial strain, and is defined as change in length divided by the original length $\Delta L_g/L_g$.
+
+Shear strain $\gamma$, refers to engineering shear strain, resulting from the application of a torsional moment to a cylindrical specimen.
+Such a torsional shear strain is simple shear and is defined similar to axial strain with the exception that the shearing displacement, $\Delta L_s$ is perpendicular to rather than parallel to the gage length, $L_g$, that is, $\gamma=\Delta L_s/L_g$.
+As shown in \ref{Fig:Shear_Strain}, $\phi$ is the angle of twist along the gage length of the cylindrical specimen, $\theta$ expressed in radians is the angle of twist between the planes defining the gage length of the cylindrical specimen.
+$\theta$ is measurable directly as angle using specially calibrated torsional extensometers.
+Thus, we have $\gamma = (d/2)\theta/ L_g$.
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=14cm]{shear_strain.pdf}
+  \caption{Twisted gage section of a cylindrical specimen due to a torsional moment.}
+  \label{Fig:Shear_Strain}
+\end{figure}
+
+Biaxial strain amplitude ratio $\lambda$, is defined as the ratio of the shear strain amplitude $\gamma_a$ to the axial strain amplitude $\varepsilon_a$, that is, $\gamma_a/\varepsilon_a$.
+
+Axial stress $\sigma$, refers to the engineering stress, which is the ratio of force, $F$, to specimen original cross sectional area, A, that is, $\sigma=F/A$.
+
+Shear stress $\tau$, refers to engineering shear stress, acting in the orthogonal tangential and axial directions of the gage section and is a result of the applied torsional moment, (Torque) $T$, to the thin-walled tubular specimen. The shear stress, like the shear strain, is always the greatest at the outer diameter. Under elastic loading conditions, shear stress also varies linearly through the thin wall of the tubular specimen. However, under elasto-plastic loading conditions, shear stress tends to vary in a nonlinear fashion. Most strain-controlled axial-torsional fatigue tests are conducted under elasto-plastic loading conditions. Therefore, assumption of a uniformly distributed shear stress is recommended. The relationship between such a shear stress applied at the mean diameter of the gage section and the torsional moment, $T$, is
+\begin{equation}
+\tau=\frac{16T}{\pi(d_o^2-d_i^2)(d_o+d_i)},
+\label{Equ:shear_stress}
+\end{equation}
+where, $\tau$ is the shear stress, $d_o$ and $d_i$ are the outer and inner diameters of the tubular test specimen, respectively.
+
+\subsection{Strain paths}
+\noindent
+\ref{Fig:LoadPath} shows schematically and exemplary six fully reversed mechanical strain paths for uniaxial tension-compression (\ref{Fig:LoadPath}(a)), pure torsional (\ref{Fig:LoadPath}(b)), and axial–torsional (\ref{Fig:LoadPath}(c,d,e,f)) tests.
+For convenience, hereafter, the six strain path which shown in \ref{Fig:LoadPath} from (a) to (f) are denoted as 'TC', 'TOR', 'CRO', 'PRO', 'NPR' and 'CIR', respectively.
+The strain paths are described by the mechanical strain $\varepsilon_{mech}$ and equivalent shear strain $\gamma/\sqrt{3}$ in a cycle.
+\ref{Fig:LoadPath}(c) represents a 45$^\circ$ proportional loading with the ratio $\varepsilon_{mech}/(\gamma/\sqrt{3})=1$. \ref{Fig:LoadPath}(e) shows a diamond non-proportional strain path (i.e. the ratio of mechanical strain amplitude and shear strain amplitude is 1). \ref{Fig:LoadPath}(f) shows a circle non-proportional strain path (i.e. the phase between mechanical and torsional strain is 90$^\circ$).
+Loading ratio $R_\varepsilon$ means the ratio of minimum mechanical strain to the maximum mechanical strain in a loading cycle. Under the axial-torsional condition, the loading ratio is calculated from the principal strains. 
+All isothermal LCF tests were carried out with the given loading ratio $R_{\varepsilon}=\varepsilon_{mech,\min}/\varepsilon_{mech,\max}=-1$.
+The tension-compression tests were performed on solid specimens (see \ref{Fig:Specimen}(a)), while the pure torsional, and axial–torsional tests were performed on tubular specimens (see \ref{Fig:Specimen}(b)).
 
 \begin{figure}
   \begin{minipage}[t]{0.33\linewidth}
     \centering
     \includegraphics[width=4.5cm]{load_path_1.pdf}
-    \centerline{\small (a) Tension Compression(TC).}
+    \centerline{\small (a) Tension-Compression(TC) path.}
   \end{minipage}
   \begin{minipage}[t]{0.33\linewidth}
     \centering
     \includegraphics[width=4.5cm]{load_path_5.pdf}
-    \centerline{\small (b) Torsional path(TOR).}
+    \centerline{\small (b) Torsional(TOR) path.}
   \end{minipage}
   \begin{minipage}[t]{0.33\linewidth}
     \centering
     \includegraphics[width=4.5cm]{load_path_2.pdf}
-    \centerline{\small (c) Proportional Path(PRO).}
+    \centerline{\small (c) Proportional(PRO) Path.}
   \end{minipage}%
 
   \begin{minipage}[t]{0.33\linewidth}
     \centering
     \includegraphics[width=4.5cm]{load_path_4.pdf}
-    \centerline{\small (d) Cross Path(CROSS).}
+    \centerline{\small (d) Cross(CRO) Path.}
   \end{minipage}
   \begin{minipage}[t]{0.33\linewidth}
     \centering
     \includegraphics[width=4.5cm]{load_path_3.pdf}
-    \centerline{\small (e) Diamond Path(DIAMOND).}
+    \centerline{\small (e) Diamond(NPR) Path.}
   \end{minipage}
   \begin{minipage}[t]{0.33\linewidth}
     \centering
     \includegraphics[width=4.5cm]{load_path_6.pdf}
-    \centerline{\small (f) Circle Path(CIRCLE).}
+    \centerline{\small (f) Circle(CIR) Path.}
   \end{minipage}%
-  \caption{Strain paths in isothermal tests.}
+  \caption{Schematic representation of different strain paths.}
   \label{Fig:LoadPath}
 \end{figure}
 
-For the duration of each test, the temperature deviations between the indicated and nominal values were less than $\pm3^{\circ}$C.
+\subsection{Process of isothermal LCF tests}
+\noindent
+Both uniaxial and axial-torsional strain controlled isothermal low cycle fatigue (LCF) tests were performed with the induction heating device.
+The temperature was measured by the thermocouples wrapped around the surface at the center of the gauge section of the specimen.
+For the duration of each isothermal LCF test, the temperature deviations between the indicated and nominal values were less than $\pm$3K.
+During uniaxial and axial-torsional LCF tests, the strain was measured by the axial extensometer (MTS Model 632.53) and the axial/torsional extensometer (MTS Model 632.68), respectively.
 
+% The isothermal LCF tests were conducted under six fully reversed strain paths. As introduced above, the strain paths are shown in \ref{Fig:LoadPath}. The test conditions are summarized in Table \ref{tab:Loading-Conditions}.
 
-A triangular waveform was applied at a prescribed frequency of 0.05Hz over the strain range of $\pm 0.6\%$ to $\pm 1.0\%$, i.e. the strain rates were below $1.0\times 10^{-3}\rm{s}^{-1}$ for all tests.
-The strain peak  $\varepsilon_{\max}$ and valley $\varepsilon_{\min}$ were given to the controlling software.
-The default peak and valley compensation method was used to obtain an accurate feedback value.
-All uniaxial fatigue tests were performed at the temperature range of 300$^{\circ}$C to 650$^{\circ}$C in total strain control by the MTS Multipurpose software (MPE).
-Failure was deemed to have occurred if the peak load dropped 15\% from the stabilized peak. a 20\% load drop In comparing with the maximum load  was defined as failure, corresponding to nucleation of macro cracks.
-The cyclic tests were quitted at 50,000 loading cycles.
+The isothermal LCF tests were conducted under five fully reversed strain paths which include tension-compression (\ref{Fig:LoadPath}(a)), pure torsional (\ref{Fig:LoadPath}(b)) and non-proportional (\ref{Fig:LoadPath}(d,e,f)) strain paths.
+% The isothermal LCF experimental program consisted of axial, pure torsional and axial-torsional tests within the temperature range from 573K to 923K.
+The test conditions are summarized in Table \ref{tab:Loading-Conditions}.
+In Table \ref{tab:Loading-Conditions}, the test type consists of the strain path and temperature condition. For example, TC-IF means the isothermal fatigue test with the tension-compression strain path, TOR-IF means the isothermal fatigue test with the pure torsional strain, and so on.
+All tests were strain controlled and the stress-strain hysteresis loops were recorded for each cycle.
+% The strain path is defined as the combination of axial strain $\varepsilon$ and shear strain $\gamma$ in a cycle under the biaxial loaded strain-controlled conditions, such as tension-compression (\ref{Fig:LoadPath}(a)), pure torsional (\ref{Fig:LoadPath}(b)), proportional (\ref{Fig:LoadPath}(c)) and non-proportional (\ref{Fig:LoadPath}(d,e,f)) strain paths.
 
-The multi-axial cyclic tests involved simultaneous axial and torsional loading with the prescribed phase relationship.
-The test procedure was adapt to the standard ASTM E2207-15 which deals with strain-controlled, axial, torsional and combined in-phase and out-of-phase axial torsional fatigue testing with thin-walled tubular specimens under isothermal condition.
-The axial strain $\varepsilon$ refers to engineering axial strain, defined as $\varepsilon=\Delta L_g/L_g$. The engineering shear strain $\gamma$ is defined as twist of the specimen.
-
-The thermo-mechanical experiments consisted of axial, torsional and non-proportional cyclic tests with temperature range from 300$^{\circ}$C to 650$^{\circ}$C. The loading conditions for each type of tests are summarized in Table \ref{tab:Loading-Conditions}.
-Strain path is described by axial strain $\varepsilon$ and shear strain $\gamma$ in a cycle under the  strain-control conditions. The proportional loading path and the non-proportional loading paths are shown in Figures \ref{Fig:LoadPath}(b) to (d), respectively.
-
-
-% Table generated by Excel2LaTeX from sheet 'IF'
 \begin{table}[htbp]
   \centering
   \caption{Temperature and loading conditions of the isothermal tests program.}
     \begin{tabular}{p{2cm}p{2cm}p{3cm}p{3cm}p{2cm}}
     \toprule
-    Strain path & Temperature & Axial strain range & Shear strain range & Strain rate \\
-          & $T$ [$^\circ$C] & $\pm \varepsilon _m$ [\%] & $\pm \gamma/ \sqrt 3$ [\%] & $\dot \varepsilon _{eq}$ [s$^{-1}$] \\
+    Test type & Temperature & Axial strain range & Shear strain range & Strain rate \\
+          & $T$ [$^\circ$C] & $\pm \varepsilon _{mech}$ [\%] & $\pm \gamma/ \sqrt 3$ [\%] & $\dot \varepsilon _{eq}$ [s$^{-1}$] \\
     \midrule
-    TC    & 300   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+    TC-IF    & 300   & 1.00  & -     & $1.00\times 10^{-3}$ \\
           & 400   & 1.00  & -     & $1.00\times 10^{-3}$ \\
           & 550   & 1.00  & -     & $1.00\times 10^{-3}$ \\
           & 650   & 1.00  & -     & $1.00\times 10^{-3}$ \\
@@ -377,23 +410,23 @@ Strain path is described by axial strain $\varepsilon$ and shear strain $\gamma$
           & 650   & 0.45  & -     & $1.00\times 10^{-3}$ \\
           & 650   & 0.40  & -     & $6.40\times 10^{-3}$ \\
     \midrule
-    TOR   & 300   & -     & 0.60  & $6.00\times 10^{-4}$ \\
+    TOR-IF   & 300   & -     & 0.60  & $6.00\times 10^{-4}$ \\
           & 300   & -     & 0.73  & $7.30\times 10^{-4}$ \\
           & 300   & -     & 0.85  & $8.50\times 10^{-4}$ \\
           & 300   & -     & 1.00  & $1.00\times 10^{-3}$ \\
           & 550   & -     & 0.85  & $8.50\times 10^{-4}$ \\
           & 650   & -     & 0.85  & $8.50\times 10^{-4}$ \\
     \midrule
-    CIRCLE & 300   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
+    CIR-IF  & 300   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
           & 550   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
           & 650   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
           & 650   & 0.60  & 0.60  & $0.85\times 10^{-4}$ \\
     \midrule
-    DIAMOND & 300   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+    NPR-IF  & 300   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
           & 550   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
           & 650   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
     \midrule
-    CROSS & 300   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+    CRO-IF  & 300   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
           & 550   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
           & 650   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
     \bottomrule
@@ -401,19 +434,100 @@ Strain path is described by axial strain $\varepsilon$ and shear strain $\gamma$
   \label{tab:Loading-Conditions}%
 \end{table}%
 
-%\begin{figure}[!htp]
-%\centering\scalebox{0.5}{\includegraphics{plot_exp_pv_TCIF_650C.pdf}}
-%\caption{Peak stresses of Inconel 718 at 650$^{\circ}$C.}
-%\label{Fig:plot_exp_pv_TCIF_650C}
-%\end{figure}
-%
-%\begin{figure}[!htp]
-%\centering\scalebox{0.5}{\includegraphics{plot_exp_half_life_cycle_TCIF_650C.pdf}}
-%\caption{Half life cycle stress-strain response of Inconel 718 at 650$^{\circ}$C.}
-%\label{Fig:plot_exp_half_life_cycle_TCIF_650C}
-%\end{figure}
-%
-%\begin{figure}
+The uniaxial tension-compression tests were performed at 573K, 673K, 823K and 923K.
+Triangular waveforms were applied at the predetermined strain rates over the strain range between $\pm 0.4\%$ and $\pm 1.0\%$.
+For uniaxial tests, the strain rates were below $1.0\times 10^{-3}\rm{s}^{-1}$.
+The pure torsional and axial-torsional tests were performed at 573K, 823K and 923K.
+% A axial-torsional test involved axial and torsional loading simultaneously with a predetermined phase relationship.
+As introduced above, the procedure of axial-torsional test was in accordance with the standard ASTM E2207.
+The process of the LCF tests were defined by using a MTS Multipurpose software (MPE).
+The strain path, temperature, strain rate were given to the software.
+Furthermore, a peak/valley compensation (PVC) method was used to obtain an accurate feedback value.
+Failure was deemed to have occurred if the peak load dropped 15\% from its stabilized value. A 30\% load drop in comparing with the stabilized peak value was defined as failure, corresponding to nucleation of macro cracks.
+Finally, the tests were stopped at the 200,000 cycle if no failure was detected.
+
+
+% The procedure of axial-torsional test was in accordance with the standard ASTM E2207 which deals with strain-controlled, axial, torsional and combined in-phase and out-of-phase axial torsional fatigue testing with thin-walled tubular specimens under isothermal condition.
+% The axial strain $\varepsilon$ refers to engineering axial strain, defined as $\varepsilon=\Delta L_g/L_g$. The engineering shear strain $\gamma$ is defined as twist of the specimen.
+\subsection{Experimetnal results}
+\noindent
+% 当进行疲劳试验时，在循环载荷作用下，循环开始的应力应变滞后回线是不封闭的，封闭的滞后回线只有经过一定循环次数后才形成。金属材料在由循环开始状态变成循环稳定状态的过程，与其在循环应力及应变作用下的形变抗力变化有关。
+% 在低周疲劳的循环加载初期，材料对循环加载的响应是一个由不稳定向稳定过渡的过程。此过程可分别用应力控制下的应变-时间曲线和应变控制下的应力-时间曲线描述。循环硬化是材料在循环过程中变形抗力不断提高、应变逐渐减小的现象。循环软化则是材料在循环过程中变形抗力不断减小而应变逐渐增加的现象。
+% 在低周疲劳的循环加载初期，材料对循环加载的响应是一个由不稳定向稳定过渡的过程。
+At the initial stage of cyclic loading of low cycle fatigue, the material's response to cyclic loading is a transition from instability to stability.
+% 此过程可分别用应力控制下的应变-时间曲线和应变控制下的应力-时间曲线描述。
+This process can be described by the strain-time curve under stress control or stress-time curve under strain control, respectively.
+% 金属材料在循环加载过程中的应力应变曲线通常有两种类型：循环硬化及循环软化。根据加载控制方式的不同，循环软化存在两种表现形式：当保持应力幅值恒定时，应变响应随循环次数不断增大；当保持应变幅值恒定时，应力响应随循环次数不断减小。
+There are usually two types of stress-strain responses for metal materials during cyclic loading: cyclic hardening and cyclic softening.
+According to different loading control methods, cycle softening has two manifestations: when the stress amplitude is kept constant, the strain response increases with the number of cycles; when the strain amplitude is kept constant, the stress response decreases with the number of cycles.
+
+\ref{Fig:plot_exp_TC-IF_2} shows the stress-strain responses of tension-compression fatigue tests at the temperatures 573, 823 and 823K with the mechanical strain range $\varepsilon=\pm1.0\%$. \ref{Fig:plot_exp_TOR-IF} shows the stress-strain responses of pure torsional tests at temperatures 573, 823 and 823K with the shear strain range $\varepsilon=\pm1.47\%$. It can be observed that the cyclic stress-strain response is closely related to the temperature. For the same strain amplitude, the cycle softening is greater with increasing temperature. This is similar to the phenomenon observed by \cite{Fournier1977,Xiao2005,kim1988elevated,Schlesinger2017} when studying Inconel 718 under elevated temperature.
+% 其中等温拉压试验的应变幅值为+-1\%，扭转试验的剪应变幅值为+-1.47\%。可以看出，循环应力响应与温度密切相关，对于相同的应变幅值，材料的循环软化程度更大。
+% 导致材料出现循环软化现象的微观因素有很多，比如沉淀剪切、析出相的溶解、共格的丧失以及位错退化与重排等。
+There are many microstructural evolutions that cause cyclic softening of materials, such as shearing of precipitate phases, dissolution of precipitates, degradation and rearrangement of dislocations.
+% 对于镍基高温合金Inconel 718循环软化现象的解释多为沉淀相的剪切机制。
+The explanation for the cyclic softening phenomenon of the nickel-based superalloy Inconel 718 is mostly the shearing of the $\gamma ''$ precipitates.
+
+As shown in \ref{Fig:plot_exp_TC-IF_650C}, the saturated stress-strain hysteresis loops are presented for all performed tests at 923K.
+It can be observed that Inconel 718 occurred cyclic softening at 923K for all investigated strain amplitudes.
+
+% \cite{Fournier1977}研究Inconel 718分别在293K和823K下低周疲劳性能，发现在常温下材料先出现硬化而后变为软化，在高温下仅出现循环软化现象。他们得出的结论是在循环应变过程中沉淀相被剪切。类似的，Xiao\cite{Xiao2005}等针对Inconel 718在室温以及高温920K下观察到了明显的循环软化以及平面滑移带，且共格和非共格的沉淀相$\gamma ''$移动的位错在{111}滑移面上剪切共格和非共格的沉淀相γ’’。此外，Xiao[46]等还研究了650oC时Inconel718中不同含量的硼元素对于材料的低周疲劳性能影响，结果发现四种不同含量硼元素的Inconel718合金均表现为循环软化，对此他们沿用之前的解释，沉淀相的剪切在开始阶段建立了位错移动的优先路径，这是Inconel718在650oC出现循环软化和平面滑移带的主要原因。E.HariKrishna[44]等研究了传统的和改进之后的Inconel718合金高温650oC下的低周疲劳性能，同样发现两种合金均出现了循环软化现象。他们指出，在载荷开始循环的几圈中由于短程有序的破坏而形成滑移带，且对于镍基高温合金随应变幅值增大滑移带数目增多。在γ’和γ’’作为强化相的镍基高温合金中通常会形成平面滑移带，这导致强化相受到剪切，推动了滑移带中的应变局部化。由于高应变幅值下平面滑移带数目更多，更多的强化相受到剪切而导致软化程度越高。
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle-TC-IF_2.pdf}
+  \put(84,13){(a)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TC-IF_2.pdf}
+  \put(84,13){(b)}
+  \end{overpic}
+  \caption{Experimental results of isothermal tension-compression tests with the axial strain range $\varepsilon = \pm1.0\%$ at temperatures 573, 823 and 923K: (a)stress-strain loops, (b)peak-valley stresses.}
+  \label{Fig:plot_exp_TC-IF_2}
+\end{figure}
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle-TOR-IF.pdf}
+  \put(84,13){(a)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TOR-IF.pdf}
+  \put(84,13){(b)}
+  \end{overpic}
+  \caption{Experimental results of isothermal pure torsional tests with the shear strain range $\gamma = \pm1.47\%$ at temperatures 573, 823 and 923K: (a)stress-strain loops, (b)peak-valley stresses.}
+  \label{Fig:plot_exp_TOR-IF}
+\end{figure}
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCIF_650C.pdf}
+  \put(84,13){(a)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIF_650C.pdf}
+  \put(84,13){(b)}
+  \end{overpic}
+  \caption{Experimental results of isothermal torsional tests with shear strain range $\varepsilon = \pm1.47\%$ at temperatures 573, 823 and 823K: (a)stress-strain loops, (b)peak-valley stresses.}
+  \label{Fig:plot_exp_TC-IF_650C}
+\end{figure}
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_CIRC-IF_axial.pdf}
+  \put(84,13){(a)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_CIRC-IF_axial.pdf}
+  \put(84,13){(b)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_CIRC-IF_torsional.pdf}
+  \put(84,13){(c)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_CIRC-IF_torsional.pdf}
+  \put(84,13){(d)}
+  \end{overpic}
+  \caption{Experimental results of isothermal circle path tests at temperatures 573, 823 and 923K: (a)axial stress-strain loops, (b)axial peak-valley stresses, (c)torsional stress-strain loops, (d)torsional peak-valley stresses.}
+  \label{Fig:plot_exp_pv_CIRC-IF}
+\end{figure}
+
+% \begin{figure}
 %  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
 %  \nonumber
 %    \centering
@@ -425,7 +539,7 @@ Strain path is described by axial strain $\varepsilon$ and shear strain $\gamma$
 %    \includegraphics[width=3.5in]{Axial+-1D0_400C.pdf}
 %    \centerline{(b) 400$^{\circ}$C.}
 %  \end{minipage}
-%
+
 %  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
 %  \nonumber
 %    \centering
@@ -439,170 +553,7 @@ Strain path is described by axial strain $\varepsilon$ and shear strain $\gamma$
 %  \end{minipage}
 %  \caption{Isothermal tension-compression stress-strain loops with strain range +-1\% at different temperatures.}
 %  \label{Fig:LoadPath}
-%\end{figure}
-
-%\subsection{Multiaxial fatigue tests}
-Multiaxial tests involved simultaneous axial and torsional loading with the prescribed phase relationship.
-The test procedure was adapt to the standard ASTM E2207-15 which deals with strain-controlled, axial, torsional, and combined in-phase and out-of-phase axial torsional fatigue testing with thin-walled, circular cross-section, tubular specimens at isothermal, ambient and elevated temperatures.
-Some concepts are defined as follows:
-
-Axial strain $\varepsilon$, refers to engineering axial strain, and is defined as change in length divided by the original length $\Delta L_g/L_g$.
-
-Shear strain $\gamma$, refers to engineering shear strain, resulting from the application of a torsional moment to a cylindrical specimen.
-Such a torsional shear strain is simple shear and is defined similar to axial strain with the exception that the shearing displacement, $\Delta L_s$ is perpendicular to rather than parallel to the gage length, $L_g$, that is, $\gamma=\Delta L_s/L_g$.
-%$\gamma$ is related to the angles of twist, $\theta$ and $\Psi$ as follows: $\gamma=\tan \Psi$
-As shown in \ref{Fig:Shear_Strain}, $\Psi$ is the angle of twist along the gage length of the cylindrical specimen, $\theta$ expressed in radians is the angle of twist between the planes defining the gage length of the cylindrical specimen.
-$\theta$ is measurable directly as angle using specially calibrated torsional extensometers.
-Thus, we have $\gamma = (d/2)\theta/ L_g$.
-Biaxial strain amplitude ratio $\lambda$, is defined as the ratio of the shear strain amplitude $\gamma_a$ to the axial strain amplitude $\varepsilon_a$, that is, $\gamma_a/\varepsilon_a$.
-\begin{figure}[!htp]
-\centering\scalebox{0.6}{\includegraphics{shear_strain.pdf}}
-\caption{Twisted gage section of a cylindrical specimen due to a torsional moment.}
-\label{Fig:Shear_Strain}
-\end{figure}
-
-Axial stress $\sigma$, refers to the engineering stress, which is the ratio of force, $F$, to specimen original cross sectional area, A, that is, $\sigma=F/A$.
-
-Shear stress $\tau$, refers to engineering shear stress, acting in the orthogonal tangential and axial directions of the gage section and is a result of the applied torsional moment, (Torque) $T$, to the thin-walled tubular specimen. The shear stress, like the shear strain, is always the greatest at the outer diameter. Under elastic loading conditions, shear stress also varies linearly through the thin wall of the tubular specimen. However, under elasto-plastic loading conditions, shear stress tends to vary in a nonlinear fashion. Most strain-controlled axial-torsional fatigue tests are conducted under elasto-plastic loading conditions. Therefore, assumption of a uniformly distributed shear stress is recommended. The relationship between such a shear stress applied at the mean diameter of the gage section and the torsional moment, $T$, is
-\begin{equation}
-\tau=\frac{16T}{\pi(d_o^2-d_i^2)(d_o+d_i)},
-\end{equation}
-where, $\tau$ is the shear stress, $d_o$ and $d_i$ are the outer and inner diameters of the tubular test specimen, respectively.
-
-The experimental program consisted of axial, torsional and non-proportional cyclic tests within temperature range from 573K to 923K.
-All tests are strain controlled and the stress-strain hysteresis loops were recorded for each cycle.
-The loading conditions for each type of tests are summarized in Table \ref{tab:Loading-Conditions}.
-The strain path is defined as the combination of axial strain $\varepsilon$ and shear strain $\gamma$ in a cycle under the biaxial loaded strain-controlled conditions, such as tension-compression (\ref{Fig:LoadPath}(a)), pure torsion (\ref{Fig:LoadPath}(b)), proportional (\ref{Fig:LoadPath}(c)) and non-proportional strain path (\ref{Fig:LoadPath}(d,e,f)).
-
-%\begin{table}[htbp]
-%  \centering
-%  \caption{Temperature and loading conditions of the isothermal test program.}
-%    \begin{tabular}{lcccc}
-%    \toprule
-%    Load type & Temperature & Axial strain range  & Shear strain range & Frequency\\
-%              & $T$ [$^{\circ}$C] & $\varepsilon$ [\%]& $\gamma /\sqrt 3$ [\%] & $f$ [Hz]  \\
-%    \midrule
-%    Circle path & 300 & $\pm0.60$ & $\pm0.73$ & 0.05 \\
-%                & 550 & $\pm0.60$ & $\pm0.73$ & 0.05 \\
-%                & 650 & $\pm0.60$ & $\pm0.73$ & 0.05 \\
-%                & 650 & $\pm0.60$ & $\pm0.60$ & 0.05 \\
-%    \midrule
-%    Diamond path & 300 & $\pm1.00$ & $\pm1.00$ & 0.05 \\
-%                 & 550 & $\pm1.00$ & $\pm1.00$ & 0.05 \\
-%                 & 650 & $\pm1.00$ & $\pm1.00$ & 0.05 \\
-%    \midrule
-%    Cross path   & 300 & $\pm1.00$ & $\pm1.00$ & 0.05 \\
-%                 & 550 & $\pm1.00$ & $\pm1.00$ & 0.05 \\
-%                 & 650 & $\pm1.00$ & $\pm1.00$ & 0.05 \\
-%    \bottomrule
-%    \end{tabular}%
-%  \label{tab:Loading-Conditions}%
-%\end{table}%
-
-In this section we will introduce the multiaxial thermomechanical fatigue testing process.
-As the name implies the multiaxial thermomechanical fatigue testing is combined with the multiaxial mechanical testing and thermomechanical fatigue (TMF) testing.
-
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle-TC-IF_2.pdf}
-    \put(0,65){(a)}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_pv_TC-IF_2.pdf}
-    \put(0,65){(b)}
-    \end{overpic}
-  \end{minipage}
-  \caption{Experimental results of isothermal tension-compression tests with axial strain range $\gamma = \pm1.0\%$ at temperatures 573, 823 and 923K: (a)stress-strain loops, (b)peak-valley stresses.}
-  \label{Fig:plot_exp_TC-IF_2}
-\end{figure}
-
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle-TOR-IF.pdf}
-    \put(0,65){\fcolorbox{white}{white}{(a)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_pv_TOR-IF.pdf}
-    \put(0,65){\fcolorbox{white}{white}{(b)}}
-    \end{overpic}
-  \end{minipage}
-  \caption{Experimental results of isothermal torsional tests with shear strain range $\varepsilon = \pm1.47\%$ at temperatures 573, 823 and 923K: (a)stress-strain loops, (b)peak-valley stresses.}
-  \label{Fig:plot_exp_TOR-IF}
-\end{figure}
-
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_CIRC-IF_axial.pdf}
-    \put(0,65){(a)}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_pv_CIRC-IF_axial.pdf}
-    \put(0,65){(b)}
-    \end{overpic}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_CIRC-IF_torsional.pdf}
-    \put(0,65){\fcolorbox{white}{white}{(c)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_pv_CIRC-IF_torsional.pdf}
-    \put(0,65){\fcolorbox{white}{white}{(d)}}
-    \end{overpic}
-  \end{minipage}
-
-  \caption{Experimental results of isothermal circle path tests at temperatures 573, 823 and 923K: (a)axial stress-strain loops, (b)axial peak-valley stresses, (c)torsional stress-strain loops, (d)torsional peak-valley stresses.}
-  \label{Fig:plot_exp_pv_CIRC-IF}
-\end{figure}
-
-% 当进行疲劳试验时，在循环载荷作用下，循环开始的应力应变滞后回线是不封闭的，封闭的滞后回线只有经过一定循环次数后才形成。金属材料在由循环开始状态变成循环稳定状态的过程，与其在循环应力及应变作用下的形变抗力变化有关。
-% 在低周疲劳的循环加载初期，材料对循环加载的响应是一个由不稳定向稳定过渡的过程。此过程可分别用应力控制下的应变-时间曲线和应变控制下的应力-时间曲线描述。循环硬化是材料在循环过程中变形抗力不断提高、应变逐渐减小的现象。循环软化则是材料在循环过程中变形抗力不断减小而应变逐渐增加的现象。
-
-% 在低周疲劳的循环加载初期，材料对循环加载的响应是一个由不稳定向稳定过渡的过程。
-At the initial stage of cyclic loading of low cycle fatigue, the material's response to cyclic loading is a transition from instability to stability.
-% 此过程可分别用应力控制下的应变-时间曲线和应变控制下的应力-时间曲线描述。
-This process can be described by the strain-time curve under stress control or stress-time curve under strain control, respectively.
-% 金属材料在循环加载过程中的应力应变曲线通常有两种类型：循环硬化及循环软化。根据加载控制方式的不同，循环软化存在两种表现形式：当保持应力幅值恒定时，应变响应随循环次数不断增大；当保持应变幅值恒定时，应力响应随循环次数不断减小。
-There are usually two types of stress-strain responses for metal materials during cyclic loading: cyclic hardening and cyclic softening.
-According to different loading control methods, cycle softening has two manifestations: when the stress amplitude is kept constant, the strain response increases with the number of cycles; when the strain amplitude is kept constant, the stress response decreases with the number of cycles.
-\ref{Fig:plot_exp_TC-IF_2} and \ref{Fig:plot_exp_TOR-IF} show the stress-strain responses of isothermal tension-compression and pure torsional tests at temperatures 573, 823 and 823K. It can be seen that the cyclic stress response is closely related to the temperature. For the same strain amplitude, the cycle softening is greater with increasing temperature. This is similar to the phenomenon observed by \cite{Fournier1977,Xiao2005,kim1988elevated,Schlesinger2017} when studying Inconel 718 under elevated temperature.
-% 其中等温拉压试验的应变幅值为+-1\%，扭转试验的剪应变幅值为+-1.47\%。可以看出，循环应力响应与温度密切相关，对于相同的应变幅值，材料的循环软化程度更大。
-% 导致材料出现循环软化现象的微观因素有很多，比如沉淀剪切、析出相的溶解、共格的丧失以及位错退化与重排等。
-There are many microstructural evolutions that cause cyclic softening of materials, such as shearing of precipitate phases, dissolution of precipitates, degradation and rearrangement of dislocations.
-% 对于镍基高温合金Inconel 718循环软化现象的解释多为沉淀相的剪切机制。
-The explanation for the cyclic softening phenomenon of the nickel-based superalloy Inconel 718 is mostly the shearing of the $\gamma ''$ precipitates.
-
-As shown in \ref{Fig:plot_exp_TC-IF_650C}, cyclic softening occurred for all the strain amplitudes investigated at 923K.
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCIF_650C.pdf}
-    \put(0,65){\fcolorbox{white}{white}{(a)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIF_650C.pdf}
-    \put(0,65){\fcolorbox{white}{white}{(b)}}
-    \end{overpic}
-  \end{minipage}
-  \caption{Experimental results of isothermal torsional tests with shear strain range $\varepsilon = \pm1.47\%$ at temperatures 573, 823 and 823K: (a)stress-strain loops, (b)peak-valley stresses.}
-  \label{Fig:plot_exp_TC-IF_650C}
-\end{figure}
-
-\cite{Fournier1977}研究Inconel 718分别在293K和823K下低周疲劳性能，发现在常温下材料先出现硬化而后变为软化，在高温下仅出现循环软化现象。他们得出的结论是在循环应变过程中沉淀相被剪切。类似的，Xiao\cite{Xiao2005}等针对Inconel 718在室温以及高温920K下观察到了明显的循环软化以及平面滑移带，且共格和非共格的沉淀相$\gamma ''$移动的位错在{111}滑移面上剪切共格和非共格的沉淀相γ’’。此外，Xiao[46]等还研究了650oC时Inconel718中不同含量的硼元素对于材料的低周疲劳性能影响，结果发现四种不同含量硼元素的Inconel718合金均表现为循环软化，对此他们沿用之前的解释，沉淀相的剪切在开始阶段建立了位错移动的优先路径，这是Inconel718在650oC出现循环软化和平面滑移带的主要原因。E.HariKrishna[44]等研究了传统的和改进之后的Inconel718合金高温650oC下的低周疲劳性能，同样发现两种合金均出现了循环软化现象。他们指出，在载荷开始循环的几圈中由于短程有序的破坏而形成滑移带，且对于镍基高温合金随应变幅值增大滑移带数目增多。在γ’和γ’’作为强化相的镍基高温合金中通常会形成平面滑移带，这导致强化相受到剪切，推动了滑移带中的应变局部化。由于高应变幅值下平面滑移带数目更多，更多的强化相受到剪切而导致软化程度越高。
+% \end{figure}
 
 \section{Thermo-mechanical fatigue tests}
 \subsection{Introduction of thermo-mechanical fatigue tests}
@@ -627,13 +578,19 @@ Since the induction coil also heats itself by the high frequency current during 
 % 大多数研究中TMF试验采用基于应变控制的加载模式，但也有少数采用基于应力控制的情况，其目的是研究相应工况下的裂纹扩展行为。
 % 其次，TMF试验的升降温速率一般控制在10℃/s以内，温度循环变化的范围基本也在200℃以上，因此，一个即使不带任何载荷保持时间的TMF周期都将明显长于LCF周期。同时，在TMF试验中需要控制温度与机械载荷保持协调变化，满足特定的相位关系，这也是该试验最难之处。根据机械载荷和温度之间相位角的不同，TMF试验可分为多种情况，被广泛采用的相位角有同相位（in-phase，简称IP）、反相位（out-of-phase，简称OP）和-90°、+90°以及-135°、+135°。在IP条件下，机械载荷和温度同时达到各自的最大值或最小值；而在OP条件下，情况正好与IP相反，机械载荷和温度存在180°的相位差，二者异步达到各自的最大和最小值；而在其他相位条件下，情况依次类推。
 TMF tests were mainly performed under the strain control mode, but in a few studies, stress controlled TMF tests is carried out in order to study the crack propagation behavior.
-The temperature rate (heating and cooling) of TMF tests is generally within 10K/s, and the temperature range of each cycle is basically above 200K. Therefore, the TMF cycle without any holding time will be significantly longer than the LCF cycle. At the same time, in the TMF tests, it is necessary to keep a specific phase angle between the temperature and mechanical load, which is the most difficult part of the tests. According to the difference of the phase angle between the mechanical load and the temperature, the TMF tests can be divided into several cases. The widely used phase angles are in-phase (IP), out-of-phase (OP), and -90, +90, -135, and 135 degrees. Under IP conditions, the mechanical load and temperature simultaneously reach their respective maximum or minimum values; while under OP conditions, the situation is exactly the opposite of IP, the mechanical load and temperature have a phase difference of 180$^\circ$, and both asynchronously reach their respective maximum and the minimum.
+The temperature rate (heating and cooling) of TMF tests is generally within 10K/s, and the temperature range of each cycle is basically above 200K. Therefore, the TMF cycle without any holding time will be significantly longer than the LCF cycle. At the same time, in the TMF tests, it is necessary to keep a specific phase angle between the temperature and mechanical load, which is the most difficult part of the tests. According to the difference of the phase angle between the mechanical load and the temperature, the TMF tests can be divided into several cases. The widely used phase angles are in-phase (IP), out-of-phase (OP), and -90, +90, -135, and 135 degrees. Under IP conditions, the mechanical load and temperature simultaneously reach their respective maximum or minimum values; while under OP conditions, the situation is exactly the opposite of IP, the mechanical load and temperature have a phase difference of 180$^\circ$, and both asynchronously reach their respective maximum and the minimum. \ref{Fig:Thermomechanical_phase} shows schematically and exemplary three thermomechanical loading conditions.
+
+\begin{figure}[!htp]
+\centering\scalebox{0.6}{\includegraphics{thermomechanical_phase.pdf}}
+\caption{Schematics of mechanical strain and temperature for In-phase, Out-of-phase and $90^\circ$-phase TMF Tests.}
+\label{Fig:Thermomechanical_phase}
+\end{figure}
 
 \subsection{Process of thermo-mechanical fatigue tests}
 \noindent
-ISO 12111 and ASTM E2368-10\cite{ASTME2005} are the standard practices for thermo-mechanical fatigue tests under uniaxial strain-controlled conditions.
+ISO 12111 and ASTM E2368\cite{ASTME2005} are the standard practices for thermo-mechanical fatigue tests under uniaxial strain-controlled conditions.
 Unfortunately there are no relevant standards for multi-axial thermo-mechanical fatigue tests.
-Therefore, multi-axial TMF tests were conducted with reference to ASTM E2207-15, which is the standard practice for strain-controlled axial-torsional fatigue tests with thin-walled tubular specimens.
+Therefore, multi-axial TMF tests were conducted with reference to ASTM E2207, which is the standard practice for strain-controlled axial-torsional fatigue tests with thin-walled tubular specimens.
 According to these standards, some concepts are defined as follows:
 
 % a thermo-mechanical fatigue cycle is defined as a condition where uniform temperature and strain fields over the specimen gage section are simultaneously varied and independently controlled.
@@ -720,10 +677,16 @@ maximum cyclic temperature given in K, and the maximum allowable transverse temp
 % Unfortunately, for the induction heating method, the configuration of the induction coils has a great influence on the temperature distribution of the specimen. Because the coil configuration not only the heating effect needs to be considered, but also has to facilitate the installation of the extensometer \cite{Hahner2006}. 
 Axial temperature gradients of specimen are influenced mainly by surface convection, heat conduction, electrical conductivity, induction frequency, water-cooled specimen grips, specimen geometry and coil configuration. Generally only the coil configuration and the specimen geometry are variable. As shown in \ref{Fig:Specimen}(b), turbular specimens are used in combination with the induction heating device. The coil configuration has a great influence on the temperature distribution of the specimen, at the same time, the installation of the extensometer has to be considered\cite{Hahner2006}. 
 % 因此，需要在试验初期首先对试样上、中、下及环向位置测温，并通过调整线圈形状、位置及冷却角度来降低试样的温度梯度，以满足ASTM或ISO热机械疲劳试验方法标准的相关规定。
+In comparison with isothermal fatigue test, the thermomechanical fatigue test is carried out under varying temperature. 
 In order to optimize the thermal stability during the TMF testing, temperatures at the upper, middle, lower, and circumferential positions in the gauge section of the specimen were measured by the chromel-alumel (type K) thermocouples wrapped around the specimen.
 The axial and transverse temperature gradients of the specimen can be reduced by adjusting the diameter, screw pitch, installation position of the induction coil.
-Consequently, the configuration of the coil was tuned iteratively to obtain the minimum temperature gradients. The temperature range for all TMF tests in the study is from 573 to 923K. \ref{Fig:thermal_stability}(a) shows the dynamic temperature measurement after the thermal stability optimization during a conducted TMF cycle. \ref{Fig:thermal_stability}(b) shows the temperature
+Consequently, the configuration of the coil was tuned iteratively to obtain the minimum temperature gradients. 
+Furthermore, heating and cooling rates also influence the temperature gradients.
+In order to avoid considerable axial and transverse temperature gradients within the strain gauge of the specimen, in the present work, the heating and cooling rates were chosen about 2.92K/s with a triangular shape tempetarue cycle, thus the time of one cycle is about 180s, and the frequency is about 0.0056Hz.
+The temperature range for all TMF tests in the study is from 573 to 923K. \ref{Fig:thermal_stability}(a) shows the dynamic temperature measurement after the thermal stability optimization during a conducted TMF cycle. \ref{Fig:thermal_stability}(b) shows the temperature
 deviations between the upper/lower and middle monitor. It is concluded that the minimum axial temperature gradients during the TMF test is -8K to 13K. 
+
+It should be noted that the thin-walled tubular specimen was used in the TMF tests. In the tubular specimen, the shear strain and shear stress are not constant in the cross-section, and the shear stress and shear strain are always the greatest at the outer diameter. Under elasto-plastic loading conditions, shear stress varies nonlinearly through the thin wall of the tubular specimen. As introduced above, according to ASTM E2207 \cite{ASTM2014}, the assumption of a uniformly distributed shear stress is recommended. The shear stresses reported in the TMF tests are calculated by Eq. (\ref{Equ:shear_stress}). The effect of temperature variation on shear strain measurement can be neglected \cite{Bakis2014}. Consequently, the compensation of torsional thermal strain is not performed in the present work. The shear strains are obtained directly from the measurement results by the extensometer.
 
 \begin{figure}[!htp]
   \centering
@@ -740,7 +703,7 @@ deviations between the upper/lower and middle monitor. It is concluded that the 
   \label{Fig:thermal_stability}
 \end{figure}
 
-本研究的TMF试验包括IP，OP和90$^\circ$相位，其中IP和OP条件下的载荷加载波形如图\ref{Fig:Thermomechanical_phase}所示。
+% 本研究的TMF试验包括IP，OP和90$^\circ$相位，其中IP和OP条件下的载荷加载波形如图\ref{Fig:Thermomechanical_phase}所示。
 % 对于应变控制模式下的TMF试验，为了控制相位恒定并避免试样产生热应力，因此，在试验中的任意加载时刻都需要进行热应变补偿。补偿的方法分为两种：a）基于温度的应变补偿；b）基于时间的应变补偿。其中，基于温度的补偿方式为目前试验所普遍采用。
 Temperature induced thermal expansion strain is generally called thermal strain, which is not constant during temperature cycling. Thermal strain will cause additional stress in the strain-controlled TMF test. Therefore, the thermal strain was actively compensated during the strain-controlled TMF test. Two common methods can be employed to compensate for the thermal strain: time-based and temperature-based compensation. In this study, temperature-based compensation was used to achieve the desired mechanical strain. The thermal strain is assumed as a function of specimen temperature:
 \begin{equation}
@@ -748,6 +711,27 @@ Temperature induced thermal expansion strain is generally called thermal strain,
 \label{Equ:thermal_strain_fitting}
 \end{equation}
 where the coefficients $A_0,A_1,A_2$ of the function can be fitted by the least squares method. Therefore, the data of thermal strain vs. temperature is needed. Thermal strain is measured during a intended temperature cycling under zero force condition, once the specimen and immediate environment have achieved a state of dynamic temperature equilibrium. The intended temperature cycles were identical to the temperature–time cycles which used in the subsequent TMF test. 
+% 在试验过程中，计算机根据实测的温度即可以算出当时的热应变量,代入式\ref{Equ:mech_strain}即可得到机械应变,并可由此实现机械应变控制,如图\ref{Fig:plot_schematic_thermal_strain}所示。
+% 试验采用机械应变$\varepsilon_{mech}$控制，根据方程\ref{Equ:thermal_strain}和\ref{Equ:total_strain}可知，机械应变$\varepsilon_{mech}$可采用下式计算:
+In the present work, the TMF tests were carried out by mechanical strain control mode.
+During the test, the thermal strain was calculated by Eq. (\ref{Equ:thermal_strain_fitting}) with the measured temperature. Thus, the mechanical strain can be obtained by
+\begin{equation}
+\varepsilon_{mech}=\varepsilon_{tot}-\varepsilon_{th}=\varepsilon_{tot}-(A_0+A_1 T+A_2 T^2).
+\label{Equ:mech_strain}
+\end{equation}
+\ref{Fig:plot_schematic_thermal_strain} shows the relationship between total strain, mechanical strain and thermal strain during the TMF tests.
+
+\begin{figure}
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_schematic_thermal_strain_IP.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_schematic_thermal_strain_OP.pdf}
+    \put(0,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  \caption{Strain decomposition of thermomechanical fatigue tests in terms of total strain, mechanical strain and thermal strain. (a) TMF-IP, (b) TMF-OP.}
+  \label{Fig:plot_schematic_thermal_strain}
+\end{figure}
 
 The accuracy of thermal strain compensation has to be checked prior to TMF-testing by a zero stress test. The zero stress test is performed under mechanical strain control at $\varepsilon_{mech}=0$ by subjecting the specimen to thermal cycling. Here, the thermal strain compensation method will be used to actively compensate for the induced thermal expansion strain of the specimen. During this cycle, the resulting extreme values of stress occurring during zero stress test shall not exceed $\pm$2\% of $\Delta \sigma$ occurring during the TMF test, which means the mechanical strain range controlled during the actual test is within $\pm$2\% of the desired mechanical strain range.
 
@@ -760,70 +744,38 @@ After the setting up procedure, the strain tests were started after several ther
 \label{Fig:tmf_code}
 \end{figure}
 
-试验采用机械应变$\varepsilon_{mech}$控制，根据方程\ref{Equ:thermal_strain}和\ref{Equ:total_strain}可知，机械应变$\varepsilon_{mech}$可采用下式计算:
-\begin{equation}
-\varepsilon_{mech}=\varepsilon_{t}-\varepsilon_{th}=\varepsilon_{t}-\alpha\Delta T,
-\label{Equ:mech_strain}
-\end{equation}
-式中$\varepsilon_{t}$为引伸计测得的总应变，$\varepsilon_{th}$为热应变，$\alpha$为材料热膨胀系数，对于金属材料来说热膨胀系数$\alpha$是温度的函数，因此在试验中采用下式对热应变进行计算，
-\begin{equation}
-\varepsilon_{th}=a_0+a_1(T-T_0)+a_2(T-T_0)^2,
-\label{Equ:thermal_strain_fitting}
-\end{equation}
-式中$T$为试件温度，$T_0$为参考温度，这里我们认为热应变是温度的二次多项式函数，$a_0,a_1,a_2$为用于曲线拟合的参数。
-试验的温度循环为300-650$^\circ$C，我们选取循环的平均温度475$^\circ$C作为参考温度$T_0$。
-根据胡克定律可知，如果试件的载荷为零，则有$\varepsilon_{mech}=0$，即$\varepsilon_{t}=\varepsilon_{th}$。
-试验过程中我们保持试件的载荷为零，将试件加热至475$^\circ$C并保温一个小时，使试件的温度场进入稳态，记录此时的热应变$\varepsilon_{th,T_0}$为热应变零点。
-然后在零载荷的作用下，对试样进行300-650$^\circ$C的温度循环，测量并记录试样的热应变随温度的变化关系。
-将试验结果带入式\ref{Equ:thermal_strain_fitting}拟合，求出参数$a_0,a_1,a_2$，并将此参数输入计算机的实验控制程序中。
-在试验过程中，计算机根据实测的温度即可以算出当时的热应变量,代入式\ref{Equ:mech_strain}即可得到机械应变,并可由此实现机械应变控制,如图\ref{Fig:plot_schematic_thermal_strain}所示。
+In the study, the TMF tests were performed within the temperature interval from 573K to 923K under mechanical strain controlled with fully reversed mechanical strain ratio $R_{\varepsilon}=-1$. The thermomechanical fatigue test matrix consisted of: tension-compression in-phase (TC-IP), tension-compression out-of-phase (TC-OP), tension-compression 90$^\circ$ phase (TC-90), proportional in-phase (PRO-IP) and non-proportional in-phase (NPR-IP) tests. The experimental conditions of the TMF tests are summarized in Table \ref{tab:test_program_tmf} with respect to testing parameters such as test type, mechanical and torsional strain amplitudes, equivalent strain amplitude and rates as well as phase shifts between mechanical strain, shear strain and temperature. All tests were carried out in air. 
 
+In \ref{Fig:LoadPath}, three strain loading paths are shown schematically for uniaxial tension/compression (\ref{Fig:LoadPath}(a)), proportional (\ref{Fig:LoadPath}(c)), and non-proportional (\ref{Fig:LoadPath}(e)) TMF tests, respectively. \ref{Fig:LoadPath}(c) represents a 45$^\circ$ proportional loading with the ratio $\varepsilon_{\rm mech}/(\gamma/\sqrt{3})=1$. While \ref{Fig:LoadPath}(e) shows a diamond non-proportional strain path (i.e. the ratio of mechanical strain amplitude and shear strain amplitude is 1). Loading ratio $R_\varepsilon$ means the ratio of minimum mechanical strain to the maximum mechanical strain in a loading cycle. Under the axial-torsional condition, the loading ratio is calculated from the principal strains. 
 
+% 试验采用机械应变$\varepsilon_{mech}$控制，根据方程\ref{Equ:thermal_strain}和\ref{Equ:total_strain}可知，机械应变$\varepsilon_{mech}$可采用下式计算:
+% \begin{equation}
+% \varepsilon_{mech}=\varepsilon_{t}-\varepsilon_{th}=\varepsilon_{t}-\alpha\Delta T,
+% \label{Equ:mech_strain}
+% \end{equation}
+% 式中$\varepsilon_{t}$为引伸计测得的总应变，$\varepsilon_{th}$为热应变，$\alpha$为材料热膨胀系数，对于金属材料来说热膨胀系数$\alpha$是温度的函数，因此在试验中采用下式对热应变进行计算，
+% \begin{equation}
+% \varepsilon_{th}=a_0+a_1(T-T_0)+a_2(T-T_0)^2,
+% \label{Equ:thermal_strain_fitting}
+% \end{equation}
+% 式中$T$为试件温度，$T_0$为参考温度，这里我们认为热应变是温度的二次多项式函数，$a_0,a_1,a_2$为用于曲线拟合的参数。
+% 试验的温度循环为300-650$^\circ$C，我们选取循环的平均温度475$^\circ$C作为参考温度$T_0$。
+% 根据胡克定律可知，如果试件的载荷为零，则有$\varepsilon_{mech}=0$，即$\varepsilon_{t}=\varepsilon_{th}$。
+% 试验过程中我们保持试件的载荷为零，将试件加热至475$^\circ$C并保温一个小时，使试件的温度场进入稳态，记录此时的热应变$\varepsilon_{th,T_0}$为热应变零点。
+% 然后在零载荷的作用下，对试样进行300-650$^\circ$C的温度循环，测量并记录试样的热应变随温度的变化关系。
+% 将试验结果带入式\ref{Equ:thermal_strain_fitting}拟合，求出参数$a_0,a_1,a_2$，并将此参数输入计算机的实验控制程序中。
+% 在试验过程中，计算机根据实测的温度即可以算出当时的热应变量,代入式\ref{Equ:mech_strain}即可得到机械应变,并可由此实现机械应变控制,如图\ref{Fig:plot_schematic_thermal_strain}所示。
 
+% 热机械疲劳试验系统之中有两个相互独立的控制闭合回路, 即机械加载和温度循环加载闭合回路，对于机械加载系统, 力值(载荷)偏差和同轴度是试验机最重要的两个性能指标，以ASTM E2368-2017为例，对应的热机械疲劳试验方法标准引用了专门的检定标准：
+% (1)力传感器需要满足ASTM E4和E467要求;
+% (2)引伸计需要满足ASTM E83要求;
+% (3)加热方式包括induction, direct resistance, radiant, or forced air heating等, 对于感应加热, 建议选择低频发热装置, 以降低集肤效应；
+% (4)温度控制测温系统的标定满足ASTM E220规定, 控温变化≤±2 ℃
+% (5)温度梯度
 
+% In this section we will introduce the multiaxial thermomechanical fatigue testing process.
+% As the name implies the multiaxial thermomechanical fatigue testing is combined with the multiaxial mechanical testing and thermomechanical fatigue (TMF) testing.
 
-
-
-
-
-
-
-热机械疲劳试验系统之中有两个相互独立的控制闭合回路, 即机械加载和温度循环加载闭合回路，对于机械加载系统, 力值(载荷)偏差和同轴度是试验机最重要的两个性能指标，以ASTM E2368-2017为例，对应的热机械疲劳试验方法标准引用了专门的检定标准：
-(1)力传感器需要满足ASTM E4和E467要求;
-(2)引伸计需要满足ASTM E83要求;
-(3)加热方式包括induction, direct resistance, radiant, or forced air heating等, 对于感应加热, 建议选择低频发热装置, 以降低集肤效应；
-(4)温度控制测温系统的标定满足ASTM E220规定, 控温变化≤±2 ℃
-(5)温度梯度
-
-
-
-
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \begin{overpic}[width=8.5cm]{plot_schematic_thermal_strain_IP.pdf}
-      \put(0,65){\fcolorbox{white}{white}{(a)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.5cm]{plot_schematic_thermal_strain_OP.pdf}
-      \put(0,65){\fcolorbox{white}{white}{(b)}}
-    \end{overpic}
-  \end{minipage}
-
-  \caption{Strain decomposition of thermomechanical fatigue tests in terms of total strain, mechanical strain and thermal strain. (a) TMF-IP, (b) TMF-OP.}
-  \label{Fig:plot_schematic_thermal_strain}
-\end{figure}
-
-\begin{figure}[!htp]
-\centering\scalebox{0.6}{\includegraphics{thermomechanical_phase.pdf}}
-\caption{Schematics of mechanical strain and temperature for In-phase, Out-of-phase and $90^\circ$-phase TMF Tests.}
-\label{Fig:Thermomechanical_phase}
-\end{figure}
-
-% Table generated by Excel2LaTeX from sheet 'Sheet3'
 \begin{table}[htbp]
   \centering
   \caption{Temperature and loading conditions of the thermomechanical fatigue tests program.}
@@ -860,54 +812,36 @@ After the setting up procedure, the strain tests were started after several ther
   \label{tab:test_program_tmf}%
 \end{table}%
 
-\subsection{others}
+\subsection{Experimental results}
+\noindent
+Fatigue tests with three different phase angles of the thermal loading and mechanical loading should give a systematical overview about the thermomechanical behavior of the material. \ref{Fig:plot_exp_TCTMF} illustrates half-life hysteresis loops and the evolution of the peak, valley and mean stresses for TC-IP, TC-OP and TC-90 TMF tests. As expected, under strain-controlled uniaxial cyclic loading with mean mechanical strain, all fatigue tests show the cyclic softening behavior as well as the hysteresis loops reach a stable state with increasing number of cycles. The decreases of mean stresses were observed during the TC-IP loading tests, whereas for TC-OP loading the opposite is the case. Furthermore, due to the symmetry of temperature in the TC-90 loading (i.e. the temperatures are the same at maximum and minimum axial strain), the mean axial stress is constant during the entire life-cycle process.
 
+As shown in \ref{Fig:plot_exp_PROTMF}, the experimental results of the PRO-IP TMF tests show the similar cyclic softening behavior of the uniaxial TC-IP tests and the shear stress response is consistent with the axial stress response. In \ref{Fig:plot_exp_PROTMF}(d) and (f), a decrease of mean stress is present in both axial and hoop directions.
 
-\ref{Fig:plot_exp_TCTMF}(a)，(c)，(e)分别为Inconel718合金在同相位，反相位和90度相位试验条件下的稳定疲劳滞回线。在IP试验条件下
+\ref{Fig:plot_exp_NPRTMF} shows the experimental results of NPR-IP TMF tests. Unlike the results of PRO-IP TMF tests, for equivalent strain amplitudes $\geqslant$0.8\%, cyclic hardening was present in the first three cycles in both axial and torsional directions. Afterwards, continuous cyclic softening follows for the major part of the fatigue life. Furthermore, compared to the PRO-IP data, both axial and shear stress amplitudes due to the same equivalent strain amplitudes are higher than the case of PRO-IP loading tests, as shown in \ref{Fig:plot_exp_NPRTMF}(d) and (f). Consequently, it was concluded that the additional non-proportional hardening occured in the mechanical non-proportional loading condition. In \ref{Fig:plot_exp_NPRTMF}(f), dissimilarly to the axial stress cases, the mean shear stress under NPR-IP loading hardly changes.
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \begin{overpic}[width=8.5cm]{plot_exp_half_life_cycle_TCIP.pdf}
-      \put(84,13){\fcolorbox{white}{white}{(a)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.5cm]{plot_exp_pv_TCIP.pdf}
-      \put(84,13){\fcolorbox{white}{white}{(b)}}
-    \end{overpic}
-  \end{minipage}
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCIP.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIP.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
 
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \begin{overpic}[width=8.5cm]{plot_exp_half_life_cycle_TCOP.pdf}
-      \put(84,13){\fcolorbox{white}{white}{(c)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.5cm]{plot_exp_pv_TCOP.pdf}
-      \put(84,13){\fcolorbox{white}{white}{(d)}}
-    \end{overpic}
-  \end{minipage}
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCOP.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCOP.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
 
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \begin{overpic}[width=8.5cm]{plot_exp_half_life_cycle_TC90.pdf}
-      \put(84,13){\fcolorbox{white}{white}{(c)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=8.5cm]{plot_exp_pv_TC90.pdf}
-      \put(84,13){\fcolorbox{white}{white}{(d)}}
-    \end{overpic}
-  \end{minipage}
-  
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TC90.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TC90.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
   \caption{Experimental results of thermomechanical fatigue tests with temperature range 350-600$^{\circ}$C.
   (a) Half life stable hysteresis loops of in-phase(IP) tests.
   (b) Peak, valley and mean stresses of in-phase(IP) tests.
@@ -917,6 +851,88 @@ After the setting up procedure, the strain tests were started after several ther
   (f) Peak, valley and mean stresses of 90$^{\circ}$-phase tests.}
   \label{Fig:plot_exp_TCTMF}
 \end{figure}
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_PROIP.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_PROIP.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_PROIP_axial.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_PROIP_axial.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
+
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_PROIP_torsional.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(e)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_PROIP_torsional.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(f)}}
+  \end{overpic}
+  \caption{Experimental results of the proportional thermomechanical fatigue tests with equivalent strain amplitudes $\Delta\varepsilon_{\rm eq}/2$= 0.6\%, 0.8\% and 1.0\%: (b)cyclic stress responses of the cycle at $N_{\rm f}/2$, (c)hallf-life hysteresis loops correspond to axial components, (d)peak, valley and mean values of shear stresses, (e)hallf-life hysteresis loops correspond to shear components, (f)peak, valley and mean values of shear stresses.
+  }
+  \label{Fig:plot_exp_PROTMF}
+\end{figure}
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_NPRIP.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_NPRIP.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_NPRIP_axial.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_NPRIP_axial.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
+
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_NPRIP_torsional.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(e)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_NPRIP_torsional.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(f)}}
+  \end{overpic}
+  \caption{TExperimental results of the non-proportional thermomechanical fatigue tests with equivalent strain amplitudes $\Delta\varepsilon_{\rm eq}/2$=0.5\%, 0.6\%, 0.7\%, 0.8\% and 1.0\%: (b)cyclic stress responses of the cycle at $N_{\rm f}/2$, (c)hallf-life hysteresis loops correspond to axial components, (d)peak, valley and mean values of shear stresses, (e)hallf-life hysteresis loops correspond to shear components, (f)peak, valley and mean values of shear stresses.}
+  \label{Fig:plot_exp_NPRTMF}
+\end{figure}
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCIPTGMF.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIPTGMF.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCOPTGMF.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCOPTGMF.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
+
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCIPTGMFTBC.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(e)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIPTGMFTBC.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(f)}}
+  \end{overpic}
+  \caption{TGMF tests of Inconel 718 with temperature range 350-600$^{\circ}$C.
+  (a),(c),(e) Half life stable hysteresis loops.
+  (b),(d),(f) Peak, valley and mean stresses.}
+  \label{Fig:plot_exp_TCTGMF}
+\end{figure}
+
 
 %\begin{figure}
 %  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
@@ -967,135 +983,3 @@ After the setting up procedure, the strain tests were started after several ther
 %\caption{Typical Model 494.04 Chassis Connections.}
 %\label{Fig:Typical_Model_494_Chassis_Connections}
 %\end{figure}
-
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_PROIP.pdf}
-    \centerline{(a)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_PROIP.pdf}
-    \centerline{(b)}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_PROIP_axial.pdf}
-    \centerline{(c)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_pv_PROIP_axial.pdf}
-    \centerline{(d)}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_PROIP_torsional.pdf}
-    \centerline{(e)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_pv_PROIP_torsional.pdf}
-    \centerline{(f)}
-  \end{minipage}
-  \caption{TMF tests of Inconel 718 under proportional strain path with temperature range 350-600$^{\circ}$C.
-  (a),(c),(e) Half life stable hysteresis loops.
-  (b),(d),(f) Peak, valley and mean stresses.}
-  \label{Fig:plot_exp_TCTMF}
-\end{figure}
-
-
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_NPRIP.pdf}
-    \centerline{(a)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_NPRIP.pdf}
-    \centerline{(b)}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_NPRIP_axial.pdf}
-    \centerline{(c)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_pv_NPRIP_axial.pdf}
-    \centerline{(d)}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_NPRIP_torsional.pdf}
-    \centerline{(e)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_pv_NPRIP_torsional.pdf}
-    \centerline{(f)}
-  \end{minipage}
-  \caption{TMF tests of Inconel 718 under non-proportional strain path with temperature range 350-600$^{\circ}$C.
-  (a),(c),(e) Half life stable hysteresis loops.
-  (b),(d),(f) Peak, valley and mean stresses.}
-  \label{Fig:plot_exp_TCTMF}
-\end{figure}
-
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_TCIPTGMF.pdf}
-    \centerline{(a)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_pv_TCIPTGMF.pdf}
-    \centerline{(b)}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_TCOPTGMF.pdf}
-    \centerline{(c)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_pv_TCOPTGMF.pdf}
-    \centerline{(d)}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_half_life_cycle_TCIPTGMFTBC.pdf}
-    \centerline{(e)}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.2in]{plot_exp_pv_TCIPTGMFTBC.pdf}
-    \centerline{(f)}
-  \end{minipage}
-
-  \caption{TMF tests of Inconel 718 with temperature range 350-600$^{\circ}$C.
-  (a),(c),(e) Half life stable hysteresis loops.
-  (b),(d),(f) Peak, valley and mean stresses.}
-  \label{Fig:plot_exp_TCTMF}
-\end{figure}
-
-%\section{Development and verification of the induction heating system}
-
-
