@@ -1,4 +1,4 @@
-\chapter{Constitutive Modeling under Theromechanical Fatigue Loading}
+\chapter{Constitutive modeling under theromechanical fatigue loading}
 
 %当前国际上通用的循环塑性模型大多在屈服面方程、流动法则方面都采用一般塑性通用的法则。
 %这些法则既适合循环荷载，也适合非循环荷载。各
@@ -199,42 +199,37 @@ In the study, the von Mises yield criteriona are used.
 
 \subsection{Flow rule}
 \noindent
-The general mathematical treatment of the constitutive equation for plastic deformation was proposed by von Mises in 1928.
-He noticed that in elasticity theory, the strain tensor was related to the stress through an elastic potential function, the complementary strain energy $U$ such that
-\begin{equation}
-{\bm{\upepsilon }} = \frac{{\partial U}}{{\partial {\bm{\sigma }}}}
-\end{equation}
-
+% The general mathematical treatment of the constitutive equation for plastic deformation was proposed by von Mises in 1928.
+% He noticed that in elasticity theory, the strain tensor was related to the stress through an elastic potential function, the complementary strain energy $U$ such that
+% \begin{equation}
+% {\bm{\upepsilon }} = \frac{{\partial U}}{{\partial {\bm{\sigma }}}}
+% \end{equation}
+In elasticity theory, the strain tensor was related to the stress through an elastic potential function.
 By generalizing and applying this idea to plasticity theory, Mises proposed that there exists a plastic potential $g(\bm{\sigma})$, such that the plastic strain rate $\dot{{\bm{\upepsilon }}^p}$ could be derived from the following flow rule:
 \begin{equation}
-\dot{{\bm{\upepsilon }}^p} = \dot\lambda \frac{\partial g}{\partial \bm{\sigma}}
+\dot{{\bm{\upepsilon }}^p} = \dot\lambda \frac{\partial g}{\partial \bm{\sigma}},
 \label{Equ:dgdsigma}
 \end{equation}
-where $\dot\lambda$ is a proportional positive scalar factor which can be determined from the yield criterion. Plasticity theory based on the above flow rule is called plastic potential theory.
-The following remarks should be noted about the above flow rule:
-
-Geometrically, the plastic potential $g(\bm{\sigma})=0$, represents a surface in the stress space and $\dot{{\bm{\upepsilon }}^p}$ can be represented by a vector in this space.
-The plastic strain rate vector is normal to $g(\bm{\sigma})=0$.
-Therefore, Equation \ref{Equ:dgdsigma} is also referred to as the normality flow rule in plasticity theory.
-
+where $\dot\lambda$ is a proportional positive scalar factor which can be determined from the yield criterion. 
+% Geometrically, the plastic potential $g(\bm{\sigma})=0$, represents a surface in the stress space and $\dot{{\bm{\upepsilon }}^p}$ can be represented by a vector in this space.
+% The plastic strain rate vector is normal to $g(\bm{\sigma})=0$.
+% Therefore, Equation \ref{Equ:dgdsigma} is also referred to as the normality flow rule in plasticity theory.
 Common approach in plasticity theory is to assume that the plastic potential function $g(\bm{\sigma})$ is the same as the yield function $f(\bm{\sigma})$.
 It is typically assumed that the plastic strain increment and the normal to the yield surface have the same direction, so that the flow rule can be written as:
-
 %In metal plasticity, the assumption that the plastic strain increment and deviatoric stress tensor have the same principal directions is encapsulated in a relation called the flow rule.
-
 \begin{equation}
-\dot{{\bm{\varepsilon }}^p} = \dot\lambda \frac{\partial f}{\partial \bm{\sigma}}
+\dot{{\bm{\upepsilon }}^p} = \dot\lambda \frac{\partial f}{\partial \bm{\sigma}}.
 \end{equation}
-This is called the associated flow rule.
-On the other hand, if $g \neq f$, the flow rule is called nonassociated.
+This form of the flow rule is called the associated flow rule.
+% On the other hand, if $g \neq f$, the flow rule is called nonassociated.
 In general, experimental observations show that inelastic deformation of metals can be characterized quite well by an associated flow rule, but for some porous materials a nonassociated flow rule provides a better representation of inelastic deformation.
 
-The above flow rule is easily justified for perfectly plastic deformations for which $d\boldsymbol{\sigma} = 0$  when $d{{\bm{\upepsilon }}^p} > 0$, i.e., the yield surface remains constant under increasing plastic deformation. This implies that the increment of elastic strain is also zero, $d{{\bm{\upepsilon }}^e} = 0$, because of Hooke's law.
-Therefore,
-\begin{equation}
-d\boldsymbol{\sigma}:\frac{\partial f}{\partial \boldsymbol{\sigma}} = 0 \quad \text{and} \quad d\boldsymbol{\sigma}:d{{\bm{\upepsilon }}^p} = 0 \,.
-\end{equation}
-Hence, both the normal to the yield surface and the plastic strain tensor are perpendicular to the stress tensor and must have the same direction.
+% The above flow rule is easily justified for perfectly plastic deformations for which $d\boldsymbol{\sigma} = 0$  when $d{{\bm{\upepsilon }}^p} > 0$, i.e., the yield surface remains constant under increasing plastic deformation. This implies that the increment of elastic strain is also zero, $d{{\bm{\upepsilon }}^e} = 0$, because of Hooke's law.
+% Therefore,
+% \begin{equation}
+% d\boldsymbol{\sigma}:\frac{\partial f}{\partial \boldsymbol{\sigma}} = 0 \quad \text{and} \quad d\boldsymbol{\sigma}:d{{\bm{\upepsilon }}^p} = 0 \,.
+% \end{equation}
+% Hence, both the normal to the yield surface and the plastic strain tensor are perpendicular to the stress tensor and must have the same direction.
 For a work hardening material, the yield surface can expand with increasing stress.
 We assume Drucker's second stability postulate which states that for an infinitesimal stress cycle this plastic work is positive, i.e.,
 \begin{equation}
@@ -249,6 +244,7 @@ df = \frac{\partial f}{\partial \boldsymbol{\sigma}}:d\boldsymbol{\sigma} + \fra
 \end{equation}
 
 \subsection{Hardening rule}
+\noindent
 The hardening rule describes how the yield surface changes in position and size.
 Evolution equations of the back stress tensor allows by the change in position of the kinematic hardening into account.
 With this shift in the yield surface, the size and shape of the yield surface remain unchanged.
@@ -260,6 +256,7 @@ The differences of the material models described in the next section consist kin
 
 \section{A review of some cyclic plasticity theories}
 \subsection{Kinematic hardening models}
+\noindent
 In the case of monotonically increasing loading, it is often reasonable to assume that any hardening that occurs is isotropic.
 For the case of cyclic loading (increasing loading and reversed loading), however, this is often not appropriate.
 Because isotropic hardening leads to a very large elastic region, on reversed loading, which is often not to be observed in experiments.
@@ -278,7 +275,8 @@ A review of some kinematic hardening models is introduced as following.
 %It is generally suggested that in the case of cyclic loading, isotropic hardening rules are not suitable to simulate the Bauschinger effect.
 %Hence the kinematic hardening model is used to represent Bauschinger effect.
 %It is assumed that the size of yield surface
-\subsection{Prager model}
+\subsection{Prager's model}
+\noindent
 Prager (1949) \cite{prager1949recent} introduce a simple linear kinematic hardening model, in which the evolution of the back-stress is collinear with the evolution of the plastic strain:
 \begin{equation}
 {\dot{\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}_{}^p,
@@ -289,14 +287,18 @@ and
 \end{equation}
 in which $c$ is a material constant, the increment in kinematic hardening to be proportional to the increment
 in plastic strain.
-\subsection{Armstrong and Frederick model}
+
+\subsection{Armstrong and Frederick's model}
+\noindent
 A better description is given by the model proposed initially by Armstrong and Frederick (1966) \cite{armstrong1966mathematical} introducing a recall term, called dynamic recovery:
 \begin{equation}
 {\dot {\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}_{}^p - \gamma {\bf{a}}\dot p,
 \end{equation}
 in which $c,\gamma$ are material constants.
 The second term on the right hand side is called the recall term which is collinear with back stress $\bf{a}$ and is proportional to the norm of the plastic strain rate. The evolution of $\bf{a}$ instead of being linear, is then exponential for a monotonic uniaxial loading, with a saturation for a value $c/\gamma $.
-\subsection{Chaboche model}
+
+\subsection{Chaboche's model}
+\noindent
 Nonlinear hardening rules based on the Armstrong and Frederick (A-F) relation have been expressed in the form of a series expansion of the back stress.
 It was postulated by Chaboche (1983) \cite{chaboche1983plastic} that the total back stress is composed of additive parts:
 \begin{equation}
@@ -315,7 +317,9 @@ where
 \begin{equation}
 \left\| {\bf{a}}_i \right\| = \sqrt {{\bf{a}}_i:{\bf{a}}_i}.
 \end{equation}
-\subsection{Ohno and Wang model}
+
+\subsection{Ohno and Wang's model}
+\noindent
 After the model with a threshold in the dynamic recovery term, it was proposed by Ohno and Wang (1993) \cite{ohno1993kinematic} a slightly different approach, introducing a critical state of dynamic recovery.
 The total back stress is composed of additive parts:
 \begin{equation}
@@ -354,7 +358,9 @@ or
 \end{equation}
 Though not necessary, the Macaulay bracket $\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle$ continues to operate in this smooth version, and will play a significant role in reducing ratchetting.
 
-\subsection{Karim and Ohno model}
+\subsection{Karim and Ohno's model}
+\noindent
+Abdel-Karim and Ohno (2000) \cite{Abdel2000} proposed a further modification of Ohno and Wang's model.
 In the first version of the Ohno and Wang's model, the dynamic recovery of ${{\bf{a}}_i}$ is assumed to take place only in a critical state, which is taken to be a hyper sphere of radius $r_i$ in the space of ${{\bf{a}}_i}$ such as
 \begin{equation}
 {f_i} = \frac{3}{2}{{\bf{a}}_i}:{{\bf{a}}_i} - r_i^2 = 0.
@@ -368,38 +374,42 @@ where $\zeta_i$ and $\mu_i$ are material parameters, and ${\dot \lambda }_i$ is 
 \begin{equation}
 {\dot \lambda _i} = {{\bm{ \upepsilon }}^p}:\frac{{{{\bf{a}}_i}}}{{{r_i}}} - {\mu _i}\dot p.
 \end{equation}
-The second and third terms in the right hand side in Equation \ref{Equ:Introduction1} express the dynamic recovery of $\bf{a}_i$ based on the Armstrong and Frederick model and the Ohno and Wang model, respectively, whereas the first term is responsible for strain hardening.
+The second and third terms in the right hand side in Equation (\ref{Equ:Introduction1}) express the dynamic recovery of $\bf{a}_i$ based on the Armstrong and Frederick model and the Ohno and Wang model, respectively, whereas the first term is responsible for strain hardening.
 \begin{equation}
 {{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{r_i}}}} \right\rangle {{\bf{a}}_i}} \right),
 \end{equation}
-where $0 \le {\mu _i} \le 1$ Critical examination for this rule indicates that continuous ratchetting with constant rate occurs as long as ${\mu _i} > 0$ while complete shakedown takes place as ${\mu _i} = 0$ since the rule reduces to the original Ohno-Wang multi-linear rule defined by Equation \ref{Eqn:Introduction2}.
+where $0 \le {\mu _i} \le 1$ Critical examination for this rule indicates that continuous ratchetting with constant rate occurs as long as ${\mu _i} > 0$ while complete shakedown takes place as ${\mu _i} = 0$ since the rule reduces to the original Ohno-Wang multi-linear rule defined by Equation (\ref{Eqn:Introduction2}).
 
-\subsection{Jiang and Sehitoglu model}
+\subsection{Jiang and Sehitoglu's model}
+\noindent
+Based on the the smooth version of Ohno-Wang's model, Jiang and Sehitoglu \cite{jiang1996modeling} suggested that the backstress can be expressed as
 \begin{equation}
 {{\dot{\bf a}}_i} = {c_i}{r_i}\left[ {{\bf{n}} - {{\left( {\frac{{\left\| {{{\bf{a}}_i}} \right\|}}{{{r_i}}}} \right)}^{{\chi _i} + 1}}{{\bf{L}}_i}} \right]\dot p,
 \end{equation}
 where ${{\bf{L}}_i} = \frac{{{{\bf{a}}_i}}}{{\left\| {{{\bf{a}}_i}} \right\|}}$.
 Cyclic hardening/softening, progressive elevation or decrease in flow strength with cycles results in cyclic hardening or softening, respectively.
-Cyclic hardening can be considered with $c_i$ in the hardening relation Equation \ref{Eqn:Introduction3} being a function of the accumulated plastic strain,
+Cyclic hardening can be considered with $c_i$ in the hardening relation Equation (\ref{Eqn:Introduction3}) being a function of the accumulated plastic strain,
 \begin{equation}
 {c_i} = {c_{i0}}\left( {1 + {a_{i1}}{e^{ - {b_{i1}}p}} + {a_{i2}}{e^{ - {b_{i2}}p}}} \right)
 \label{Eqn:Introduction3}
 \end{equation}
 where $c_{i0}$, $a_{i1}$, $b_{i1}$, $a_{i2}$ and $b_{i2}$ are material constants.
-When the material displays monotonic hardening or monotonic softening, only two terms in Equation \ref{Eqn:Introduction3} are needed.
+When the material displays monotonic hardening or monotonic softening, only two terms in Equation (\ref{Eqn:Introduction3}) are needed.
 When the material behavior is mixed hardening/softening, all three terms are necessary.
 
-\subsection{Kang model}
-Kang considered the Abdel-Karim and Ohno rule and incorporated the accumulated plastic strain increment within dynamic recovery term rather than the plastic strain increment:
+\subsection{Kang's model}
+\noindent
+Kang \cite{kang2004uniaxial} considered the Abdel-Karim and Ohno rule and incorporated the accumulated plastic strain increment within dynamic recovery term rather than the plastic strain increment:
 \begin{equation}
 {{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\dot p{{\bf{a}}_i}} \right)
 \end{equation}
-It is clear that, as $\mu_i=0$ this rule reduces to the modified Ohno-Wang rule defined by Equation \ref{Eqn:Introduction2} while it reduces to the Armstrong-Frederick rule when $\mu_i>0$.
+It is clear that, as $\mu_i=0$ this rule reduces to the modified Ohno-Wang rule defined by Equation (\ref{Eqn:Introduction2}) while it reduces to the Armstrong-Frederick rule when $\mu_i>0$.
 
-\subsection{Chen model}
-Chen et al. (2005) introduced a multiplying factor to the dynamic recovery term that considers non-proportionality of the plastic strain and back stress:
+\subsection{Chen's model}
+\noindent
+Chen et al. \cite{chen2004modified} introduced a multiplying factor to the dynamic recovery term that considers non-proportionality of the plastic strain and back stress:
 \begin{equation}
-{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {{\left( {\frac{{{{\bar a}_i}}}{{{r_i}}}} \right)}^{{m_i}}}{{\left\langle {{\bf{n}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle }^{{\chi _i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right)
+{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {{\left( {\frac{{{{\bar a}_i}}}{{{r_i}}}} \right)}^{{m_i}}}{{\left\langle {{\bf{n}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle }^{{\chi _i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right).
 \end{equation}
 
 \section{The cyclic plasticity model}
@@ -537,42 +547,42 @@ with
 {\bfn^*} = \frac{{\partial g}}{{\partial {\bfepsilon^p}}} = \frac{{{\bfepsilon^p} - \bfbeta}}{{\left\| {{\bfepsilon^p} - \bfbeta} \right\|}}.
 \end{equation}
 
-\subsection{Non-proportional hardening}
-\noindent
-In the article the non-proportional hardening is considered in an additional term of the isotropic hardening, as
-\begin{equation}
-Y = {Y_0} + {Y_{\Delta np}},
-\end{equation}
-where $Y_0$ denotes the yield stress for proportional loading and ${Y_{\Delta np}}$ is the non-proportional hardening defined by
-\begin{equation}
-{\dot Y_{\Delta np}} = {\gamma _p}\left( {{Y_{\rm sat}} - {Y_{\Delta np}}} \right)\dot p.
-\end{equation}
-Integrating the above equation with the initial condition ${Y_{\Delta np}}(0)=0$ follows
-\begin{equation}
-{Y_{\Delta np}} = Y_{\rm sat}\left( 1-e^{- \gamma_p p} \right),
-\end{equation}
-where $Y_{\rm sat}$ is the saturated value of ${Y_{\Delta np}}$ under a non-proportional loading path.
-Tanaka introduced a non-proportionality factor \cite{tanaka1994nonproportionality},
-\begin{equation}
-\phi  = \sqrt {1 - \frac{{\bfn:\mathbb{C}:\mathbb{C}:\bfn}}{{\mathbb{C}::\mathbb{C}}}}
-\end{equation}
-to quantify influence of the non-proportional load path to the material behavior.  $\mathbb{C}$ is a fourth-rank tensor and represents the internal dislocation structure \cite{tanaka1994nonproportionality}, as
-\begin{equation}
-\dot {\mathbb{C}} = {c_c}\left( {\bfn \otimes \bfn - \mathbb{C}} \right)\dot p.
-\end{equation}
-Assuming ${Y_{\rm sat}}$ depending on the loading path follows the simplest form as
-\begin{equation}
-{Y_{\rm sat}} = \phi {Y_{\Delta NS}},
-\end{equation}
-with $0 \leq \phi \leq 1$.
-For the proportional loading $\phi = 0$, there is no non-proportional hardening, while $\phi = 1$ means ${Y_{\rm sat}} = {Y_{\Delta NS}}$ for the maximum non-proportional hardening.
+% \subsection{Non-proportional hardening}
+% \noindent
+% In the article the non-proportional hardening is considered in an additional term of the isotropic hardening, as
+% \begin{equation}
+% Y = {Y_0} + {Y_{\Delta np}},
+% \end{equation}
+% where $Y_0$ denotes the yield stress for proportional loading and ${Y_{\Delta np}}$ is the non-proportional hardening defined by
+% \begin{equation}
+% {\dot Y_{\Delta np}} = {\gamma _p}\left( {{Y_{\rm sat}} - {Y_{\Delta np}}} \right)\dot p.
+% \end{equation}
+% Integrating the above equation with the initial condition ${Y_{\Delta np}}(0)=0$ follows
+% \begin{equation}
+% {Y_{\Delta np}} = Y_{\rm sat}\left( 1-e^{- \gamma_p p} \right),
+% \end{equation}
+% where $Y_{\rm sat}$ is the saturated value of ${Y_{\Delta np}}$ under a non-proportional loading path.
+% Tanaka introduced a non-proportionality factor \cite{tanaka1994nonproportionality},
+% \begin{equation}
+% \phi  = \sqrt {1 - \frac{{\bfn:\mathbb{C}:\mathbb{C}:\bfn}}{{\mathbb{C}::\mathbb{C}}}}
+% \end{equation}
+% to quantify influence of the non-proportional load path to the material behavior.  $\mathbb{C}$ is a fourth-rank tensor and represents the internal dislocation structure \cite{tanaka1994nonproportionality}, as
+% \begin{equation}
+% \dot {\mathbb{C}} = {c_c}\left( {\bfn \otimes \bfn - \mathbb{C}} \right)\dot p.
+% \end{equation}
+% Assuming ${Y_{\rm sat}}$ depending on the loading path follows the simplest form as
+% \begin{equation}
+% {Y_{\rm sat}} = \phi {Y_{\Delta NS}},
+% \end{equation}
+% with $0 \leq \phi \leq 1$.
+% For the proportional loading $\phi = 0$, there is no non-proportional hardening, while $\phi = 1$ means ${Y_{\rm sat}} = {Y_{\Delta NS}}$ for the maximum non-proportional hardening.
 
-According to Ref. \cite{fang2015cyclic}, the evolution of ${Y_{\Delta NS}}$ can be defined as
-\begin{equation}
-{\dot Y_{\Delta NS}} = {\gamma _q}\left( {{Y_{\Delta 0}} - {Y_{\Delta NS}}} \right)\dot q.
-\end{equation}
-Noting that the strain memory effect is taken into account, $q$ is the radius of strain memory surface, ${\gamma _q}$ is a rate parameter.
-If the material satisfies the Masing postulate,  ${\gamma _q}=0$. $Y_{\Delta 0} $ denotes the saturate value of $Y_{\Delta NS}$.
+% According to Ref. \cite{fang2015cyclic}, the evolution of ${Y_{\Delta NS}}$ can be defined as
+% \begin{equation}
+% {\dot Y_{\Delta NS}} = {\gamma _q}\left( {{Y_{\Delta 0}} - {Y_{\Delta NS}}} \right)\dot q.
+% \end{equation}
+% Noting that the strain memory effect is taken into account, $q$ is the radius of strain memory surface, ${\gamma _q}$ is a rate parameter.
+% If the material satisfies the Masing postulate,  ${\gamma _q}=0$. $Y_{\Delta 0} $ denotes the saturate value of $Y_{\Delta NS}$.
 
 \subsection{Non-proportional hardening}
 In this paper, we consider the non-proportional hardening as an additional term of isotropic hardening.
@@ -768,7 +778,7 @@ The stress deviator is given by:
 \end{equation}
 where ${\mathbb{I}_d} = \mathbb{I} - \frac{1}{3}{\bf{I}} \otimes {\bf{I}}$ is the deviatoric projection tensor.
 
-Taking the deviatoric part of Equation \ref{Equ:sigma1}, we have:
+Taking the deviatoric part of Equation (\ref{Equ:sigma1}), we have:
 \begin{equation}
 {{\bf{s}}_{n + 1}} = {\bf{s}}_{n + 1}^{tr} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
@@ -817,7 +827,7 @@ where
 \bar b_{n + 1}^{k,tr} = \sqrt {\frac{3}{2}{\bf{b}}_{n + 1}^{k,tr}:{\bf{b}}_{n + 1}^{k,tr}}
 \end{equation}
 
-Substituting ${{\bf{a}}_{n + 1}}$ into Equation \ref{Equ:sminusa1}, we have:
+Substituting ${{\bf{a}}_{n + 1}}$ into Equation (\ref{Equ:sminusa1}), we have:
 \begin{equation}
 \label{Equ:sminusa2}
 \begin{aligned}
@@ -827,7 +837,7 @@ Substituting ${{\bf{a}}_{n + 1}}$ into Equation \ref{Equ:sminusa1}, we have:
 \end{aligned}
 \end{equation}
 
-Substitution of Equation \ref{Equ:Fn+1}-\ref{Equ:nn+1} and \ref{Equ:sminusa2} into the yield function ${F_{n + 1}} = 0$ provides:
+Substitution of Equations (\ref{Equ:Fn+1}) to (\ref{Equ:nn+1}) and (\ref{Equ:sminusa2}) into the yield function ${F_{n + 1}} = 0$ provides:
 \begin{equation}
 \Delta {p_{n + 1}} = \frac{{\sqrt {\frac{3}{2}} \left\| {{\bf{s}}_{n + 1}^{tr} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right\| - {Y_n}}}{{{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}} + 3G + \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}} }}
 \end{equation}
@@ -847,20 +857,20 @@ To complete the algorithmic scheme discussed above we derive in the following th
 \Delta {\bm{\upsigma }} = {\mathbb{D}^{ep}}:\Delta {\bm{\upepsilon }}
 \end{equation}
 
-Considering Equation \ref{Equ:dotak3}, we assume that the increment of deviatoric back stress has the following differential:
+Considering Equation (\ref{Equ:dotak3}), we assume that the increment of deviatoric back stress has the following differential:
 \begin{equation}
 \label{Equ:dan+1}
 {\text{d}}\Delta {{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} :{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 where $\mathbb{H}_{n + 1}^k( k = 1,2,3,...,M )$ are fourth-rank constitutive parameters.
 
-It is noted that, when ${F_{n + 1}} = 0$, ${\bf{n}}_{n + 1}$ defined by Equation \ref{Equ:nn+1} satisfies:
+It is noted that, when ${F_{n + 1}} = 0$, ${\bf{n}}_{n + 1}$ defined by Equation (\ref{Equ:nn+1}) satisfies:
 \begin{equation}
 \label{Equ:nn1}
 {{\bf{n}}_{n + 1}}:{{\bf{n}}_{n + 1}} = 1
 \end{equation}
 
-On the assumption that all constitutive variables are known at state $n$, and that $F_{n+1}=0$, let us differentiate Equations \ref{Equ:sigman+1}, \ref{Equ:epsilonpn+1}, \ref{Equ:nn+1} and \ref{Equ:nn1} to obtain:
+On the assumption that all constitutive variables are known at state $n$, and that $F_{n+1}=0$, let us differentiate Equations (\ref{Equ:sigman+1}), (\ref{Equ:epsilonpn+1}), (\ref{Equ:nn+1}) and (\ref{Equ:nn1}) to obtain:
 \begin{equation}
 \label{Equ:dsigman+1}
 {\text{d}}\Delta {{\bm{\upsigma }}_{n + 1}} = {\mathbb{D}^e}:\left( {{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - {\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p} \right)
@@ -877,19 +887,19 @@ On the assumption that all constitutive variables are known at state $n$, and th
 {{\bf{n}}_{n + 1}}:{\text{d}}{{\bf{n}}_{n + 1}} = 0
 \end{equation}
 
-From Equation \ref{Equ:sigma1} we obtain:
+From Equation (\ref{Equ:sigma1}) we obtain:
 \begin{equation}
 \label{Equ:sn+1}
 {{\bf{s}}_{n + 1}} = 2G{\mathbb{I}_d}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_{n + 1}^p} \right)
 \end{equation}
 
-Differentiating Equation \ref{Equ:sn+1}, we have:
+Differentiating Equation (\ref{Equ:sn+1}), we have:
 \begin{equation}
 \label{Equ:dsn+1}
 {\text{d}}\Delta {{\bf{s}}_{n + 1}} = 2G{\mathbb{I}_d}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - 2G{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Substitution of Equations \ref{Equ:dan+1} and \ref{Equ:dsn+1} into \ref{Equ:dnn+1} provides:
+Substitution of Equations (\ref{Equ:dan+1}) and (\ref{Equ:dsn+1}) into (\ref{Equ:dnn+1}) provides:
 \begin{equation}
 \label{Equ:dnn+12}
 \begin{aligned}
@@ -903,7 +913,7 @@ noting that
 {\text{d}}\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}} {{\bf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Substituting Equations \ref{Equ:dnn+12} and \ref{Equ:dpn+1} into Equation \ref{Equ:depsilon+1} to eliminate ${\text{d}}{{\bf{n}}_{n + 1}}$ and ${\text{d}}\Delta {p_{n + 1}}$, and rearranging the resulting equation, we obtain:
+Substituting Equations (\ref{Equ:dnn+12}) and (\ref{Equ:dpn+1}) into Equation (\ref{Equ:depsilon+1}) to eliminate ${\text{d}}{{\bf{n}}_{n + 1}}$ and ${\text{d}}\Delta {p_{n + 1}}$, and rearranging the resulting equation, we obtain:
 \begin{equation}
 {\mathbb{L}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p = 2G{\mathbb{I}_d}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}}
 \end{equation}
@@ -916,7 +926,7 @@ where
 \end{aligned}
 \end{equation}
 
-Elimination of ${\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p$ in Equation \ref{Equ:dsigman+1} by use of the Equation \ref{Equ:Ln+1} gives:
+Elimination of ${\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p$ in Equation (\ref{Equ:dsigman+1}) by use of the Equation (\ref{Equ:Ln+1}) gives:
 \begin{equation}
 {\text{d}}\Delta {{\bm{\upsigma }}_{n + 1}} = \left( {{\mathbb{D}^e} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_d}} \right):{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}}
 \end{equation}
@@ -926,7 +936,7 @@ Therefore, consistent tangent modulus $\frac{{{\text{d}}\Delta {{\bm{\upsigma }}
 {\mathbb{D}^{ep}} = {\mathbb{D}^e} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_d}
 \end{equation}
 
-In order to obtain $\mathbb{H}_{n + 1}^k$, we differentiate Equations \ref{Equ:an+1} and \ref{Equ:bn+1}, so that:
+In order to obtain $\mathbb{H}_{n + 1}^k$, we differentiate Equations (\ref{Equ:an+1}) and (\ref{Equ:bn+1}), so that:
 \begin{equation}
 {\text{d}}{{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\left( {r_{n + 1}^k{\text{d}}{\bf{b}}_{n + 1}^k + {\bf{b}}_{n + 1}^k{\text{d}}r_{n + 1}^k} \right)}
 \end{equation}
@@ -935,7 +945,7 @@ In order to obtain $\mathbb{H}_{n + 1}^k$, we differentiate Equations \ref{Equ:a
 {\text{d}}{\bf{b}}_{n + 1}^k = \frac{{{\bf{b}}_{n + 1}^k}}{{\theta _{n + 1}^k}}{\text{d}}\theta _{n + 1}^k + \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Considering Equation \ref{Equ:thetan+1}, we may derive $\theta _{n + 1}^k$ in two cases.
+Considering Equation (\ref{Equ:thetan+1}), we may derive $\theta _{n + 1}^k$ in two cases.
 
 I. When $H\left( {\bar f_{n + 1}^k} \right) = 0$, we have $\theta _{n + 1}^k = c_{n + 1}^k$, then:
 \begin{equation}
@@ -945,7 +955,7 @@ I. When $H\left( {\bar f_{n + 1}^k} \right) = 0$, we have $\theta _{n + 1}^k = c
 \end{aligned}
 \end{equation}
 
-Therefore, $\mathbb{H}_{n + 1}^k$ in Equation \ref{Equ:dan+1} has an expression:
+Therefore, $\mathbb{H}_{n + 1}^k$ in Equation (\ref{Equ:dan+1}) has an expression:
 \begin{equation}
 \begin{aligned}
 \mathbb{H}_{n + 1}^k = \frac{2}{3}r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mathbb{I} + \sqrt {\frac{2}{3}} \left[ {{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}} - r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mu \right.\\
@@ -953,31 +963,31 @@ Therefore, $\mathbb{H}_{n + 1}^k$ in Equation \ref{Equ:dan+1} has an expression:
 \end{aligned}
 \end{equation}
 
-II. When $H\left( {\bar f_{n + 1}^k} \right) = 1$, Equation \ref{Equ:thetan+1} becomes $\theta _{n + 1}^k = \frac{1}{{\bar b_{n + 1}^{k,tr}}}$, then:
+II. When $H\left( {\bar f_{n + 1}^k} \right) = 1$, Equation (\ref{Equ:thetan+1}) becomes $\theta _{n + 1}^k = \frac{1}{{\bar b_{n + 1}^{k,tr}}}$, then:
 \begin{equation}
 \label{Equ:thetan+1}
 {\text{d}}\theta _{n + 1}^k =  - \frac{3}{2}{\left( {\theta _{n + 1}^k} \right)^3}{\bf{b}}_{n + 1}^{k,tr}:{\text{d}}{\bf{b}}_{n + 1}^{k,tr}
 \end{equation}
 
-We differentiate Equation \ref{Equ:btrn+1}, so that:
+We differentiate Equation (\ref{Equ:btrn+1}), so that:
 \begin{equation}
 \label{Equ:dbtrn+1}
 {\text{d}}{\bf{b}}_{n + 1}^{k,tr} = \frac{2}{3}{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Eliminating ${\bf{b}}_{n + 1}^{k,tr}$ and ${\text{d}}{\bf{b}}_{n + 1}^{k,tr}$ in Equation \ref{Equ:thetan+1} by using Equations \ref{Equ:btrn+1} and \ref{Equ:dbtrn+1}, we obtain:
+Eliminating ${\bf{b}}_{n + 1}^{k,tr}$ and ${\text{d}}{\bf{b}}_{n + 1}^{k,tr}$ in Equation (\ref{Equ:thetan+1}) by using Equations (\ref{Equ:btrn+1}) and (\ref{Equ:dbtrn+1}), we obtain:
 \begin{equation}
 \label{Equ:thetan+1}
 {\text{d}}\theta _{n + 1}^k =  - {\left( {\theta _{n + 1}^k} \right)^2}{\zeta ^k}{\bf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Substitution of Equation \ref{Equ:thetan+1} into \ref{Equ:dbn+1} provides:
+Substitution of Equation (\ref{Equ:thetan+1}) into (\ref{Equ:dbn+1}) provides:
 \begin{equation}
 \label{Equ:dbn+12}
 {\text{d}}{\bf{b}}_{n + 1}^k = \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p - {\zeta ^k}\theta _{n + 1}^k{\bf{b}}_{n + 1}^k \otimes {\bf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^p
 \end{equation}
 
-Therefore, $\mathbb{H}_{n + 1}^k$ in Equation \ref{Equ:dan+1} has an expression:
+Therefore, $\mathbb{H}_{n + 1}^k$ in Equation (\ref{Equ:dan+1}) has an expression:
 \begin{equation}
 \begin{aligned}
 \mathbb{H}_{n + 1}^k = \frac{2}{3}r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mathbb{I} - r_{n + 1}^k{\zeta ^k}\theta _{n + 1}^k{\bf{b}}_{n + 1}^k \otimes {\bf{b}}_{n + 1}^k + \\

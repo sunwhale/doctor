@@ -854,6 +854,106 @@ Zamrik and Renauld \cite{Zamrik2000} suggested an explicit fatigue model incorpo
 \end{equation}
 where $\sigma _{eq,\max }$ denotes maximum equivalent tensile stress in mid-life hysteresis loop, $\varepsilon _{eq,ten}$ is maximum equivalent strain in mid-life hysteresis loop for which the stress is tensile, $\sigma _{ult}$ is ultimate strength, $\varepsilon _{f}$ is failure elongation , $t_h$ is length of compressive hold-time, $t_c$ is length of total cycle time including hold-time, $Q$ is activation energy for high temperature damage, $R$ is gas constant, $T_{\max}$ is maximum temperature in TMF cycle and $T_0$ is a reference temperature, $A$,$B$ and $C$ are model coefficients. In the present work, the TMF tests did not have the holding time which means $t_c=0$.
 
+\subsection{Stress components relative to a generic material plane}
+\noindent
+Consider a material point $O$ which is the centre of the absolute coordinate $Oxyz$. The orientation of a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$ can be located by using spherical coordinates $\phi$ and $\theta$, where $\phi$ is the angle between the projection of unit vector ${\bf{n}}$ on $x–y$ plane and the $x$-axis, $\theta$ is the angle between the unit vector ${\bf{n}}$ and the $z$-axis. 
+
+\begin{figure}
+\centering
+\includegraphics[width=10cm]{generic_material_plane.pdf}
+\caption{Definition of the angles $\phi$, $\theta$ and a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$.}
+\label{Fig:generic_material_plane}
+\end{figure}
+
+The tensor components are dependent on the coordinate system.
+If the coordinate system is changed due to a rotation so do the tensor components.
+\begin{figure}
+\centering
+\includegraphics[width=10cm]{rotation_of_coordinate.pdf}
+\caption{Rotation of the Cartesian coordinate system.}
+\label{Fig:rotation_of_coordinate}
+\end{figure}
+\ref{Fig:rotation_of_coordinate} shows the original Cartesian coordinate system ($x_1,x_2,x_3$) and the new coordinate system ($x'_1,x'_2,x'_3$).
+The transformation law of the components between the coordinate systems for a vector can be expressed as:
+\begin{equation}
+\bf{v'} = {\bf{A}}\bf{v},
+\label{Equ:coordinate_transformation_of_vector}
+\end{equation}
+where $\bf{v}$ represents the vector components in coordinate system ($x_1,x_2,x_3$) and $\bf{v'}$ represents the vector components in coordinate system ($x'_1,x'_2,x'_3$).
+The transformation law of the components between the coordinate systems for a second-order tensor can be expressed as:
+\begin{equation}
+{\bf{T'}} = {\bf{AT}}{{\bf{A}}^{\rm{T}}},
+\label{Equ:coordinate_transformation_of_tensor}
+\end{equation}
+where $\bf{T}$ represents the second-order tensor components in coordinate system ($x_1,x_2,x_3$) and $\bf{T'}$ represents the second-order tensor components in coordinate system ($x'_1,x'_2,x'_3$).
+
+In Eq. (\ref{Equ:coordinate_transformation_of_vector}) and (\ref{Equ:coordinate_transformation_of_tensor}), the $\bf{A}$ is the transformation matrix from coordinate system ($x_1,x_2,x_3$) to ($x'_1,x'_2,x'_3$). The transformation matrix $\bf{A}$ is given by:
+\begin{eqnarray}
+{\bf{A}} = \left( {\begin{array}{*{20}{c}}
+{\cos \left( {{{x'}_1},{x_1}} \right)}&{\cos \left( {{{x'}_1},{x_2}} \right)}&{\cos \left( {{{x'}_1},{x_3}} \right)}\\
+{\cos \left( {{{x'}_2},{x_1}} \right)}&{\cos \left( {{{x'}_2},{x_2}} \right)}&{\cos \left( {{{x'}_2},{x_3}} \right)}\\
+{\cos \left( {{{x'}_3},{x_1}} \right)}&{\cos \left( {{{x'}_3},{x_2}} \right)}&{\cos \left( {{{x'}_3},{x_3}} \right)}
+\end{array}} \right).
+\end{eqnarray}
+The direction cosines of a vector are those of the angles between the vector and the three coordinate axes. According to \ref{Fig:rotation_of_coordinate}, it can be found that $\cos {\alpha _1} = \cos \left( {{{x'}_1},{x_1}} \right)$, $\cos {\beta _1} = \cos \left( {{{x'}_1},{x_2}} \right)$, $\cos {\gamma _1} = \cos \left( {{{x'}_1},{x_3}} \right)$ and so on.
+
+Now we consider a two steps coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$). As shown in \ref{Fig:coordinate_transformation_of_tensor}, the coordinate system ($x''_1,x''_2,x''_3$) can be obtaioned by combinations of rotations. wsthe step 1 is rotation along the  
+
+\[{\bf{A}} = \left( {\begin{array}{*{20}{c}}
+{\cos \left( {{{x'}_1},{x_1}} \right)}&{\cos \left( {{{x'}_1},{x_2}} \right)}&{\cos \left( {{{x'}_1},{x_3}} \right)}\\
+{\cos \left( {{{x'}_2},{x_1}} \right)}&{\cos \left( {{{x'}_2},{x_2}} \right)}&{\cos \left( {{{x'}_2},{x_3}} \right)}\\
+{\cos \left( {{{x'}_3},{x_1}} \right)}&{\cos \left( {{{x'}_3},{x_2}} \right)}&{\cos \left( {{{x'}_3},{x_3}} \right)}
+\end{array}} \right){\rm{ = }}\left( {\begin{array}{*{20}{c}}
+{\cos \varphi }&{\sin \varphi }&0\\
+{ - \sin \varphi }&{\cos \varphi }&0\\
+0&0&1
+\end{array}} \right)\]
+
+\[{\bf{T'}} = {\bf{AT}}{{\bf{A}}^{\rm{T}}}\]
+
+\[{\bf{T''}} = {\bf{BT'}}{{\bf{B}}^{\rm{T}}} = {\bf{BAT}}{{\bf{A}}^{\rm{T}}}{{\bf{B}}^{\rm{T}}} = {\bf{MT}}{{\bf{M}}^{\rm{T}}}\]
+
+\[\begin{array}{*{20}{l}}
+{\bf{B}}&{ = \left( {\begin{array}{*{20}{c}}
+{\cos \left( {{{x''}_1},{{x'}_1}} \right)}&{\cos \left( {{{x''}_1},{{x'}_2}} \right)}&{\cos \left( {{{x''}_1},{{x'}_3}} \right)}\\
+{\cos \left( {{{x''}_2},{{x'}_1}} \right)}&{\cos \left( {{{x''}_2},{{x'}_2}} \right)}&{\cos \left( {{{x''}_2},{{x'}_3}} \right)}\\
+{\cos \left( {{{x''}_3},{{x'}_1}} \right)}&{\cos \left( {{{x''}_3},{{x'}_2}} \right)}&{\cos \left( {{{x''}_3},{{x'}_3}} \right)}
+\end{array}} \right)}\\
+{}&{{\rm{ = }}\left( {\begin{array}{*{20}{c}}
+{\cos \left( { - \frac{{{\mkern 1mu} \pi }}{2} + \theta } \right)}&0&{ - \sin \left( { - \frac{{{\mkern 1mu} \pi }}{2} + \theta } \right)}\\
+0&1&0\\
+{\sin \left( { - \frac{{{\mkern 1mu} \pi }}{2} + \theta } \right)}&0&{\cos \left( { - \frac{{{\mkern 1mu} \pi }}{2} + \theta } \right)}
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+{\sin \theta }&0&{\cos \theta }\\
+0&1&0\\
+{ - \cos \theta }&0&{\sin \theta }
+\end{array}} \right)}
+\end{array}\]
+
+\[\begin{array}{*{20}{l}}
+{{\bf{M}} = {\bf{BA}}}&{ = \left( {\begin{array}{*{20}{c}}
+{\sin \theta }&0&{\cos \theta }\\
+0&1&0\\
+{ - \cos \theta }&0&{\sin \theta }
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+{\cos \varphi }&{\sin \varphi }&0\\
+{ - \sin \varphi }&{\cos \varphi }&0\\
+0&0&1
+\end{array}} \right)}\\
+{}&{ = \left( {\begin{array}{*{20}{c}}
+{\sin \theta \cos \varphi }&{\sin \theta \sin \varphi }&{\cos \theta }\\
+{ - \sin \varphi }&{\cos \varphi }&0\\
+{ - \cos \theta \cos \varphi }&{ - \cos \theta \sin \varphi }&{\sin \theta }
+\end{array}} \right)}
+\end{array}\]
+
+\begin{figure}
+\centering
+\includegraphics[width=14cm]{coordinate_transformation_of_tensor.pdf}
+\caption{Coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$).}
+\label{Fig:coordinate_transformation_of_tensor}
+\end{figure}
+
 \subsection{Fatigue life prediction based on the conventional fatigue models}
 \noindent
 The six models presented previously are used to evaluate the thermomechanical fatigue. Whereas the tests were run at 650$^\circ$C for isothermal fatigue and at 573K to 923K for thermomechanical fatigue, the fatigue life models are essentially based on the material property at 923K.

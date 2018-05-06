@@ -18,7 +18,7 @@
 火焰喷射的优点在于接近真实发动机涡轮叶片的工作环境，但火焰的稳定性差，火焰形状难以控制，很难形成均匀的温度场\cite{MAUGET2017225}。
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=10cm]{IN718_Axial_Specimen_TGMF.pdf}}
+\centering{\includegraphics[width=12cm]{IN718_Axial_Specimen_TGMF.pdf}}
 \caption{TGMF试样示意图.}
 \label{Fig:Specimen}
 \end{figure}
@@ -34,7 +34,7 @@
 对于试件内表面，考虑到气体流动，在TGMF期间，内部点焊热电偶是不可能的，因为它们的信号受到内部冷却的影响。
 同时由于试件的尺寸很小，内孔直径只有6.5mm，也无法使用热像仪进行测量，因此在这里采用计算的方法来确定时间内表面的温度。
 \begin{figure}[!htp]
-\centering{\includegraphics[width=10cm]{Radiation_Furnace2.pdf}}
+\centering{\includegraphics[width=12cm]{Radiation_Furnace2.pdf}}
 \caption{聚光辐射加热系统.}
 \label{Fig:Radiation_Furnace2}
 \end{figure}
@@ -43,28 +43,10 @@
 \begin{table}[htbp]
   \centering
   \caption{650$^{\circ}$C恒温疲劳试验、TMF与TGMF试验结果.}
-    \begin{tabular}{llllll}
+    \begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
     \toprule
     Test Type & $\pm \varepsilon _m$ & $\varepsilon _{eq}$ & $\dot \varepsilon _{eq}$ & $\theta_{T-\varepsilon}$ & $N_f$ \\
           & [\%]  & [\%]  & [s$^{-1}$] & [$^\circ$] &  \\
-    \midrule
-    IF & 1.00  & 1.00  & $1\times 10^{-3}$ & -     & 131 \\
-          & 0.80  & 0.80  & $1\times 10^{-3}$ & -     & 326 \\
-          & 0.70  & 0.70  & $1\times 10^{-3}$ & -     & 592 \\
-          & 0.60  & 0.60  & $1\times 10^{-3}$ & -     & 1336 \\
-          & 0.50  & 0.50  & $1\times 10^{-3}$ & -     & 8449 \\
-          & 0.45  & 0.45  & $1\times 10^{-3}$ & -     & 15497 \\
-          & 0.40  & 0.40  & $6.4\times 10^{-3}$ & -     & 130585 \\
-    \midrule
-    TMF-IP & 1.00  & 1.00  & $2.22\times 10^{-4}$ & 0     & 58 \\
-          & 0.80  & 0.80  & $1.78\times 10^{-4}$ & 0     & 176 \\
-          & 0.70  & 0.70  & $1.56\times 10^{-4}$ & 0     & 248 \\
-          & 0.60  & 0.60  & $1.33\times 10^{-4}$ & 0     & 1297 \\
-    \midrule
-    TMF-OP & 1.00  & 1.00  & $2.22\times 10^{-4}$ & 180   & 209 \\
-          & 0.80  & 0.80  & $1.78\times 10^{-4}$ & 180   & 303 \\
-          & 0.70  & 0.70  & $1.56\times 10^{-4}$ & 180   & 429 \\
-          & 0.65  & 0.65  & $1.44\times 10^{-4}$ & 180   & 633 \\
     \midrule
     TGMF-IP & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 0     & 48 \\
           & 0.60  & 0.60  & $1.33\times 10^{-4}$ & 0     & 50 \\
@@ -109,21 +91,42 @@
 由于热梯度机械疲劳的温度循环与载荷循环之间有相位差,导致其拉伸半周和压缩半周具有不同的循环软化行为。
 对于同相位热梯度机械疲劳试验,合金在拉伸半周表现出较强的循环软化，而对于反相位热梯度机械疲劳试验则相反,合金在压缩半周表现出较强的循环软化。
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \begin{overpic}[width=6.0cm]{plot_exp_pv_TCIPTGMF.pdf}
-      \put(0,65){\fcolorbox{white}{white}{(a)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=6.0cm]{plot_exp_pv_TCOPTGMF.pdf}
-      \put(0,65){\fcolorbox{white}{white}{(b)}}
-    \end{overpic}
-  \end{minipage}
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCIPTGMF.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIPTGMF.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCOPTGMF.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCOPTGMF.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
 
+  \begin{overpic}[width=8.0cm]{plot_exp_half_life_cycle_TCIPTGMFTBC.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(e)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIPTGMFTBC.pdf}
+    \put(84,13){\fcolorbox{white}{white}{(f)}}
+  \end{overpic}
+  \caption{TGMF tests of Inconel 718 with temperature range 350-600$^{\circ}$C.
+  (a),(c),(e) Half life stable hysteresis loops.
+  (b),(d),(f) Peak, valley and mean stresses.}
+  \label{Fig:plot_exp_TCTGMF}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIPTGMF.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCOPTGMF.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
   \caption{TGMF应力均值与峰谷值：(a)同相位，(b)反相位.}
   \label{Fig:plot_exp_pv_TCTGMF}
 \end{figure}
@@ -133,20 +136,13 @@
 同相位和反相位热梯度机械疲劳试验均表现为循环软化，但温度循环与载荷循环之间的相位差，导致循环软化的程度不同，在300-650$^{\circ}$C范围内，温度越高，材料的循环软化越明显，因此对于同相位的情况，材料在拉伸半周的循环软化更强烈，反应在平均应力的演化上则表现为平均应力随着循环的增加，产生越来越大的平均压应力。
 
 \begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \begin{overpic}[width=6.0cm]{plot_exp_mean_TCIPTGMF.pdf}
-      \put(0,65){\fcolorbox{white}{white}{(a)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=6.0cm]{plot_exp_mean_TCOPTGMF.pdf}
-      \put(0,65){\fcolorbox{white}{white}{(b)}}
-    \end{overpic}
-  \end{minipage}
-
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_mean_TCIPTGMF.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_mean_TCOPTGMF.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
   \caption{TGMF循环应力均值：(a)同相位，(b)反相位.}
   \label{Fig:plot_exp_mean_TCTGMF}
 \end{figure}
@@ -170,7 +166,7 @@ The measured temperature is not the temperature of the inner surface, but the av
 Therefore we tried to calculate the temperature distribution of the specimen inner surface using the FEM method.
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{inner_cooling.pdf}}
+\centering{\includegraphics[width=14cm]{inner_cooling.pdf}}
 \caption{Schematic of inner cooling air system.}
 \label{Fig:inner_cooling}
 \end{figure}
@@ -182,7 +178,7 @@ TGMF试件的几何形状如图\ref{Fig:Specimen}所示，由于几何形状和�
 试件外表面为温度边界，随时间变化的温度分布可由试验测得，试件内表面为对流边界条件，对流换热系数由圆管强制对流换热公式计算，需要试验测量冷却空气的密度、温度和体积流量。由于试件的对称性，中心对称界面可假设为绝热边界，试件的上边界认为是热传导边界，对于热辐射，取试件表面的发射率为$\varepsilon=0.75$。
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{FEM.pdf}}
+\centering{\includegraphics[width=14cm]{FEM.pdf}}
 \caption{Simulated temperature distribution and resulting axial stress component during heating of an inductively heated TMF specimen.}
 \label{Fig:FEM}
 \end{figure}
@@ -253,7 +249,7 @@ According to the measurement results of the sensors, the average pressure and te
   \begin{threeparttable}
   \centering
   \caption{Heat convection coefficients of the inner surface of the specimen.}
-    \begin{tabular}{p{6cm}p{2.5cm}p{2.5cm}}
+    \begin{tabular}{p{6cm}p{3cm}p{3cm}}
     \toprule
     Physical quantity   & Unit & Value  \\
     \midrule
@@ -287,14 +283,14 @@ According to the measurement results of the sensors, the average pressure and te
 
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{plot_temperature_along_gauge_length.pdf}}
+\centering{\includegraphics[width=14cm]{plot_temperature_along_gauge_length.pdf}}
 \caption{Diagram of simulated axial temperature gradients and the resulting, thermally induced axial stress components at maximum temprature (650$^{\circ}$C) during TGMF tests.}
 \label{Fig:plot_temperature_along_gauge_length}
 \end{figure}
 
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{plot_temperature_along_radial_direction.pdf}}
+\centering{\includegraphics[width=14cm]{plot_temperature_along_radial_direction.pdf}}
 \caption{Diagram of simulated radial temperature gradients and the resulting, thermally induced hoop stress components at maximum temprature (650$^{\circ}$C) during TGMF tests.}
 \label{Fig:plot_temperature_along_radial_direction}
 \end{figure}
@@ -303,7 +299,7 @@ According to the measurement results of the sensors, the average pressure and te
 \subsection{疲劳寿命}
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=10cm]{plot_exp_fatigue_life.pdf}}
+\centering{\includegraphics[width=12cm]{plot_exp_fatigue_life.pdf}}
 \caption{恒温试验（IF）、热机械疲劳试验（TMF）和热梯度机械疲劳试验（TGMF）寿命比较.}
 \label{Fig:plot_exp_fatigue_life}
 \end{figure}
@@ -447,94 +443,30 @@ According to the measurement results of the sensors, the average pressure and te
 
 
 \section{疲劳模型}
+\begin{figure}
+   \centering
+   \begin{overpic}[width=7.5cm]{NF-NP-TGMF-BM.pdf}
+     \put(65,20){\fcolorbox{white}{white}{(a) BM}}
+   \end{overpic}
+   \begin{overpic}[width=7.5cm]{NF-NP-TGMF-FS.pdf}
+     \put(70,20){\fcolorbox{white}{white}{(b) FS}}
+   \end{overpic}
 
-\subsection{Brown-Miller Model}
-Based on the critical plane concepts \cite{Brown1973}, Wang and Brown \cite{Wang1993} proposed that the Kandil, Brown and Miller fatigue parameter \cite{Kandil1982} can be reformulated as the equivalent shear strain amplitude:
-\begin{equation}
-\frac{{\Delta \hat \gamma }}{2} = \frac{{\Delta {\gamma _{max}}}}{2} + S\Delta {\varepsilon _n},
-\label{Equ:ShearStrainBM}
-\end{equation}
-where $\frac{{\Delta \hat \gamma }}{2}$ is the equivalent shear strain range, $\Delta {\varepsilon _n}$ represents the normal strain excursion on the on the plane with the maximum strain range $\Delta {\gamma _{max}}$. The material dependent parameter S represents the influence of the normal strain on the crack propagation.
-The fatigue endurance is suggested as:
-\begin{equation}
-\frac{{\Delta \hat \gamma }}{2} = A\frac{{{{\sigma '}_f}}}{E}{\left( {2{N_f}} \right)^b} + B{{\varepsilon '}_f}{\left( {2{N_f}} \right)^c},
-\end{equation}
-with
-\[A = 1 + {\nu _e} + \left( {1 - {\nu _e}} \right)S,\]
-and
-\[B = 1 + {\nu _p} + \left( {1 - {\nu _p}} \right)S.\]
+   \begin{overpic}[width=7.5cm]{NF-NP-TGMF-SWT.pdf}
+     \put(70,20){\fcolorbox{white}{white}{(c) SWT}}
+   \end{overpic}
+   \begin{overpic}[width=7.5cm]{NF-NP-TGMF-Chu.pdf}
+     \put(70,20){\fcolorbox{white}{white}{(d) CCB}}
+   \end{overpic}
 
-\begin{figure}[!htp]
-\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-BM.pdf}}
-\caption{Brown-Miller Model.}
-\label{Fig:NF-NP-TGMF-BM}
-\end{figure}
-
-\subsection{Fatemi-Socie Model}
-Based on the work of Brown and Miller, Fatemi and Socie \cite{Fatemi1988} proposed that the normal strain term in Equation (\ref{Equ:ShearStrainBM}) should be replaced by the normal stress.
-The equivalent shear strain amplitude is developed as:
-\begin{equation}
-\frac{{\Delta \hat \gamma }}{2} = \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,max}}}}{{{\sigma _y}}}} \right),
-\end{equation}
-where
-$\sigma _{n,max}$ is the maximum normal stress on the critical plane suffering the maximum strain range $\Delta {\gamma _{max}}$, $k$ is a material parameter, the sensitivity of the material to normal stress is reflected in the ratio $k/\sigma_y$.
-They developed a damaging model oriented on the shear-based damage initiation:
-\begin{equation}
-\frac{{\Delta \hat \gamma }}{2} = \frac{{{{\tau '}_f}}}{G}{\left( {2{N_f}} \right)^{{b_0}}} + {{\gamma '}_f}{\left( {2{N_f}} \right)^{{c_0}}}.
-\end{equation}
-Furthermore, McClaflin and Fatemi \cite{McClaflin2004} proposed that the sensitivity parameter $k$ is varied with fatigue life and can be expressed by tension and torsion data, as
-\begin{equation}
-k =  \frac{{k_0 {\sigma _y}}}{{{{\sigma '}_f}{{\left( {2{N_f}} \right)}^b}}}
-\end{equation}
-with
-\[
-k_0 =  {\frac{{\frac{{{{\tau '}_f}}}{G}{{\left( {2{N_f}} \right)}^{{b_0}}} + {{\gamma '}_f}{{\left( {2{N_f}} \right)}^{{c_0}}}}}{{\left( {1 + {\nu _e}} \right)\frac{{{{\sigma '}_f}}}{E}{{\left( {2{N_f}} \right)}^b} + \left( {1 + {\nu _p}} \right){{\varepsilon '}_f}{{\left( {2{N_f}} \right)}^c}}} - 1} .
-\]
-
-\begin{figure}[!htp]
-\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-FS.pdf}}
-\caption{Fatemi-Socie Model.}
-\label{Fig:NF-NP-TGMF-FS}
-\end{figure}
-
-\subsection{Smith-Watson-Topper Model}
-\[{\sigma _{n,max}}\frac{{\Delta \varepsilon }}{2} = \frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + {\sigma '_f}{\varepsilon '_f}{\left( {2{N_f}} \right)^{b + c}}\]
-
-\begin{figure}[!htp]
-\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-SWT.pdf}}
-\caption{Smith-Watson-Topper Model.}
-\label{Fig:NF-NP-TGMF-SWT}
-\end{figure}
-
-\subsection{Liu’s Strain Energy Models}
-\begin{eqnarray*}
-{\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) &=& \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}}
-\\
-& & + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
-\end{eqnarray*}
-\begin{figure}[!htp]
-\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-Liu1.pdf}}
-\caption{Liu Tension Strain Energy Model.}
-\label{Fig:NF-NP-TGMF-Liu1}
-\end{figure}
-
-\begin{figure}[!htp]
-\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-Liu2.pdf}}
-\caption{Liu Shear Strain Energy Model.}
-\label{Fig:NF-NP-TGMF-Liu2}
-\end{figure}
-
-\subsection{Chu Strain Energy Model}
-
-\begin{eqnarray*}
-{\left( {{\tau _{n,\max }}\frac{{\Delta \gamma }}{2} + {\sigma _{n,\max }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }} &=& 1.02\frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} \\
-&& + 1.04{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
-\end{eqnarray*}
-
-\begin{figure}[!htp]
-\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-Chu.pdf}}
-\caption{Chu Strain Energy Model.}
-\label{Fig:NF-NP-TGMF-Chu}
+   \begin{overpic}[width=7.5cm]{NF-NP-TGMF-Liu1.pdf}
+     \put(70,20){\fcolorbox{white}{white}{(e) Liu I}}
+   \end{overpic}
+   \begin{overpic}[width=7.5cm]{NF-NP-TGMF-Zamrik.pdf}
+     \put(65,20){\fcolorbox{white}{white}{(f) Zamrik}}
+   \end{overpic}
+  \caption{Comparison between predicted fatigue life and experimental results of multiaxial thermomechanical fatigue tests. (a) Brown-Miller Model; (b) Fatemi-Socie Model; (c) Smith-Watson-Topper Model; (d) Chu-Conle-Bonnen Model; (e) Liu Tension Energy Model; (f) Zamrik Model.}
+  \label{Fig:life_prediction}
 \end{figure}
 
 \section{温度梯度的影响}
@@ -557,15 +489,13 @@ f\left( {T,\nabla T} \right) = \left( {1 + \frac{{t\left\| {\nabla T} \right\|}}
 图\ref{Fig:NF-NP-TGMF-Our}为修正的Chu模型的预测结果，TMF和TGMF的结果都在3倍线以内。
 
 \begin{figure}
-  \centering{
-    \begin{overpic}[width=8.0cm]{plot_exp_fatigue_life_IP.pdf}
-      \put(15,65){\fcolorbox{white}{white}{(a)}}
-    \end{overpic}
-
-    \begin{overpic}[width=8.0cm]{plot_exp_fatigue_life_OP.pdf}
-      \put(15,65){\fcolorbox{white}{white}{(b)}}
-    \end{overpic}
-  }
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_exp_fatigue_life_IP.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_exp_fatigue_life_OP.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
   \caption{TGMF寿命与TMF寿命的比较：(a)同相位，(b)反相位.}
   \label{Fig:plot_exp_fatigue_life_TMF_TGMF}
 \end{figure}
@@ -601,475 +531,475 @@ f\left( {T,\nabla T} \right) = \left( {1 + \frac{{t\left\| {\nabla T} \right\|}}
 
 \section{结论}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7033-1.jpg}
-    \centerline{(a)500X.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7033-12.jpg}
-    \centerline{(b)850.}
-  \end{minipage}
-  \caption{TC-OP.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7033-1.jpg}
+%     \centerline{(a)500X.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7033-12.jpg}
+%     \centerline{(b)850.}
+%   \end{minipage}
+%   \caption{TC-OP.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7036-1.jpg}
-    \centerline{(a)$\Delta \varepsilon_{m}/2=0.5\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7036-7.jpg}
-    \centerline{(b)$\Delta \varepsilon_{m}/2=0.5\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7036-1.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{m}/2=0.5\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7036-7.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{m}/2=0.5\%$.}
+%   \end{minipage}
 
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7046-1.jpg}
-    \centerline{(C)$\Delta \varepsilon_{m}/2=0.7\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7046-6.jpg}
-    \centerline{(D)$\Delta \varepsilon_{m}/2=0.7\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7046-1.jpg}
+%     \centerline{(C)$\Delta \varepsilon_{m}/2=0.7\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7046-6.jpg}
+%     \centerline{(D)$\Delta \varepsilon_{m}/2=0.7\%$.}
+%   \end{minipage}
 
-  \caption{NRP-IP.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \caption{NRP-IP.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7047-1.jpg}
-    \centerline{(a)500X.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7047-12.jpg}
-    \centerline{(b)1000X.}
-  \end{minipage}
-  \caption{TC-IP.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7047-1.jpg}
+%     \centerline{(a)500X.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7047-12.jpg}
+%     \centerline{(b)1000X.}
+%   \end{minipage}
+%   \caption{TC-IP.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7112-1.jpg}
-    \centerline{(a)500X.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7112-3.jpg}
-    \centerline{(b)1000X.}
-  \end{minipage}
-  \caption{TC-IF.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7112-1.jpg}
+%     \centerline{(a)500X.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7112-3.jpg}
+%     \centerline{(b)1000X.}
+%   \end{minipage}
+%   \caption{TC-IF.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7040-3.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.6\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7040-5.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.6\%$.}
-  \end{minipage}
-  \caption{PRO-IP.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7040-3.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.6\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7040-5.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.6\%$.}
+%   \end{minipage}
+%   \caption{PRO-IP.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7206-1.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7206-3.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
-  \caption{TC-IP-TGMF.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7206-1.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7206-3.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
+%   \caption{TC-IP-TGMF.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{720719.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{720721.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{720719.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{720721.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
 
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{720932.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.45\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{720935.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.45\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{720932.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.45\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{720935.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.45\%$.}
+%   \end{minipage}
 
-  \caption{TC-OP-TGMF.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \caption{TC-OP-TGMF.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7301-7.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7301-4.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7301-7.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7301-4.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
 
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{730109.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{730116.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{730109.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{730116.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
 
-  \caption{TC-IP-TGMF-TBC.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \caption{TC-IP-TGMF-TBC.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7112-4.jpg}
-    \centerline{(a)TC-IF-650$^{\circ}$ $\Delta \varepsilon_{eq}/2=0.45\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7047-7.jpg}
-    \centerline{(b)TC-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7112-4.jpg}
+%     \centerline{(a)TC-IF-650$^{\circ}$ $\Delta \varepsilon_{eq}/2=0.45\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7047-7.jpg}
+%     \centerline{(b)TC-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
+%   \end{minipage}
 
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7033-11.jpg}
-    \centerline{(c)TC-OP $\Delta \varepsilon_{eq}/2=0.65\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7040-5.jpg}
-    \centerline{(d)PRO-IP $\Delta \varepsilon_{eq}/2=0.6\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7033-11.jpg}
+%     \centerline{(c)TC-OP $\Delta \varepsilon_{eq}/2=0.65\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7040-5.jpg}
+%     \centerline{(d)PRO-IP $\Delta \varepsilon_{eq}/2=0.6\%$.}
+%   \end{minipage}
 
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7036-3.jpg}
-    \centerline{(e)NPR-IP $\Delta \varepsilon_{eq}/2=0.5\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{7046-8.jpg}
-    \centerline{(f)NPR-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
-  \end{minipage}
-  \caption{Observation of fatigue striations on fractures surface.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7036-3.jpg}
+%     \centerline{(e)NPR-IP $\Delta \varepsilon_{eq}/2=0.5\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{7046-8.jpg}
+%     \centerline{(f)NPR-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
+%   \end{minipage}
+%   \caption{Observation of fatigue striations on fractures surface.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{720935.jpg}
-    \centerline{(d)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.50\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{720721.jpg}
-    \centerline{(c)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{720935.jpg}
+%     \centerline{(d)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.50\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{720721.jpg}
+%     \centerline{(c)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
 
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=6cm]{7206-2.jpg}
-    \centerline{(d)TC-IP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=6cm]{730112.jpg}
-    \centerline{(c)TC-IP-TGMF-TBC $\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=6cm]{7206-2.jpg}
+%     \centerline{(d)TC-IP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=6cm]{730112.jpg}
+%     \centerline{(c)TC-IP-TGMF-TBC $\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
 
-  \caption{Observation of fatigue striations on fractures surface.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \caption{Observation of fatigue striations on fractures surface.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7033-1.jpg}
-    \centerline{(a)500X.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7033-12.jpg}
-    \centerline{(b)850.}
-  \end{minipage}
-  \caption{TC-OP.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7033-1.jpg}
+%     \centerline{(a)500X.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7033-12.jpg}
+%     \centerline{(b)850.}
+%   \end{minipage}
+%   \caption{TC-OP.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7036-1.jpg}
-    \centerline{(a)$\Delta \varepsilon_{m}/2=0.5\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7036-7.jpg}
-    \centerline{(b)$\Delta \varepsilon_{m}/2=0.5\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7036-1.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{m}/2=0.5\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7036-7.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{m}/2=0.5\%$.}
+%   \end{minipage}
   
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7046-1.jpg}
-    \centerline{(C)$\Delta \varepsilon_{m}/2=0.7\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7046-6.jpg}
-    \centerline{(D)$\Delta \varepsilon_{m}/2=0.7\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7046-1.jpg}
+%     \centerline{(C)$\Delta \varepsilon_{m}/2=0.7\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7046-6.jpg}
+%     \centerline{(D)$\Delta \varepsilon_{m}/2=0.7\%$.}
+%   \end{minipage}
   
-  \caption{NRP-IP.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \caption{NRP-IP.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7047-1.jpg}
-    \centerline{(a)500X.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7047-12.jpg}
-    \centerline{(b)1000X.}
-  \end{minipage}
-  \caption{TC-IP.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7047-1.jpg}
+%     \centerline{(a)500X.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7047-12.jpg}
+%     \centerline{(b)1000X.}
+%   \end{minipage}
+%   \caption{TC-IP.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7112-1.jpg}
-    \centerline{(a)500X.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7112-3.jpg}
-    \centerline{(b)1000X.}
-  \end{minipage}
-  \caption{TC-IF.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7112-1.jpg}
+%     \centerline{(a)500X.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7112-3.jpg}
+%     \centerline{(b)1000X.}
+%   \end{minipage}
+%   \caption{TC-IF.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7040-3.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.6\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7040-5.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.6\%$.}
-  \end{minipage}
-  \caption{PRO-IP.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7040-3.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.6\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7040-5.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.6\%$.}
+%   \end{minipage}
+%   \caption{PRO-IP.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7206-1.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7206-3.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
-  \caption{TC-IP-TGMF.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7206-1.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7206-3.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
+%   \caption{TC-IP-TGMF.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{720719.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{720721.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{720719.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{720721.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
   
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{720932.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.45\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{720935.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.45\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{720932.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.45\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{720935.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.45\%$.}
+%   \end{minipage}
   
-  \caption{TC-OP-TGMF.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \caption{TC-OP-TGMF.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7301-7.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7301-4.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7301-7.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7301-4.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
   
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{730109.jpg}
-    \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{730116.jpg}
-    \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{730109.jpg}
+%     \centerline{(a)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{730116.jpg}
+%     \centerline{(b)$\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
   
-  \caption{TC-IP-TGMF-TBC.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \caption{TC-IP-TGMF-TBC.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7112-4.jpg}
-    \centerline{(a)TC-IF-650$^{\circ}$ $\Delta \varepsilon_{eq}/2=0.45\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7047-7.jpg}
-    \centerline{(b)TC-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7112-4.jpg}
+%     \centerline{(a)TC-IF-650$^{\circ}$ $\Delta \varepsilon_{eq}/2=0.45\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7047-7.jpg}
+%     \centerline{(b)TC-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
+%   \end{minipage}
   
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7033-11.jpg}
-    \centerline{(c)TC-OP $\Delta \varepsilon_{eq}/2=0.65\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7040-5.jpg}
-    \centerline{(d)PRO-IP $\Delta \varepsilon_{eq}/2=0.6\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7033-11.jpg}
+%     \centerline{(c)TC-OP $\Delta \varepsilon_{eq}/2=0.65\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7040-5.jpg}
+%     \centerline{(d)PRO-IP $\Delta \varepsilon_{eq}/2=0.6\%$.}
+%   \end{minipage}
 
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7036-3.jpg}
-    \centerline{(e)NPR-IP $\Delta \varepsilon_{eq}/2=0.5\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{7046-8.jpg}
-    \centerline{(f)NPR-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
-  \end{minipage}
-  \caption{Observation of fatigue striations on fractures surface.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7036-3.jpg}
+%     \centerline{(e)NPR-IP $\Delta \varepsilon_{eq}/2=0.5\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{7046-8.jpg}
+%     \centerline{(f)NPR-IP $\Delta \varepsilon_{eq}/2=0.7\%$.}
+%   \end{minipage}
+%   \caption{Observation of fatigue striations on fractures surface.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{720935.jpg}
-    \centerline{(d)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.50\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{720721.jpg}
-    \centerline{(c)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{720935.jpg}
+%     \centerline{(d)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.50\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{720721.jpg}
+%     \centerline{(c)TC-OP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
 
-  \begin{minipage}[t]{0.5\linewidth}
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{7206-2.jpg}
-    \centerline{(d)TC-IP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{730112.jpg}
-    \centerline{(c)TC-IP-TGMF-TBC $\Delta \varepsilon_{eq}/2=0.55\%$.}
-  \end{minipage}
+%   \begin{minipage}[t]{0.5\linewidth}
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{7206-2.jpg}
+%     \centerline{(d)TC-IP-TGMF $\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{730112.jpg}
+%     \centerline{(c)TC-IP-TGMF-TBC $\Delta \varepsilon_{eq}/2=0.55\%$.}
+%   \end{minipage}
 
-  \caption{Observation of fatigue striations on fractures surface.}
-  \label{Fig:MicrostructureofInconel718}
-\end{figure}
+%   \caption{Observation of fatigue striations on fractures surface.}
+%   \label{Fig:MicrostructureofInconel718}
+% \end{figure}
 
 %\begin{figure}
 %  \begin{minipage}[t]{0.5\linewidth}
@@ -1138,52 +1068,3 @@ f\left( {T,\nabla T} \right) = \left( {1 + \frac{{t\left\| {\nabla T} \right\|}}
 %  \caption{Observation of fatigue striations on fractures surface.}
 %  \label{Fig:MicrostructureofInconel718}
 %\end{figure}
-
-
-
-
-
-
-
-%This thesis has presented computational results of heat transfer in a heated multiple cavity rig with axial-flow-through.
-%The rig comprised an encased rotor with two internal cavities from a typical compressor disc-shroud stack and a central shaft.
-%The inlet and rotating conditions are $Re_z$ up to $1.4 \times 10^5$ and $Re_{\phi}$ up to $1.53 \times 10^7$.
-%Conclusions are dependent on the computational results:
-%
-%%    ¶¨Òå¼ÆÊýÆ÷
-%\newcounter{Lcount}
-%%   ±êÇ©¼ÆÊýÏÔÊ¾ÎªÂÞÂíÊý×Ö
-%\begin{list}{\arabic{Lcount}.}
-%%    Ê¹ÓÃ¼ÆÊýÆ÷
-%  {\usecounter{Lcount}
-%%    ×óÓÒ¶Ô³Æ
-%  \setlength{\rightmargin}{\leftmargin}}
-%%    ¿ªÊ¼
-%    \item \textbf{Pressure distribution. }Air pressure in the rotating cavities increases with the normalized radial coordinate and it is a linear relation between the pressure and radial coordinate. A pressure coefficient is suggested to describe the pressure distribution.
-%        The pressure coefficient, which is assumed by pressure and radial coordinate, grows squarely with the rotational Reynolds number.
-%        Gap ratio influences the pressure coefficient.
-%        With increasing of gap ratio, the pressure coefficient decreases.
-%        However, the pressure coefficient is insensible with discs' thickness.
-%    \item \textbf{Average Nusselt number of disc. }Average Nusselt number from the inner surface of the disc has a linear relation with the square root of rotational Reynolds number.
-%        Results with different rotational Reynolds numbers but the fixed inlet speed and gap ratio are chosen to determine the relation.
-%        Comparison of the results with different gap ratios shows that geometry effect of the average Nusselt number is not evident.
-%        Generally with increasing of gap ratio, the average Nusselt number from disc decreases.
-%        The small gap ratio relates to the reduction of convective heat transfer.
-%        Average Nusselt number from disc also has a relation with Rossby number.
-%        Quotient of average Nusselt number and rotational Reynolds number is a linear function of Rossby number.
-%    \item \textbf{Local Nusselt number of disc. }The expression of local Nusselt number is suggested.
-%        The local Nusselt number from the inner surface of the disk is suggested as a function of rotational Reynolds number, axial Reynolds number, local temperature and radial coordinate.
-%        Parameters of the expression are determined by the computational results.
-%        The expression can be used to estimate the discs' convective heat transfer coefficient.
-%    \item \textbf{Average Nusselt number of shroud. }Average Nusselt number from the inner surface of cavities' shroud shows a linear relation with rotational Reynolds number.
-%        Gap ratio influences the linear relation.
-%        As the gap ratio becomes larger, the slope of the linear relation increases.
-%    \item \textbf{Prediction of temperature. }Comprising with the experimental data, CFD and FEM computations shows that the suggested thermal model can estimate good temperature prediction of rotating axial-flow-through cavities.
-%        With the expression of local Nusselt number, the convective heat transfer coefficients are calculated.
-%        The convective heat transfer coefficients are used as the boundary conditions of the inner surface of the cavities in the structural thermal computations.
-%        The difference between the results of FEM and CFD simulations is less than $\pm 3\%$.
-%
-%\end{list}
-%
-%
-%Further experimental and numerical study is needed to improve the prediction of the complex flow and heat transfer in the heated rotating cavities with axial-through-flow. Transient simulation is needed to study the transient heat transfer behavior instead of the steady state simulation. 
