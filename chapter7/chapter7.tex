@@ -856,15 +856,6 @@ where $\sigma _{eq,\max }$ denotes maximum equivalent tensile stress in mid-life
 
 \subsection{Stress components relative to a generic material plane}
 \noindent
-Consider a material point $O$ which is the centre of the absolute coordinate $Oxyz$. The orientation of a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$ can be located by using spherical coordinates $\phi$ and $\theta$, where $\phi$ is the angle between the projection of unit vector ${\bf{n}}$ on $x–y$ plane and the $x$-axis, $\theta$ is the angle between the unit vector ${\bf{n}}$ and the $z$-axis. 
-
-\begin{figure}
-\centering
-\includegraphics[width=10cm]{generic_material_plane.pdf}
-\caption{Definition of the angles $\phi$, $\theta$ and a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$.}
-\label{Fig:generic_material_plane}
-\end{figure}
-
 The tensor components are dependent on the coordinate system.
 If the coordinate system is changed due to a rotation so do the tensor components.
 \begin{figure}
@@ -874,7 +865,7 @@ If the coordinate system is changed due to a rotation so do the tensor component
 \label{Fig:rotation_of_coordinate}
 \end{figure}
 \ref{Fig:rotation_of_coordinate} shows the original Cartesian coordinate system ($x_1,x_2,x_3$) and the new coordinate system ($x'_1,x'_2,x'_3$).
-The transformation law of the components between the coordinate systems for a vector can be expressed as:
+The transformation law of the components between the coordinate systems for a vector can be expressed as \cite{Chaves2013Notes}:
 \begin{equation}
 \bf{v'} = {\bf{A}}\bf{v},
 \label{Equ:coordinate_transformation_of_vector}
@@ -885,9 +876,9 @@ The transformation law of the components between the coordinate systems for a se
 {\bf{T'}} = {\bf{AT}}{{\bf{A}}^{\rm{T}}},
 \label{Equ:coordinate_transformation_of_tensor}
 \end{equation}
-where $\bf{T}$ represents the second-order tensor components in coordinate system ($x_1,x_2,x_3$) and $\bf{T'}$ represents the second-order tensor components in coordinate system ($x'_1,x'_2,x'_3$).
+where $\bf{T}$ and $\bf{T'}$ represent the second-order tensor components in coordinate system ($x_1,x_2,x_3$) and ($x'_1,x'_2,x'_3$) respectively.
 
-In Eq. (\ref{Equ:coordinate_transformation_of_vector}) and (\ref{Equ:coordinate_transformation_of_tensor}), the $\bf{A}$ is the transformation matrix from coordinate system ($x_1,x_2,x_3$) to ($x'_1,x'_2,x'_3$). The transformation matrix $\bf{A}$ is given by:
+In Equations (\ref{Equ:coordinate_transformation_of_vector}) and (\ref{Equ:coordinate_transformation_of_tensor}), the $\bf{A}$ is the transformation matrix from coordinate system ($x_1,x_2,x_3$) to ($x'_1,x'_2,x'_3$). The transformation matrix $\bf{A}$ is given by:
 \begin{eqnarray}
 {\bf{A}} = \left( {\begin{array}{*{20}{c}}
 {\cos \left( {{{x'}_1},{x_1}} \right)}&{\cos \left( {{{x'}_1},{x_2}} \right)}&{\cos \left( {{{x'}_1},{x_3}} \right)}\\
@@ -897,9 +888,21 @@ In Eq. (\ref{Equ:coordinate_transformation_of_vector}) and (\ref{Equ:coordinate_
 \end{eqnarray}
 The direction cosines of a vector are those of the angles between the vector and the three coordinate axes. According to \ref{Fig:rotation_of_coordinate}, it can be found that $\cos {\alpha _1} = \cos \left( {{{x'}_1},{x_1}} \right)$, $\cos {\beta _1} = \cos \left( {{{x'}_1},{x_2}} \right)$, $\cos {\gamma _1} = \cos \left( {{{x'}_1},{x_3}} \right)$ and so on.
 
-Now we consider a two steps coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$). As shown in \ref{Fig:coordinate_transformation_of_tensor}, the coordinate system ($x''_1,x''_2,x''_3$) can be obtaioned by combinations of rotations. wsthe step 1 is rotation along the  
+\begin{figure}
+\centering
+\begin{overpic}[width=14cm]{coordinate_transformation_of_tensor.pdf}
+\put(50,45){(c)}
+\put(60,45){(d)}
+\put(50,55){(a)}
+\put(60,55){(b)}
+\end{overpic}
+\caption{Coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$).}
+\label{Fig:coordinate_transformation_of_tensor}
+\end{figure}
 
-\[{\bf{A}} = \left( {\begin{array}{*{20}{c}}
+Now we consider a two steps coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$). As shown in \ref{Fig:coordinate_transformation_of_tensor}, the coordinate system ($x''_1,x''_2,x''_3$) can be obtaioned by combinations of the two steps rotations. The first step is rotation along the $x_3$-axis and the rotation angle is $\varphi$. The transformation matrix from ($x_1,x_2,x_3$) to ($x'_1,x'_2,x'_3$) is given by direction cosines as:
+\begin{eqnarray}
+{\bf{A}} = \left( {\begin{array}{*{20}{c}}
 {\cos \left( {{{x'}_1},{x_1}} \right)}&{\cos \left( {{{x'}_1},{x_2}} \right)}&{\cos \left( {{{x'}_1},{x_3}} \right)}\\
 {\cos \left( {{{x'}_2},{x_1}} \right)}&{\cos \left( {{{x'}_2},{x_2}} \right)}&{\cos \left( {{{x'}_2},{x_3}} \right)}\\
 {\cos \left( {{{x'}_3},{x_1}} \right)}&{\cos \left( {{{x'}_3},{x_2}} \right)}&{\cos \left( {{{x'}_3},{x_3}} \right)}
@@ -907,13 +910,13 @@ Now we consider a two steps coordinate transformation from coordinate system ($x
 {\cos \varphi }&{\sin \varphi }&0\\
 { - \sin \varphi }&{\cos \varphi }&0\\
 0&0&1
-\end{array}} \right)\]
+\end{array}} \right),
+\end{eqnarray}
+and the components of ${\bf{T''}}$ can be obtained by Equation (\ref{Equ:coordinate_transformation_of_tensor}).
 
-\[{\bf{T'}} = {\bf{AT}}{{\bf{A}}^{\rm{T}}}\]
-
-\[{\bf{T''}} = {\bf{BT'}}{{\bf{B}}^{\rm{T}}} = {\bf{BAT}}{{\bf{A}}^{\rm{T}}}{{\bf{B}}^{\rm{T}}} = {\bf{MT}}{{\bf{M}}^{\rm{T}}}\]
-
-\[\begin{array}{*{20}{l}}
+The second step is rotation along the $x'_2$-axis. As shown in \ref{Fig:coordinate_transformation_of_tensor}, if we define the angle from $x'_3$-axis to $x''_1$-axis as $\theta$, the rotaion angle along the $x'_2$-axis is $\theta-{\pi}/{2}$. The transformation matrix from ($x'_1,x'_2,x'_3$) to ($x''_1,x''_2,x''_3$) is given by direction cosines as:
+\begin{eqnarray}
+\begin{array}{*{20}{l}}
 {\bf{B}}&{ = \left( {\begin{array}{*{20}{c}}
 {\cos \left( {{{x''}_1},{{x'}_1}} \right)}&{\cos \left( {{{x''}_1},{{x'}_2}} \right)}&{\cos \left( {{{x''}_1},{{x'}_3}} \right)}\\
 {\cos \left( {{{x''}_2},{{x'}_1}} \right)}&{\cos \left( {{{x''}_2},{{x'}_2}} \right)}&{\cos \left( {{{x''}_2},{{x'}_3}} \right)}\\
@@ -927,10 +930,17 @@ Now we consider a two steps coordinate transformation from coordinate system ($x
 {\sin \theta }&0&{\cos \theta }\\
 0&1&0\\
 { - \cos \theta }&0&{\sin \theta }
-\end{array}} \right)}
-\end{array}\]
-
-\[\begin{array}{*{20}{l}}
+\end{array}} \right)}.
+\end{array}
+\end{eqnarray}
+Based on the transformation law of the second-order tensor, the components of ${\bf{T'}}$ can be obtained by:
+\begin{equation}
+{\bf{T''}} = {\bf{BT'}}{{\bf{B}}^{\rm{T}}} = {\bf{BAT}}{{\bf{A}}^{\rm{T}}}{{\bf{B}}^{\rm{T}}} = {\bf{MT}}{{\bf{M}}^{\rm{T}}},
+\label{Equ:two_step_rotation}
+\end{equation}
+where ${\bf{M}}$ is the transformation matrix from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$), and ${\bf{M}}$ is expressed by:
+\begin{eqnarray}
+\begin{array}{*{20}{l}}
 {{\bf{M}} = {\bf{BA}}}&{ = \left( {\begin{array}{*{20}{c}}
 {\sin \theta }&0&{\cos \theta }\\
 0&1&0\\
@@ -944,15 +954,61 @@ Now we consider a two steps coordinate transformation from coordinate system ($x
 {\sin \theta \cos \varphi }&{\sin \theta \sin \varphi }&{\cos \theta }\\
 { - \sin \varphi }&{\cos \varphi }&0\\
 { - \cos \theta \cos \varphi }&{ - \cos \theta \sin \varphi }&{\sin \theta }
-\end{array}} \right)}
-\end{array}\]
+\end{array}} \right)}.
+\end{array}
+\label{Equ:transformation_matrix}
+\end{eqnarray}
+
+Consider a material point $O$ which is the centre of the absolute coordinate $Oxyz$. As shown in \ref{Fig:generic_material_plane}, the orientation of a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$ can be located by using spherical coordinates $\phi$ and $\theta$, where $\phi$ is the angle between the projection of unit vector ${\bf{n}}$ on $x–y$ plane and the $x$-axis, $\theta$ is the angle between the unit vector ${\bf{n}}$ and the $z$-axis. 
 
 \begin{figure}
 \centering
-\includegraphics[width=14cm]{coordinate_transformation_of_tensor.pdf}
-\caption{Coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$).}
-\label{Fig:coordinate_transformation_of_tensor}
+\includegraphics[width=10cm]{generic_material_plane.pdf}
+\caption{Definition of the angles $\phi$, $\theta$ and a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$.}
+\label{Fig:generic_material_plane}
 \end{figure}
+
+Comparison of \ref{Fig:coordinate_transformation_of_tensor}(c) and \ref{Fig:generic_material_plane}, the coordinate system ($x_1,x_2,x_3$) and ($x''_1,x''_2,x''_3$) can be considerded as the coordinate system ($x,y,z$) and ($n,a,b$) respectively. Considering a stress or strain state at the material point $O$, the components of stress and strain tensors in the coordinate system ($x,y,z$) are expressed as:
+\begin{eqnarray}
+{\bf{\sigma }} = \left( {\begin{array}{*{20}{c}}
+{{\sigma _{xx}}}&{{\tau _{xy}}}&{{\tau _{xz}}}\\
+{{\tau _{yx}}}&{{\sigma _{yy}}}&{{\tau _{yz}}}\\
+{{\tau _{zx}}}&{{\tau _{zy}}}&{{\sigma _{zz}}}
+\end{array}} \right),
+\end{eqnarray}
+and
+\begin{eqnarray}
+{\bf{\varepsilon }} = \left( {\begin{array}{*{20}{c}}
+{{\varepsilon _{xx}}}&{{\varepsilon _{xy}}}&{{\varepsilon _{xz}}}\\
+{{\varepsilon _{yx}}}&{{\varepsilon _{yy}}}&{{\varepsilon _{yz}}}\\
+{{\varepsilon _{zx}}}&{{\varepsilon _{zy}}}&{{\varepsilon _{zz}}}
+\end{array}} \right).
+\end{eqnarray}
+Similarly, the the components of stress and strain tensors in the coordinate system ($n,a,b$) are expressed as:
+\begin{eqnarray}
+{\bf{\sigma ''}} = \left( {\begin{array}{*{20}{c}}
+{{\sigma _{{\rm{nn}}}}}&{{\tau _{{\rm{na}}}}}&{{\tau _{{\rm{nb}}}}}\\
+{{\tau _{{\rm{an}}}}}&{{\sigma _{{\rm{aa}}}}}&{{\tau _{{\rm{ab}}}}}\\
+{{\tau _{{\rm{bn}}}}}&{{\tau _{{\rm{ba}}}}}&{{\sigma _{{\rm{bb}}}}}
+\end{array}} \right),
+\end{eqnarray}
+and
+\begin{eqnarray}
+{\bf{\varepsilon ''}} = \left( {\begin{array}{*{20}{c}}
+{{\varepsilon _{{\rm{nn}}}}}&{{\varepsilon _{{\rm{na}}}}}&{{\varepsilon _{{\rm{nb}}}}}\\
+{{\varepsilon _{{\rm{an}}}}}&{{\varepsilon _{{\rm{aa}}}}}&{{\varepsilon _{{\rm{ab}}}}}\\
+{{\varepsilon _{{\rm{bn}}}}}&{{\varepsilon _{{\rm{ba}}}}}&{{\varepsilon _{{\rm{bb}}}}}
+\end{array}} \right).
+\end{eqnarray}
+According to Equation (\ref{Equ:two_step_rotation}), we have:
+\begin{equation}
+{\bf{\sigma ''}} = {\bf{M\sigma }}{{\bf{M}}^{\rm{T}}},
+\end{equation}
+and
+\begin{equation}
+{\bf{\varepsilon ''}} = {\bf{M\varepsilon }}{{\bf{M}}^{\rm{T}}},
+\end{equation}
+where the transformation matrix ${\bf{M}}$ are given in Equation (\ref{Equ:transformation_matrix}).
 
 \subsection{Fatigue life prediction based on the conventional fatigue models}
 \noindent
