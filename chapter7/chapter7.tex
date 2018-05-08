@@ -959,7 +959,7 @@ where ${\bf{M}}$ is the transformation matrix from coordinate system ($x_1,x_2,x
 \label{Equ:transformation_matrix}
 \end{eqnarray}
 
-Consider a material point $O$ which is the centre of the absolute coordinate $Oxyz$. As shown in \ref{Fig:generic_material_plane}, the orientation of a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$ can be located by using spherical coordinates $\phi$ and $\theta$, where $\phi$ is the angle between the projection of unit vector ${\bf{n}}$ on $x–y$ plane and the $x$-axis, $\theta$ is the angle between the unit vector ${\bf{n}}$ and the $z$-axis. 
+Consider a material point $O$ which is the centre of the coordinate system ($x,y,z$). As shown in \ref{Fig:generic_material_plane}, the orientation of a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$ can be located by using spherical coordinates $\phi$ and $\theta$, where $\phi$ is the angle between the projection of unit vector ${\bf{n}}$ on $x–y$ plane and the $x$-axis, $\theta$ is the angle between the unit vector ${\bf{n}}$ and the $z$-axis. According to the schematisation, all the material planes passing through point $O$ can be investigated by making angles $\phi$ and $\theta$ vary between 0 and 2$\pi$ and 0 and $\pi$, respectively. In order to calculate the stress and strain on the material plane, the coordinate system ($n,a,b$) is introduced and the $n$-axis is parallel to the unit vector ${\bf{n}}$.
 
 \begin{figure}
 \centering
@@ -967,48 +967,92 @@ Consider a material point $O$ which is the centre of the absolute coordinate $Ox
 \caption{Definition of the angles $\phi$, $\theta$ and a material plane $\Gamma$ having a normal unit vector ${\bf{n}}$.}
 \label{Fig:generic_material_plane}
 \end{figure}
-
-Comparison of \ref{Fig:coordinate_transformation_of_tensor}(c) and \ref{Fig:generic_material_plane}, the coordinate system ($x_1,x_2,x_3$) and ($x''_1,x''_2,x''_3$) can be considerded as the coordinate system ($x,y,z$) and ($n,a,b$) respectively. Considering a stress or strain state at the material point $O$, the components of stress and strain tensors in the coordinate system ($x,y,z$) are expressed as:
+Comparing \ref{Fig:coordinate_transformation_of_tensor}(c) with \ref{Fig:generic_material_plane}, the coordinate systems ($x_1,x_2,x_3$) and ($x''_1,x''_2,x''_3$) can be considerded as the coordinate systems ($x,y,z$) and ($n,a,b$), respectively. Considering the stress and strain state at the material point $O$, at any instant $t$ of the applied cyclic load history (in the time period $\mathscr{T}$), the components of stress and strain tensors in the coordinate system ($x,y,z$) can be expressed as:
 \begin{eqnarray}
-{\bf{\sigma }} = \left( {\begin{array}{*{20}{c}}
-{{\sigma _{xx}}}&{{\tau _{xy}}}&{{\tau _{xz}}}\\
-{{\tau _{yx}}}&{{\sigma _{yy}}}&{{\tau _{yz}}}\\
-{{\tau _{zx}}}&{{\tau _{zy}}}&{{\sigma _{zz}}}
+{\bm{\sigma }}(t) = \left( {\begin{array}{*{20}{c}}
+{{\sigma _{x}}(t)}&{{\tau _{xy}}(t)}&{{\tau _{xz}}(t)}\\
+{{\tau _{yx}}(t)}&{{\sigma _{y}}(t)}&{{\tau _{yz}}(t)}\\
+{{\tau _{zx}}(t)}&{{\tau _{zy}}(t)}&{{\sigma _{z}}(t)}
 \end{array}} \right),
 \end{eqnarray}
 and
 \begin{eqnarray}
-{\bf{\varepsilon }} = \left( {\begin{array}{*{20}{c}}
-{{\varepsilon _{xx}}}&{{\varepsilon _{xy}}}&{{\varepsilon _{xz}}}\\
-{{\varepsilon _{yx}}}&{{\varepsilon _{yy}}}&{{\varepsilon _{yz}}}\\
-{{\varepsilon _{zx}}}&{{\varepsilon _{zy}}}&{{\varepsilon _{zz}}}
-\end{array}} \right).
+{\bm{\varepsilon }}(t) = \left( {\begin{array}{*{20}{c}}
+{{\varepsilon _{x}}(t)}&{{\varepsilon _{xy}}(t)}&{{\varepsilon _{xz}}(t)}\\
+{{\varepsilon _{yx}}(t)}&{{\varepsilon _{y}}(t)}&{{\varepsilon _{yz}}(t)}\\
+{{\varepsilon _{zx}}(t)}&{{\varepsilon _{zy}}(t)}&{{\varepsilon _{z}}(t)}
+\end{array}} \right),
 \end{eqnarray}
+where $t \in \mathscr{T}$.
 Similarly, the the components of stress and strain tensors in the coordinate system ($n,a,b$) are expressed as:
 \begin{eqnarray}
-{\bf{\sigma ''}} = \left( {\begin{array}{*{20}{c}}
-{{\sigma _{{\rm{nn}}}}}&{{\tau _{{\rm{na}}}}}&{{\tau _{{\rm{nb}}}}}\\
-{{\tau _{{\rm{an}}}}}&{{\sigma _{{\rm{aa}}}}}&{{\tau _{{\rm{ab}}}}}\\
-{{\tau _{{\rm{bn}}}}}&{{\tau _{{\rm{ba}}}}}&{{\sigma _{{\rm{bb}}}}}
+{\bm{\sigma ''}}(t) = \left( {\begin{array}{*{20}{c}}
+{{\sigma _{{\rm{n}}}}(t)}&{{\tau _{{\rm{na}}}}(t)}&{{\tau _{{\rm{nb}}}}(t)}\\
+{{\tau _{{\rm{an}}}}(t)}&{{\sigma _{{\rm{a}}}}(t)}&{{\tau _{{\rm{ab}}}}(t)}\\
+{{\tau _{{\rm{bn}}}}(t)}&{{\tau _{{\rm{ba}}}}(t)}&{{\sigma _{{\rm{b}}}}(t)}
 \end{array}} \right),
 \end{eqnarray}
 and
 \begin{eqnarray}
-{\bf{\varepsilon ''}} = \left( {\begin{array}{*{20}{c}}
-{{\varepsilon _{{\rm{nn}}}}}&{{\varepsilon _{{\rm{na}}}}}&{{\varepsilon _{{\rm{nb}}}}}\\
-{{\varepsilon _{{\rm{an}}}}}&{{\varepsilon _{{\rm{aa}}}}}&{{\varepsilon _{{\rm{ab}}}}}\\
-{{\varepsilon _{{\rm{bn}}}}}&{{\varepsilon _{{\rm{ba}}}}}&{{\varepsilon _{{\rm{bb}}}}}
-\end{array}} \right).
+{\bm{\varepsilon ''}}(t) = \left( {\begin{array}{*{20}{c}}
+{{\varepsilon _{{\rm{n}}}}(t)}&{{\varepsilon _{{\rm{na}}}}(t)}&{{\varepsilon _{{\rm{nb}}}}(t)}\\
+{{\varepsilon _{{\rm{an}}}}(t)}&{{\varepsilon _{{\rm{a}}}}(t)}&{{\varepsilon _{{\rm{ab}}}}(t)}\\
+{{\varepsilon _{{\rm{bn}}}}(t)}&{{\varepsilon _{{\rm{ba}}}}(t)}&{{\varepsilon _{{\rm{b}}}}(t)}
+\end{array}} \right),
 \end{eqnarray}
+where $t \in \mathscr{T}$.
+
 According to Equation (\ref{Equ:two_step_rotation}), we have:
 \begin{equation}
-{\bf{\sigma ''}} = {\bf{M\sigma }}{{\bf{M}}^{\rm{T}}},
+{\bm{\sigma ''}}(t) = {\bf{M}}{\bm{\sigma}}(t){{\bf{M}}^{\rm{T}}},
 \end{equation}
 and
 \begin{equation}
-{\bf{\varepsilon ''}} = {\bf{M\varepsilon }}{{\bf{M}}^{\rm{T}}},
+{\bm{\varepsilon ''}}(t) = {\bf{M}}{\bm{\varepsilon}}(t){{\bf{M}}^{\rm{T}}},
 \end{equation}
 where the transformation matrix ${\bf{M}}$ are given in Equation (\ref{Equ:transformation_matrix}).
+Therefore, at any instant $t \in \mathscr{T}$, it is possible to calculate the normal stress ${{\sigma _{{\rm{n}}}}(t)}$ and the normal strain ${{\varepsilon _{{\rm{n}}}}(t)}$, as well as the shear stress ${{\tau _{{\rm{n}}}}(t)}$ and the shear strain ${{\gamma _{{\rm{n}}}}(t)}$, relative to the investigated material plane $\Gamma$. The shear stress ${{\tau _{{\rm{n}}}}(t)}$ and the shear strain ${{\gamma _{{\rm{n}}}}(t)}$ can be obtained as:
+\begin{equation}
+{{\tau _{{\rm{n}}}}(t)} = \sqrt{{{\tau^2_{{\rm{na}}}}(t)}+{{\tau^2_{{\rm{nb}}}}(t)}},
+\end{equation}
+\begin{equation}
+{{\gamma _{{\rm{n}}}}(t)} = 2 \sqrt{{{\varepsilon^2_{{\rm{na}}}}(t)}+{{\varepsilon^2_{{\rm{nb}}}}(t)}}.
+\end{equation}
+
+As shown in \ref{Fig:stress_on_material_plane}, during the loading cycle, the normal stress ${{\sigma _{{\rm{n}}}}(t)}$ relative to the material plane $\Gamma$, varies its magnitude by remaining always parallel to the $n$-axis. Therefore, the normal stress ${{\sigma _{{\rm{n}}}}(t)}$ can be considered as a scalar, so that its maximum, minimum values and amplitude can be calculated as follows:
+\begin{equation}
+% {\sigma _{{\rm{n,max}}}} = \max \left[ {{\sigma _n}\left( t \right)} \right], t \in \mathscr{T},
+{\sigma _{{\rm{n,max}}}} = \mathop {\max }\limits_{t \in \mathscr{T}} \left[ {{\sigma _n}\left( t \right)} \right]
+\end{equation}
+\begin{equation}
+% {\sigma _{{\rm{n,min}}}} = \min \left[ {{\sigma _n}\left( t \right)} \right], t \in \mathscr{T},
+{\sigma _{{\rm{n,min}}}} = \mathop {\min }\limits_{t \in \mathscr{T}} \left[ {{\sigma _n}\left( t \right)} \right]
+\end{equation}
+\begin{equation}
+\Delta \sigma  = \frac{1}{2}\left( {{\sigma _{{\rm{n,max}}}} - {\sigma _{{\rm{n,min}}}}} \right).
+\end{equation}
+Contrary to the normal stress, the shear stress ${{\tau _{{\rm{n}}}}(t)}$ relative to the material plane $\Gamma$ is consider as a vector. It varies in both direction and magnitude during the loading cycle. 
+Thus, the maximum, minimum values and amplitude of the shear stress ${{\tau _{{\rm{n}}}}(t)}$ are much more complex to obtain. 
+Due to the complexity of the problem, many different definitions have been proposed and validated, such as the Longest Chord Method\cite{Lemaitre1990Mechanics}, the Longest Projection Method, the Minimum Circumscribed Circle Method, the Minimum Circumscribed Ellipse Method and so on. 
+
+In order to make the calculations simply, the Longest Chord Method is chosen to calculate the shear stress amplitude $\Delta \tau/2$.
+As shown in \ref{Fig:stress_on_material_plane}, the tip of the shear stress vector draws on $\Gamma$ a close curve $C$ during the loading cycle.
+The Longest Chord Method introduced that the shear stress amplitude is equal to half of the longest chord amongst those linking together any two points belonging to curve $C$. Thus, the shear stress amplitude is given by:
+\begin{equation}
+\frac{{\Delta \tau }}{2} = \frac{1}{2}\mathop {\max }\limits_{{t_2} \in \mathscr{T}} \left[ {\mathop {\max }\limits_{{t_1} \in \mathscr{T}} \left| {{\tau _n}\left( {{t_1}} \right) - {\tau _n}\left( {{t_2}} \right)} \right|} \right],
+\end{equation}
+where $t_1$ and $t_2$ are two instants of the cyclic load history in the time period $\mathscr{T}$.
+
+
+\begin{figure}
+\centering
+\begin{overpic}[width=10cm]{stress_on_material_plane.pdf}
+\put(30,30){$C$}
+\end{overpic}
+\caption{Normal stress ${{\sigma _{{\rm{n}}}}(t)}$ and shear stress ${{\tau _{{\rm{n}}}}(t)}$ relative to the given plane $\Gamma$.}
+\label{Fig:stress_on_material_plane}
+\end{figure}
+
 
 \subsection{Fatigue life prediction based on the conventional fatigue models}
 \noindent
