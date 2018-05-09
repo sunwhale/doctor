@@ -785,6 +785,7 @@ where ${{\Delta \hat \gamma }}/{2}$ is the equivalent shear strain range \cite{W
 The fatigue endurance is determined from
 \begin{equation}
 \frac{{\Delta \hat \gamma }}{2} = A\frac{{{{\sigma '}_{\rm f}}}}{E}{\left( {2{N_{\rm f}}} \right)^b} + B{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^c},
+\label{Equ:BM_model}
 \end{equation}
 with
 \[A = 1 + {\nu _{\rm e}} + \left( {1 - {\nu _{\rm e}}} \right)S,\]
@@ -803,6 +804,7 @@ $\sigma _{\rm n,\max}$ is the maximum normal stress on the critical plane suffer
 The fatigue life model oriented to the shear-based damage is illustrated as
 \begin{equation}
 \frac{{\Delta \hat \gamma }}{2} = \frac{{{{\tau '}_{\rm f}}}}{G}{\left( {2{N_{\rm f}}} \right)^{{b_0}}} + {{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{{c_0}}}.
+\label{Equ:FS_model}
 \end{equation}
 Furthermore, McClaflin and Fatemi \cite{McClaflin2004} proposed that the sensitivity parameter $k$ is varied with fatigue life and can be related to the tension and torsion property, that is,
 \begin{equation}
@@ -822,6 +824,7 @@ The SWT model \cite{Socie2000} is based on the principal strain range and the ma
 strain range, that is,
 \begin{equation}
 {\sigma _{\rm n, \max}}\frac{{\Delta \varepsilon }}{2} = \frac{{{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + {\sigma '_{\rm f}}{\varepsilon '_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
+\label{Equ:SWT_model}
 \end{equation}
 
 \subsection{Liu's Strain Energy Models}
@@ -829,18 +832,21 @@ strain range, that is,
 The normal strain energy based model suggested by Liu  \cite{Socie2000} can be written as
 \begin{equation}
 {\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) = \frac{{4{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + 4{{\sigma '}_{\rm f}}{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
+\label{Equ:Liu1_model}
 \end{equation}
 Above the critical plane is defined from maximizing the normal strain energy ${\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}}$. Note the model parameters in the present model differ from others. The corresponding shear strain energy based model is expressed as
 \begin{equation}
 \left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right) + {\left( {\Delta \tau \Delta \gamma } \right)_{\max }} = \frac{{4{{\tau '}_{\rm f}}^2}}{G}{\left( {2{N_{\rm f}}} \right)^{2b\gamma }} + 4{{\tau '}_{\rm f}}{{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b\gamma  + c\gamma }}.
+\label{Equ:Liu2_model}
 \end{equation}
 The critical plane is calculated from the shear strain energy.
 
 \subsection{Chu-Conle-Bonnen Model}
 \noindent
-An additional energy-based fatigue model suggested by Chu et al.  \cite{Socie2000} is expressed as
+An additional energy-based fatigue model suggested by Chu et al. \cite{Socie2000} is expressed as
 \begin{equation}
 {\left( {{\tau _{\rm n}}\frac{{\Delta \gamma }}{2} + {\sigma _{\rm n }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }} = 1.02\frac{{{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + 1.04{{\sigma '}_{\rm f}}{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
+\label{Equ:CCB_model}
 \end{equation}
 Note the different definition of the strain energy in comparing with the Liu's models. The critical plane should provide the maximum strain energy in the whole loading range and in all directions.
  
@@ -850,7 +856,7 @@ Zamrik and Renauld \cite{Zamrik2000} suggested an explicit fatigue model incorpo
 \begin{equation}
 {N_{\rm f}} = A{\left[ {\left( {\frac{{{\varepsilon _{eq,ten}}}}{{{\varepsilon _{\rm f}}}}} \right)\left( {\frac{{{\sigma _{eq,\max }}}}{{{\sigma _{ult}}}}} \right)} \right]^B} 
 {\left( {1 + \frac{{{t_h}}}{{{t_c}}}} \right)^C} \exp \left[ {\frac{{ - Q}}{{R\left( {{T_{\max }} - {T_0}} \right)}}} \right],
-\label{Equ:ZamrikModel}
+\label{Equ:Zamrik_model}
 \end{equation}
 where $\sigma _{eq,\max }$ denotes maximum equivalent tensile stress in mid-life hysteresis loop, $\varepsilon _{eq,ten}$ is maximum equivalent strain in mid-life hysteresis loop for which the stress is tensile, $\sigma _{ult}$ is ultimate strength, $\varepsilon _{f}$ is failure elongation , $t_h$ is length of compressive hold-time, $t_c$ is length of total cycle time including hold-time, $Q$ is activation energy for high temperature damage, $R$ is gas constant, $T_{\max}$ is maximum temperature in TMF cycle and $T_0$ is a reference temperature, $A$,$B$ and $C$ are model coefficients. In the present work, the TMF tests did not have the holding time which means $t_c=0$.
 
@@ -1065,9 +1071,50 @@ Similarly, the maximum normal strain, minimum normal strain and the amplitude of
 \end{figure}
 
 \subsection{An example of nonproportional TMF test}
+\noindent
+Identifying the range of stress, strain and the maximum values during cycling is the most fundamental element of the fatigue models.
+In this chapter, we introduced Brown-Miller's Model, Fatemi-Socie's Model, Smith-Watson-Topper's Model, Chu-Conle-Bonnen's Model, Liu's Energy Model and Zamrik's Model.
+Except the Zamrik's Model, the right-hand sides of the fatigue models in Equations (\ref{Equ:BM_model}), (\ref{Equ:FS_model}), (\ref{Equ:SWT_model}), (\ref{Equ:Liu1_model}) and (\ref{Equ:CCB_model}) which are also called the fatigue damage parameters, are given by:
+\begin{eqnarray*}
+p_{BM}&=&\frac{{\Delta {\gamma _{\max}}}}{2} + S\Delta {\varepsilon _{\rm n}}, \\
+p_{FS}&=&\frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{\rm n,\max}}}}{{{\sigma _y}}}} \right), \\
+p_{SWT}&=&{\sigma _{\rm n, \max}}\frac{{\Delta \varepsilon }}{2}, \\
+p_{LiuI}&=&{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right), \\
+p_{CCB}&=&{\left( {{\tau _{\rm n}}\frac{{\Delta \gamma }}{2} + {\sigma _{\rm n }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }}. 
+\end{eqnarray*}
+Thus, the fundamental elements used to obtain the fatigue damage parameters are given as follows:
+
+$\bullet$ $\sigma_{\rm{n,max}}$,
+
+$\bullet$ $\Delta \sigma$,
+
+$\bullet$ $\Delta \varepsilon$,
+
+$\bullet$ $\tau_{\rm{n,max}}$,
+
+$\bullet$ $\Delta \tau$,
+
+$\bullet$ $\Delta \gamma$.
+
+The nonproportional TMF test with equivalent strain range $\pm0.7\%$ is taken as an example.
+When a thin-walled specimen is subjected under axial and torsional loadings, the out of plane stress can be neglected. Therefore, the stress state of the thin-walled specimen can be simplified as the plane stress state.
+\ref {Fig:stress_on_material_plane_with_specimen} shows schematically the definition of global coordinate system ($x,y,z$) and the material coordinate system ($n,a,b$), where the $z$-axis is parallel to the outer normal vector of the specimen at the material point $O$. 
+Comparing \ref {Fig:stress_on_material_plane_with_specimen} with \ref{Fig:generic_material_plane}, the angle $\theta$ is defined as $90^\circ$, and the $n$-axis is parallel to the $z$-axis. 
+Consequently, the coordinate systems under the plane stress state can be defined as ($x,y$) and($n,a$), with the same center point $O$.
+
+The measured stress-strain response of the test is given in Table \ref{Tab:stress_strain_7046}.
+
+\begin{figure}
+\centering
+\includegraphics[width=10cm]{stress_on_material_plane_with_specimen.pdf}
+\caption{Definition of global coordinate system ($x,y,z$) and material coordinate system ($n,a,b$) on tubular specimen, with the angle $\theta=90^\circ$.}
+\label{Fig:stress_on_material_plane_with_specimen}
+\end{figure}
+
+
 \begin{table}[htbp]
   \centering
-  \caption{The measured stress-strain history (stress unit: MPa, strain unit: mm/mm, temperature unit: K, time unit: s).}
+  \caption{The measured stress-strain response of the NPR-IF test with equivalent strain range $\pm0.7\%$ (stress unit: MPa, strain unit: mm/mm, temperature unit: K, time unit: s).}
     \begin{tabular}{p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}}
     \toprule
     $t$   & $\varepsilon_x$ & $\gamma_{xy}$ & $\varepsilon_y$ & $\sigma_x$ & $\tau_{xy}$ & $T$ \\
@@ -1107,7 +1154,7 @@ Similarly, the maximum normal strain, minimum normal strain and the amplitude of
     180.0  & -0.00002  & -0.00604  & 0.00001  & 102.4  & -561.4  & 745.2  \\
     \bottomrule
     \end{tabular}%
-  \label{tab:addlabel}%
+  \label{Tab:stress_strain_7046}%
 \end{table}%
 
 \begin{table}[htbp]
