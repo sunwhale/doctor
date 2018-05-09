@@ -1096,14 +1096,6 @@ $\bullet$ $\Delta \tau$,
 
 $\bullet$ $\Delta \gamma$.
 
-The nonproportional TMF test with equivalent strain range $\pm0.7\%$ is taken as an example.
-When a thin-walled specimen is subjected under axial and torsional loadings, the out of plane stress can be neglected. Therefore, the stress state of the thin-walled specimen can be simplified as the plane stress state.
-\ref {Fig:stress_on_material_plane_with_specimen} shows schematically the definition of global coordinate system ($x,y,z$) and the material coordinate system ($n,a,b$), where the $z$-axis is parallel to the outer normal vector of the specimen at the material point $O$. 
-Comparing \ref {Fig:stress_on_material_plane_with_specimen} with \ref{Fig:generic_material_plane}, the angle $\theta$ is defined as $90^\circ$, and the $n$-axis is parallel to the $z$-axis. 
-Consequently, the coordinate systems under the plane stress state can be defined as ($x,y$) and($n,a$), with the same center point $O$.
-
-The measured stress-strain response of the test is given in Table \ref{Tab:stress_strain_7046}.
-
 \begin{figure}
 \centering
 \includegraphics[width=10cm]{stress_on_material_plane_with_specimen.pdf}
@@ -1111,6 +1103,63 @@ The measured stress-strain response of the test is given in Table \ref{Tab:stres
 \label{Fig:stress_on_material_plane_with_specimen}
 \end{figure}
 
+The nonproportional TMF test with equivalent strain range $\pm0.7\%$ is taken as an example.
+When a thin-walled specimen is subjected under axial and torsional loadings, the out of plane stress can be neglected. Therefore, the stress state of the thin-walled specimen can be simplified as the plane stress state.
+\ref {Fig:stress_on_material_plane_with_specimen} shows schematically the definition of global coordinate system ($x,y,z$) and the material coordinate system ($n,a,b$), where the $z$-axis is parallel to the outer normal vector of the specimen at the material point $O$. 
+Comparing \ref {Fig:stress_on_material_plane_with_specimen} with \ref{Fig:generic_material_plane}, the angle $\theta$ is defined as $90^\circ$, and the $n$-axis is parallel to the $z$-axis. 
+Consequently, the coordinate systems under the plane stress state can be defined as ($x,y$) and($n,a$), with the same center point $O$.
+
+As shown in \ref{Fig:plot_values_with_angle}, for Brown-Miller's Model, the maximum value of the shear strain range occurs on the plane $\varphi=0^\circ$
+The measured stress-strain response of the test is given in Table \ref{Tab:stress_strain_7046}.
+
+\begin{figure}
+	\centering
+	\begin{overpic}[width=8cm]{plot_values_with_angle_BM.pdf}
+	\put(70,20){(a)}
+	\end{overpic}
+	\begin{overpic}[width=8cm]{plot_values_with_angle_FS.pdf}
+	\put(70,20){(b)}
+	\end{overpic}
+	\begin{overpic}[width=8cm]{plot_values_with_angle_SWT.pdf}
+	\put(70,20){(c)}
+	\end{overpic}
+	\begin{overpic}[width=8cm]{plot_values_with_angle_Liu.pdf}
+	\put(70,20){(d)}
+	\end{overpic}
+	\caption{(a)Variation of normal and shear strain range by angle for Brown-Miller's Model.
+	(b)Shear strain range and maximum normal stress on various planes for Fatemi-Socie's Model.
+	(c)Fatigue damage parameter of Smith-Watson-Topper's Model on various planes.
+	(d)Distribution of shear and tensile work on different planes for Liu's Model.}
+	\label{Fig:plot_values_with_angle}
+\end{figure}
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=14cm]{plot_values_with_angle_BM.pdf}
+% \caption{Normal and shear strain range on various planes for Brown-Miller's Model.}
+% \label{Fig:plot_values_with_angle_BM}
+% \end{figure}
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=14cm]{plot_values_with_angle_FS.pdf}
+% \caption{Shear strain range and maximum normal stress on various planes for Fatemi-Socie's Model.}
+% \label{Fig:plot_values_with_angle_FS}
+% \end{figure}
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=14cm]{plot_values_with_angle_SWT.pdf}
+% \caption{Fatigue damage parameter of Smith-Watson-Topper's Model on various planes.}
+% \label{Fig:plot_values_with_angle_SWT}
+% \end{figure}
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=14cm]{plot_values_with_angle_Liu.pdf}
+% \caption{Shear strain range and maximum normal stress on various planes for Liu's Model.}
+% \label{Fig:plot_values_with_angle_Liu}
+% \end{figure}
 
 \begin{table}[htbp]
   \centering
