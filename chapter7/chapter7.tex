@@ -809,6 +809,7 @@ The fatigue life model oriented to the shear-based damage is illustrated as
 Furthermore, McClaflin and Fatemi \cite{McClaflin2004} proposed that the sensitivity parameter $k$ is varied with fatigue life and can be related to the tension and torsion property, that is,
 \begin{equation}
 k =  \frac{{k_0 {\sigma _y}}}{{{{\sigma '}_{\rm f}}{{\left( {2{N_{\rm f}}} \right)}^b}}}
+\label{Equ:k_in_FS_model}
 \end{equation}
 with
 \[
@@ -1059,6 +1060,7 @@ Similarly, the maximum normal strain, minimum normal strain and the amplitude of
 \end{equation}
 \begin{equation}
 \frac{{\Delta \gamma }}{2} = \frac{1}{2}\mathop {\max }\limits_{{t_2} \in \mathscr{T}} \left[ {\mathop {\max }\limits_{{t_1} \in \mathscr{T}} \left| {{\gamma _n}\left( {{t_1}} \right) - {\gamma _n}\left( {{t_2}} \right)} \right|} \right].
+\label{Equ:delta_gamma}
 \end{equation}
 
 \begin{figure}
@@ -1073,14 +1075,14 @@ Similarly, the maximum normal strain, minimum normal strain and the amplitude of
 \subsection{An example of nonproportional TMF test}
 \noindent
 Identifying the range of stress, strain and the maximum values during cycling is the most fundamental element of the fatigue models.
-In this chapter, we introduced Brown-Miller's Model, Fatemi-Socie's Model, Smith-Watson-Topper's Model, Chu-Conle-Bonnen's Model, Liu's Energy Model and Zamrik's Model.
-Except the Zamrik's Model, the right-hand sides of the fatigue models in Equations (\ref{Equ:BM_model}), (\ref{Equ:FS_model}), (\ref{Equ:SWT_model}), (\ref{Equ:Liu1_model}) and (\ref{Equ:CCB_model}) which are also called the fatigue damage parameters, are given by:
+In this chapter, we introduced Brown-Miller's model, Fatemi-Socie's model, Smith-Watson-Topper's model, Chu-Conle-Bonnen's model, Liu's Energy model and Zamrik's model.
+Except the Zamrik's model, the right-hand sides of the fatigue models in Equations (\ref{Equ:BM_model}), (\ref{Equ:FS_model}), (\ref{Equ:SWT_model}), (\ref{Equ:Liu1_model}) and (\ref{Equ:CCB_model}) which are also called the fatigue damage parameters, are given by:
 \begin{eqnarray*}
-p_{BM}&=&\frac{{\Delta {\gamma _{\max}}}}{2} + S\Delta {\varepsilon _{\rm n}}, \\
-p_{FS}&=&\frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{\rm n,\max}}}}{{{\sigma _y}}}} \right), \\
-p_{SWT}&=&{\sigma _{\rm n, \max}}\frac{{\Delta \varepsilon }}{2}, \\
-p_{LiuI}&=&{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right), \\
-p_{CCB}&=&{\left( {{\tau _{\rm n}}\frac{{\Delta \gamma }}{2} + {\sigma _{\rm n }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }}. 
+p_{\rm{BM}}&=&\frac{{\Delta {\gamma _{\max}}}}{2} + S\Delta {\varepsilon _{\rm n}}, \\
+p_{\rm{FS}}&=&\frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{\rm n,\max}}}}{{{\sigma _y}}}} \right), \\
+p_{\rm{SWT}}&=&{\sigma _{\rm n, \max}}\frac{{\Delta \varepsilon }}{2}, \\
+p_{\rm{LiuI}}&=&{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right), \\
+p_{\rm{CCB}}&=&{\left( {{\tau _{\rm n}}\frac{{\Delta \gamma }}{2} + {\sigma _{\rm n }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }}. 
 \end{eqnarray*}
 Thus, the fundamental elements used to obtain the fatigue damage parameters are given as follows:
 
@@ -1109,8 +1111,28 @@ When a thin-walled specimen is subjected under axial and torsional loadings, the
 Comparing \ref {Fig:stress_on_material_plane_with_specimen} with \ref{Fig:generic_material_plane}, the angle $\theta$ is defined as $90^\circ$, and the $n$-axis is parallel to the $z$-axis. 
 Consequently, the coordinate systems under the plane stress state can be defined as ($x,y$) and($n,a$), with the same center point $O$.
 
-As shown in \ref{Fig:plot_values_with_angle}, for Brown-Miller's Model, the maximum value of the shear strain range occurs on the plane $\varphi=0^\circ$
-The measured stress-strain response of the test is given in Table \ref{Tab:stress_strain_7046}.
+The measured stress-strain response of the test is given in Table \ref{Tab:stress_strain_7046} and the fatigue life of the test is $N_{\rm{f}}$=220 cycles. The stress and strain on the material plane with the angle $\varphi$ from 0$^\circ$ to 180$^\circ$ can be calculated by the Equtations (\ref{Equ:transformation_matrix})-(\ref{Equ:delta_gamma}).
+The results are listed in Table \ref{Tab:stress_on_material_plane}. 
+
+As shown in \ref{Fig:plot_values_with_angle}(a), for the Brown-Miller's model, the maximum value of the shear strain range ${\Delta {\gamma _{\max }}}$=0.02416 which occurs on the plane with the angle $\varphi=0^\circ$, with the corresponding normal strain range $\Delta {\varepsilon _{\rm{n}}}$ = 0.01399. Then the fatigue damage parameter of Brown-Miller's model can be calculated as:
+\[{p_{{\rm{BM}}}} = \frac{{\Delta {\gamma _{\max }}}}{2} + S\Delta {\varepsilon _{\rm{n}}}{\rm{ = }}\left( {\frac{{0.02416}}{2} + 0.36 \times 0.01399} \right) = 0.017119,\]
+where the constant $S$ in the Brown-Miller's model is set as 0.36.
+Then the fatigue life can be calculated from Equation (\ref{Equ:BM_model}):
+\[0.017119 = 1.552\frac{{{{\sigma '}_{\rm{f}}}}}{E}{\left( {2{N_{\rm{f}}}} \right)^b} + 1.68{{\varepsilon '}_{\rm{f}}}{\left( {2{N_{\rm{f}}}} \right)^c},\]
+with the result of fatigue life $N_{\rm{p}}$=231 cycles.
+
+As shown in \ref{Fig:plot_values_with_angle}(b), for the Fatemi-Socie's model, the maximum value of the shear strain range is also found on the plane with the angle $\varphi=0^\circ$, with the corresponding maximum normal stress ${{\sigma _{{\rm{n}},\max }}}$=780.4 MPa.
+Then the fatigue damage parameter of Fatemi-Socie's model can be calculated as:
+\[{p_{{\rm{FS}}}} = \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{{\rm{n}},\max }}}}{{{\sigma _y}}}} \right){\rm{ = }}\frac{{0.02416}}{2}\left( {1 + {\rm{0}}{\rm{.214}} \times \frac{{780.4}}{{1064}}} \right) = 0.013935,\]
+where the constant $k$ is obtained by Equation (\ref{Equ:k_in_FS_model}) as 0.214, and ${\sigma _y}$ is the yield stress which can be found in Table \ref{tab:General_material_mechanical_properties}.
+The fatigue life is computed from Equation (\ref{Equ:FS_model}):
+\[0.013935 = \frac{{{{\tau '}_{\rm f}}}}{G}{\left( {2{N_{\rm f}}} \right)^{{b_0}}} + {{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{{c_0}}},\]
+and the fatigue life $N_{\rm{p}}$=294 cycles.
+
+
+
+
+
 
 \begin{figure}
 	\centering
@@ -1133,33 +1155,6 @@ The measured stress-strain response of the test is given in Table \ref{Tab:stres
 	\label{Fig:plot_values_with_angle}
 \end{figure}
 
-% \begin{figure}
-% \centering
-% \includegraphics[width=14cm]{plot_values_with_angle_BM.pdf}
-% \caption{Normal and shear strain range on various planes for Brown-Miller's Model.}
-% \label{Fig:plot_values_with_angle_BM}
-% \end{figure}
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=14cm]{plot_values_with_angle_FS.pdf}
-% \caption{Shear strain range and maximum normal stress on various planes for Fatemi-Socie's Model.}
-% \label{Fig:plot_values_with_angle_FS}
-% \end{figure}
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=14cm]{plot_values_with_angle_SWT.pdf}
-% \caption{Fatigue damage parameter of Smith-Watson-Topper's Model on various planes.}
-% \label{Fig:plot_values_with_angle_SWT}
-% \end{figure}
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=14cm]{plot_values_with_angle_Liu.pdf}
-% \caption{Shear strain range and maximum normal stress on various planes for Liu's Model.}
-% \label{Fig:plot_values_with_angle_Liu}
-% \end{figure}
 
 \begin{table}[htbp]
   \centering
@@ -1251,7 +1246,7 @@ The measured stress-strain response of the test is given in Table \ref{Tab:stres
     175   & 757.9  & 1810.9  & 0.01386  & 552.4  & 1082.1  & 0.02380  & 647.9  \\
     \bottomrule
     \end{tabular}%
-  \label{tab:addlabel}%
+  \label{Tab:stress_on_material_plane}%
 \end{table}%
 
 
