@@ -1072,7 +1072,7 @@ Similarly, the maximum normal strain, minimum normal strain and the amplitude of
 \label{Fig:stress_on_material_plane}
 \end{figure}
 
-\subsection{An example of nonproportional TMF test}
+\subsection{Computational examples of the non-proportional TMF test}
 \noindent
 Identifying the range of stress, strain and the maximum values during cycling is the most fundamental element of the fatigue models.
 In this chapter, we introduced Brown-Miller's model, Fatemi-Socie's model, Smith-Watson-Topper's model, Chu-Conle-Bonnen's model, Liu's Energy model and Zamrik's model.
@@ -1080,7 +1080,7 @@ Except the Zamrik's model, the right-hand sides of the fatigue models in Equatio
 \begin{eqnarray*}
 p_{\rm{BM}}&=&\frac{{\Delta {\gamma _{\max}}}}{2} + S\Delta {\varepsilon _{\rm n}}, \\
 p_{\rm{FS}}&=&\frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{\rm n,\max}}}}{{{\sigma _y}}}} \right), \\
-p_{\rm{SWT}}&=&{\sigma _{\rm n, \max}}\frac{{\Delta \varepsilon }}{2}, \\
+p_{\rm{SWT}}&=&{\sigma _{\rm n, \max}}\frac{{\Delta \varepsilon_ {\max} }}{2}, \\
 p_{\rm{LiuI}}&=&{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right), \\
 p_{\rm{CCB}}&=&{\left( {{\tau _{\rm n}}\frac{{\Delta \gamma }}{2} + {\sigma _{\rm n }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }}. 
 \end{eqnarray*}
@@ -1129,24 +1129,31 @@ The fatigue life is computed from Equation (\ref{Equ:FS_model}):
 \[0.013935 = \frac{{{{\tau '}_{\rm f}}}}{G}{\left( {2{N_{\rm f}}} \right)^{{b_0}}} + {{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{{c_0}}},\]
 and the fatigue life $N_{\rm{p}}$=294 cycles.
 
+The fatigue damage parameter of the Smith-Watson-Topper's model, $p_{\rm{SWT}}$, is based on the product of normal strain ranges and maximum normal stresses on each plane. \ref{Fig:plot_values_with_angle}(c) shows that the maximum value of normal strain range, ${\Delta {\varepsilon _{\max }}}=0.01399$, occurs on the plane oriented at $\varphi=0^\circ$, with the corresponding maximum normal stress ${{\sigma _{{\rm{n}},\max }}}$=780.4 MPa. Then we have
+\[{p_{{\rm{SWT}}}} = {\sigma _{{\rm{n}},\max }}\frac{{\Delta {\varepsilon _{\max }}}}{2}{\rm{ = }}780.4 \times \frac{{0.01399}}{2} = 5.4598.\]
+The fatigue life can be obtained by Equation (\ref{Equ:SWT_model}):
+\[5.4598 = \frac{{{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + {\sigma '_{\rm f}}{\varepsilon '_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}},\]
+resulting in the fatigue life of $N_{\rm{p}}$=611 cycles.
 
-
-
-
+Liu's model is based on the virtual strain energy (VSE) on each plane. The VSE is the product of stress and strain ranges, and is displayed in \ref{Fig:plot_values_with_angle}(d). The normal VSE is the maximum value of normal work plus the shear work on the same plane. The maximum normal work is observed to occur on the $\varphi=0^\circ$ plane, and the fatigue damage parameter of Liu's normal VSE model is computed as:
+\[{p_{{\rm{LiuI}}}} = {\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) = 1857.4 \times 0.01399 + 1126.2 \times 0.02416 = 44.71.\]
+Then the fatigue life is computed from Equation (\ref{Equ:Liu1_model}):
+\[44.71 = \frac{{4{{\tau '}_{\rm f}}^2}}{G}{\left( {2{N_{\rm f}}} \right)^{2b\gamma }} + 4{{\tau '}_{\rm f}}{{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b\gamma  + c\gamma }},\]
+with the result of fatigue life $N_{\rm{p}}$=71 cycles.
 
 \begin{figure}
 	\centering
 	\begin{overpic}[width=8cm]{plot_values_with_angle_BM.pdf}
-	\put(70,20){(a)}
+	\put(76,64){(a)}
 	\end{overpic}
 	\begin{overpic}[width=8cm]{plot_values_with_angle_FS.pdf}
-	\put(70,20){(b)}
+	\put(76,64){(b)}
 	\end{overpic}
 	\begin{overpic}[width=8cm]{plot_values_with_angle_SWT.pdf}
-	\put(70,20){(c)}
+	\put(76,64){(c)}
 	\end{overpic}
 	\begin{overpic}[width=8cm]{plot_values_with_angle_Liu.pdf}
-	\put(70,20){(d)}
+	\put(76,64){(d)}
 	\end{overpic}
 	\caption{(a)Variation of normal and shear strain range by angle for Brown-Miller's Model.
 	(b)Shear strain range and maximum normal stress on various planes for Fatemi-Socie's Model.
@@ -1253,7 +1260,8 @@ and the fatigue life $N_{\rm{p}}$=294 cycles.
 
 \subsection{Fatigue life prediction based on the conventional fatigue models}
 \noindent
-The six models presented previously are used to evaluate the thermomechanical fatigue. Whereas the tests were run at 650$^\circ$C for isothermal fatigue and at 573K to 923K for thermomechanical fatigue, the fatigue life models are essentially based on the material property at 923K.
+As introduced above, the Brown-Miller's model, Fatemi-Socie's model, Smith-Watson-Topper's model, Chu-Conle-Bonnen's model, Liu's Energy model and Zamrik's model are used to evaluate the thermomechanical fatigue. The isothermal fatigue tests were carried out at 923K, and the thermomechanical fatigue test were performed at the temperature range from 573K to 923K.
+Whereas the fatigue life models are essentially based on the material properties at 923K.
 
 \ref{Fig:life_prediction} shows the comparison between predicted and experimental fatigue life of multiaxial thermomechanical fatigue tests. The predicted fatigue lifes of Brown-Miller and Fatemi-Socie's models are non-conservative. Most of the TC-IP and NPR-IP results are outside of the scatter band with a factor of 2. For the TMF tests under uniaxial loading, the predicted lifes of the Zamrik, Smith-Watson-Topper and Chu-Conle-Bonnen's models agree well with the experiments. However, for the PRO-IP and NPR-IP tests, the results of the three models are discrete. One can observe that the best results of the six presented models have been achieved by the Liu's tension strain energy model. But for the NPR-IP and TC-90 tests, the predicted fatigue lifes of Liu's model are too much conservative.
 
