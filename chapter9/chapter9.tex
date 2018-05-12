@@ -33,11 +33,11 @@
 在测试过程中，使用接触式K型电偶测量试件外表面的温度，考虑到试验过程中温度变化速率很快，需要传感器对温度变化有迅速的响应，传感器体积越小，对温度的响应越迅速，因此我们选取测量点直径为0.25mm的热电偶，将试件中心点的温度作为控制量，以实现良好的温度控制，精度为±5°C。
 对于试件内表面，考虑到气体流动，在TGMF期间，内部点焊热电偶是不可能的，因为它们的信号受到内部冷却的影响。
 同时由于试件的尺寸很小，内孔直径只有6.5mm，也无法使用热像仪进行测量，因此在这里采用计算的方法来确定时间内表面的温度。
-\begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{Radiation_Furnace2.pdf}}
-\caption{聚光辐射加热系统.}
-\label{Fig:Radiation_Furnace2}
-\end{figure}
+% \begin{figure}[!htp]
+% \centering{\includegraphics[width=12cm]{Radiation_Furnace2.pdf}}
+% \caption{聚光辐射加热系统.}
+% \label{Fig:Radiation_Furnace2}
+% \end{figure}
 
 
 \begin{table}[htbp]
@@ -68,24 +68,24 @@
 
 \section{试验结果}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \begin{overpic}[width=6.0cm]{plot_exp_half_life_cycle_TCIPTGMF.pdf}
-      \put(0,65){\fcolorbox{white}{white}{(a)}}
-    \end{overpic}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \begin{overpic}[width=6.0cm]{plot_exp_half_life_cycle_TCOPTGMF.pdf}
-      \put(0,65){\fcolorbox{white}{white}{(b)}}
-    \end{overpic}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+%   \nonumber
+%     \centering
+%     \begin{overpic}[width=6.0cm]{plot_exp_half_life_cycle_TCIPTGMF.pdf}
+%       \put(0,65){\fcolorbox{white}{white}{(a)}}
+%     \end{overpic}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \begin{overpic}[width=6.0cm]{plot_exp_half_life_cycle_TCOPTGMF.pdf}
+%       \put(0,65){\fcolorbox{white}{white}{(b)}}
+%     \end{overpic}
+%   \end{minipage}
 
-  \caption{TGMF稳定滞后回线：(a)同相位，(b)反相位.}
-  \label{Fig:plot_exp_half_life_cycle_TCTGMF}
-\end{figure}
+%   \caption{TGMF稳定滞后回线：(a)同相位，(b)反相位.}
+%   \label{Fig:plot_exp_half_life_cycle_TCTGMF}
+% \end{figure}
 
 图\ref{Fig:plot_exp_half_life_cycle_TCTGMF}分别是同相位和反相位热梯度机械疲劳的稳定滞后回线。
 由于热梯度机械疲劳的温度循环与载荷循环之间有相位差,导致其拉伸半周和压缩半周具有不同的循环软化行为。
@@ -119,33 +119,39 @@
   \label{Fig:plot_exp_TCTGMF}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIPTGMF.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(a)}}
-  \end{overpic}
-  \begin{overpic}[width=8.0cm]{plot_exp_pv_TCOPTGMF.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(b)}}
-  \end{overpic}
-  \caption{TGMF应力均值与峰谷值：(a)同相位，(b)反相位.}
-  \label{Fig:plot_exp_pv_TCTGMF}
+\begin{figure}[!htp]
+\centering{\includegraphics[width=16cm]{plot_exp_mean_TCTGMF.pdf}}
+\caption{Mean stress of TGMF-IP and TGMF-OP.}
+\label{Fig:plot_exp_mean_TCTGMF}
 \end{figure}
+
+% \begin{figure}
+%   \centering
+%   \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIPTGMF.pdf}
+%     \put(84,65){\fcolorbox{white}{white}{(a)}}
+%   \end{overpic}
+%   \begin{overpic}[width=8.0cm]{plot_exp_pv_TCOPTGMF.pdf}
+%     \put(84,65){\fcolorbox{white}{white}{(b)}}
+%   \end{overpic}
+%   \caption{TGMF应力均值与峰谷值：(a)同相位，(b)反相位.}
+%   \label{Fig:plot_exp_pv_TCTGMF}
+% \end{figure}
 
 图\ref{Fig:plot_exp_pv_TCTGMF}分别是同相位和反相位热梯度机械疲劳的循环应力峰谷值和均值。
 在所有的试验条件下,合金在最终断裂前循环应力峰谷值快速下降,这实际上是宏观裂纹的形成以及随后的失稳扩展至断裂的结果。
 同相位和反相位热梯度机械疲劳试验均表现为循环软化，但温度循环与载荷循环之间的相位差，导致循环软化的程度不同，在300-650$^{\circ}$C范围内，温度越高，材料的循环软化越明显，因此对于同相位的情况，材料在拉伸半周的循环软化更强烈，反应在平均应力的演化上则表现为平均应力随着循环的增加，产生越来越大的平均压应力。
 
-\begin{figure}
-  \centering
-  \begin{overpic}[width=8.0cm]{plot_exp_mean_TCIPTGMF.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(a)}}
-  \end{overpic}
-  \begin{overpic}[width=8.0cm]{plot_exp_mean_TCOPTGMF.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(b)}}
-  \end{overpic}
-  \caption{TGMF循环应力均值：(a)同相位，(b)反相位.}
-  \label{Fig:plot_exp_mean_TCTGMF}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \begin{overpic}[width=8.0cm]{plot_exp_mean_TCIPTGMF.pdf}
+%     \put(84,65){\fcolorbox{white}{white}{(a)}}
+%   \end{overpic}
+%   \begin{overpic}[width=8.0cm]{plot_exp_mean_TCOPTGMF.pdf}
+%     \put(84,65){\fcolorbox{white}{white}{(b)}}
+%   \end{overpic}
+%   \caption{TGMF循环应力均值：(a)同相位，(b)反相位.}
+%   \label{Fig:plot_exp_mean_TCTGMF}
+% \end{figure}
 
 平均应力是高温低周疲劳中不可忽视的因素，尤其对于强度较高而韧性较低的镍基高温合金而言，平均应力是影响疲劳寿命的重要因素，图\ref{Fig:plot_exp_mean_TCTGMF}所示为Inconel 718合金在同相位和反相位TGMF试验条件下的平均应力响应曲线。可见，对于TGMF-IP，平均应力为压应力，机械应变幅的增加对平均应力的影响不大，对于不同的机械应变幅值，平均应力演化的速率相近，平均应力的数值随着循环数的增加而增大，
 ，当$\Delta_{\varepsilon}=0.4\%$时，半寿命时的压缩平均应力为66.7MPa。对于TGMF-OP，平均应力为拉应力且随着机械应变幅的增加拉伸平均应力幅度变大，当$\Delta_{\varepsilon}=0.4\%$时，半寿命时的拉伸平均应力约为52.3MPa。TGMF中存在明显平均应力的原因是合金的强度随温度的不断变化，无论是同相位还是反相位热梯度机械疲劳都经历低温到高温的温度循环，当试验温度较高时合金的强度较低，而当试验温度较低时合金的强度较高，因此造成了滞后回线的应力不对称性，平均应力总是偏向低温半周，而平均应力随机械应变幅增加而增大的原因是随着机械应变幅的增加，合金在高温半周产生的塑性变形增加，这加剧了拉压应力的不对称性。此外，可以观察到在两种TGMF试验条件下平均应力幅值均随循环的进行而逐渐增大，这可认为是IN718合金在高温半周循环软化更为强烈的结果。等温疲劳试验，平均应力数值普遍较小，因此平均应力对等温疲劳试验的影响可以忽略。
@@ -474,19 +480,22 @@ According to the measurement results of the sensors, the average pressure and te
 可以发现，同相位和反相位的情况下TGMF寿命都要低于TMF寿命，由于两组试验的温度循环相同，唯一不同的是试件径向方向的温度梯度，因此可以认为温度梯度对材料寿命有不利的影响，同时比较图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(a)和(b)，在同相位的情况下，温度梯度导致的寿命减少比反向位试验更加明显。
 根据上一节的分析可知，Chu能量模型在TMF-IP,TMF-OP和TGMF-OP的预测上有比较好的结果，表\ref{Tab:FatigueCoefficient}列举出了Chu模型计算过程中的参数，其中$\phi$为临界面与中心截面的夹角，$\sigma_{n,max}$为该临界面上在循环过程中的最大正应力，$T$,$\partial T/\partial y$和$\partial T/\partial r$为最大正应力处所对应的温度与温度梯度。
 在Chu能量模型的基础上，增加温度梯度的修正项，新的寿命模型如下：
-\begin{eqnarray*}
-f\left( {T,\nabla T} \right) {\left( {{\tau _{n,\max }}\frac{{\Delta \gamma }}{2} + {\sigma _{n,\max }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }} &=& 1.02\frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} \\
-&& + 1.04{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
-\end{eqnarray*}
-其中
+Based on the proposed TMF model in chapter 7, a correction term of the temperature gradient is multiplied on the right-hand side of Equation (\ref{Equ:TMF_model}). The fatigue life model for TGMF is suggested as:
 \begin{equation}
-f\left( {T,\nabla T} \right) = \left( {1 + \frac{{t\left\| {\nabla T} \right\|}}{{{T_{\max }} - {T_{{\sigma _{n,\max }}}} + {T_0}}}} \right),
+f\left( {T,\nabla T} \right)\left[ {A{{\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right)}_{\max }} + B\left( {\Delta \tau \Delta \gamma } \right)} \right]\left( {\frac{2}{{1 - {R_\sigma }}}} \right) = \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}.
+\label{Equ:TGMF_model}
 \end{equation}
-为温度梯度修正项，$T_{max}$为热机械循环中的最高温度，${T_{{\sigma _{n,\max }}}}$为临界面最大正应力时刻对应的温度，$T_0$为参考温度，可以通过寿命预测得到，$t$为试件特征长度，这里取试件的厚度$t=1$mm，用于无量纲化，${\left\| {\nabla T} \right\|}$为温度梯度的模，计算方式如下：
+The correction term of the temperature gradient is defined as:
+\begin{equation}
+f\left( {T,\nabla T} \right) = \left( {1 + g\frac{{\left\| {\nabla T} \right\|}}{{{T_{{\rm{melt}}}} - {T_{{\sigma _{n,\max }}}}}}} \right),
+\end{equation}
+where ${T_{{\rm{melt}}}}$ is the melting point of the material, and ${T_{{\sigma _{n,\max }}}}$ is the temperature corresponding to the maximum normal stress, $g$ is a model parameter in the unit of mm. ${\left\| {\nabla T} \right\|}$ is the temperature gradient and given by:
+% 为温度梯度修正项，$T_{max}$为热机械循环中的最高温度，${T_{{\sigma _{n,\max }}}}$为临界面最大正应力时刻对应的温度，$T_0$为参考温度，可以通过寿命预测得到，$t$为试件特征长度，这里取试件的厚度$t=1$mm，用于无量纲化，${\left\| {\nabla T} \right\|}$为温度梯度的模，计算方式如下：
 \begin{equation}
 \left\| {\nabla T} \right\| = \sqrt {{{\left( {\frac{{\partial T}}{{\partial x}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial y}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial z}}} \right)}^2}}.
 \end{equation}
-图\ref{Fig:NF-NP-TGMF-Our}为修正的Chu模型的预测结果，TMF和TGMF的结果都在3倍线以内。
+
+\ref{Fig:TGMF_model} shows the life assessment of the TGMF tests. As shown in \ref{Fig:TGMF_model}(a), the fatigue damage parameters versus experimental fatigue lifetimes is illustrated. The fatigue damage parameters shows good correlation with experimental fatigue lifetimes of TGMF-IP and TGMF-OP tests. In \ref{Fig:TGMF_model}(b), one can observed that based on the proposed model (Equation (\ref{Equ:TGMF_model})), most of the predicted fatigue lifetimes are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lifetimes.
 
 \begin{figure}
   \centering
@@ -523,10 +532,28 @@ f\left( {T,\nabla T} \right) = \left( {1 + \frac{{t\left\| {\nabla T} \right\|}}
   \label{Tab:FatigueCoefficient}%
 \end{table}%
 
+\begin{figure}
+  \centering
+  \begin{overpic}[width=12cm]{F-NF-TGMF-Study2.pdf}
+    \put(84,15){{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=12cm]{NF-NP-TGMF-Study2.pdf}
+    \put(84,18){{(b)}}
+  \end{overpic}
+  \caption{Computational results of the TMF tests, based on the present model: (a)Fatigue damage parameter versus experimental fatigue lifetime, (b)Comparison of the predicted fatigue lifetime and experimental fatigue lifetime.}
+  \label{Fig:TGMF_model}
+\end{figure}
+
 \begin{figure}[!htp]
-\centering{\includegraphics[width=8.5cm]{NF-NP-TGMF-Our.pdf}}
-\caption{Our Strain Energy Model.}
-\label{Fig:NF-NP-TGMF-Our}
+\centering
+\begin{overpic}[width=8.0cm]{plot_fatigue_life_quantitative_evaluation_tgmf_TN.pdf}
+\put(14,65){\fcolorbox{white}{white}{(a)}}
+\end{overpic}
+\begin{overpic}[width=8.0cm]{plot_fatigue_life_quantitative_evaluation_tgmf_TRMS.pdf}
+\put(14,65){\fcolorbox{white}{white}{(b)}}
+\end{overpic}
+\caption{The quantitative evaluation of the fatigue life prediction results: (a)$T_N$, (b)$T_{RMS}$.}
+\label{Fig:plot_fatigue_life_quantitative_evaluation_tmf}
 \end{figure}
 
 \section{结论}
