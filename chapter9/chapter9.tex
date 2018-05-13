@@ -18,9 +18,9 @@
 火焰喷射的优点在于接近真实发动机涡轮叶片的工作环境，但火焰的稳定性差，火焰形状难以控制，很难形成均匀的温度场\cite{MAUGET2017225}。
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{IN718_Axial_Specimen_TGMF.pdf}}
+\centering{\includegraphics[width=12cm]{AxialSpecimenIN718-120.pdf}}
 \caption{TGMF试样示意图.}
-\label{Fig:Specimen}
+\label{Fig:AxialSpecimenIN718-120}
 \end{figure}
 
 因此，参考德宇航的工作\cite{BAUFELD2008219}，我们为热梯度机械疲劳（TGMF）测试设计开发了聚光辐射加热系统，如\ref{Fig:Radiation_Furnace2}所示。
@@ -39,32 +39,34 @@
 % \label{Fig:Radiation_Furnace2}
 % \end{figure}
 
+% 如果是右对齐，那么只需要将\centering换成\raggedleft，如果左对齐，那么换成\raggedright即可。
 
 \begin{table}[htbp]
   \centering
   \caption{650$^{\circ}$C恒温疲劳试验、TMF与TGMF试验结果.}
-    \begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
+    \begin{tabular}{p{4cm}p{1.5cm}<{\raggedleft}p{1.5cm}<{\raggedleft}p{3cm}<{\raggedleft}p{1.5cm}<{\raggedleft}p{1.5cm}<{\raggedleft}}
     \toprule
     Test Type & $\pm \varepsilon _m$ & $\varepsilon _{eq}$ & $\dot \varepsilon _{eq}$ & $\theta_{T-\varepsilon}$ & $N_f$ \\
-          & [\%]  & [\%]  & [s$^{-1}$] & [$^\circ$] &  \\
+          & [\%]  & [\%]  & [s$^{-1}$] & [$^\circ$] & [cycle] \\
     \midrule
-    TGMF-IP & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 0     & 48 \\
+    TC-IP-TGMF & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 0     & 48 \\
           & 0.60  & 0.60  & $1.33\times 10^{-4}$ & 0     & 50 \\
           & 0.55  & 0.55  & $1.22\times 10^{-4}$ & 0     & 107 \\
           & 0.50  & 0.50  & $1.11\times 10^{-4}$ & 0     & 208 \\
           & 0.40  & 0.40  & $0.89\times 10^{-4}$ & 0     & 1066 \\
     \midrule
-    TGMF-OP & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 180   & 128 \\
+    TC-OP-TGMF & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 180   & 128 \\
           & 0.55  & 0.55  & $1.22\times 10^{-4}$ & 180   & 375 \\
           & 0.50  & 0.50  & $1.11\times 10^{-4}$ & 180   & 864 \\
           & 0.40  & 0.40  & $0.89\times 10^{-4}$ & 180   & 3387 \\
     \midrule
-    TGMF-IP-TBC & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 0     & 147 \\
+    TC-IP-TGMF-TBC & 0.75  & 0.75  & $1.67\times 10^{-4}$ & 0     & 147 \\
           & 0.55  & 0.55  & $1.22\times 10^{-4}$ & 0     & 624 \\
     \bottomrule
     \end{tabular}%
   \label{tab:test_matrix}%
 \end{table}%
+
 
 \section{试验结果}
 
@@ -231,7 +233,7 @@ Table \ref{tab:SutherlandConstant} shows the Sutherland's constant and reference
   \caption{Sutherland's constant and reference values of the air.}
     \begin{tabular}{p{2cm}p{2cm}p{2cm}p{3cm}}
     \toprule
-    Gas   & $C$(K) & $T_0$(K) & $\mu_0$($\rm{Pa\cdot s}$) \\
+    Gas   & $C$ [K] & $T_0$ [K] & $\mu_0$ [$\rm{Pa\cdot s}$] \\
     \midrule
     air   & 120   & 291.15 & $1.827\times 10^{-5}$ \\
     \bottomrule
@@ -251,7 +253,9 @@ $R$ is specific gas constant.
 
 According to the measurement results of the sensors, the average pressure and temperature of the cooling air are 6.5 bar and 288.15K, respectively.
 
+\renewcommand\arraystretch{1.4}
 \begin{table}[htbp]
+\centering
   \begin{threeparttable}
   \centering
   \caption{Heat convection coefficients of the inner surface of the specimen.}
@@ -282,6 +286,7 @@ According to the measurement results of the sensors, the average pressure and te
     \end{threeparttable}
   \label{tab:addlabel}%
 \end{table}%
+\renewcommand\arraystretch{1}
 
 \subsection{计算结果}
 图\ref{Fig:plot_temperature_along_gauge_length}为试件内、外表面温度和轴向应力在标距段内沿轴向的分布，横坐标为距离试件中心截面的距离，在TGMF-IP循环过程中，图中所示的温度与应变为温度最高点（650$^{\circ}$C）时的值。
@@ -305,12 +310,12 @@ According to the measurement results of the sensors, the average pressure and te
 \subsection{疲劳寿命}
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{plot_exp_fatigue_life.pdf}}
+\centering{\includegraphics[width=12cm]{plot_exp_fatigue_life_TGMF.pdf}}
 \caption{恒温试验（IF）、热机械疲劳试验（TMF）和热梯度机械疲劳试验（TGMF）寿命比较.}
-\label{Fig:plot_exp_fatigue_life}
+\label{Fig:plot_exp_fatigue_life_TGMF}
 \end{figure}
 
-在机械应变控制条件下，一般可以通过机械应变幅与疲劳寿命之间的关系来考查材料的热机械疲劳寿命行为。图\ref{Fig:plot_exp_fatigue_life}所示为300-650$^{\circ}$C同相位、反相位热机械疲劳和热梯度机械疲劳试验条件下机械应变与疲劳寿命之间的关系，图中黑色实线为650$^{\circ}$C等温疲劳的Coffin-Masson疲劳寿命曲线。可见300-650$^{\circ}$C的热机械疲劳与热梯度机械疲劳比650$^{\circ}$C等温疲劳具有更大的损伤。在同等机械应变幅下650$^{\circ}$C等温低周疲劳具有较高的疲劳寿命。
+在机械应变控制条件下，一般可以通过机械应变幅与疲劳寿命之间的关系来考查材料的热机械疲劳寿命行为。图\ref{Fig:plot_exp_fatigue_life_TGMF}所示为300-650$^{\circ}$C同相位、反相位热机械疲劳和热梯度机械疲劳试验条件下机械应变与疲劳寿命之间的关系，图中黑色实线为650$^{\circ}$C等温疲劳的Coffin-Masson疲劳寿命曲线。可见300-650$^{\circ}$C的热机械疲劳与热梯度机械疲劳比650$^{\circ}$C等温疲劳具有更大的损伤。在同等机械应变幅下650$^{\circ}$C等温低周疲劳具有较高的疲劳寿命。
 对于热机械疲劳（TMF），同相位和反相位试验的机械应变幅-寿命关系曲线存在相互交叉，交叉点的位置大概在机械应变幅为0.6\%左右。
 当机械应变幅较高时，同相位热机械疲劳倾向于具有较低的疲劳寿命而当机械应变幅较低时,反相位热机械疲劳倾向于具有较低的疲劳寿命。
 而对于热梯度机械疲劳（TGMF），同相位和反相位试验的机械应变幅-寿命关系曲线并没有存在相互交叉的趋势，同相位热梯度机械疲劳一直具有较低的疲劳寿命。
@@ -447,7 +452,6 @@ According to the measurement results of the sensors, the average pressure and te
   \label{Fig:fatigue_striations}
 \end{figure}
 
-
 \section{疲劳模型}
 \begin{figure}
    \centering
@@ -468,18 +472,27 @@ According to the measurement results of the sensors, the average pressure and te
    \begin{overpic}[width=7.5cm]{NF-NP-TGMF-Liu1.pdf}
      \put(70,20){\fcolorbox{white}{white}{(e) Liu I}}
    \end{overpic}
-   \begin{overpic}[width=7.5cm]{NF-NP-TGMF-Zamrik.pdf}
-     \put(65,20){\fcolorbox{white}{white}{(f) Zamrik}}
+   \begin{overpic}[width=7.5cm]{NF-NP-TGMF-Study.pdf}
+     \put(65,20){\fcolorbox{white}{white}{(f) Present}}
    \end{overpic}
-  \caption{Comparison between predicted fatigue life and experimental results of multiaxial thermomechanical fatigue tests. (a) Brown-Miller Model; (b) Fatemi-Socie Model; (c) Smith-Watson-Topper Model; (d) Chu-Conle-Bonnen Model; (e) Liu Tension Energy Model; (f) Zamrik Model.}
+  \caption{Comparison between predicted fatigue life and experimental results of multiaxial thermomechanical fatigue tests. (a) Brown-Miller model; (b) Fatemi-Socie model; (c) Smith-Watson-Topper model; (d) Chu-Conle-Bonnen model; (e) Liu Tension Energy model; (f) Present TMF model (Equation (\ref{Equ:TMF_model})).}
   \label{Fig:life_prediction}
 \end{figure}
 
-\section{温度梯度的影响}
-图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}分别比较了TMF和TGMF在同相位和反相位时的疲劳寿命。
-可以发现，同相位和反相位的情况下TGMF寿命都要低于TMF寿命，由于两组试验的温度循环相同，唯一不同的是试件径向方向的温度梯度，因此可以认为温度梯度对材料寿命有不利的影响，同时比较图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(a)和(b)，在同相位的情况下，温度梯度导致的寿命减少比反向位试验更加明显。
-根据上一节的分析可知，Chu能量模型在TMF-IP,TMF-OP和TGMF-OP的预测上有比较好的结果，表\ref{Tab:FatigueCoefficient}列举出了Chu模型计算过程中的参数，其中$\phi$为临界面与中心截面的夹角，$\sigma_{n,max}$为该临界面上在循环过程中的最大正应力，$T$,$\partial T/\partial y$和$\partial T/\partial r$为最大正应力处所对应的温度与温度梯度。
-在Chu能量模型的基础上，增加温度梯度的修正项，新的寿命模型如下：
+\section{Fatigue life assessment of TGMF}
+\noindent
+\ref{Fig:plot_exp_fatigue_life_TMF_TGMF} shows the comparision of the fatigue lifetimes of TMF and TGMF tests under in-phase and out-of-phase loading conditions, respectively.
+The TC-IP-TGMF life is smaller than the TC-IP life as shown in \ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(a) and the TC-OP-TGMF life is smaller than the TC-OP life as shown in \ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(b).
+The temperature cycles of the TMF and TGMF tests are the same, the only difference between the TMF and TGMF tests is the temperature gradient in the specimen.
+Therefore, the temperature gradient is considered to have a significant effect on the fatigue life under the thermomechanical loading condition.
+Comparing \ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(a) with \ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(b), the reduction of TC-IP-TGMF life due to the temperature gradient is more evident than the reduction of TC-OP-TGMF life.
+
+According to the analysis in the previous chapter, the suggested TMF model has good agreement in the prediction of TMF-IP, TMF-OP, and TGMF-OP. The table \ref{Tab: FatigueCoefficient} lists the parameters in the calculation of the Chu model. , where $\phi$ is the angle between the proximate interface and the central section, $\sigma_{n,max}$ is the maximum normal stress during the cycle on this proximate interface, $T$,$\partial T/\partial y$ and $\partial T/\partial r$ are the temperature and temperature gradients corresponding to the maximum normal stress location.
+
+% 图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}分别比较了TMF和TGMF在同相位和反相位时的疲劳寿命。
+% 可以发现，同相位和反相位的情况下TGMF寿命都要低于TMF寿命，由于两组试验的温度循环相同，唯一不同的是试件径向方向的温度梯度，因此可以认为温度梯度对材料寿命有不利的影响，同时比较图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(a)和(b)，在同相位的情况下，温度梯度导致的寿命减少比反向位试验更加明显。
+% 根据上一节的分析可知，Chu能量模型在TMF-IP,TMF-OP和TGMF-OP的预测上有比较好的结果，表\ref{Tab:FatigueCoefficient}列举出了Chu模型计算过程中的参数，其中$\phi$为临界面与中心截面的夹角，$\sigma_{n,max}$为该临界面上在循环过程中的最大正应力，$T$,$\partial T/\partial y$和$\partial T/\partial r$为最大正应力处所对应的温度与温度梯度。
+% 在Chu能量模型的基础上，增加温度梯度的修正项，新的寿命模型如下：
 Based on the proposed TMF model in chapter 7, a correction term of the temperature gradient is multiplied on the right-hand side of Equation (\ref{Equ:TMF_model}). The fatigue life model for TGMF is suggested as:
 \begin{equation}
 f\left( {T,\nabla T} \right)\left[ {A{{\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right)}_{\max }} + B\left( {\Delta \tau \Delta \gamma } \right)} \right]\left( {\frac{2}{{1 - {R_\sigma }}}} \right) = \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}.
@@ -495,7 +508,7 @@ where ${T_{{\rm{melt}}}}$ is the melting point of the material, and ${T_{{\sigma
 \left\| {\nabla T} \right\| = \sqrt {{{\left( {\frac{{\partial T}}{{\partial x}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial y}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial z}}} \right)}^2}}.
 \end{equation}
 
-\ref{Fig:TGMF_model} shows the life assessment of the TGMF tests. As shown in \ref{Fig:TGMF_model}(a), the fatigue damage parameters versus experimental fatigue lifetimes is illustrated. The fatigue damage parameters shows good correlation with experimental fatigue lifetimes of TGMF-IP and TGMF-OP tests. In \ref{Fig:TGMF_model}(b), one can observed that based on the proposed model (Equation (\ref{Equ:TGMF_model})), most of the predicted fatigue lifetimes are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lifetimes.
+\ref{Fig:TGMF_model} shows the fatigue life assessment of the TGMF tests. As shown in \ref{Fig:TGMF_model}(a), the fatigue damage parameters versus experimental fatigue lives is illustrated. The fatigue damage parameters shows good correlation with experimental fatigue lives of TGMF-IP and TGMF-OP tests. In \ref{Fig:TGMF_model}(b), one can observed that based on the proposed model (Equation (\ref{Equ:TGMF_model})), most of the predicted fatigue lives are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lives.
 
 \begin{figure}
   \centering
@@ -509,27 +522,27 @@ where ${T_{{\rm{melt}}}}$ is the melting point of the material, and ${T_{{\sigma
   \label{Fig:plot_exp_fatigue_life_TMF_TGMF}
 \end{figure}
 
-% Table generated by Excel2LaTeX from sheet 'Sheet2'
 \begin{table}[htbp]
   \centering
-  \caption{Fatemi-Socie模型计算数值}
-    \begin{tabular}{rrrrrrrrrr}
+  \caption{Add caption}
+    \begin{tabular}{lrrrrrrrrr}
     \toprule
-    Load Type & $\Delta\varepsilon/2$ & $\phi$ & $\Delta\gamma$ & $\sigma_{n,max}$ & $T$   & $\partial T/\partial y$ & $\partial T/\partial r$ & $N_f$ & $N_p$ \\
-          & [\%]  & [$^{\circ}$] & [\%]  & [MPa] & [$^{\circ}$C] & [$^{\circ}$C/mm] & [$^{\circ}$C/mm] & [cycle] & [cycle] \\
+    Load Type & $\Delta\varepsilon/2$ & $\varphi$ & $\Delta\sigma$ & $\Delta\varepsilon$ & $T$   & $\partial T/\partial y$ & $\partial T/\partial r$ & $N_{\rm{f}}$ & $N_{\rm{p}}$ \\
+          & [\%]  & [$^{\circ}$] & [MPa] & [\%]  & [K]   & [K/mm] & [K/mm] & [cycle] & [cycle] \\
     \midrule
-    TGMF-IP & 0.4   & 45    & 1.09  & 262.9  & 642.0  & -11.6  & 0.092  & 1066  & 72333 \\
-    TGMF-IP & 0.5   & 45    & 1.36  & 350.6  & 642.0  & -11.6  & 0.092  & 208   & 6938 \\
-    TGMF-IP & 0.65  & 45    & 1.50  & 396.3  & 642.0  & -11.6  & 0.092  & 107   & 3443 \\
-    TGMF-IP & 0.7   & 45    & 1.65  & 407.9  & 642.0  & -11.6  & 0.092  & 48    & 1957 \\
-    TGMF-IP & 0.9   & 45    & 2.42  & 432.5  & 647.2  & -11.7  & 0.093  & 48    & 369 \\
-    TGMF-OP & 0.4   & 45    & 1.00  & 419.1  & 308.0  & -6.5  & 0.044  & 3387  & 145692 \\
-    TGMF-OP & 0.5   & 45    & 1.18  & 524.7  & 316.2  & -7.1  & 0.045  & 864   & 20077 \\
-    TGMF-OP & 0.65  & 45    & 1.82  & 511.6  & 302.8  & -6.4  & 0.044  & 375   & 1083 \\
-    TGMF-OP & 0.9   & 45    & 2.58  & 543.5  & 302.8  & -6.4  & 0.044  & 128   & 273 \\
+    TC-IP-TGMF & 0.4   & 0     & 1058.4  & 0.85  & 923   & -11.6  & 0.092  & 1066  & 111026 \\
+      & 0.5   & 0     & 1298.3  & 0.99  & 923   & -11.6  & 0.092  & 208   & 7950 \\
+      & 0.65  & 0     & 1827.8  & 1.29  & 923   & -11.6  & 0.092  & 107   & 550 \\
+      & 0.7   & 0     & 1758.6  & 1.28  & 923   & -11.6  & 0.092  & 48    & 719 \\
+      & 0.9   & 0     & 1917.3  & 1.87  & 923   & -11.6  & 0.092  & 48    & 169 \\
+    \midrule
+    TC-OP-TGMF & 0.4   & 0     & 1562.6  & 0.78  & 573   & -6.5  & 0.044  & 3387  & 29041 \\
+      & 0.5   & 0     & 1680.5  & 1.02  & 573   & -6.5  & 0.044  & 864   & 2295 \\
+      & 0.65  & 0     & 1834.4  & 1.42  & 573   & -6.5  & 0.044  & 375   & 490 \\
+      & 0.9   & 0     & 1981.1  & 2.00  & 573   & -6.5  & 0.044  & 128   & 136 \\
     \bottomrule
     \end{tabular}%
-  \label{Tab:FatigueCoefficient}%
+  \label{tab:FatigueCoefficient}%
 \end{table}%
 
 \begin{figure}
