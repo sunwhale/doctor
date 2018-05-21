@@ -1,18 +1,18 @@
 \documentclass[a4paper,            % paper size
-               12pTCt,               % font size
-%              twoside,            % two-sided
+               12pTCt,             % font size
+               % twoside,            % two-sided
                oneside,
                pointlessnumbers,   % avoid trailing "." for chapter and figure numbers
                headinclude,        % include header and exclude
                footexclude,        % footer from text body
                headsepline,        % line separating the header
-%               normalheadings,     % middle-sized chapter headings
+               % normalheadings,     % middle-sized chapter headings
                bibtotoc,           % include bibliography in contents
                openany,            % chapters may start on any page
-%               openright,          % chapters may start on right side only
+               % openright,          % chapters may start on right side only
                cleardoubleempty,   % free pages in empty style
                tablecaptionabove,  % table caption above table
-%               draft               % draft/final
+               % draft               % draft/final
                ]{scrbook}          % KOMA-Script book-class
 \usepackage[english,german]{babel} % load required languages
 \usepackage{graphicx}              % to include graphics
@@ -20,11 +20,10 @@
 \usepackage[caption=false]{subfig} % allow subfigures (without destroying the KOMA-Script captions)
 \usepackage[intlimits]{amsmath}    % better maths
 \usepackage{amssymb,amsfonts}
-%\usepackage[automark]{scrpage2}    % better headers and footers
-%\usepackage[dvipdfm,               % generate pdf using dvipdfm
+% \usepackage[automark]{scrpage2}    % better headers and footers
+% \usepackage[dvipdfm,               % generate pdf using dvipdfm
 \usepackage{url}
-\usepackage[%dvips,                 % generate pdf using dvips & ps2pdf
-            % pdf-meta-information here
+\usepackage[% dvips,                 % generate pdf using dvips & ps2pdf
             pdftitle={Computation of Fluid Dynamics and Conjugate Heat Transfer in Rotating Cavity},
             pdfauthor={Jingyu Sun},
             pdfsubject={MSc. Thesis},
@@ -41,15 +40,15 @@
                                    % better citations
 \usepackage{hypernat}              % ensure cooperation of natbib and hyperref
 \usepackage{booktabs}
-%\usepackage{subfig}
+% \usepackage{subfig}
 \usepackage[below]{placeins}
 \usepackage{fancyhdr}
 \usepackage{mdwlist}
-%\usepackage{CJK}
+% \usepackage{CJK}
 \usepackage{indentfirst}
 \usepackage[Symbol]{upgreek}
 \usepackage{bm}
-%\usepackage{Times}
+% \usepackage{Times}
 \usepackage{framed}
 \usepackage{threeparttable}
 \usepackage{overpic}
@@ -110,15 +109,15 @@
 \typearea[18mm]{19}                % VDI preference (rather large type area!)
 
 % adjust the page layout slightly (optional)
-%\clubpenalty=10000
-%\widowpenalty=10000
-%\interlinepenalty=1000
+% \clubpenalty=10000
+% \widowpenalty=10000
+% \interlinepenalty=1000
 
-%\newpagestyle{newchapter}{{\hfill}{\hfill}{\hfill}}{{\pagemark \hfill}{\hfill \pagemark}%
+% \newpagestyle{newchapter}{{\hfill}{\hfill}{\hfill}}{{\pagemark \hfill}{\hfill \pagemark}%
 %    {\hfill \pagemark \hfill}}     % new page style with no \headmark in header
-%\renewcommand*{\chapterpagestyle}{newchapter}
-                                   % page style of the first chapter page - VDI preference
-%\pagestyle{scrheadings}            % sophisticated headers and footers
+% \renewcommand*{\chapterpagestyle}{newchapter}
+%                                    page style of the first chapter page - VDI preference
+% \pagestyle{scrheadings}            % sophisticated headers and footers
 
 \addtokomafont{caption}{\sffamily} % captions in SansSerif
 \setkomafont{captionlabel}{\sffamily\bfseries}
@@ -130,13 +129,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-%\begin{CJK*}{GBK}{song}
-\captionsetup[figure]{labelfont={bf},font={footnotesize},name={Fig.},labelsep=period}
+% \begin{CJK*}{GBK}{song}
+\captionsetup[figure]{labelfont={bf},font={footnotesize},name={Figure},labelsep=period}
 
 \captionsetup[table]{labelfont={bf},font={footnotesize},name={Tabel},labelsep=period}
 
 \selectlanguage{english}           % select English as primary language
-%\selectlanguage{german}            % select German as primary language
+% \selectlanguage{german}            % select German as primary language
 \frontmatter
 \pagenumbering{Roman}              % capital Roman numbers (for German dissertations only!)
 
@@ -144,25 +143,15 @@
 \pagestyle{plain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\include{title/title}                    % prescribed title page
-%\include{title/page2}                    % prescribed back side of the title page (if required)
-%\cleardoublepage                         % move to the right
-%\include{dedication/dedication}          % dedication/motto (if desired)
-%\include{acknowledgements/acknowledgements}
-%
-%\include{zusammenfassung/zusammenfassung}
-%\include{abstract/abstract}              % abstract (if required)
-%\cleardoublepage                         % move to the right for the table of contents
-% \tableofcontents                         % table of contents
-%\addcontentsline{toc}{chapter}
-%{\listfigurename}
-%\listoffigures
-\include{symbols/symbols}                % list of symbols (if required)
-\include{abbreviations/abbreviations}    % list of abbreviations (if required)
+% \include{title/title}                    % prescribed title page
+% \include{title/page2}                    % prescribed back side of the title page (if required)
+% \cleardoublepage                         % move to the right
+% \include{dedication/dedication}          % dedication/motto (if desired)
+% \include{acknowledgements/acknowledgements}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mainmatter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \include{zusammenfassung/zusammenfassung}
+% \include{abstract/abstract}              % abstract (if required)
+% \cleardoublepage                         % move to the right for the table of contents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% set the pagestyle
@@ -181,14 +170,22 @@
 \renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
 \renewcommand\subsectionmark[1]{\markright{\thesubsection\ #1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents                         % table of contents
+% \addcontentsline{toc}{chapter}
+\listoffigures
+% \include{symbols/symbols}                % list of symbols (if required)
+% \include{abbreviations/abbreviations}    % list of abbreviations (if required)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \graphicspath{{F:/Cloud/GitHub/doctor/figs/}{F:/Cloud/GitHub/doctor/figs/python/}{F:/Cloud/GitHub/doctor/figs/ppt/}{F:/Cloud/GitHub/doctor/figs/svg/}{F:/Cloud/GitHub/doctor/figs/sem/}{F:/Cloud/GitHub/doctor/figs/test/}{F:/Cloud/Database/IN718/SEM/}{F:/Cloud/GitHub/fatigue/figs/}{F:/Cloud/GitHub/furnace/figs/}{F:/Cloud/GitHub/tmf/figs/}{F:/Cloud/GitHub/tgmf/figs/}}
 % \graphicspath{{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/python/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/ppt/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/svg/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/sem/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/test/}{/Users/SunJingyu/Documents/Cloud/Database/IN718/SEM/}{/Users/SunJingyu/Documents/Cloud/GitHub/fatigue/figs/}{/Users/SunJingyu/Documents/Cloud/GitHub/furnace/figs/}{/Users/SunJingyu/Documents/Cloud/GitHub/tmf/figs/}{F:/Cloud/GitHub/tgmf/figs/}}
 
-
 % \include{chapter1/chapter1}
 % \include{chapter2/chapter2}
-% \include{chapter3/chapter3}
+\include{chapter3/chapter3}
 % \include{chapter4/chapter4}
 % \include{chapter5/chapter5}
 % \include{chapter6/chapter6}
@@ -197,15 +194,15 @@
 % \include{chapter9/chapter9}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \bibliographystyle{unsrt}            % bibliography style
-% \bibliography{bibliography}          % personal bibliography file
+\bibliographystyle{unsrt}            % bibliography style
+\bibliography{bibliography}          % personal bibliography file
 
-%\include{myresume/myresume}                    % resume (if required)
-%\include{appendix1/appendix1}                  % preface/acknowledgements
-%\include{appendix2/appendix2}                  % preface/acknowledgements
-%\include{appendix3/appendix3}                  % preface/acknowledgements
-%\end{CJK*}
+% \include{myresume/myresume}                    % resume (if required)
+% \include{appendix1/appendix1}                  % preface/acknowledgements
+% \include{appendix2/appendix2}                  % preface/acknowledgements
+% \include{appendix3/appendix3}                  % preface/acknowledgements
+% \end{CJK*}
 \end{document}

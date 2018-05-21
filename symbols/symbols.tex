@@ -1,78 +1,117 @@
 \addchap{Nomenclature}             % include list of symbols in the table of contents (without number)
 \sectionmark{Nomenclature}         % correct section headings
-\renewcommand\arraystretch{1.2}
+\renewcommand\arraystretch{1.0}
 
-\begin{table}[!hbp]
+\begin{table}[htb]
   \centering
-    \begin{tabular}{p{4cm}p{9.5cm}}
-    $\bf{a}$ & back stress tensor \\
+    \begin{tabular}{p{3cm}p{10.5cm}}
+    \textbf{Greek symbols} & \\
+    $\alpha$ & coefficient of thermal expansion \\
     $\bm{\upbeta}$ & back strain tensor \\
-    $\bm{\upepsilon}$ & total strain tensor \\
-    $\bm{\upepsilon}^e$ & elastic strain tensor \\
-    $\bm{\upepsilon}^p$ & plastic strain tensor \\
-    $\bm{\upsigma}$ & stess tensor \\
-    $\bf{s}$ & deviatoric stress tensor \\
-    $\bm{\uptau}$ & Kirchhoff stress tensor \\
-    $\bm{\uptau}'$ & deviatoric Kirchhoff stress tensor \\
-    $\lambda$ & plastic multiplier \\
-    $\bf{n}$ & unit normal vector of yield surface \\
-    $Y_0$ & initial yield stress \\
-    $F$   & yield function \\
-    $\nu$ & Poisson's ratio \\
-    $E$   & Young's modulus \\
-    $G$   & shear modulus \\
-    $\mathbb{C}^{e}$ & elastic stiffness tensor \\
-    $\mathbb{C}^{ep}$ & consistent tangent moduli \\
-    $\mathbb{I}$ & unit tensor of rank four \\
-    $\mathbb{I}_d$ & deviatoric projection tensor of rank four \\
-    $\bf{I}$ & unit tensor of rank two \\
-    $\bf{F}$ & deformation gradient \\
-    $\bf{L}$ & velocity gradient \\
-    $\bf{V}$ & left stretch tensor \\
-    $\bf{U}$ & right stretch tensor \\
-    $\bf{B}$ & left Cauchy-Green tensor \\
-    $\bf{R}$ & proper orthogonal rotation tensor \\
-    $\bf{D}$ & stretching tensor \\
-    $\bf{W}$ & vorticity tensor \\
-    $\bm{\Omega}$ & spin tensor \\
-    $\eta,\theta,\mu$ & model constants \\
-    \end{tabular}%
-  \label{Tab:symbols1}%
-\end{table}%
-
-\begin{table}[!hbp]
-  \centering
-    \begin{tabular}{p{4cm}p{9.5cm}}
-    $T$ & temperature, torque \\
+    $\gamma$ & engineering shear strain \\
+    $\gamma_p, \gamma_q$ & coefficients \\
+    $\gamma'_f$ & torsional fatigue ductility coefficient \\
+    $\epsilon$ & emissivity \\
+    $\varepsilon_{eng}$  & engineering strain \\
     $\varepsilon_{mech}$ & mechanical strain \\
     $\varepsilon_{tot}$ & total strain \\
     $\varepsilon_{th}$ & thermal strain \\
-    $R_{\varepsilon}$ & loading ratio of the mechanical strain \\
-    $R_{\sigma}$ & loading ratio of the stress \\
-    $A$ & area, coefficient \\
-    $\sigma'_f$ & fatigue strength coefficient \\
     $\varepsilon'_f$ & fatigue ductility coefficient \\
-    $b$ & fatigue strength exponent \\
-    $c$ & fatigue ductility exponent \\
+    $\bm{\upepsilon}$ & total strain tensor \\
+    $\bm{\upepsilon}^e$ & elastic strain tensor \\
+    $\bm{\upepsilon}^p$ & plastic strain tensor \\
+    $\zeta$ & parameter in constitutive model \\
+    $\eta$ & model constants \\
+    $\theta$ & model constants \\
+    $\kappa$ & Lame constants \\
+    $\lambda$ & plastic multiplier \\
+    $\mu$ & model constants \\
+    $\nu$ & Poisson's ratio \\
+    $\pi$ & circumference \\
+    $\rho$ & density \\
+    $\sigma_{eng}$  & engineering stress \\
+    $\sigma'_f$ & fatigue strength coefficient \\
+    $\bm{\upsigma}$ & stress tensor \\
+    $\tau$  & shear stress \\
     $\tau'_f$ & torsional fatigue strength coefficient \\
-    $\gamma'_f$ & torsional fatigue ductility coefficient \\
-    $b_0$ & torsional fatigue strength exponent \\
-    $c_0$ & torsional fatigue ductility exponent \\
-    $N_f$ & experimental fatigue life \\
-    $N_p$ & predicted fatigue life \\
+    $\bm{\uptau}$ & Kirchhoff stress tensor \\
+    $\bm{\uptau}'$ & deviatoric Kirchhoff stress tensor \\
+    $\varphi$ & angle of critical plane \\
+    $\bm{\Omega}$ & spin tensor \\
     \end{tabular}%
-  \label{Tab:symbols2}%
+  \label{Tab:greek_1}%
 \end{table}%
 
-
-
-\begin{table}[!hbp]
+\begin{table}[htb]
   \centering
-    \begin{tabular}{p{4cm}p{9.5cm}}
+    \begin{tabular}{p{3cm}p{10.5cm}}
+    \textbf{Latin symbols} & \\
+    $\bf{a}$ & back stress tensor \\
+    $A$ & area, coefficient \\
+    $b$ & fatigue strength exponent \\
+    $b_0$ & torsional fatigue strength exponent \\
+    $\bf{b}$ & normalized back stress tensor \\
+    $\bf{B}$ & left Cauchy-Green tensor \\
+    $c$ & fatigue ductility exponent, kinematic hardening coefficient \\
+    $c_0$ & torsional fatigue ductility exponent \\
+    $\mathbb{C}$ & non-proportionality factor \\
+    $d$  & diameter \\
+    $\bf{D}$ & stretching tensor \\
+    $\mathbb{D}^{e}$ & elastic stiffness tensor \\
+    $\mathbb{D}^{ep}$ & consistent tangent moduli \\
+    $E$   & Young's modulus \\
+    $F$   & yield function, force \\
+    $\bf{F}$ & deformation gradient \\
+    $G$   & shear modulus \\
+    $h$ & convective heat transfer coefficient \\
+    $\mathbb{I}$ & unit tensor of rank four \\
+    $\mathbb{I}_d$ & deviatoric projection tensor of rank four \\
+    $\bf{I}$ & unit tensor of rank two \\
+    $l$ & length \\
+    $\bf{L}$ & velocity gradient \\
+    $M$ & number of segment \\
+    $\bf{n}$ & unit normal vector of yield surface \\
+    $N_f$ & experimental fatigue life \\
+    $N_p$ & predicted fatigue life \\
+    $p$   & accumulated plastic strain, fatigue damage parameter \\
+    $q$   & radius of the non-hardening surface \\
+    $R_{\varepsilon}$ & loading ratio of the mechanical strain \\
+    $R_{\sigma}$ & loading ratio of the stress \\
+    $\bf{R}$ & proper orthogonal rotation tensor \\
+    $\bf{s}$ & deviatoric stress tensor \\
+    $T$ & temperature, torque \\
+    $\bf{U}$ & right stretch tensor \\
+    $\bf{V}$ & left stretch tensor \\
+    $\bf{W}$ & vorticity tensor \\
+    $Y$ & yield stress \\
+    $Y_0$ & initial yield stress \\
+    \end{tabular}%
+  \label{Tab:latin_1}%
+\end{table}%
+
+\begin{table}[htb]
+  \centering
+    \begin{tabular}{p{3cm}p{10.5cm}}
+    $\textbf{Indices}$ & \\
+    $e$  & elastic \\
+    $eq$  & equivalent \\
+    $\max$  & maximum \\
+    $\min$  & minimum \\
+    $p$  & plastic, predicted \\
+    $n$  & step, normal \\
+    $o$  & out \\
+    $tr$  & trial \\
+    \end{tabular}%
+  \label{Tab:indices}%
+\end{table}%
+
+\begin{table}[htb]
+  \centering
+    \begin{tabular}{p{3cm}p{10.5cm}}
     $\textbf{Operations}$ & \\
     $\cdot$  & scalar product \\
     $:$  & double dot product \\
-    $:$  & double dot product \\
+    $::$  & four dot product \\
     ${\dot  \bullet }$  & time derivative of $\bullet$ \\
     ${\Delta  \bullet }$  & increment of $\bullet$ \\
     $\nabla \bullet$  & gradient of $\bullet$ \\
