@@ -21,12 +21,12 @@
 %“流动法则”将塑性应变增量和偏应力增量联系起来。金属材料通常应用的法则是相关的流动法则或者正态条件（Drucker公设）。
 %根据假定，该应力状态下的塑性应变增量是和此应力状态下的屈服表面的外法向共线的。其数学表达式为：
 %\begin{equation}
-%{{\bm{\dot \upepsilon }}^p} = \dot \lambda \frac{{\partial F}}{{\partial {\bm{\upsigma }}}}
+%{{\bm{\dot \upepsilon }}^{\rm{p}}} = \dot \lambda \frac{{\partial F}}{{\partial {\bm{\upsigma }}}}
 %\end{equation}
 
 \section{Introduction}
 \noindent
-Gas turbine components are exposed in high temperature and experience cyclic multi-axial thermo-mechanical loadings. The increasing performance requirements to modern gas turbines challenge  the material operating limits. Quantified characterization of deformation and fatigue behavior of materials under realistic conditions becomes increasingly of importance for industrial application \cite{harrison1996modelling}, including variations of structure temperature, mechanical loads as well as environmental conditions. Inconel 718 is the most popular nickel-based superalloy in turbine industry. It is an oxidation- and corrosion-resistant material possessing optimal thermal and mechanical property. It is used for both rotors and casings, so that the low cycle fatigue characterization of the material is of great significance for mechanical design. The operating temperature of Inconel 718 is limited to 650 $^{\circ}$C for the life limited parts, such as discs and shafts.
+Gas turbine components are exposed in high temperature and experience cyclic multi-axial thermo-mechanical loadings. The increasing performance requirements to modern gas turbines challenge  the material operating limits. Quantified characterization of deformation and fatigue behavior of materials under realistic conditions becomes increasingly of importance for industrial application \cite{harrison1996modelling}, including variations of structure temperature, mechanical loads as well as environmental conditions. Inconel 718 is the most popular nickel-based superalloy in turbine industry. It is an oxidation- and corrosion-resistant material possessing optimal thermal and mechanical property. It is used for both rotors and casings, so that the low cycle fatigue characterization of the material is of great significance for mechanical design. The operating temperature of Inconel 718 is limited to 923K for the life limited parts, such as discs and shafts.
 A turbine suffers from high temperature low cycle fatigue (LCF) as well as thermo-mechanical fatigue (TMF).
 The LCF and TMF behaviors of the nickel-based superalloy are the major concern for the safety and reliability of gas turbine engines.
 
@@ -40,7 +40,7 @@ The alloy Inconel 718 exhibited a pronounced initial cyclic hardening then becam
 Zhu et al. \cite{ZHU2016} introduced a cyclic elasto-viscoplastic constitutive model for thermo-mechanically coupled problems. The model introduced the energy conservation in viscoplastic deformations and considered heating exchange due to high strain rate as well as its effects to mechanical behavior of the material. The work is interesting for metal forming, but not related to thermo-mechanical fatigue, in which the description of materials mechanical behavior under complex loading condition is of importance. 
 Development of a reliable cyclic plasticity with experimental verification is necessary for predicting thermo-mechanical fatigue performance.
 
-The present work focuses on the multi-axial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 300 and 650$^{\circ}$C. Effects of non-proportional cyclic loading as well as thermo-mechanical coupling are studied. Inconel 718 was proven to be hardly influenced by the strain rate below 650$^{\circ}$C under realistic loading speed \cite{kim1988elevated, Schlesinger2017}, and the constitutive model is assumed to be rate-independent. However,  experiments reveal complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermo-mechanical phase effect, non-masing effect etc. Quantitative description of the material behavior needs a constitutive model based on extensive experimental investigation. In the present work a modified cyclic plasticity model is suggested for the nickel-based superalloy Inconel 718 under multi-axial thermo-mechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermo-mechanical fatigue loading components.
+The present work focuses on the multi-axial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 573K and 923K. Effects of non-proportional cyclic loading as well as thermo-mechanical coupling are studied. Inconel 718 was proven to be hardly influenced by the strain rate below 923K under realistic loading speed \cite{kim1988elevated, Schlesinger2017}, and the constitutive model is assumed to be rate-independent. However,  experiments reveal complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermo-mechanical phase effect, non-masing effect etc. Quantitative description of the material behavior needs a constitutive model based on extensive experimental investigation. In the present work a modified cyclic plasticity model is suggested for the nickel-based superalloy Inconel 718 under multi-axial thermo-mechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermo-mechanical fatigue loading components.
 
 \section{Continuum plasticity}
 \noindent
@@ -115,15 +115,15 @@ It is called hardening because the stress is increasing relative to perfect plas
 \label{Fig:Strain_decomposition}
 \end{figure}
 If, at a strain of $\varepsilon$, the loading were to be reversed, the material would cease to deform plastically (at least in the absence of time-dependent effects) and would show a linearly decreasing stress with strain such that the gradient of this part of the stress-strain curve would again be the Young's modulus, E, shown in \ref{Fig:Strain_decomposition}.
-Once a stress of zero is achieved (provided the material remains elastic on full reversal of the load), the strain remaining in the test specimen is the plastic strain, $\varepsilon_p$.
+Once a stress of zero is achieved (provided the material remains elastic on full reversal of the load), the strain remaining in the test specimen is the plastic strain, $\varepsilon_{\rm{p}}$.
 The recovered strain, $\varepsilon_e$, is the elastic strain and it can be seen that the total strain, $\varepsilon$, is the sum of the two
 \begin{equation}
-\varepsilon = \varepsilon^e + \varepsilon^p
+\varepsilon = \varepsilon_{\rm{e}} + \varepsilon_{\rm{p}}
 \end{equation}
 This is called the classical additive decomposition of strain.
 It is also apparent from \ref{Fig:Strain_decomposition} that the stress achieved at a strain of $\varepsilon$ is given by
 \begin{equation}
-\sigma = E\varepsilon^e = E(\varepsilon - \varepsilon^p)
+\sigma = E\varepsilon_{\rm{e}} = E(\varepsilon - \varepsilon_{\rm{p}})
 \end{equation}
 
 \subsection{Yield criterion}
@@ -205,40 +205,40 @@ In the study, the von Mises yield criteriona are used.
 % {\bm{\upepsilon }} = \frac{{\partial U}}{{\partial {\bm{\sigma }}}}
 % \end{equation}
 In elasticity theory, the strain tensor was related to the stress through an elastic potential function.
-By generalizing and applying this idea to plasticity theory, Mises proposed that there exists a plastic potential $g(\bm{\sigma})$, such that the plastic strain rate $\dot{{\bm{\upepsilon }}^p}$ could be derived from the following flow rule:
+By generalizing and applying this idea to plasticity theory, Mises proposed that there exists a plastic potential $g(\bm{\sigma})$, such that the plastic strain rate $\dot{{\bm{\upepsilon }}^{\rm{p}}}$ could be derived from the following flow rule:
 \begin{equation}
-\dot{{\bm{\upepsilon }}^p} = \dot\lambda \frac{\partial g}{\partial \bm{\sigma}},
+\dot{{\bm{\upepsilon }}^{\rm{p}}} = \dot\lambda \frac{\partial g}{\partial \bm{\sigma}},
 \label{Equ:dgdsigma}
 \end{equation}
 where $\dot\lambda$ is a proportional positive scalar factor which can be determined from the yield criterion. 
-% Geometrically, the plastic potential $g(\bm{\sigma})=0$, represents a surface in the stress space and $\dot{{\bm{\upepsilon }}^p}$ can be represented by a vector in this space.
+% Geometrically, the plastic potential $g(\bm{\sigma})=0$, represents a surface in the stress space and $\dot{{\bm{\upepsilon }}^{\rm{p}}}$ can be represented by a vector in this space.
 % The plastic strain rate vector is normal to $g(\bm{\sigma})=0$.
 % Therefore, Equation \ref{Equ:dgdsigma} is also referred to as the normality flow rule in plasticity theory.
 Common approach in plasticity theory is to assume that the plastic potential function $g(\bm{\sigma})$ is the same as the yield function $f(\bm{\sigma})$.
 It is typically assumed that the plastic strain increment and the normal to the yield surface have the same direction, so that the flow rule can be written as:
 %In metal plasticity, the assumption that the plastic strain increment and deviatoric stress tensor have the same principal directions is encapsulated in a relation called the flow rule.
 \begin{equation}
-\dot{{\bm{\upepsilon }}^p} = \dot\lambda \frac{\partial f}{\partial \bm{\sigma}}.
+\dot{{\bm{\upepsilon }}^{\rm{p}}} = \dot\lambda \frac{\partial f}{\partial \bm{\sigma}}.
 \end{equation}
 This form of the flow rule is called the associated flow rule.
 % On the other hand, if $g \neq f$, the flow rule is called nonassociated.
 In general, experimental observations show that inelastic deformation of metals can be characterized quite well by an associated flow rule, but for some porous materials a nonassociated flow rule provides a better representation of inelastic deformation.
 
-% The above flow rule is easily justified for perfectly plastic deformations for which $d\boldsymbol{\sigma} = 0$  when $d{{\bm{\upepsilon }}^p} > 0$, i.e., the yield surface remains constant under increasing plastic deformation. This implies that the increment of elastic strain is also zero, $d{{\bm{\upepsilon }}^e} = 0$, because of Hooke's law.
+% The above flow rule is easily justified for perfectly plastic deformations for which $d\boldsymbol{\sigma} = 0$  when $d{{\bm{\upepsilon }}^{\rm{p}}} > 0$, i.e., the yield surface remains constant under increasing plastic deformation. This implies that the increment of elastic strain is also zero, $d{{\bm{\upepsilon }}^e} = 0$, because of Hooke's law.
 % Therefore,
 % \begin{equation}
-% d\boldsymbol{\sigma}:\frac{\partial f}{\partial \boldsymbol{\sigma}} = 0 \quad \text{and} \quad d\boldsymbol{\sigma}:d{{\bm{\upepsilon }}^p} = 0 \,.
+% d\boldsymbol{\sigma}:\frac{\partial f}{\partial \boldsymbol{\sigma}} = 0 \quad \text{and} \quad d\boldsymbol{\sigma}:d{{\bm{\upepsilon }}^{\rm{p}}} = 0 \,.
 % \end{equation}
 % Hence, both the normal to the yield surface and the plastic strain tensor are perpendicular to the stress tensor and must have the same direction.
 For a work hardening material, the yield surface can expand with increasing stress.
 We assume Drucker's second stability postulate which states that for an infinitesimal stress cycle this plastic work is positive, i.e.,
 \begin{equation}
-d\boldsymbol{\sigma}: d{{\bm{\upepsilon }}^p} \ge 0 \,.
+d\boldsymbol{\sigma}: d{{\bm{\upepsilon }}^{\rm{p}}} \ge 0 \,.
 \end{equation}
 The above quantity is equal to zero for purely elastic cycles.
 Examination of the work done over a cycle of plastic loading-unloading can be used to justify the validity of the associated flow rule.
 The Prager consistency condition is needed to close the set of constitutive equations and to eliminate the unknown parameter $d\lambda$ from the system of equations.
-The consistency condition states that $df = 0$  at yield because  $f(\boldsymbol{\sigma},{{\bm{\upepsilon }}^p}) = 0$ , and hence
+The consistency condition states that $df = 0$  at yield because  $f(\boldsymbol{\sigma},{{\bm{\upepsilon }}^{\rm{p}}}) = 0$ , and hence
 \begin{equation}
 df = \frac{\partial f}{\partial \boldsymbol{\sigma}}:d\boldsymbol{\sigma} + \frac{\partial f}{\partial \boldsymbol{\varepsilon}_p}:d\boldsymbol{\varepsilon}_p = 0 \,.
 \end{equation}
@@ -279,11 +279,11 @@ A review of some kinematic hardening models is introduced as following.
 \noindent
 Prager (1949) \cite{prager1949recent} introduce a simple linear kinematic hardening model, in which the evolution of the back-stress is collinear with the evolution of the plastic strain:
 \begin{equation}
-{\dot{\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}_{}^p,
+{\dot{\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}^{\rm{p}},
 \end{equation}
 and
 \begin{equation}
-{\bf{ a}} = \frac{2}{3}c{\bm{ \upepsilon }}_{}^p,
+{\bf{ a}} = \frac{2}{3}c{\bm{ \upepsilon }}^{\rm{p}},
 \end{equation}
 in which $c$ is a material constant, the increment in kinematic hardening to be proportional to the increment
 in plastic strain.
@@ -292,7 +292,7 @@ in plastic strain.
 \noindent
 A better description is given by the model proposed initially by Armstrong and Frederick (1966) \cite{armstrong1966mathematical} introducing a recall term, called dynamic recovery:
 \begin{equation}
-{\dot {\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}_{}^p - \gamma {\bf{a}}\dot p,
+{\dot {\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}^{\rm{p}} - \gamma {\bf{a}}\dot p,
 \end{equation}
 in which $c,\gamma$ are material constants.
 The second term on the right hand side is called the recall term which is collinear with back stress $\bf{a}$ and is proportional to the norm of the plastic strain rate. The evolution of $\bf{a}$ instead of being linear, is then exponential for a monotonic uniaxial loading, with a saturation for a value $c/\gamma $.
@@ -306,12 +306,12 @@ It was postulated by Chaboche (1983) \cite{chaboche1983plastic} that the total b
 \end{equation}
 where ${\bf{a}}$ is the total back stress, ${{{\bf{a}}_i}}$ is a part of the total back stress, $i = 1\sim M$ , and $M$ is the number of back stress parts considered. Each back stress, ${{{\bf{a}}_i}}$ follows an A-F type relation:
 \begin{equation}
-{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}{{\bf{a}}_i}\dot p.
+{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^{\rm{p}}} - {\gamma _i}{{\bf{a}}_i}\dot p.
 \end{equation}
 
 Instead of using a nonlinear dependency (of the back-stress norm) in the dynamic recovery term, it was proposed by Chaboche (1991) \cite{Chaboche1991661} to introduce a threshold. The structure of the additional back-stress evolution equation is then:
 \begin{equation}
-{\dot{\bf a}}_i = \frac{2}{3}c_i{{\bm{\dot \upepsilon }}^p} - {\gamma _i} \left\langle {1 - \frac{{\bf{a}}_i}{{\left\| {\bf{a}}_i \right\|}}} \right\rangle {\bf{a}}_i\dot p,
+{\dot{\bf a}}_i = \frac{2}{3}c_i{{\bm{\dot \upepsilon }}^{\rm{p}}} - {\gamma _i} \left\langle {1 - \frac{{\bf{a}}_i}{{\left\| {\bf{a}}_i \right\|}}} \right\rangle {\bf{a}}_i\dot p,
 \end{equation}
 where
 \begin{equation}
@@ -325,7 +325,7 @@ The total back stress is composed of additive parts:
 \begin{equation}
 {\dot{\bf a}} = \sum\limits_{i = 1}^M {{{{\dot{\bf a}}}_i}},
 \end{equation}
-For each back stress, $\bf{a}_i$, it takes two forms as following.
+For each back stress, ${\bf{a}}_i$, it takes two forms as following.
 
 \textbf{Model I}, the extreme case, corresponding to some multilinear model.
 The decomposition of the kinematic hardening variable into components, are based on the assumption that each component has a critical state for its dynamic recovery to be activated fully.
@@ -333,7 +333,7 @@ The critical state is introduced by a surface ${f_i} = \left\| {{{\bf{a}}_i}} \r
 The recovery term operates only when the back stress attains this surface.
 In that case, under proportional loading, the back-stress rate vanishes. It writes:
 \begin{equation}
-{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}H\left( {{f_i}} \right)\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle {{\bf{a}}_i}\dot p,
+{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^{\rm{p}}} - {\gamma _i}H\left( {{f_i}} \right)\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle {{\bf{a}}_i}\dot p,
 \end{equation}
 in which
 \begin{equation}
@@ -341,7 +341,7 @@ in which
 \end{equation}
 or
 \begin{equation}
-{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - H\left( {{f_i}} \right)\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right],
+{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - H\left( {{f_i}} \right)\left\langle {{{{\bm{\dot \upepsilon }}}^{\rm{p}}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right],
 \label{Eqn:Introduction2}
 \end{equation}
 where $H$ is the Heaviside step function, ${\bf{n}}$ the plastic strain rate direction.
@@ -350,11 +350,11 @@ This version will never predict ratchetting under stationary conditions.
 
 \textbf{Model II}, the smooth version, more realistic, replaces the Heaviside step function by a power function:
 \begin{equation}
-{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^p} - {\gamma _i}{\left( {\frac{{\left\| {{{\bf{a}}_i}} \right\|}}{{{c^k}/{\gamma ^k}}}} \right)^{{m_i}}}\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle {{\bf{a}}_i}\dot p,
+{{\dot{\bf a}}_i} = \frac{2}{3}{c_i}{{\bm{\dot \upepsilon }}^{\rm{p}}} - {\gamma _i}{\left( {\frac{{\left\| {{{\bf{a}}_i}} \right\|}}{{{c^k}/{\gamma ^k}}}} \right)^{{m_i}}}\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle {{\bf{a}}_i}\dot p,
 \end{equation}
 or
 \begin{equation}
-{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {{\left( {\frac{{{{\bar a}_i}}}{r}} \right)}^{{m_i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right].
+{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - {{\left( {\frac{{{{\bar a}_i}}}{r}} \right)}^{{m_i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^{\rm{p}}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right].
 \end{equation}
 Though not necessary, the Macaulay bracket $\left\langle {{\bf{n}}:{{\bf{L}}_i}} \right\rangle$ continues to operate in this smooth version, and will play a significant role in reducing ratchetting.
 
@@ -367,16 +367,16 @@ In the first version of the Ohno and Wang's model, the dynamic recovery of ${{\b
 \end{equation}
 Let us assume the two kinds of dynamic recovery terms mentioned above. Then, with Heaviside's step function and Macaulay bracket, the evolution equation of ${{\bf{a}}_i}$ can be expressed as
 \begin{equation}
-{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {\mu _i}{{\bf{a}}_i}\dot p - H\left( {{f_i}} \right)\left\langle {{{\dot \lambda }_i}} \right\rangle {{\bf{a}}_i}} \right],
+{{\dot{\bf a}}_i} = {\zeta _i}\left[ {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - {\mu _i}{{\bf{a}}_i}\dot p - H\left( {{f_i}} \right)\left\langle {{{\dot \lambda }_i}} \right\rangle {{\bf{a}}_i}} \right],
 \label{Equ:Introduction1}
 \end{equation}
 where $\zeta_i$ and $\mu_i$ are material parameters, and ${\dot \lambda }_i$ is determined to have the following form using the consistency condition ${\dot f_i} = 0$:
 \begin{equation}
-{\dot \lambda _i} = {{\bm{ \upepsilon }}^p}:\frac{{{{\bf{a}}_i}}}{{{r_i}}} - {\mu _i}\dot p.
+{\dot \lambda _i} = {\bm{\dot \upepsilon }}^{\rm{p}}:\frac{{{{\bf{a}}_i}}}{{{r_i}}} - {\mu _i}\dot p.
 \end{equation}
-The second and third terms in the right hand side in Equation (\ref{Equ:Introduction1}) express the dynamic recovery of $\bf{a}_i$ based on the Armstrong and Frederick model and the Ohno and Wang model, respectively, whereas the first term is responsible for strain hardening.
+The second and third terms in the right hand side in Equation (\ref{Equ:Introduction1}) express the dynamic recovery of ${\bf{a}}_i$ based on the Armstrong and Frederick model and the Ohno and Wang model, respectively, whereas the first term is responsible for strain hardening.
 \begin{equation}
-{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{r_i}}}} \right\rangle {{\bf{a}}_i}} \right),
+{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\left\langle {{{{\bm{\dot \upepsilon }}}^{\rm{p}}}:\frac{{{{\bf{a}}_i}}}{{{r_i}}}} \right\rangle {{\bf{a}}_i}} \right),
 \end{equation}
 where $0 \le {\mu _i} \le 1$ Critical examination for this rule indicates that continuous ratchetting with constant rate occurs as long as ${\mu _i} > 0$ while complete shakedown takes place as ${\mu _i} = 0$ since the rule reduces to the original Ohno-Wang multi-linear rule defined by Equation (\ref{Eqn:Introduction2}).
 
@@ -386,11 +386,11 @@ Based on the the smooth version of Ohno-Wang's model, Jiang and Sehitoglu \cite{
 \begin{equation}
 {{\dot{\bf a}}_i} = {c_i}{r_i}\left[ {{\bf{n}} - {{\left( {\frac{{\left\| {{{\bf{a}}_i}} \right\|}}{{{r_i}}}} \right)}^{{\chi _i} + 1}}{{\bf{L}}_i}} \right]\dot p,
 \end{equation}
-where ${{\bf{L}}_i} = \frac{{{{\bf{a}}_i}}}{{\left\| {{{\bf{a}}_i}} \right\|}}$.
+where ${{\bf{L}}_i} = {{{\bf{a}}_i}}/{\left\| {{{\bf{a}}_i}} \right\|}$.
 Cyclic hardening/softening, progressive elevation or decrease in flow strength with cycles results in cyclic hardening or softening, respectively.
 Cyclic hardening can be considered with $c_i$ in the hardening relation Equation (\ref{Eqn:Introduction3}) being a function of the accumulated plastic strain,
 \begin{equation}
-{c_i} = {c_{i0}}\left( {1 + {a_{i1}}{e^{ - {b_{i1}}p}} + {a_{i2}}{e^{ - {b_{i2}}p}}} \right)
+{c_i} = {c_{i0}}\left( {1 + {a_{i1}}{e^{ - {b_{i1}}p}} + {a_{i2}}{e^{ - {b_{i2}}p}}} \right),
 \label{Eqn:Introduction3}
 \end{equation}
 where $c_{i0}$, $a_{i1}$, $b_{i1}$, $a_{i2}$ and $b_{i2}$ are material constants.
@@ -401,7 +401,7 @@ When the material behavior is mixed hardening/softening, all three terms are nec
 \noindent
 Kang \cite{kang2004uniaxial} considered the Abdel-Karim and Ohno rule and incorporated the accumulated plastic strain increment within dynamic recovery term rather than the plastic strain increment:
 \begin{equation}
-{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\dot p{{\bf{a}}_i}} \right)
+{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - \left[ {{\mu _i} + H\left( {{f_i}} \right)\left( {1 - {\mu _i}} \right)} \right]\dot p{{\bf{a}}_i}} \right).
 \end{equation}
 It is clear that, as $\mu_i=0$ this rule reduces to the modified Ohno-Wang rule defined by Equation (\ref{Eqn:Introduction2}) while it reduces to the Armstrong-Frederick rule when $\mu_i>0$.
 
@@ -409,7 +409,7 @@ It is clear that, as $\mu_i=0$ this rule reduces to the modified Ohno-Wang rule 
 \noindent
 Chen et al. \cite{chen2004modified} introduced a multiplying factor to the dynamic recovery term that considers non-proportionality of the plastic strain and back stress:
 \begin{equation}
-{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^p} - {{\left( {\frac{{{{\bar a}_i}}}{{{r_i}}}} \right)}^{{m_i}}}{{\left\langle {{\bf{n}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle }^{{\chi _i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^p}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right).
+{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - {{\left( {\frac{{{{\bar a}_i}}}{{{r_i}}}} \right)}^{{m_i}}}{{\left\langle {{\bf{n}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle }^{{\chi _i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^{\rm{p}}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right).
 \end{equation}
 
 \section{The cyclic plasticity model}
@@ -634,7 +634,7 @@ Box 1 and Box 2 summarize the constitutive equations of the model as follows:
 Box 1: Summary of the constitutive equations.
 
 1. Additive decomposition of the strain tensor:
-\[{\bm{\upepsilon }} = {{\bm{\upepsilon }}^e} + {{\bm{\upepsilon }}^p}\]
+\[{\bm{\upepsilon }} = {{\bm{\upepsilon }}^e} + {{\bm{\upepsilon }}^{\rm{p}}}\]
 
 2. Total stress:
 \[{\bm{\upsigma }} = {\bf{s}} + \frac{1}{3}tr\left( {\bm{\upsigma }} \right){\bf{I}} = {\mathbb{D}^e}:{{\bm{\upepsilon }}^e}\]
@@ -643,17 +643,17 @@ Box 1: Summary of the constitutive equations.
 \[F = \sqrt {\frac{3}{2}\left( {{\bf{s}} - {\bf{a}}} \right):\left( {{\bf{s}} - {\bf{a}}} \right)}  - Y = 0\]
 
 4. Plastic flow rule:
-\[{{\bm{\dot \upepsilon }}^p} = \dot \lambda \frac{{\partial F}}{{\partial {\bm{\upsigma }}}}\]
+\[{{\bm{\dot \upepsilon }}^{\rm{p}}} = \dot \lambda \frac{{\partial F}}{{\partial {\bm{\upsigma }}}}\]
 
 5. Effective stress:
 \[{\bf{n}} = \frac{{{\bf{s}} - {\bf{a}}}}{{\left\| {{\bf{s}} - {\bf{a}}} \right\|}}\]
 
 6. Backstress:
 \[{\bf{a}} = \sum\limits_{k = 1}^M {{{\bf{a}}^k}} \]
-\[{{\dot{\bf a}}^k} = {r^k}{\zeta ^k}\left[ {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^p} - \mu \frac{{{{\bf{a}}^k}}}{{{r^k}}}\dot p - H\left( {{f^k}} \right)\left\langle {\frac{{{{\bf{a}}^k}}}{{{r^k}}}:{{{\bm{\dot \upepsilon }}}^p} - \mu \dot p} \right\rangle \frac{{{{\bf{a}}^k}}}{{{r^k}}}} \right] + H\left( {{f^k}} \right)\frac{{{{\bf{a}}^k}}}{{{r^k}}}{\dot r^k}\]
+\[{{\dot{\bf a}}^k} = {r^k}{\zeta ^k}\left[ {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - \mu \frac{{{{\bf{a}}^k}}}{{{r^k}}}\dot p - H\left( {{f^k}} \right)\left\langle {\frac{{{{\bf{a}}^k}}}{{{r^k}}}:{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - \mu \dot p} \right\rangle \frac{{{{\bf{a}}^k}}}{{{r^k}}}} \right] + H\left( {{f^k}} \right)\frac{{{{\bf{a}}^k}}}{{{r^k}}}{\dot r^k}\]
 
 Normalized form:
-\[{{\dot{\bf b}}^k} = {\zeta ^k}\left( {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^p} - {{\bf{b}}^k}{{\dot p}^k}} \right) + \left[ {H\left( {{f^k}} \right) - 1} \right]\frac{{{{\dot r}^k}}}{{{r^k}}}{{\bf{b}}^k}\]
+\[{{\dot{\bf b}}^k} = {\zeta ^k}\left( {\frac{2}{3}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - {{\bf{b}}^k}{{\dot p}^k}} \right) + \left[ {H\left( {{f^k}} \right) - 1} \right]\frac{{{{\dot r}^k}}}{{{r^k}}}{{\bf{b}}^k}\]
 
 where
 \[{{\bf{a}}^k} = {r^k}{{\bf{b}}^k}\]
@@ -667,10 +667,10 @@ where
 Box 2: Specification of the material functions.
 
 1. Dynamic recovery:
-\[g = \sqrt {\frac{2}{3}\left( {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right):\left( {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right)}  - q\]
+\[g = \sqrt {\frac{2}{3}\left( {{{\bm{\upepsilon }}^{\rm{p}}} - {\bm{\upbeta}}} \right):\left( {{{\bm{\upepsilon }}^{\rm{p}}} - {\bm{\upbeta}}} \right)}  - q\]
 \[\dot \beta  = \left( {1 - \eta } \right)H\left( g \right)\left\langle {{\bf{n}}:{{\bf{n}}^*}} \right\rangle \sqrt {\frac{3}{2}} {{\bf{n}}^*}\dot p\]
 \[\dot q = \eta H\left( g \right)\left\langle {{\bf{n}}:{{\bf{n}}^*}} \right\rangle \dot p\]
-\[{{\bf{n}}^*} = \frac{{\partial g}}{{\partial {{\bm{\upepsilon }}^p}}} = \frac{{{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}}}{{\left\| {{{\bm{\upepsilon }}^p} - {\bm{\upbeta}}} \right\|}}\]
+\[{{\bf{n}}^*} = \frac{{\partial g}}{{\partial {{\bm{\upepsilon }}^{\rm{p}}}}} = \frac{{{{\bm{\upepsilon }}^{\rm{p}}} - {\bm{\upbeta}}}}{{\left\| {{{\bm{\upepsilon }}^{\rm{p}}} - {\bm{\upbeta}}} \right\|}}\]
 
 2. Kinematic hard/softening:
 \[{r^k} = r_0^k + r_\Delta ^k\]

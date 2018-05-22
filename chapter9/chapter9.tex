@@ -1,10 +1,8 @@
-\chapter{Low cycle fatigue assessment under thermal gradient mechanical condition}
+\chapter{Low cycle fatigue assessment of thermal gradient mechanical fatigue}
 
 \section{Introduction}
 \noindent
-热障涂层涂覆于航空发动机和燃气轮机高温部件表面，具有防止高温腐蚀、延长热端部件使用寿命、提高发动机功率和减少燃油消耗等优点。
-通常典型的热障涂层包括表面陶瓷层(TC：top coat)和金属粘结层(BC：bond coat)。在服役过程中，粘结层会发生氧化，在粘结层和陶瓷层界面形成厚度为1~10$\mu$m的热生长氧化物(TGO：thermally grown oxide)。TGO的形成是一个体积膨胀过程，界面会限制这种体积变化，因而在TGO内部会随之产生应力。而且，陶瓷层与金属基底的热膨胀系数相
-差较大，在热循环过程中会在热载荷的作用下产生较大的热应力，从而在界面缺陷处引起应力集中，促进裂纹的萌生与扩展。
+
 
 发动机涡轮叶片主要采用气膜冷却和内部流冷却，轮盘通常采用内部二次流冷却。
 服役过程中，涡轮叶片不仅受到较大的交变载荷，而且在叶片表面和内部分别受到高温高压燃气的冲击和冷却气体的作用，这样涡轮叶片就遭受载荷和温度同时变化带来的热机械疲劳损伤。
@@ -22,19 +20,23 @@ The resistance furnace (see \ref{Fig:heating_methods}(a)) can reach a uniform te
 % Resistance furnaces have the advantage of good temperature stability, but the actual temperature rise during the start-up phase of the engine only takes tens of seconds, and cooling is also very rapid. 
 % The use of resistance furnaces cannot achieve rapid temperature rise and cooling of the test pieces.
 
-% 燃气加热是利用燃烧室中燃油燃烧时所产生的高温燃气对试件进行加热，在满足试件加热条件的同时，还可模拟燃气与零部件的热量交换、氧化、腐蚀等过程，并且对于试件的材料无特殊要求（金属、非金属复合材料等）。燃气加热能力强，可以将试件加热到很高温度。但是燃气加热需要搭建复杂的燃烧室设备及其控制系统，火焰加热受环境影响较大，试件的温度场均匀性较差，远远达不到TMF试验的要求。火焰喷射的优点在于接近真实发动机涡轮叶片的工作环境，但火焰的稳定性差，火焰形状难以控制，很难形成均匀的温度场\cite{MAUGET2017225}。
-Flame heating (see \ref{Fig:heating_methods}(c)) is the use of high-temperature gas generated in the combustion of fuel in the combustion chamber to heat the specimen. It can simulate the heat exchange, oxidation, corrosion and other processes of the gas and specimen. Flame heating has no special requirements for the material of the specimen (metal, non-metal composites, etc.) and allows the specimen to be heated to very high temperature. However, it requires the combustion chamber and complex control system. The flame heating is greatly affected by the environment, and the uniformity of the temperature field of the specimen is poor, which is far from the requirements of the TMF test \cite{MAUGET2017225}.
+% 电磁感应加热的优点在于加热效率高，试件升温迅速，通常热机械疲劳试验采用高频电磁感应设备进行加热，其中高频电磁感应加热厚度约为1-2mm，这意味着试件的内外表面是同时加热的，在内部冷却过程中，不利于产生内外表面的温度梯度，同时电磁感应方式只会对内部金属层加热，使得内部金属层温度高于外部陶瓷层温度，这不符合热障涂层构件实际工作状态下的温度分布\cite{BRENDEL2008234}。
 
-
-
-电磁感应加热的优点在于加热效率高，试件升温迅速，通常热机械疲劳试验采用高频电磁感应设备进行加热，其中高频电磁感应加热厚度约为1-2mm，这意味着试件的内外表面是同时加热的，在内部冷却过程中，不利于产生内外表面的温度梯度，同时电磁感应方式只会对内部金属层加热，使得内部金属层温度高于外部陶瓷层温度，这不符合热障涂层构件实际工作状态下的温度分布\cite{BRENDEL2008234}。
-
-As introduced in chapter 2, induction heating has the advantages of high heating rate and high efficiency and is widely used in TMF testing.
+As introduced in chapter 2, induction heating (see \ref{Fig:heating_methods}(b)) has the advantages of high heating rate and high efficiency. It is widely used in TMF testing.
 % 感应加热具有加热能力强、加热速度快，且具有低成本的优势，可以通过感应线圈的设计模拟复杂温度场，被广泛应用于金属材料高温疲劳试验。
 % 由于感应电流的趋肤效应，感应加热通常只能对工件表层进行加热，且感应频率越高，加热深度越浅。工件内部温度通过热传导实现升温。
 Due to the skin effect of the induced current, induction heating usually only heats the surface of the specimen, and the higher the induction frequency, the shallower the heating depth.
-In the present study, the heating depth of the induced current is about 1-2mm, which means the inner and outer surfaces of the specimen is heated simultaneously.
-in the internal cooling process, is not conducive to produce internal and external surface temperature gradient, while the electromagnetic induction method will only heat the internal metal layer, making the internal metal layer temperature is higher than the external ceramic layer temperature, which does not meet the thermal barrier coating Temperature distribution of layer members in actual working condition
+In the present study, the heating depth of the induced current is about 1-2mm, and thus the inner and outer surfaces of the specimen is heated simultaneously.
+Considering the internal cooling process, the induction heating is not conducive to produce the temperature gradient between internal and external surface of the specimen. Furthermore, considering a specimen covered with a thermal barrier coating (TBC) on its outer surface, the induction heating can only heat the metal part of the specimen, and the TBC (typically a ceramic material) will not be heated. This will cause the temperature inside the specimen to be higher than the outside temperature, which does not meet the temperature distribution in actual working condition \cite{BRENDEL2008234}.
+
+% 燃气加热是利用燃烧室中燃油燃烧时所产生的高温燃气对试件进行加热，在满足试件加热条件的同时，还可模拟燃气与零部件的热量交换、氧化、腐蚀等过程，并且对于试件的材料无特殊要求（金属、非金属复合材料等）。燃气加热能力强，可以将试件加热到很高温度。但是燃气加热需要搭建复杂的燃烧室设备及其控制系统，火焰加热受环境影响较大，试件的温度场均匀性较差，远远达不到TMF试验的要求。火焰喷射的优点在于接近真实发动机涡轮叶片的工作环境，但火焰的稳定性差，火焰形状难以控制，很难形成均匀的温度场\cite{MAUGET2017225}。
+Flame heating (see \ref{Fig:heating_methods}(c)) is the use of high-temperature gas generated in the combustion of fuel in the combustion chamber to heat the specimen. It can simulate the heat exchange, oxidation, corrosion and other processes of the gas and specimen. Flame heating has no special requirements for the material of the specimen (metal, non-metal composites, etc.) and allows the specimen to be heated to very high temperature. However, it requires the combustion chamber and complex control system. The flame heating is greatly affected by the environment, and the uniformity of the temperature field of the specimen is poor, which is far from the requirements of the TMF test \cite{MAUGET2017225}.
+
+% 石英灯辐射加热是利用石英灯管照射试件，实现试件升温的加热方式。辐射加热可加热金属、非金属和复合材料等多种材料，可通过多温区控制实现复杂的温度场。
+Quartz lamp radiant heating is the use of quartz lamp to irradiate the specimen or workpiece to achieve the predetermined temperature field. Radiant heating can heat metals, non-metals, composites, etc., and can obtain complex temperature fields through multi-temperature zone control.
+% 德国航空航天中心（Geman Aerospace Center, DLR）[36]通过镜面反射16 根1kW 的石英灯管设计了一种石英灯辐射加热炉（图 8），该加热炉加热能力较高，可在15s 内将试件表面温度从室温升至1000℃。由于加热时需要灯光照射在试件表面，因而难以安装引伸计等应变测量设备。但照射灯加热通常需要对多根灯管进行同步反馈控制，对控制系统的软硬件要求较高。并且在考核段的温度均匀性尚未得到很好的解决，限制了其在材料高温疲劳试验领域的应用。
+Deutsches Zentrum f\"{u}r Luft- und Raumfahrt (DLR) \cite{BAUFELD2008219} has developed a thermal gradient mechanical fatigue (TGMF) test facilities (see \ref{Fig:heating_methods}(d)) which allow simultaneous cyclic thermal and mechanical loading with controlled thermal gradients over the wall of hollow specimens. The thermal gradient is obtained by heating of the outer surface with a concentrating radiation furnace and simultaneous internal cooling with pressurized air. The high heat flux of the radiation furnace allows heating rates comparable to those in real turbine blades of a jet engine. The radiation furnace has a power of 16 kW and consists of 16 quartz lamps. A hollow cylindrical specimen from nickel base super alloy can be heated from 100°C to 1000°C in ca. 20 seconds. 
+
 
 \begin{figure}[!htp]
   \centering
@@ -58,21 +60,21 @@ in the internal cooling process, is not conducive to produce internal and extern
   \label{Fig:heating_methods}
 \end{figure}
 
-因此，参考德宇航的工作\cite{BAUFELD2008219}，我们为热梯度机械疲劳（TGMF）测试设计开发了聚光辐射加热系统，如\ref{Fig:Radiation_Furnace2}所示。
-该系统包括16根卤素灯管，灯丝的直径小于0.5mm，因此每根灯丝可以被抽象为一个线光源。
-每根灯管对应一面反射镜，反射镜的几何形状为椭圆柱面，每根灯管位于其对应的椭圆柱面其中一个焦点，试件位于所有椭圆柱面的公共焦点，通过镜面反射将光线聚焦在试件表面进行加热。
-通过聚光辐射的方法加热试件外表面，同时内表面通过压缩空气冷却来实现温度梯度。
-该系统可以在空心试件表上实现受控的温度梯度循环，同时施加机械载荷，适用于金属和非金属材料。
+% 因此，参考德宇航的工作\cite{BAUFELD2008219}，我们为热梯度机械疲劳（TGMF）测试设计开发了聚光辐射加热系统，如\ref{Fig:Radiation_Furnace2}所示。
+% 该系统包括16根卤素灯管，灯丝的直径小于0.5mm，因此每根灯丝可以被抽象为一个线光源。
+% 每根灯管对应一面反射镜，反射镜的几何形状为椭圆柱面，每根灯管位于其对应的椭圆柱面其中一个焦点，试件位于所有椭圆柱面的公共焦点，通过镜面反射将光线聚焦在试件表面进行加热。
+% 通过聚光辐射的方法加热试件外表面，同时内表面通过压缩空气冷却来实现温度梯度。
+% 该系统可以在空心试件表上实现受控的温度梯度循环，同时施加机械载荷，适用于金属和非金属材料。
 
-在TMF和TGMF测试中，温度控制是实现每个测试的可重复加载条件的关键问题，两种试验采用相似的温度控制方法。
-在测试过程中，使用接触式K型电偶测量试件外表面的温度，考虑到试验过程中温度变化速率很快，需要传感器对温度变化有迅速的响应，传感器体积越小，对温度的响应越迅速，因此我们选取测量点直径为0.25mm的热电偶，将试件中心点的温度作为控制量，以实现良好的温度控制，精度为±5°C。
-对于试件内表面，考虑到气体流动，在TGMF期间，内部点焊热电偶是不可能的，因为它们的信号受到内部冷却的影响。
-同时由于试件的尺寸很小，内孔直径只有6.5mm，也无法使用热像仪进行测量，因此在这里采用计算的方法来确定时间内表面的温度。
+% 在TMF和TGMF测试中，温度控制是实现每个测试的可重复加载条件的关键问题，两种试验采用相似的温度控制方法。
+% 在测试过程中，使用接触式K型电偶测量试件外表面的温度，考虑到试验过程中温度变化速率很快，需要传感器对温度变化有迅速的响应，传感器体积越小，对温度的响应越迅速，因此我们选取测量点直径为0.25mm的热电偶，将试件中心点的温度作为控制量，以实现良好的温度控制，精度为±5°C。
+% 对于试件内表面，考虑到气体流动，在TGMF期间，内部点焊热电偶是不可能的，因为它们的信号受到内部冷却的影响。
+% 同时由于试件的尺寸很小，内孔直径只有6.5mm，也无法使用热像仪进行测量，因此在这里采用计算的方法来确定时间内表面的温度。
 
 
 \begin{figure}[!htp]
 \centering{\includegraphics[width=12cm]{IN718_Axial_Specimen_TGMF.pdf}}
-\caption{TGMF试样示意图.}
+\caption{Dimensions of the specimen for TGMF testing.}
 \label{Fig:IN718_Axial_Specimen_TGMF}
 \end{figure}
 
@@ -81,8 +83,8 @@ in the internal cooling process, is not conducive to produce internal and extern
 The experimental conditions and results of TGMF tests are summarized in Table \ref{Tab:test_matrix_TGMF}. The load type TC-IP-TGMF is short for the tension-compression in-phase thermal gradient mechanical fatigue and TC-OP-TGMF means the tension-compression out-of-phase thermal gradient mechanical fatigue. The abbreviation TBC means the specimen is covered with the thermal barrier coating.
 Because of the thermal gradients in radial and axial directions, the axial stress is not constant on the cross section of the specimen.
 Therefore, the stress distribution of the specimen during the test has to be obtained by the finite element computation.
-In order to facilitate the comparison and analysis, the average axial stress on the cross section is given by,
-\[\sigma_{ave} = F/A.\]
+In order to facilitate the comparison and analysis, the nominal axial stress on the cross section is given by,
+\[\sigma_{\rm{nom}} = F/A.\]
 % 图\ref{Fig:plot_exp_TCTGMF}(a),(c)分别是同相位和反相位热梯度机械疲劳的稳定滞后回线。
 % 由于热梯度机械疲劳的温度循环与载荷循环之间有相位差,导致其拉伸半周和压缩半周具有不同的循环软化行为。
 % 对于同相位热梯度机械疲劳试验,合金在拉伸半周表现出较强的循环软化，而对于反相位热梯度机械疲劳试验则相反,合金在压缩半周表现出较强的循环软化。
@@ -95,24 +97,24 @@ For the TC-IP-TGMF test, an evident cyclic softening was observed during the ten
 \begin{table}[htbp]
   \centering
   \caption{Experimental conditions and results of thermal gradient mechanical fatigue tests.}
-    \begin{tabular}{p{4cm}p{1.5cm}<{\raggedleft}p{1.5cm}<{\raggedleft}p{3cm}<{\raggedleft}p{1.5cm}<{\raggedleft}p{1.5cm}<{\raggedleft}}
+    \begin{tabular}{p{4cm}p{1.5cm}<{\centering}p{3cm}<{\centering}p{1.5cm}<{\centering}p{1.5cm}<{\raggedleft}}
     \toprule
-    Test Type & $\pm \varepsilon _m$ & $\varepsilon _{eq}$ & $\dot \varepsilon _{eq}$ & $\theta_{T-\varepsilon}$ & $N_f$ \\
-          & [\%]  & [\%]  & [s$^{-1}$] & [$^\circ$] & [cycle] \\
+    Test Type & $\pm \varepsilon _{\rm{mech}}$ & $\dot \varepsilon _{\rm{mech}}$ & $\theta_{\rm{T-\varepsilon}}$ & $N_{\rm{f}}$ \\
+          & [\%]  & [s$^{-1}$] & [$^\circ$] & [cycle] \\
     \midrule
-    TC-IP-TGMF & 0.90  & 0.90  & $1.67\times 10^{-4}$ & 0     & 48 \\
-          & 0.70  & 0.70  & $1.33\times 10^{-4}$ & 0     & 50 \\
-          & 0.65  & 0.65  & $1.22\times 10^{-4}$ & 0     & 107 \\
-          & 0.50  & 0.50  & $1.11\times 10^{-4}$ & 0     & 208 \\
-          & 0.40  & 0.40  & $0.89\times 10^{-4}$ & 0     & 1066 \\
+    TC-IP-TGMF & 0.90  & $1.67\times 10^{-4}$ & 0     & 48 \\
+          & 0.70  & $1.33\times 10^{-4}$ & 0     & 50 \\
+          & 0.65  & $1.22\times 10^{-4}$ & 0     & 107 \\
+          & 0.50  & $1.11\times 10^{-4}$ & 0     & 208 \\
+          & 0.40  & $0.89\times 10^{-4}$ & 0     & 1066 \\
     \midrule
-    TC-OP-TGMF & 0.90  & 0.90  & $1.67\times 10^{-4}$ & 180   & 128 \\
-          & 0.65  & 0.65  & $1.22\times 10^{-4}$ & 180   & 375 \\
-          & 0.50  & 0.50  & $1.11\times 10^{-4}$ & 180   & 864 \\
-          & 0.40  & 0.40  & $0.89\times 10^{-4}$ & 180   & 3387 \\
+    TC-OP-TGMF & 0.90  & $1.67\times 10^{-4}$ & 180   & 128 \\
+          & 0.65  & $1.22\times 10^{-4}$ & 180   & 375 \\
+          & 0.50  & $1.11\times 10^{-4}$ & 180   & 864 \\
+          & 0.40  & $0.89\times 10^{-4}$ & 180   & 3387 \\
     \midrule
-    TC-IP-TGMF-TBC & 0.90  & 0.90  & $1.67\times 10^{-4}$ & 0     & 147 \\
-          & 0.65  & 0.65  & $1.22\times 10^{-4}$ & 0     & 624 \\
+    TC-IP-TGMF-TBC & 0.90  & $1.67\times 10^{-4}$ & 0     & 147 \\
+          & 0.65  & $1.22\times 10^{-4}$ & 0     & 624 \\
     \bottomrule
     \end{tabular}%
   \label{Tab:test_matrix_TGMF}%
@@ -229,7 +231,7 @@ Therefore we tried to calculate the temperature distribution of the specimen inn
 % TGMF试件的几何形状如图\ref{Fig:Specimen}所示，由于几何形状和外部环境的对称性，我们取出试样的标距段部分，建立轴对称有限元模型，如图\ref{Fig:FEM}所示，标距段长度为12mm，取试件的中心界面作为轴对称面。
 % 用以下物理边界条件进行辐射加热的TGMF试样几何形状的有限元分析：
 % 试件外表面为温度边界，随时间变化的温度分布可由试验测得，试件内表面为对流边界条件，对流换热系数由圆管强制对流换热公式计算，需要试验测量冷却空气的密度、温度和体积流量。由于试件的对称性，中心对称界面可假设为绝热边界，试件的上边界认为是热传导边界，对于热辐射，取试件表面的发射率为$\varepsilon=0.75$。
-The geometry of the TGMF specimen is shown in \ref{Fig:IN718_Axial_Specimen_TGMF}, because of the symmetry of the geometry and the external environment, we took out the gauge section of the specimen and created an axisymmetric finite element model. As shown in \ref{Fig:FEM}, the gauge length is 12mm and the central cross section of the specimen is taken as the symmetric plane.
+The geometry of the TGMF specimen is shown in \ref{Fig:IN718_Axial_Specimen_TGMF}, because of the symmetry of the geometry and the external environment, we took out the gauge section of the specimen and created an axisymmetric finite element model. As shown in \ref{Fig:FE_model}, the gauge length is 12mm and the central cross section of the specimen is taken as the symmetric plane.
 The outer surface of the specimen is defined as a temperature boundary condition. The temperature distribution of the outer surface was measured during the tests. The inner surface of the specimen is considered as a convection boundary condition. The inner surface of the specimen is considered as a convection boundary condition. The convective heat transfer coefficient can be calculated by a empirical formula for turbulent flow in tubes. The density, temperature and volume flow of the cooling air needs to be measured. The specimen is symmetric about its central cross section. Therefore, only half of the specimen is modeled, and a symmetry boundary condition is applied.
 The upper surface of the model is considered as a thermal conduction boundary. For radiation calculations, the emissivity of the surface of the specimen is defined as 0.75.
 
@@ -419,7 +421,14 @@ We can infer the location of the crack initiation by the fractography of the cra
   \label{Fig:fatigue_striations}
 \end{figure}
 
-\section{疲劳模型}
+\section{Fatigue life assessment of TGMF}
+
+\subsection{Fatigue life prediction based on the conventional fatigue models}
+\noindent
+As introduced above, the Brown-Miller's model, Fatemi-Socie's model, Smith-Watson-Topper's model, Chu-Conle-Bonnen's model, Liu's Energy model and Zamrik's model are used to evaluate the thermomechanical fatigue. The isothermal fatigue tests were carried out at 923K, and the thermomechanical fatigue test were performed at the temperature range from 573K to 923K.
+Whereas the fatigue life models are essentially based on the material properties at 923K.
+
+\ref{Fig:life_prediction_TGMF} shows the comparison between predicted and experimental fatigue life of multiaxial thermomechanical fatigue tests. The predicted fatigue lives of Brown-Miller and Fatemi-Socie's models are non-conservative. Most of the TC-IP and NPR-IP results are outside of the scatter band with a factor of 2. For the TMF tests under uniaxial loading, the predicted lifes of the Zamrik, Smith-Watson-Topper and Chu-Conle-Bonnen's models agree well with the experiments. However, for the PRO-IP and NPR-IP tests, the results of the three models are discrete. One can observe that the best results of the six presented models have been achieved by the Liu's tension strain energy model. But for the NPR-IP and TC-90 tests, the predicted fatigue lifes of Liu's model are too much conservative.
 \begin{figure}
    \centering
    \begin{overpic}[width=7.5cm]{NF-NP-TGMF-BM.pdf}
@@ -443,12 +452,11 @@ We can infer the location of the crack initiation by the fractography of the cra
      \put(65,20){\fcolorbox{white}{white}{(f) Present}}
    \end{overpic}
   \caption{Comparison between predicted fatigue life and experimental results of multiaxial thermomechanical fatigue tests. (a) Brown-Miller model; (b) Fatemi-Socie model; (c) Smith-Watson-Topper model; (d) Chu-Conle-Bonnen model; (e) Liu Tension Energy model; (f) Present TMF model (Equation (\ref{Equ:TMF_model})).}
-  \label{Fig:life_prediction}
+  \label{Fig:life_prediction_TGMF}
 \end{figure}
 
-\section{Fatigue life assessment of TGMF}
 \noindent
-According to the analysis in the previous chapter, the suggested TMF model has good agreement in the prediction of TMF-IP, TMF-OP, and TGMF-OP. The table \ref{Tab: FatigueCoefficient} lists the parameters in the calculation of the Chu model. , where $\phi$ is the angle between the proximate interface and the central section, $\sigma_{n,max}$ is the maximum normal stress during the cycle on this proximate interface, $T$,$\partial T/\partial y$ and $\partial T/\partial r$ are the temperature and temperature gradients corresponding to the maximum normal stress location.
+According to the analysis in the previous chapter, the suggested TMF model has good agreement in the prediction of multiaxial TMF tests. The table \ref{Tab:Temperature_gradient} lists the parameters in the calculation of suggested TMF model, where $\phi$ is the angle of the critical plane, $\sigma_{n,max}$ is the maximum normal stress during the cycle on the critical plane, $T_{\sigma_{n,\max}}$, $\partial T/\partial y$ and $\partial T/\partial r$ are the temperature and temperature gradients corresponding to the maximum normal stress location.
 
 % 图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}分别比较了TMF和TGMF在同相位和反相位时的疲劳寿命。
 % 可以发现，同相位和反相位的情况下TGMF寿命都要低于TMF寿命，由于两组试验的温度循环相同，唯一不同的是试件径向方向的温度梯度，因此可以认为温度梯度对材料寿命有不利的影响，同时比较图\ref{Fig:plot_exp_fatigue_life_TMF_TGMF}(a)和(b)，在同相位的情况下，温度梯度导致的寿命减少比反向位试验更加明显。
@@ -464,14 +472,12 @@ The correction term of the temperature gradient is defined as:
 f\left( {T,\nabla T} \right) = \left( {1 + g\frac{{\left\| {\nabla T} \right\|}}{{{T_{{\rm{melt}}}} - {T_{{\sigma _{n,\max }}}}}}} \right),
 \end{equation}
 where ${T_{{\rm{melt}}}}$ is the melting point of the material, and ${T_{{\sigma _{n,\max }}}}$ is the temperature corresponding to the maximum normal stress, $g$ is a model parameter in the unit of mm. ${\left\| {\nabla T} \right\|}$ is the temperature gradient and given by:
-% 为温度梯度修正项，$T_{max}$为热机械循环中的最高温度，${T_{{\sigma _{n,\max }}}}$为临界面最大正应力时刻对应的温度，$T_0$为参考温度，可以通过寿命预测得到，$t$为试件特征长度，这里取试件的厚度$t=1$mm，用于无量纲化，${\left\| {\nabla T} \right\|}$为温度梯度的模，计算方式如下：
 \begin{equation}
 \left\| {\nabla T} \right\| = \sqrt {{{\left( {\frac{{\partial T}}{{\partial x}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial y}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial z}}} \right)}^2}}.
 \end{equation}
+In Equation (\ref{Equ:TGMF_model}), when $\left\| {\nabla T} \right\|=0$, $f\left( {T,\nabla T} \right)=1$, then Equation (\ref{Equ:TGMF_model}) reduce to the Equation (\ref{Equ:TMF_model}).
 
-\ref{Fig:TGMF_model} shows the fatigue life assessment of the TGMF tests. As shown in \ref{Fig:TGMF_model}(a), the fatigue damage parameters versus experimental fatigue lives is illustrated. The fatigue damage parameters shows good correlation with experimental fatigue lives of TGMF-IP and TGMF-OP tests. In \ref{Fig:TGMF_model}(b), one can observed that based on the proposed model (Equation (\ref{Equ:TGMF_model})), most of the predicted fatigue lives are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lives.
-
-
+\ref{Fig:TGMF_model} shows the fatigue life assessment of the TGMF tests. As shown in \ref{Fig:TGMF_model}(a), the fatigue damage parameters vs. experimental fatigue lives is illustrated. The fatigue damage parameters shows good correlation with experimental fatigue lives of TGMF-IP and TGMF-OP tests. In \ref{Fig:TGMF_model}(b), one can observed that based on the proposed model (Equation (\ref{Equ:TGMF_model})), most of the predicted fatigue lives are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lives.
 
 \begin{table}[htbp]
   \centering
@@ -493,9 +499,8 @@ where ${T_{{\rm{melt}}}}$ is the melting point of the material, and ${T_{{\sigma
       & 0.90   & 0     & 1981.1  & 2.00  & 573   & -6.5  & 0.044  & 128   & 136 \\
     \bottomrule
     \end{tabular}%
-  \label{tab:FatigueCoefficient}%
+  \label{Tab:Temperature_gradient}%
 \end{table}%
-
 \begin{figure}
   \centering
   \begin{overpic}[width=12cm]{F-NF-TGMF-Study2.pdf}
@@ -509,18 +514,39 @@ where ${T_{{\rm{melt}}}}$ is the melting point of the material, and ${T_{{\sigma
 \end{figure}
 
 \begin{figure}[!htp]
-\centering
-\begin{overpic}[width=8.0cm]{plot_fatigue_life_quantitative_evaluation_tgmf_TN.pdf}
-\put(14,65){\fcolorbox{white}{white}{(a)}}
-\end{overpic}
-\begin{overpic}[width=8.0cm]{plot_fatigue_life_quantitative_evaluation_tgmf_TRMS.pdf}
-\put(14,65){\fcolorbox{white}{white}{(b)}}
-\end{overpic}
-\caption{The quantitative evaluation of the fatigue life prediction results: (a)$T_N$, (b)$T_{RMS}$.}
-\label{Fig:plot_fatigue_life_quantitative_evaluation_tmf}
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_fatigue_life_quantitative_evaluation_tgmf_TN.pdf}
+  \put(14,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_fatigue_life_quantitative_evaluation_tgmf_TRMS.pdf}
+  \put(14,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  \caption{The quantitative evaluation of the fatigue life prediction results: (a)$T_N$, (b)$T_{RMS}$.}
+  \label{Fig:plot_fatigue_life_quantitative_evaluation_tmf}
 \end{figure}
 
-\section{结论}
+\subsection{Effect of the thermal barrier coating on the lifetime of TGMF}
+\noindent
+% 热障涂层涂覆于航空发动机和燃气轮机高温部件表面，具有防止高温腐蚀、延长热端部件使用寿命、提高发动机功率和减少燃油消耗等优点。通常典型的热障涂层包括表面陶瓷层(TC：top coat)和金属粘结层(BC：bond coat)。在服役过程中，粘结层会发生氧化，在粘结层和陶瓷层界面形成厚度为1~10$\mu$m的热生长氧化物(TGO：thermally grown oxide)。TGO的形成是一个体积膨胀过程，界面会限制这种体积变化，因而在TGO内部会随之产生应力。而且，陶瓷层与金属基底的热膨胀系数相差较大，在热循环过程中会在热载荷的作用下产生较大的热应力，从而在界面缺陷处引起应力集中，促进裂纹的萌生与扩展。
+Thermal barrier coatings (TBC) are advanced materials systems usually applied to metallic surfaces, such as on gas turbine or aero-engine parts, operating at elevated temperatures, as a form of exhaust heat management. These 100 μm to 2 mm coatings serve to insulate components from large and prolonged heat loads by utilizing thermally insulating materials which can sustain an appreciable temperature difference between the load-bearing alloys and the coating surface.[1] In doing so, these coatings can allow for higher operating temperatures while limiting the thermal exposure of structural components, extending part life by reducing oxidation and thermal fatigue. In conjunction with active film cooling, TBCs permit working fluid temperatures higher than the melting point of the metal airfoil in some turbine applications. Due to increasing demand for higher engine operation (efficiency increases at higher temperatures), better durability/lifetime, and thinner coatings to reduce parasitic weight for rotating/moving components, there is significant motivation to develop new and advanced TBCs.
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=16.0cm]{TGMF_TBC.pdf}
+  \end{overpic}
+  \caption{}
+  \label{Fig:TGMF_TBC}
+\end{figure}
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=12.0cm]{plot_exp_fatigue_life_TGMF-TBC.pdf}
+  \end{overpic}
+  \caption{}
+  \label{Fig:plot_exp_fatigue_life_TGMF-TBC}
+\end{figure}
+
+\section{Summaries}
 
 % \begin{figure}
 %   \begin{minipage}[t]{0.5\linewidth}

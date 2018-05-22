@@ -59,7 +59,7 @@
 \input{package}
 \input{pythonlisting}
 
-\def\BigRoman {\uppercase\expandafter{\romannumeral\number\count255}}
+\def\BigRoman{\uppercase\expandafter{\romannumeral\number\count255}}
 \def\Romannumeral{\afterassignment\BigRoman\count255=}
 
 \makeatletter
@@ -75,8 +75,10 @@
 \renewcommand{\baselinestretch}{1.1}
 
 \newcommand{\bfsigma}{{\mbox{\boldmath{$\sigma$}}}}
-\newcommand{\bfepsilon}{{\mbox{\boldmath{$\varepsilon$}}}}
-\newcommand{\dotbfepsilon}{{\mbox{\boldmath{$\dot\varepsilon$}}}}
+% \newcommand{\bfepsilon}{{\mbox{\boldmath{$\varepsilon$}}}}
+% \newcommand{\dotbfepsilon}{{\mbox{\boldmath{$\dot\varepsilon$}}}}
+\newcommand{\dotbfepsilon}{{\dot{\bm{\upepsilon}}}}
+\newcommand{\bfepsilon}{{\bm{\upepsilon}}}
 \newcommand{\dotbfsigma}{{\mbox{\boldmath{$\dot\sigma$}}}}
 \newcommand{\bftau}{{\mbox{\boldmath{$\tau$}}}}
 \newcommand{\bfpsi}{{\mbox{\boldmath{$\psi$}}}}
@@ -185,8 +187,8 @@
 
 % \include{chapter1/chapter1}
 % \include{chapter2/chapter2}
-\include{chapter3/chapter3}
-% \include{chapter4/chapter4}
+% \include{chapter3/chapter3}
+\include{chapter4/chapter4}
 % \include{chapter5/chapter5}
 % \include{chapter6/chapter6}
 % \include{chapter7/chapter7}

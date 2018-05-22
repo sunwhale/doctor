@@ -1,497 +1,152 @@
-﻿\chapter{Low cycle fatigue assessment under isothermal and thermomechanical condition}
+﻿\chapter{Low cycle fatigue assessment of isothermal and thermomechanical fatigue}
 
-% \section{Experimental results}
-% \subsection{Isothermal fatigue tests}
-% The results of a uniaxial isothermal test is analyzed firstly in order to identify primary material properties. Fig. \ref{Fig:plot_exp_half_life_cycle} shows the obtained cyclic stress-strain curves, the values of stress and strain have been determined from the half life cycles. In comparision with the monotonic loading case, the stress-strain relationship for both monotonic and cyclic loadings is described by the known Ramberg-Osgood model, as shown in Fig. \ref{Fig:plot_monotonic_cyclic_osgood}. It confirms that the strain hardening can be expressed in the power-law function fairly well. The material demonstrates significant cyclic softening, of which the monotonic stress-strain curve can be expressed by the conventional Ramberg-Osgood model, as
+% \section{Introduction of multiaxial fatigue assessment}
+
+% 工程中的疲劳问题研究偏重于材料或结构件的疲劳破坏全寿命分析，主要是通过建立宏观力学参数与疲劳破坏寿命之间的关系，如单轴疲劳中用Manson-Coffin总应变－疲劳寿命公式来评价不同加载条件下材料和结构的抗疲劳性能。基于von Mises等效应变参数的 Manson-Coffin总应变－疲劳寿命公式可表示为
 % \begin{equation}
-% {\varepsilon } = \frac{{\sigma }}{{E}} + {\left( {\frac{{\sigma }}{{K}}} \right)^{1/n}},
+% \frac{{\Delta {\varepsilon _{eq}}}}{2} = \frac{{{{\sigma '}_f}}}{E}{\left( {2{N_f}} \right)^b} + {{\varepsilon '}_f}{\left( {2{N_f}} \right)^c},
+% \label{Equ:Manson-Coffin}
 % \end{equation}
-% for the monotonic loading, where $K$ is the material plastic offset and $n$ is the monotonic strain hardening exponent.
-% The cyclic stress-strain relationship is assumed to be in the form of the Ramberg-Osgood model, as:
+% 式中，$\Delta {\varepsilon _{eq}}/2$为von Mises等效应变幅，${\sigma '}_f$为疲劳强度系数，${\varepsilon '}_f$为疲劳延性系数，$b$为疲劳强度指数，$c$
+% 为疲劳延性指数，$N_f$为疲劳寿命，$E$为材料的弹性模量。
+
+% 早期的多轴疲劳理论仅仅是简单地应用某种等效方法, 如von Mises理论, 将多轴应力状态下的等
+% 效应力应变等同于单轴应力状态下的应力应变, 按照等损伤原则建立多轴疲劳寿命预测方法。大量金属材料的试验结果表明，式\ref{Equ:Manson-Coffin}能较好地适用于单轴和多轴比例加载条件下的疲劳寿命预测，但对多轴非比例加载条件下的疲劳寿命预测能力不理想。
+% 对于一些材料在非比例循环加载下的循环本构行为的实验研究\cite{tanaka1985effects,xia1991nonproportional}已表明，非比例循环载荷将产生明显的附加强化效应。许多学者\cite{Fatemi1988,socie1987multiaxial,chen1994damage}提出，这种附加强化效应是导致多轴非比例加载时的疲劳寿命降低的主要原因。因此按照常规的寿命预测方法对多轴非比例加载下的零部件进行疲劳寿命预测，将得到偏于危险的预测结果。
+
+% 许多工程结构在使用中发生的疲劳失效实际上为多轴疲劳失效。一方面，一些结构由于本身几何形状复杂，即使仅承受单一疲劳载荷作用，结构局部应力应变分布实际为多轴应力状态。另一方面，一些结构承受着多种载荷的循环作用，各载荷之间可能为比例加载，也可能为非比例加载。在非比例载荷作用下，应力或应变主轴发生旋转，导致多滑移系开动，阻碍了材料内部形成稳定的位错结构，从而产生非比例附加强化现象，导致工程结构的疲劳寿命降低。因此，需要发展新的疲劳损伤控制参量进行多轴非比例疲劳寿命的预测和评估。目前提出的多轴疲劳寿命模型主要分为三类：即等效应力应变法、能量法和临界平面法。
+
+% 国内外已有众多学者对多轴加载下如何预测构件的疲劳寿命进行了广泛研究，并提出许多适用于不同材料、不同载荷情况的疲劳破坏准则。
+% Garud等[7-13]从不同角度，对不同时期的疲劳准则进行过回顾。
+% 依据材料疲劳破坏参量，可将疲劳破坏准则划分为三类：应力准则、应变准则和能量准则。
+% \subsection{Stress based models}
+% 早期的研究者试图应用静强度理论解决多轴疲劳问题，其中常用的有最大正应力准则、最大剪应力准则（Tresca准则）以及Von Mises准则。
+% 但实际应用中发现，这些准则不能很好地描述试验数据，尤其是在非比例载荷情况下，预测的疲劳寿命偏于危险。
+
+
+% Gough和Pollard\cite{gough1935strength}\cite{gough1936properties}针对弯扭复合加载情况，给出了适用于韧性材料的椭圆方程：
+% \[{\left( {\frac{{{S_t}}}{t}} \right)^2} + {\left( {\frac{{{S_b}}}{b}} \right)^2} = 1\]
+% 和适用于脆性材料的椭圆弧方程：
+% \[{\left( {\frac{{{S_t}}}{t}} \right)^2} + {\left( {\frac{{{S_b}}}{b}} \right)^2}\left( {\frac{b}{t} - 1} \right) + \left( {\frac{{{S_b}}}{b}} \right)\left( {2 - \frac{b}{t}} \right) = 1\]
+% 其中，${S_t}$和${S_b}$分别为扭转应力幅值及弯曲应力幅值，$t$和$b$分别是扭转疲劳极限和弯曲疲劳极限。
+
+% Sines\cite{sines1959behavior}考虑了静水压力的影响，将Von Mises应力准则修改为：
+% \[\frac{{\Delta {\tau _{oct}}}}{2} + f\left( {2{\sigma _h}} \right) = C\]
+% 其中，${\Delta {\tau _{oct}}}$是八面体剪应力变幅，${\sigma _h}$为静水应力，$k$和$C$是材料常数。
+
+% Gough准则和Sines准则的共同特征是它们均与材料的弯曲疲劳极限和扭转疲劳极限的比$b/t$相关，而$b/t$的值不仅随着材料、试件几何形状而改变，而且随着耐久极限的改变而改变。
+% Findley\cite{findley1953combined}\cite{findley1954modified}\cite{findley1956theory}\cite{findley1958theory}对大量的疲劳数据进行分析后，提出不断变化的剪应力是导致疲劳的主要原因，而临界平面上的正应力对材料抵抗不断变化应力的能力有很大影响。
+% 提出了一个剪应力与正应力的线性组合式作为疲劳判据：
+% \[{\left( {\frac{{\Delta \tau }}{2} + k{\sigma _n}} \right)_{\max }} = C\]
+% 其中，${\Delta \tau }$为平面上的剪应力变幅，${\sigma _n}$为平面上的法向应力幅，$k$和$C$是材料常数。
+% 临界面定义为正应力和剪应力的线性组合（式(1.4)中括号内部分）
+% 达到最大值的面。单元内任意截面上的应力状态如图1.2所示。
+
+% MicDiarmid\cite{mcdiarmid1991general}考虑了裂纹的不同开裂模式，将临界面定义为剪应力幅达到最大值的面，提出：
+% \[\frac{{\Delta {\tau _{\max }}}}{{2{t_{A,B}}}} + \frac{{{\sigma _{n,\max }}}}{{2{\sigma _u}}} = 1\]
+% 其中，${\Delta {\tau _{\max }}}$为临界面上的最大剪应力变幅，${\sigma _{n,\max }}$是临界面上的最大法向应力，${t_{A,B}}$为相对应于A，B两种不同裂纹开裂模式的剪切疲劳强度，${\sigma _u}$是材料的拉伸强度。
+
+% Dang Van\cite{van1986criterion}\cite{van1999introduction}从微观角度出发，观察到疲劳裂纹萌生是一个局部过程，通常发生在那些经历塑性变形并形成典型滑移带的晶粒处，认为一个
+% 晶粒内的微观剪应力$\tau$是主要参数，同样，微观静水应力$\sigma_h$将影响裂纹的开裂和滑移带的形成，建立如下关系式：
+% \[\tau  + k\sigma  = C\]
+% 其中，$k$和$C$是材料常数。
+
+% Carpenteri和Spagnoli\cite{carpinteri2001multiaxial}应用临界面的概念将Gough准则进行如下修改：
+% \[{\left( {\frac{{\Delta \tau }}{{2t}}} \right)^2} + \left( {\frac{{{\sigma _{n,\max }}}}{b}} \right) \le 1\]
+% 其中，临界面方向定义为应用权重函数法计算出的平均主应力方向。${\Delta \tau }$为临界面上的剪应力变幅，${\sigma _{n,\max }}$
+% 是临界面上的最大法向应力，t和b分别是扭转疲劳极限和弯曲疲劳极限。
+
+
+% \subsection{Strain based models}
+% % 与应力准则相对应，早期的研究者Yokobori等将静强度理论应用到多轴应变准则中来。
+% % 采用最大法向应变、最大剪应变、Von Mises等效应变等代替Manson-Coffin公式的应变，与单轴低周疲劳估算相似，进行多轴疲劳寿命预算。
+% % 由于该方法没有考虑不同应力路径对材料响应和疲劳寿命的影响，因而不能用于预测多轴非比例加载下的疲劳寿命。
+
+% 临界面概念的提出, 使得多轴疲劳问题的研究前进了一大步。
+% % Findley\cite{findley1958theory},并认为此平面上的剪应力及法向正应力是导致疲劳裂纹萌生和扩展的主要原因。
+% Findley\cite{findley1953combined,findley1954modified,findley1956theory,findley1958theory}最早提出临界面概念，对大量的疲劳数据进行分析后，提出不断变化的剪应力是导致疲劳的主要原因，而临界平面上的正应力对材料抵抗不断变化应力的能力有很大影响。
+% 提出了一个剪应力与正应力的线性组合式作为疲劳判据：
+% \[{\left( {\frac{{\Delta \tau }}{2} + k{\sigma _n}} \right)_{\max }} = C\]
+% 其中，${\Delta \tau }$为平面上的剪应力变幅，${\sigma _n}$为平面上的法向应力幅，$k$和$C$是材料常数。
+% 临界面定义为正应力和剪应力的线性组合（式(1.4)中括号内部分）
+% 达到最大值的面。单元内任意截面上的应力状态如图1.2所示。
+
+% Brown和Miller\cite{brown1973theory}根据疲劳裂纹萌生和扩展的物理解释提出了一种多轴疲劳理论，与Findley\cite{findley1958theory}提出的应力准则相类似，Brown和Miller认为最大剪平面上的剪应变和法向应变这两个参数都应该考虑。他们提出裂纹第一阶段沿最大剪切面生成，第二阶段沿垂直于最大拉应变方向扩展。
+% Brown和Miller准则由一系列由最大剪应变${\gamma _{\max }}$和最大剪应变平面上的法向应变${\varepsilon _n}$为坐标所组成的$\Gamma$平面上的等寿命曲线组成，对于给定寿命有
+% \[{\gamma _{\max }} = f\left( {{\varepsilon _n}} \right)\]
+
+% 上式对于A、B两类裂纹有着不同的表达式。Brown和Miller将裂纹分为两种情况。在复合拉伸和扭转中，主应变${\varepsilon _1}$和${\varepsilon _3}$平行于表面，裂纹沿着表面扩展称为A类裂纹；对于正的双向拉伸，应变${\varepsilon _3}$垂直于自由表面，裂纹在自由表面上萌生进而沿纵深方向扩展称为B类裂纹。Kandil，Brown和Miller\cite{Kandil1982}给出A类裂纹表达式的简化形式：
+% \[\frac{{\Delta {\gamma _{\max }}}}{2} + k\Delta {\varepsilon _n} = C\]
+% 其中，$\Delta {\varepsilon _n}$是临界面上的法向应变变幅，$k$和$C$是材料常数。
+
+% % Wang和Brown[37]用相邻两个最大剪应变折返点之间的法向应变变程${\varepsilon _n^*}$来代替法向应变变程$\Delta {\varepsilon _n}$，给出疲劳破坏模型
+% % \[\frac{{\Delta {\gamma _{\max }}}}{2} + k\varepsilon _n^* = C\]
+% % 其中$k$和$C$是材料常数。
+
+% Fatemi和Socie\cite{Fatemi1988}研究后发现，由于Kandil、Brown和Miller破坏模型的参数都是应变，没有考虑非比例加载下由于主轴旋转所产生的附加强化效
+% 应，所以预测的多轴非比例加载下的疲劳寿命偏于危险，建议以最大剪应变平面上的最大法向应力${\sigma _{n,\max }}$
+% 代替法向应变变程$\Delta {\varepsilon _n}$作为参数，提出准则如下：
 % \begin{equation}
-% \frac{{\Delta \varepsilon }}{2} = \frac{{\Delta \sigma }}{{2E}} + {\left( {\frac{{\Delta \sigma }}{{2K'}}} \right)^{1/n'}},
+% % \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,\max }}}}{{{\sigma _y}}}} \right) = C,
+% \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,\max }}}}{{{\sigma _y}}}} \right) = \frac{{{{\tau '}_f}}}{G}{\left( {2{N_f}} \right)^{{b_0}}} + {{\gamma '}_f}{\left( {2{N_f}} \right)^{{c_0}}},
 % \end{equation}
-% where $K'$ is the cyclic strength coefficient and $n'$ is the cyclic strain hardening exponent.
-% %Comparison between the present experiments and Ramberg-Osgood model is illustrated in Fig. \ref{Fig:plot_exp_half_life_cycle}. The experimental loops are taken from $N_f/2$th cycles. More detailed discussions about cyclic plasticity for the Inconel718 are referred a separate publication by the authors \cite{Sun2017}.
+% 其中，$\sigma_y$是屈服应力，$k$是材料常数。
+% % \begin{equation}
+% % \frac{{\Delta \hat \gamma }}{2} = \frac{{{{\tau '}_f}}}{G}{\left( {2{N_f}} \right)^{{b_0}}} + {{\gamma '}_f}{\left( {2{N_f}} \right)^{{c_0}}}.
+% % \end{equation}
 
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{plot_exp_half_life_cycle-TC-IF.pdf}}
-% \caption{Comparison of the stress-strain hysteresis loops of the half life cycle $N_f/2$ between experiments and Ramberg-Osgood model, with strain ranges of $\pm0.4\%, \pm0.6\%, \pm0.8\%$ and $\pm1.0\%$.}
-% \label{Fig:plot_exp_half_life_cycle}
-% \end{figure}
-
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{plot_monotonic_cyclic_osgood.pdf}}
-% \caption{Monotonic and cyclic stress-strain curve with Ramberg-Osgood relationship for Inconel 718.}
-% \label{Fig:plot_monotonic_cyclic_osgood}
-% \end{figure}
-
-% \begin{table*}[htbp]
-%   \centering
-%   \caption{Basic properties of Nickel-based superalloy Inconel 718 at 650$^{\circ}$C.}
-%     \begin{tabular}{llllllll}
-%     \hline
-%           & $E$     & $K'$     & $n'$     & $\sigma_f$    & $b$     & $\varepsilon_f$    & $c$ \\
-%     \hline
-%     NASA \cite{kim1988elevated, nelson1992creep}  & 162.6 GPa & 1827 MPa  & 0.16723 & 1348 MPa & -0.10052 & 0.12445 & -0.55218 \\
-%     BHU \cite{Mahobia2014}   & 177.2 GPa & 1420 MPa  & 0.11332 & 985 MPa & -0.03917 & 0.24721 & -0.55682 \\
-%     Investigated   & 167.1 GPa & 1406 MPa  & 0.10527 & 1034 MPa & -0.04486 & 0.11499 & -0.52436 \\
-%     \hline
-%     \end{tabular}%
-%   \label{tab:MechanicalProperties}%
-% \end{table*}%
-
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{plot_exp_coffin_manson.pdf}}
-% \caption{Manson-Coffin plots of the isothermal fatigue tests.}
-% \label{Fig:Baseline}
-% \end{figure}
-
-% Fig. \ref{Fig:Baseline} shows the comparison of experimental results by Kim \cite{kim1988elevated} and Nelson \cite{nelson1992creep}, Mohabia \cite{Mahobia2014} as well as ours. Partially significant difference is observed among the three series of testing, which may be induced by different material providers. Heat treatments and processing of all the three series of specimens are similar. From this observation one may expect obvious deviations in fatigue performance for the nominal same superalloy Inconel 718.
-
-% The Manson-Coffin model is popular in engineering fatigue life assessment, in which the applied strain amplitude $\Delta \varepsilon/2$ is decomposed in elastic strain amplitude ($\Delta \varepsilon_e/2$) and plastic strain amplitude ($\Delta \varepsilon_p/2$). The fatigue life, in terms of number of reversals to failure ($2N_f$), is determined from
+% \subsection{Energy based models}
+% Socie\cite{socie1987multiaxial}认为材料的多轴低周疲劳断裂形式分为剪切型和拉伸型两种。剪切型破坏材料的疲劳裂纹萌生与扩展主要在剪应变（剪应力）平面上进行；拉伸型破坏材料的疲劳裂纹扩展是疲劳寿命的主要阶段，垂直于裂纹方向的应力和应变是影响裂纹扩展速率的主要因素。针对拉伸型破坏材料，Socie以最大主应变平面为临界面，对Smith、Watson和Topper\cite{smith1970stress}的能量准则进行了修正
 % \begin{equation}
-% \frac{{\Delta \varepsilon }}{2} = \frac{{\Delta {\varepsilon _e}}}{2} + \frac{{\Delta {\varepsilon _p}}}{2} = \frac{{{{\sigma '}_f}}}{E}{\left( {2{N_f}} \right)^b} + {\varepsilon '_f}{\left( {2{N_f}} \right)^c},
-% \label{Equ:CoffinManson}
+% {\sigma _{n,max}}\frac{{\Delta \varepsilon }}{2} = \frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + {\sigma '_f}{\varepsilon '_f}{\left( {2{N_f}} \right)^{b + c}},
 % \end{equation}
-% where ${{{\sigma '}_f}}$ is the fatigue strength coefficient, $b$ is the fatigue strength exponent, ${{{\varepsilon '}_f}}$ is the fatigue ductility coefficient and $c$ is the fatigue ductility exponent. The model parameters can be determined from uniaxial fatigue data in combining with the Ramberg-Osgood model. The results are summarized in Table \ref{tab:MechanicalProperties} for all three series of experiments.
+% 其中$\Delta \varepsilon$是最大主应变变程,${\sigma _{n,max}}$是垂直于最大主应变面的最大法向应力。
 
-% \subsection{Thermomechanical fatigue tests}
-
-% Fig. \ref{Fig:plot_exp_fatigue_life} shows the lifetimes of thermomechanical fatigue tests under different loading conditions. The data are plotted as Mises equivalent strain amplitude $\Delta\varepsilon_{eq}/2$ versus number of cycles to failure $N_f$. The black solid line in the figure is the Coffin-Masson curve of 650$^\circ$C isothermal fatigue. It can be seen that the lifetimes under uniaxial thermomechanical in-phase and out-of-phase loadings and under multi-axial thermomechanical in-phase loadings are shorter than under isothermal loadings at the same equivalent strain amplitude.
-% In contrast, the lifetimes under uniaxial thermomechanical 90$^\circ$ phase loadings and proportional thermomechanical in-phase loadings are longer than under isothermal loadings.
-
-% For uniaxial thermomechanical fatigue tests, the mechanical strain amplitude vs. lifetime curves under the in-phase and out-of-phase loading conditons intersect with each other. The position of the crossover point is about 0.6\% of the mechanical strain amplitude.
-% At the mechanical strain amplitude bigger than 0.6\%, the in-phase thermomechanical fatigue tends to have a lower fatigue lifetime, oppositely, the in-phase thermomechanical fatigue lifetimes are longer than the out-of-phase at the mechanical strain amplitude smaller than 0.6\%.
-
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{plot_exp_fatigue_life_tmf.pdf}}
-% \caption{Manson-Coffin plots of the TMF fatigue tests.}
-% \label{Fig:plot_exp_fatigue_life}
-% \end{figure}
-
-% \begin{figure}
-%     \begin{overpic}[width=8.5cm]{plot_exp_pv_TCIP.pdf}
-%       \put(0,65){(a)}
-%     \end{overpic}
-%     \begin{overpic}[width=8.5cm]{plot_exp_pv_TCOP.pdf}
-%       \put(0,65){(b)}
-%     \end{overpic}
-%     \begin{overpic}[width=8.5cm]{plot_exp_pv_TC90.pdf}
-%       \put(0,65){(c)}
-%     \end{overpic}
-%   \caption{Comparison of peak, valley and mean stresses under (a)TC-IP, (b)TC-OP and (c)TC-90 loading conditions.}
-%   \label{Fig:plot_exp_TCTMF}
-% \end{figure}
-
-% \begin{figure}
-%     \begin{overpic}[width=8.5cm]{plot_exp_half_life_cycle_PROIP.pdf}
-%       \put(0,65){(a)}
-%     \end{overpic}
-%     \begin{overpic}[width=8.5cm]{plot_exp_pv_PROIP_axial.pdf}
-%       \put(0,65){(b)}
-%     \end{overpic}
-%     \begin{overpic}[width=8.5cm]{plot_exp_pv_PROIP_torsional.pdf}
-%       \put(0,65){(c)}
-%     \end{overpic}
-%   \caption{Experimental results of the proportional thermo-mechanical fatigue tests with equivalent strain amplitudes $\Delta\varepsilon_{eq}/2$= 0.6\%, 0.8\% and 1.0\%: (a)cyclic stress responses of the cycle at $N_f/2$, (b)peak, valley and mean values of axial stresses, (c)peak, valley and mean values of shear stresses.}
-%   \label{Fig:plot_exp_PROTMF}
-% \end{figure}
-
-% \begin{figure}
-%     \begin{overpic}[width=8.5cm]{plot_exp_half_life_cycle_NPRIP.pdf}
-%       \put(0,65){(a)}
-%     \end{overpic}
-%     \begin{overpic}[width=8.5cm]{plot_exp_pv_NPRIP_axial.pdf}
-%       \put(0,65){(b)}
-%     \end{overpic}
-%     \begin{overpic}[width=8.5cm]{plot_exp_pv_NPRIP_torsional.pdf}
-%       \put(0,65){(c)}
-%     \end{overpic}
-%   \caption{Experimental results of the non-proportional thermo-mechanical fatigue tests with equivalent strain amplitudes $\Delta\varepsilon_{eq}/2$=0.5\%, 0.6\%, 0.7\%, 0.8\% and 1.0\%: (a)cyclic stress responses of the cycle at $N_f/2$, (b)peak, valley and mean values of axial stresses, (c)peak, valley and mean values of shear stresses.}
-%   \label{Fig:plot_exp_NPRTMF}
-% \end{figure}
-
-% Fatigue tests with three different phase angles of the thermal loading and mechanical loading should give a systematical overview about the thermomechanical behavior of the material. Fig. \ref{Fig:plot_exp_TCTMF} illustrates the evolution of the peak, valley and mean stresses for TC-IP, TC-OP and TC-90 loading tests. As expected, under strain-controlled uniaxial cyclic loading with mean mechanical strain, all fatigue tests show the cyclic softening behavior as well as the hysteresis loops reach a stable state with increasing number of cycles. The decreases of mean stresses were observed during the TC-IP loading tests, whereas for TC-OP loading the opposite is the case. Furthermore, due to the symmetry of temperature in the TC-90 loading (i.e. the temperatures are the same at maximum and minimum axial strain), the mean axial stress is constant during the entire life-cycle process.
-
-% As shown in Fig. \ref{Fig:plot_exp_PROTMF}, the experimental results of the PRO-IP loading tests show the similar cyclic softening behavior of the uniaxial TC-IP tests and the shear stress response is consistent with the axial stress response. In Fig. \ref{Fig:plot_exp_PROTMF}(b) and (c), a decrease of mean stress was present in both axial and hoop directions.
-
-
-% Fig. \ref{Fig:plot_exp_NPRTMF} shows the experimental results of NPR-IP loading tests. Unlike the results of PRO-IP loading tests, for equivalent strain amplitudes $\geqslant$0.8\%, cyclic hardening was present in the first three cycles in both axial and torsional directions. Afterwards, continuous cyclic softening follows for the major part of the fatigue life. Furthermore, compared to the PRO-IP data, both axial and shear stress amplitudes due to the same equivalent strain amplitudes are higher than the case of PRO-IP loading tests, as shown in Fig. \ref{Fig:plot_exp_NPRTMF}(b) and (c). Consequently, it was concluded that the additional non-proportional hardening occured in the mechanical non-proportional loading condition. In Fig. \ref{Fig:plot_exp_NPRTMF}(c), unlike the case of axial stress, the changes of mean value of shear stress under NPR-IP loading are tiny.
-
-% \subsection{Fractography under different loadings conditions}
-
-% % A number of studies \cite{Evans2008,Xiao2006,Jacobsson2009}
-
-% To gain insight into the failure mechanism of multiaxial thermomechanical fatigue, scanning electron microscope(SEM) was used to investigate the fracture surfaces. In Fig. \ref{Fig:crack_initiation}, typical fractographs in the region of crack initiation are shown. For both isothermal and thermomechanical loadings, crack initiation and subsequent failure have been identified as being initiated at the outer surface of the specimen, as indicated by arrows in Fig. \ref{Fig:crack_initiation}(a)-(f). The SEM investigations reveal that the dominant failure mechanism is changing with the phase angle of the thermal loading and mechanical loading, $\theta_{T-\varepsilon}$, as well as the mechanical loading path.
-% Fig. \ref{Fig:crack_propagation} shows the fractographs of stable crack propagation region.
-% In Fig. \ref{Fig:crack_propagation}(a), the fracture surface of the 650$^\circ$ TC-IF specimen displays evident grain boundaries and slight fatigue striations. Consequently, it can be concluded that a mixture of transgranular and intergranular fracture mode is present in the TC-IF test, additionally the intergranular fracture plays a dominant role.
-% Fatigue striations are not observed in Fig. \ref{Fig:crack_propagation}(b) and (d), during TC-IP and PRO-IP tests, extensive grain boundary cracking are found. This implies that intergranular fracture is evident under in-phase thermomechanical loading tests.
-% However, as shown in Fig. \ref{Fig:crack_propagation}(c), the fracture surface of TC-OP test exhibits well-developed fatigue fatigue striations, which reveal transgranular crack gorwth is predominant during out-of-phase thermomechanical tests.
-% The fracture surfaces of the NPR-IP specimens under mechanical equivalent strain amplitude 0.7\% and 0.5\% are shown in Fig. \ref{Fig:crack_propagation}(e) and (f), respectively. Smooth fracture surfaces are observed ...
-% Consequently, it can be concluded that the intergranular fracture occurs mainly when high tensile stress and high temperature act simultaneously. However, under out-of-phase thermomechanical loadings, no visible morphology of grain boundaries is observed and the fatigue striations are very evident, which means that the creep damage can be ignored in such two loading conditions.
-
-% \begin{figure}
-%    \centering
-%    \begin{overpic}[width=8.0cm]{7112-1.jpg}
-%      \put(0,65){\fcolorbox{white}{white}{(a)}}
-%      \put(50,40){\color{white}\thicklines\vector(1,1){15.5}}
-%    \end{overpic}
-%    \begin{overpic}[width=8.0cm]{7047-1.jpg}
-%      \put(0,65){\fcolorbox{white}{white}{(b)}}
-%      \put(50,40){\color{white}\thicklines\vector(3,1){25}}
-%    \end{overpic}
-%    \begin{overpic}[width=8.0cm]{7033-1.jpg}
-%      \put(0,65){\fcolorbox{white}{white}{(c)}}
-%      \put(45,40){\color{white}\thicklines\vector(1,0){18}}
-%    \end{overpic}
-%    \begin{overpic}[width=8.0cm]{7040-3.jpg}
-%      \put(0,65){\fcolorbox{white}{white}{(d)}}
-%      \put(50,30){\color{white}\thicklines\vector(1,1){20}}
-%    \end{overpic}
-%    \begin{overpic}[width=8.0cm]{7046-6.jpg}
-%      \put(0,65){\fcolorbox{white}{white}{(e)}}
-%      \put(60,40){\color{white}\thicklines\vector(-1,-2){11}}
-%    \end{overpic}
-%    \begin{overpic}[width=8.0cm]{7036-1.jpg}
-%      \put(0,65){\fcolorbox{white}{white}{(f)}}
-%      \put(50,40){\color{white}\thicklines\vector(-1,0){30}}
-%    \end{overpic}
-%   \caption{Locations of crack initiation: (a)TC-IF 0.45\%, (b)TC-IP 0.6\%, (c)TC-OP 0.65\%, (d)RPO-IP 0.6\%, (e)NPR-IP 0.7\%, (f)NPR-IP 0.5\%.}
-%   \label{Fig:crack_initiation}
-% \end{figure}
-
-% \begin{figure*}
-%   \centering
-%   \begin{overpic}[width=8.0cm]{7112-4.jpg}
-%     \put(0,65){\fcolorbox{white}{white}{(a)}}
-%     \put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
-%   \end{overpic}
-%   \begin{overpic}[width=8.0cm]{7047-8.jpg}
-%     \put(0,65){\fcolorbox{white}{white}{(b)}}
-%     \put(50,50){\color{white}\thicklines\vector(-1,-1){20}}
-%   \end{overpic}
-%   \begin{overpic}[width=8.0cm]{7033-102.jpg}
-%     \put(0,65){\fcolorbox{white}{white}{(c)}}
-%     \put(50,50){\color{white}\thicklines\vector(-1,2){10}}
-%   \end{overpic}
-%   \begin{overpic}[width=8.0cm]{7040-6.jpg}
-%     \put(0,65){\fcolorbox{white}{white}{(d)}}
-%     \put(50,30){\color{white}\thicklines\vector(-1,-1){20}}
-%   \end{overpic}
-%   \begin{overpic}[width=8.0cm]{7046-9.jpg}
-%     \put(0,65){\fcolorbox{white}{white}{(e)}}
-%     \put(30,30){\color{white}\thicklines\vector(1,2){10}}
-%   \end{overpic}
-%   \begin{overpic}[width=8.0cm]{7036-5.jpg}
-%     \put(0,65){\fcolorbox{white}{white}{(f)}}
-%     \put(30,30){\color{white}\thicklines\vector(2,1){20}}
-%   \end{overpic}
-%   \caption{Observation of fatigue striations on fractures surface: (a)TC-IF 0.45\%, (b)TC-IP 0.6\%, (c)TC-OP 0.65\%, (d)PRO-IP 0.6\%, (e)NPR-IP 0.7\%, (f)NPR-IP 0.5\%}
-%   \label{Fig:crack_propagation}
-% \end{figure*}
-
-% \section{ Thermomechanical Fatigue Assessment}
-
-% \subsection{Brown-Miller Model}
-% Based on the critical plane concepts \cite{Brown2006}, Wang and Brown \cite{Wang1993} proposed that the Kandil, Brown and Miller fatigue parameter \cite{Kandil1982} can be reformulated as the equivalent shear strain amplitude:
+% Liu\cite{Liu1993}定义了有效应变能来分析临界平面上的疲劳损伤,发现比例加载情况下,SAE1045，Inconel 718材料在双轴应力状态下预测的疲劳寿命与试验结果吻合较好。
+% 近年来,结合临界面和能量法发展了临界面应变能密度法。Liu建议一个虚拟应变能参数(VSE),给
+% 出如下具有一定物理解释的能量判据
 % \begin{equation}
-% \frac{{\Delta \hat \gamma }}{2} = \frac{{\Delta {\gamma _{max}}}}{2} + S\Delta {\varepsilon _n},
-% \label{Equ:ShearStrainBM}
+% \Delta W = \Delta {W_e} + \Delta {W_p} \cong \Delta \sigma \Delta \varepsilon,
 % \end{equation}
-% where $\frac{{\Delta \hat \gamma }}{2}$ is the equivalent shear strain range, $\Delta {\varepsilon _n}$ represents the normal strain excursion on the on the plane with the maximum strain range $\Delta {\gamma _{max}}$. The material dependent parameter S represents the influence of the normal strain on the crack propagation.
-% The fatigue endurance is suggested as:
+% 其中虚应变能密度变程$\Delta W$, 对于两种不同的破坏型，给出不同的形式。对于拉伸型(I型)破坏
 % \begin{equation}
-% \frac{{\Delta \hat \gamma }}{2} = A\frac{{{{\sigma '}_f}}}{E}{\left( {2{N_f}} \right)^b} + B{{\varepsilon '}_f}{\left( {2{N_f}} \right)^c},
+% \Delta {W_{\rm{I}}} = {\left( {\Delta {W_n}} \right)_{\max }} + \Delta {W_s},
 % \end{equation}
-% with
-% \[A = 1 + {\nu _e} + \left( {1 - {\nu _e}} \right)S,\]
-% and
-% \[B = 1 + {\nu _p} + \left( {1 - {\nu _p}} \right)S.\]
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{NF-NP-TMF-BM.pdf}}
-% \caption{Brown-Miller Model.}
-% \label{Fig:NF-NP-TMF-BM}
-% \end{figure}
-
-% \subsection{Fatemi-Socie Model}
-% Based on the work of Brown and Miller, Fatemi and Socie \cite{Fatemi1988} proposed that the normal strain term in Equation (\ref{Equ:ShearStrainBM}) should be replaced by the normal stress.
-% The equivalent shear strain amplitude is developed as:
-% %\begin{equation}
-% %\end{equation}
+% 对于剪切型(II型)破坏
 % \begin{equation}
-% \frac{{\Delta \hat \gamma }}{2} = \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,max}}}}{{{\sigma _y}}}} \right),
+% \Delta {W_{{\rm{II}}}} = \Delta {W_n} + {\left( {\Delta {W_s}} \right)_{\max }},
 % \end{equation}
-% where
-% $\sigma _{n,max}$ is the maximum normal stress on the critical plane suffering the maximum strain range $\Delta {\gamma _{max}}$, $k$ is a material parameter, the sensitivity of the material to normal stress is reflected in the ratio $k/\sigma_y$.
-% They developed a damaging model oriented on the shear-based damage initiation:
-% \begin{equation}
-% \frac{{\Delta \hat \gamma }}{2} = \frac{{{{\tau '}_f}}}{G}{\left( {2{N_f}} \right)^{{b_0}}} + {{\gamma '}_f}{\left( {2{N_f}} \right)^{{c_0}}}.
-% \end{equation}
-% Furthermore, McClaflin and Fatemi \cite{McClaflin2004} proposed that the sensitivity parameter $k$ is varied with fatigue life and can be expressed by tension and torsion data, as
-% \begin{equation}
-% k =  \frac{{k_0 {\sigma _y}}}{{{{\sigma '}_f}{{\left( {2{N_f}} \right)}^b}}}
-% \end{equation}
-% with
-% \[
-% k_0 =  {\frac{{\frac{{{{\tau '}_f}}}{G}{{\left( {2{N_f}} \right)}^{{b_0}}} + {{\gamma '}_f}{{\left( {2{N_f}} \right)}^{{c_0}}}}}{{\left( {1 + {\nu _e}} \right)\frac{{{{\sigma '}_f}}}{E}{{\left( {2{N_f}} \right)}^b} + \left( {1 + {\nu _p}} \right){{\varepsilon '}_f}{{\left( {2{N_f}} \right)}^c}}} - 1} .
-% \]
+% 其中$\Delta {W_n}$和$\Delta {W_s}$分别为一定临界面上由拉伸项和剪切项所得的虚拟应变能密度变程。对于拉伸型破坏,Liu定义产生最大拉伸应变能密度变程${\left( {\Delta {W_n}} \right)_{\max }}$的面为临界面,而对于剪切型破坏,则认为产生最大剪切应变能密度变程${\left( {\Delta {W_s}} \right)_{\max }}$max的面为临界面。以上定义的虚拟应变能密度较实际应变能密度要大些。
 
-% %where the equivalent shear strain on the critical plane was based on a combination of the maximum shear strain amplitude $\Delta \gamma$ and maximum normal stress $\sigma _{n,max}$ during the cycle. The shear strain was used as the variable decisive for the rain-flow decomposition.
-% %The criterion used to be based on the MSSR maximization.
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{NF-NP-TMF-FS.pdf}}
-% \caption{Fatemi-Socie Model.}
-% \label{Fig:NF-NP-TMF-FS}
-% \end{figure}
+% \begin{eqnarray}
+% {\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) &=& \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
+% \end{eqnarray}
 
-% \subsection{Smith-Watson-Topper Model}
-% SWT parameter is based on the principal strain range ?€??1 and the maximum stress on the plane of the principal
-% strain range
+% \begin{eqnarray}
+% \left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right) + {\left( {\Delta \tau \Delta \gamma } \right)_{\max }} &=& \frac{{4{{\tau '}_f}^2}}{G}{\left( {2{N_f}} \right)^{2b\gamma }} + 4{{\tau '}_f}{{\gamma '}_f}{\left( {2{N_f}} \right)^{b\gamma  + c\gamma }}
+% \end{eqnarray}
 
-% \[{\sigma _{n,max}}\frac{{\Delta \varepsilon }}{2} = \frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + {\sigma '_f}{\varepsilon '_f}{\left( {2{N_f}} \right)^{b + c}}\]
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{NF-NP-TMF-SWT.pdf}}
-% \caption{Smith-Watson-Topper Model.}
-% \label{Fig:NF-NP-TMF-SWT}
-% \end{figure}
-
-% \subsection{Liu's Strain Energy Models}
-% \begin{eqnarray*}
-% {\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) &=& \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}}
-% \\
-% & & + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
-% \end{eqnarray*}
-
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{NF-NP-TMF-Liu1.pdf}}
-% \caption{Liu Tension Strain Energy Model.}
-% \label{Fig:NF-NP-TMF-Liu}
-% \end{figure}
-
-% \begin{eqnarray*}
-% \left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right) + {\left( {\Delta \tau \Delta \gamma } \right)_{\max }} &=& \frac{{4{{\tau '}_f}^2}}{G}{\left( {2{N_f}} \right)^{2b\gamma }}
-% \\
-% && + 4{{\tau '}_f}{{\gamma '}_f}{\left( {2{N_f}} \right)^{b\gamma  + c\gamma }}
-% \end{eqnarray*}
-
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{NF-NP-TMF-Liu2.pdf}}
-% \caption{Liu Shear Strain Energy Model.}
-% \label{Fig:NF-NP-TMF-Liu2}
-% \end{figure}
-
-% \subsection{Chu Strain Energy Model}
-% \begin{eqnarray*}
-% {\left( {{\tau _{n,\max }}\frac{{\Delta \gamma }}{2} + {\sigma _{n,\max }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }} &=& 1.02\frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} \\
-% && + 1.04{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
-% \end{eqnarray*}
-
-% \begin{figure}[!htp]
-% \centering{\includegraphics[width=8.5cm]{NF-NP-TMF-Chu.pdf}}
-% \caption{Chu Strain Energy Model.}
-% \label{Fig:NF-NP-TMF-Chu}
-% \end{figure}
-
-
-
-% \marked{Fig. \ref{Fig:plot_fatigue_life_quantitative_evaluation_tmf} shows a quantitative assessment of fatigue life prediction results. The comparison
-% between calculated Ncal and experimental Nexp fatigue lives has been made by means of two statistical parameters.
-% The first of them is a mean dispersion of fatigue life}
-
-% \[{T_N} = {10^{\bar E}}\]
-
-% where $\bar E$is given by:
-
-% \[\bar E = \frac{1}{n}\sum\limits_{i = 1}^n {\log \left( {\frac{{{N_{\exp ,i}}}}{{{N_{cal,i}}}}} \right)} \]
-% where n is a number of the compared results. The second parameter is a life prediction mean-squared error
-
-% \[{T_{RMS}} = {10^{{E_{RMS}}}}\]
-% where $E_{RMS}$ is given by:
-% \[{E_{RMS}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\log }^2}\left( {\frac{{{N_{\exp ,i}}}}{{{N_{cal,i}}}}} \right)} } \]
-
-% \marked{
-% $T_N$ equals 1 when mean experimental and calculated fatigue lives are equal; more than 1 when the experimental life values are higher than the calculated ones; lower than 1 when the experimental life values are lower than the calculated ones. The $T_N$ quantity is insensitive to the dispersion of life. It can assume the same value for the results with low and high statistical dispersion. Quantity $T_{RMS}$ is a measure of statistical dispersion. It assumes the value equal 1 when the mean and the statistical dispersion of experimental and computational life are identical. It is higher than 1 in other cases. $T_{RMS}$ does not provide any information on whether the computational life is higher or lower than the experimental one.}
-
-% \begin{figure}[!htp]
-% \centering
-% \begin{overpic}[width=8.5cm]{plot_fatigue_life_quantitative_evaluation_tmf_TN.pdf}
-% \put(14,65){\fcolorbox{white}{white}{(a)}}
-% \end{overpic}
-% \begin{overpic}[width=8.5cm]{plot_fatigue_life_quantitative_evaluation_tmf_TRMS.pdf}
-% \put(14,65){\fcolorbox{white}{white}{(b)}}
-% \end{overpic}
-% \caption{The quantitative evaluation of the fatigue life prediction results: (a)$T_N$, (b)$T_{RMS}$.}
-% \label{Fig:plot_fatigue_life_quantitative_evaluation_tmf}
-% \end{figure}
-
-\section{Introduction of multiaxial fatigue assessment}
-
-工程中的疲劳问题研究偏重于材料或结构件的疲劳破坏全寿命分析，主要是通过建立宏观力学参数与疲劳破坏寿命之间的关系，如单轴疲劳中用Manson-Coffin总应变－疲劳寿命公式来评价不同加载条件下材料和结构的抗疲劳性能。基于von Mises等效应变参数的 Manson-Coffin总应变－疲劳寿命公式可表示为
-\begin{equation}
-\frac{{\Delta {\varepsilon _{eq}}}}{2} = \frac{{{{\sigma '}_f}}}{E}{\left( {2{N_f}} \right)^b} + {{\varepsilon '}_f}{\left( {2{N_f}} \right)^c},
-\label{Equ:Manson-Coffin}
-\end{equation}
-式中，$\Delta {\varepsilon _{eq}}/2$为von Mises等效应变幅，${\sigma '}_f$为疲劳强度系数，${\varepsilon '}_f$为疲劳延性系数，$b$为疲劳强度指数，$c$
-为疲劳延性指数，$N_f$为疲劳寿命，$E$为材料的弹性模量。
-
-早期的多轴疲劳理论仅仅是简单地应用某种等效方法, 如von Mises理论, 将多轴应力状态下的等
-效应力应变等同于单轴应力状态下的应力应变, 按照等损伤原则建立多轴疲劳寿命预测方法。大量金属材料的试验结果表明，式\ref{Equ:Manson-Coffin}能较好地适用于单轴和多轴比例加载条件下的疲劳寿命预测，但对多轴非比例加载条件下的疲劳寿命预测能力不理想。
-对于一些材料在非比例循环加载下的循环本构行为的实验研究\cite{tanaka1985effects,xia1991nonproportional}已表明，非比例循环载荷将产生明显的附加强化效应。许多学者\cite{Fatemi1988,socie1987multiaxial,chen1994damage}提出，这种附加强化效应是导致多轴非比例加载时的疲劳寿命降低的主要原因。因此按照常规的寿命预测方法对多轴非比例加载下的零部件进行疲劳寿命预测，将得到偏于危险的预测结果。
-
-许多工程结构在使用中发生的疲劳失效实际上为多轴疲劳失效。一方面，一些结构由于本身几何形状复杂，即使仅承受单一疲劳载荷作用，结构局部应力应变分布实际为多轴应力状态。另一方面，一些结构承受着多种载荷的循环作用，各载荷之间可能为比例加载，也可能为非比例加载。在非比例载荷作用下，应力或应变主轴发生旋转，导致多滑移系开动，阻碍了材料内部形成稳定的位错结构，从而产生非比例附加强化现象，导致工程结构的疲劳寿命降低。因此，需要发展新的疲劳损伤控制参量进行多轴非比例疲劳寿命的预测和评估。目前提出的多轴疲劳寿命模型主要分为三类：即等效应力应变法、能量法和临界平面法。
-
-国内外已有众多学者对多轴加载下如何预测构件的疲劳寿命进行了广泛研究，并提出许多适用于不同材料、不同载荷情况的疲劳破坏准则。
-Garud等[7-13]从不同角度，对不同时期的疲劳准则进行过回顾。
-依据材料疲劳破坏参量，可将疲劳破坏准则划分为三类：应力准则、应变准则和能量准则。
-\subsection{Stress based models}
-早期的研究者试图应用静强度理论解决多轴疲劳问题，其中常用的有最大正应力准则、最大剪应力准则（Tresca准则）以及Von Mises准则。
-但实际应用中发现，这些准则不能很好地描述试验数据，尤其是在非比例载荷情况下，预测的疲劳寿命偏于危险。
-
-
-Gough和Pollard\cite{gough1935strength}\cite{gough1936properties}针对弯扭复合加载情况，给出了适用于韧性材料的椭圆方程：
-\[{\left( {\frac{{{S_t}}}{t}} \right)^2} + {\left( {\frac{{{S_b}}}{b}} \right)^2} = 1\]
-和适用于脆性材料的椭圆弧方程：
-\[{\left( {\frac{{{S_t}}}{t}} \right)^2} + {\left( {\frac{{{S_b}}}{b}} \right)^2}\left( {\frac{b}{t} - 1} \right) + \left( {\frac{{{S_b}}}{b}} \right)\left( {2 - \frac{b}{t}} \right) = 1\]
-其中，${S_t}$和${S_b}$分别为扭转应力幅值及弯曲应力幅值，$t$和$b$分别是扭转疲劳极限和弯曲疲劳极限。
-
-Sines\cite{sines1959behavior}考虑了静水压力的影响，将Von Mises应力准则修改为：
-\[\frac{{\Delta {\tau _{oct}}}}{2} + f\left( {2{\sigma _h}} \right) = C\]
-其中，${\Delta {\tau _{oct}}}$是八面体剪应力变幅，${\sigma _h}$为静水应力，$k$和$C$是材料常数。
-
-Gough准则和Sines准则的共同特征是它们均与材料的弯曲疲劳极限和扭转疲劳极限的比$b/t$相关，而$b/t$的值不仅随着材料、试件几何形状而改变，而且随着耐久极限的改变而改变。
-Findley\cite{findley1953combined}\cite{findley1954modified}\cite{findley1956theory}\cite{findley1958theory}对大量的疲劳数据进行分析后，提出不断变化的剪应力是导致疲劳的主要原因，而临界平面上的正应力对材料抵抗不断变化应力的能力有很大影响。
-提出了一个剪应力与正应力的线性组合式作为疲劳判据：
-\[{\left( {\frac{{\Delta \tau }}{2} + k{\sigma _n}} \right)_{\max }} = C\]
-其中，${\Delta \tau }$为平面上的剪应力变幅，${\sigma _n}$为平面上的法向应力幅，$k$和$C$是材料常数。
-临界面定义为正应力和剪应力的线性组合（式(1.4)中括号内部分）
-达到最大值的面。单元内任意截面上的应力状态如图1.2所示。
-
-MicDiarmid\cite{mcdiarmid1991general}考虑了裂纹的不同开裂模式，将临界面定义为剪应力幅达到最大值的面，提出：
-\[\frac{{\Delta {\tau _{\max }}}}{{2{t_{A,B}}}} + \frac{{{\sigma _{n,\max }}}}{{2{\sigma _u}}} = 1\]
-其中，${\Delta {\tau _{\max }}}$为临界面上的最大剪应力变幅，${\sigma _{n,\max }}$是临界面上的最大法向应力，${t_{A,B}}$为相对应于A，B两种不同裂纹开裂模式的剪切疲劳强度，${\sigma _u}$是材料的拉伸强度。
-
-Dang Van\cite{van1986criterion}\cite{van1999introduction}从微观角度出发，观察到疲劳裂纹萌生是一个局部过程，通常发生在那些经历塑性变形并形成典型滑移带的晶粒处，认为一个
-晶粒内的微观剪应力$\tau$是主要参数，同样，微观静水应力$\sigma_h$将影响裂纹的开裂和滑移带的形成，建立如下关系式：
-\[\tau  + k\sigma  = C\]
-其中，$k$和$C$是材料常数。
-
-Carpenteri和Spagnoli\cite{carpinteri2001multiaxial}应用临界面的概念将Gough准则进行如下修改：
-\[{\left( {\frac{{\Delta \tau }}{{2t}}} \right)^2} + \left( {\frac{{{\sigma _{n,\max }}}}{b}} \right) \le 1\]
-其中，临界面方向定义为应用权重函数法计算出的平均主应力方向。${\Delta \tau }$为临界面上的剪应力变幅，${\sigma _{n,\max }}$
-是临界面上的最大法向应力，t和b分别是扭转疲劳极限和弯曲疲劳极限。
-
-
-\subsection{Strain based models}
-% 与应力准则相对应，早期的研究者Yokobori等将静强度理论应用到多轴应变准则中来。
-% 采用最大法向应变、最大剪应变、Von Mises等效应变等代替Manson-Coffin公式的应变，与单轴低周疲劳估算相似，进行多轴疲劳寿命预算。
-% 由于该方法没有考虑不同应力路径对材料响应和疲劳寿命的影响，因而不能用于预测多轴非比例加载下的疲劳寿命。
-
-临界面概念的提出, 使得多轴疲劳问题的研究前进了一大步。
-% Findley\cite{findley1958theory},并认为此平面上的剪应力及法向正应力是导致疲劳裂纹萌生和扩展的主要原因。
-Findley\cite{findley1953combined,findley1954modified,findley1956theory,findley1958theory}最早提出临界面概念，对大量的疲劳数据进行分析后，提出不断变化的剪应力是导致疲劳的主要原因，而临界平面上的正应力对材料抵抗不断变化应力的能力有很大影响。
-提出了一个剪应力与正应力的线性组合式作为疲劳判据：
-\[{\left( {\frac{{\Delta \tau }}{2} + k{\sigma _n}} \right)_{\max }} = C\]
-其中，${\Delta \tau }$为平面上的剪应力变幅，${\sigma _n}$为平面上的法向应力幅，$k$和$C$是材料常数。
-临界面定义为正应力和剪应力的线性组合（式(1.4)中括号内部分）
-达到最大值的面。单元内任意截面上的应力状态如图1.2所示。
-
-Brown和Miller\cite{brown1973theory}根据疲劳裂纹萌生和扩展的物理解释提出了一种多轴疲劳理论，与Findley\cite{findley1958theory}提出的应力准则相类似，Brown和Miller认为最大剪平面上的剪应变和法向应变这两个参数都应该考虑。他们提出裂纹第一阶段沿最大剪切面生成，第二阶段沿垂直于最大拉应变方向扩展。
-Brown和Miller准则由一系列由最大剪应变${\gamma _{\max }}$和最大剪应变平面上的法向应变${\varepsilon _n}$为坐标所组成的$\Gamma$平面上的等寿命曲线组成，对于给定寿命有
-\[{\gamma _{\max }} = f\left( {{\varepsilon _n}} \right)\]
-
-上式对于A、B两类裂纹有着不同的表达式。Brown和Miller将裂纹分为两种情况。在复合拉伸和扭转中，主应变${\varepsilon _1}$和${\varepsilon _3}$平行于表面，裂纹沿着表面扩展称为A类裂纹；对于正的双向拉伸，应变${\varepsilon _3}$垂直于自由表面，裂纹在自由表面上萌生进而沿纵深方向扩展称为B类裂纹。Kandil，Brown和Miller\cite{Kandil1982}给出A类裂纹表达式的简化形式：
-\[\frac{{\Delta {\gamma _{\max }}}}{2} + k\Delta {\varepsilon _n} = C\]
-其中，$\Delta {\varepsilon _n}$是临界面上的法向应变变幅，$k$和$C$是材料常数。
-
-% Wang和Brown[37]用相邻两个最大剪应变折返点之间的法向应变变程${\varepsilon _n^*}$来代替法向应变变程$\Delta {\varepsilon _n}$，给出疲劳破坏模型
-% \[\frac{{\Delta {\gamma _{\max }}}}{2} + k\varepsilon _n^* = C\]
-% 其中$k$和$C$是材料常数。
-
-Fatemi和Socie\cite{Fatemi1988}研究后发现，由于Kandil、Brown和Miller破坏模型的参数都是应变，没有考虑非比例加载下由于主轴旋转所产生的附加强化效
-应，所以预测的多轴非比例加载下的疲劳寿命偏于危险，建议以最大剪应变平面上的最大法向应力${\sigma _{n,\max }}$
-代替法向应变变程$\Delta {\varepsilon _n}$作为参数，提出准则如下：
-\begin{equation}
-% \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,\max }}}}{{{\sigma _y}}}} \right) = C,
-\frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,\max }}}}{{{\sigma _y}}}} \right) = \frac{{{{\tau '}_f}}}{G}{\left( {2{N_f}} \right)^{{b_0}}} + {{\gamma '}_f}{\left( {2{N_f}} \right)^{{c_0}}},
-\end{equation}
-其中，$\sigma_y$是屈服应力，$k$是材料常数。
-% \begin{equation}
-% \frac{{\Delta \hat \gamma }}{2} = \frac{{{{\tau '}_f}}}{G}{\left( {2{N_f}} \right)^{{b_0}}} + {{\gamma '}_f}{\left( {2{N_f}} \right)^{{c_0}}}.
-% \end{equation}
-
-\subsection{Energy based models}
-Socie\cite{socie1987multiaxial}认为材料的多轴低周疲劳断裂形式分为剪切型和拉伸型两种。剪切型破坏材料的疲劳裂纹萌生与扩展主要在剪应变（剪应力）平面上进行；拉伸型破坏材料的疲劳裂纹扩展是疲劳寿命的主要阶段，垂直于裂纹方向的应力和应变是影响裂纹扩展速率的主要因素。针对拉伸型破坏材料，Socie以最大主应变平面为临界面，对Smith、Watson和Topper\cite{smith1970stress}的能量准则进行了修正
-\begin{equation}
-{\sigma _{n,max}}\frac{{\Delta \varepsilon }}{2} = \frac{{{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + {\sigma '_f}{\varepsilon '_f}{\left( {2{N_f}} \right)^{b + c}},
-\end{equation}
-其中$\Delta \varepsilon$是最大主应变变程,${\sigma _{n,max}}$是垂直于最大主应变面的最大法向应力。
-
-Liu\cite{Liu1993}定义了有效应变能来分析临界平面上的疲劳损伤,发现比例加载情况下,SAE1045，Inconel 718材料在双轴应力状态下预测的疲劳寿命与试验结果吻合较好。
-近年来,结合临界面和能量法发展了临界面应变能密度法。Liu建议一个虚拟应变能参数(VSE),给
-出如下具有一定物理解释的能量判据
-\begin{equation}
-\Delta W = \Delta {W_e} + \Delta {W_p} \cong \Delta \sigma \Delta \varepsilon,
-\end{equation}
-其中虚应变能密度变程$\Delta W$, 对于两种不同的破坏型，给出不同的形式。对于拉伸型(I型)破坏
-\begin{equation}
-\Delta {W_{\rm{I}}} = {\left( {\Delta {W_n}} \right)_{\max }} + \Delta {W_s},
-\end{equation}
-对于剪切型(II型)破坏
-\begin{equation}
-\Delta {W_{{\rm{II}}}} = \Delta {W_n} + {\left( {\Delta {W_s}} \right)_{\max }},
-\end{equation}
-其中$\Delta {W_n}$和$\Delta {W_s}$分别为一定临界面上由拉伸项和剪切项所得的虚拟应变能密度变程。对于拉伸型破坏,Liu定义产生最大拉伸应变能密度变程${\left( {\Delta {W_n}} \right)_{\max }}$的面为临界面,而对于剪切型破坏,则认为产生最大剪切应变能密度变程${\left( {\Delta {W_s}} \right)_{\max }}$max的面为临界面。以上定义的虚拟应变能密度较实际应变能密度要大些。
-
-\begin{eqnarray}
-{\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) &=& \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
-\end{eqnarray}
-
-\begin{eqnarray}
-\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right) + {\left( {\Delta \tau \Delta \gamma } \right)_{\max }} &=& \frac{{4{{\tau '}_f}^2}}{G}{\left( {2{N_f}} \right)^{2b\gamma }} + 4{{\tau '}_f}{{\gamma '}_f}{\left( {2{N_f}} \right)^{b\gamma  + c\gamma }}
-\end{eqnarray}
-
-Chu\cite{Chu1993,Chu1995}等人提出用临界面上的正应变与剪应变的能量密度来描述比例及非比例加载下的高周疲劳。这一准则与Glinka准则相似, 但这一准则是基于一点的, 忽视了考虑材料非线形行为的情况。
-
-% \section{Isothermal low cycle fatigue assessment}
-
-% \subsection{Uniaxial fatigue life}
-% \subsection{Evaluation of multiaxial fatigue models}
-% \subsection{Multiaxial fatigue life prediction}
-
-% \section{Thermomechanical low cycle fatigue assessment}
+% Chu\cite{Chu1993,Chu1995}等人提出用临界面上的正应变与剪应变的能量密度来描述比例及非比例加载下的高周疲劳。这一准则与Glinka准则相似, 但这一准则是基于一点的, 忽视了考虑材料非线形行为的情况。
 
 \section{Introduction}
 \noindent
 Gas turbine components experience severe cyclic multiaxial mechanical and thermal loadings. The increasing operating temperature in gas turbines is pushing materials closer to their operating limits. Quantifying mechanical behavior and fatigue performance of the components under the more realistic conditions becomes necessary to design reliable long-term components \cite{Harrison1996}.
 
-In the past decades the high temperature superalloy Inconel 718 was extensively tested under isothermal loading conditions, especially by different aero engine makers. Engineering design was essentially based on uniaxial fatigue models, so that the influence of the loading multiaxiality was not clarified.
+In the past decades the Nickel-based superalloy Inconel 718 was extensively tested under isothermal loading conditions, especially by different aero engine makers. Engineering design was essentially based on uniaxial fatigue models, so that the influence of the loading multiaxiality was not clarified.
 For engineering applications numerous investigations on the isothermal low cycle fatigue of the nickel-based superalloy were performed \cite{Koch85, Morrow88, Mahobia2014, Chen2016, William1995, kim1988elevated, nelson1992creep}.
 Generally life design of the turbine components is based on the isothermal fatigue concept, although the real loading history in turbine is essentially under varying temperature. It is assumed that the material fatigue at the higher temperature is more critical than that under the thermomechanical condition. From material testing view point, isothermal fatigue can be conducted more easily than the thermomechanical fatigue. However, experiments reveal that the varying temperature changes fatigue damage mechanisms and may accelerate material failure significantly. Recently quantifying thermomechanical fatigue damage becomes an important design issue, especially for high performance components.
 
 Thermomechanical fatigue (TMF) means fatigue under both cyclic mechanical loads as well as cyclic temperature. Under thermomechanical fatigue the material experiences different damage processes and the fatigue life is sensitive to the loading configuration. In past years many TMF results were published mainly for uniaxial loading \cite{Evans2008, Kulawinski2015, Remy2003, Bauer2009}. The major goal was to demonstrate effects of the loading phase angles and to correlate fatigue life with the phase angle. A phenomenological fatigue models was proposed  in \cite{Vose2013} to predict the material fatigue life under isothermal and thermomechanical loading conditions. It is well known the deformation and damage mechanisms under multiaxial loads can significantly differ from those under uniaxial loading \cite{Fang2015, Kang2004, Chen2004}. Most components in turbine engines typically experience significant variations in multiaxial states of stress, strain and temperatures under non-isothermal conditions. There are few works on the multiaxial TMF fatigue life published \cite{Brookes2010}.
 
-The present paper considers thermomechanical fatigue under tension-torsion loading conditions and discusses multiaxial TMF fatigue. Both elastic-plastic behavior and fatigue life under multiaxial TMF loading condition are investigated. It is shown that the TMF affects fatigue performance of the material significantly and the TMF fatigue has to be considered with more information about the thermomechanical loads.
+This chapter considers thermomechanical fatigue under tension-torsion loading conditions and discusses multiaxial TMF fatigue. Both elastic-plastic behavior and fatigue life under multiaxial TMF loading condition are investigated. It is shown that the TMF affects fatigue performance of the material significantly and the TMF fatigue has to be considered with more information about the thermomechanical loads.
 
-\section{Experiments}
+\section{Experimental results}
 \noindent
-Experiments were conducted on an MTS tension-torsion closed-loop servo hydraulic testing machine. Cooling is achieved by enforced air convection and heating is achieved by the induction heating device. The system is capable of applying both axial and biaxial loads with the temperature variation simultaneously. Thus, uniaxial or biaxial stress state can be generated under a given certain temperature range in the specimen. \ref{Fig:Equipment} shows the induction heating system. The strains were measured using the high temperature axial and biaxial extensometers which contact the specimen surface with two ceramic rods. The gauge length of the axial-torsional extensometers is 25mm.
-
-\subsection{Fatigue tests}
-\noindent
-
-
-%$N_{\rm f}$ was defined as number of cycles at failure, i.e. $N_{\rm f}$ represents the last cycle.$N_{\rm f}$
-
-%The multiaxial fatigue tests ran under given axial strain $\varepsilon$ and shear strain $\gamma$ in a cycle. The proportional and the non-proportional loading paths are shown in Figures \ref{Fig:LoadPath}. While Figure \ref{Fig:LoadPath} (b) shows a proportional load,  Figures \ref{Fig:LoadPath} (c) and (d) define two non-proportional loads, with very different characteristics. Loading ratio $R_\varepsilon$ means the ratio of minimum mechanical strain to the maximum mechanical strain in a loading cycle. Under the tension-torsion condition, the loading ratio is calculated from the principal strains.
-
-% , as shown in Figure \ref{Fig:Temp-Distr}, in which the thermomechanical loads are characterized additionally by the phase angle, $\varphi$.
-% In the present work, the temperature cycled from $T_{min}=300^\circ$C to $T_{\max}=650^\circ$C at a heating/cooling rates of 3.89K/s with the constant ramp rates forming a triangular cycle.
-% The test matrix for the present work is summarized in Table \ref{Tab:TestMatrix}, with both varying loading amplitudes and different phase angles. Effects of the loading proportionality is an additional issue to be clarified experimentally.
-
-%The mechanical strain component ($\varepsilon_{m}$) resulting when the free expansion thermal strain component ($\varepsilon_{\rm th}$) is subtracted from the total strain ($\varepsilon_{\rm t}$). In order to account for the thermal expansion during the tests, each specimen was heated by the induction heating device to the intended thermal cycle of the experiment under the  stress free condition before TMF tests. Under this condition the specimen can expand freely and the thermal expansion was measured directly. Figure \ref{Fig:plot_elastic_by_temperature_in718} shows variations of elasticity modulus, shear modulus and Poisson's ratio as functions of temperature. The curves are independent of mechanical loading.
-
-Scanning electron microscopy (SEM) have been used to observe the morphology of fracture in order to characterize the damage mechanism under different thermomechanical loading conditions.
+Experiments were conducted on the MTS tension/torsion closed-loop servo hydraulic testing machine. 
+The testing procedure of IF and TMF tests were introduced in chapter 2. 
+In this chapter, the fatigue lifetime of IF and TMF tests will be analyzed.
+% Scanning electron microscopy (SEM) have been used to observe the morphology of fracture in order to characterize the damage mechanism under different thermomechanical loading conditions. 
+The fatigue lives of IF and TMF tests are summarized in Table \ref{Tab:TestMatrix}.
 
 \begin{table*}[htbp]
   \centering
@@ -537,10 +192,9 @@ Scanning electron microscopy (SEM) have been used to observe the morphology of f
   \label{Tab:TestMatrix}%
 \end{table*}%
 
-\section{Experimental results}
 \subsection{Isothermal fatigue tests}
 \noindent
-The results of a uniaxial isothermal test is analyzed firstly in order to identify primary material properties. Figure \ref{Fig:plot_exp_half_life_cycle} shows the obtained cyclic stress-strain curves, the values of stress and strain have been determined from the half life cycles. In comparison with the monotonic loading case, the stress-strain relationship for both monotonic and cyclic loadings is described by the known Ramberg-Osgood model, as shown in Figure \ref{Fig:plot_monotonic_cyclic_osgood}. It confirms that the strain hardening can be expressed in the power-law function fairly well. The material demonstrates significant cyclic softening, of which the monotonic stress-strain curve can be expressed by the conventional Ramberg-Osgood model, as
+The results of the TC-IF tests are analyzed firstly in order to identify the primary material properties. \ref{Fig:plot_exp_half_life_cycle} shows the obtained cyclic stress-strain curves, the values of stress and strain have been determined from the half life cycles. In comparison with the monotonic loading case, the stress-strain relationship for both monotonic and cyclic loadings is described by the known Ramberg-Osgood model, as shown in \ref{Fig:plot_monotonic_cyclic_osgood}. It confirms that the strain hardening can be expressed in the power-law function fairly well. The material demonstrates significant cyclic softening, of which the monotonic stress-strain curve can be expressed by the conventional Ramberg-Osgood model, as
 \begin{equation}
 {\varepsilon } = \frac{{\sigma }}{{E}} + {\left( {\frac{{\sigma }}{{K}}} \right)^{1/n}},
 \end{equation}
@@ -550,7 +204,7 @@ The cyclic stress-strain relationship is assumed to be in the form of the Ramber
 \frac{{\Delta \varepsilon }}{2} = \frac{{\Delta \sigma }}{{2E}} + {\left( {\frac{{\Delta \sigma }}{{2K'}}} \right)^{1/n'}},
 \end{equation}
 where $K'$ is the cyclic strength coefficient and $n'$ is the cyclic strain hardening exponent.
-%Comparison between the present experiments and Ramberg-Osgood model is illustrated in Figure \ref{Fig:plot_exp_half_life_cycle}. The experimental loops are taken from $N_{\rm f}/2$th cycles. More detailed discussions about cyclic plasticity for the Inconel718 are referred a separate publication by the authors \cite{Sun2017}.
+%Comparison between the present experiments and Ramberg-Osgood model is illustrated in \ref{Fig:plot_exp_half_life_cycle}. The experimental loops are taken from $N_{\rm f}/2$th cycles. More detailed discussions about cyclic plasticity for the Inconel718 are referred a separate publication by the authors \cite{Sun2017}.
 
 \begin{figure}[!htp]
 \centering
@@ -598,16 +252,16 @@ where ${{{\sigma '}_{\rm f}}}$ is the fatigue strength coefficient, $b$ is the f
 
 \subsection{Thermomechanical fatigue tests}
 \noindent
-\ref{Fig:plot_exp_fatigue_life} shows the lifetimes of thermomechanical fatigue tests under different loading conditions. The data are plotted as Mises equivalent strain amplitude $\Delta\varepsilon_{\rm eq}/2$ versus number of cycles to failure $N_{\rm f}$. The black solid line in the figure is the Coffin-Manson curve of the 650$^\circ$C isothermal fatigue. It can be seen that the lifetimes under uniaxial thermomechanical in-phase and out-of-phase loadings and under multiaxial thermomechanical in-phase loadings are shorter than under isothermal loadings at the same equivalent strain amplitude.
+\ref{Fig:plot_exp_fatigue_life} shows the lifetimes of thermomechanical fatigue tests under different loading conditions. The data are plotted as Mises equivalent strain amplitude $\Delta\varepsilon_{\rm eq}/2$ vs. number of cycles to failure $N_{\rm f}$. The black solid line in the figure is the Coffin-Manson curve of the 923K isothermal fatigue. It can be seen that the lifetimes under uniaxial thermomechanical in-phase and out-of-phase loadings and under multiaxial thermomechanical in-phase loadings are shorter than under isothermal loadings at the same equivalent strain amplitude.
 In contrast, the lifetimes under uniaxial thermomechanical 90$^\circ$ phase loadings and proportional thermomechanical in-phase loadings are longer than under isothermal loadings.
 
 For uniaxial thermomechanical fatigue tests, the mechanical strain amplitude vs. lifetime curves under the in-phase and out-of-phase loading conditions intersect with each other. The position of the crossover point is about 0.6\% of the mechanical strain amplitude.
 At the mechanical strain amplitude bigger than 0.6\%, the in-phase thermomechanical fatigue tends to have a lower fatigue lifetime, oppositely, the in-phase thermomechanical fatigue lifetimes are longer than the out-of-phase at the mechanical strain amplitude smaller than 0.6\%.
 
-% Figure \ref{Fig:plot_monotonic_cyclic_osgood} shows the Mises equivalent strain amplitude vs. number of cycles to failure under four loading conditions: uniaxial in phase IP TMF, uniaxial out of phase OP TMF, proportional axial-torsional IP TMF and non-proportional axial torsional (diamond path) IP TMF.
+% \ref{Fig:plot_monotonic_cyclic_osgood} shows the Mises equivalent strain amplitude vs. number of cycles to failure under four loading conditions: uniaxial in phase IP TMF, uniaxial out of phase OP TMF, proportional axial-torsional IP TMF and non-proportional axial torsional (diamond path) IP TMF.
 
 % Firstly, we consider the in phase IP and out of phase OP effect under uniaxial tests. The out of phase OP cycles resulted in lives that are significantly longer than the in phase IP tests at the equivalent strain amplitude 1\%. As the strain amplitude decrease, the deviations of fatigue life $N_{\rm f}$  becomes smaller.
-% Secondly, we consider the multiaxial effect on the fatigue life. Because the temperature cycles of all the IF TMF tests from 300$^\circ$C to 650$^\circ$C remain the same. It was observed previously that the fatigue life of the multiaxial diamond path in phase IP TMF tests is shorter than the uniaxial in phase IP TMF tests. But the fatigue life of the proportional load path IP TMF tests is longer than the uniaxial IP TMF tests. This phenomenon was suggested to be related to the number of equivalent plastic strain of the two different strain loading paths.
+% Secondly, we consider the multiaxial effect on the fatigue life. Because the temperature cycles of all the IF TMF tests from 573K to 923K remain the same. It was observed previously that the fatigue life of the multiaxial diamond path in phase IP TMF tests is shorter than the uniaxial in phase IP TMF tests. But the fatigue life of the proportional load path IP TMF tests is longer than the uniaxial IP TMF tests. This phenomenon was suggested to be related to the number of equivalent plastic strain of the two different strain loading paths.
 
 \begin{figure}[!htp]
 \centering{\includegraphics[width=12cm]{plot_exp_fatigue_life_tmf.pdf}}
@@ -617,17 +271,17 @@ At the mechanical strain amplitude bigger than 0.6\%, the in-phase thermomechani
 
 \subsection{Fractography of different specimens}
 \noindent
-To gain insight into the failure mechanism of multiaxial thermomechanical fatigue, scanning electron microscope (SEM) was used to investigate the fracture surfaces. In Figure \ref{Fig:crack_initiation}, typical fractographs in the region of crack initiation are shown. For both isothermal and thermomechanical loadings, crack initiation and subsequent failure have been identified as being initiated at the outer surface of the specimen, as indicated by arrows in Figure \ref{Fig:crack_initiation}.
+To gain insight into the failure mechanism of multiaxial thermomechanical fatigue, scanning electron microscope (SEM) was used to investigate the fracture surfaces. In \ref{Fig:crack_initiation}, typical fractographs in the region of crack initiation are shown. For both isothermal and thermomechanical loadings, crack initiation and subsequent failure have been identified as being initiated at the outer surface of the specimen, as indicated by arrows in \ref{Fig:crack_initiation}.
 
 The SEM investigations reveal that the dominant failure mechanism is changing with the phase angle of the thermal loading and mechanical loading, $\theta_{T-\varepsilon}$, as well as the mechanical loading path.
-Figure \ref{Fig:crack_propagation} shows the fractography of stable crack propagation.
-In Figure \ref{Fig:crack_propagation}(a), the fracture surface of the 650$^\circ$ TC-IF specimen displays evident grain boundaries and slight fatigue striations. Consequently, it can be concluded that a mixture of transgranular and intergranular fracture mode is present in the TC-IF test, and the intergranular fracture plays a dominant role.
+\ref{Fig:crack_propagation} shows the fractography of stable crack propagation.
+In \ref{Fig:crack_propagation}(a), the fracture surface of the 650$^\circ$ TC-IF specimen displays evident grain boundaries and slight fatigue striations. Consequently, it can be concluded that a mixture of transgranular and intergranular fracture mode is present in the TC-IF test, and the intergranular fracture plays a dominant role.
 Fatigue striations are not observed in Figures \ref{Fig:crack_propagation}(b) and (d), for TC-IP and PRO-IP. Extensive grain boundary cracking are found. This implies that intergranular fracture is evident under in-phase thermomechanical loading tests.
 
-However, as shown in Figure \ref{Fig:crack_propagation}(c), the fracture surface of TC-OP test exhibits well-developed fatigue fatigue striations, which reveal transgranular crack growth is predominant during out-of-phase thermomechanical tests.
-The fracture surfaces of the NPR-IP specimens under mechanical equivalent strain amplitude 0.7\% and 0.5\% are shown in Figures \ref{Fig:crack_propagation}(e) and (f), respectively. Smooth fracture surfaces are observed.
+However, as shown in \ref{Fig:crack_propagation}(c), the fracture surface of TC-OP test exhibits well-developed fatigue fatigue striations, which reveal transgranular crack growth is predominant during out-of-phase thermomechanical tests.
+The fracture surfaces of the NPR-IP specimens under mechanical equivalent strain amplitude 0.7\% and 0.5\% are shown in \ref{Fig:crack_propagation}(e) and (f), respectively. Smooth fracture surfaces are observed.
 Consequently, it can be concluded that the transgranular fracture occurs mainly under low temperature but intergranular fracture occurs mainly under high temperature and high tensile stress.
-%In the temperature range 300 to 650$^\circ$C, fatigue striations is observed evident under out-of-phase thermomechanical loading.
+%In the temperature range 300 to 923K, fatigue striations is observed evident under out-of-phase thermomechanical loading.
 
 \begin{figure}[!htp]
    \centering
@@ -837,7 +491,7 @@ The normal strain energy based model suggested by Liu \cite{Socie2000} can be wr
 \end{equation}
 Above the critical plane is defined from maximizing the normal strain energy ${\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}}$. Note the model parameters in the present model differ from others. The corresponding shear strain energy based model is expressed as
 \begin{equation}
-\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right) + {\left( {\Delta \tau \Delta \gamma } \right)_{\max }} = \frac{{4{{\tau '}_{\rm f}}^2}}{G}{\left( {2{N_{\rm f}}} \right)^{2b\gamma }} + 4{{\tau '}_{\rm f}}{{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b\gamma  + c\gamma }}.
+\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right) + {\left( {\Delta \tau \Delta \gamma } \right)_{\max }} = \frac{{4{{\tau '}_{\rm f}}^2}}{G}{\left( {2{N_{\rm f}}} \right)^{2b_0 }} + 4{{\tau '}_{\rm f}}{{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b_0  + c_0 }}.
 \label{Equ:Liu2_model}
 \end{equation}
 The critical plane is calculated from the shear strain energy.
@@ -1138,7 +792,7 @@ resulting in the fatigue life of $N_{\rm{p}}$=611 cycles.
 Liu's model is based on the virtual strain energy (VSE) on each plane. The VSE is the product of stress and strain ranges, and is displayed in \ref{Fig:plot_values_with_angle}(d). The normal VSE is the maximum value of normal work plus the shear work on the same plane. The maximum normal work is observed to occur on the $\varphi=0^\circ$ plane, and the fatigue damage parameter of Liu's normal VSE model is computed as:
 \[{p_{{\rm{LiuI}}}} = {\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) = 1857.4 \times 0.01399 + 1126.2 \times 0.02416 = 44.71.\]
 Then the fatigue life is computed from Equation (\ref{Equ:Liu1_model}):
-\[44.71 = \frac{{4{{\tau '}_{\rm f}}^2}}{G}{\left( {2{N_{\rm f}}} \right)^{2b\gamma }} + 4{{\tau '}_{\rm f}}{{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b\gamma  + c\gamma }},\]
+\[44.71 = \frac{{4{{\tau '}_{\rm f}}^2}}{G}{\left( {2{N_{\rm f}}} \right)^{2b_0 }} + 4{{\tau '}_{\rm f}}{{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b_0  + c_0 }},\]
 with the result of fatigue life $N_{\rm{p}}$=71 cycles.
 
 \begin{figure}
@@ -1256,8 +910,6 @@ with the result of fatigue life $N_{\rm{p}}$=71 cycles.
   \label{Tab:stress_on_material_plane}%
 \end{table}%
 
-
-
 \subsection{Fatigue life prediction based on the conventional fatigue models}
 \noindent
 As introduced above, the Brown-Miller's model, Fatemi-Socie's model, Smith-Watson-Topper's model, Chu-Conle-Bonnen's model, Liu's Energy model and Zamrik's model are used to evaluate the thermomechanical fatigue. The isothermal fatigue tests were carried out at 923K, and the thermomechanical fatigue test were performed at the temperature range from 573K to 923K.
@@ -1330,7 +982,7 @@ A new lifetime model based on the Liu's Model I virtual strain energy approach i
 = \frac{{4{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + 4{{\sigma '}_{\rm f}}{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
 \label{Equ:TMF_model}
 \end{equation}
-In Eq. (\ref{TMF_model}), $A$ is a correction term according to the virtual tension strain energy ${{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)}_{\max }}$ and $B$ is a material constant in regard to the virtual shear strain energy ${\Delta \tau \Delta \gamma }$.
+In Equation (\ref{Equ:TMF_model}), $A$ is a correction term according to the virtual tension strain energy ${{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)}_{\max }}$ and $B$ is a material constant in regard to the virtual shear strain energy ${\Delta \tau \Delta \gamma }$.
 As discussed in Ref.\cite{Vose2013}, the correction term A is defined as:
 \begin{equation}
 A = {\left[ {1 + C\int_{{t_0}}^{{t_0} + {t_{cyc}}} {\eta \left( t \right)\exp \left( {\frac{{ - Q\left( t \right)}}{{RT\left( t \right)}}} \right){\rm{d}}t} } \right]^k},
@@ -1378,18 +1030,18 @@ As given in \cite{Warren2008}, the activation energy $Q_0$ is set to the value o
 
 \ref{Fig:plot_fatigue_life_quantitative_evaluation_tmf} shows a quantitative assessment of fatigue life prediction results. The comparison between calculated $N_{\rm{p}}$ and experimental $N_{\rm{f}}$ fatigue lives has been made by means of two statistical parameters. The first of them is a mean dispersion of fatigue life:
 
-\[{T_N} = {10^{\bar E}}\]
+\[{T_{\rm{N}}} = {10^{\bar E}}\]
 
 where $\bar E$ is given by:
 
-\[\bar E = \frac{1}{n}\sum\limits_{i = 1}^n {\log \left( {\frac{{{N_{\rm{f} ,i}}}}{{{N_{\rm{p},i}}}}} \right)} \]
+\[\bar E = \frac{1}{n}\sum\limits_{i = 1}^n {\log \left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)} \]
 where n is a number of the compared results. The second parameter is a life prediction mean-squared error
 
-\[{T_{RMS}} = {10^{{E_{RMS}}}}\]
+\[{T_{\rm{RMS}}} = {10^{{E_{\rm{RMS}}}}}\]
 where $E_{RMS}$ is given by:
-\[{E_{RMS}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\log }^2}\left( {\frac{{{N_{\rm{f} ,i}}}}{{{N_{\rm{p},i}}}}} \right)} } \]
+\[{E_{\rm{RMS}}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\log }^2}\left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)} } \]
 
-$T_N$ equals 1 when mean experimental and calculated fatigue lives are equal; more than 1 when the experimental life values are higher than the calculated ones; lower than 1 when the experimental life values are lower than the calculated ones. The $T_N$ quantity is insensitive to the dispersion of life. It can assume the same value for the results with low and high statistical dispersion. Quantity $T_{RMS}$ is a measure of statistical dispersion. It assumes the value equal 1 when the mean and the statistical dispersion of experimental and computational life are identical. It is higher than 1 in other cases. $T_{RMS}$ does not provide any information on whether the computational life is higher or lower than the experimental one.
+$T_{\rm{N}}$ equals 1 when mean experimental and calculated fatigue lives are equal; more than 1 when the experimental life values are higher than the calculated ones; lower than 1 when the experimental life values are lower than the calculated ones. The $T_{\rm{N}}$ quantity is insensitive to the dispersion of life. It can assume the same value for the results with low and high statistical dispersion. Quantity $T_{\rm{RMS}}$ is a measure of statistical dispersion. It assumes the value equal 1 when the mean and the statistical dispersion of experimental and computational life are identical. It is higher than 1 in other cases. $T_{\rm{RMS}}$ does not provide any information on whether the computational life is higher or lower than the experimental one.
 
 \begin{figure}[!htp]
 \centering
@@ -1399,13 +1051,13 @@ $T_N$ equals 1 when mean experimental and calculated fatigue lives are equal; mo
 \begin{overpic}[width=8.0cm]{plot_fatigue_life_quantitative_evaluation_tmf_TRMS.pdf}
 \put(14,65){\fcolorbox{white}{white}{(b)}}
 \end{overpic}
-\caption{The quantitative evaluation of the fatigue life prediction results: (a)$T_N$, (b)$T_{RMS}$.}
+\caption{The quantitative evaluation of the fatigue life prediction results: (a)$T_{\rm{N}}$, (b)$T_{\rm{RMS}}$.}
 \label{Fig:plot_fatigue_life_quantitative_evaluation_tmf}
 \end{figure}
 
-\section{Conlusions}
+\section{Summaries}
 
-This section has described the experimental facility of non-proportional thermomechanical fatigue tests. The machine had to be carefully calibrated from its original design to improve the thermal gradient and ensure the control stability of the axial-torsional extensometers. The Nickel-based superalloy Inconel 718 was investigated experimentally and computationally under 650$^\circ$C isothermal and 300$^\circ$C to 650$^\circ$C thermomechanical loading conditions with proportional and non-proportional mechanical loading paths. The main conclusions are as follows:
+This chapter has described the experimental facility of non-proportional thermomechanical fatigue tests. The Nickel-based superalloy Inconel 718 was investigated experimentally and computationally under 923K isothermal and 573K to 923K thermomechanical loading conditions with proportional and non-proportional mechanical loading paths. The main summaries are as follows:
 
 \begin{itemize}
 \item Experimental results shows that the TC-OP tests have a longer lifetime than the TC-IP tests within the Mises equivalent mechanical strain amplitude range from 0.6\% to 1\%.
