@@ -72,20 +72,20 @@
 % 达到最大值的面。单元内任意截面上的应力状态如图1.2所示。
 
 % Brown和Miller\cite{brown1973theory}根据疲劳裂纹萌生和扩展的物理解释提出了一种多轴疲劳理论，与Findley\cite{findley1958theory}提出的应力准则相类似，Brown和Miller认为最大剪平面上的剪应变和法向应变这两个参数都应该考虑。他们提出裂纹第一阶段沿最大剪切面生成，第二阶段沿垂直于最大拉应变方向扩展。
-% Brown和Miller准则由一系列由最大剪应变${\gamma _{\max }}$和最大剪应变平面上的法向应变${\varepsilon _n}$为坐标所组成的$\Gamma$平面上的等寿命曲线组成，对于给定寿命有
-% \[{\gamma _{\max }} = f\left( {{\varepsilon _n}} \right)\]
+% Brown和Miller准则由一系列由最大剪应变${\gamma _{\max }}$和最大剪应变平面上的法向应变${\varepsilon _{\rm{n}}}$为坐标所组成的$\Gamma$平面上的等寿命曲线组成，对于给定寿命有
+% \[{\gamma _{\max }} = f\left( {{\varepsilon _{\rm{n}}}} \right)\]
 
 % 上式对于A、B两类裂纹有着不同的表达式。Brown和Miller将裂纹分为两种情况。在复合拉伸和扭转中，主应变${\varepsilon _1}$和${\varepsilon _3}$平行于表面，裂纹沿着表面扩展称为A类裂纹；对于正的双向拉伸，应变${\varepsilon _3}$垂直于自由表面，裂纹在自由表面上萌生进而沿纵深方向扩展称为B类裂纹。Kandil，Brown和Miller\cite{Kandil1982}给出A类裂纹表达式的简化形式：
-% \[\frac{{\Delta {\gamma _{\max }}}}{2} + k\Delta {\varepsilon _n} = C\]
-% 其中，$\Delta {\varepsilon _n}$是临界面上的法向应变变幅，$k$和$C$是材料常数。
+% \[\frac{{\Delta {\gamma _{\max }}}}{2} + k\Delta {\varepsilon _{\rm{n}}} = C\]
+% 其中，$\Delta {\varepsilon _{\rm{n}}}$是临界面上的法向应变变幅，$k$和$C$是材料常数。
 
-% % Wang和Brown[37]用相邻两个最大剪应变折返点之间的法向应变变程${\varepsilon _n^*}$来代替法向应变变程$\Delta {\varepsilon _n}$，给出疲劳破坏模型
-% % \[\frac{{\Delta {\gamma _{\max }}}}{2} + k\varepsilon _n^* = C\]
+% % Wang和Brown[37]用相邻两个最大剪应变折返点之间的法向应变变程${\varepsilon _{\rm{n}}^*}$来代替法向应变变程$\Delta {\varepsilon _{\rm{n}}}$，给出疲劳破坏模型
+% % \[\frac{{\Delta {\gamma _{\max }}}}{2} + k\varepsilon _{\rm{n}}^* = C\]
 % % 其中$k$和$C$是材料常数。
 
 % Fatemi和Socie\cite{Fatemi1988}研究后发现，由于Kandil、Brown和Miller破坏模型的参数都是应变，没有考虑非比例加载下由于主轴旋转所产生的附加强化效
 % 应，所以预测的多轴非比例加载下的疲劳寿命偏于危险，建议以最大剪应变平面上的最大法向应力${\sigma _{n,\max }}$
-% 代替法向应变变程$\Delta {\varepsilon _n}$作为参数，提出准则如下：
+% 代替法向应变变程$\Delta {\varepsilon _{\rm{n}}}$作为参数，提出准则如下：
 % \begin{equation}
 % % \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,\max }}}}{{{\sigma _y}}}} \right) = C,
 % \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{n,\max }}}}{{{\sigma _y}}}} \right) = \frac{{{{\tau '}_f}}}{G}{\left( {2{N_f}} \right)^{{b_0}}} + {{\gamma '}_f}{\left( {2{N_f}} \right)^{{c_0}}},
@@ -119,11 +119,11 @@
 % 其中$\Delta {W_n}$和$\Delta {W_s}$分别为一定临界面上由拉伸项和剪切项所得的虚拟应变能密度变程。对于拉伸型破坏,Liu定义产生最大拉伸应变能密度变程${\left( {\Delta {W_n}} \right)_{\max }}$的面为临界面,而对于剪切型破坏,则认为产生最大剪切应变能密度变程${\left( {\Delta {W_s}} \right)_{\max }}$max的面为临界面。以上定义的虚拟应变能密度较实际应变能密度要大些。
 
 % \begin{eqnarray}
-% {\left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) &=& \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
+% {\left( {\Delta {\sigma _n}\Delta {\varepsilon _{\rm{n}}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) &=& \frac{{4{{\sigma '}_f}^2}}{E}{\left( {2{N_f}} \right)^{2b}} + 4{{\sigma '}_f}{{\varepsilon '}_f}{\left( {2{N_f}} \right)^{b + c}}
 % \end{eqnarray}
 
 % \begin{eqnarray}
-% \left( {\Delta {\sigma _n}\Delta {\varepsilon _n}} \right) + {\left( {\Delta \tau \Delta \gamma } \right)_{\max }} &=& \frac{{4{{\tau '}_f}^2}}{G}{\left( {2{N_f}} \right)^{2b\gamma }} + 4{{\tau '}_f}{{\gamma '}_f}{\left( {2{N_f}} \right)^{b\gamma  + c\gamma }}
+% \left( {\Delta {\sigma _n}\Delta {\varepsilon _{\rm{n}}}} \right) + {\left( {\Delta \tau \Delta \gamma } \right)_{\max }} &=& \frac{{4{{\tau '}_f}^2}}{G}{\left( {2{N_f}} \right)^{2b\gamma }} + 4{{\tau '}_f}{{\gamma '}_f}{\left( {2{N_f}} \right)^{b\gamma  + c\gamma }}
 % \end{eqnarray}
 
 % Chu\cite{Chu1993,Chu1995}等人提出用临界面上的正应变与剪应变的能量密度来描述比例及非比例加载下的高周疲劳。这一准则与Glinka准则相似, 但这一准则是基于一点的, 忽视了考虑材料非线形行为的情况。
@@ -275,7 +275,7 @@ To gain insight into the failure mechanism of multiaxial thermomechanical fatigu
 
 The SEM investigations reveal that the dominant failure mechanism is changing with the phase angle of the thermal loading and mechanical loading, $\theta_{T-\varepsilon}$, as well as the mechanical loading path.
 \ref{Fig:crack_propagation} shows the fractography of stable crack propagation.
-In \ref{Fig:crack_propagation}(a), the fracture surface of the 650$^\circ$ TC-IF specimen displays evident grain boundaries and slight fatigue striations. Consequently, it can be concluded that a mixture of transgranular and intergranular fracture mode is present in the TC-IF test, and the intergranular fracture plays a dominant role.
+In \ref{Fig:crack_propagation}(a), the fracture surface of the 923K TC-IF specimen displays evident grain boundaries and slight fatigue striations. Consequently, it can be concluded that a mixture of transgranular and intergranular fracture mode is present in the TC-IF test, and the intergranular fracture plays a dominant role.
 Fatigue striations are not observed in Figures \ref{Fig:crack_propagation}(b) and (d), for TC-IP and PRO-IP. Extensive grain boundary cracking are found. This implies that intergranular fracture is evident under in-phase thermomechanical loading tests.
 
 However, as shown in \ref{Fig:crack_propagation}(c), the fracture surface of TC-OP test exhibits well-developed fatigue fatigue striations, which reveal transgranular crack growth is predominant during out-of-phase thermomechanical tests.
@@ -509,11 +509,11 @@ Note the different definition of the strain energy in comparing with the Liu's m
 \noindent
 Zamrik and Renauld \cite{Zamrik2000} suggested an explicit fatigue model incorporating the effect of creep, environment, and temperature for thermomechanical fatigue, as
 \begin{equation}
-{N_{\rm f}} = A{\left[ {\left( {\frac{{{\varepsilon _{eq,ten}}}}{{{\varepsilon _{\rm f}}}}} \right)\left( {\frac{{{\sigma _{eq,\max }}}}{{{\sigma _{ult}}}}} \right)} \right]^B}
-{\left( {1 + \frac{{{t_h}}}{{{t_c}}}} \right)^C} \exp \left[ {\frac{{ - Q}}{{R\left( {{T_{\max }} - {T_0}} \right)}}} \right],
+{N_{\rm f}} = A{\left[ {\left( {\frac{{{\varepsilon _{\rm eq,ten}}}}{{{\varepsilon _{\rm f}}}}} \right)\left( {\frac{{{\sigma _{\rm eq,\max }}}}{{{\sigma _{\rm{ult}}}}}} \right)} \right]^B}
+{\left( {1 + \frac{{{t_{\rm{h}}}}}{{{t_{\rm{c}}}}}} \right)^C} \exp \left[ {\frac{{ - Q}}{{R\left( {{T_{\max }} - {T_0}} \right)}}} \right],
 \label{Equ:Zamrik_model}
 \end{equation}
-where $\sigma _{eq,\max }$ denotes maximum equivalent tensile stress in mid-life hysteresis loop, $\varepsilon _{eq,ten}$ is maximum equivalent strain in mid-life hysteresis loop for which the stress is tensile, $\sigma _{ult}$ is ultimate strength, $\varepsilon _{f}$ is failure elongation , $t_h$ is length of compressive hold-time, $t_c$ is length of total cycle time including hold-time, $Q$ is activation energy for high temperature damage, $R$ is gas constant, $T_{\max}$ is maximum temperature in TMF cycle and $T_0$ is a reference temperature, $A$,$B$ and $C$ are model coefficients. In the present work, the TMF tests did not have the holding time which means $t_c=0$.
+where $\sigma _{\rm eq,\max }$ denotes maximum equivalent tensile stress in mid-life hysteresis loop, $\varepsilon _{\rm eq,ten}$ is maximum equivalent strain in mid-life hysteresis loop for which the stress is tensile, $\sigma _{\rm ult}$ is ultimate strength, $\varepsilon _{\rm f}$ is failure elongation , $t_{\rm{h}}$ is length of compressive hold-time, $t_{\rm{c}}$ is length of total cycle time including hold-time, $Q$ is activation energy for high temperature damage, $R$ is gas constant, $T_{\max}$ is maximum temperature in TMF cycle and $T_0$ is a reference temperature, $A$,$B$ and $C$ are model coefficients. In the present work, the TMF tests did not have the holding time which means $t_{\rm{c}}=0$.
 
 \subsection{Stress components relative to a generic material plane}
 \noindent
@@ -698,16 +698,16 @@ In order to make the calculations simply, the Longest Chord Method is chosen to 
 As shown in \ref{Fig:stress_on_material_plane}, the tip of the shear stress vector draws on $\Gamma$ a close curve $C$ during the loading cycle.
 The Longest Chord Method introduced that the shear stress amplitude is equal to half of the longest chord amongst those linking together any two points belonging to curve $C$. Thus, the shear stress amplitude is given by:
 \begin{equation}
-\frac{{\Delta \tau }}{2} = \frac{1}{2}\mathop {\max }\limits_{{t_2} \in \mathscr{T}} \left[ {\mathop {\max }\limits_{{t_1} \in \mathscr{T}} \left| {{\tau _n}\left( {{t_1}} \right) - {\tau _n}\left( {{t_2}} \right)} \right|} \right],
+\frac{{\Delta \tau }}{2} = \frac{1}{2}\mathop {\max }\limits_{{t_2} \in \mathscr{T}} \left[ {\mathop {\max }\limits_{{t_1} \in \mathscr{T}} \left| {{\tau _{\rm{n}}}\left( {{t_1}} \right) - {\tau _{\rm{n}}}\left( {{t_2}} \right)} \right|} \right],
 \end{equation}
 where $t_1$ and $t_2$ are two instants of the cyclic load history in the time period $\mathscr{T}$.
 
 Similarly, the maximum normal strain, minimum normal strain and the amplitude of the normal strain and shear strain can be calculated by using the same methods as follows:
 \begin{equation}
-{\varepsilon _{{\rm{n,max}}}} = \mathop {\max }\limits_{t \in \mathscr{T}} \left[ {{\varepsilon _n}\left( t \right)} \right],
+{\varepsilon _{{\rm{n,max}}}} = \mathop {\max }\limits_{t \in \mathscr{T}} \left[ {{\varepsilon _{\rm{n}}}\left( t \right)} \right],
 \end{equation}
 \begin{equation}
-{\varepsilon _{{\rm{n,min}}}} = \mathop {\min }\limits_{t \in \mathscr{T}} \left[ {{\varepsilon _n}\left( t \right)} \right],
+{\varepsilon _{{\rm{n,min}}}} = \mathop {\min }\limits_{t \in \mathscr{T}} \left[ {{\varepsilon _{\rm{n}}}\left( t \right)} \right],
 \end{equation}
 \begin{equation}
 \Delta \varepsilon  = \frac{1}{2}\left( {{\varepsilon _{{\rm{n,max}}}} - {\varepsilon _{{\rm{n,min}}}}} \right),
@@ -991,11 +991,11 @@ A = {\left[ {1 + C\int_{{t_0}}^{{t_0} + {t_{cyc}}} {\eta \left( t \right)\exp \l
 assuming that the viscous deformation only affects the tensile strain energy, where $\eta \left( t \right)$ is stress triaxiality, $R$ is the ideal gas constant ($8.31\times10^{-3}$kJ/mol$\cdot$K), the time integral is from the start time $t_0$ of the cycle to the end time $t_0 + t_{cyc}$, $t_{cyc}$ is the period of the tests, $C$ and $k$ are material constants.
 In Eq. (\ref{Equ:A}), $Q$ is presented \cite{Warren2006,Warren2008} as
 \begin{equation}
-Q\left( t \right) = {Q_0} - \upsilon _0^*{\sigma _{\rm n}}\left( t \right)\left( {1 - \frac{{{\sigma _{\rm n}}\left( t \right)}}{{2{\sigma _{ult}}}}} \right),
+Q\left( t \right) = {Q_0} - \upsilon _0^*{\sigma _{\rm n}}\left( t \right)\left( {1 - \frac{{{\sigma _{\rm n}}\left( t \right)}}{{2{\sigma _{\rm{ult}}}}}} \right),
 \label{Equ:creep_activation_energy}
 \end{equation}
 where $Q_0$ is the the intrinsic activation energy, $\upsilon _0^*$ represents the intrinsic activation volume, $\sigma_{ult}$ is the ultimate stress at the maximum temperature and $\sigma_{\rm n}(t)$ is the normal stress of the critical plane.
-As given in \cite{Warren2008}, the activation energy $Q_0$ is set to the value of 240kJ/mol and the intrinsic activation volume $\upsilon _0^*$ is used the value of $3.51\times10^{-4}\rm{m}^{3}/\rm{mol}$. The ultimate strength $\sigma_{ult}$ of Inconel 718 at 650 $^\circ$C was measured under monotonic tensile tests as $1305$MPa. The constants $k$, $B$ and $C$ are determined by the optimization method to minimize the life prediction mean-squared error. Finally, $k$ is set to 1.2, $B$ is set to 0.5 and $C$ is set to $1.29\times10^{12}s^{-1}$.
+As given in \cite{Warren2008}, the activation energy $Q_0$ is set to the value of 240kJ/mol and the intrinsic activation volume $\upsilon _0^*$ is used the value of $3.51\times10^{-4}\rm{m}^{3}/\rm{mol}$. The ultimate strength $\sigma_{\rm{ult}}$ of Inconel 718 at 923K was measured under monotonic tensile tests as $1305$MPa. The constants $k$, $B$ and $C$ are determined by the optimization method to minimize the life prediction mean-squared error. Finally, $k$ is set to 1.2, $B$ is set to 0.5 and $C$ is set to $1.29\times10^{12}s^{-1}$.
 
 % $Q_0$ = (240kJ/mol)
 % $\upsilon _0^*$ = ($3.75\times10^{-4}\rm{m}^{3}/\rm{mol}$)
