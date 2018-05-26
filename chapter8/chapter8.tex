@@ -820,28 +820,40 @@ Because of this effect ellipsoids are most useful when coupled with a small sour
 % 但是根据上一节的计算，如果我们将灯丝近似为一个圆柱面，则该圆柱面的直径约为0.5mm，光线经过镜面反射后会有一定的发散。
 % 真实的镜面无法保证完全光滑，光线会产生一定的漫反射，通过试验和计算，我们需要确定镜面的反射效率。
 
-Ideally, the filament can be reducible to a linear light source. According to the nature of the elliptical mirror, if the linear light source is located at one of the focal points of the mirror, the reflected light will all pass through the other focal point.
-But according to the calculation in the previous section, if we approximate the filament as a cylindrical surface, the diameter of the cylindrical surface is about 0.5mm, and the light will have a certain degree of divergence after specular reflection.
-The true mirror cannot guarantee perfect smoothness, and the light will produce a certain degree of diffuse reflection. Through experiments and calculations, we need to determine the reflection efficiency of the mirror.
+The filament can be simplified as a linear light source, due to its small diameter. As discussed above, if a linear light source is located at one focus of the elliptical cylinder mirror, the reflected light will pass through the other focus.
+However, according to the computations in the previous section, if we consider the filament as a cylindrical surface, the diameter of the cylindrical surface is about 0.5mm. Not all of the reflected light is transferred to the other focus.
+Meanwhile, the real mirror is not completely smooth and a part of the light is diffusely reflected. Therefore, we have to determine the reflection efficiency through the experiments and calculations.
 
 % 单盏卤素灯镜面反射辐射传热试验装置，如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(a)所示，包括椭圆柱面镜、受光平板、温度传感器及数据采集系统等。
 % 卤素灯位于椭圆柱面镜的其中一个焦点，受光平板的向光面垂直于椭圆柱面的长轴，并通过其另一个焦点，光线经过椭圆柱面镜反射后聚焦在受光平面上，如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(b)所示。
-
-Single-halogen lamp mirror specular reflection radiation heat transfer test device, as shown in \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(a), includes an elliptic cylindrical mirror, a light-receiving plate, a temperature sensor, and a data acquisition system.
-The halogen lamp is located at one of the focuses of the elliptic cylindrical mirror. The reflective panel of light-receiving plate is perpendicular to the long axis of the elliptic cylinder.Through the other focal point, the light is reflected by the elliptic cylindrical mirror and focused on the light receiving plane, as show in \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(b).
+A reflected single halogen lamp radiation heat transfer testing device was developed to analyze the energy transformation during the light reflection.
+As shown in \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(a), the testing
+device includes an elliptical cylinder mirror, a light-receiving plate, temperature sensors, and a data acquisition system.
+The halogen lamp is located at one of the foci of the elliptical cylinder mirror. The light-receiving plate is perpendicular to the long axis of the elliptical cylinder mirror and its surface pass through the other focus. During the test, the light is reflected by the elliptical cylinder mirror and focused on the light-receiving plate, as show in \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(b).
 
 %灯丝的直径、灯丝与镜面的相对位置、镜面的表面粗糙度和镜面的轴线方向都会影响受光平面上的光强度分布。
 % 与上一节相同，受光平板材料为SS304不锈钢，表面采用同样的耐高温黑色涂料喷涂，因此可以认为该受光平板的表面发射率与上一节中的圆柱空腔内壁相同，为0.95。
 % 选择K型热电偶测量平板表面的温度分布，热电偶的位置分布如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c)所示，共15个。
 % 热电偶的数据采集，同样选取National Instruments公司的9213型16通道热电偶数据采集器，相应的编程和数据处理过程与上一节类似，采样频率为10Hz。
 
-As in the previous section, the light-receiving plate material is SS304 stainless steel, and the surface was coated with the same high-temperature-resistant black paint. Therefore, the surface emissivity of the light-receiving plate was considered to be the same as that of the cylindrical chamber wall in the previous section, which was 0.95.
-The K-type thermocouple was used to measure the temperature distribution on the surface of the plate, and the thermocouple position distribution was as shown in \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c).The number of thermocouple was 15 altogether.
-Thermocouple data acquisition, also selected National Instruments's 9213 16-channel thermocouple data collector. The corresponding programming and data processing process was similar to the previous section, the sampling frequency was 10Hz.
+The material of the light-receiving plate is the stainless steel SS304, and the plate surface was coated with the high-temperature-resistant black paint. The paint was the same as the paint used in the cylindrical cavity radiation device. Therefore, the emissivity of the light-receiving plate was consider as 0.95, which was already determined in the previous section.
+The type K thermocouples were welded on the light-receiving plate to measure the temperature distribution of the plate during the test.
+The number of thermocouples was 15, and \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c) shows the positions of the thermocouples. 
+The data acquisition system was also the NI9213 thermocouple data collector, which was introduced in the previous section. The corresponding programming and data acquisition process was similar to the cylindrical cavity radiation testing and the sampling frequency was chosen as 10Hz.
 
-观察受光平板上光斑的位置和
 
-Observe the position of the spot on the light receiving plate and
+\begin{figure}
+  \centering
+  \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{one_lamp_reflection_2.png}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  \caption{.}
+  \label{Fig:one_lamp_reflection}
+\end{figure}
+
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
