@@ -841,19 +841,7 @@ The type K thermocouples were welded on the light-receiving plate to measure the
 The number of thermocouples was 15, and \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c) shows the positions of the thermocouples. 
 The data acquisition system was also the NI9213 thermocouple data collector, which was introduced in the previous section. The corresponding programming and data acquisition process was similar to the cylindrical cavity radiation testing and the sampling frequency was chosen as 10Hz.
 
-
-\begin{figure}
-  \centering
-  \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
-    \put(84,65){\fcolorbox{white}{white}{(a)}}
-  \end{overpic}
-  \begin{overpic}[width=8.0cm]{one_lamp_reflection_2.png}
-    \put(84,65){\fcolorbox{white}{white}{(b)}}
-  \end{overpic}
-  \caption{.}
-  \label{Fig:one_lamp_reflection}
-\end{figure}
-
+The radiative transfer between the surfaces can be computed by ABAQUS through the cavity radiation method. Geometric view factors are computed in ABAQUS between each facet of the mesh on the surfaces. These view factors quantify the effect of radiative transfer between each facet and each of the other facets in the user-defined cavity. However, cavity radiation method can not simulate the specular reflection between the surfaces. 
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
@@ -884,23 +872,49 @@ The data acquisition system was also the NI9213 thermocouple data collector, whi
     \label{Fig:OneLightWithEllipseMirrorReflectionShow6}
   \end{minipage}
 
-%  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-%  \nonumber
-%    \centering
-%    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow5.jpg}
-%    \centerline{(e) Experimental process.}
-%    \label{Fig:OneLightWithEllipseMirrorReflectionShow5}
-%  \end{minipage}%
-%  \begin{minipage}[t]{0.5\linewidth}
-%    \centering
-%    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow6.jpg}
-%    \centerline{(f) Focused light.}
-%    \label{Fig:OneLightWithEllipseMirrorReflectionShow6}
-%  \end{minipage}
+% \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+% \nonumber
+%   \centering
+%   \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow5.jpg}
+%   \centerline{(e) Experimental process.}
+%   \label{Fig:OneLightWithEllipseMirrorReflectionShow5}
+% \end{minipage}%
+% \begin{minipage}[t]{0.5\linewidth}
+%   \centering
+%   \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionShow6.jpg}
+%   \centerline{(f) Focused light.}
+%   \label{Fig:OneLightWithEllipseMirrorReflectionShow6}
+% \end{minipage}
 
   \caption{Test rig of single halogen lamp radiation with the reflect mirror.}
   \label{Fig:OneLightWithEllipseMirrorReflectionShow}
 \end{figure}
+
+\begin{figure}
+  \centering
+  \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{one_lamp_reflection_2.png}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  \caption{.}
+  \label{Fig:one_lamp_reflection}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{overpic}[width=8.0cm]{OneLightWithEllipseMirrorReflection.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  \caption{.}
+  \label{Fig:one_lamp_reflection_cavity_radiation}
+\end{figure}
+
+
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
