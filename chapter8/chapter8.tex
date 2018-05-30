@@ -1,4 +1,5 @@
-\chapter{Experimental apparatus and procedure of TGMF}
+\chapter{Development of the radiation furnace and testing procedure of TGMF}
+\noindent
 % 飞机发动机推力的提高很大程度上依赖于涡轮前总温的提高。
 % 对于高温所带来的一系列问题，解决的办法主要有以下三个:
 % (1)提高材料的耐热性，发展高性能耐热合金，制造单晶叶片；
@@ -37,7 +38,7 @@ Because the thermal gradient mechanical fatigue test is the closest to the servi
 % 该试验系统需要实现较高的加热和冷却速度，因此加热系统的功率和冷却气体的流量需要进行详细设计。
 Moreover, the temperature gradient brings about multiaxial loads to the parts.
 For internally cooled parts, the temperature gradient can produce additional stress, which is expressed as a multiaxial compressive load on the hotter surface, while a multiaxial tensile load is displayed on the cooler surface.
-Conventional thermo-mechanical fatigue tests are not able to simulate these stress conditions and achieve a temperature gradient in the radial direction. So we designed this test system for thermal gradient mechanical fatigue (TGMF) testing.
+Conventional thermomechanical fatigue tests are not able to simulate these stress conditions and achieve a temperature gradient in the radial direction. So we designed this test system for thermal gradient mechanical fatigue (TGMF) testing.
 The system can realize the controlled thermal cycle with temperature gradient on the hollow specimen and apply the mechanical load at the same time.
 The external surface of the specimen is heated by the method of concentrating radiation, while the inner surface is cooled by compressed air to achieve the temperature gradient.
 The test system needs to achieve high heating and cooling speed, so the power of heating system and the volume flow of the cooling air should be designed in detail.
@@ -54,7 +55,7 @@ The test system needs to achieve high heating and cooling speed, so the power of
 %In addition, the heating and cooling rates achieved in the TGMF test apparatus allow very short test cycles so that the fatigue load of an entire flight can be applied to a test body within three to five minutes.
 
 \section{Mechanisms of heat transfer}
-
+\noindent
 %\subsection{Mechanisms of heat transfer}
 Heat transfer describes the exchange of thermal energy and it is normally from a high temperature object to a lower temperature object.
 %The exchange of kinetic energy of particles through the boundary between two systems which are at different temperatures from each other or from their surroundings.
@@ -111,11 +112,11 @@ Two types of convective heat transfer may be distinguished: free convection and 
 Free convection describes when fluid motion is caused by buoyancy forces that result from the density variations due to variations of thermal temperature in the fluid.
 Forced convection describes when a fluid is forced to flow over the surface by an external source such as fans, by stirring, and pumps, creating an artificially induced convection current.
 
-    \begin{figure}[!htp]
-        \centering\scalebox{0.8}{\includegraphics{Thermal_boundary_layer.pdf}}
-        \caption{Thermal boundary layer.}
-        \label{Thermal_boundary_layer}
-    \end{figure}
+\begin{figure}[!htp]
+	\centering\scalebox{0.8}{\includegraphics{Thermal_boundary_layer.pdf}}
+	\caption{Thermal boundary layer.}
+	\label{Thermal_boundary_layer}
+\end{figure}
 
 Convection is sometimes assumed to be described by Newton's law.
 Newton's law, which requires a heat transfer coefficient, states that the rate of heat loss of a body is proportional to the difference in temperatures between the body and its surroundings. %The constant of proportionality is the heat transfer coefficient.
@@ -262,7 +263,7 @@ P = \epsilon \cdot \sigma \cdot A \cdot T^4.
 
 This type of theoretical model, with frequency-independent emissivity lower than that of a perfect black body, is often known as a 'grey body'. For frequency-dependent emissivity, the solution for the integrated power depends on the functional form of the dependence, though in general there is no simple expression for it. Practically speaking, if the emissivity of the body is roughly constant around the peak emission wavelength, the gray body model tends to work fairly well since the weight of the curve around the peak emission tends to dominate the integral.
 
-\subsection{Temperature Measurement}
+\subsection{Temperature measurement}
 \subsubsection{Thermocouple}
 A thermocouple is a sensor for measuring temperature.
 It consists of two dissimilar metal wires, joined at one end.
@@ -505,10 +506,8 @@ Three types (K, R, S) of thermocouples are used in our temperature measurement s
 %This hardening rule can be integrated analytically integrated
 
 \section{Design and development of the radiation furnace for TGMF tests}
-
-
+\noindent
 % http://www.dlr.de/wf/en/desktopdefault.aspx/tabid-2192/3209_read-5876/
-
 Thermal gradients cause multiaxial loads in cooled components. With internal cooling, for example rotors in the first stage of a jet engine, the thermally induced stresses can not relax by macroscopic deformations. The stresses occurring on the component lead to multiaxial pressure loads on the hot surface and to multiaxial tensile loads on the cooled surface.
 
 Since it is not possible to simulate these load conditions and to achieve a homogeneous temperature distribution in conventional thermomechanical tests, the Institute for Materials Research of the German Aerospace Center (DLR) has developed two test rigs for mechanical fatigue by thermal gradients (TGMF). These systems allow a cyclic and at the same time thermal and mechanical load with controlled temperature gradients on the wall of hollow test specimens. The temperature gradient is achieved by heating the outer surface with an oven that emits concentrated radiation and simultaneously cooling the inner surface with compressed air.
@@ -519,51 +518,12 @@ These realistic tests have the advantage that they can be used to transfer data 
 
 The radiant heater has a power of 16 kW. Typical test data for a nickel-based superalloy hollow cylindrical specimen are: heating, from 100 ° C to 1000 ° C in about 20 seconds, cooling from 1000 ° C to 100 ° C in about 15 seconds, stationary, temperature gradient of 100 ° C per mm., The maximum mechanical load is 25 kN or 60 kN.
 
-Therefore, we decided to develop and build a radiant oven for our purposes. In general, a radiant oven is a furnace in which radiation is used to heat. The simplest case of a radiant furnace is shown in Figure 3.1.
-
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
-\begin{table}[htbp]
-  \centering
-  \caption{Add caption}
-    \begin{tabular}{p{4cm}p{10cm}}
-    \toprule
-    Item  & Requirement \\
-    \midrule
-    Force transducer & The force transducer shall comply with the specifications in Practices E4 and E467. \\
-    Extensometers & The extensometers should qualify as Class B-2 or better in accordance with Practice E83. \\
-    Heating device & Specimen heating can be accomplished by various techniques including induction, direct resistance, radiant, or forced air heating. \\
-    Temperature measurement & The specimen temperature shall be measured using thermocouples in contact with the specimen surface in conjunction with an appropriate temperature indicating device or non-contacting sensors that are adjusted for emisivity changes by comparison to a reference such as thermocouples. \\
-    Temperature command & Through out the duration of the test, the temperatures indicated by the control sensor; for example, thermocouples shall not vary by more than 6 2 K from the corresponding values of the initial temperature cycle. \\
-    Temperature gradient & The maximum allowable axial temperature gradient is $\pm1\% T_{max}$K or $\pm3$K  \\
-    \bottomrule
-    \end{tabular}%
-  \label{tab:addlabel}%
-\end{table}%
-
-
-% 通常意义上讲，热疲劳试验时被测试件的试验环境是高温且温度不恒定，甚至温度是急剧反复变化的，这样被测试件会由于温度的梯度循环引起热应力循环（或热应变循环），从而产生疲劳破坏现象。热疲劳试验中，试件的外形尺寸和试验温度是影响试件疲劳特性的主要因素。目前，常见的热疲劳试验箱的高温试验温度范围约为200~500℃，具备温度梯度循环变化能力，有些超高温疲劳试验箱的温度可达几千摄氏度。传统的疲劳分析往往将热载荷转化为机械载荷加以分析，但这种方法无法考察温度和机械载荷叠加交互作用的影响，直至20世纪80年代后期才出现了热/机械疲劳试验系统。热/机械疲劳试验系统将热疲劳和机械疲劳耦合在一起，根据试件材料不同的应用环境，模拟试件实际的工作环境，更好地研究材料在热机疲劳下的损伤行为，从而得出更为准确的疲劳特性。在热/机械疲劳试验中，加载应力的大小和频率会直接影响到试件的断裂寿命，通常在试验频率范围内，疲劳寿命随着试验频率的降低而减少，高频时加载循环快，更容易出现疲劳损伤；低频时加载周期慢，除疲劳损伤外还容易出现蠕变损伤[11]。所以在疲劳试验时应根据需要选择合适的加载工况。
-Generally, test environment of the specimen is high temperature but not constant in the thermal fatigue test. Even the temperature changes abruptly and repeatedly. So that the specimen would cause thermal stress cycle or thermal strain cycle due to gradient circulation of temperature, resulting in fatigue damage. In the thermal fatigue test, the dimensions of the specimen and the test temperature are the main factors affecting the fatigue characteristics of the specimen. At present, the common thermal fatigue test chamber has a high temperature range from 200°C to 500°C. It has a capability of temperature gradient cyclic change. Some ultra-high temperature fatigue test chambers can reach several thousand degrees Celsius. The thermal load was often translated into mechanical load in traditional fatigue analysis, but this method cannot examine the influence of the interaction between temperature and mechanical load until the late 1980s when the thermal/mechanical fatigue test system appeared. The thermal/mechanical fatigue test system couples thermal fatigue and mechanical fatigue, and simulates the actual working environment of the specimen according to the different application environments of the specimen material. Having a better study on the damage behavior of the material under thermal fatigue lead to more accurate fatigue characteristics. In the thermal/mechanical fatigue test, the magnitude and frequency of the loading stress will directly affect the fracture life of the specimen. Usually within the test frequency range, the fatigue life decreases with the decrease of the test frequency. The loading cycle becomes faster at high frequencies, which is prone to fatigue damage. But at low frequencies loading cycle becomes slow, which is prone to creep damage in except fatigue damage[11]. Therefore, in the fatigue test, suitable loading conditions should be selected according to the requirements.
-
-
-% 热梯度机械疲劳试验由机械载荷循环，温度循环和内部冷却空气组成。机械循环由MTS液压伺服试验机实现，试件的轴对称安装由对中系统来保证。温度循环由聚光辐射加热系统来实现，卤素灯管发出的光线通过椭圆柱状镜面反射到试件的工作段。温度循环冷却由自然对流方式来实现，它较之强风冷却系统引起的温度梯度要小。图1给出了试件安装在试验机夹具上的示意图。高温应变测量系统和热电偶测温系统组成两个闭合回路，通过计算机控制软件，自动测量与控制应变和温度循环的幅度、频率及相位关系。应变的测量和控制是由高精度高温应变引伸计来实现的，为了避免高温的影响，引伸计主体安装在加热炉外侧，引伸计上的两根头部为楔形的陶瓷探棒穿过炉体，夹持在试件上。要想测量温度变化的每一个瞬态值并加以控制，必须采用高灵敏度的热电偶探头。我们选用了直径仅为0.25mm的Cr-Al合金快速响应热电偶，通过缠绕的方式将热电偶固定在试件外表面，热电偶两端点由弹簧构成稳定的拉力，在试件承受拉压载荷，其直径不断变化的情况下，热电偶工作段仍能够压紧在试件上，得到试件表面的真实温度。应变循环和温度循环的叠加构成相同频率的“同相位”和“反相位”两种形式，在同相位实验中，最大拉应变对应于最高温度;而在反相位实验中，最大压应变对应于最高温度。为了保证机械应变循环和温度循环频率相位上的精度，在控制程序中编入了时钟校对系统，以消除频率积累误差。所采用的温度循环范围有两种:250～500℃和250～650℃。所有试验的总应变控制范围(机械应变与温度产生的应变之和)均为±0。8\%，应变变化率为0。0002/秒。为了消除试件内壁由于温度迟滞产生的温度梯度效应，在最大和最小应变处有10秒的保持时间。图2给出了计算机控制的温度循环和机械循环两个闭路系统的示意图。
-The thermal gradient mechanical fatigue test consisted of mechanical load cycling, temperature cycling, and internal cooling air. The mechanical cycle is realized by the MTS hydraulic servo testing machine. The axisymmetric installation of the specimen is ensured by the centering system. The temperature cycle is achieved by a concentrating radiant heating system. The light emitted by the halogen lamp is reflected by the elliptical cylinder mirror to the working section of the specimen. The temperature cycle cooling is achieved by the natural convection method, which has a lower temperature gradient than the strong wind cooling system. Figure 1 shows a schematic view of the specimen mounted on the fixture of the testing machine. The high-temperature strain measurement system and the thermocouple temperature measurement system form two closed loops. Through the computer control software, the amplitude, frequency, and phase relationship of the strain and temperature cycle are automatically measured and controlled. Strain measurement and control are achieved by high-precision high-temperature strain extensometers. To avoid the effect of high temperature, the extensometer body is mounted on the outside of the furnace. Two wedge-shaped ceramic probes on the extensometer penetrate the furnace body, and they are clamped tn the specimen. To measure and control every transient temperature change, a highly sensitive thermocouple probe must be used. We chose a Cr-Al alloy rapid response thermocouple with a diameter of only 0.25mm. The thermocouple was fixed on the outer surface of the specimen by winding. The thermocouple was stabilized at both ends by a spring. when the tensile load is applied to the specimen, and the diameter of the thermocouple is constantly changing, the working section of the thermocouple can still be pressed against the specimen to obtain the true temperature of the surface of the specimen. The superposition of the strain cycle and the temperature cycle constitutes two forms of the "in-phase" and "anti-phase" with the same frequency. In the in-phase experiment, the maximum tensile strain corresponds to the highest temperature, but in the anti-phase experiment, the maximum compressive strain corresponds to the highest temperature. In order to ensure the accuracy of the frequency phase of the mechanical strain cycle and the temperature cycle, a clock calibration system was incorporated in the control program to eliminate the frequency accumulation error. There are two types of temperature cycling used: 250-500°C and 250-650°C. The total strain control range (the sum of mechanical strain and temperature-induced strain) of all tests was ±0.8\%, and the rate of strain change was 0.002/s. In order to eliminate the effect of temperature gradients on the inner wall of the specimen due to temperature hysteresis, there is a holding time of 10 seconds at the maximum and minimum strains. Figure 2 shows a schematic diagram of two closed circuit systems for computer-controlled temperature cycling and mechanical cycling.
-
-\begin{figure}[!htp]
-\centering{\includegraphics[height=22.0cm]{tgmf_code.pdf}}
-\caption{The experimental procedures of thermal gradient mechanical fatigue test.}
-\label{Fig:tgmf_code}
-\end{figure}
-
 In this section, the high temperature radiation furnace is applied.
-It is used to heat the single crystal specimens with thermal barrier coating up to a high temperature.
-The furnace is matching with the MTS 809 Axial/Torsional fatigue testing machine.
+It is used to heat the specimens with thermal barrier coating up to a high temperature.
+The furnace is matching with the MTS 809 axial/torsional fatigue testing machine.
 Specimen heating can be accomplished by various techniques including induction, direct resistance, radiant, or forced air heating.
 %There are several techniques to heat the specimen such as
 
-
-
-
-%中文
 %The mainly heating methods of high temperature material experiments are: environmental high temperature furnace, high frequency electromagnetic induction heating and radiation heating.
 Forced air heating furnace can be used for all kinds of material. It has good temperature stability and mostly used in isothermal material tests, but it is not suitable for the experiments which need rapid temperature change.
 
@@ -578,16 +538,18 @@ Induction heating is convenient to match up an additional air cooling system, wh
 
 
 \section{Experiment and simulation of single halogen lamp radiation in a cylindrical cavity}
-%A halogen lamp, also known as a quartz-halogen, is an incandescent lamp that has a small amount of a halogen such as iodine or bromine added.
+\noindent
+A halogen lamp, also known as a quartz-halogen, is an incandescent lamp that has a small amount of a halogen such as iodine or bromine added.
 %The combination of the halogen gas and the tungsten filament produces a halogen cycle chemical reaction which redeposits evaporated tungsten back onto the filament, increasing its life and maintaining the clarity of the envelope.
 %Because of this, a halogen lamp can be operated at a higher temperature than a standard gas-filled lamp of similar power and operating life, producing light of a higher luminous efficacy and color temperature.
-%The small size of halogen lamps permits their use in compact optical systems for projectors and illumination.
-
+The small size of halogen lamps permits their use in compact optical systems for projectors and illumination.
 % 聚光辐射加热系统包括16根卤素灯管，灯丝的直径小于0.5mm，因此每根灯管可以被抽象为一个线光源。
-The radiation furnace consists of 16 halogen lamps. The filament diameter of the lamp is about 0.3 mm, so each halogen lamp can be abstracted as a line light source.
+The radiation furnace consists of 16 halogen lamps and the filament diameter of the lamp is about 0.5 mm. In the simulation, the filament can be abstracted as a cylindrical surface, due to its geometry.
+
 % 每根灯管对应一面反射镜，反射镜的几何形状为椭圆柱面，每根灯管位于其对应的椭圆柱面其中一个焦点，试件位于所有椭圆柱面的公共焦点，通过镜面反射将光线聚焦在试件表面进行加热。
 % 根据传热学，要确定这样一个系统的温度状态，需要已知卤素灯的辐射效率，镜面的反射效率，试件表面的辐射吸收率，以及试件内外表面的热对流系数。
-Each lamp corresponds to a mirror. The mirror's geometry is an elliptic cylinder. Each lamp is located at one of the focal points of its corresponding elliptic cylinder. The sample is located at the common focal point of all elliptic cylinders. The light is reflected by the mirror and focus on the surface of the specimen for heating.
+Each lamp corresponds to a reflector. The geometry of the reflector is an elliptic cylinder. Each lamp is located at one of the focus
+lines of its corresponding elliptic cylinder. The specimen is located at the common focus lines of all elliptic cylinders. The light is reflected by the mirror and focus on the surface of the specimen for heating.
 According to the heat transfer theory, to determine the temperature distribution of such a system, it is necessary to know the radiation efficiency of the halogen lamp, the reflection efficiency of the mirror, the radiation emissivity and the convective heat transfer coefficient of the inner and outer surfaces of the specimen.
 % 我们的研究分为三个步骤：
 % 1.单盏卤素灯密封腔辐射试验，确定单盏卤素灯的辐射效率，及物体表面的辐射吸收率；
@@ -595,17 +557,17 @@ According to the heat transfer theory, to determine the temperature distribution
 % 3.整体系统的聚光加热试验，验证计算结果。
 % 本节介绍了单盏卤素灯自由辐射的试验过程及数值计算结果。
 
-The study is divided into three steps:
+Three tests were carried out to determine the heat transfer parameters:
 1. Single lamp radiation test in a sealed cavity to determine the radiation efficiency of the single halogen lamp;
-2. Single lamp mirror light concentrating heating test, to determine the reflection efficiency of the gold-plated mirror, and the convection heat transfer coefficient of the surface;
-3. Condensation heating test of the overall system to verify the calculation results.
+2. Elliptical cylinder mirror reflection test, to determine the reflection efficiency of the gold-plated mirror, and the convection heat transfer coefficient of the surface;
+3. Heating test of the radiation furnace to verify the calculation results.
 This section describes the test procedure and numerical results of the free radiation of a single halogen lamp.
 
 % 单盏卤素灯密封腔辐射试验装置设计如\ref{Fig:OneLightRadiation}(a)所示，包括圆柱形不锈钢壁面、上下盖板和灯头固定部件等，构成了一个圆柱形密封腔。
 % 所有零件都使用SS304不锈钢通过数控加工中心制作，空腔内壁采用耐高温黑色涂料均匀喷涂，确保空腔内壁各处的辐射发射率相同。
 % 我们采用K型热电偶测量圆柱壁面的温度分布。
 % 根据该试验装置的对称性，选取其中一个轴对称截面放置热电偶，内壁面和外壁面在垂直方向各五个，热电偶的位置及编号如\ref{Fig:OneLightRadiation}(b)所示。
-The radiation test device for sealed chamber of single-halogen lamp  was designed as shown in Fig. 1.2(a). It includes a cylindrical stainless steel wall, upper and lower cover plates, and lamp holders to form a cylindrical sealed chamber.
+The testing device for sealed chamber of single-halogen lamp was designed as shown in Fig. 1.2(a). It includes a cylindrical stainless steel wall, upper and lower cover plates, and lamp holders to form a cylindrical sealed chamber.
 All the components were made of SS304 stainless steel through a CNC machining center. The inner wall of the chamber was coated with high-temperature resistant black paint to ensure that the radiation emission rate is the same throughout the inner wall of the chamber.
 We used a K-type thermocouple to measure the temperature distribution of the cylindrical wall.
 According to the symmetry of the test device, an axisymmetric section was chosen to place thermocouples. Each surface of inner wall and the outer wall placed five thermocouples in the vertical direction. The position and number of thermocouples are shown in Fig. 1.2(b).
@@ -667,10 +629,15 @@ The temperature measurement range of this infrared thermometer is -50 to 2000$^{
 % 将热电偶采集器和红外测温数据与PC端进行同步，定义数据采集程序。
 % 开启卤素灯加热一段时间后关闭电源，试验装置自然冷却至室温，记录升温与降温全过程。
 % 更换不同功率的卤素灯（240W，350W和400W），获取不同功率卤素灯的辐射加热和冷却曲线。
-Before starting, all thermocouples were connected to the dataloggers, calibrated the temperature of each thermocouple and compensated cold-junction compensation.
-Synchronize the thermocouple collector and infrared temperature measurement data with the PC terminal and define the data acquisition procedure.
-Turn off the power supply after turning on the halogen lamp for a period of time. Cool the test device to room temperature naturally, and record the whole process of temperature increase and temperature decrease.
-Replace different power halogen lamps (240W, 350W and 400W) to obtain radiant heating and cooling curves of different power halogen lamps.
+Prior to the testing, all thermocouples were connected to the data acquisition unit. Each thermocouple was calibrated and cold junction compensation was performed.
+The data acquisition unit and infrared thermometer were connected to a host computer via the USB interface.
+% A LabView program was developed to acquire data, synchronize time and design custom display interfaces.
+On the host computer, a LabView program was developed for data acquisition, time synchronization and custom display interfaces.
+
+When the test begins, the halogen lamp was turned on for a period of time. Then it was turned off and the device was cooled to room temperature by the natural convection.
+During the test, the temperature of each thermocouple was recorded.
+The above test process was repeated with different power halogen lamps to obtain the heating and cooling data.
+
 
 % 通过试验我们可以得到圆柱壁面上11个不同位置测温点的温度-时间曲线。
 % 下面我们将建立有限元模型，结合数值计算的结果，确定壁面的对流换热系数及表面散射率。
@@ -681,7 +648,7 @@ Replace different power halogen lamps (240W, 350W and 400W) to obtain radiant he
 % 我们进行的是瞬态温度场计算，因此材料的热传导系数、密度和比热容需要被定义。
 % 圆柱壁面材料为SS304不锈钢，随着温度的升高，SS304不锈钢的传热系数也会增大，不同温度下的材料传热系数如Table \ref{Tab:SS304HeatTransfer}所示。
 % 忽略温度对密度和比热容的影响，定义SS304不锈钢的密度为7873kg/m$^3$，比热容(Specific Heat Capacity)为502J/(kg$\cdot$K)。
-Through experiments, we obtained the temperature-time curve of 11 different temperature measurement points on the cylindrical wall surface.
+Through the experiments, the temperature-time curves of 11 temperature measurement points were obtained on surface of the cylindrical wall.
 In the following, we would establish a finite element model and combine the results of numerical calculations to determine the convection heat transfer coefficient and surface scattering rate of the wall surface.
 We used the Heat transfer module of the commercial finite element software ABAQUS for calculations.
 For calculation models containing radiative heat transfer, the two constants need to be defined in advance:
@@ -820,7 +787,7 @@ Because of this effect ellipsoids are most useful when coupled with a small sour
 % 但是根据上一节的计算，如果我们将灯丝近似为一个圆柱面，则该圆柱面的直径约为0.5mm，光线经过镜面反射后会有一定的发散。
 % 真实的镜面无法保证完全光滑，光线会产生一定的漫反射，通过试验和计算，我们需要确定镜面的反射效率。
 
-The filament can be simplified as a linear light source, due to its small diameter. As discussed above, if a linear light source is located at one focus of the elliptical cylinder mirror, the reflected light will pass through the other focus.
+The filament can be simplified as a line light source, due to its small diameter. As discussed above, if a line light source is located at one focus of the elliptical cylinder mirror, the reflected light will pass through the other focus.
 However, according to the computations in the previous section, if we consider the filament as a cylindrical surface, the diameter of the cylindrical surface is about 0.5mm. Not all of the reflected light is transferred to the other focus.
 Meanwhile, the real mirror is not completely smooth and a part of the light is diffusely reflected. Therefore, we have to determine the reflection efficiency through the experiments and calculations.
 
@@ -904,7 +871,7 @@ The radiative transfer between the surfaces can be computed by ABAQUS through th
 
 \begin{figure}
   \centering
-  \begin{overpic}[width=8.0cm]{OneLightWithEllipseMirrorReflection.pdf}
+  \begin{overpic}[width=6.0cm]{OneLightWithEllipseMirrorReflection.pdf}
     \put(84,65){\fcolorbox{white}{white}{(a)}}
   \end{overpic}
   \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
@@ -1190,7 +1157,41 @@ According to the measurement results of the sensors, the average pressure and te
 \end{table}%
 
 
+\section{TGMF code}
+Therefore, we decided to develop and build a radiant oven for our purposes. In general, a radiant oven is a furnace in which radiation is used to heat. The simplest case of a radiant furnace is shown in Figure 3.1.
 
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+  \centering
+  \caption{Add caption}
+    \begin{tabular}{p{4cm}p{10cm}}
+    \toprule
+    Item  & Requirement \\
+    \midrule
+    Force transducer & The force transducer shall comply with the specifications in Practices E4 and E467. \\
+    Extensometers & The extensometers should qualify as Class B-2 or better in accordance with Practice E83. \\
+    Heating device & Specimen heating can be accomplished by various techniques including induction, direct resistance, radiant, or forced air heating. \\
+    Temperature measurement & The specimen temperature shall be measured using thermocouples in contact with the specimen surface in conjunction with an appropriate temperature indicating device or non-contacting sensors that are adjusted for emisivity changes by comparison to a reference such as thermocouples. \\
+    Temperature command & Through out the duration of the test, the temperatures indicated by the control sensor; for example, thermocouples shall not vary by more than 6 2 K from the corresponding values of the initial temperature cycle. \\
+    Temperature gradient & The maximum allowable axial temperature gradient is $\pm1\% T_{max}$K or $\pm3$K  \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:addlabel}%
+\end{table}%
+
+
+% 通常意义上讲，热疲劳试验时被测试件的试验环境是高温且温度不恒定，甚至温度是急剧反复变化的，这样被测试件会由于温度的梯度循环引起热应力循环（或热应变循环），从而产生疲劳破坏现象。热疲劳试验中，试件的外形尺寸和试验温度是影响试件疲劳特性的主要因素。目前，常见的热疲劳试验箱的高温试验温度范围约为200~500℃，具备温度梯度循环变化能力，有些超高温疲劳试验箱的温度可达几千摄氏度。传统的疲劳分析往往将热载荷转化为机械载荷加以分析，但这种方法无法考察温度和机械载荷叠加交互作用的影响，直至20世纪80年代后期才出现了热/机械疲劳试验系统。热/机械疲劳试验系统将热疲劳和机械疲劳耦合在一起，根据试件材料不同的应用环境，模拟试件实际的工作环境，更好地研究材料在热机疲劳下的损伤行为，从而得出更为准确的疲劳特性。在热/机械疲劳试验中，加载应力的大小和频率会直接影响到试件的断裂寿命，通常在试验频率范围内，疲劳寿命随着试验频率的降低而减少，高频时加载循环快，更容易出现疲劳损伤；低频时加载周期慢，除疲劳损伤外还容易出现蠕变损伤[11]。所以在疲劳试验时应根据需要选择合适的加载工况。
+Generally, test environment of the specimen is high temperature but not constant in the thermal fatigue test. Even the temperature changes abruptly and repeatedly. So that the specimen would cause thermal stress cycle or thermal strain cycle due to gradient circulation of temperature, resulting in fatigue damage. In the thermal fatigue test, the dimensions of the specimen and the test temperature are the main factors affecting the fatigue characteristics of the specimen. At present, the common thermal fatigue test chamber has a high temperature range from 200°C to 500°C. It has a capability of temperature gradient cyclic change. Some ultra-high temperature fatigue test chambers can reach several thousand degrees Celsius. The thermal load was often translated into mechanical load in traditional fatigue analysis, but this method cannot examine the influence of the interaction between temperature and mechanical load until the late 1980s when the thermal/mechanical fatigue test system appeared. The thermal/mechanical fatigue test system couples thermal fatigue and mechanical fatigue, and simulates the actual working environment of the specimen according to the different application environments of the specimen material. Having a better study on the damage behavior of the material under thermal fatigue lead to more accurate fatigue characteristics. In the thermal/mechanical fatigue test, the magnitude and frequency of the loading stress will directly affect the fracture life of the specimen. Usually within the test frequency range, the fatigue life decreases with the decrease of the test frequency. The loading cycle becomes faster at high frequencies, which is prone to fatigue damage. But at low frequencies loading cycle becomes slow, which is prone to creep damage in except fatigue damage[11]. Therefore, in the fatigue test, suitable loading conditions should be selected according to the requirements.
+
+
+% 热梯度机械疲劳试验由机械载荷循环，温度循环和内部冷却空气组成。机械循环由MTS液压伺服试验机实现，试件的轴对称安装由对中系统来保证。温度循环由聚光辐射加热系统来实现，卤素灯管发出的光线通过椭圆柱状镜面反射到试件的工作段。温度循环冷却由自然对流方式来实现，它较之强风冷却系统引起的温度梯度要小。图1给出了试件安装在试验机夹具上的示意图。高温应变测量系统和热电偶测温系统组成两个闭合回路，通过计算机控制软件，自动测量与控制应变和温度循环的幅度、频率及相位关系。应变的测量和控制是由高精度高温应变引伸计来实现的，为了避免高温的影响，引伸计主体安装在加热炉外侧，引伸计上的两根头部为楔形的陶瓷探棒穿过炉体，夹持在试件上。要想测量温度变化的每一个瞬态值并加以控制，必须采用高灵敏度的热电偶探头。我们选用了直径仅为0.25mm的Cr-Al合金快速响应热电偶，通过缠绕的方式将热电偶固定在试件外表面，热电偶两端点由弹簧构成稳定的拉力，在试件承受拉压载荷，其直径不断变化的情况下，热电偶工作段仍能够压紧在试件上，得到试件表面的真实温度。应变循环和温度循环的叠加构成相同频率的“同相位”和“反相位”两种形式，在同相位实验中，最大拉应变对应于最高温度;而在反相位实验中，最大压应变对应于最高温度。为了保证机械应变循环和温度循环频率相位上的精度，在控制程序中编入了时钟校对系统，以消除频率积累误差。所采用的温度循环范围有两种:250～500℃和250～650℃。所有试验的总应变控制范围(机械应变与温度产生的应变之和)均为±0。8\%，应变变化率为0。0002/秒。为了消除试件内壁由于温度迟滞产生的温度梯度效应，在最大和最小应变处有10秒的保持时间。图2给出了计算机控制的温度循环和机械循环两个闭路系统的示意图。
+The thermal gradient mechanical fatigue test consisted of mechanical load cycling, temperature cycling, and internal cooling air. The mechanical cycle is realized by the MTS hydraulic servo testing machine. The axisymmetric installation of the specimen is ensured by the centering system. The temperature cycle is achieved by a concentrating radiant heating system. The light emitted by the halogen lamp is reflected by the elliptical cylinder mirror to the working section of the specimen. The temperature cycle cooling is achieved by the natural convection method, which has a lower temperature gradient than the strong wind cooling system. Figure 1 shows a schematic view of the specimen mounted on the fixture of the testing machine. The high-temperature strain measurement system and the thermocouple temperature measurement system form two closed loops. Through the computer control software, the amplitude, frequency, and phase relationship of the strain and temperature cycle are automatically measured and controlled. Strain measurement and control are achieved by high-precision high-temperature strain extensometers. To avoid the effect of high temperature, the extensometer body is mounted on the outside of the furnace. Two wedge-shaped ceramic probes on the extensometer penetrate the furnace body, and they are clamped tn the specimen. To measure and control every transient temperature change, a highly sensitive thermocouple probe must be used. We chose a Cr-Al alloy rapid response thermocouple with a diameter of only 0.25mm. The thermocouple was fixed on the outer surface of the specimen by winding. The thermocouple was stabilized at both ends by a spring. when the tensile load is applied to the specimen, and the diameter of the thermocouple is constantly changing, the working section of the thermocouple can still be pressed against the specimen to obtain the true temperature of the surface of the specimen. The superposition of the strain cycle and the temperature cycle constitutes two forms of the "in-phase" and "anti-phase" with the same frequency. In the in-phase experiment, the maximum tensile strain corresponds to the highest temperature, but in the anti-phase experiment, the maximum compressive strain corresponds to the highest temperature. In order to ensure the accuracy of the frequency phase of the mechanical strain cycle and the temperature cycle, a clock calibration system was incorporated in the control program to eliminate the frequency accumulation error. There are two types of temperature cycling used: 250-500°C and 250-650°C. The total strain control range (the sum of mechanical strain and temperature-induced strain) of all tests was ±0.8\%, and the rate of strain change was 0.002/s. In order to eliminate the effect of temperature gradients on the inner wall of the specimen due to temperature hysteresis, there is a holding time of 10 seconds at the maximum and minimum strains. Figure 2 shows a schematic diagram of two closed circuit systems for computer-controlled temperature cycling and mechanical cycling.
+
+\begin{figure}[!htp]
+\centering{\includegraphics[height=22.0cm]{tgmf_code.pdf}}
+\caption{The experimental procedures of thermal gradient mechanical fatigue test.}
+\label{Fig:tgmf_code}
+\end{figure}
 
 
 %temperature $T=15+273.15=288.15\rm{K}$
