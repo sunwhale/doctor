@@ -648,7 +648,7 @@ The above test process was repeated with different power halogen lamps to obtain
 % 我们进行的是瞬态温度场计算，因此材料的热传导系数、密度和比热容需要被定义。
 % 圆柱壁面材料为SS304不锈钢，随着温度的升高，SS304不锈钢的传热系数也会增大，不同温度下的材料传热系数如Table \ref{Tab:SS304HeatTransfer}所示。
 % 忽略温度对密度和比热容的影响，定义SS304不锈钢的密度为7873kg/m$^3$，比热容(Specific Heat Capacity)为502J/(kg$\cdot$K)。
-Through the experiments, the temperature-time curves of 11 temperature measurement points were obtained on surface of the cylindrical wall.
+Through the experiments, the temperature-time curves of 11 temperature measurement points on surface of the cylindrical wall were obtained.
 In the following, we would establish a finite element model and combine the results of numerical calculations to determine the convection heat transfer coefficient and surface scattering rate of the wall surface.
 We used the Heat transfer module of the commercial finite element software ABAQUS for calculations.
 For calculation models containing radiative heat transfer, the two constants need to be defined in advance:
@@ -867,6 +867,15 @@ The radiative transfer between the surfaces can be computed by ABAQUS through th
   \end{overpic}
   \caption{.}
   \label{Fig:one_lamp_reflection}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{overpic}[width=16.0cm]{irradiance_map_D1.0mm_S0.0mm_gray.png}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \caption{.}
+  \label{Fig:irradiance_map_D1.0mm_S0.5mm_gray}
 \end{figure}
 
 \begin{figure}
