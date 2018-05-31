@@ -537,7 +537,7 @@ Induction heating is convenient to match up an additional air cooling system, wh
 
 
 
-\section{Experiment and simulation of single halogen lamp radiation in a cylindrical cavity}
+\section{Experiments and simulations of the single lamp radiation in a cylindrical cavity}
 \noindent
 A halogen lamp, also known as a quartz-halogen, is an incandescent lamp that has a small amount of a halogen such as iodine or bromine added.
 %The combination of the halogen gas and the tungsten filament produces a halogen cycle chemical reaction which redeposits evaporated tungsten back onto the filament, increasing its life and maintaining the clarity of the envelope.
@@ -567,20 +567,13 @@ This section describes the test procedure and numerical results of the free radi
 % 所有零件都使用SS304不锈钢通过数控加工中心制作，空腔内壁采用耐高温黑色涂料均匀喷涂，确保空腔内壁各处的辐射发射率相同。
 % 我们采用K型热电偶测量圆柱壁面的温度分布。
 % 根据该试验装置的对称性，选取其中一个轴对称截面放置热电偶，内壁面和外壁面在垂直方向各五个，热电偶的位置及编号如\ref{Fig:OneLightRadiation}(b)所示。
-The testing device for sealed chamber of single-halogen lamp was designed as shown in Fig. 1.2(a). It includes a cylindrical stainless steel wall, upper and lower cover plates, and lamp holders to form a cylindrical sealed chamber.
-All the components were made of SS304 stainless steel through a CNC machining center. The inner wall of the chamber was coated with high-temperature resistant black paint to ensure that the radiation emission rate is the same throughout the inner wall of the chamber.
-We used a K-type thermocouple to measure the temperature distribution of the cylindrical wall.
-According to the symmetry of the test device, an axisymmetric section was chosen to place thermocouples. Each surface of inner wall and the outer wall placed five thermocouples in the vertical direction. The position and number of thermocouples are shown in Fig. 1.2(b).
 
-% 使用National Instruments公司的NI 9213型16通道热电偶数据采集器（见\ref{Fig:OneLightRadiation}(c)）对热电偶的测量结果进行采集，该数据采集器内置CJC冷端温度补偿，通过在PC端安装NI-DAQmx驱动软件实现与电脑之间的通信。 National Instruments公司同时提供了LabVIEW可编程软件，根据Equation \ref{Equ:Inverse_polynomials}编写程序，将K型热电偶的电压信号转换为温度值，并将试验结果按照合适的文件格式存储。
-Fig.1.2(c) shows that  NI 9213 16-Channel Thermocouple Data Collector was used to acquire the thermocouple measurement results, which was made by National Instruments Company. The data collector included a CJC cold-junction temperature compensation, and it communicated with the computer by installing an NI-DAQmx driver software on the PC side. National Instruments Company also offers LabVIEW programmable software. Writing a program converted the K-type thermocouple voltage signal to a temperature value and store the test results in a suitable file format according to Equation? ? .
-
-% 为了保证实验的精度，我们在圆柱密封腔外表面中心位置（如\ref{Fig:OneLightRadiation}(a)所示）选取了一个矩形区域进行喷涂，并将矩形区域的中心作为红外温度测量点。
-% 采用Voltcraft IR 2200型红外测温仪（见\ref{Fig:OneLightRadiation}(d)）测量该点的温度。
-% 其中，该型号红外测温仪的温度测量范围是-50至2000$^{\circ}$C，测量精度为$\pm2^{\circ}$C。
-In order to ensure the accuracy of the experiment, we selected a rectangular region at the center of the outer surface of the cylindrical sealed chamber to spray on (as shown in Fig. 17(a)), and the center of the rectangular region acted as the infrared temperature measurement point.
-The temperature of this point was measured using a Voltcraft IR 2200 infrared thermometer (as shown in Fig. 17(d)).
-The temperature measurement range of this infrared thermometer is -50 to 2000$^{\circ}$C, and the measurement accuracy is $\pm2^{\circ}$C.
+The test rig of the single lamp radiation in a cylindrical cavity is shown in \ref{Fig:OneLightRadiation}(a).
+% It consists of a cylindrical wall, upper and lower cover plates, and lamp holders to form a cylindrical sealed chamber.
+It consists of a cylindrical wall, upper and lower cover plates, and lamp holders.
+The cylindrical wall, upper and lower cover plates constructed a sealed cylindrical cavity and their material was the stainless steel SS304. The inner walls of the cavity were coated with a high-temperature resistant black paint to ensure that the emissivity is the same throughout the inner walls of the cavity.
+K-type thermocouples were used to measure the temperature distribution of the cylindrical wall.
+According to the symmetry of the test rig, an axisymmetric section was chosen to weld the thermocouples. The positions of the thermocouples are shown in \ref{Fig:OneLightRadiation}(b), with five thermocouples welded on the inner surface and the other five thermocouples welded on the outer surface. 
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
@@ -625,6 +618,17 @@ The temperature measurement range of this infrared thermometer is -50 to 2000$^{
   \label{Fig:OneLightRadiation}
 \end{figure}
 
+% 使用National Instruments公司的NI 9213型16通道热电偶数据采集器（见\ref{Fig:OneLightRadiation}(c)）对热电偶的测量结果进行采集，该数据采集器内置CJC冷端温度补偿，通过在PC端安装NI-DAQmx驱动软件实现与电脑之间的通信。 National Instruments公司同时提供了LabVIEW可编程软件，根据Equation \ref{Equ:Inverse_polynomials}编写程序，将K型热电偶的电压信号转换为温度值，并将试验结果按照合适的文件格式存储。
+The NI-9213 temperature input module (see \ref{Fig:OneLightRadiation}(c)) was used to acquire the input signals from the thermocouples. It is a high-density thermocouple input module that is designed for higher channel count systems and it includes anti-aliasing filters, open-thermocouple detection, and cold-junction compensation for high accuracy thermocouple measurements. 
+The NI-9213 temperature input module was connected to a host computer by the USB interface. Based on the LabVIEW software platform, a program was developed to converted the voltage signal of the thermocouple to the temperature value according to Equation (\ref{Equ:Inverse_polynomials}).
+
+% 为了保证实验的精度，我们在圆柱密封腔外表面中心位置（如\ref{Fig:OneLightRadiation}(a)所示）选取了一个矩形区域进行喷涂，并将矩形区域的中心作为红外温度测量点。
+% 采用Voltcraft IR 2200型红外测温仪（见\ref{Fig:OneLightRadiatiosoftware platformn}(d)）测量该点的温度。
+% 其中，该型号红外测温仪的温度测量范围是-50至2000$^{\circ}$C，测量精度为$\pm2^{\circ}$C。
+In order to improve the accuracy of the experiment, an infrared thermometer (see \ref{Fig:OneLightRadiation}(d)) was also used for the temperature measurement.
+The measurement range of the infrared thermometer is from -50 to 2000$^{\circ}$C, and the accuracy is $\pm2^{\circ}$C.
+A rectangular region on the outer surface of the cylinderical wall was coated by the black paint, and the infrared temperature measurement point was shown in \ref{Fig:OneLightRadiation}(a).
+
 % 试验开始前，将所有热电偶与数据采集器连接，标定每个热电偶的温度值并进行冷端补偿。
 % 将热电偶采集器和红外测温数据与PC端进行同步，定义数据采集程序。
 % 开启卤素灯加热一段时间后关闭电源，试验装置自然冷却至室温，记录升温与降温全过程。
@@ -658,19 +662,19 @@ For the transient temperature field calculation, the thermal conductivity, densi
 The cylindrical wall material is SS304 stainless steel. As the temperature increases, the heat transfer coefficient of SS304 stainless steel will also increase. The material heat transfer coefficient at different temperatures are shown in Table \ref{Tab:SS304HeatTransfer}.
 Neglecting the influence of temperature on density and specific heat capacity, the density of SS304 stainless steel is defined as 7873kg/m$^3$, and the Specific Heat Capacity is 502J/(kg$\cdot$K).
 
+The material is stainless steel SS304 with a density of 7873kg/m$^3$, a specific heat of 502J/(kg$\cdot$K), and the 
+
+The part is dimensioned in meters, and the temperature is measured in $^\circ$C, so the Stefan Boltzmann constant is taken as $5.670\times10^{-8}\rm{W}/(\rm{m}^{2}\cdot\rm{K})$ and absolute zero is set at 273.15°C below zero. The surface emissivity of gray iron is taken as a constant value of 0.77. 
+
+
 \begin{table}[htbp]
   \centering
   \caption{Heat conductivity of 304 Stainless Steel.}
-    \begin{tabular}{llll}
+    \begin{tabular}{lcccccccccc}
     \toprule
-    Temperature & Conductivity & Temperature & Conductivity \\
-    $^{\circ}$C & ${\rm{W/(m}} \cdot {\rm{K)}}$ & $^{\circ}$C & ${\rm{W/(m}} \cdot {\rm{K)}}$ \\
+    Temperature [$^{\circ}$C] & 100   & 200   & 300   & 400   & 500   & 600   & 700   & 800   & 900   & 1000 \\
     \midrule
-    100   & 15.5  & 600   & 20.3 \\
-    200   & 18.1  & 700   & 20.8 \\
-    300   & 18.4  & 800   & 20.8 \\
-    400   & 19.1  & 900   & 20.6 \\
-    500   & 19.7  & 1000  & 20.7 \\
+    Conductivity [${\rm{W/(m}} \cdot {\rm{K)}}]$ & 15.5  & 18.1  & 18.4  & 19.1  & 19.7  & 20.3  & 20.8  & 20.8  & 20.6  & 20.7 \\
     \bottomrule
     \end{tabular}%
   \label{Tab:SS304HeatTransfer}%
@@ -683,9 +687,6 @@ Single-halogen lamp sealed chamber radiation test can be simplified as cylindric
 According to the structural symmetry, the center height section is taken as the symmetry plane, and the finite element calculation model is established, as shown in \ref{Fig:OneLightRadiationSimulation}(c).
 
 % 以400W卤素灯为例，经过测量灯芯长度为68mm(see \ref{Fig:OneLightRadiation}(a))，灯芯色温2950K。根据Equation \ref{Equ:IntegratingOfStefanBoltzmann}我们可以计算灯芯表面辐射面积为：
-\begin{equation}
-A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.316\times10^{-5} {\rm{m}}^2,
-\end{equation}
 % 将灯芯等效为理想圆柱面，已知圆柱面的表面积93.16${\rm{mm}}^2$和长度68mm，因此，可以计算得出圆柱面的直径为0.436mm。
 
 Taking a 400W halogen lamp as an example, the measured wick length is 68mm (as shown in \ref{Fig:OneLightRadiation}(a)), and the wick has a color temperature of 2950K. According to Equation \ref{Equ:IntegratingOfStefanBoltzmann} we can calculate the radiant surface area of the wick as:
@@ -694,21 +695,31 @@ A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.31
 \end{equation}
 We suppose the wick is equivalent to an ideal cylindrical surface. The surface area of the known cylindrical surface is 93.16${\rm{mm}}^2$ and the length is 68mm. Therefore, the diameter of the cylindrical surface can be calculated as 0.436mm.
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{HalogenLamp1.png}
-    \centerline{(a) Double ended halogen lamp with tube base.}
-    \label{Fig:HalogenLamp1}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{Filament.pdf}
-    \centerline{(b) Mesh of the filament.}
-  \end{minipage}
-  \caption{Comparison of experimental and computational results of free radiation with single halogen lamp.}
-  \label{Fig:Filament}
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{filament.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{FEM_model_cavity_radiation.png}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+
+  \begin{overpic}[width=8.0cm]{cavity_radiation_NT11_2.png}
+    \put(84,65){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_240W.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
+
+  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_350W.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(e)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_400W.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(f)}}
+  \end{overpic}
+
+  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double ended halogen lamp with tube base. (b) Mesh of the FEM model. (c) Mesh of the FEM model. (d) Mesh of the FEM model. (e) Mesh of the FEM model. (f) Mesh of the FEM model. }
+  \label{Fig:OneLightRadiationSimulation}
 \end{figure}
 
 % 试验过程中环境温度为23$^{\circ}$C，空气自然对流换热系数的范围是5到25W/(${\rm{m}}^2\cdot$K)。
@@ -721,37 +732,37 @@ Using the trial and error method, the surface scattering rate of the inner wall 
 Using the obtained surface scattering rate and convection heat transfer coefficient, the radiant heat transfer of 240W, 350W and 400W power halogen lamps were calculated respectively, and the temperature values of the center point of the outer wall surface were selected and compared, as shown in \ref{Fig:OneLightRadiationSimulation}(bd). ) .
 The numerical simulation results, thermocouple measurement values, and the temperature values obtained by the infrared temperature measurement instrument were well matched in both heating and cooling processes. This shows that the material constants and heat transfer parameters we used are correct.
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=2.5in]{OneLightRadiationTransient.pdf}
-    \centerline{(a) FEM model.}
-    \label{Fig:OneLightRadiationTransient}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_240W.pdf}
-    \centerline{(b) Halogen lamp power 240W.}
-    \label{Fig:Compare240W}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+%   \nonumber
+%     \centering
+%     \includegraphics[width=2.5in]{OneLightRadiationTransient.pdf}
+%     \centerline{(a) FEM model.}
+%     \label{Fig:OneLightRadiationTransient}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_240W.pdf}
+%     \centerline{(b) Halogen lamp power 240W.}
+%     \label{Fig:Compare240W}
+%   \end{minipage}
 
-    \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_350W.pdf}
-    \centerline{(c) Halogen lamp power 350W.}
-    \label{Fig:Compare350W}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_400W.pdf}
-    \centerline{(d) Halogen lamp power 400W.}
-    \label{Fig:Compare400W}
-  \end{minipage}
-  \caption{Comparison of experimental and computational results of single halogen lamp radiation in the cylindrical cavity.}
-  \label{Fig:OneLightRadiationSimulation}
-\end{figure}
+%     \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_350W.pdf}
+%     \centerline{(c) Halogen lamp power 350W.}
+%     \label{Fig:Compare350W}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_400W.pdf}
+%     \centerline{(d) Halogen lamp power 400W.}
+%     \label{Fig:Compare400W}
+%   \end{minipage}
+%   \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity.}
+%   \label{Fig:OneLightRadiationSimulation}
+% \end{figure}
 
 
 
@@ -806,7 +817,7 @@ The halogen lamp is located at one of the foci of the elliptical cylinder mirror
 The material of the light-receiving plate is the stainless steel SS304, and the plate surface was coated with the high-temperature-resistant black paint. The paint was the same as the paint used in the cylindrical cavity radiation device. Therefore, the emissivity of the light-receiving plate was consider as 0.95, which was already determined in the previous section.
 The type K thermocouples were welded on the light-receiving plate to measure the temperature distribution of the plate during the test.
 The number of thermocouples was 15, and \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c) shows the positions of the thermocouples. 
-The data acquisition system was also the NI9213 thermocouple data collector, which was introduced in the previous section. The corresponding programming and data acquisition process was similar to the cylindrical cavity radiation testing and the sampling frequency was chosen as 10Hz.
+The data acquisition system was also the NI-9213 thermocouple data collector, which was introduced in the previous section. The corresponding programming and data acquisition process was similar to the cylindrical cavity radiation testing and the sampling frequency was chosen as 10Hz.
 
 The radiative transfer between the surfaces can be computed by ABAQUS through the cavity radiation method. Geometric view factors are computed in ABAQUS between each facet of the mesh on the surfaces. These view factors quantify the effect of radiative transfer between each facet and each of the other facets in the user-defined cavity. However, cavity radiation method can not simulate the specular reflection between the surfaces. 
 
