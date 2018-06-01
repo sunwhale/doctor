@@ -537,7 +537,7 @@ Induction heating is convenient to match up an additional air cooling system, wh
 
 
 
-\section{Experiments and simulations of the single lamp radiation in a cylindrical cavity}
+\section{Experiments and simulations of the single lamp radiation in the cylindrical cavity}
 \noindent
 A halogen lamp, also known as a quartz-halogen, is an incandescent lamp that has a small amount of a halogen such as iodine or bromine added.
 %The combination of the halogen gas and the tungsten filament produces a halogen cycle chemical reaction which redeposits evaporated tungsten back onto the filament, increasing its life and maintaining the clarity of the envelope.
@@ -573,7 +573,7 @@ The test rig of the single lamp radiation in a cylindrical cavity is shown in \r
 It consists of a cylindrical wall, upper and lower cover plates, and lamp holders.
 The cylindrical wall, upper and lower cover plates constructed a sealed cylindrical cavity and their material was the stainless steel SS304. The inner walls of the cavity were coated with a high-temperature resistant black paint to ensure that the emissivity is the same throughout the inner walls of the cavity.
 K-type thermocouples were used to measure the temperature distribution of the cylindrical wall.
-According to the symmetry of the test rig, an axisymmetric section was chosen to weld the thermocouples. The positions of the thermocouples are shown in \ref{Fig:OneLightRadiation}(b), with five thermocouples welded on the inner surface and the other five thermocouples welded on the outer surface. 
+According to the symmetry of the test rig, an axisymmetric section was chosen to weld the thermocouples. The positions of the thermocouples are shown in \ref{Fig:OneLightRadiation}(b), with five thermocouples welded on the inner surface and the other five thermocouples welded on the outer surface. For simplicity
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
@@ -641,7 +641,7 @@ On the host computer, a LabView program was developed for data acquisition, time
 When the test begins, the halogen lamp was turned on for a period of time. Then it was turned off and the device was cooled to room temperature by the natural convection.
 During the test, the temperature of each thermocouple was recorded.
 The above test process was repeated with different power halogen lamps to obtain the heating and cooling data.
-
+Through the experiments, the temperature-time curves of the 11 temperature measurement points (10 thermocouples and 1 infrared thermometer) were obtained.
 
 % 通过试验我们可以得到圆柱壁面上11个不同位置测温点的温度-时间曲线。
 % 下面我们将建立有限元模型，结合数值计算的结果，确定壁面的对流换热系数及表面散射率。
@@ -652,20 +652,20 @@ The above test process was repeated with different power halogen lamps to obtain
 % 我们进行的是瞬态温度场计算，因此材料的热传导系数、密度和比热容需要被定义。
 % 圆柱壁面材料为SS304不锈钢，随着温度的升高，SS304不锈钢的传热系数也会增大，不同温度下的材料传热系数如Table \ref{Tab:SS304HeatTransfer}所示。
 % 忽略温度对密度和比热容的影响，定义SS304不锈钢的密度为7873kg/m$^3$，比热容(Specific Heat Capacity)为502J/(kg$\cdot$K)。
-Through the experiments, the temperature-time curves of 11 temperature measurement points on surface of the cylindrical wall were obtained.
+
+Heat transfer in the test rig is governed by three effects: conduction through the metal, convection from the air, and radiative exchange between the lamp and parts of the metal surface. 
+For the transient thermal computation, the thermal conductivity, density, and specific heat capacity of the material should be defined.
+The material of the test rig is the stainless steel SS304 with a density of 7873kg/m$^3$ and a specific heat of 502J/(kg$\cdot$K). The density and specific heat capacity of the stainless steel SS304 are approximately considered as temperature independent, but the temperature dependence of thermal conductivity can not be neglected. The thermal conductivity of the stainless steel SS304 at different temperatures are listed in Table \ref{Tab:SS304HeatTransfer}, and it is observed that the conductivity increases with the increasing temperature. 
+
+A computational heat transfer model are created in the commercial finite element software ABAQUS.
+The FEM model is dimensioned in meters, and the temperature is measured in $^\circ$C, so the Stefan Boltzmann constant is taken as $5.670\times10^{-8}\rm{W}/(\rm{m}^{2}\cdot\rm{K})$ and absolute zero is set at 273.15$^\circ$C below zero.
+The procedure consists of two heat transfer steps in which the thermal loading conditions are heating and cooling down.
+The boundary constraints on the cylindrical cavity
+Convection due to heat transfer from the air is applied at the internal and external surfaces of the cylindrical cavity.
+Radiation is modeled between the internal surfaces of the cavity and the filament of the lamp using the cavity radiation method.
+The emissivities of the inner and outer surfaces of the cylindrical cavity are taken as variables. 
+
 In the following, we would establish a finite element model and combine the results of numerical calculations to determine the convection heat transfer coefficient and surface scattering rate of the wall surface.
-We used the Heat transfer module of the commercial finite element software ABAQUS for calculations.
-For calculation models containing radiative heat transfer, the two constants need to be defined in advance:
-(1) The Stefan-Boltzmann constant is $5.670\times10^{-8}\rm{W}/(\rm{m}^{2}\cdot\rm{K})$,
-(2) The absolute zero is -273.15$^{\circ}$C.
-For the transient temperature field calculation, the thermal conductivity, density, and specific heat capacity of the material should be defined.
-The cylindrical wall material is SS304 stainless steel. As the temperature increases, the heat transfer coefficient of SS304 stainless steel will also increase. The material heat transfer coefficient at different temperatures are shown in Table \ref{Tab:SS304HeatTransfer}.
-Neglecting the influence of temperature on density and specific heat capacity, the density of SS304 stainless steel is defined as 7873kg/m$^3$, and the Specific Heat Capacity is 502J/(kg$\cdot$K).
-
-The material is stainless steel SS304 with a density of 7873kg/m$^3$, a specific heat of 502J/(kg$\cdot$K), and the 
-
-The part is dimensioned in meters, and the temperature is measured in $^\circ$C, so the Stefan Boltzmann constant is taken as $5.670\times10^{-8}\rm{W}/(\rm{m}^{2}\cdot\rm{K})$ and absolute zero is set at 273.15°C below zero. The surface emissivity of gray iron is taken as a constant value of 0.77. 
-
 
 \begin{table}[htbp]
   \centering
@@ -731,6 +731,8 @@ During the test, the ambient temperature was 23$^{\circ}$C, and the natural conv
 Using the trial and error method, the surface scattering rate of the inner wall surface (black spray) was 0.95, the surface scattering rate of the outer wall surface (metal surface) was 0.68, and the convection heat transfer coefficient was 5.6 W/(${\rm{m}}. ^2\cdot$K).
 Using the obtained surface scattering rate and convection heat transfer coefficient, the radiant heat transfer of 240W, 350W and 400W power halogen lamps were calculated respectively, and the temperature values of the center point of the outer wall surface were selected and compared, as shown in \ref{Fig:OneLightRadiationSimulation}(bd). ) .
 The numerical simulation results, thermocouple measurement values, and the temperature values obtained by the infrared temperature measurement instrument were well matched in both heating and cooling processes. This shows that the material constants and heat transfer parameters we used are correct.
+
+\ref{Fig:OneLightRadiationSimulation}(c) shows the nodal temperature field for the test rig. On the left, results obtained using the cavity radiation method are shown (results with and without cavity parallel decomposition enabled were identical); on the right, results using the average-temperature radiation conditions are shown. In this problem we observe good agreement between the experimental and computational results.
 
 % \begin{figure}
 %   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
