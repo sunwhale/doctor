@@ -76,6 +76,7 @@ Usually more than one of these processes occurs in a given situation as shown in
 \end{figure}
 
 \subsection{Thermal conduction}
+\noindent
 Thermal conduction is the transfer of internal energy by microscopic diffusion and collisions of particles or quasi-particles within a body.
 %The microscopically diffusing and colliding objects include molecules, atoms, and electrons.
 %They transfer disorganized microscopic kinetic and potential energy, which are jointly known as internal energy.
@@ -106,7 +107,7 @@ While the thermal conductivity of a material generally varies with temperature, 
 In anisotropic materials, the thermal conductivity typically varies with orientation; in this case k is represented by a second-order tensor. In non uniform materials, k varies with spatial location.
 
 \subsection{Thermal convection}
-
+\noindent
 Convective heat transfer, often referred to simply as convection, is the transfer of heat from one place to another by the movement of fluids.
 Two types of convective heat transfer may be distinguished: free convection and forced convection.
 Free convection describes when fluid motion is caused by buoyancy forces that result from the density variations due to variations of thermal temperature in the fluid.
@@ -123,9 +124,9 @@ Newton's law, which requires a heat transfer coefficient, states that the rate o
 As shown in \ref{Thermal_boundary_layer}, the basic relationship for heat transfer by convection is:
 %The heat transfer rate can be written as,
     \begin{equation}
-    q_y=hA(T_s-T_{\infty})
+    q_y=hA(T_{\rm{s}}-T_{\infty})
     \end{equation}
-where $q_y$ is the heat transferred per unit time, $h$ is the heat transfer coefficient, $T_s$ is the object's surface temperature and $T_{\infty}$ is the fluid temperature.
+where $q_y$ is the heat transferred per unit time, $h$ is the heat transfer coefficient, $T_{\rm{s}}$ is the object's surface temperature and $T_{\infty}$ is the fluid temperature.
 
 %And because heat transfer at the surface is by conduction,
 %    \begin{equation}
@@ -229,42 +230,43 @@ where $q_y$ is the heat transferred per unit time, $h$ is the heat transfer coef
 
 
 \subsection{Thermal radiation}
+\noindent
 Thermal radiation is the emission of electromagnetic waves from all matter that has a temperature greater than absolute zero.
 It represents a conversion of thermal energy into electromagnetic energy.
 All matter with a temperature greater than absolute zero emits thermal radiation. When the temperature of the body is greater than absolute zero, inter-atomic collisions cause the kinetic energy of the atoms or molecules to change. This results in charge-acceleration and/or dipole oscillation which produces electromagnetic radiation, and the wide spectrum of radiation reflects the wide spectrum of energies and accelerations that occur even at a single temperature.
 
 Thermal radiation power of a black body per unit area of radiating surface per unit of solid angle and per unit frequency $\nu$ is given by Planck's law as:
 \begin{equation}
-u(\nu,T)=\frac{2 h\nu^3}{c^2}\cdot\frac1{e^{h\nu/k_BT}-1},
+u(\nu,T)=\frac{2 h\nu^3}{c^2}\cdot\frac1{e^{h\nu/k_{\rm{B}}T}-1},
 \end{equation}
 or in terms of wavelength
 \begin{equation}
-u(\lambda,T)=\frac{\beta}{\lambda^5}\cdot\frac1{e^{hc/k_BT\lambda}-1},
+u(\lambda,T)=\frac{\beta}{\lambda^5}\cdot\frac1{e^{hc/k_{\rm{B}}T\lambda}-1},
 \end{equation}
-where $h=6.626\times10^{-34}J \cdot s$ is Planck's constant, $b=2.898\times10^{-3}m \cdot K$ is Wien's displacement constant, $k_{B}=1.381\times10^{-23}J \cdot K^{-1}$ is Boltzmann constant and $c$ is the speed of light.
+where $h=6.626\times10^{-34}{\rm{J}}\cdot {\rm{s}}$ is Planck's constant, $b=2.898\times10^{-3}{\rm{m}} \cdot {\rm{K}}$ is Wien's displacement constant, $k_{\rm{B}}=1.381\times10^{-23}{\rm{J}} \cdot {\rm{K}}^{-1}$ is Boltzmann constant and $c$ is the speed of light.
 
 This formula mathematically follows from calculation of spectral distribution of energy in Quantization (physics)|quantized electromagnetic field which is in complete thermal equilibrium with the radiating object. The equation is derived as an infinite sum over all possible frequencies. The energy, $E=h \nu$, of each photon is multiplied by the number of states available at that frequency, and the probability that each of those states will be occupied.
 
-Integrating the above equation over $\nu$ the power output given by the Stefan¨CBoltzmann law is obtained, as:
+Integrating the above equation over $\nu$ the power output given by the Stefan-Boltzmann law is obtained, as:
 \begin{equation}
 P = \sigma \cdot A \cdot T^4,
 \label{Equ:IntegratingOfStefanBoltzmann}
 \end{equation}
-where the constant of proportionality $\sigma=5.670\times10^{-8}\rm{W}\cdot \rm{m}^{-2}\cdot \rm{K}^{-1}$ is the Stefan¨CBoltzmann constant and $A$ is the radiating surface area.
+where the constant of proportionality $\sigma=5.670\times10^{-8}\rm{W}\cdot \rm{m}^{-2}\cdot \rm{K}^{-1}$ is the Stefan-Boltzmann constant and $A$ is the radiating surface area.
 
 The wavelength $\lambda \,$, for which the emission intensity is highest, is given by Wien's displacement law as
 \begin{equation}
-\lambda_{max} = \frac{b}{T}.
+\lambda_{\max} = \frac{b}{T}.
 \end{equation}
 For surfaces which are not black bodies, one has to consider the (generally frequency dependent) emissivity factor $\epsilon(\nu)$. This factor has to be multiplied with the radiation spectrum formula before integration. If it is taken as a constant, the resulting formula for the power output can be written in a way that contains $\epsilon$ as a factor:
 \begin{equation}
 P = \epsilon \cdot \sigma \cdot A \cdot T^4.
 \end{equation}
 
-This type of theoretical model, with frequency-independent emissivity lower than that of a perfect black body, is often known as a 'grey body'. For frequency-dependent emissivity, the solution for the integrated power depends on the functional form of the dependence, though in general there is no simple expression for it. Practically speaking, if the emissivity of the body is roughly constant around the peak emission wavelength, the gray body model tends to work fairly well since the weight of the curve around the peak emission tends to dominate the integral.
+This type of theoretical model, with frequency-independent emissivity lower than that of a perfect black body, is often known as a 'gray body'. For frequency-dependent emissivity, the solution for the integrated power depends on the functional form of the dependence, though in general there is no simple expression for it. Practically speaking, if the emissivity of the body is roughly constant around the peak emission wavelength, the gray body model tends to work fairly well since the weight of the curve around the peak emission tends to dominate the integral.
 
-\subsection{Temperature measurement}
-\subsubsection{Thermocouple}
+\subsection{Thermocouple}
+\noindent
 A thermocouple is a sensor for measuring temperature.
 It consists of two dissimilar metal wires, joined at one end.
 %When properly configured, thermocouples can provide temperature measurements over a wide range of temperatures.
@@ -277,7 +279,7 @@ The physical principle of the thermocouple is Seebeck effect.
 \label{Fig:Seebeck_Voltage}
 \end{figure}
 In 1821 the German physicist Thomas Johann Seebeck discovered the continuous current flow in the thermoelectric circuit when two wires of dissimilar metals are joined at both ends and one of the ends is heated, and that is the Seebeck effect.
-If this circuit is broken at the center (see \ref{Fig:Seebeck_Voltage}), the net open circuit voltage $e_{AB}$ (the Seebeck voltage) is a function of the junction temperature and the composition of the two metals.
+If this circuit is broken at the center (see \ref{Fig:Seebeck_Voltage}), the net open circuit voltage $e_{\rm AB}$ (the Seebeck voltage) is a function of the junction temperature and the composition of the two metals.
 This was because the electron energy levels in each metal shifted differently and a voltage difference between the junctions.
 We can't measure the Seebeck voltage directly because we must first connect a voltmeter to the thermocouple, and the voltmeter leads themselves create a new thermoelectric circuit.
 
@@ -289,17 +291,17 @@ The thermoelectric effect is the direct conversion of temperature differences to
 \label{Fig:Thermocouple_circuit_Ktype_including_voltmeter_temperature}
 \end{figure}
 
-\subsubsection{Thermocouple direct and inverse polynomials}
 Once we obtain the voltage from the thermocouple we have to convert the voltage to a temperature.
-As shown in \ref{Fig:Thermocouples}, output voltages for the type K, R and S thermocouples are plotted as a function of temperature.
+As shown in \ref{Fig:plot_thermocouples}, output voltages for the type K, R and S thermocouples are plotted as a function of temperature.
 Unfortunately, the temperature-versus-voltage relationship of the thermocouple is not linear.
 \begin{figure}[!htp]
-\centering\scalebox{0.5}{\includegraphics{Thermocouples.pdf}}
+\centering
+\includegraphics[width=10cm]{plot_thermocouples.pdf}
 \caption{Characteristic functions for thermocouples types K, R, S.}
-\label{Fig:Thermocouples}
+\label{Fig:plot_thermocouples}
 \end{figure}
 Therefore, polynomials are used to present the temperature-versus-voltage and the inverse relationship.
-Direct polynomials (see Equation \ref{Equ:Direct_polynomials}) provide the thermoelectric voltage from a known temperature and inverse polynomials (see Equation \ref{Equ:Inverse_polynomials}) provide the temperature from a known thermoelectric voltage.
+Direct polynomials (see Equation (\ref{Equ:Direct_polynomials})) provide the thermoelectric voltage from a known temperature and inverse polynomials (see Equation (\ref{Equ:Inverse_polynomials})) provide the temperature from a known thermoelectric voltage.
 \begin{equation}
 \label{Equ:Direct_polynomials}
 E = {c_0} + {c_1}T + {c_2}{T^2} + ... + {c_n}{T^n} = \sum\limits_{i = 0}^n {{c_i}{T^i}}
@@ -345,7 +347,7 @@ Three types (K, R, S) of thermocouples are used in our temperature measurement s
   \label{tab:TypeRDirectPolynomial}%
 \end{table}%
 
-% Table generated by Excel2LaTeX from sheet 'R'
+
 \begin{table}[htbp]
   \centering
   \small
@@ -372,7 +374,7 @@ Three types (K, R, S) of thermocouples are used in our temperature measurement s
     \bottomrule
     \end{tabular}%
   \label{tab:TypeRInversePolynomial}%
-\end{table}% 
+\end{table}%
 
 %\section{Heat and heat transfer}
 %The internal, thermal energy of a body or of a component is referred to as its "heat" in general terms and in a manner of speaking. In fact, heat is the thermal energy, the exchange of which is preceded by the temperature difference alone. The thermal energy of a body, which is stored as a kinetic energy in the non-directed particle motion at the molecular level, is changed by heat input and exhaust.
@@ -658,6 +660,7 @@ For the transient thermal computation, the thermal conductivity, density, and sp
 The material of the test rig is the stainless steel SS304 with a density of 7873kg/m$^3$ and a specific heat of 502J/(kg$\cdot$K). The density and specific heat capacity of the stainless steel SS304 are approximately considered as temperature independent, but the temperature dependence of thermal conductivity can not be neglected. The thermal conductivity of the stainless steel SS304 at different temperatures are listed in Table \ref{Tab:SS304HeatTransfer}, and it is observed that the conductivity increases with the increasing temperature. 
 
 A computational heat transfer model are created in the commercial finite element software ABAQUS.
+According to the symmetry of the test rig, the middle cross section of the cylinder is taken as the symmetry plane, and the FEM model is shown in \ref{Fig:OneLightRadiationSimulation}(b).
 The FEM model is dimensioned in meters, and the temperature is measured in $^\circ$C, so the Stefan Boltzmann constant is taken as $5.670\times10^{-8}\rm{W}/(\rm{m}^{2}\cdot\rm{K})$ and absolute zero is set at 273.15$^\circ$C below zero.
 The procedure consists of two heat transfer steps in which the thermal loading conditions are heating and cooling down.
 The boundary constraints on the cylindrical cavity
@@ -665,7 +668,7 @@ Convection due to heat transfer from the air is applied at the internal and exte
 Radiation is modeled between the internal surfaces of the cavity and the filament of the lamp using the cavity radiation method.
 The emissivities of the inner and outer surfaces of the cylindrical cavity are taken as variables. 
 
-In the following, we would establish a finite element model and combine the results of numerical calculations to determine the convection heat transfer coefficient and surface scattering rate of the wall surface.
+% In the following, we would establish a finite element model and combine the results of numerical calculations to determine the convection heat transfer coefficient and surface scattering rate of the wall surface.
 
 \begin{table}[htbp]
   \centering
@@ -683,17 +686,18 @@ In the following, we would establish a finite element model and combine the resu
 
 % 单盏卤素灯密封腔辐射试验，可以简化为圆柱面（灯丝）在密闭空间内辐射传热模型。
 % 根据结构对称性，以中心高度截面作为对称面，建立有限元计算模型，如\ref{Fig:OneLightRadiationSimulation}(c)所示。
-Single-halogen lamp sealed chamber radiation test can be simplified as cylindrical surface (filament) radiation heat transfer model in a confined space.
-According to the structural symmetry, the center height section is taken as the symmetry plane, and the finite element calculation model is established, as shown in \ref{Fig:OneLightRadiationSimulation}(c).
+% Single-halogen lamp sealed chamber radiation test can be simplified as cylindrical surface (filament) radiation heat transfer model in a confined space.
+
 
 % 以400W卤素灯为例，经过测量灯芯长度为68mm(see \ref{Fig:OneLightRadiation}(a))，灯芯色温2950K。根据Equation \ref{Equ:IntegratingOfStefanBoltzmann}我们可以计算灯芯表面辐射面积为：
 % 将灯芯等效为理想圆柱面，已知圆柱面的表面积93.16${\rm{mm}}^2$和长度68mm，因此，可以计算得出圆柱面的直径为0.436mm。
 
-Taking a 400W halogen lamp as an example, the measured wick length is 68mm (as shown in \ref{Fig:OneLightRadiation}(a)), and the wick has a color temperature of 2950K. According to Equation \ref{Equ:IntegratingOfStefanBoltzmann} we can calculate the radiant surface area of the wick as:
+Taking the 400W halogen lamp as an example, the measured filament length is about 68mm (see \ref{Fig:OneLightRadiationSimulation}(a)), and the color temperature of the filament is 2950K. According to the Equation (\ref{Equ:IntegratingOfStefanBoltzmann}), the radiating surface area of the filament can be calculated by:
 \begin{equation}
-A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.316\times10^{-5} {\rm{m }}^2,
+A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.316\times10^{-5} {\rm{m }}^2.
 \end{equation}
-We suppose the wick is equivalent to an ideal cylindrical surface. The surface area of the known cylindrical surface is 93.16${\rm{mm}}^2$ and the length is 68mm. Therefore, the diameter of the cylindrical surface can be calculated as 0.436mm.
+The shape of the filament is a spiral.
+For simplicity, the filament can be abstracted as a cylindrical surface with the area of 93.16mm$^2$ and the length of 68mm. Therefore, the diameter of the cylinder can be calculated as 0.436mm. The mesh of the filament is shown in \ref{Fig:OneLightRadiationSimulation}(a).
 
 \begin{figure}[!htp]
   \centering
@@ -727,63 +731,30 @@ We suppose the wick is equivalent to an ideal cylindrical surface. The surface a
 % 使用得到的表面散射率和对流换热系数，分别对240W、350W和400W功率卤素灯的辐射传热进行计算，选取外壁面中心点的温度值进行对比，如\ref{Fig:OneLightRadiationSimulation}(b-d)所示。
 % 数值模拟结果、热电偶测量值和红外温度测量仪所得到的温度值在加热和冷却两个过程中都得到了很好的吻合，这说明我们使用的材料常数和传热学参数是正确的。
 
-During the test, the ambient temperature was 23$^{\circ}$C, and the natural convection heat transfer coefficient of air ranged from 5 to 25 W/(${\rm{m}}^2\cdot$K).
-Using the trial and error method, the surface scattering rate of the inner wall surface (black spray) was 0.95, the surface scattering rate of the outer wall surface (metal surface) was 0.68, and the convection heat transfer coefficient was 5.6 W/(${\rm{m}}. ^2\cdot$K).
-Using the obtained surface scattering rate and convection heat transfer coefficient, the radiant heat transfer of 240W, 350W and 400W power halogen lamps were calculated respectively, and the temperature values of the center point of the outer wall surface were selected and compared, as shown in \ref{Fig:OneLightRadiationSimulation}(bd). ) .
-The numerical simulation results, thermocouple measurement values, and the temperature values obtained by the infrared temperature measurement instrument were well matched in both heating and cooling processes. This shows that the material constants and heat transfer parameters we used are correct.
+During the test, the ambient temperature was measured as 23$^{\circ}$C, and the natural convection heat transfer coefficient of air ranged from 5 to 25 W/(${\rm{m}}^2\cdot$K).
+In the FEM model, several heat transfer coefficients are unknown.
+Using the trial and error method, we determined the unknown coefficients with the emissivity of the inner wall surface (black coated) of 0.95, the emissivity of the outer wall surface (metallic surface) of 0.68, and the convective heat transfer coefficient of 5.6W/(m$^2\cdot$K).
+Using the obtained heat transfer coefficients, the radiant heat transfer of the test rig with different power halogen lamps were computed through the finite element model. 
+\ref{Fig:OneLightRadiationSimulation}(c) shows the nodal temperature field for the test rig. 
+The temperature at the middle section of the outer wall surface are shown in \ref{Fig:OneLightRadiationSimulation}(d),(e),(f) with the lamp power of 240W, 350W and 400W, respectively.
+We observed good agreement between the experimental and computational results.
+Therefore, the emissivities and convective heat transfer coefficient determined from the trial and error method are appropriate.
 
-\ref{Fig:OneLightRadiationSimulation}(c) shows the nodal temperature field for the test rig. On the left, results obtained using the cavity radiation method are shown (results with and without cavity parallel decomposition enabled were identical); on the right, results using the average-temperature radiation conditions are shown. In this problem we observe good agreement between the experimental and computational results.
-
-% \begin{figure}
-%   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-%   \nonumber
-%     \centering
-%     \includegraphics[width=2.5in]{OneLightRadiationTransient.pdf}
-%     \centerline{(a) FEM model.}
-%     \label{Fig:OneLightRadiationTransient}
-%   \end{minipage}%
-%   \begin{minipage}[t]{0.5\linewidth}
-%     \centering
-%     \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_240W.pdf}
-%     \centerline{(b) Halogen lamp power 240W.}
-%     \label{Fig:Compare240W}
-%   \end{minipage}
-
-%     \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-%   \nonumber
-%     \centering
-%     \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_350W.pdf}
-%     \centerline{(c) Halogen lamp power 350W.}
-%     \label{Fig:Compare350W}
-%   \end{minipage}%
-%   \begin{minipage}[t]{0.5\linewidth}
-%     \centering
-%     \includegraphics[width=3.0in]{plot_cmp_cavity_radiation_400W.pdf}
-%     \centerline{(d) Halogen lamp power 400W.}
-%     \label{Fig:Compare400W}
-%   \end{minipage}
-%   \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity.}
-%   \label{Fig:OneLightRadiationSimulation}
-% \end{figure}
 
 
 
 \section{Experiment and simulation of single halogen lamp with mirror condenser}
-%\begin{figure}[!htp]
-%\centering\scalebox{0.3}{\includegraphics{haloline-for-mains-voltage.jpg}}
-%\caption{Double ended halogen lamps with tube base.}
-%\label{Fig:}
-%\end{figure}
 
 Ellipsoidal reflectors have two conjugate foci. Light from one focus passes through the other after reflection (see \ref{Fig:EllipsoidalReflectors}).
 Deep ellipsoids of revolution surrounding a source collect a much higher fraction of total emitted light than a spherical mirror or conventional lens system.
 The effective collection are very small, and the geometry is well suited to the spatial distribution of the output from an arc lamp.
 Two ellipsoids can almost fully enclose a light source and target to provide nearly total energy transfer.
-    \begin{figure}[!htp]
-        \centering\scalebox{0.6}{\includegraphics{Ellipsoidal_reflectors.png}}
-        \caption{A section of an ellipsoidal reflector. }
-        \label{Fig:EllipsoidalReflectors}
-    \end{figure}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=10cm]{Ellipsoidal_reflectors.png}
+	\caption{A section of an ellipsoidal reflector. }
+	\label{Fig:EllipsoidalReflectors}
+\end{figure}
 More significant perhaps is the ellipsoid's effect upon imaging of extended sources.
 For a pure point source exactly at one focus of the ellipse, almost all of the energy is transferred to the other focus.
 Unfortunately, every real light source, such as a lamp arc, has some finite extent; points of the source that are not exactly at the focus of the ellipse will be magnified and defocused at the image.
@@ -817,8 +788,8 @@ The halogen lamp is located at one of the foci of the elliptical cylinder mirror
 % 热电偶的数据采集，同样选取National Instruments公司的9213型16通道热电偶数据采集器，相应的编程和数据处理过程与上一节类似，采样频率为10Hz。
 
 The material of the light-receiving plate is the stainless steel SS304, and the plate surface was coated with the high-temperature-resistant black paint. The paint was the same as the paint used in the cylindrical cavity radiation device. Therefore, the emissivity of the light-receiving plate was consider as 0.95, which was already determined in the previous section.
-The type K thermocouples were welded on the light-receiving plate to measure the temperature distribution of the plate during the test.
-The number of thermocouples was 15, and \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c) shows the positions of the thermocouples. 
+There are 15 type K thermocouples welded on the light-receiving plate to measure the temperature distribution of the plate during the test.
+\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c) shows the positions of the thermocouples. 
 The data acquisition system was also the NI-9213 thermocouple data collector, which was introduced in the previous section. The corresponding programming and data acquisition process was similar to the cylindrical cavity radiation testing and the sampling frequency was chosen as 10Hz.
 
 The radiative transfer between the surfaces can be computed by ABAQUS through the cavity radiation method. Geometric view factors are computed in ABAQUS between each facet of the mesh on the surfaces. These view factors quantify the effect of radiative transfer between each facet and each of the other facets in the user-defined cavity. However, cavity radiation method can not simulate the specular reflection between the surfaces. 
@@ -870,16 +841,36 @@ The radiative transfer between the surfaces can be computed by ABAQUS through th
   \label{Fig:OneLightWithEllipseMirrorReflectionShow}
 \end{figure}
 
+% \begin{figure}
+%   \centering
+%   \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
+%     \put(84,65){\fcolorbox{white}{white}{(a)}}
+%   \end{overpic}
+%   \begin{overpic}[width=8.0cm]{one_lamp_reflection_2.png}
+%     \put(84,65){\fcolorbox{white}{white}{(b)}}
+%   \end{overpic}
+%   \caption{.}
+%   \label{Fig:one_lamp_reflection}
+% \end{figure}
+
+TracePro is a commercial optical engineering software program for designing and analyzing optical and illumination systems.
+It has been used in many projects for designing and analyzing all types of optical/illumination systems ranging from stray light suppression in telescopes and cameras to biomedical applications to LED modeling and solar collector modeling.
+A simulation model are created in the software TracePro, as shown in \ref{Fig:tracepro}.
+The simulation model consists of three parts: the reflector, filament and light-receiving plate.
+The upper and lower plate are ignored, because they are coated with the black paint, most of the light is absorbed when they irradiate on the plate.
+For simplicity, the filament are abstracted as a cylinder with a diameter of 1mm.
+The rays are traced through the systems to find energy distributions on any surface or track volume flux through any space.
+
 \begin{figure}
   \centering
-  \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
+  \begin{overpic}[width=8.0cm]{tracepro_iso.png}
     \put(84,65){\fcolorbox{white}{white}{(a)}}
   \end{overpic}
-  \begin{overpic}[width=8.0cm]{one_lamp_reflection_2.png}
+  \begin{overpic}[width=8.0cm]{tracepro_yz.png}
     \put(84,65){\fcolorbox{white}{white}{(b)}}
   \end{overpic}
   \caption{.}
-  \label{Fig:one_lamp_reflection}
+  \label{Fig:tracepro}
 \end{figure}
 
 \begin{figure}
@@ -893,12 +884,13 @@ The radiative transfer between the surfaces can be computed by ABAQUS through th
 
 \begin{figure}
   \centering
-  \begin{overpic}[width=6.0cm]{OneLightWithEllipseMirrorReflection.pdf}
+  \begin{overpic}[width=8.0cm]{FEM_model_single_lamp_reflection.png}
     \put(84,65){\fcolorbox{white}{white}{(a)}}
   \end{overpic}
   \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
     \put(84,65){\fcolorbox{white}{white}{(b)}}
   \end{overpic}
+
   \caption{.}
   \label{Fig:one_lamp_reflection_cavity_radiation}
 \end{figure}
@@ -981,24 +973,24 @@ The furnace includes the following subsystems:
 \label{Fig:TGMF_Test_System}
 \end{figure}
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{MirrorBeforeOvergild.jpg}
-    \centerline{(a) 镀金前的镜面单元体.}
-    \label{fig:side:a}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{MirrorAfterOvergild.jpg}
-    \centerline{(b) 镀金后的镜面单元体.}
-    \label{fig:side:b}
-  \end{minipage}
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{MirrorBeforeOvergild.jpg}
+%     \centerline{(a) 镀金前的镜面单元体.}
+%     \label{fig:side:a}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{MirrorAfterOvergild.jpg}
+%     \centerline{(b) 镀金后的镜面单元体.}
+%     \label{fig:side:b}
+%   \end{minipage}
 
-  \caption{椭圆柱面镜的加工及镀金。}
-  \label{Fig:MirrorOvergild}
-\end{figure}
+%   \caption{椭圆柱面镜的加工及镀金。}
+%   \label{Fig:MirrorOvergild}
+% \end{figure}
 
 %\begin{figure}[!htp]
 %\centering\scalebox{0.15}{\includegraphics{MTS370WithResistanceFurnace.jpg}}
@@ -1011,7 +1003,7 @@ The furnace includes the following subsystems:
 %\caption{MTS-370 轴向疲劳材料试验机与辐射加热系统.}
 %\label{Fig:MTS370WithRadiationFurnace}
 %\end{figure}
-\newpage
+
 \section{Extensometer}
 An extensometer is a device that is used to measure changes in the length of an object.
 It is useful for stress-strain measurements and tensile tests.
@@ -1029,9 +1021,10 @@ The extensometer is typically used for high temperature tension, compression and
 Its gauge length is 10mm with $\pm20\%$ full scale range.
 
 \begin{figure}[!htp]
-\centering\scalebox{0.3}{\includegraphics{ObservationWindow.png}}
-\caption{The observation window of radiation furnace.}
-\label{Fig:ObservationWindow}
+	\centering
+	\includegraphics[width=8cm]{ObservationWindow.png}
+	\caption{The observation window of radiation furnace.}
+	\label{Fig:ObservationWindow}
 \end{figure}
 
 The extensometer were held on the specimen by light, flexible ceramic fiber cords as shown in \ref{Fig:Epsilon3448}.
@@ -1040,9 +1033,10 @@ No furnace mounting brackets are required.
 The side load on the test sample is greatly reduced because of the self-supporting design and light weight of the sensor.
 The combination of radiant heat shields and convection cooling fins allow this model to be used at specimen temperatures up to 1200$^{\circ}$C without cooling.
 \begin{figure}[!htp]
-\centering\scalebox{0.12}{\includegraphics{Epsilon3448.png}}
-\caption{Self-supporting on the specimen.}
-\label{Fig:Epsilon3448}
+	\centering
+	\includegraphics[width=8cm]{Epsilon3448.png}
+	\caption{Self-supporting on the specimen.}
+	\label{Fig:Epsilon3448}
 \end{figure}
 
 %An extensometer is a sensor attached to a specimen that measures a dimensional change (gage length or strain) that occurs in the specimen during testing.
@@ -1062,8 +1056,13 @@ The micrometer head and shaft are mounted on a frame and the extensometer is att
 As the micrometer is adjusted, the lower shaft moves and displacement is applied to the extensometer.
 The elongation is read from the dial scale of the micrometer head. This can be used to either verify the output of the extensometer shown on the test system or to set zero and full scale output to calibrate it initially.
 \begin{figure}[!htp]
-\centering{\includegraphics[width=6cm]{Calibration_out.jpg}}
-\centering{\includegraphics[width=8cm]{GainDeltaK.pdf}}
+	\centering
+	\begin{overpic}[width=8.0cm]{Calibration_out.jpg}
+		\put(84,65){\fcolorbox{white}{white}{(a)}}
+	\end{overpic}
+	\begin{overpic}[width=8.0cm]{GainDeltaK.pdf}
+		\put(84,65){\fcolorbox{white}{white}{(b)}}
+	\end{overpic}
 \caption{Extensometer calibrator GWB-200JA.}
 \label{Fig:Calibration}
 \end{figure}
