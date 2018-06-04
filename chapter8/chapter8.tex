@@ -929,9 +929,7 @@ The rays are traced through the systems to find energy distributions on any surf
 \end{figure}
 \newpage
 \subsection{Design of the radiation furnace}
-搭建的标准圆管试件TMF试验系统如图 23 所示，试验系统包括加载、加热、同步、气冷、水冷等多个子系统，这些子系统协同配合，保证了试件的机械载荷和温度载
-荷的同步加载，从而实现了试件考核段的TMF 试验（图 24）。各子系统主要试验设备
-及主要性能参数如表 5 所示。
+The TGMF testing system for the thin-walled tubular specimen is shown in \ref{Fig:TGMF_Test_System}. The testing system includes multiple subsystems such as loading, heating,  air cooling, and water cooling. These subsystems work cooperatively to ensure the mechanical load and temperature over the specimen gage section are simultaneously varied and independently controlled. The main facilities and their performance parameters of each subsystem are shown in Table \ref{Tab:TGMF_subsystem}.
 
 A radiant furnace is developed specifically for the TGMF tests.
 % It is complex to create the radiation heating system directly.
@@ -941,7 +939,7 @@ The furnace includes the following subsystems:
 \begin{table}[htbp]
   \centering
   \caption{Add caption}
-    \begin{tabular}{p{4cm}p{5cm}p{5cm}}
+    \begin{tabular}{p{3cm}p{5cm}p{6cm}}
     \toprule
     Subsystem & Facility & Comments \\
     \midrule
@@ -949,6 +947,7 @@ The furnace includes the following subsystems:
           & Digtal controller & FlexTest 40 \\
           & Extensometer & gauge length 12mm, range $\pm$20\% \\
           & Host computer &  \\
+    \midrule
     Radiation furnace & Halogen lamps & 400W/800W \\
           & Thermocouples & K/S/R-type \\
           & Temperature input module & 8-Channel \\
@@ -957,17 +956,19 @@ The furnace includes the following subsystems:
           & Temperature controller & output 0-10V \\
           & Power Regulator & AC 180V-460V, 100A \\
           & Alarm & 4 temperature monitors \\
+    \midrule
     Air cooling & Air compressor & 2.4kW \\
           & Air dryer &  \\
           & Air flowmeter &  \\
           & Metering valve & 0-6m$^3$C/h \\
           & Air pressure gauge & measuring range 0-14 bar \\
           & Cooling passage & 4 manifolds, 32 lamp holders and flexible pipes \\
+    \midrule
     Water cooling & Industrial water-cooling machine & 10kW, water temperature 10 to 18$^\circ$C \\
           & Cooling passage &  \\
     \bottomrule
     \end{tabular}%
-  \label{tab:addlabel}%
+  \label{Tab:TGMF_subsystem}%
 \end{table}%
 
 \begin{itemize}
