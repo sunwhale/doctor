@@ -518,7 +518,7 @@ A stationary temperature gradient is reached, usually after 20 to 40 seconds. Du
 
 These realistic tests have the advantage that they can be used to transfer data from laboratory tests to the conditions of use. In addition, the heating and cooling rates achieved in the TGMF test apparatus allow very short test cycles so that the fatigue load of one entire flight can be applied to one specimen within three to five minutes.
 
-The radiant heater has a power of 16 kW. Typical test data for a nickel-based superalloy hollow cylindrical specimen are: heating, from 100 ° C to 1000 ° C in about 20 seconds, cooling from 1000 ° C to 100 ° C in about 15 seconds, stationary, temperature gradient of 100 ° C per mm., The maximum mechanical load is 25 kN or 60 kN.
+
 
 In this section, the high temperature radiation furnace is applied.
 It is used to heat the specimens with thermal barrier coating up to a high temperature.
@@ -696,7 +696,7 @@ Taking the 400W halogen lamp as an example, the measured filament length is abou
 \begin{equation}
 A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.316\times10^{-5} {\rm{m }}^2.
 \end{equation}
-The shape of the filament is a spiral.
+The shape of the filament is a spiral coil. 
 For simplicity, the filament can be abstracted as a cylindrical surface with the area of 93.16mm$^2$ and the length of 68mm. Therefore, the diameter of the cylinder can be calculated as 0.436mm. The mesh of the filament is shown in \ref{Fig:OneLightRadiationSimulation}(a).
 
 \begin{figure}[!htp]
@@ -747,21 +747,21 @@ Therefore, the emissivities and convective heat transfer coefficient determined 
 \noindent
 Elliptical cylinder reflectors have two conjugate focus lines. Light from one focus line passes through the other after reflection (see \ref{Fig:EllipsoidalReflectors}).
 Deep elliptical cylinder surrounding a line source collect a much higher fraction of total emitted light than a spherical mirror or conventional lens system.
-The effective collection are very small, and the geometry is well suited to the spatial distribution of the output from an arc lamp.
-Two ellipsoids can almost fully enclose a light source and target to provide nearly total energy transfer.
+The effective collection are very small, and the geometry is well suited to the spatial distribution of the output from a line lamp.
+Two elliptical cylinders can almost fully enclose a light source and target to provide nearly total energy transfer.
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[width=10cm]{Ellipsoidal_reflectors.png}
 	\caption{A section of an ellipsoidal reflector. }
 	\label{Fig:EllipsoidalReflectors}
 \end{figure}
-More significant perhaps is the ellipsoid's effect upon imaging of extended sources.
-For a pure point source exactly at one focus of the ellipse, almost all of the energy is transferred to the other focus.
-Unfortunately, every real light source, such as a lamp arc, has some finite extent; points of the source that are not exactly at the focus of the ellipse will be magnified and defocused at the image.
+More significant perhaps is the elliptical cylinder's effect upon imaging of extended sources.
+For a pure line source exactly at one focus line of the elliptical cylinder, almost all of the energy is transferred to the other focus line.
+Unfortunately, every real light source, such as a halogen tube, has some finite extent; points of the source that are not exactly at the focus line of the elliptical cylinder will be magnified and defocused at the image.
 
 \ref{Fig:EllipsoidalReflectors} illustrates how light from point S, off the focus F1, does not reimage near F2, but is instead spread along the axis.
 Rays a, b and c, shown in the top half of the ellipse, are all from F1 and pass through F2, the second focus of the ellipse. Rays A, B and C, in the bottom half of the ellipse are exact ray traces for rays from a point close to F1. They strike the ellipse at equivalent points to a, b and c, but do not pass through F2. For a small spot (image) at F2 you need a very small source.
-Because of this effect ellipsoids are most useful when coupled with a small source and a system that requires a lot of light without concern for particularly good imaging.
+Because of this effect elliptical cylinder are most useful when coupled with a small source and a system that requires a lot of light without concern for particularly good imaging.
 
 %根据灯丝形状不同光源可以被简化为点光源和直线光源两种。
 %点光源的聚光采用椭圆球面镜，将点光源放置于椭圆球面镜的其中一个焦点，经过反射光线会聚焦至另一个焦点。
@@ -771,7 +771,7 @@ Because of this effect ellipsoids are most useful when coupled with a small sour
 % 但是根据上一节的计算，如果我们将灯丝近似为一个圆柱面，则该圆柱面的直径约为0.5mm，光线经过镜面反射后会有一定的发散。
 % 真实的镜面无法保证完全光滑，光线会产生一定的漫反射，通过试验和计算，我们需要确定镜面的反射效率。
 
-The filament can be simplified as a line light source, due to its small diameter. As discussed above, if a line light source is located at one focus of the elliptical cylinder mirror, the reflected light will pass through the other focus.
+The filament can be simplified as a line light source, due to its small diameter. As discussed above, if a line light source is located at one focus line of the elliptical cylinder mirror, the reflected light will pass through the other focus line.
 However, according to the computations in the previous section, if we consider the filament as a cylindrical surface, the diameter of the cylindrical surface is about 0.5mm. Not all of the reflected light is transferred to the other focus.
 Meanwhile, the real mirror is not completely smooth and a part of the light is diffusely reflected. Therefore, we have to determine the reflection efficiency through the experiments and calculations.
 
@@ -780,19 +780,7 @@ Meanwhile, the real mirror is not completely smooth and a part of the light is d
 A reflected single halogen lamp radiation heat transfer testing device was developed to analyze the energy transformation during the light reflection.
 As shown in \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(a), the testing
 device includes an elliptical cylinder mirror, a light-receiving plate, temperature sensors, and a data acquisition system.
-The halogen lamp is located at one of the foci of the elliptical cylinder mirror. The light-receiving plate is perpendicular to the long axis of the elliptical cylinder mirror and its surface pass through the other focus. During the test, the light is reflected by the elliptical cylinder mirror and focused on the light-receiving plate, as show in \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(b).
-
-%灯丝的直径、灯丝与镜面的相对位置、镜面的表面粗糙度和镜面的轴线方向都会影响受光平面上的光强度分布。
-% 与上一节相同，受光平板材料为SS304不锈钢，表面采用同样的耐高温黑色涂料喷涂，因此可以认为该受光平板的表面发射率与上一节中的圆柱空腔内壁相同，为0.95。
-% 选择K型热电偶测量平板表面的温度分布，热电偶的位置分布如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c)所示，共15个。
-% 热电偶的数据采集，同样选取National Instruments公司的9213型16通道热电偶数据采集器，相应的编程和数据处理过程与上一节类似，采样频率为10Hz。
-
-The material of the light-receiving plate is the stainless steel SS304, and the plate surface was coated with the high-temperature-resistant black paint. The paint was the same as the paint used in the cylindrical cavity radiation device. Therefore, the emissivity of the light-receiving plate was consider as 0.95, which was already determined in the previous section.
-There are 15 type K thermocouples welded on the light-receiving plate to measure the temperature distribution of the plate during the test.
-\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c) shows the positions of the thermocouples. 
-The data acquisition system was also the NI-9213 thermocouple data collector, which was introduced in the previous section. The corresponding programming and data acquisition process was similar to the cylindrical cavity radiation testing and the sampling frequency was chosen as 10Hz.
-
-The radiative transfer between the surfaces can be computed by ABAQUS through the cavity radiation method. Geometric view factors are computed in ABAQUS between each facet of the mesh on the surfaces. These view factors quantify the effect of radiative transfer between each facet and each of the other facets in the user-defined cavity. However, cavity radiation method can not simulate the specular reflection between the surfaces. 
+The halogen lamp is located at one of the focus lines of the elliptical cylinder mirror. The light-receiving plate is perpendicular to the long axis of the elliptical cylinder mirror and its surface pass through the other focus line. During the test, the light is reflected by the elliptical cylinder mirror and focused on the light-receiving plate, as show in \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(b).
 
 \begin{figure}
   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
@@ -841,6 +829,31 @@ The radiative transfer between the surfaces can be computed by ABAQUS through th
   \label{Fig:OneLightWithEllipseMirrorReflectionShow}
 \end{figure}
 
+%灯丝的直径、灯丝与镜面的相对位置、镜面的表面粗糙度和镜面的轴线方向都会影响受光平面上的光强度分布。
+% 与上一节相同，受光平板材料为SS304不锈钢，表面采用同样的耐高温黑色涂料喷涂，因此可以认为该受光平板的表面发射率与上一节中的圆柱空腔内壁相同，为0.95。
+% 选择K型热电偶测量平板表面的温度分布，热电偶的位置分布如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c)所示，共15个。
+% 热电偶的数据采集，同样选取National Instruments公司的9213型16通道热电偶数据采集器，相应的编程和数据处理过程与上一节类似，采样频率为10Hz。
+
+The material of the light-receiving plate is the stainless steel SS304, and the plate surface was coated with the high-temperature-resistant black paint. The paint was the same as the paint used in the cylindrical cavity radiation device. Therefore, the emissivity of the light-receiving plate was consider as 0.95, which was already determined in the previous section.
+There are 15 type K thermocouples welded on the light-receiving plate to measure the temperature distribution of the plate during the test.
+\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(c) shows the positions of the thermocouples. 
+The data acquisition system was also the NI-9213 thermocouple data collector, which was introduced in the previous section. The corresponding programming and data acquisition process was similar to the cylindrical cavity radiation testing and the sampling frequency was chosen as 10Hz.
+
+The radiative transfer between the surfaces can be computed by ABAQUS through the cavity radiation method. Geometric view factors are computed in ABAQUS between each facet of the mesh on the surfaces. These view factors quantify the effect of radiative transfer between each facet and each of the other facets in the user-defined cavity. 
+\ref{Fig:one_lamp_reflection_cavity_radiation} shows the FE-model and the computational result of the one lamp reflection test. The simulated temperature distribution of the light-receiving plate is much lower than the measured temperature distribution. The reason is the cavity radiation method can not simulate the specular reflection between the surfaces. 
+\begin{figure}
+  \centering
+  \begin{overpic}[width=8.0cm]{FEM_model_single_lamp_reflection.png}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+
+  \caption{FE-model (a) and computational result (b) of the one lamp reflection test.}
+  \label{Fig:one_lamp_reflection_cavity_radiation}
+\end{figure}
+
 % \begin{figure}
 %   \centering
 %   \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
@@ -853,13 +866,22 @@ The radiative transfer between the surfaces can be computed by ABAQUS through th
 %   \label{Fig:one_lamp_reflection}
 % \end{figure}
 
-TracePro is a commercial optical engineering software program for designing and analyzing optical and illumination systems.
+In order to obtain the optical path and radiation distribution on the light-receiving plate, a commercial optical engineering software TracePro was used to simulate the process. 
+TracePro is the software program for designing and analyzing optical and illumination systems.
 It has been used in many projects for designing and analyzing all types of optical/illumination systems ranging from stray light suppression in telescopes and cameras to biomedical applications to LED modeling and solar collector modeling.
-A simulation model are created in the software TracePro, as shown in \ref{Fig:tracepro}.
+A simulation model are created in TracePro, as shown in \ref{Fig:tracepro}.
 The simulation model consists of three parts: the reflector, filament and light-receiving plate.
 The upper and lower plate are ignored, because they are coated with the black paint, most of the light is absorbed when they irradiate on the plate.
-For simplicity, the filament are abstracted as a cylinder with a diameter of 1mm.
-The rays are traced through the systems to find energy distributions on any surface or track volume flux through any space.
+For simplicity, the spiral coil shaped filament are abstracted as a cylinder with a diameter of 1mm.
+The rays are traced through the systems to find energy distributions on the light-receiving plate.
+
+The ray tracing results show that 27.7\% of the light emitted by the halogen lamp shined on the light-receiving plate and the irradiance distribution are plotted in \ref{Fig:irradiance_map_D1.0mm_S0.0mm_gray}.
+The $x$ direction is the length of the plate and the $y$ direction is the height of the plate. Comparing \ref{Fig:irradiance_map_D1.0mm_S0.0mm_gray} with \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(d), we observed similar irradiance distributions between the experimental and computational results.
+
+The transient heat transfer model was created in ABAQUS, and the irradiance distributions obtained by TracePro are used as the heat flux boundary conditions.
+The light-receiving plate was divided into 128$\times$128 meshes, as shown in \ref{Fig:OneLightWithReflection}(a). Thus, the irradiance distribution obtained by TracePro was also divided into 128$\times$128 areas with their geometries and positions corresponding to the meshes one by one. For simplicity, the heat flux on each area is assumed as a constant, then the heat flux on each area can be calculated by using its average value. Using this method, we can get the approximate heat flux boundary conditions. The larger the mesh density, the more accurate the calculation results. Through the calculations with different mesh densities, it is observed that the 128$\times$128 meshes are sufficiently accurate for our experiment. 
+
+During the test, the halogen lamp was turned on for 200s then turned off. The transient heat transfer results at the running time 200s are shown in \ref{Fig:OneLightWithReflection}(b). \ref{Fig:OneLightWithReflection}(c) and (d) illustrate the comparison of the experimental and computational temperatures along the horizontal and vertical directions, with different reflection efficiencies. We observed the best agreement between the experimental and computational results with the reflection efficiency of 0.95. Therefore, the reflection efficiency of the gold coated reflector is determined as 0.95.
 
 \begin{figure}
   \centering
@@ -869,7 +891,7 @@ The rays are traced through the systems to find energy distributions on any surf
   \begin{overpic}[width=8.0cm]{tracepro_yz.png}
     \put(84,65){\fcolorbox{white}{white}{(b)}}
   \end{overpic}
-  \caption{.}
+  \caption{Computational model in TracePro: (a) isometric view, (b) view on $x$-$z$ plane.}
   \label{Fig:tracepro}
 \end{figure}
 
@@ -878,113 +900,58 @@ The rays are traced through the systems to find energy distributions on any surf
   \begin{overpic}[width=16.0cm]{irradiance_map_D1.0mm_S0.0mm_gray.png}
     \put(84,65){\fcolorbox{white}{white}{(a)}}
   \end{overpic}
-  \caption{.}
-  \label{Fig:irradiance_map_D1.0mm_S0.5mm_gray}
+  \caption{The irradiance map of the light-receiving plate.}
+  \label{Fig:irradiance_map_D1.0mm_S0.0mm_gray}
 \end{figure}
+
 
 \begin{figure}
   \centering
-  \begin{overpic}[width=8.0cm]{FEM_model_single_lamp_reflection.png}
+  \begin{overpic}[width=8.0cm]{FEM_model_single_lamp_reflection_mesh.png}
     \put(84,65){\fcolorbox{white}{white}{(a)}}
   \end{overpic}
-  \begin{overpic}[width=8.0cm]{one_lamp_reflection_1.png}
+  \begin{overpic}[width=8.0cm]{one_lamp_reflection_2.png}
     \put(84,65){\fcolorbox{white}{white}{(b)}}
   \end{overpic}
 
-  \caption{.}
-  \label{Fig:one_lamp_reflection_cavity_radiation}
-\end{figure}
+  \begin{overpic}[width=8.0cm]{plot_compare_horizontal_reflection.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_compare_vertical_reflection.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
 
-
-
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=2.2in]{OneLightWithEllipseMirrorReflection.pdf}
-    \centerline{(a) FEM model.}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{OneLightWithEllipseMirrorReflectionSimulation.png}
-    \centerline{(b) Simulation result.}
-  \end{minipage}
-
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{plot_cmp_temperature_horizontal.pdf}
-    \centerline{(c) Temperature distribution along }
-    \centerline{the horizontal direction. }
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{plot_cmp_temperature_vertical.pdf}
-    \centerline{(d) Temperature distribution along }
-    \centerline{the vertical direction. }
-  \end{minipage}
-
-  \caption{Comparison of experimental and computational results of single halogen lamp radiation with the reflect mirror.}
+  \caption{(a) FE model of the light-receiving plate. (b) Temperature distribution on the light-receiving plate. (c) Temperature distribution along the horizontal direction. (d) Temperature distribution along the vertical direction.}
   \label{Fig:OneLightWithReflection}
 \end{figure}
-\newpage
-\subsection{Design of the radiation furnace}
+
+\section{Design of the radiation furnace}
+\noindent
 The TGMF testing system for the thin-walled tubular specimen is shown in \ref{Fig:TGMF_Test_System}. The testing system includes multiple subsystems such as loading, heating,  air cooling, and water cooling. These subsystems work cooperatively to ensure the mechanical load and temperature over the specimen gage section are simultaneously varied and independently controlled. The main facilities and their performance parameters of each subsystem are shown in Table \ref{Tab:TGMF_subsystem}.
 
+The loading subsystem consists of the MTS model 370 hydraulic servo fatigue testing systems, the digital controller, extensometer, and the host computer. The fatigue testing systems can provide a tension/compression mechanical load of ±250kN. The mechanical load is transmitted to specimen through a fixture. 
+In order to meet the test requirements, the fixture for the thin-walled tubular specimen was designed as shown in FIG.
+The cooling air can enter the internal of the tubular specimen through the fixture.
+In order to reduce the additional bending moments and the bending stress in specimen, the fixture must provide a sufficiently high degree of coaxiality. Meanwhile, the frame of the MTS model 370 testing systems provides an alignment device, it can effectively reduce the additional bending moments in the specimen during the test.
+When the radiation furnace heats the specimen, it inevitably heats the fixture. Therefore, the fixture was made of a directionally solidified nickel base superalloy to ensure the strength of the fixture during the whole test process. A thread paste was used to avoid the sintering between the fixture and specimen.
+
 A radiant furnace is developed specifically for the TGMF tests.
+% 辐射炉的设计过程如图所示，包括辐射传热试验/模拟、CAD设计、制作加工、装配、控制系统设计等步骤。
+% 之间的章节已经介绍了椭圆柱面镜的辐射传热试验与数值计算结果。
+% 我们获取了卤素灯的辐射效率，镜面反射效率以及试件表面的发射率等信息。
+% 本研究中使用的试件标距段长度约为35cm，因此我们选取了Double ended halogen lamps with tube base.
+
+The design process of the radiant furnace is shown in the figure, including radiative heat transfer test/simulation, CAD design, manufacturing, assembly, and control system design.
+The results of radiative heat transfer experiments and numerical calculations for the single lamp have been introduced in the above sections.
+The radiation efficiency, specular reflection efficiency, and emissivity of the surface are determined.
+The length of the gauge section of the specimen used in this study is 30cm, and the total length of the specimen is 120cm. Consequently, the double ended halogen lamps with a length of 115cm were chosen. According to the heat conduction equation, the temperature gradient of the material is proportional to the heat flux vector. In order achieve a large temperature gradient, a large heat flux is required. The developed radiant furnace consists of 16 halogen lamps, and the powers of the lamps can be chosen as 400W or 800W for different requirements of the TGMF tests.
+
+In the present study, the lamp with the power of 400W was used. Thus, the radiant furnace has a power of 6.4kW. Typical test data for a nickel-based superalloy tubular specimen are: heating, from 23$^\circ$C to 1400$^\circ$C in about 50 seconds, cooling from 1400$^\circ$C to 100$^\circ$C in about 20 seconds, stationary, temperature gradient of 30$^\circ$C/mm.
+
 % It is complex to create the radiation heating system directly.
 % Then the radiation furnace is suggested to divided into several subsystem as follows.
 The furnace includes the following subsystems:
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
-\begin{table}[htbp]
-  \centering
-  \caption{Add caption}
-    \begin{tabular}{p{3cm}p{5cm}p{6cm}}
-    \toprule
-    Subsystem & Facility & Comments \\
-    \midrule
-    Load  & Fatigue testing machine & MTS 370, $\pm$250kN \\
-          & Digtal controller & FlexTest 40 \\
-          & Extensometer & gauge length 12mm, range $\pm$20\% \\
-          & Host computer &  \\
-    \midrule
-    Radiation furnace & Halogen lamps & 400W/800W \\
-          & Thermocouples & K/S/R-type \\
-          & Temperature input module & 8-Channel \\
-          & Infrared thermometer & measuring range -50 to 2000$^\circ$C \\
-          & Reflector & elliptic cylinders \\
-          & Temperature controller & output 0-10V \\
-          & Power Regulator & AC 180V-460V, 100A \\
-          & Alarm & 4 temperature monitors \\
-    \midrule
-    Air cooling & Air compressor & 2.4kW \\
-          & Air dryer &  \\
-          & Air flowmeter &  \\
-          & Metering valve & 0-6m$^3$C/h \\
-          & Air pressure gauge & measuring range 0-14 bar \\
-          & Cooling passage & 4 manifolds, 32 lamp holders and flexible pipes \\
-    \midrule
-    Water cooling & Industrial water-cooling machine & 10kW, water temperature 10 to 18$^\circ$C \\
-          & Cooling passage &  \\
-    \bottomrule
-    \end{tabular}%
-  \label{Tab:TGMF_subsystem}%
-\end{table}%
-
-\begin{itemize}
-\item \textbf{Quartz lamp alignment device} includes 16 halogen, its power supply circuit and position adjusting device.
-\item \textbf{Temperature control system} includes a controller, .
-\item \textbf{Switch and circuit} includes 16 halogen, its power supply circuit and position adjusting device.
-
-\item \textbf{Quartz lamp radiation heating system} includes 16 halogen, its power supply circuit and position adjusting device.
-\item \textbf{Air cooling system for the halogen lamps} includes an air compressor, breathable lamp holders and four air manifolds.
-\item \textbf{Air Cooling system for inner and outer surface of the specimen } is to realize the aim of fast cooling. Two hollow extend clamp are manufactured with cooling air pipe connected to each side.
-
-\item \textbf{Water cooling system for the mirrors.}
-\item \textbf{Temperature measurement system.}
-\item \textbf{Strain measurement system.}
-\item \textbf{Temperature control system.}
-\end{itemize}
 
 
 \begin{figure}[!htp]
@@ -1045,7 +1012,58 @@ The furnace includes the following subsystems:
 %\label{Fig:MTS370WithRadiationFurnace}
 %\end{figure}
 
+\section{TGMF test rig}
+\begin{table}[htbp]
+  \centering
+  \caption{Add caption}
+    \begin{tabular}{p{3cm}p{5cm}p{6cm}}
+    \toprule
+    Subsystem & Facility & Comments \\
+    \midrule
+    Loading  & Fatigue testing machine & MTS 370, $\pm$250kN \\
+          & Digtal controller & FlexTest 40 \\
+          & Extensometer & gauge length 12mm, range $\pm$20\% \\
+          & Host computer &  TestSuite$^{\rm TM}$ Multipurpose Software\\
+    \midrule
+    Radiation furnace & Halogen lamps & 400W/800W \\
+          & Thermocouples & K/S/R-type \\
+          & Temperature input module & 8-Channel \\
+          & Infrared thermometer & measuring range -50 to 2000$^\circ$C \\
+          & Reflector & elliptic cylinders \\
+          & Temperature controller & output 0-10V \\
+          & Power Regulator & AC 180V-460V, 100A \\
+          & Alarm & 4 temperature monitors \\
+    \midrule
+    Air cooling & Air compressor & 2.4kW \\
+          & Air dryer & maximum allowable pressure 16bar \\
+          & Metering valve & maximum volume flow 10m$^3$/h \\
+          & Air pressure gauge & measuring range 0-14bar \\
+          & Cooling passage & 4 manifolds, 32 lamp holders and flexible pipes \\
+    \midrule
+    Water cooling & Industrial water-cooling machine & 10kW, outlet water temperature from 10 to 18$^\circ$C \\
+          & Cooling passage & fixtures and cooling passages in the radiation furnace \\
+    \bottomrule
+    \end{tabular}%
+  \label{Tab:TGMF_subsystem}%
+\end{table}%
+
+\begin{itemize}
+\item \textbf{Quartz lamp alignment device} includes 16 halogen, its power supply circuit and position adjusting device.
+\item \textbf{Temperature control system} includes a controller, .
+\item \textbf{Switch and circuit} includes 16 halogen, its power supply circuit and position adjusting device.
+
+\item \textbf{Quartz lamp radiation heating system} includes 16 halogen, its power supply circuit and position adjusting device.
+\item \textbf{Air cooling system for the halogen lamps} includes an air compressor, breathable lamp holders and four air manifolds.
+\item \textbf{Air Cooling system for inner and outer surface of the specimen } is to realize the aim of fast cooling. Two hollow extend clamp are manufactured with cooling air pipe connected to each side.
+
+\item \textbf{Water cooling system for the mirrors.}
+\item \textbf{Temperature measurement system.}
+\item \textbf{Strain measurement system.}
+\item \textbf{Temperature control system.}
+\end{itemize}
+
 \section{Extensometer}
+\noindent
 An extensometer is a device that is used to measure changes in the length of an object.
 It is useful for stress-strain measurements and tensile tests.
 There are many different types of high temperature extensometers available.
