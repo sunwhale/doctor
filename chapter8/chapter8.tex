@@ -898,7 +898,6 @@ During the test, the halogen lamp was turned on for 200s then turned off. The tr
 \begin{figure}
   \centering
   \begin{overpic}[width=16.0cm]{irradiance_map_D1.0mm_S0.0mm_gray.png}
-    \put(84,65){\fcolorbox{white}{white}{(a)}}
   \end{overpic}
   \caption{The irradiance map of the light-receiving plate.}
   \label{Fig:irradiance_map_D1.0mm_S0.0mm_gray}
@@ -944,9 +943,15 @@ A radiant furnace is developed specifically for the TGMF tests.
 The design process of the radiant furnace is shown in the figure, including radiative heat transfer test/simulation, CAD design, manufacturing, assembly, and control system design.
 The results of radiative heat transfer experiments and numerical calculations for the single lamp have been introduced in the above sections.
 The radiation efficiency, specular reflection efficiency, and emissivity of the surface are determined.
-The length of the gauge section of the specimen used in this study is 30cm, and the total length of the specimen is 120cm. Consequently, the double ended halogen lamps with a length of 115cm were chosen. According to the heat conduction equation, the temperature gradient of the material is proportional to the heat flux vector. In order achieve a large temperature gradient, a large heat flux is required. The developed radiant furnace consists of 16 halogen lamps, and the powers of the lamps can be chosen as 400W or 800W for different requirements of the TGMF tests.
+The length of the gauge section of the specimen used in TGMF test is 30cm, and the total length of the specimen is 120cm. Consequently, the double ended halogen lamps with a length of 115cm were chosen. According to the heat conduction equation, the temperature gradient of the material is proportional to the heat flux vector. In order achieve a large temperature gradient, a large heat flux is required. The developed radiant furnace consists of 16 halogen lamps, and the powers of the lamps can be chosen as 400W or 800W for different requirements of the TGMF tests.
 
-In the present study, the lamp with the power of 400W was used. Thus, the radiant furnace has a power of 6.4kW. Typical test data for a nickel-based superalloy tubular specimen are: heating, from 23$^\circ$C to 1400$^\circ$C in about 50 seconds, cooling from 1400$^\circ$C to 100$^\circ$C in about 20 seconds, stationary, temperature gradient of 30$^\circ$C/mm.
+CATIA is a multi-platform software suite for computer-aided design (CAD), computer-aided manufacturing (CAM) and computer-aided engineering (CAE).
+The parametric design, simulation assembly and shape optimization of the radiation furnace were performed by using the software CATIA.
+\ref{Fig:radiation_furnace_show_2} shows the CAD model of the radiation furnace in CATIA. A The dimension of the radiation furnace is 600$\times$800$\times$210
+
+In the present study, the lamp with the power of 400W was used. Thus, the radiation furnace has a total power of 6.4kW. Typical test data for a nickel-based superalloy tubular specimen are: heating, from 23$^\circ$C to 1400$^\circ$C in about 50 seconds, cooling from 1400$^\circ$C to 100$^\circ$C in about 20 seconds, stationary, temperature gradient of 30$^\circ$C/mm.
+
+
 
 % It is complex to create the radiation heating system directly.
 % Then the radiation furnace is suggested to divided into several subsystem as follows.
@@ -958,6 +963,13 @@ The furnace includes the following subsystems:
 \centering\scalebox{0.65}{\includegraphics{Radiation_Furnace2.pdf}}
 \caption{Sketch of radiation furnace.}
 \label{Fig:Radiation_Furnace}
+\end{figure}
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=16cm]{radiation_furnace_show_2.pdf}
+	\caption{Sketch of radiation furnace.}
+	\label{Fig:radiation_furnace_show_2}
 \end{figure}
 
 \begin{figure}[!htp]
@@ -1138,115 +1150,115 @@ The elongation is read from the dial scale of the micrometer head. This can be u
 \label{Fig:Calibration}
 \end{figure}
 
-\section{Forced convection in turbulent pipe flow}
+% \section{Forced convection in turbulent pipe flow}
 
-\begin{figure}[!htp]
-\centering\scalebox{0.6}{\includegraphics{inner_cooling.pdf}}
-\caption{Schematic of inner cooling air system.}
-\label{Fig:}
-\end{figure}
+% \begin{figure}[!htp]
+% \centering\scalebox{0.6}{\includegraphics{inner_cooling.pdf}}
+% \caption{Schematic of inner cooling air system.}
+% \label{Fig:}
+% \end{figure}
 
-Because of the small inner diameter 6.5mm of the specimen, it is difficult to measure the temperature of the specimen inner surface during the tests.
-A variety of measurement options were tried to measure the inner surface temperature.
-It was found that the internal cooling air has a significant effect on the temperature measurement of the inner surface of the specimen.
-%内部冷却空气对试件内壁的温度测量有很大的影响。
-The measured temperature is not the temperature of the inner surface, but the average temperature of the wall and the cooling air flow.
-%测量得到的温度不是壁面的温度，而是壁面和冷却气流的平均温度。
-Therefore we tried to calculate the temperature distribution of the specimen inner surface using the FEM method.
+% Because of the small inner diameter 6.5mm of the specimen, it is difficult to measure the temperature of the specimen inner surface during the tests.
+% A variety of measurement options were tried to measure the inner surface temperature.
+% It was found that the internal cooling air has a significant effect on the temperature measurement of the inner surface of the specimen.
+% %内部冷却空气对试件内壁的温度测量有很大的影响。
+% The measured temperature is not the temperature of the inner surface, but the average temperature of the wall and the cooling air flow.
+% %测量得到的温度不是壁面的温度，而是壁面和冷却气流的平均温度。
+% Therefore we tried to calculate the temperature distribution of the specimen inner surface using the FEM method.
 
-%The internal diameter of the specimen is 6.5 mm, and .
-%试件的内部直径为6.5mm,。
+% %The internal diameter of the specimen is 6.5 mm, and .
+% %试件的内部直径为6.5mm,。
 
-The inner surface of the hollow specimen can be considers as a pipe.
-%空心试件可以简化为圆管.
-According to the formula of convection in turbulent pipe flow, the convective heat transfer coefficient of the inner surface of the specimen can be calculated.
-%根据圆管内部的强制对流换热公式，我们计算试件内表面的对流换热系数。
+% The inner surface of the hollow specimen can be considers as a pipe.
+% %空心试件可以简化为圆管.
+% According to the formula of convection in turbulent pipe flow, the convective heat transfer coefficient of the inner surface of the specimen can be calculated.
+% %根据圆管内部的强制对流换热公式，我们计算试件内表面的对流换热系数。
 
-Nusselt number (Nu) is a dimensionless number, defined as the ratio of convective to conductive heat transfer across (normal to) the boundary.
-The Nusselt number is given as:
-\[{\rm{N}}{{\rm{u}}_L} = \frac{{hL}}{k},\]
-where $h$ is the convective heat transfer coefficient of the fluid, $L$ is the characteristic length, $k$ is the thermal conductivity of the fluid.
+% Nusselt number (Nu) is a dimensionless number, defined as the ratio of convective to conductive heat transfer across (normal to) the boundary.
+% The Nusselt number is given as:
+% \[{\rm{N}}{{\rm{u}}_L} = \frac{{hL}}{k},\]
+% where $h$ is the convective heat transfer coefficient of the fluid, $L$ is the characteristic length, $k$ is the thermal conductivity of the fluid.
 
-Gnielinski's correlation for turbulent flow in tubes is given as:
-\[{\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}},\]
-where $f$ is the Darcy friction factor that can either be obtained from the Moody chart or for smooth tubes from correlation developed by Petukhov:
-\[f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}},\]
-with
-\[0.5 \le {\rm{Pr}} \le 2000,\]
-\[3000 \le {\rm{R}}{{\rm{e}}_D} \le 5 \times {10^6},\]
+% Gnielinski's correlation for turbulent flow in tubes is given as:
+% \[{\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}},\]
+% where $f$ is the Darcy friction factor that can either be obtained from the Moody chart or for smooth tubes from correlation developed by Petukhov:
+% \[f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}},\]
+% with
+% \[0.5 \le {\rm{Pr}} \le 2000,\]
+% \[3000 \le {\rm{R}}{{\rm{e}}_D} \le 5 \times {10^6},\]
 
-The Prandtl number (Pr) is a dimensionless number, defined as the ratio of momentum diffusivity to thermal diffusivity.
-The Prandtl number is given as:
-\[{\rm{Pr}} = \frac{{{c_p}\mu }}{k},\]
-where
-$c_{p}$ is specific heat, $\mu$ is dynamic viscosity and $k$ is thermal conductivity.
+% The Prandtl number (Pr) is a dimensionless number, defined as the ratio of momentum diffusivity to thermal diffusivity.
+% The Prandtl number is given as:
+% \[{\rm{Pr}} = \frac{{{c_p}\mu }}{k},\]
+% where
+% $c_{p}$ is specific heat, $\mu$ is dynamic viscosity and $k$ is thermal conductivity.
 
-The Reynolds number (Re) is a dimensionless number, defined as the ratio of inertial forces to viscous forces within a fluid.
-The Reynolds number is given as:
-\[{\rm{Re}} = \frac{{\rho uL}}{\mu },\]
-where
-$\rho$ is density of the fluid, $u$ is the velocity of the fluid with respect to the object, $\mu$ is the dynamic viscosity of the fluid and $L$ is a characteristic dimension.
+% The Reynolds number (Re) is a dimensionless number, defined as the ratio of inertial forces to viscous forces within a fluid.
+% The Reynolds number is given as:
+% \[{\rm{Re}} = \frac{{\rho uL}}{\mu },\]
+% where
+% $\rho$ is density of the fluid, $u$ is the velocity of the fluid with respect to the object, $\mu$ is the dynamic viscosity of the fluid and $L$ is a characteristic dimension.
 
-It is noted that the dynamic viscosity $\mu$ of an ideal gas is a function of the temperature. It can be derived as Sutherland's formula:
-\[\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}},\]
-where $\mu$ is dynamic viscosity at input temperature $T$,
-$\mu_0$ is reference viscosity at reference temperature $T_0$,
-$C$ is Sutherland's constant dependent on the gaseous material.
-Table \ref{tab:SutherlandConstant} shows the Sutherland's constant and reference values of the air.
-\begin{table}[htbp]
-  \centering
-  \caption{Sutherland's constant and reference values of the air.}
-    \begin{tabular}{p{2cm}p{2cm}p{2cm}p{3cm}}
-    \toprule
-    Gas   & $C$(K) & $T_0$(K) & $\mu_0$($\rm{Pa\cdot s}$) \\
-    \midrule
-    air   & 120   & 291.15 & $1.827\times 10^{-5}$ \\
-    \bottomrule
-    \end{tabular}%
-  \label{tab:SutherlandConstant}%
-\end{table}%
+% It is noted that the dynamic viscosity $\mu$ of an ideal gas is a function of the temperature. It can be derived as Sutherland's formula:
+% \[\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}},\]
+% where $\mu$ is dynamic viscosity at input temperature $T$,
+% $\mu_0$ is reference viscosity at reference temperature $T_0$,
+% $C$ is Sutherland's constant dependent on the gaseous material.
+% Table \ref{tab:SutherlandConstant} shows the Sutherland's constant and reference values of the air.
+% \begin{table}[htbp]
+%   \centering
+%   \caption{Sutherland's constant and reference values of the air.}
+%     \begin{tabular}{p{2cm}p{2cm}p{2cm}p{3cm}}
+%     \toprule
+%     Gas   & $C$(K) & $T_0$(K) & $\mu_0$($\rm{Pa\cdot s}$) \\
+%     \midrule
+%     air   & 120   & 291.15 & $1.827\times 10^{-5}$ \\
+%     \bottomrule
+%     \end{tabular}%
+%   \label{tab:SutherlandConstant}%
+% \end{table}%
 
-The density of dry air $\rho$ can be calculated using the ideal gas law, expressed as a function of temperature and pressure:
-\begin{equation}
-\rho  = \frac{p}{{RT}},
-\label{Equ:AirDensity}
-\end{equation}
-where
-$p$ is absolute pressure,
-$T$ is absolute temperature,
-$R$ is specific gas constant.
+% The density of dry air $\rho$ can be calculated using the ideal gas law, expressed as a function of temperature and pressure:
+% \begin{equation}
+% \rho  = \frac{p}{{RT}},
+% \label{Equ:AirDensity}
+% \end{equation}
+% where
+% $p$ is absolute pressure,
+% $T$ is absolute temperature,
+% $R$ is specific gas constant.
 
-According to the measurement results of the sensors, the average pressure and temperature of the cooling air are 6.5 bar and 288.15K, respectively.
+% According to the measurement results of the sensors, the average pressure and temperature of the cooling air are 6.5 bar and 288.15K, respectively.
 
-\begin{table}[htbp]
-  \begin{threeparttable}
-  \centering
-  \caption{Heat convection coefficients of the inner surface of the specimen.}
-    \begin{tabular}{llrrrr}
-    \toprule
-    $T$   & ${\rm{K}}$ & 288.15  & 288.15  & 288.15  & 288.15  \\
-    $p$   & ${\rm{bar}}$ & 6.5   & 6.5   & 6.5   & 6.5  \\
-    $\rho  = \frac{p}{{RT}}$ \tnote{*1} & ${\rm{kg/}}{{\rm{m}}^{\rm{3}}}$ & 7.724 & 7.724 & 7.724 & 7.724 \\
-    $\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}}$ \tnote{*2} & -     & 1.81E-05 & 1.81E-05 & 1.81E-05 & 1.81E-05 \\
-    ${\dot V}$ & ${\rm{l/min}}$ & 10    & 20    & 30    & 40  \\
-    $u = \frac{{4\dot V}}{{\pi {D^2}}}$ \tnote{*3} & ${\rm{m/}}{{\rm{s}}^2}$ & 5.02  & 10.05  & 15.07  & 20.09  \\
-    ${\rm{Re}} = \frac{{\rho uL}}{\mu }$ \tnote{*4} & -     & 13906  & 27812  & 41718  & 55624  \\
-    ${\rm{Pr}} = \frac{{{c_p}\mu }}{k}$ \tnote{*5} & -     & 0.63  & 0.63  & 0.63  & 0.63  \\
-    $f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}}$ & -     & 0.0288  & 0.0241  & 0.0219  & 0.0205  \\
-    ${\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}}$ & -     & 36.76  & 62.61  & 85.39  & 106.50  \\
-    $h = \frac{k}{{D{\rm{N}}{{\rm{u}}_D}}}$ & ${\rm{W/(}}{{\rm{m}}^{\rm{2}}} \cdot {\rm{K)}}$ & 146.03  & 248.74  & 339.24  & 423.10  \\
-    \bottomrule
-    \end{tabular}%
-    \begin{tablenotes}
-    \item[*1] $R = 287.058 {\rm{J/(kg}} \cdot {\rm{K}})$ for dry air.
-    \item[*2] Sutherland's constant and reference values of the air (see Table \ref{tab:SutherlandConstant}).
-    \item[*3] $D=0.65$mm.
-    \item[*4] $L=D$.
-    \item[*5] $c_{p}=903.3 {\rm{J/(kg}} \cdot {\rm{K}})$ and $k=0.0258 {\rm{W/(m}} \cdot {\rm{K}})$ at $288.15{\rm{K}}$.
-    \end{tablenotes}
-    \end{threeparttable}
-  \label{tab:addlabel}%
-\end{table}%
+% \begin{table}[htbp]
+%   \begin{threeparttable}
+%   \centering
+%   \caption{Heat convection coefficients of the inner surface of the specimen.}
+%     \begin{tabular}{llrrrr}
+%     \toprule
+%     $T$   & ${\rm{K}}$ & 288.15  & 288.15  & 288.15  & 288.15  \\
+%     $p$   & ${\rm{bar}}$ & 6.5   & 6.5   & 6.5   & 6.5  \\
+%     $\rho  = \frac{p}{{RT}}$ \tnote{*1} & ${\rm{kg/}}{{\rm{m}}^{\rm{3}}}$ & 7.724 & 7.724 & 7.724 & 7.724 \\
+%     $\mu  = {\mu _0}\frac{{{T_0} + C}}{{T + C}}{\left( {\frac{T}{{{T_0}}}} \right)^{\frac{3}{2}}}$ \tnote{*2} & -     & 1.81E-05 & 1.81E-05 & 1.81E-05 & 1.81E-05 \\
+%     ${\dot V}$ & ${\rm{l/min}}$ & 10    & 20    & 30    & 40  \\
+%     $u = \frac{{4\dot V}}{{\pi {D^2}}}$ \tnote{*3} & ${\rm{m/}}{{\rm{s}}^2}$ & 5.02  & 10.05  & 15.07  & 20.09  \\
+%     ${\rm{Re}} = \frac{{\rho uL}}{\mu }$ \tnote{*4} & -     & 13906  & 27812  & 41718  & 55624  \\
+%     ${\rm{Pr}} = \frac{{{c_p}\mu }}{k}$ \tnote{*5} & -     & 0.63  & 0.63  & 0.63  & 0.63  \\
+%     $f = {\left( {0.79\ln \left( {{\rm{R}}{{\rm{e}}_D}} \right) - 1.64} \right)^{ - 2}}$ & -     & 0.0288  & 0.0241  & 0.0219  & 0.0205  \\
+%     ${\rm{N}}{{\rm{u}}_D} = \frac{{\left( {f/8} \right)\left( {{\rm{R}}{{\rm{e}}_D} - 1000} \right){\rm{Pr}}}}{{1 + 12.7{{(f/8)}^{1/2}}\left( {{\rm{P}}{{\rm{r}}^{2/3}} - 1} \right)}}$ & -     & 36.76  & 62.61  & 85.39  & 106.50  \\
+%     $h = \frac{k}{{D{\rm{N}}{{\rm{u}}_D}}}$ & ${\rm{W/(}}{{\rm{m}}^{\rm{2}}} \cdot {\rm{K)}}$ & 146.03  & 248.74  & 339.24  & 423.10  \\
+%     \bottomrule
+%     \end{tabular}%
+%     \begin{tablenotes}
+%     \item[*1] $R = 287.058 {\rm{J/(kg}} \cdot {\rm{K}})$ for dry air.
+%     \item[*2] Sutherland's constant and reference values of the air (see Table \ref{tab:SutherlandConstant}).
+%     \item[*3] $D=0.65$mm.
+%     \item[*4] $L=D$.
+%     \item[*5] $c_{p}=903.3 {\rm{J/(kg}} \cdot {\rm{K}})$ and $k=0.0258 {\rm{W/(m}} \cdot {\rm{K}})$ at $288.15{\rm{K}}$.
+%     \end{tablenotes}
+%     \end{threeparttable}
+%   \label{tab:addlabel}%
+% \end{table}%
 
 
 \section{TGMF code}
