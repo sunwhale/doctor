@@ -210,20 +210,20 @@ The monotonic tensile test conditions are listed in Table \ref{tab:TensionLoadin
 %Finally, the specimen was carefully removed and examined.
 %During this process, The axial strain rate keeps constant as $1 \times 10^{-4}$s$^{-1}$.
 %Extensometer measurement values of the gauge section is recorded against the applied force.
-The elongation and force measurements are used to calculate the engineering stress $\sigma_{eng}$ and engineering strain $\varepsilon_{eng}$, using the following equation:
+The elongation and force measurements are used to calculate the engineering stress $\sigma_{\rm eng}$ and engineering strain $\varepsilon_{\rm eng}$, using the following equation:
 \begin{equation}
-\sigma_{eng}=\frac{F}{A_0},
+\sigma_{\rm eng}=\frac{F}{A_0},
 \end{equation}
 \begin{equation}
-\varepsilon_{eng}=\frac{l-l_0}{l_0},
+\varepsilon_{\rm eng}=\frac{l-l_0}{l_0},
 \end{equation}
 where $F$ is the axial force, $A_0$ is the specimen initial cross-sectional area, $\Delta l$ is the change of gauge length, $l_0$ and $l$ are the initial and final gauge lengths of the specimen.
 Noting that, it is recommended to use true stress $\sigma$ and logarithmic strain $\varepsilon$ in large deformation condition, and they can be expressed as:
 \begin{equation}
-\sigma=\sigma_{eng}(1+\varepsilon_{eng}),
+\sigma=\sigma_{\rm eng}(1+\varepsilon_{\rm eng}),
 \end{equation}
 \begin{equation}
-\varepsilon=\ln(1+\varepsilon_{eng}).
+\varepsilon=\ln(1+\varepsilon_{\rm eng}).
 \end{equation}
 
 \ref{Fig:IN718_Monotonic_Tension} shows the variation of the Inconel 718 tension stress-strain curves with different temperatures 20$^{\circ}$C, 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C.
@@ -245,7 +245,7 @@ As a result, the material still retains reasonable strength at 650$^{\circ}$C.
     \begin{tabular}{lcccc}
     \toprule
     Temperature         & Young's modulus   & Yield stress            & Ultimate stress     & Fracture elongation\\
-    $T$ [$^{\circ}$C]   & $E$ [GPa]         & $\sigma_{p=0.2}$ [MPa]  & $\sigma_u$ [MPa]    & $\varepsilon_f$ [\%]\\
+    $T$ [$^{\circ}$C]   & $E$ [GPa]         & $\sigma_{p=0.2}$ [MPa]  & $\sigma_{\rm u}$ [MPa]    & $\varepsilon_{\rm f}$ [\%]\\
     \midrule
     20    & 206.3 & 1192 & 1433 & 26.4 \\
     300   & 190.2 & 1140 & 1334 & 21.2 \\
@@ -390,49 +390,91 @@ In Table \ref{tab:Loading-Conditions}, the test type consists of the strain path
 All tests were strain controlled and the stress-strain hysteresis loops were recorded for each cycle.
 % The strain path is defined as the combination of axial strain $\varepsilon$ and shear strain $\gamma$ in a cycle under the biaxial loaded strain-controlled conditions, such as tension-compression (\ref{Fig:LoadPath}(a)), pure torsional (\ref{Fig:LoadPath}(b)), proportional (\ref{Fig:LoadPath}(c)) and non-proportional (\ref{Fig:LoadPath}(d,e,f)) strain paths.
 
+% \begin{table}[htbp]
+%   \centering
+%   \caption{Temperature and loading conditions of the isothermal tests program.}
+%     \begin{tabular}{p{2cm}p{2cm}p{3cm}p{3cm}p{2cm}}
+%     \toprule
+%     Test type & Temperature & Axial strain range & Shear strain range & Strain rate \\
+%           & $T$ [$^\circ$C] & $\pm \varepsilon _{mech}$ [\%] & $\pm \gamma/ \sqrt 3$ [\%] & $\dot \varepsilon_{\rm{eq}}$ [s$^{-1}$] \\
+%     \midrule
+%     TC-IF    & 300   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+%           & 400   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+%           & 550   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+%           & 650   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+%           & 650   & 0.80  & -     & $1.00\times 10^{-3}$ \\
+%           & 650   & 0.70  & -     & $1.00\times 10^{-3}$ \\
+%           & 650   & 0.60  & -     & $1.00\times 10^{-3}$ \\
+%           & 650   & 0.50  & -     & $1.00\times 10^{-3}$ \\
+%           & 650   & 0.45  & -     & $1.00\times 10^{-3}$ \\
+%           & 650   & 0.40  & -     & $6.40\times 10^{-3}$ \\
+%     \midrule
+%     TOR-IF   & 300   & -     & 0.60  & $6.00\times 10^{-4}$ \\
+%           & 300   & -     & 0.73  & $7.30\times 10^{-4}$ \\
+%           & 300   & -     & 0.85  & $8.50\times 10^{-4}$ \\
+%           & 300   & -     & 1.00  & $1.00\times 10^{-3}$ \\
+%           & 550   & -     & 0.85  & $8.50\times 10^{-4}$ \\
+%           & 650   & -     & 0.85  & $8.50\times 10^{-4}$ \\
+%     \midrule
+%     CIR-IF  & 300   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
+%           & 550   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
+%           & 650   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
+%           & 650   & 0.60  & 0.60  & $0.85\times 10^{-4}$ \\
+%     \midrule
+%     NPR-IF  & 300   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+%           & 550   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+%           & 650   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+%     \midrule
+%     CRO-IF  & 300   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+%           & 550   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+%           & 650   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+%     \bottomrule
+%     \end{tabular}%
+%   \label{tab:Loading-Conditions}%
+% \end{table}%
+
 \begin{table}[htbp]
   \centering
   \caption{Temperature and loading conditions of the isothermal tests program.}
     \begin{tabular}{p{2cm}p{2cm}p{3cm}p{3cm}p{2cm}}
     \toprule
     Test type & Temperature & Axial strain range & Shear strain range & Strain rate \\
-          & $T$ [$^\circ$C] & $\pm \varepsilon _{mech}$ [\%] & $\pm \gamma/ \sqrt 3$ [\%] & $\dot \varepsilon_{\rm{eq}}$ [s$^{-1}$] \\
+          & $T$ [K] & $\pm \varepsilon _{\rm mech}$ [\%] & $\pm \gamma/ \sqrt 3$ [\%] & $\dot \varepsilon_{\rm{eq}}$ [s$^{-1}$] \\
     \midrule
-    TC-IF    & 300   & 1.00  & -     & $1.00\times 10^{-3}$ \\
-          & 400   & 1.00  & -     & $1.00\times 10^{-3}$ \\
-          & 550   & 1.00  & -     & $1.00\times 10^{-3}$ \\
-          & 650   & 1.00  & -     & $1.00\times 10^{-3}$ \\
-          & 650   & 0.80  & -     & $1.00\times 10^{-3}$ \\
-          & 650   & 0.70  & -     & $1.00\times 10^{-3}$ \\
-          & 650   & 0.60  & -     & $1.00\times 10^{-3}$ \\
-          & 650   & 0.50  & -     & $1.00\times 10^{-3}$ \\
-          & 650   & 0.45  & -     & $1.00\times 10^{-3}$ \\
-          & 650   & 0.40  & -     & $6.40\times 10^{-3}$ \\
+    TC-IF    & 573   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+          & 673   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+          & 823   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+          & 923   & 1.00  & -     & $1.00\times 10^{-3}$ \\
+          & 923   & 0.80  & -     & $1.00\times 10^{-3}$ \\
+          & 923   & 0.70  & -     & $1.00\times 10^{-3}$ \\
+          & 923   & 0.60  & -     & $1.00\times 10^{-3}$ \\
+          & 923   & 0.50  & -     & $1.00\times 10^{-3}$ \\
+          & 923   & 0.45  & -     & $1.00\times 10^{-3}$ \\
+          & 923   & 0.40  & -     & $6.40\times 10^{-3}$ \\
     \midrule
-    TOR-IF   & 300   & -     & 0.60  & $6.00\times 10^{-4}$ \\
-          & 300   & -     & 0.73  & $7.30\times 10^{-4}$ \\
-          & 300   & -     & 0.85  & $8.50\times 10^{-4}$ \\
-          & 300   & -     & 1.00  & $1.00\times 10^{-3}$ \\
-          & 550   & -     & 0.85  & $8.50\times 10^{-4}$ \\
-          & 650   & -     & 0.85  & $8.50\times 10^{-4}$ \\
+    TOR-IF   & 573   & -     & 0.60  & $6.00\times 10^{-4}$ \\
+          & 573   & -     & 0.73  & $7.30\times 10^{-4}$ \\
+          & 573   & -     & 0.85  & $8.50\times 10^{-4}$ \\
+          & 573   & -     & 1.00  & $1.00\times 10^{-3}$ \\
+          & 823   & -     & 0.85  & $8.50\times 10^{-4}$ \\
+          & 923   & -     & 0.85  & $8.50\times 10^{-4}$ \\
     \midrule
-    CIR-IF  & 300   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
-          & 550   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
-          & 650   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
-          & 650   & 0.60  & 0.60  & $0.85\times 10^{-4}$ \\
+    CIR-IF  & 573   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
+          & 823   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
+          & 923   & 0.60  & 0.73  & $0.94\times 10^{-4}$ \\
+          & 923   & 0.60  & 0.60  & $0.85\times 10^{-4}$ \\
     \midrule
-    NPR-IF  & 300   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
-          & 550   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
-          & 650   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+    NPR-IF  & 573   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+          & 823   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+          & 923   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
     \midrule
-    CRO-IF  & 300   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
-          & 550   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
-          & 650   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+    CRO-IF  & 573   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+          & 823   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
+          & 923   & 1.00  & 1.00  & $1.44\times 10^{-4}$ \\
     \bottomrule
     \end{tabular}%
   \label{tab:Loading-Conditions}%
 \end{table}%
-
 The uniaxial tension-compression tests were performed at 573K, 673K, 823K and 923K.
 Triangular waveforms were applied at the predetermined strain rates over the strain range between $\pm 0.4\%$ and $\pm 1.0\%$.
 For uniaxial tests, the strain rates were below $1.0\times 10^{-3}\rm{s}^{-1}$.
@@ -689,15 +731,15 @@ It should be noted that the thin-walled tubular specimen was used in the TMF tes
 
 \begin{figure}[!htp]
   \centering
-  \includegraphics[width=10.0cm]{temperature_monitors.pdf}
-  \caption{caption.}
+  \includegraphics[width=16.0cm]{temperature_monitors.pdf}
+  \caption{Locations of the temperature monitors.}
   \label{Fig:temperature_monitors}
 \end{figure}
 
 \begin{figure}[!htp]
   \centering
-  \includegraphics[width=8.0cm]{plot_thermal_stability.pdf}
-  \includegraphics[width=8.0cm]{plot_thermal_stability_deviation.pdf}
+  \includegraphics[width=8.0cm]{plot_thermal_stability_K.pdf}
+  \includegraphics[width=8.0cm]{plot_thermal_stability_deviation_K.pdf}
   \caption{Varying temperatures in a tubular specimen with 25 mm of the gauge length, heated by an optimized induction coil. (a) Temperature variations of three thermal elements during a loading cycle. (b) Temperature deviations in the axial direction.}
   \label{Fig:thermal_stability}
 \end{figure}
@@ -841,7 +883,7 @@ As shown in \ref{Fig:plot_exp_PROTMF}, the experimental results of the PRO-IP TM
   \begin{overpic}[width=8.0cm]{plot_exp_pv_TC90.pdf}
     \put(84,13){\fcolorbox{white}{white}{(d)}}
   \end{overpic}
-  \caption{Experimental results of thermomechanical fatigue tests with temperature range 350-600$^{\circ}$C.
+  \caption{Experimental results of thermomechanical fatigue tests with temperature range 573-923K.
   (a) Half life stable hysteresis loops of in-phase(IP) tests.
   (b) Peak, valley and mean stresses of in-phase(IP) tests.
   (c) Half life stable hysteresis loops of out-of-phase(OP) tests.
