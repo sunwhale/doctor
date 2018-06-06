@@ -722,7 +722,7 @@ For simplicity, the filament can be abstracted as a cylindrical surface with the
     \put(84,65){\fcolorbox{white}{white}{(f)}}
   \end{overpic}
 
-  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double ended halogen lamp with tube base. (b) Mesh of the FEM model. (c) Mesh of the FEM model. (d) Mesh of the FEM model. (e) Mesh of the FEM model. (f) Mesh of the FEM model. }
+  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double ended halogen lamp with tube base. (b) Mesh of the FEM model. (c) Mesh of the FEM model. (d) Lamp power of 240W. (e) Lamp power of 350W. (f) Lamp power of 400W. }
   \label{Fig:OneLightRadiationSimulation}
 \end{figure}
 
@@ -866,23 +866,6 @@ The radiative transfer between the surfaces can be computed by ABAQUS through th
 %   \label{Fig:one_lamp_reflection}
 % \end{figure}
 
-In order to obtain the optical path and radiation distribution on the light-receiving plate, a commercial optical engineering software TracePro was used to simulate the process. 
-TracePro is the software program for designing and analyzing optical and illumination systems.
-It has been used in many projects for designing and analyzing all types of optical/illumination systems ranging from stray light suppression in telescopes and cameras to biomedical applications to LED modeling and solar collector modeling.
-A simulation model are created in TracePro, as shown in \ref{Fig:tracepro}.
-The simulation model consists of three parts: the reflector, filament and light-receiving plate.
-The upper and lower plate are ignored, because they are coated with the black paint, most of the light is absorbed when they irradiate on the plate.
-For simplicity, the spiral coil shaped filament are abstracted as a cylinder with a diameter of 1mm.
-The rays are traced through the systems to find energy distributions on the light-receiving plate.
-
-The ray tracing results show that 27.7\% of the light emitted by the halogen lamp shined on the light-receiving plate and the irradiance distribution are plotted in \ref{Fig:irradiance_map_D1.0mm_S0.0mm_gray}.
-The $x$ direction is the length of the plate and the $y$ direction is the height of the plate. Comparing \ref{Fig:irradiance_map_D1.0mm_S0.0mm_gray} with \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(d), we observed similar irradiance distributions between the experimental and computational results.
-
-The transient heat transfer model was created in ABAQUS, and the irradiance distributions obtained by TracePro are used as the heat flux boundary conditions.
-The light-receiving plate was divided into 128$\times$128 meshes, as shown in \ref{Fig:OneLightWithReflection}(a). Thus, the irradiance distribution obtained by TracePro was also divided into 128$\times$128 areas with their geometries and positions corresponding to the meshes one by one. For simplicity, the heat flux on each area is assumed as a constant, then the heat flux on each area can be calculated by using its average value. Using this method, we can get the approximate heat flux boundary conditions. The larger the mesh density, the more accurate the calculation results. Through the calculations with different mesh densities, it is observed that the 128$\times$128 meshes are sufficiently accurate for our experiment. 
-
-During the test, the halogen lamp was turned on for 200s then turned off. The transient heat transfer results at the running time 200s are shown in \ref{Fig:OneLightWithReflection}(b). \ref{Fig:OneLightWithReflection}(c) and (d) illustrate the comparison of the experimental and computational temperatures along the horizontal and vertical directions, with different reflection efficiencies. We observed the best agreement between the experimental and computational results with the reflection efficiency of 0.95. Therefore, the reflection efficiency of the gold coated reflector is determined as 0.95.
-
 \begin{figure}
   \centering
   \begin{overpic}[width=8.0cm]{tracepro_iso.png}
@@ -924,155 +907,22 @@ During the test, the halogen lamp was turned on for 200s then turned off. The tr
   \label{Fig:OneLightWithReflection}
 \end{figure}
 
-\section{Design of the radiation furnace}
-\noindent
-The TGMF testing system for the thin-walled tubular specimen is shown in \ref{Fig:TGMF_Test_System}. The testing system includes multiple subsystems such as loading, heating,  air cooling, and water cooling. These subsystems work cooperatively to ensure the mechanical load and temperature over the specimen gage section are simultaneously varied and independently controlled. The main facilities and their performance parameters of each subsystem are shown in Table \ref{Tab:TGMF_subsystem}.
+In order to obtain the optical path and radiation distribution on the light-receiving plate, a commercial optical engineering software TracePro was used to simulate the process. 
+TracePro is the software program for designing and analyzing optical and illumination systems.
+It has been used in many projects for designing and analyzing all types of optical/illumination systems ranging from stray light suppression in telescopes and cameras to biomedical applications to LED modeling and solar collector modeling.
+A simulation model are created in TracePro, as shown in \ref{Fig:tracepro}.
+The simulation model consists of three parts: the reflector, filament and light-receiving plate.
+The upper and lower plate are ignored, because they are coated with the black paint, most of the light is absorbed when they irradiate on the plate.
+For simplicity, the spiral coil shaped filament are abstracted as a cylinder with a diameter of 1mm.
+The rays are traced through the systems to find energy distributions on the light-receiving plate.
 
-The loading subsystem consists of the MTS model 370 hydraulic servo fatigue testing systems, the digital controller, extensometer, and the host computer. The fatigue testing systems can provide a tension/compression mechanical load of ±250kN. The mechanical load is transmitted to specimen through a fixture. 
-In order to meet the test requirements, the fixture for the thin-walled tubular specimen was designed as shown in FIG.
-The cooling air can enter the internal of the tubular specimen through the fixture.
-In order to reduce the additional bending moments and the bending stress in specimen, the fixture must provide a sufficiently high degree of coaxiality. Meanwhile, the frame of the MTS model 370 testing systems provides an alignment device, it can effectively reduce the additional bending moments in the specimen during the test.
-When the radiation furnace heats the specimen, it inevitably heats the fixture. Therefore, the fixture was made of a directionally solidified nickel base superalloy to ensure the strength of the fixture during the whole test process. A thread paste was used to avoid the sintering between the fixture and specimen.
+The ray tracing results show that 27.7\% of the light emitted by the halogen lamp shined on the light-receiving plate and the irradiance distribution are plotted in \ref{Fig:irradiance_map_D1.0mm_S0.0mm_gray}.
+The $x$ direction is the length of the plate and the $y$ direction is the height of the plate. Comparing \ref{Fig:irradiance_map_D1.0mm_S0.0mm_gray} with \ref{Fig:OneLightWithEllipseMirrorReflectionShow}(d), we observed similar irradiance distributions between the experimental and computational results.
 
-A radiant furnace is developed specifically for the TGMF tests.
-% 辐射炉的设计过程如图所示，包括辐射传热试验/模拟、CAD设计、制作加工、装配、控制系统设计等步骤。
-% 之间的章节已经介绍了椭圆柱面镜的辐射传热试验与数值计算结果。
-% 我们获取了卤素灯的辐射效率，镜面反射效率以及试件表面的发射率等信息。
-% 本研究中使用的试件标距段长度约为35cm，因此我们选取了Double ended halogen lamps with tube base.
+The transient heat transfer model was created in ABAQUS, and the irradiance distributions obtained by TracePro are used as the heat flux boundary conditions.
+The light-receiving plate was divided into 128$\times$128 meshes, as shown in \ref{Fig:OneLightWithReflection}(a). Thus, the irradiance distribution obtained by TracePro was also divided into 128$\times$128 areas with their geometries and positions corresponding to the meshes one by one. For simplicity, the heat flux on each area is assumed as a constant, then the heat flux on each area can be calculated by using its average value. Using this method, we can get the approximate heat flux boundary conditions. The larger the mesh density, the more accurate the calculation results. Through the calculations with different mesh densities, it is observed that the 128$\times$128 meshes are sufficiently accurate for our experiment. 
 
-The design process of the radiant furnace is shown in the figure, including radiative heat transfer test/simulation, CAD design, manufacturing, assembly, and control system design.
-The results of radiative heat transfer experiments and numerical calculations for the single lamp have been introduced in the above sections.
-The radiation efficiency, specular reflection efficiency, and emissivity of the surface are determined.
-The length of the gauge section of the specimen used in TGMF test is 30cm, and the total length of the specimen is 120cm. Consequently, the double ended halogen lamps with a length of 115cm were chosen. According to the heat conduction equation, the temperature gradient of the material is proportional to the heat flux vector. In order achieve a large temperature gradient, a large heat flux is required. The developed radiant furnace consists of 16 halogen lamps, and the powers of the lamps can be chosen as 400W or 800W for different requirements of the TGMF tests.
-
-CATIA is a multi-platform software suite for computer-aided design (CAD), computer-aided manufacturing (CAM) and computer-aided engineering (CAE).
-The parametric design, simulation assembly and shape optimization of the radiation furnace were performed by using the software CATIA.
-\ref{Fig:radiation_furnace_show_2} shows the CAD model of the radiation furnace in CATIA. A The dimension of the radiation furnace is 600$\times$800$\times$210
-
-In the present study, the lamp with the power of 400W was used. Thus, the radiation furnace has a total power of 6.4kW. Typical test data for a nickel-based superalloy tubular specimen are: heating, from 23$^\circ$C to 1400$^\circ$C in about 50 seconds, cooling from 1400$^\circ$C to 100$^\circ$C in about 20 seconds, stationary, temperature gradient of 30$^\circ$C/mm.
-
-
-
-% It is complex to create the radiation heating system directly.
-% Then the radiation furnace is suggested to divided into several subsystem as follows.
-The furnace includes the following subsystems:
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
-
-
-\begin{figure}[!htp]
-\centering\scalebox{0.65}{\includegraphics{Radiation_Furnace2.pdf}}
-\caption{Sketch of radiation furnace.}
-\label{Fig:Radiation_Furnace}
-\end{figure}
-
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=16cm]{radiation_furnace_show_2.pdf}
-	\caption{Sketch of radiation furnace.}
-	\label{Fig:radiation_furnace_show_2}
-\end{figure}
-
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=16cm]{DesignWithCATIA.png}
-	\caption{Design scheme of the radiation furnace with CATIA.}
-	\label{Fig:DesignWithCAITA}
-\end{figure}
-
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=16cm]{Heating_Specimen.jpg}
-	\caption{Specimen is heated by radiation.}
-	\label{Fig:Heating_Specimen}
-\end{figure}
-
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=16cm]{TGMF_Test_System.pdf}
-	\caption{Experimental apparatus of TGMF test system.}
-	\label{Fig:TGMF_Test_System}
-\end{figure}
-
-% \begin{figure}
-%   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-%   \nonumber
-%     \centering
-%     \includegraphics[width=3.0in]{MirrorBeforeOvergild.jpg}
-%     \centerline{(a) 镀金前的镜面单元体.}
-%     \label{fig:side:a}
-%   \end{minipage}%
-%   \begin{minipage}[t]{0.5\linewidth}
-%     \centering
-%     \includegraphics[width=3.0in]{MirrorAfterOvergild.jpg}
-%     \centerline{(b) 镀金后的镜面单元体.}
-%     \label{fig:side:b}
-%   \end{minipage}
-
-%   \caption{椭圆柱面镜的加工及镀金。}
-%   \label{Fig:MirrorOvergild}
-% \end{figure}
-
-%\begin{figure}[!htp]
-%\centering\scalebox{0.15}{\includegraphics{MTS370WithResistanceFurnace.jpg}}
-%\caption{MTS-370 轴向疲劳材料试验机与电阻式加热炉.}
-%\label{Fig:MTS370WithResistanceFurnace}
-%\end{figure}
-
-%\begin{figure}[!htp]
-%\centering\scalebox{0.15}{\includegraphics{MTS370WithRadiationFurnace.jpg}}
-%\caption{MTS-370 轴向疲劳材料试验机与辐射加热系统.}
-%\label{Fig:MTS370WithRadiationFurnace}
-%\end{figure}
-
-\section{TGMF test rig}
-\begin{table}[htbp]
-  \centering
-  \caption{Add caption}
-    \begin{tabular}{p{3cm}p{5cm}p{6cm}}
-    \toprule
-    Subsystem & Facility & Comments \\
-    \midrule
-    Loading  & Fatigue testing machine & MTS 370, $\pm$250kN \\
-          & Digtal controller & FlexTest 40 \\
-          & Extensometer & gauge length 12mm, range $\pm$20\% \\
-          & Host computer &  TestSuite$^{\rm TM}$ Multipurpose Software\\
-    \midrule
-    Radiation furnace & Halogen lamps & 400W/800W \\
-          & Thermocouples & K/S/R-type \\
-          & Temperature input module & 8-Channel \\
-          & Infrared thermometer & measuring range -50 to 2000$^\circ$C \\
-          & Reflector & elliptic cylinders \\
-          & Temperature controller & output 0-10V \\
-          & Power Regulator & AC 180V-460V, 100A \\
-          & Alarm & 4 temperature monitors \\
-    \midrule
-    Air cooling & Air compressor & 2.4kW \\
-          & Air dryer & maximum allowable pressure 16bar \\
-          & Metering valve & maximum volume flow 10m$^3$/h \\
-          & Air pressure gauge & measuring range 0-14bar \\
-          & Cooling passage & 4 manifolds, 32 lamp holders and flexible pipes \\
-    \midrule
-    Water cooling & Industrial water-cooling machine & 10kW, outlet water temperature from 10 to 18$^\circ$C \\
-          & Cooling passage & fixtures and cooling passages in the radiation furnace \\
-    \bottomrule
-    \end{tabular}%
-  \label{Tab:TGMF_subsystem}%
-\end{table}%
-
-\begin{itemize}
-\item \textbf{Quartz lamp alignment device} includes 16 halogen, its power supply circuit and position adjusting device.
-\item \textbf{Temperature control system} includes a controller, .
-\item \textbf{Switch and circuit} includes 16 halogen, its power supply circuit and position adjusting device.
-
-\item \textbf{Quartz lamp radiation heating system} includes 16 halogen, its power supply circuit and position adjusting device.
-\item \textbf{Air cooling system for the halogen lamps} includes an air compressor, breathable lamp holders and four air manifolds.
-\item \textbf{Air Cooling system for inner and outer surface of the specimen } is to realize the aim of fast cooling. Two hollow extend clamp are manufactured with cooling air pipe connected to each side.
-
-\item \textbf{Water cooling system for the mirrors.}
-\item \textbf{Temperature measurement system.}
-\item \textbf{Strain measurement system.}
-\item \textbf{Temperature control system.}
-\end{itemize}
+During the test, the halogen lamp was turned on for 200s then turned off. The transient heat transfer results at the running time 200s are shown in \ref{Fig:OneLightWithReflection}(b). \ref{Fig:OneLightWithReflection}(c) and (d) illustrate the comparison of the experimental and computational temperatures along the horizontal and vertical directions, with different reflection efficiencies. We observed the best agreement between the experimental and computational results with the reflection efficiency of 0.95. Therefore, the reflection efficiency of the gold coated reflector is determined as 0.95.
 
 \section{Extensometer}
 \noindent
@@ -1149,6 +999,176 @@ The elongation is read from the dial scale of the micrometer head. This can be u
 \caption{Extensometer calibrator GWB-200JA.}
 \label{Fig:Calibration}
 \end{figure}
+
+\section{Design of the radiation furnace}
+\noindent
+% The radiant furnace is developed specifically for the TGMF tests.
+% 辐射炉的设计过程如图所示，包括辐射传热试验/模拟、CAD设计、制作加工、装配、控制系统设计等步骤。
+% 之间的章节已经介绍了椭圆柱面镜的辐射传热试验与数值计算结果。
+% 我们获取了卤素灯的辐射效率，镜面反射效率以及试件表面的发射率等信息。
+% 本研究中使用的试件标距段长度约为35cm，因此我们选取了Double ended halogen lamps with tube base.
+The design process of the radiant furnace is shown in the figure, including radiative heat transfer test/simulation, CAD design, manufacturing, assembly, and control system design.
+The results of radiative heat transfer experiments and numerical calculations for the single lamp have been introduced in the above sections.
+The radiation efficiency, specular reflection efficiency, and emissivity of the surface are determined.
+The length of the gauge section of the specimen used in TGMF test is 30cm, and the total length of the specimen is 120cm. Consequently, the double ended halogen lamps with a length of 115cm were chosen. According to the heat conduction equation, the temperature gradient of the material is proportional to the heat flux vector. In order achieve a large temperature gradient, a large heat flux is required. The developed radiant furnace consists of 16 halogen lamps, and the powers of the lamps can be chosen as 400W or 800W for different requirements of the TGMF tests.
+
+CATIA is a multi-platform software suite for computer-aided design (CAD), computer-aided manufacturing (CAM) and computer-aided engineering (CAE).
+The parametric design, simulation assembly and shape optimization of the radiation furnace were performed by using the software CATIA.
+During the test, we must ensure that the relative position of the radiant furnace and the specimen remains unchanged. An aluminum alloy frame was used to create the support system of the radiation furnace. In order to reduce the effect of vibration, the support system is fixed on the column of the testing machine. The levelness of the support system is adjustable through a screw structure. \ref{Fig:radiation_furnace_show_2} shows the CAD model of the radiation furnace in CATIA. The dimension of the radiation furnace is about 380mm$\times$380mm$\times$210mm and the dimension of the support system is 600mm$\times$800mm. The radiation furnace can match with most of the fatigue testing machines.
+
+\ref{Fig:radiation_furnace_show} shows that the radiation furnace includes two windows for observation. One window is for strain measurement and the other window is for temperature measurement. 
+The strain measurement window can match with the high temperature extensometer or digital image correlation (DIC) equipment.
+And the temperature measurement window can match with the thermocouple or infrared thermometer.
+A quartz glass tube is an optional accessory, as shown in \ref{Fig:radiation_furnace_show}. The quartz glass tube can change the irradiance distribution through its refraction effect. When the diameter of the specimen is small, the quartz tube can be used to further focus the light. Meanwhile, the quartz glass tube can form a sealed cavity, in order to reduce the effect of external air flow during the test. As discussed in the above section, points of the source that are not exactly at the focus line of the elliptical cylinder will be magnified and defocused at the image. In practice, the filament is not completely on the central axis of the halogen lamp due to manufacturing errors. Therefore, an adjustable lamp holder are developed to finely tune the position of the lamp, in order to make the filament coaxial with the focus line of the elliptic cylindrical mirror.
+
+In the present study, the lamp with the power of 400W was used. Thus, the radiation furnace has a total power of 6.4kW. A power regulator was used to control the voltage of the halogen lamps. The 16 lamps are connected in parallel to the power regulator to ensure the same voltage of each lamp at the same time. Therefore, a uniform radiation intensity in the circumferential direction of the specimen can be achieved.
+
+Typical test data for a nickel-based superalloy tubular specimen are: heating, from 23$^\circ$C to 1400$^\circ$C in about 50 seconds, cooling from 1400$^\circ$C to 100$^\circ$C in about 20 seconds, stationary, temperature gradient of 30$^\circ$C/mm.
+
+
+% It is complex to create the radiation heating system directly.
+% Then the radiation furnace is suggested to divided into several subsystem as follows.
+% The furnace includes the following subsystems:
+
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=16cm]{radiation_furnace_show_2.pdf}
+	\caption{Design scheme of the radiation furnace with its support system.}
+	\label{Fig:radiation_furnace_show_2}
+\end{figure}
+
+\begin{figure}[!htp]
+	\centering
+	% \includegraphics[width=16cm]{DesignWithCATIA.png}
+	\includegraphics[width=16cm]{radiation_furnace_show.pdf}
+	\caption{Schematic diagram of the radiation furnace.}
+	\label{Fig:radiation_furnace_show}
+\end{figure}
+
+\begin{figure}[!htp]
+\centering\scalebox{0.65}{\includegraphics{Radiation_Furnace2.pdf}}
+\caption{Schematic diagram of the control system of the radiation furnace.}
+\label{Fig:Radiation_Furnace}
+\end{figure}
+
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{MirrorBeforeOvergild.jpg}
+%     \centerline{(a) 镀金前的镜面单元体.}
+%     \label{fig:side:a}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{MirrorAfterOvergild.jpg}
+%     \centerline{(b) 镀金后的镜面单元体.}
+%     \label{fig:side:b}
+%   \end{minipage}
+
+%   \caption{椭圆柱面镜的加工及镀金。}
+%   \label{Fig:MirrorOvergild}
+% \end{figure}
+
+%\begin{figure}[!htp]
+%\centering\scalebox{0.15}{\includegraphics{MTS370WithResistanceFurnace.jpg}}
+%\caption{MTS-370 轴向疲劳材料试验机与电阻式加热炉.}
+%\label{Fig:MTS370WithResistanceFurnace}
+%\end{figure}
+
+%\begin{figure}[!htp]
+%\centering\scalebox{0.15}{\includegraphics{MTS370WithRadiationFurnace.jpg}}
+%\caption{MTS-370 轴向疲劳材料试验机与辐射加热系统.}
+%\label{Fig:MTS370WithRadiationFurnace}
+%\end{figure}
+
+\section{TGMF testing system}
+\noindent
+The TGMF testing system for the thin-walled tubular specimen is shown in \ref{Fig:TGMF_Test_System}. The testing system includes multiple subsystems such as loading, heating,  air cooling, and water cooling. These subsystems work cooperatively to ensure the mechanical load and temperature over the specimen gage section are simultaneously varied and independently controlled. The main facilities and their performance parameters of each subsystem are shown in Table \ref{Tab:TGMF_subsystem}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Main equipments of TGMF testing system.}
+    \begin{tabular}{p{3cm}p{4.5cm}p{6.5cm}}
+    \toprule
+    Subsystem & Facility & Comments \\
+    \midrule
+    Loading  & Fatigue testing machine & MTS 370, $\pm$250kN \\
+          & Digtal controller & FlexTest 40 \\
+          & Extensometer & gauge length 12mm, range $\pm$20\% \\
+          & Host computer &  TestSuite$^{\rm TM}$ Multipurpose Software\\
+    \midrule
+    Heating & Halogen lamps & 400W/800W \\
+          & Thermocouples & K/S/R-type \\
+          & Temperature input module & 8-channel \\
+          & Infrared thermometer & measuring range -50 to 2000$^\circ$C \\
+          & Reflector & elliptic cylinders \\
+          & Temperature controller & output 0-10V \\
+          & Power Regulator & AC 180V-460V, 100A \\
+          & Alarm & 4 temperature monitors \\
+    \midrule
+    Air cooling & Air compressor & 2.4kW \\
+          & Air dryer & maximum allowable pressure 16bar \\
+          & Metering valve & maximum volume flow 10m$^3$/h \\
+          & Air pressure gauge & measuring range 0-14bar \\
+          & Cooling passage & 4 manifolds, 32 lamp holders and flexible pipes \\
+    \midrule
+    Water cooling & Water-cooling machine & 10kW, outlet water temperature 18$^\circ$C \\
+          & Cooling passage & fixtures, cooling passages of the radiation furnace and flexible pipes \\
+    \bottomrule
+    \end{tabular}%
+  \label{Tab:TGMF_subsystem}%
+\end{table}%
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=16cm]{Heating_Specimen.jpg}
+	\caption{Specimen is heated by radiation.}
+	\label{Fig:Heating_Specimen}
+\end{figure}
+
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=16cm]{TGMF_Test_System.pdf}
+	\caption{Experimental apparatus of TGMF test system.}
+	\label{Fig:TGMF_Test_System}
+\end{figure}
+
+The loading subsystem consists of the MTS model 370 hydraulic servo fatigue testing systems, the digital controller, extensometer, and the host computer. The fatigue testing systems can provide a tension/compression mechanical load of ±250kN. The mechanical load is transmitted to specimen through a fixture. 
+In order to meet the test requirements, the fixture for the thin-walled tubular specimen was designed as shown in FIG.
+The cooling air can enter the internal of the tubular specimen through the fixture.
+In order to reduce the additional bending moments and the bending stress in specimen, the fixture must provide a sufficiently high degree of coaxiality. Meanwhile, the frame of the MTS model 370 testing systems provides an alignment device, it can effectively reduce the additional bending moments in the specimen during the test.
+When the radiation furnace heats the specimen, it inevitably heats the fixture. Therefore, the fixture was made of a directionally solidified nickel base superalloy to ensure the strength of the fixture during the whole test process. A thread paste was used to avoid the sintering between the fixture and specimen.
+The extensometer is Epsilon-3448 with a gauge length of 10mm and a measuring range of $\pm$20\%, as introduced in the above section. The PID gains of the extensometer have to be carefully tuned for different materials.
+
+The heating subsystem is used to apply a temperature load to the test specimen. The equipments include the radiation furnace, power supply, temperature monitors, temperature controller and so on. The heating subsystem requires sufficient heating power and the ability of dynamically adjust the heating power according to a given temperature.
+The temperature of the specimen was measured by the thermocouples. In practice, the choice of the diameter of the thermocouple wire is very important. A thick thermocouple wire will cause a delay in the temperature measurement. It leads to a temperature deviation between the thermocouple and the specimen, and affects the response of the feedback control system. In order to improve the accuracy of temperature measurement and increase the response speed of thermocouples, the diameter of the thermocouple wire should be as smaller as possible. Therefore, the thermocouple wires with the diameter of 0.25mm were used.
+However, K-type thermocouples will suffer from oxidation failure at high temperature over a long period of time. The smaller the diameter of the thermocouple, the shorter the oxidation failure time at high temperatures. Therefore, the K-type thermocouples with the diameter of 0.25mm should be used in the TGMF testing below 800$^\circ$C and the R and S-type thermocouples were used in the TGMF testing above 800$^\circ$C.
+
+A temperature controller was used to control the temperature of the specimen.
+The controller accepted the temperature sensor (thermocouple or infrared thermometer) as input and compare the actual temperature to the desired control temperature. It will then provide an output to the power regulator to control the luminance of the lamps. 
+The temperature controller of the radiation furnace is a proportional–integral–derivative controller (PID controller). The values of proportional, integral, and derivative gains of the PID controller can be determined by the PID tuning process.
+However, the emissivity of the specimen and the temperature range will influence the PID gains of the temperature controller. Therefore, for the specimen with and without the TBC, the PID gains should be tuned respectively.
+
+
+
+
+
+% \begin{itemize}
+% \item \textbf{Quartz lamp alignment device} includes 16 halogen, its power supply circuit and position adjusting device.
+% \item \textbf{Temperature control system} includes a controller, .
+% \item \textbf{Switch and circuit} includes 16 halogen, its power supply circuit and position adjusting device.
+
+% \item \textbf{Quartz lamp radiation heating system} includes 16 halogen, its power supply circuit and position adjusting device.
+% \item \textbf{Air cooling system for the halogen lamps} includes an air compressor, breathable lamp holders and four air manifolds.
+% \item \textbf{Air Cooling system for inner and outer surface of the specimen } is to realize the aim of fast cooling. Two hollow extend clamp are manufactured with cooling air pipe connected to each side.
+
+% \item \textbf{Water cooling system for the mirrors.}
+% \item \textbf{Temperature measurement system.}
+% \item \textbf{Strain measurement system.}
+% \item \textbf{Temperature control system.}
+% \end{itemize}
 
 % \section{Forced convection in turbulent pipe flow}
 
@@ -1261,7 +1281,8 @@ The elongation is read from the dial scale of the micrometer head. This can be u
 % \end{table}%
 
 
-\section{TGMF code}
+\section{Process of TGMF testing}
+\noindent
 Therefore, we decided to develop and build a radiant oven for our purposes. In general, a radiant oven is a furnace in which radiation is used to heat. The simplest case of a radiant furnace is shown in Figure 3.1.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
