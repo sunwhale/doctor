@@ -1099,8 +1099,8 @@ The TGMF testing system for the thin-walled tubular specimen is shown in \ref{Fi
           & Extensometer & gauge length 12mm, range $\pm$20\% \\
           & Host computer &  TestSuite$^{\rm TM}$ Multipurpose Software\\
     \midrule
-    Heating & Halogen lamps & 400W/800W \\
-          & Thermocouples & K/S/R-type \\
+    Heating & Halogen lamp & 400W/800W \\
+          & Thermocouple & K/S/R-type \\
           & Temperature input module & 8-channel \\
           & Infrared thermometer & measuring range -50 to 2000$^\circ$C \\
           & Reflector & elliptic cylinders \\
@@ -1146,12 +1146,21 @@ The heating subsystem is used to apply a temperature load to the test specimen. 
 The temperature of the specimen was measured by the thermocouples. In practice, the choice of the diameter of the thermocouple wire is very important. A thick thermocouple wire will cause a delay in the temperature measurement. It leads to a temperature deviation between the thermocouple and the specimen, and affects the response of the feedback control system. In order to improve the accuracy of temperature measurement and increase the response speed of thermocouples, the diameter of the thermocouple wire should be as smaller as possible. Therefore, the thermocouple wires with the diameter of 0.25mm were used.
 However, K-type thermocouples will suffer from oxidation failure at high temperature over a long period of time. The smaller the diameter of the thermocouple, the shorter the oxidation failure time at high temperatures. Therefore, the K-type thermocouples with the diameter of 0.25mm should be used in the TGMF testing below 800$^\circ$C and the R and S-type thermocouples were used in the TGMF testing above 800$^\circ$C.
 
-A temperature controller was used to control the temperature of the specimen.
+The temperature controller was used to control the temperature of the specimen.
 The controller accepted the temperature sensor (thermocouple or infrared thermometer) as input and compare the actual temperature to the desired control temperature. It will then provide an output to the power regulator to control the luminance of the lamps. 
-The temperature controller of the radiation furnace is a proportional–integral–derivative controller (PID controller). The values of proportional, integral, and derivative gains of the PID controller can be determined by the PID tuning process.
+The temperature controller of the radiation furnace is a proportional–integral–derivative (PID) controller. The values of proportional, integral, and derivative gains of the PID controller can be determined by the PID tuning process.
 However, the emissivity of the specimen and the temperature range will influence the PID gains of the temperature controller. Therefore, for the specimen with and without the TBC, the PID gains should be tuned respectively.
 
+The air cooling subsystem consists of two air compressors, an air dryer, metering valves, air pressure gauges and cooling passages. 
+The two air compressor were used to provide the cooling air of the specimen and the lamp holders, separately.
+Each air compressor has a power of 2.4kW and provides compressed air of 0.4-0.8MPa. The compressed air with a pressure of 0.7MPa is filtered through the air dryer and output to the metering valve. The air dryer is used for removing water vapor from the compressed air.
+During the TGMF testing, the pressure and the volume flow of the compressed air have to be kept as constants. The metering valve was used to control the volume flow of the compressed air.
+The air cooling subsystem also provides compressed air for the lamp holders.
+The duration of the TGMF test is usually long and the lamp holders have to be cooled to ensure that they can work properly.
 
+The water cooling subsystem consists of a 10kW industrial water-cooling machine, valves, and corresponding pipes. 
+The water was cooled by the machine and circulated through the pipes to cool the test equipment. 
+The equipments of the TGMF testing system need to be cooled, such as the fixture system and the radiation furnace.
 
 
 
@@ -1283,34 +1292,69 @@ However, the emissivity of the specimen and the temperature range will influence
 
 \section{Process of TGMF testing}
 \noindent
-Therefore, we decided to develop and build a radiant oven for our purposes. In general, a radiant oven is a furnace in which radiation is used to heat. The simplest case of a radiant furnace is shown in Figure 3.1.
+There are no relevant standards for TGMF testing. Because of the test processes of the TGMF and TMF are very similar, according to the testing process of TMF, the concepts in TGMF testing are defined as same as them in the TMF testing, such as:
+\begin{itemize}
+  \item {Thermal strain}, $\varepsilon_{\rm{th}}$,
+  \item {Mechanical strain}, $\varepsilon_{\rm{mech}}$,
+  \item {Total strain}, $\varepsilon_{\rm{tot}}=\varepsilon_{\rm{mech}}+\varepsilon_{\rm{th}}$,
+  \item {Loading ratio}, $R_{\varepsilon}=\varepsilon_{\rm{mech,min}}/\varepsilon_{\rm{mech,max}}$.
+\end{itemize}
 
-% Table generated by Excel2LaTeX from sheet 'Sheet1'
-\begin{table}[htbp]
-  \centering
-  \caption{Add caption}
-    \begin{tabular}{p{4cm}p{10cm}}
-    \toprule
-    Item  & Requirement \\
-    \midrule
-    Force transducer & The force transducer shall comply with the specifications in Practices E4 and E467. \\
-    Extensometers & The extensometers should qualify as Class B-2 or better in accordance with Practice E83. \\
-    Heating device & Specimen heating can be accomplished by various techniques including induction, direct resistance, radiant, or forced air heating. \\
-    Temperature measurement & The specimen temperature shall be measured using thermocouples in contact with the specimen surface in conjunction with an appropriate temperature indicating device or non-contacting sensors that are adjusted for emisivity changes by comparison to a reference such as thermocouples. \\
-    Temperature command & Through out the duration of the test, the temperatures indicated by the control sensor; for example, thermocouples shall not vary by more than 6 2 K from the corresponding values of the initial temperature cycle. \\
-    Temperature gradient & The maximum allowable axial temperature gradient is $\pm1\% T_{max}$K or $\pm3$K  \\
-    \bottomrule
-    \end{tabular}%
-  \label{tab:addlabel}%
-\end{table}%
+According to the standards discussed above, 
 
+The implemented steps of the strain-controlled TGMF testing is shown in \ref{Fig:tgmf_code}, in the form of a flow diagram. The flow diagram similar to the flow diagram of TMF (see \ref{Fig:tmf_code}). Comparing \ref{Fig:tgmf_code} with \ref{Fig:tmf_code}, based on the TMF test, the measurement and verification of the internal cooling air are added into the flow diagram, as well as the calibration of the radiation furnace.
 
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=16.0cm]{temperature_monitors_tgmf.pdf}
+	\caption{Locations of the temperature monitors.}
+	\label{Fig:temperature_monitors_tgmf}
+\end{figure}
+
+\begin{figure}[!htp]
+	\centering
+	\begin{overpic}[width=8.0cm]{plot_thermal_stability_tgmf_K.pdf}
+		\put(84,65){\fcolorbox{white}{white}{(a)}}
+	\end{overpic}
+	\begin{overpic}[width=8.0cm]{plot_thermal_stability_tgmf_deviation_K.pdf}
+		\put(84,65){\fcolorbox{white}{white}{(b)}}
+	\end{overpic}
+	\caption{Varying temperatures in a tubular specimen with the gauge length of 15mm, heated by the radiation furnace. (a) Temperature variations of three thermal elements during a loading cycle. (b) Temperature deviations in the axial direction.}
+	\label{Fig:thermal_stability_TGMF}
+\end{figure}
+
+The light reflected off the upper and lower gold-coated walls leads to the highest intensity of radiation in the middle section of the specimen.
+This will cause a temperature gradient along the axial direction of the specimen and the highest temperature will occur at the middle section of the specimen during the TGMF test.
+Unlike the induction heating, the axial temperature gradient of the specimen is difficult to adjust by modifying the radiation furnace.
+Therefore, the influence of the axial temperature gradient have to be considered in the computation.
+
+In order to obtain the temperature distribution of the specimen during the TGMF testing, temperatures at the upper, middle and lower positions in the gauge section of the specimen were measured by the thermocouples wrapped around the specimen. \ref{Fig:temperature_monitors_tgmf} shows the locations of the thermocouples. In the study, the temperature range of the TGMF testing is from 573 to 923K. The cycle period was predetermined as 240s with a triangular shape temperature cycle, thus the heating and cooling rates were about 2.2K/s.
+\ref{Fig:thermal_stability_TGMF}(a) shows the dynamic temperature measurement during a stable TGMF cycle and \ref{Fig:thermal_stability_TGMF}(b) shows the temperature deviations between each thermocouple and the temperature command.
+
+% Therefore, we decided to develop and build a radiant oven for our purposes. In general, a radiant oven is a furnace in which radiation is used to heat. The simplest case of a radiant furnace is shown in Figure 3.1.
 % 通常意义上讲，热疲劳试验时被测试件的试验环境是高温且温度不恒定，甚至温度是急剧反复变化的，这样被测试件会由于温度的梯度循环引起热应力循环（或热应变循环），从而产生疲劳破坏现象。热疲劳试验中，试件的外形尺寸和试验温度是影响试件疲劳特性的主要因素。目前，常见的热疲劳试验箱的高温试验温度范围约为200~500℃，具备温度梯度循环变化能力，有些超高温疲劳试验箱的温度可达几千摄氏度。传统的疲劳分析往往将热载荷转化为机械载荷加以分析，但这种方法无法考察温度和机械载荷叠加交互作用的影响，直至20世纪80年代后期才出现了热/机械疲劳试验系统。热/机械疲劳试验系统将热疲劳和机械疲劳耦合在一起，根据试件材料不同的应用环境，模拟试件实际的工作环境，更好地研究材料在热机疲劳下的损伤行为，从而得出更为准确的疲劳特性。在热/机械疲劳试验中，加载应力的大小和频率会直接影响到试件的断裂寿命，通常在试验频率范围内，疲劳寿命随着试验频率的降低而减少，高频时加载循环快，更容易出现疲劳损伤；低频时加载周期慢，除疲劳损伤外还容易出现蠕变损伤[11]。所以在疲劳试验时应根据需要选择合适的加载工况。
-Generally, test environment of the specimen is high temperature but not constant in the thermal fatigue test. Even the temperature changes abruptly and repeatedly. So that the specimen would cause thermal stress cycle or thermal strain cycle due to gradient circulation of temperature, resulting in fatigue damage. In the thermal fatigue test, the dimensions of the specimen and the test temperature are the main factors affecting the fatigue characteristics of the specimen. At present, the common thermal fatigue test chamber has a high temperature range from 200°C to 500°C. It has a capability of temperature gradient cyclic change. Some ultra-high temperature fatigue test chambers can reach several thousand degrees Celsius. The thermal load was often translated into mechanical load in traditional fatigue analysis, but this method cannot examine the influence of the interaction between temperature and mechanical load until the late 1980s when the thermal/mechanical fatigue test system appeared. The thermal/mechanical fatigue test system couples thermal fatigue and mechanical fatigue, and simulates the actual working environment of the specimen according to the different application environments of the specimen material. Having a better study on the damage behavior of the material under thermal fatigue lead to more accurate fatigue characteristics. In the thermal/mechanical fatigue test, the magnitude and frequency of the loading stress will directly affect the fracture life of the specimen. Usually within the test frequency range, the fatigue life decreases with the decrease of the test frequency. The loading cycle becomes faster at high frequencies, which is prone to fatigue damage. But at low frequencies loading cycle becomes slow, which is prone to creep damage in except fatigue damage[11]. Therefore, in the fatigue test, suitable loading conditions should be selected according to the requirements.
+% Generally, test environment of the specimen is high temperature but not constant in the thermal fatigue test. Even the temperature changes abruptly and repeatedly. So that the specimen would cause thermal stress cycle or thermal strain cycle due to gradient circulation of temperature, resulting in fatigue damage. In the thermal fatigue test, the dimensions of the specimen and the test temperature are the main factors affecting the fatigue characteristics of the specimen. At present, the common thermal fatigue test chamber has a high temperature range from 200°C to 500°C. It has a capability of temperature gradient cyclic change. Some ultra-high temperature fatigue test chambers can reach several thousand degrees Celsius. The thermal load was often translated into mechanical load in traditional fatigue analysis, but this method cannot examine the influence of the interaction between temperature and mechanical load until the late 1980s when the thermal/mechanical fatigue test system appeared. The thermal/mechanical fatigue test system couples thermal fatigue and mechanical fatigue, and simulates the actual working environment of the specimen according to the different application environments of the specimen material. Having a better study on the damage behavior of the material under thermal fatigue lead to more accurate fatigue characteristics. In the thermal/mechanical fatigue test, the magnitude and frequency of the loading stress will directly affect the fracture life of the specimen. Usually within the test frequency range, the fatigue life decreases with the decrease of the test frequency. The loading cycle becomes faster at high frequencies, which is prone to fatigue damage. But at low frequencies loading cycle becomes slow, which is prone to creep damage in except fatigue damage[11]. Therefore, in the fatigue test, suitable loading conditions should be selected according to the requirements.
 
+% \begin{table}[htbp]
+%   \centering
+%   \caption{Add caption}
+%     \begin{tabular}{p{4cm}p{10cm}}
+%     \toprule
+%     Item  & Requirement \\
+%     \midrule
+%     Force transducer & The force transducer shall comply with the specifications in Practices E4 and E467. \\
+%     Extensometers & The extensometers should qualify as Class B-2 or better in accordance with Practice E83. \\
+%     Heating device & Specimen heating can be accomplished by various techniques including induction, direct resistance, radiant, or forced air heating. \\
+%     Temperature measurement & The specimen temperature shall be measured using thermocouples in contact with the specimen surface in conjunction with an appropriate temperature indicating device or non-contacting sensors that are adjusted for emisivity changes by comparison to a reference such as thermocouples. \\
+%     Temperature command & Through out the duration of the test, the temperatures indicated by the control sensor; for example, thermocouples shall not vary by more than 6 2 K from the corresponding values of the initial temperature cycle. \\
+%     Temperature gradient & The maximum allowable axial temperature gradient is $\pm1\% T_{max}$K or $\pm3$K  \\
+%     \bottomrule
+%     \end{tabular}%
+%   \label{tab:addlabel}%
+% \end{table}%
 
 % 热梯度机械疲劳试验由机械载荷循环，温度循环和内部冷却空气组成。机械循环由MTS液压伺服试验机实现，试件的轴对称安装由对中系统来保证。温度循环由聚光辐射加热系统来实现，卤素灯管发出的光线通过椭圆柱状镜面反射到试件的工作段。温度循环冷却由自然对流方式来实现，它较之强风冷却系统引起的温度梯度要小。图1给出了试件安装在试验机夹具上的示意图。高温应变测量系统和热电偶测温系统组成两个闭合回路，通过计算机控制软件，自动测量与控制应变和温度循环的幅度、频率及相位关系。应变的测量和控制是由高精度高温应变引伸计来实现的，为了避免高温的影响，引伸计主体安装在加热炉外侧，引伸计上的两根头部为楔形的陶瓷探棒穿过炉体，夹持在试件上。要想测量温度变化的每一个瞬态值并加以控制，必须采用高灵敏度的热电偶探头。我们选用了直径仅为0.25mm的Cr-Al合金快速响应热电偶，通过缠绕的方式将热电偶固定在试件外表面，热电偶两端点由弹簧构成稳定的拉力，在试件承受拉压载荷，其直径不断变化的情况下，热电偶工作段仍能够压紧在试件上，得到试件表面的真实温度。应变循环和温度循环的叠加构成相同频率的“同相位”和“反相位”两种形式，在同相位实验中，最大拉应变对应于最高温度;而在反相位实验中，最大压应变对应于最高温度。为了保证机械应变循环和温度循环频率相位上的精度，在控制程序中编入了时钟校对系统，以消除频率积累误差。所采用的温度循环范围有两种:250～500℃和250～650℃。所有试验的总应变控制范围(机械应变与温度产生的应变之和)均为±0。8\%，应变变化率为0。0002/秒。为了消除试件内壁由于温度迟滞产生的温度梯度效应，在最大和最小应变处有10秒的保持时间。图2给出了计算机控制的温度循环和机械循环两个闭路系统的示意图。
-The thermal gradient mechanical fatigue test consisted of mechanical load cycling, temperature cycling, and internal cooling air. The mechanical cycle is realized by the MTS hydraulic servo testing machine. The axisymmetric installation of the specimen is ensured by the centering system. The temperature cycle is achieved by a concentrating radiant heating system. The light emitted by the halogen lamp is reflected by the elliptical cylinder mirror to the working section of the specimen. The temperature cycle cooling is achieved by the natural convection method, which has a lower temperature gradient than the strong wind cooling system. Figure 1 shows a schematic view of the specimen mounted on the fixture of the testing machine. The high-temperature strain measurement system and the thermocouple temperature measurement system form two closed loops. Through the computer control software, the amplitude, frequency, and phase relationship of the strain and temperature cycle are automatically measured and controlled. Strain measurement and control are achieved by high-precision high-temperature strain extensometers. To avoid the effect of high temperature, the extensometer body is mounted on the outside of the furnace. Two wedge-shaped ceramic probes on the extensometer penetrate the furnace body, and they are clamped tn the specimen. To measure and control every transient temperature change, a highly sensitive thermocouple probe must be used. We chose a Cr-Al alloy rapid response thermocouple with a diameter of only 0.25mm. The thermocouple was fixed on the outer surface of the specimen by winding. The thermocouple was stabilized at both ends by a spring. when the tensile load is applied to the specimen, and the diameter of the thermocouple is constantly changing, the working section of the thermocouple can still be pressed against the specimen to obtain the true temperature of the surface of the specimen. The superposition of the strain cycle and the temperature cycle constitutes two forms of the "in-phase" and "anti-phase" with the same frequency. In the in-phase experiment, the maximum tensile strain corresponds to the highest temperature, but in the anti-phase experiment, the maximum compressive strain corresponds to the highest temperature. In order to ensure the accuracy of the frequency phase of the mechanical strain cycle and the temperature cycle, a clock calibration system was incorporated in the control program to eliminate the frequency accumulation error. There are two types of temperature cycling used: 250-500°C and 250-650°C. The total strain control range (the sum of mechanical strain and temperature-induced strain) of all tests was ±0.8\%, and the rate of strain change was 0.002/s. In order to eliminate the effect of temperature gradients on the inner wall of the specimen due to temperature hysteresis, there is a holding time of 10 seconds at the maximum and minimum strains. Figure 2 shows a schematic diagram of two closed circuit systems for computer-controlled temperature cycling and mechanical cycling.
+The thermal gradient mechanical fatigue test consists of mechanical loading cycle, temperature cycling, and internal cooling air. The mechanical cycle is realized by the MTS hydraulic servo testing machine. The axisymmetric installation of the specimen is ensured by the centering system. The temperature cycle is achieved by a concentrating radiant heating system. The light emitted by the halogen lamp is reflected by the elliptical cylinder mirror to the working section of the specimen. The temperature cycle cooling is achieved by the natural convection method, which has a lower temperature gradient than the strong wind cooling system. Figure 1 shows a schematic view of the specimen mounted on the fixture of the testing machine. The high-temperature strain measurement system and the thermocouple temperature measurement system form two closed loops. Through the computer control software, the amplitude, frequency, and phase relationship of the strain and temperature cycle are automatically measured and controlled. Strain measurement and control are achieved by high-precision high-temperature strain extensometers. To avoid the effect of high temperature, the extensometer body is mounted on the outside of the furnace. Two wedge-shaped ceramic probes on the extensometer penetrate the furnace body, and they are clamped tn the specimen. To measure and control every transient temperature change, a highly sensitive thermocouple probe must be used. We chose a Cr-Al alloy rapid response thermocouple with a diameter of only 0.25mm. The thermocouple was fixed on the outer surface of the specimen by winding. The thermocouple was stabilized at both ends by a spring. when the tensile load is applied to the specimen, and the diameter of the thermocouple is constantly changing, the working section of the thermocouple can still be pressed against the specimen to obtain the true temperature of the surface of the specimen. The superposition of the strain cycle and the temperature cycle constitutes two forms of the "in-phase" and "anti-phase" with the same frequency. In the in-phase experiment, the maximum tensile strain corresponds to the highest temperature, but in the anti-phase experiment, the maximum compressive strain corresponds to the highest temperature. In order to ensure the accuracy of the frequency phase of the mechanical strain cycle and the temperature cycle, a clock calibration system was incorporated in the control program to eliminate the frequency accumulation error. There are two types of temperature cycling used: 250-500°C and 250-650°C. The total strain control range (the sum of mechanical strain and temperature-induced strain) of all tests was ±0.8\%, and the rate of strain change was 0.002/s. In order to eliminate the effect of temperature gradients on the inner wall of the specimen due to temperature hysteresis, there is a holding time of 10 seconds at the maximum and minimum strains. Figure 2 shows a schematic diagram of two closed circuit systems for computer-controlled temperature cycling and mechanical cycling.
 
 \begin{figure}[!htp]
 \centering{\includegraphics[height=22.0cm]{tgmf_code.pdf}}
@@ -1325,4 +1369,3 @@ The thermal gradient mechanical fatigue test consisted of mechanical load cyclin
 %The average pressure of inner cooling air is 6.5 bar. With Equation \ref{Equ:AirDensity}, we obtain the air density at 6.5 bar is 7.858 $\rm{kg/m^3}$.
 %inner diameter of specimen $d_{in} = 0.0065\rm{mm}$
 %volume flow ${\dot V} = 25\rm{l/min}$
-
