@@ -583,22 +583,26 @@ According to the symmetry of the test rig, an axisymmetric section was chosen to
 
 \begin{figure}[!htp]
   \centering
-  % \begin{overpic}[width=6.0cm]{OneLightRadiationPhoto.jpg}
-  %   \put(84,65){\fcolorbox{white}{white}{(a)}}
-  % \end{overpic}
-  \begin{overpic}[width=16.0cm]{OneLightRadiationShow.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \begin{overpic}[width=8.0cm]{OneLightRadiationPhoto.jpg}
+    \put(0,90){\fcolorbox{white}{white}{(a)}}
   \end{overpic}
+  \begin{overpic}[width=8.0cm]{OneLightRadiationShow.pdf}
+    \put(0,90){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+  \caption{The test rig of the single halogen lamp radiation in a cylindrical cavity. (a) The infrared temperature measurement point. (b) Thermocouple locations.}
+  \label{Fig:OneLightRadiation}
+\end{figure}
 
+\begin{figure}[!htp]
+  \centering
   \begin{overpic}[width=8.0cm]{NI9213.jpg}
-    \put(84,65){\fcolorbox{white}{white}{(c)}}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
   \end{overpic}
   \begin{overpic}[width=8.0cm]{IR.jpg}
-    \put(84,65){\fcolorbox{white}{white}{(d)}}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
   \end{overpic}
-
-  \caption{The test rig of the single halogen lamp radiation in a cylindrical cavity. (a) The infrared temperature measurement point. (b) Thermocouple locations. (c) NI-9213  temperature input module. (d) Infrared thermometer. }
-  \label{Fig:OneLightRadiation}
+  \caption{Temperature measurement devices: (a) NI-9213  temperature input module. (b) Infrared thermometer.}
+  \label{Fig:temperature_measurement_devices}
 \end{figure}
 
 % \begin{figure}
@@ -645,13 +649,13 @@ According to the symmetry of the test rig, an axisymmetric section was chosen to
 % \end{figure}
 
 % 使用National Instruments公司的NI 9213型16通道热电偶数据采集器（见\ref{Fig:OneLightRadiation}(c)）对热电偶的测量结果进行采集，该数据采集器内置CJC冷端温度补偿，通过在PC端安装NI-DAQmx驱动软件实现与电脑之间的通信。 National Instruments公司同时提供了LabVIEW可编程软件，根据Equation \ref{Equ:Inverse_polynomials}编写程序，将K型热电偶的电压信号转换为温度值，并将试验结果按照合适的文件格式存储。
-The NI-9213 temperature input module (see \ref{Fig:OneLightRadiation}(c)) was used to acquire the input signals from the thermocouples. It is a high-density thermocouple input module that is designed for higher channel count systems and it includes anti-aliasing filters, open-thermocouple detection, and cold-junction compensation for high accuracy thermocouple measurements. 
+The NI-9213 temperature input module (see \ref{Fig:temperature_measurement_devices}(a)) was used to acquire the input signals from the thermocouples. It is a high-density thermocouple input module that is designed for higher channel count systems and it includes anti-aliasing filters, open-thermocouple detection, and cold-junction compensation for high accuracy thermocouple measurements. 
 The NI-9213 temperature input module was connected to a host computer by the USB interface. Based on the LabVIEW software platform, a program was developed to converted the voltage signal of the thermocouple to the temperature value according to Equation (\ref{Equ:Inverse_polynomials}).
 
 % 为了保证实验的精度，我们在圆柱密封腔外表面中心位置（如\ref{Fig:OneLightRadiation}(a)所示）选取了一个矩形区域进行喷涂，并将矩形区域的中心作为红外温度测量点。
 % 采用Voltcraft IR 2200型红外测温仪（见\ref{Fig:OneLightRadiatiosoftware platformn}(d)）测量该点的温度。
 % 其中，该型号红外测温仪的温度测量范围是-50至2000$^{\circ}$C，测量精度为$\pm2^{\circ}$C。
-In order to improve the accuracy of the experiment, an infrared thermometer (see \ref{Fig:OneLightRadiation}(d)) was also used for the temperature measurement.
+In order to improve the accuracy of the experiment, an infrared thermometer (see \ref{Fig:temperature_measurement_devices}(b)) was also used for the temperature measurement.
 The measurement range of the infrared thermometer is from -50 to 2000$^{\circ}$C, and the accuracy is $\pm2^{\circ}$C.
 A rectangular region on the outer surface of the cylinderical wall was coated by the black paint, and the infrared temperature measurement point was shown in \ref{Fig:OneLightRadiation}(a).
 
@@ -661,8 +665,8 @@ A rectangular region on the outer surface of the cylinderical wall was coated by
 % 更换不同功率的卤素灯（240W，350W和400W），获取不同功率卤素灯的辐射加热和冷却曲线。
 Prior to the testing, all thermocouples were connected to the data acquisition unit. Each thermocouple was calibrated and cold junction compensation was performed.
 The data acquisition unit and infrared thermometer were connected to a host computer via the USB interface.
-% A LabView program was developed to acquire data, synchronize time and design custom display interfaces.
-On the host computer, a LabView program was developed for data acquisition, time synchronization and custom display interfaces.
+% A LabVIEW program was developed to acquire data, synchronize time and design custom display interfaces.
+On the host computer, a LabVIEW program was developed for data acquisition, time synchronization and custom display interfaces.
 
 When the test begins, the halogen lamp was turned on for a period of time. Then it was turned off and the device was cooled to room temperature by the natural convection.
 During the test, the temperature of each thermocouple was recorded.
@@ -682,6 +686,33 @@ Through the experiments, the temperature-time curves of the 11 temperature measu
 Heat transfer in the test rig is governed by three effects: conduction through the metal, convection from the air, and radiative exchange between the lamp and parts of the metal surface. 
 For the transient thermal computation, the thermal conductivity, density, and specific heat capacity of the material should be defined.
 The material of the test rig is the stainless steel SS304 with a density of 7873kg/m$^3$ and a specific heat of 502J/$({\rm{kg}} \cdot {}^ \circ {\rm{C}})$. The density and specific heat capacity of the stainless steel SS304 are approximately considered as temperature independent, but the temperature dependence of thermal conductivity can not be neglected. The thermal conductivity of the stainless steel SS304 at different temperatures are listed in Table \ref{Tab:SS304HeatTransfer}, and it is observed that the conductivity increases with the increasing temperature. 
+
+\begin{figure}[!htp]
+  \centering
+  \begin{overpic}[width=8.0cm]{filament.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(a)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{FEM_model_cavity_radiation.png}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
+
+  \begin{overpic}[width=8.0cm]{cavity_radiation_NT11_2.png}
+    \put(84,65){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_240W.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
+
+  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_350W.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(e)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_400W.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(f)}}
+  \end{overpic}
+
+  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double ended halogen lamp with tube base. (b) Mesh of the FE-model. (c) Mesh of the FE-model. (d) Lamp power of 240W. (e) Lamp power of 350W. (f) Lamp power of 400W. }
+  \label{Fig:OneLightRadiationSimulation}
+\end{figure}
 
 A computational heat transfer model are created in the commercial finite element software ABAQUS.
 According to the symmetry of the test rig, the middle cross section of the cylinder is taken as the symmetry plane, and the FE-model is shown in \ref{Fig:OneLightRadiationSimulation}(b).
@@ -723,32 +754,7 @@ A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.31
 The shape of the filament is a spiral coil. 
 For simplicity, the filament can be abstracted as a cylindrical surface with the area of 93.16mm$^2$ and the length of 68mm. Therefore, the diameter of the cylinder can be calculated as 0.436mm. The mesh of the filament is shown in \ref{Fig:OneLightRadiationSimulation}(a).
 
-\begin{figure}[!htp]
-  \centering
-  \begin{overpic}[width=8.0cm]{filament.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(a)}}
-  \end{overpic}
-  \begin{overpic}[width=8.0cm]{FEM_model_cavity_radiation.png}
-    \put(84,65){\fcolorbox{white}{white}{(b)}}
-  \end{overpic}
 
-  \begin{overpic}[width=8.0cm]{cavity_radiation_NT11_2.png}
-    \put(84,65){\fcolorbox{white}{white}{(c)}}
-  \end{overpic}
-  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_240W.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(d)}}
-  \end{overpic}
-
-  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_350W.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(e)}}
-  \end{overpic}
-  \begin{overpic}[width=8.0cm]{plot_cmp_cavity_radiation_400W.pdf}
-    \put(84,65){\fcolorbox{white}{white}{(f)}}
-  \end{overpic}
-
-  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double ended halogen lamp with tube base. (b) Mesh of the FE-model. (c) Mesh of the FE-model. (d) Lamp power of 240W. (e) Lamp power of 350W. (f) Lamp power of 400W. }
-  \label{Fig:OneLightRadiationSimulation}
-\end{figure}
 
 % 试验过程中环境温度为23$^{\circ}$C，空气自然对流换热系数的范围是5到25W/(${\rm{m}}^2\cdot$K)。
 % 使用trial and error方法，可以得到内壁面（黑色喷涂）的表面散射率为0.95，外壁面（金属表面）的表面散射率为0.68，对流换热系数5.6W/(${\rm{m}}^2\cdot$K)。
@@ -757,9 +763,9 @@ For simplicity, the filament can be abstracted as a cylindrical surface with the
 
 During the test, the ambient temperature was measured as 23$^{\circ}$C, and the natural convection heat transfer coefficient of air ranged from 5 to 25 ${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$.
 In the FE-model, several heat transfer coefficients are unknown.
-Using the trial and error method, we determined the unknown coefficients with the emissivity of the inner wall surface (black coated) of 0.95, the emissivity of the outer wall surface (metallic surface) of 0.68, and the convective heat transfer coefficient of 5.6${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$.
+Using the trial and error method, we determined the unknown coefficients with the emissivity of the inner wall surface (black coated) of 0.95, the emissivity of the outer wall surface (metallic surface) of 0.68, the radiation efficiency of 0.94, and the convective heat transfer coefficient of 5.6${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$.
 Using the obtained heat transfer coefficients, the radiant heat transfer of the test rig with different power halogen lamps were computed through the finite element model. 
-\ref{Fig:OneLightRadiationSimulation}(c) shows the nodal temperature field for the test rig. 
+\ref{Fig:OneLightRadiationSimulation}(c) shows the nodal temperature field of the test rig. 
 The temperature at the middle section of the outer wall surface are shown in \ref{Fig:OneLightRadiationSimulation}(d),(e),(f) with the lamp power of 240W, 350W and 400W, respectively.
 We observed good agreement between the experimental and computational results.
 Therefore, the emissivities and convective heat transfer coefficient determined from the trial and error method are appropriate.
