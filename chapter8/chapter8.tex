@@ -70,9 +70,10 @@ Usually more than one of these processes occurs in a given situation as shown in
 % shows a high temperature object cooling in air,
 %Common case is transfer of heat by a combination of the three modes.
 \begin{figure}[!htp]
-\centering\scalebox{0.8}{\includegraphics{Heat_Convection.pdf}}
-\caption{The fundamental modes of heat transfer.}
-\label{Fig:HeatTransfer}
+	\centering
+	\includegraphics[width=16cm]{Heat_Convection.pdf}
+	\caption{The fundamental modes of heat transfer.}
+	\label{Fig:HeatTransfer}
 \end{figure}
 
 \subsection{Thermal conduction}
@@ -114,7 +115,8 @@ Free convection describes when fluid motion is caused by buoyancy forces that re
 Forced convection describes when a fluid is forced to flow over the surface by an external source such as fans, by stirring, and pumps, creating an artificially induced convection current.
 
 \begin{figure}[!htp]
-	\centering\scalebox{0.8}{\includegraphics{Thermal_boundary_layer.pdf}}
+	\centering
+	\includegraphics[width=16cm]{Thermal_boundary_layer.pdf}
 	\caption{Thermal boundary layer.}
 	\label{Thermal_boundary_layer}
 \end{figure}
@@ -274,9 +276,10 @@ In contrast to most other methods of temperature measurement, thermocouples are 
 The physical principle of the thermocouple is Seebeck effect.
 
 \begin{figure}[!htp]
-\centering\scalebox{1.0}{\includegraphics{Seebeck_Voltage.pdf}}
-\caption{Schematic of Seebeck effect.}
-\label{Fig:Seebeck_Voltage}
+	\centering
+	\includegraphics[width=6cm]{Seebeck_Voltage.pdf}
+	\caption{Schematic of Seebeck effect.}
+	\label{Fig:Seebeck_Voltage}
 \end{figure}
 In 1821 the German physicist Thomas Johann Seebeck discovered the continuous current flow in the thermoelectric circuit when two wires of dissimilar metals are joined at both ends and one of the ends is heated, and that is the Seebeck effect.
 If this circuit is broken at the center (see \ref{Fig:Seebeck_Voltage}), the net open circuit voltage $e_{\rm AB}$ (the Seebeck voltage) is a function of the junction temperature and the composition of the two metals.
@@ -286,9 +289,10 @@ We can't measure the Seebeck voltage directly because we must first connect a vo
 A thermocouple is an electrical device consisting of two different conductors forming electrical junctions at differing temperatures. A thermocouple produces a temperature-dependent voltage as a result of the thermoelectric effect, and this voltage can be interpreted to measure temperature.
 The thermoelectric effect is the direct conversion of temperature differences to electric voltage and vice versa. A thermoelectric device creates voltage when there is a different temperature on each side. Conversely, when a voltage is applied to it, it creates a temperature difference. At the atomic scale, an applied temperature gradient causes charge carriers in the material to diffuse from the hot side to the cold side.
 \begin{figure}[!htp]
-\centering\scalebox{1.2}{\includegraphics{Thermocouple_circuit_Ktype_including_voltmeter_temperature.pdf}}
-\caption{K-type thermocouple in the standard thermocouple measurement configuration.}
-\label{Fig:Thermocouple_circuit_Ktype_including_voltmeter_temperature}
+	\centering
+	\includegraphics[width=10cm]{Thermocouple_circuit_Ktype_including_voltmeter_temperature.pdf}
+	\caption{K-type thermocouple in the standard thermocouple measurement configuration.}
+	\label{Fig:Thermocouple_circuit_Ktype_including_voltmeter_temperature}
 \end{figure}
 
 Once we obtain the voltage from the thermocouple we have to convert the voltage to a temperature.
@@ -577,48 +581,68 @@ The cylindrical wall, upper and lower cover plates constructed a sealed cylindri
 K-type thermocouples were used to measure the temperature distribution of the cylindrical wall.
 According to the symmetry of the test rig, an axisymmetric section was chosen to weld the thermocouples. The positions of the thermocouples are shown in \ref{Fig:OneLightRadiation}(b), with five thermocouples welded on the inner surface and the other five thermocouples welded on the outer surface. For simplicity
 
-\begin{figure}
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{OneLightRadiationPhoto.jpg}
-    \centerline{(a) Cylindrical cavity.}
-    \label{Fig:OneLightRadiationShow}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{OneLightRadiationShow.pdf}
-    \centerline{(b) Thermocouple locations.}
-    \label{Fig:OneLightRadiationPhoto}
-  \end{minipage}
+\begin{figure}[!htp]
+  \centering
+  % \begin{overpic}[width=6.0cm]{OneLightRadiationPhoto.jpg}
+  %   \put(84,65){\fcolorbox{white}{white}{(a)}}
+  % \end{overpic}
+  \begin{overpic}[width=16.0cm]{OneLightRadiationShow.pdf}
+    \put(84,65){\fcolorbox{white}{white}{(b)}}
+  \end{overpic}
 
-  \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-  \nonumber
-    \centering
-    \includegraphics[width=3.0in]{NI9213.jpg}
-    \centerline{(c) NI9213 thermocouple signal transmitter }
-    \centerline{and the data acquisition device. }
-    \label{Fig:NI9213}
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\linewidth}
-    \centering
-    \includegraphics[width=3.0in]{IR.jpg}
-    \centerline{(d) The infrared temperature measurement }
-    \centerline{device.}
-    \label{Fig:IR}
-  \end{minipage}
+  \begin{overpic}[width=8.0cm]{NI9213.jpg}
+    \put(84,65){\fcolorbox{white}{white}{(c)}}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{IR.jpg}
+    \put(84,65){\fcolorbox{white}{white}{(d)}}
+  \end{overpic}
 
-%  \begin{minipage}[t]{1.0\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
-%  \nonumber
-%    \centering
-%    \includegraphics[width=5.0in]{BlockDiagram.png}
-%    \centerline{(e) Program block diagram of data collection, temperature transform and computation.}
-%    \label{Fig:FrontPanel}
-%  \end{minipage}
-
-  \caption{Test rig of the single halogen lamp radiation in a cylindrical cavity.}
+  \caption{The test rig of the single halogen lamp radiation in a cylindrical cavity. (a) The infrared temperature measurement point. (b) Thermocouple locations. (c) NI-9213  temperature input module. (d) Infrared thermometer. }
   \label{Fig:OneLightRadiation}
 \end{figure}
+
+% \begin{figure}
+%   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{OneLightRadiationPhoto.jpg}
+%     \centerline{(a) Cylindrical cavity.}
+%     \label{Fig:OneLightRadiationShow}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{OneLightRadiationShow.pdf}
+%     \centerline{(b) Thermocouple locations.}
+%     \label{Fig:OneLightRadiationPhoto}
+%   \end{minipage}
+
+%   \begin{minipage}[t]{0.5\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+%   \nonumber
+%     \centering
+%     \includegraphics[width=3.0in]{NI9213.jpg}
+%     \centerline{(c) NI9213 thermocouple signal transmitter }
+%     \centerline{and the data acquisition device. }
+%     \label{Fig:NI9213}
+%   \end{minipage}%
+%   \begin{minipage}[t]{0.5\linewidth}
+%     \centering
+%     \includegraphics[width=3.0in]{IR.jpg}
+%     \centerline{(d) The infrared temperature measurement }
+%     \centerline{device.}
+%     \label{Fig:IR}
+%   \end{minipage}
+
+% %  \begin{minipage}[t]{1.0\linewidth} % 如果一行放2个图，用0.5，如果3个图，用0.33\
+% %  \nonumber
+% %    \centering
+% %    \includegraphics[width=5.0in]{BlockDiagram.png}
+% %    \centerline{(e) Program block diagram of data collection, temperature transform and computation.}
+% %    \label{Fig:FrontPanel}
+% %  \end{minipage}
+
+%   \caption{Test rig of the single halogen lamp radiation in a cylindrical cavity.}
+%   \label{Fig:OneLightRadiation}
+% \end{figure}
 
 % 使用National Instruments公司的NI 9213型16通道热电偶数据采集器（见\ref{Fig:OneLightRadiation}(c)）对热电偶的测量结果进行采集，该数据采集器内置CJC冷端温度补偿，通过在PC端安装NI-DAQmx驱动软件实现与电脑之间的通信。 National Instruments公司同时提供了LabVIEW可编程软件，根据Equation \ref{Equ:Inverse_polynomials}编写程序，将K型热电偶的电压信号转换为温度值，并将试验结果按照合适的文件格式存储。
 The NI-9213 temperature input module (see \ref{Fig:OneLightRadiation}(c)) was used to acquire the input signals from the thermocouples. It is a high-density thermocouple input module that is designed for higher channel count systems and it includes anti-aliasing filters, open-thermocouple detection, and cold-junction compensation for high accuracy thermocouple measurements. 
@@ -657,11 +681,11 @@ Through the experiments, the temperature-time curves of the 11 temperature measu
 
 Heat transfer in the test rig is governed by three effects: conduction through the metal, convection from the air, and radiative exchange between the lamp and parts of the metal surface. 
 For the transient thermal computation, the thermal conductivity, density, and specific heat capacity of the material should be defined.
-The material of the test rig is the stainless steel SS304 with a density of 7873kg/m$^3$ and a specific heat of 502J/(kg$\cdot$K). The density and specific heat capacity of the stainless steel SS304 are approximately considered as temperature independent, but the temperature dependence of thermal conductivity can not be neglected. The thermal conductivity of the stainless steel SS304 at different temperatures are listed in Table \ref{Tab:SS304HeatTransfer}, and it is observed that the conductivity increases with the increasing temperature. 
+The material of the test rig is the stainless steel SS304 with a density of 7873kg/m$^3$ and a specific heat of 502J/$({\rm{kg}} \cdot {}^ \circ {\rm{C}})$. The density and specific heat capacity of the stainless steel SS304 are approximately considered as temperature independent, but the temperature dependence of thermal conductivity can not be neglected. The thermal conductivity of the stainless steel SS304 at different temperatures are listed in Table \ref{Tab:SS304HeatTransfer}, and it is observed that the conductivity increases with the increasing temperature. 
 
 A computational heat transfer model are created in the commercial finite element software ABAQUS.
-According to the symmetry of the test rig, the middle cross section of the cylinder is taken as the symmetry plane, and the FEM model is shown in \ref{Fig:OneLightRadiationSimulation}(b).
-The FEM model is dimensioned in meters, and the temperature is measured in $^\circ$C, so the Stefan Boltzmann constant is taken as $5.670\times10^{-8}\rm{W}/(\rm{m}^{2}\cdot\rm{K})$ and absolute zero is set at 273.15$^\circ$C below zero.
+According to the symmetry of the test rig, the middle cross section of the cylinder is taken as the symmetry plane, and the FE-model is shown in \ref{Fig:OneLightRadiationSimulation}(b).
+The FE-model is dimensioned in meters, and the temperature is measured in $^\circ$C, so the Stefan Boltzmann constant is taken as $5.670\times10^{-8}{\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$ and absolute zero is set at 273.15$^\circ$C below zero.
 The procedure consists of two heat transfer steps in which the thermal loading conditions are heating and cooling down.
 The boundary constraints on the cylindrical cavity
 Convection due to heat transfer from the air is applied at the internal and external surfaces of the cylindrical cavity.
@@ -677,7 +701,7 @@ The emissivities of the inner and outer surfaces of the cylindrical cavity are t
     \toprule
     Temperature [$^{\circ}$C] & 100   & 200   & 300   & 400   & 500   & 600   & 700   & 800   & 900   & 1000 \\
     \midrule
-    Conductivity [${\rm{W/(m}} \cdot {\rm{K)}}]$ & 15.5  & 18.1  & 18.4  & 19.1  & 19.7  & 20.3  & 20.8  & 20.8  & 20.6  & 20.7 \\
+    Conductivity [${\rm{W/}}({\rm{m}} \cdot {}^ \circ {\rm{C}})$] & 15.5  & 18.1  & 18.4  & 19.1  & 19.7  & 20.3  & 20.8  & 20.8  & 20.6  & 20.7 \\
     \bottomrule
     \end{tabular}%
   \label{Tab:SS304HeatTransfer}%
@@ -722,7 +746,7 @@ For simplicity, the filament can be abstracted as a cylindrical surface with the
     \put(84,65){\fcolorbox{white}{white}{(f)}}
   \end{overpic}
 
-  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double ended halogen lamp with tube base. (b) Mesh of the FEM model. (c) Mesh of the FEM model. (d) Lamp power of 240W. (e) Lamp power of 350W. (f) Lamp power of 400W. }
+  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double ended halogen lamp with tube base. (b) Mesh of the FE-model. (c) Mesh of the FE-model. (d) Lamp power of 240W. (e) Lamp power of 350W. (f) Lamp power of 400W. }
   \label{Fig:OneLightRadiationSimulation}
 \end{figure}
 
@@ -731,9 +755,9 @@ For simplicity, the filament can be abstracted as a cylindrical surface with the
 % 使用得到的表面散射率和对流换热系数，分别对240W、350W和400W功率卤素灯的辐射传热进行计算，选取外壁面中心点的温度值进行对比，如\ref{Fig:OneLightRadiationSimulation}(b-d)所示。
 % 数值模拟结果、热电偶测量值和红外温度测量仪所得到的温度值在加热和冷却两个过程中都得到了很好的吻合，这说明我们使用的材料常数和传热学参数是正确的。
 
-During the test, the ambient temperature was measured as 23$^{\circ}$C, and the natural convection heat transfer coefficient of air ranged from 5 to 25 W/(${\rm{m}}^2\cdot$K).
-In the FEM model, several heat transfer coefficients are unknown.
-Using the trial and error method, we determined the unknown coefficients with the emissivity of the inner wall surface (black coated) of 0.95, the emissivity of the outer wall surface (metallic surface) of 0.68, and the convective heat transfer coefficient of 5.6W/(m$^2\cdot$K).
+During the test, the ambient temperature was measured as 23$^{\circ}$C, and the natural convection heat transfer coefficient of air ranged from 5 to 25 ${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$.
+In the FE-model, several heat transfer coefficients are unknown.
+Using the trial and error method, we determined the unknown coefficients with the emissivity of the inner wall surface (black coated) of 0.95, the emissivity of the outer wall surface (metallic surface) of 0.68, and the convective heat transfer coefficient of 5.6${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$.
 Using the obtained heat transfer coefficients, the radiant heat transfer of the test rig with different power halogen lamps were computed through the finite element model. 
 \ref{Fig:OneLightRadiationSimulation}(c) shows the nodal temperature field for the test rig. 
 The temperature at the middle section of the outer wall surface are shown in \ref{Fig:OneLightRadiationSimulation}(d),(e),(f) with the lamp power of 240W, 350W and 400W, respectively.
@@ -1292,7 +1316,7 @@ The equipments of the TGMF testing system need to be cooled, such as the fixture
 
 \section{Process of TGMF testing}
 \noindent
-There are no relevant standards for TGMF testing. Because of the test processes of the TGMF and TMF are very similar, according to the testing process of TMF, the concepts in TGMF testing are defined as same as them in the TMF testing, such as:
+Recently, there are no relevant standards for TGMF testing. Because of the test processes of the TGMF and TMF are very similar, according to the testing process of TMF, the concepts in TGMF testing are defined as same as them in the TMF testing, such as:
 \begin{itemize}
   \item {Thermal strain}, $\varepsilon_{\rm{th}}$,
   \item {Mechanical strain}, $\varepsilon_{\rm{mech}}$,
@@ -1328,8 +1352,9 @@ This will cause a temperature gradient along the axial direction of the specimen
 Unlike the induction heating, the axial temperature gradient of the specimen is difficult to adjust by modifying the radiation furnace.
 Therefore, the influence of the axial temperature gradient have to be considered in the computation.
 
-In order to obtain the temperature distribution of the specimen during the TGMF testing, temperatures at the upper, middle and lower positions in the gauge section of the specimen were measured by the thermocouples wrapped around the specimen. \ref{Fig:temperature_monitors_tgmf} shows the locations of the thermocouples. In the study, the temperature range of the TGMF testing is from 573 to 923K. The cycle period was predetermined as 240s with a triangular shape temperature cycle, thus the heating and cooling rates were about 2.2K/s.
+In order to obtain the temperature distribution of the specimen during the TGMF testing, temperatures at the upper, center and lower positions in the gauge section of the specimen were measured by the thermocouples wrapped around the specimen. \ref{Fig:temperature_monitors_tgmf} shows the locations of the thermocouples. In the study, the temperature range of the TGMF testing is from 573 to 923K. The cycle period was predetermined as 240s with a triangular shape temperature cycle, thus the heating and cooling rates were about 2.2K/s.
 \ref{Fig:thermal_stability_TGMF}(a) shows the dynamic temperature measurement during a stable TGMF cycle and \ref{Fig:thermal_stability_TGMF}(b) shows the temperature deviations between each thermocouple and the temperature command.
+It is observed that the maximum axial temperature gradients during the TMF test is less than $\pm30$K.
 
 % Therefore, we decided to develop and build a radiant oven for our purposes. In general, a radiant oven is a furnace in which radiation is used to heat. The simplest case of a radiant furnace is shown in Figure 3.1.
 % 通常意义上讲，热疲劳试验时被测试件的试验环境是高温且温度不恒定，甚至温度是急剧反复变化的，这样被测试件会由于温度的梯度循环引起热应力循环（或热应变循环），从而产生疲劳破坏现象。热疲劳试验中，试件的外形尺寸和试验温度是影响试件疲劳特性的主要因素。目前，常见的热疲劳试验箱的高温试验温度范围约为200~500℃，具备温度梯度循环变化能力，有些超高温疲劳试验箱的温度可达几千摄氏度。传统的疲劳分析往往将热载荷转化为机械载荷加以分析，但这种方法无法考察温度和机械载荷叠加交互作用的影响，直至20世纪80年代后期才出现了热/机械疲劳试验系统。热/机械疲劳试验系统将热疲劳和机械疲劳耦合在一起，根据试件材料不同的应用环境，模拟试件实际的工作环境，更好地研究材料在热机疲劳下的损伤行为，从而得出更为准确的疲劳特性。在热/机械疲劳试验中，加载应力的大小和频率会直接影响到试件的断裂寿命，通常在试验频率范围内，疲劳寿命随着试验频率的降低而减少，高频时加载循环快，更容易出现疲劳损伤；低频时加载周期慢，除疲劳损伤外还容易出现蠕变损伤[11]。所以在疲劳试验时应根据需要选择合适的加载工况。
@@ -1354,7 +1379,7 @@ In order to obtain the temperature distribution of the specimen during the TGMF 
 % \end{table}%
 
 % 热梯度机械疲劳试验由机械载荷循环，温度循环和内部冷却空气组成。机械循环由MTS液压伺服试验机实现，试件的轴对称安装由对中系统来保证。温度循环由聚光辐射加热系统来实现，卤素灯管发出的光线通过椭圆柱状镜面反射到试件的工作段。温度循环冷却由自然对流方式来实现，它较之强风冷却系统引起的温度梯度要小。图1给出了试件安装在试验机夹具上的示意图。高温应变测量系统和热电偶测温系统组成两个闭合回路，通过计算机控制软件，自动测量与控制应变和温度循环的幅度、频率及相位关系。应变的测量和控制是由高精度高温应变引伸计来实现的，为了避免高温的影响，引伸计主体安装在加热炉外侧，引伸计上的两根头部为楔形的陶瓷探棒穿过炉体，夹持在试件上。要想测量温度变化的每一个瞬态值并加以控制，必须采用高灵敏度的热电偶探头。我们选用了直径仅为0.25mm的Cr-Al合金快速响应热电偶，通过缠绕的方式将热电偶固定在试件外表面，热电偶两端点由弹簧构成稳定的拉力，在试件承受拉压载荷，其直径不断变化的情况下，热电偶工作段仍能够压紧在试件上，得到试件表面的真实温度。应变循环和温度循环的叠加构成相同频率的“同相位”和“反相位”两种形式，在同相位实验中，最大拉应变对应于最高温度;而在反相位实验中，最大压应变对应于最高温度。为了保证机械应变循环和温度循环频率相位上的精度，在控制程序中编入了时钟校对系统，以消除频率积累误差。所采用的温度循环范围有两种:250～500℃和250～650℃。所有试验的总应变控制范围(机械应变与温度产生的应变之和)均为±0。8\%，应变变化率为0。0002/秒。为了消除试件内壁由于温度迟滞产生的温度梯度效应，在最大和最小应变处有10秒的保持时间。图2给出了计算机控制的温度循环和机械循环两个闭路系统的示意图。
-The thermal gradient mechanical fatigue test consists of mechanical loading cycle, temperature cycling, and internal cooling air. The mechanical cycle is realized by the MTS hydraulic servo testing machine. The axisymmetric installation of the specimen is ensured by the centering system. The temperature cycle is achieved by a concentrating radiant heating system. The light emitted by the halogen lamp is reflected by the elliptical cylinder mirror to the working section of the specimen. The temperature cycle cooling is achieved by the natural convection method, which has a lower temperature gradient than the strong wind cooling system. Figure 1 shows a schematic view of the specimen mounted on the fixture of the testing machine. The high-temperature strain measurement system and the thermocouple temperature measurement system form two closed loops. Through the computer control software, the amplitude, frequency, and phase relationship of the strain and temperature cycle are automatically measured and controlled. Strain measurement and control are achieved by high-precision high-temperature strain extensometers. To avoid the effect of high temperature, the extensometer body is mounted on the outside of the furnace. Two wedge-shaped ceramic probes on the extensometer penetrate the furnace body, and they are clamped tn the specimen. To measure and control every transient temperature change, a highly sensitive thermocouple probe must be used. We chose a Cr-Al alloy rapid response thermocouple with a diameter of only 0.25mm. The thermocouple was fixed on the outer surface of the specimen by winding. The thermocouple was stabilized at both ends by a spring. when the tensile load is applied to the specimen, and the diameter of the thermocouple is constantly changing, the working section of the thermocouple can still be pressed against the specimen to obtain the true temperature of the surface of the specimen. The superposition of the strain cycle and the temperature cycle constitutes two forms of the "in-phase" and "anti-phase" with the same frequency. In the in-phase experiment, the maximum tensile strain corresponds to the highest temperature, but in the anti-phase experiment, the maximum compressive strain corresponds to the highest temperature. In order to ensure the accuracy of the frequency phase of the mechanical strain cycle and the temperature cycle, a clock calibration system was incorporated in the control program to eliminate the frequency accumulation error. There are two types of temperature cycling used: 250-500°C and 250-650°C. The total strain control range (the sum of mechanical strain and temperature-induced strain) of all tests was ±0.8\%, and the rate of strain change was 0.002/s. In order to eliminate the effect of temperature gradients on the inner wall of the specimen due to temperature hysteresis, there is a holding time of 10 seconds at the maximum and minimum strains. Figure 2 shows a schematic diagram of two closed circuit systems for computer-controlled temperature cycling and mechanical cycling.
+% The thermal gradient mechanical fatigue test consists of mechanical loading cycle, temperature cycle, and internal cooling air. The mechanical load is supplied by the MTS hydraulic servo testing machine. The axisymmetric installation of the specimen is ensured by the centering system. The temperature cycle is achieved by a concentrating radiant heating system. The light emitted by the halogen lamp is reflected by the elliptical cylinder mirror to the working section of the specimen. The temperature cycle cooling is achieved by the natural convection method, which has a lower temperature gradient than the strong wind cooling system. Figure 1 shows a schematic view of the specimen mounted on the fixture of the testing machine. The high-temperature strain measurement system and the thermocouple temperature measurement system form two closed loops. Through the computer control software, the amplitude, frequency, and phase relationship of the strain and temperature cycle are automatically measured and controlled. Strain measurement and control are achieved by high-precision high-temperature strain extensometers. To avoid the effect of high temperature, the extensometer body is mounted on the outside of the furnace. Two wedge-shaped ceramic probes on the extensometer penetrate the furnace body, and they are clamped tn the specimen. To measure and control every transient temperature change, a highly sensitive thermocouple probe must be used. We chose a Cr-Al alloy rapid response thermocouple with a diameter of only 0.25mm. The thermocouple was fixed on the outer surface of the specimen by winding. The thermocouple was stabilized at both ends by a spring. when the tensile load is applied to the specimen, and the diameter of the thermocouple is constantly changing, the working section of the thermocouple can still be pressed against the specimen to obtain the true temperature of the surface of the specimen. The superposition of the strain cycle and the temperature cycle constitutes two forms of the "in-phase" and "anti-phase" with the same frequency. In the in-phase experiment, the maximum tensile strain corresponds to the highest temperature, but in the anti-phase experiment, the maximum compressive strain corresponds to the highest temperature. In order to ensure the accuracy of the frequency phase of the mechanical strain cycle and the temperature cycle, a clock calibration system was incorporated in the control program to eliminate the frequency accumulation error. There are two types of temperature cycling used: 250-500°C and 250-650°C. The total strain control range (the sum of mechanical strain and temperature-induced strain) of all tests was ±0.8\%, and the rate of strain change was 0.002/s. In order to eliminate the effect of temperature gradients on the inner wall of the specimen due to temperature hysteresis, there is a holding time of 10 seconds at the maximum and minimum strains. Figure 2 shows a schematic diagram of two closed circuit systems for computer-controlled temperature cycling and mechanical cycling.
 
 \begin{figure}[!htp]
 \centering{\includegraphics[height=22.0cm]{tgmf_code.pdf}}

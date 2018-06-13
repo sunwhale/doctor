@@ -701,7 +701,7 @@ The implemented program consist of three steps:
 
 The calibration of the testing system is necessary to ensure the accuracy and repeatability of the test results.
 As shown in \ref{Fig:tmf_code}, force transducer, extensometer and the temperature measurement are the three parts which have to be calibrated.
-The accuracy of the force transducer shall meet the ASTM E4 and E467 requirements ($F_{error}\pm \leq 1\%$) during the tmf test duration.
+The accuracy of the force transducer shall meet the ASTM E4 and E467 requirements ($F_{\rm error}\pm \leq 1\%$) during the tmf test duration.
 During the TMF testing, the axial and shear strain in the gage section of the specimen are measured with the high temperature extensometers.
 The extensometers are calibrated in accordance with the recommendations of ASTM E83.
 The specimen temperature was measured by the thermocouples in contact with the specimen surface, and the temperature measurement system is calibrated in accordance with the recommendations of ASTM E220.
@@ -719,15 +719,15 @@ maximum cyclic temperature given in K, and the maximum allowable transverse temp
 Axial temperature gradients of specimen are influenced mainly by surface convection, heat conduction, electrical conductivity, induction frequency, water-cooled specimen grips, specimen geometry and coil configuration. Generally only the coil configuration and the specimen geometry are variable. As shown in \ref{Fig:Specimen}(b), turbular specimens are used in combination with the induction heating device. The coil configuration has a great influence on the temperature distribution of the specimen, at the same time, the installation of the extensometer has to be considered\cite{Hahner2006}.
 % 因此，需要在试验初期首先对试样上、中、下及环向位置测温，并通过调整线圈形状、位置及冷却角度来降低试样的温度梯度，以满足ASTM或ISO热机械疲劳试验方法标准的相关规定。
 In comparison with isothermal fatigue test, the thermomechanical fatigue test is carried out under varying temperature.
-In order to optimize the thermal stability during the TMF testing, temperatures at the upper, middle, lower, and circumferential positions in the gauge section of the specimen were measured by the chromel-alumel (type K) thermocouples wrapped around the specimen.
+In order to optimize the thermal stability during the TMF testing, temperatures at the upper, center, lower, and circumferential positions in the gauge section of the specimen were measured by the chromel-alumel (type K) thermocouples wrapped around the specimen. \ref{Fig:temperature_monitors} shows the locations of the thermocouples.
 The axial and transverse temperature gradients of the specimen can be reduced by adjusting the diameter, screw pitch, installation position of the induction coil.
 Consequently, the configuration of the coil was tuned iteratively to obtain the minimum temperature gradients.
 Furthermore, heating and cooling rates also influence the temperature gradients.
 In order to avoid considerable axial and transverse temperature gradients within the strain gauge of the specimen, in the present work, the heating and cooling rates were chosen about 2.92K/s with a triangular shape temperature cycle, thus the time of one cycle is about 180s, and the frequency is about 0.0056Hz.
 The temperature range for all TMF tests in the study is from 573 to 923K. \ref{Fig:thermal_stability}(a) shows the dynamic temperature measurement after the thermal stability optimization during a conducted TMF cycle. \ref{Fig:thermal_stability}(b) shows the temperature
-deviations between the upper/lower and middle monitor. It is concluded that the minimum axial temperature gradients during the TMF test is -8K to 13K.
+deviations between the upper/lower and middle monitor. It is concluded that the maximum axial temperature gradients during the TMF test is -8K to 13K.
 
-It should be noted that the thin-walled tubular specimen was used in the TMF tests. In the tubular specimen, the shear strain and shear stress are not constant in the cross-section, and the shear stress and shear strain are always the greatest at the outer diameter. Under elasto-plastic loading conditions, shear stress varies nonlinearly through the thin wall of the tubular specimen. As introduced above, according to ASTM E2207 \cite{ASTM2014}, the assumption of a uniformly distributed shear stress is recommended. The shear stresses reported in the TMF tests are calculated by Eq. (\ref{Equ:shear_stress}). The effect of temperature variation on shear strain measurement can be neglected \cite{Bakis2014}. Consequently, the compensation of torsional thermal strain is not performed in the present work. The shear strains are obtained directly from the measurement results by the extensometer.
+It should be noted that the thin-walled tubular specimen was used in the TMF tests. In the tubular specimen, the shear strain and shear stress are not constant in the cross-section, and the shear stress and shear strain are always the greatest at the outer diameter. Under elasto-plastic loading conditions, shear stress varies nonlinearly through the thin wall of the tubular specimen. As introduced above, according to ASTM E2207 \cite{ASTM2014}, the assumption of a uniformly distributed shear stress is recommended. The shear stresses reported in the TMF tests are calculated by Equation (\ref{Equ:shear_stress}). The effect of temperature variation on shear strain measurement can be neglected \cite{Bakis2014}. Consequently, the compensation of torsional thermal strain is not performed in the present work. The shear strains are obtained directly from the measurement results by the extensometer.
 
 \begin{figure}[!htp]
   \centering
@@ -759,7 +759,7 @@ where the coefficients $A_0,A_1,A_2$ of the function can be fitted by the least 
 % 在试验过程中，计算机根据实测的温度即可以算出当时的热应变量,代入式\ref{Equ:mech_strain}即可得到机械应变,并可由此实现机械应变控制,如图\ref{Fig:plot_schematic_thermal_strain}所示。
 % 试验采用机械应变$\varepsilon_{\rm{mech}}$控制，根据方程\ref{Equ:thermal_strain}和\ref{Equ:total_strain}可知，机械应变$\varepsilon_{\rm{mech}}$可采用下式计算:
 In the present work, the TMF tests were carried out by mechanical strain control mode.
-During the test, the thermal strain was calculated by Eq. (\ref{Equ:thermal_strain_fitting}) with the measured temperature. Thus, the mechanical strain can be obtained by
+During the test, the thermal strain was calculated by Equation (\ref{Equ:thermal_strain_fitting}) with the measured temperature. Thus, the mechanical strain can be obtained by
 \begin{equation}
 \varepsilon_{\rm{mech}}=\varepsilon_{\rm{tot}}-\varepsilon_{\rm{th}}=\varepsilon_{\rm{tot}}-(A_0+A_1 T+A_2 T^2).
 \label{Equ:mech_strain}

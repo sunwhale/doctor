@@ -585,6 +585,7 @@ with
 % If the material satisfies the Masing postulate,  ${\gamma _q}=0$. $Y_{\Delta 0} $ denotes the saturate value of $Y_{\Delta NS}$.
 
 \subsection{Non-proportional hardening}
+\noindent
 In this paper, we consider the non-proportional hardening as an additional term of isotropic hardening.
 Thus, the yield stress is suggested as:
 \begin{equation}
@@ -690,10 +691,12 @@ Box 2: Specification of the material functions.
 \end{framed}
 
 \section{Algorithmic formulation of the constitutive model}
+\noindent
 % In the following, a fully implicit strain driven integration algorithm is developed for the constitutive model discussed in the previous section. It is ready for an implementation in a general Finite Element (FE) context where the proposed algorithm is applied locally at every integration point during each global iteration step.
 The present constitutive model has included Tanaka non-proportional term and modified backstress equations for complex thermo-mechanical loads. The implicit algorithm of the constitutive equation becomes necessary and should provide the stress increment and the plastic strain increment, based on the given strain increment. The integration method is to be implemented into the commercial finite element codes, such ABAQUS via the UMAT interface.
 
 \subsection{Backward Euler discretization}
+\noindent
 The backward Euler method is a first order implicit method popularly used in the finite element computation. Considering the integration interval from Step $n$ to Step $n+1$, variables of Step $n$ are denoted by the index $n$. The symbol $\Delta$ indicates the increment of the variable from $n$ to $n+1$. The constitutive equations can be discretized as follows.
 % Backward Euler method is a first order fully implicit method. Consider the interval from a state $n$ to $n+1$, in the following, any quantity evaluated at state $n$ will be indicated by a subscript $n$, for quantities evaluated at state $n+1$ subscript $n+1$ are omitted, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$. The backward Euler method allows the constitutive equations to be discretized as the following.
 %Hereafter, the subscripts $n$ and $n+1$ signify the values at $n$ and $n+1$ respectively, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$.
@@ -758,6 +761,7 @@ Dynamic recovery:
 \end{equation}
 
 \subsection{Implicit stress integration}
+\noindent
 The problem considered here is stated as follows: given all constitutive variables at step $n$ and also $\Delta {{\bm{\upepsilon }}_{n + 1}}$, find $\bm{\upsigma}_{n+1}$  satisfying the discretized constitutive relations. Let us use return mapping, which consists of an elastic predictor and a plastic corrector. The elastic predictor is taken to be an elastic tentative stress:
 \begin{equation}
 {\bm{\upsigma }}_{n + 1}^{\rm{tr}} = {\mathbb{D}^{\rm{e}}}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_n^{\rm{p}}} \right)
@@ -852,6 +856,7 @@ Substitution of Equations (\ref{Equ:Fn+1}) to (\ref{Equ:nn+1}) and (\ref{Equ:smi
 \end{figure}
 
 \subsection{Consistent tangent moduli}
+\noindent
 To complete the algorithmic scheme discussed above we derive in the following the tangent moduli consistent with the proposed algorithm. The tangent moduli determine the incremental change of the stresses $\Delta {\bm{\upsigma }}$ along with the incremental change of the total strains $\Delta {\bm{\upepsilon }}$ determined through the global iteration algorithm according to:
 \begin{equation}
 \Delta {\bm{\upsigma }} = {\mathbb{D}^{\rm{ep}}}:\Delta {\bm{\upepsilon }}

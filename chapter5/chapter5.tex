@@ -1,60 +1,61 @@
 \chapter{Constitutive modeling in finite deformation framework}
 
 \section{Continuous formulation of the constitutive model}
-\label{}
 \subsection{Kinematics}
+\noindent
 Considering a homogeneous solid deformable body experiencing continued finite deformation.
 Assume $\mathbf{X}$ is an arbitrary position vector of a material particle in the reference configuration $\mathfrak{B_0}$ and $\mathbf{x}$ is the corresponding space position vector in the current configuration $\mathfrak{B}$ denoted by $\mathbf{x}=\mathbf{x}\left(\mathbf{X},t\right)$ at current time.
 The motion of the body is decried by the deformation gradient $\mathbf{F}$:
 \begin{equation}
-{\mathbf{F}} = \frac{{\partial {\mathbf{x}}}}{{\partial {\mathbf{X}}}}, \rm{\quad} \det {\mathbf{F}}>0
+{\mathbf{F}} = \frac{{\partial {\mathbf{x}}}}{{\partial {\mathbf{X}}}}, \rm{\quad} \det {\mathbf{F}}>0.
 \end{equation}
 Let $\mathbf{L}$ be the velocity gradient, the following decomposition holds:
 \begin{equation}
-{\mathbf{L}} = \frac{{\partial {\dot {\bf{x}}}}}{{\partial {\mathbf{X}}}} = {\dot {\bf{F}}}{{\mathbf{F}}^{ - 1}}
+{\mathbf{L}} = \frac{{\partial {\dot {\bf{x}}}}}{{\partial {\mathbf{X}}}} = {\dot {\bf{F}}}{{\mathbf{F}}^{ - 1}}.
 \end{equation}
 Throughout, a superposed dot $\left(\dot{\ }\right)$ denotes the material time derivative of a scalar or tensor field.\\
 %$\left(\dot{\ }\right)$ the differentiation with respect to time,
 The deformation gradient $\mathbf{F}$ can be uniquely decomposed into its left and right multiplicative decompositions.
 The left and right polar decomposition of $\mathbf{F}$ is given by:
 \begin{equation}
-{\mathbf{F}} = {\mathbf{VR}} = {\mathbf{RU}}
+{\mathbf{F}} = {\mathbf{VR}} = {\mathbf{RU}},
 \end{equation}
 where the positive definite symmetric tensors $\mathbf{V}$ and $\mathbf{U}$ are called left and right stretch tensors, and $\mathbf{R}$ is the proper orthogonal rotation tensor.
 \begin{equation}
-{{\mathbf{R}}^{\rm{T}}} {\mathbf{R}} = {\mathbf{I}}, \rm{\quad} {{\mathbf{R}}^{\rm{T}}} = {{\mathbf{R}}^{ - 1}}
+{{\mathbf{R}}^{\rm{T}}} {\mathbf{R}} = {\mathbf{I}}, \rm{\quad} {{\mathbf{R}}^{\rm{T}}} = {{\mathbf{R}}^{ - 1}}.
 \end{equation}
 Suppose the entries of $\mathbf{R}$ are differentiable functions of time $t$, and that $t = 0$ gives $\mathbf{R} = \mathbf{I}$. Differentiating the orthogonality condition yields:
 \begin{equation}
-\dot{\mathbf{R}}^\mathrm{T} \mathbf{R} + \mathbf{R}^\mathrm{T} \dot{\mathbf{R}} = 0
+\dot{\mathbf{R}}^\mathrm{T} \mathbf{R} + \mathbf{R}^\mathrm{T} \dot{\mathbf{R}} = 0.
 \end{equation}
 The objective left Cauchy-Green tensor ${\mathbf{B}}$ is computed from ${\mathbf{V}}$:
 \begin{equation}
-{\mathbf{B}} = {{\mathbf{V}}^2} = {\mathbf{F}}{{\mathbf{F}}^{\rm{T}}}
+{\mathbf{B}} = {{\mathbf{V}}^2} = {\mathbf{F}}{{\mathbf{F}}^{\rm{T}}}.
 \end{equation}
 Here, $\mathbf{V}$ and $\mathbf{B}$ offer two Eulerian strain measures. In particular, Eulerian logarithmic strain is defined as:
 \begin{equation}
-\ln {\mathbf{V}} = \sum\limits_{i = 1}^3 {\ln \left( {{v _i}} \right)} {{\mathbf{n}}_i} \otimes {{\mathbf{n}}_i}
+\ln {\mathbf{V}} = \sum\limits_{i = 1}^3 {\ln \left( {{v _i}} \right)} {{\mathbf{n}}_i} \otimes {{\mathbf{n}}_i},
 \end{equation}
 where $v_i$ and ${\mathbf{n}}_i$, $i=1,2,3$, are the eigenvalues and orthonormal eigenvectors of the left stretch tensor $\mathbf{V}$.\\
 The spectral decomposition of $\mathbf{B}$ is represented by:
 \begin{equation}
-{\mathbf{B}} = \sum\limits_{i = 1}^3 {{b_i}{{\mathbf{m}}_i} \otimes {{\mathbf{m}}_i}}
+{\mathbf{B}} = \sum\limits_{i = 1}^3 {{b_i}{{\mathbf{m}}_i} \otimes {{\mathbf{m}}_i}},
 \end{equation}
 where $b_i$ and ${\mathbf{m}}_i$, $i=1,2,3$, are the eigenvalues and orthonormal eigenvectors of the left Cauchy-Green tensor $\mathbf{B}$.\\
 The unique additive decomposition of the velocity gradient $\mathbf{L}$ is as follow:
 \begin{equation}
-{\mathbf{L}} = {\mathbf{D}} + {\mathbf{W}}
+{\mathbf{L}} = {\mathbf{D}} + {\mathbf{W}},
 \end{equation}
 \begin{equation}
-{\mathbf{D}} = \frac{1}{2}\left( {{\mathbf{L}} + {{\mathbf{L}}^{\rm{T}}}} \right)
+{\mathbf{D}} = \frac{1}{2}\left( {{\mathbf{L}} + {{\mathbf{L}}^{\rm{T}}}} \right),
 \end{equation}
 \begin{equation}
-{\mathbf{W}} = \frac{1}{2}\left( {{\mathbf{L}} - {{\mathbf{L}}^{\rm{T}}}} \right)
+{\mathbf{W}} = \frac{1}{2}\left( {{\mathbf{L}} - {{\mathbf{L}}^{\rm{T}}}} \right),
 \end{equation}
 where, generally, the symmetric and antisymmetric tensors $\mathbf{D}$ and $\mathbf{W}$ are called the stretching and the vorticity tensor.
 
 \subsection{Co-rotational rates}
+\noindent
 Under a change of observer or change of frame a physical quantity should not vary.
 The rotated system will henceforth be denoted with a superscript $(\rm{\ })^*$ and may be defined by its spin $\bm{\Omega}^*$, which determines the skew-symmetric second-order Eulerian tensor $\mathbf{Q}$ to within a constant proper orthogonal tensor through the linear tensorial differential equation.
 \begin{equation}
@@ -88,7 +89,10 @@ Feigenbaum and Dafalias (2014) \cite{feigenbaum2014directional} derive the co-ro
 \begin{equation}
 {\mathring A _{pqrs}}^* = {{\dot A}_{pqrs}} - \Omega _{pv}^*{A_{vqrs}} - \Omega _{qv}^*{A_{pvrs}} - \Omega _{rv}^*{A_{pqvs}} - \Omega _{sv}^*{A_{pqrv}}
 \end{equation}
+
+
 \subsection{Continuous formulation of the constitutive model}
+\noindent
 In view of rate independent and initially isotropic elastic-plastic materials, according to the finite deformation elastoplastic theory postulating the additive decomposition of the stretching tensor ${\mathbf{D}}$ into the elastic part ${{\mathbf{D}}^{\rm{e}}}$ and the plastic part ${{\mathbf{D}}^{\rm{p}}}$:
 \begin{equation}
 {\mathbf{D}} = {{\mathbf{D}}^{\rm{e}}} + {{\mathbf{D}}^{\rm{p}}}
@@ -194,7 +198,9 @@ where ${\mathbf{n}}$ is the normal direction of the yield surface and given by:
 \begin{equation}
 {\mathbf{n}} = \frac{{{\bm{\uptau}'} - {\mathbf{a}}}}{{\left\| {{\bm{\uptau}}' - {\mathbf{a}}} \right\|}}
 \end{equation}
+
 \subsection{Cyclic hard/softening}
+\noindent
 Metals subjected to alternating tensile and compressive loads during strain controlled experiments give characteristic stress-strain relationships. Observations on stress-strain hysteresis loops of austenite stainless steel have shown that the peak stresses of each loop are not monotonic increasing or decreasing. The peak stresses become larger at the beginning loops and reach the maximum value during around hundreds of cycles. However, after that the peak stresses become smaller until the steady state is achieved. We suggest that $r^k$ consists of two parts $r_0^k$ and $r_{\Delta}^k$ which can be estimated from the monotonic tension curve and cyclic tension-compression curve respectively:
 \begin{equation}
 \label{Equ:rk1}
@@ -237,6 +243,7 @@ where
 \end{equation}
 
 \subsection{Non-proportional hardening}
+\noindent
 In this paper, we consider the non-proportional hardening as an additional term of isotropic hardening.
 Thus, the yield stress is suggested as:
 \begin{equation}
@@ -281,7 +288,9 @@ As discussed by Fang (2015) \cite{fang2015cyclic}, the evolution of ${Y_{\Delta 
 \end{equation}
 noting that the account of the strain memory effect is counted, $q$ is the radius of strain memory surface, ${\gamma _q}$ is a rate parameter.
 Generally if the material performs Massing behavior, we can choose ${\gamma _q}=0$.
+
 \subsection{Logarithmic rates}
+\noindent
 Xiao (1997) \cite{xiao1997logarithmic} and Bruhns (1999) \cite{Bruhns1999479} proved that only the logarithmic rate of the Eulerian logarithmic strain tensor is equal to the stretching tensor:
 \begin{equation}
 {\mathring {\mathbf{\upepsilon }}^{\log }}{\rm{ = }}{( {\mathring {\ln \mathbf{V}}} )^{\log }} = {\mathbf{D}}
@@ -320,7 +329,9 @@ and moreover
 \left[ {{{\mathbf{B}}^r}{\mathbf{D}}{{\mathbf{B}}^s}} \right] = {{\mathbf{B}}^r}{\mathbf{D}}{{\mathbf{B}}^s} - {{\mathbf{B}}^s}{\mathbf{D}}{{\mathbf{B}}^r}
 \end{equation}
 for $r,s = 0,1,2$.
+
 \subsection{Summarize equations}
+\noindent
 Box 1 and Box 2 summarize the constitutive equations of the model as follows:
 \begin{framed}
 \label{Box:1}
@@ -385,11 +396,11 @@ Box 2: Specification of the material functions.
 \end{framed}
 
 \section{Algorithmic formulation of the constitutive model}
+\noindent
 In the following, a fully implicit strain driven integration algorithm is developed for the constitutive model discussed in the previous section. It is ready for an implementation in a general Finite Element (FE) context where the proposed algorithm is applied locally at every integration point during each global iteration step.
 
-\label{}
 \subsection{Backward Euler discretization}
-\label{}
+\noindent
 Backward Euler method is a first order fully implicit method. Consider the interval from a state $n$ to $n+1$, in the following, any quantity evaluated at state $n$ will be indicated by a subscript $n$, for quantities evaluated at state $n+1$ subscript $n+1$ are omitted, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$.. The backward Euler method allows our constitutive equations to be discretized as the following.
 %Hereafter, the subscripts $n$ and $n+1$ signify the values at $n$ and $n+1$ respectively, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$.
 \begin{equation}
@@ -501,8 +512,8 @@ Dynamic recovery:
 \end{equation}
 
 
-
 \subsection{Implicit stress integration}
+\noindent
 The problem considered here is stated as follows: given all constitutive variables at step $n$ and also $\Delta {{\bm{\upepsilon }}_{n + 1}}$, find $\bm{\upsigma}_{n+1}$  satisfying the discretized constitutive relations. Let us use return mapping, which consists of an elastic predictor and a plastic corrector. The elastic predictor is taken to be an elastic tentative stress:
 \begin{equation}
 {\bm{\uptau }}_{n + 1}^{tr} = {\mathbb{D}^{\rm{e}}}: {{\mathbf{D}}_{n + 1} \Delta t} + \Delta {\mathbf{R}}_{n + 1}^{}{{\bm{\uptau }}_n}{\left( {\Delta {\mathbf{R}}_{n + 1}^{}} \right)^{\rm{T}}}
@@ -594,6 +605,7 @@ Substitution of Equation \ref{Equ:Fn+1}-\ref{Equ:nn+1} and \ref{Equ:sminusa2} in
 \end{figure}
 
 \subsection{Consistent tangent moduli}
+\noindent
 To complete the algorithmic scheme discussed above we derive in the following the tangent moduli consistent with the proposed algorithm. The tangent moduli determine the incremental change of the stresses $\Delta {\bm{\upsigma }}$ along with the incremental change of the total strains $\Delta {\bm{\upepsilon }}$ determined through the global iteration algorithm according to:
 \begin{equation}
 \Delta {\bm{\uptau }} = {\mathbb{D}^{\rm{ep}}}:\Delta {\bm{\upepsilon }}
