@@ -206,20 +206,6 @@ The cyclic stress-strain relationship is assumed to be in the form of the Ramber
 where $K'$ is the cyclic strength coefficient and $n'$ is the cyclic strain hardening exponent.
 %Comparison between the present experiments and Ramberg-Osgood model is illustrated in \ref{Fig:plot_exp_half_life_cycle}. The experimental loops are taken from $N_{\rm f}/2$th cycles. More detailed discussions about cyclic plasticity for the Inconel718 are referred a separate publication by the authors \cite{Sun2017}.
 
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=12cm]{plot_exp_half_life_cycle-TC-IF.pdf}
-\caption{Comparison of the stress-strain hysteresis loops of the half life cycle $N_{\rm f}/2$ between experiments and Ramberg-Osgood model, with strain ranges of $\pm0.4\%, \pm0.6\%, \pm0.8\%$ and $\pm1.0\%$.}
-\label{Fig:plot_exp_half_life_cycle}
-\end{figure}
-
-\begin{figure}[!htp]
-\centering
-\includegraphics[width=12cm]{plot_monotonic_cyclic_osgood.pdf}
-\caption{Monotonic and cyclic stress-strain curve with Ramberg-Osgood relationship for Inconel 718.}
-\label{Fig:plot_monotonic_cyclic_osgood}
-\end{figure}
-
 \begin{table}[htbp]
   \centering
   \caption{Basic properties of Nickel-based superalloy Inconel 718 at 650$^{\circ}$C.}
@@ -236,9 +222,23 @@ where $K'$ is the cyclic strength coefficient and $n'$ is the cyclic strain hard
 \end{table}
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{plot_exp_coffin_manson.pdf}}
-\caption{Manson-Coffin plots of the isothermal fatigue tests.}
-\label{Fig:Baseline}
+  \centering
+  \includegraphics[width=14cm]{plot_exp_half_life_cycle-TC-IF.pdf}
+  \caption{Comparison of the stress-strain hysteresis loops of the half life cycle $N_{\rm f}/2$ between experiments and Ramberg-Osgood model, with strain ranges of $\pm0.4\%, \pm0.6\%, \pm0.8\%$ and $\pm1.0\%$.}
+  \label{Fig:plot_exp_half_life_cycle}
+\end{figure}
+
+\begin{figure}[!htp]
+  \centering
+  \includegraphics[width=14cm]{plot_monotonic_cyclic_osgood.pdf}
+  \caption{Monotonic and cyclic stress-strain curve with Ramberg-Osgood relationship for Inconel 718.}
+  \label{Fig:plot_monotonic_cyclic_osgood}
+\end{figure}
+
+\begin{figure}[!htp]
+  \centering{\includegraphics[width=14cm]{plot_exp_coffin_manson.pdf}}
+  \caption{Manson-Coffin plots of the isothermal fatigue tests.}
+  \label{Fig:Baseline}
 \end{figure}
 
 \ref{Fig:Baseline} shows  comparison of experimental results by Kim \cite{kim1988elevated} and Nelson \cite{nelson1992creep}, Mohabia \cite{Mahobia2014} as well as the data from the present work. Partially significant difference is observed among the three series of testing, which may be induced by different material providers. Heat treatments and processing of all the three series of specimens are similar. From this observation one may expect obvious deviations in fatigue performance for the nominal same superalloy Inconel 718.
@@ -264,9 +264,9 @@ At the mechanical strain amplitude bigger than 0.6\%, the in-phase thermomechani
 % Secondly, we consider the multiaxial effect on the fatigue life. Because the temperature cycles of all the IF TMF tests from 573K to 923K remain the same. It was observed previously that the fatigue life of the multiaxial diamond path in phase IP TMF tests is shorter than the uniaxial in phase IP TMF tests. But the fatigue life of the proportional load path IP TMF tests is longer than the uniaxial IP TMF tests. This phenomenon was suggested to be related to the number of equivalent plastic strain of the two different strain loading paths.
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=12cm]{plot_exp_fatigue_life_tmf.pdf}}
-\caption{Manson-Coffin plots of the TMF fatigue tests.}
-\label{Fig:plot_exp_fatigue_life}
+  \centering{\includegraphics[width=14cm]{plot_exp_fatigue_life_tmf.pdf}}
+  \caption{Manson-Coffin plots of the TMF fatigue tests.}
+  \label{Fig:plot_exp_fatigue_life}
 \end{figure}
 
 \subsection{Fractography of different specimens}
@@ -549,16 +549,16 @@ In Equations (\ref{Equ:coordinate_transformation_of_vector}) and (\ref{Equ:coord
 \end{eqnarray}
 The direction cosines of a vector are those of the angles between the vector and the three coordinate axes. According to \ref{Fig:rotation_of_coordinate}, it can be found that $\cos {\alpha _1} = \cos \left( {{{x'}_1},{x_1}} \right)$, $\cos {\beta _1} = \cos \left( {{{x'}_1},{x_2}} \right)$, $\cos {\gamma _1} = \cos \left( {{{x'}_1},{x_3}} \right)$ and so on.
 
-\begin{figure}
-\centering
-\begin{overpic}[width=14cm]{coordinate_transformation_of_tensor.pdf}
-\put(50,45){(c)}
-\put(60,45){(d)}
-\put(50,55){(a)}
-\put(60,55){(b)}
-\end{overpic}
-\caption{Coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$).}
-\label{Fig:coordinate_transformation_of_tensor}
+\begin{figure}[ht]
+  \centering
+  \begin{overpic}[width=14cm]{coordinate_transformation_of_tensor.pdf}
+  \put(50,45){(c)}
+  \put(60,45){(d)}
+  \put(50,55){(a)}
+  \put(60,55){(b)}
+  \end{overpic}
+  \caption{Coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$).}
+  \label{Fig:coordinate_transformation_of_tensor}
 \end{figure}
 
 Now we consider a two steps coordinate transformation from coordinate system ($x_1,x_2,x_3$) to ($x''_1,x''_2,x''_3$). As shown in \ref{Fig:coordinate_transformation_of_tensor}, the coordinate system ($x''_1,x''_2,x''_3$) can be obtained by combinations of the two steps rotations. The first step is rotation along the $x_3$-axis and the rotation angle is $\varphi$. The transformation matrix from ($x_1,x_2,x_3$) to ($x'_1,x'_2,x'_3$) is given by direction cosines as:
@@ -680,6 +680,15 @@ Therefore, at any instant $t \in \mathscr{T}$, it is possible to calculate the n
 {{\gamma _{{{n}}}}(t)} = 2 \sqrt{{{\varepsilon^2_{{{na}}}}(t)}+{{\varepsilon^2_{{{nb}}}}(t)}}.
 \end{equation}
 
+\begin{figure}[ht]
+  \centering
+  \begin{overpic}[width=10cm]{stress_on_material_plane.pdf}
+  \put(30,30){$C$}
+  \end{overpic}
+  \caption{Normal stress ${{\sigma _{{\rm{n}}}}(t)}$ and shear stress ${{\tau _{{\rm{n}}}}(t)}$ relative to the given plane $\Gamma$.}
+  \label{Fig:stress_on_material_plane}
+\end{figure}
+
 As shown in \ref{Fig:stress_on_material_plane}, during the loading cycle, the normal stress ${{\sigma _{{{n}}}}(t)}$ relative to the material plane $\Gamma$, varies its magnitude by remaining always parallel to the $n$-axis. Therefore, the normal stress ${{\sigma _{{{n}}}}(t)}$ can be considered as a scalar, so that its maximum, minimum values and amplitude can be calculated as follows:
 \begin{equation}
 {\sigma _{{\rm{n,max}}}} = \mathop {\max }\limits_{t \in \mathscr{T}} \left[ {{\sigma _n}\left( t \right)} \right],
@@ -716,15 +725,6 @@ Similarly, the maximum normal strain, minimum normal strain and the amplitude of
 \frac{{\Delta \gamma }}{2} = \frac{1}{2}\mathop {\max }\limits_{{t_2} \in \mathscr{T}} \left[ {\mathop {\max }\limits_{{t_1} \in \mathscr{T}} \left| {{\gamma _n}\left( {{t_1}} \right) - {\gamma _n}\left( {{t_2}} \right)} \right|} \right].
 \label{Equ:delta_gamma}
 \end{equation}
-
-\begin{figure}
-\centering
-\begin{overpic}[width=10cm]{stress_on_material_plane.pdf}
-\put(30,30){$C$}
-\end{overpic}
-\caption{Normal stress ${{\sigma _{{\rm{n}}}}(t)}$ and shear stress ${{\tau _{{\rm{n}}}}(t)}$ relative to the given plane $\Gamma$.}
-\label{Fig:stress_on_material_plane}
-\end{figure}
 
 \subsection{Computational examples of the non-proportional TMF test}
 \noindent

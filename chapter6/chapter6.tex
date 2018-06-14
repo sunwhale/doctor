@@ -165,10 +165,10 @@ noting that the calculated Young's modulus $E$ is in the unit of MPa and Poisson
 \end{table}%
 
 \begin{figure}[!htp]
-\centering
-\includegraphics[width=10cm]{plot_elastic_by_temperature_in718.pdf}
-\caption{Young's modulus $E$, shear modulus $G$ and Poisson's Ratio at different temperatures.}
-\label{Fig:plot_elastic_by_temperature_in718}
+  \centering
+  \includegraphics[width=14cm]{plot_elastic_by_temperature_in718.pdf}
+  \caption{Young's modulus $E$, shear modulus $G$ and Poisson's Ratio at different temperatures.}
+  \label{Fig:plot_elastic_by_temperature_in718}
 \end{figure}
 
 \subsection{Determination of $\zeta^k$ and $r_0^k$ from the monotonic stress-strain curves}
@@ -187,10 +187,10 @@ r_0^k = \left( {\frac{{\sigma _{}^k - \sigma _{}^{k - 1}}}{{\varepsilon _{\rm{p}
 where $\sigma^k$ and $\varepsilon_p^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$-th point on the monotonic  stress-plastic strain curve, respectively. $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_p^0=0$. Generally, the uniaxial tensile stress-strain curve is represented in $M$ intervals, as shown in \ref{Fig:Determine_the_basic_material_constants}. In the present work, $M=9$ is proposed.
 
 \begin{figure}[!htp]
-\centering
-\includegraphics[width=14cm]{Determine_the_basic_material_constants.pdf}
-\caption{The material constants $\zeta^k$ and $r_0^k$ are determined by monotonic tensile stress-strain curves of Inconel 718 at 923K.}
-\label{Fig:Determine_the_basic_material_constants}
+  \centering
+  \includegraphics[width=14cm]{Determine_the_basic_material_constants.pdf}
+  \caption{The material constants $\zeta^k$ and $r_0^k$ are determined by monotonic tensile stress-strain curves of Inconel 718 at 923K.}
+  \label{Fig:Determine_the_basic_material_constants}
 \end{figure}
 
 \subsection{Determination of $r_{\Delta \rm{s}}^k$ from the cyclic stress-strain curves}
@@ -220,9 +220,9 @@ f(\sigma,\varepsilon)=\frac{1}{2}(f_{\rm{inc}}\left(\sigma,\varepsilon)+f_{\rm{d
 \end{equation}
 \begin{figure}[!htp]
 \centering
-\includegraphics[width=12cm]{plot_alternating_curve.pdf}
-\caption{Calculation of the alternating stress-strain curve from the hysteresis loop at 923K.}
-\label{Fig:Alternating_Curve}
+  \includegraphics[width=14cm]{plot_alternating_curve.pdf}
+  \caption{Calculation of the alternating stress-strain curve from the hysteresis loop at 923K.}
+  \label{Fig:Alternating_Curve}
 \end{figure}
 % By combining Equation \ref{Equ:rk1} and \ref{Equ:rdeltak1}, $r^k$ can be expressed as:
 % \begin{equation}
@@ -491,10 +491,10 @@ Similarly axisymmetric tension-torsion calculation is a typical biaxial stress s
 We take out a cross section in the specimen gauge length with the same inner and outer radius as the hollow round specimen.
 
 \begin{figure}[!htp]
-\centering
-\includegraphics[width=16cm]{compuation_model.pdf}
-\caption{Computation model with ABAQUS.}
-\label{Fig:Compuation_model}
+  \centering
+  \includegraphics[width=16cm]{compuation_model.pdf}
+  \caption{Computation model with ABAQUS.}
+  \label{Fig:Compuation_model}
 \end{figure}
 
 The small number of elements will speed up the computation and simultaneously provide sufficient precision.
@@ -503,10 +503,10 @@ A major goal is to simulate the experiments with thermomechanical loading condit
 %The material model and parameters used in the following simulation models was taken from the above sections.
 
 \begin{figure}[!htp]
-\centering
-\includegraphics[width=16cm]{abaqus_umat_subroutine.pdf}
-\caption{ABAQUS UMAT SUBROUTINE.}
-\label{Fig:ABAQUS_UMAT_SUBROUTINE}
+  \centering
+  \includegraphics[width=16cm]{abaqus_umat_subroutine.pdf}
+  \caption{ABAQUS UMAT SUBROUTINE.}
+  \label{Fig:ABAQUS_UMAT_SUBROUTINE}
 \end{figure}
 
 \ref{Fig:plot_exp_monotonic_tensile} shows the experimental and computational monotonic tensile responses at 573K, 823K and 923K.
@@ -515,7 +515,7 @@ Because of the initial kinematic hardening parameters $r_0^k$ are directly obtai
 
 \begin{figure}[!htp]
   \centering
-  \includegraphics[width=8.0cm]{plot_exp_monotonic_tensile.pdf}
+  \includegraphics[width=14.0cm]{plot_exp_monotonic_tensile.pdf}
   \caption{Comparison of experimental and computational stress-strain responses of monotonic tensile test at 573K, 823K and 923K.}
   \label{Fig:plot_exp_monotonic_tensile}
 \end{figure}
