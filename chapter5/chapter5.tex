@@ -530,9 +530,9 @@ Also we can derive the relation between stress and trial stress at state $n+1$ a
 Note that, because of elastic isotropy and plastic incompressibility, ${\mathbf{D}}_{n + 1}^p$ is a deviatoric tensor with $Tr\left( {\mathbf{D}}_{n + 1}^p \right)=0$.
 The stress deviator is given by:
 \begin{equation}
-{\bm{\uptau }}'_{n + 1} \equiv {\bm{\uptau }} - \frac{1}{3}\left( {{\bm{\uptau }}:{\mathbf{I}}} \right){\mathbf{I}} = {\mathbb{I}_d}:{\bm{\uptau }}
+{\bm{\uptau }}'_{n + 1} \equiv {\bm{\uptau }} - \frac{1}{3}\left( {{\bm{\uptau }}:{\mathbf{I}}} \right){\mathbf{I}} = {\mathbb{I}_{\rm d}}:{\bm{\uptau }}
 \end{equation}
-where ${\mathbb{I}_d} = \mathbb{I} - \frac{1}{3}{\mathbf{I}} \otimes {\mathbf{I}}$ is the deviatoric projection tensor.
+where ${\mathbb{I}_{\rm d}} = \mathbb{I} - \frac{1}{3}{\mathbf{I}} \otimes {\mathbf{I}}$ is the deviatoric projection tensor.
 Taking the deviatoric part of Equation \ref{Equ:tau1}, we have:
 \begin{equation}
 {\bm{\uptau }}'_{n + 1} = {{\bm{\uptau }}'}_{n + 1}^{tr} - 2G{\mathbf{D}}_{n + 1}^p \Delta t
@@ -557,29 +557,29 @@ The two steps radial return map method is the same as which introduced in the la
 Then we define a tentative form of the backstress as:
 \begin{equation}
 \label{Equ:btrn+1}
-{\mathbf{b}}_{n + 1}^{k,tr} = \Delta {\mathbf{R}}_{n + 1}^{}{{\mathbf{b}}_n^k}{\left( {\Delta {\mathbf{R}}_{n + 1}^{}} \right)^{\rm{T}}}  + \frac{2}{3}{\zeta ^k}{\mathbf{D }}_{n + 1}^p \Delta t
+{\mathbf{b}}_{n + 1}^{k,\rm tr} = \Delta {\mathbf{R}}_{n + 1}^{}{{\mathbf{b}}_n^k}{\left( {\Delta {\mathbf{R}}_{n + 1}^{}} \right)^{\rm{T}}}  + \frac{2}{3}{\zeta ^k}{\mathbf{D }}_{n + 1}^p \Delta t
 \end{equation}
 
 Therefore, the normalized backstress ${\mathbf{b}}_{n + 1}^k$ can be written as:
 \begin{equation}
 \label{Equ:bn+1}
-{\mathbf{b}}_{n + 1}^k = \theta _{n + 1}^k\left[ \Delta {\mathbf{R}}_{n + 1}^{}{{\mathbf{b}}_n^k}{\left( {\Delta {\mathbf{R}}_{n + 1}^{}} \right)^{\rm{T}}}  + \frac{2}{3}{\zeta ^k}{\mathbf{D }}_{n + 1}^p \Delta t \right] = \theta _{n + 1}^k{\mathbf{b}}_{n + 1}^{k,tr}
+{\mathbf{b}}_{n + 1}^k = \theta _{n + 1}^k\left[ \Delta {\mathbf{R}}_{n + 1}^{}{{\mathbf{b}}_n^k}{\left( {\Delta {\mathbf{R}}_{n + 1}^{}} \right)^{\rm{T}}}  + \frac{2}{3}{\zeta ^k}{\mathbf{D }}_{n + 1}^p \Delta t \right] = \theta _{n + 1}^k{\mathbf{b}}_{n + 1}^{k,\rm tr}
 \end{equation}
 where $\theta _{n + 1}^k$ is defined by the following equation and satisfies $0 < \theta _{n + 1}^k \leqslant 1$:
 \begin{equation}
 \label{Equ:thetan+1}
-\theta _{n + 1}^k = c_{n + 1}^k + H\left( {\bar f_{n + 1}^k} \right)\left( {\frac{1}{{\bar b_{n + 1}^{k,tr}}} - c_{n + 1}^k} \right)
+\theta _{n + 1}^k = c_{n + 1}^k + H\left( {\bar f_{n + 1}^k} \right)\left( {\frac{1}{{\bar b_{n + 1}^{k,\rm tr}}} - c_{n + 1}^k} \right)
 \end{equation}
 $c_{n + 1}^k$ and ${\bar f_{n + 1}^k}$ are given as:
 \begin{equation}
 c_{n + 1}^k = \frac{1}{{1 + {\zeta ^k}\mu \Delta {p_{n + 1}} - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}}}
 \end{equation}
 \begin{equation}
-\bar f_{n + 1}^k = {\left( {c_{n + 1}^k\bar b_{n + 1}^{k,tr}} \right)^2} - 1
+\bar f_{n + 1}^k = {\left( {c_{n + 1}^k\bar b_{n + 1}^{k,\rm tr}} \right)^2} - 1
 \end{equation}
 where
 \begin{equation}
-\bar b_{n + 1}^{k,tr} = \sqrt {\frac{3}{2}{\mathbf{b}}_{n + 1}^{k,tr}:{\mathbf{b}}_{n + 1}^{k,tr}}
+\bar b_{n + 1}^{k,\rm tr} = \sqrt {\frac{3}{2}{\mathbf{b}}_{n + 1}^{k,\rm tr}:{\mathbf{b}}_{n + 1}^{k,\rm tr}}
 \end{equation}
 
 Substituting ${{\mathbf{a}}_{n + 1}}$ into Equation \ref{Equ:sminusa1}, we have:
@@ -630,23 +630,23 @@ With the notation:
 {\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log } = {\text{d}}(\mathbf{D}_{n+1} \Delta t)
 \end{equation}
 \begin{equation}
-{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{e(\log) } = {\text{d}}(\mathbf{D}_{n+1}^e \Delta t)
+{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm e(\log) } = {\text{d}}(\mathbf{D}_{n+1}^e \Delta t)
 \end{equation}
 \begin{equation}
-{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) } = {\text{d}}(\mathbf{D}_{n+1}^p \Delta t)
+{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) } = {\text{d}}(\mathbf{D}_{n+1}^{\rm p} \Delta t)
 \end{equation}
 We have:
 \begin{equation}
-{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log } = {\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{e(\log) } + {\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) }
+{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log } = {\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm e(\log) } + {\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) }
 \end{equation}
 On the assumption that all constitutive variables are known at state $n$, and that $F_{n+1}=0$, let us differentiate Equations \ref{Equ:sigman+1}, \ref{Equ:epsilonpn+1}, \ref{Equ:nn+1} and \ref{Equ:nn1} to obtain:
 \begin{equation}
 \label{Equ:dsigman+1}
-{\text{d}}\Delta \mathring {\bm{\uptau}}_{n + 1}^{\log } = {\mathbb{D}^{\rm{e}}}:\left( \mathbf{D}_{n+1} - \mathbf{D}_{n+1}^{p} \right) \Delta t
+{\text{d}}\Delta \mathring {\bm{\uptau}}_{n + 1}^{\log } = {\mathbb{D}^{\rm{e}}}:\left( \mathbf{D}_{n+1} - \mathbf{D}_{n+1}^{\rm p} \right) \Delta t
 \end{equation}
 \begin{equation}
 \label{Equ:depsilon+1}
-{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) } = \sqrt {\frac{3}{2}} \left( {{\text{d}}\Delta {p_{n + 1}}{{\mathbf{n}}_{n + 1}} + \Delta {p_{n + 1}}{\text{d}}{{\mathbf{n}}_{n + 1}}} \right)
+{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) } = \sqrt {\frac{3}{2}} \left( {{\text{d}}\Delta {p_{n + 1}}{{\mathbf{n}}_{n + 1}} + \Delta {p_{n + 1}}{\text{d}}{{\mathbf{n}}_{n + 1}}} \right)
 \end{equation}
 \begin{equation}
 \label{Equ:dnn+1}
@@ -658,24 +658,24 @@ On the assumption that all constitutive variables are known at state $n$, and th
 Taking the deviatoric part of Equation \ref{Equ:dsigman+1}, we have:
 \begin{equation}
 \label{Equ:dsn+1}
-{\text{d}}\Delta \mathring {{\bm{\uptau}}'}_{n + 1}^{\log }  = 2G{\mathbb{I}_d}:\mathbf{D}_{n+1} \Delta t - 2G\mathbf{D}_{n+1}^p \Delta t
+{\text{d}}\Delta \mathring {{\bm{\uptau}}'}_{n + 1}^{\log }  = 2G{\mathbb{I}_{\rm d}}:\mathbf{D}_{n+1} \Delta t - 2G\mathbf{D}_{n+1}^{\rm p} \Delta t
 \end{equation}
 Substitution of Equations \ref{Equ:dan+1} and \ref{Equ:dsn+1} into Equation \ref{Equ:dnn+1} provides:
 \begin{equation}
 \label{Equ:dnn+12}
 \begin{aligned}
-{\text{d}}{{\mathbf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{1}{{{Y_{n + 1}}}} \left[ {2G{\mathbb{I}_d}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log } - \left( {2G\mathbb{I} + \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} } \right):{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) } } \right.\\
-\left. { - \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\mathbf{n}}_{n + 1}} \otimes {{\mathbf{n}}_{n + 1}}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) }}\right]
+{\text{d}}{{\mathbf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{1}{{{Y_{n + 1}}}} \left[ {2G{\mathbb{I}_{\rm d}}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log } - \left( {2G\mathbb{I} + \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} } \right):{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) } } \right.\\
+\left. { - \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\mathbf{n}}_{n + 1}} \otimes {{\mathbf{n}}_{n + 1}}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) }}\right]
 \end{aligned}
 \end{equation}
 noting that
 \begin{equation}
 \label{Equ:dpn+1}
-{\text{d}}\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}} {{\mathbf{n}}_{n + 1}}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) }
+{\text{d}}\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}} {{\mathbf{n}}_{n + 1}}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) }
 \end{equation}
 Substituting Equations \ref{Equ:dnn+12} and \ref{Equ:dpn+1} into Equation \ref{Equ:depsilon+1} to eliminate ${\text{d}}{{\mathbf{n}}_{n + 1}}$ and ${\text{d}}\Delta {p_{n + 1}}$, and rearranging the resulting equation, we obtain:
 \begin{equation}
-{\mathbb{L}_{n + 1}}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) } = 2G{\mathbb{I}_d}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log }
+{\mathbb{L}_{n + 1}}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) } = 2G{\mathbb{I}_{\rm d}}:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log }
 \end{equation}
 where
 \begin{equation}
@@ -685,13 +685,13 @@ where
    + \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\mathbf{n}}_{n + 1}} \otimes {{\mathbf{n}}_{n + 1}}
 \end{aligned}
 \end{equation}
-Elimination of ${\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) }$ in Equation \ref{Equ:dsigman+1} by use of the Equation \ref{Equ:Ln+1} gives:
+Elimination of ${\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) }$ in Equation \ref{Equ:dsigman+1} by use of the Equation \ref{Equ:Ln+1} gives:
 \begin{equation}
-{\text{d}}\Delta \mathring {\bm{\uptau}}_{n + 1}^{\log } = \left( {{\mathbb{D}^{\rm{e}}} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_d}} \right):{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log }
+{\text{d}}\Delta \mathring {\bm{\uptau}}_{n + 1}^{\log } = \left( {{\mathbb{D}^{\rm{e}}} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_{\rm d}}} \right):{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log }
 \end{equation}
 Therefore, consistent tangent modulus $\frac{{\text{d}}\Delta \mathring {\bm{\uptau}}_{n + 1}^{\log }}{{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\log }}$ is derived as:
 \begin{equation}
-{\mathbb{D}^{\rm{ep}}} = {\mathbb{D}^{\rm{e}}} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_d}
+{\mathbb{D}^{\rm{ep}}} = {\mathbb{D}^{\rm{e}}} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_{\rm d}}
 \end{equation}
 In order to obtain $\mathbb{H}_{n + 1}^k$, we differentiate Equations \ref{Equ:an+1} and \ref{Equ:bn+1}, so that:
 \begin{equation}
@@ -699,7 +699,7 @@ In order to obtain $\mathbb{H}_{n + 1}^k$, we differentiate Equations \ref{Equ:a
 \end{equation}
 \begin{equation}
 \label{Equ:dbn+1}
-\text{d} \Delta \mathring {\mathbf{b}}_{n + 1}^{k(\log) } = \frac{{{\mathbf{b}}_{n + 1}^k}}{{\theta _{n + 1}^k}}{\text{d}} \Delta \theta _{n + 1}^k + \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) }
+\text{d} \Delta \mathring {\mathbf{b}}_{n + 1}^{k(\log) } = \frac{{{\mathbf{b}}_{n + 1}^k}}{{\theta _{n + 1}^k}}{\text{d}} \Delta \theta _{n + 1}^k + \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) }
 \end{equation}
 Considering Equation \ref{Equ:thetan+1}, we may derive $\theta _{n + 1}^k$ in two cases.\\
 I. When $H\left( {\bar f_{n + 1}^k} \right) = 0$, we have $\theta _{n + 1}^k = c_{n + 1}^k$, then:
@@ -716,25 +716,25 @@ Therefore, $\mathbb{H}_{n + 1}^k$ in Equation \ref{Equ:dan+1} has an expression:
 \left. + \theta _{n + 1}^k\left( {1 - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}} \right){{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}} \right]{\mathbf{b}}_{n + 1}^k \otimes {{\mathbf{n}}_{n + 1}}
 \end{aligned}
 \end{equation}\\
-II. When $H\left( {\bar f_{n + 1}^k} \right) = 1$, Equation \ref{Equ:thetan+1} becomes $\theta _{n + 1}^k = \frac{1}{{\bar b_{n + 1}^{k,tr}}}$, then:
+II. When $H\left( {\bar f_{n + 1}^k} \right) = 1$, Equation \ref{Equ:thetan+1} becomes $\theta _{n + 1}^k = \frac{1}{{\bar b_{n + 1}^{k,\rm tr}}}$, then:
 \begin{equation}
 \label{Equ:thetan+1}
-{\text{d}} \Delta \theta _{n + 1}^k =  - \frac{3}{2}{\left( {\theta _{n + 1}^k} \right)^3}{\mathbf{b}}_{n + 1}^{k,tr}:\text{d} \Delta \mathring {\mathbf{b}}_{n + 1}^{k,tr(\log) }
+{\text{d}} \Delta \theta _{n + 1}^k =  - \frac{3}{2}{\left( {\theta _{n + 1}^k} \right)^3}{\mathbf{b}}_{n + 1}^{k,\rm tr}:\text{d} \Delta \mathring {\mathbf{b}}_{n + 1}^{k,\rm tr(\log) }
 \end{equation}
 We differentiate Equation \ref{Equ:btrn+1}, so that:
 \begin{equation}
 \label{Equ:dbtrn+1}
-\text{d} \Delta \mathring {\mathbf{b}}_{n + 1}^{k,tr(\log) } = \frac{2}{3}{\zeta ^k}{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) }
+\text{d} \Delta \mathring {\mathbf{b}}_{n + 1}^{k,\rm tr(\log) } = \frac{2}{3}{\zeta ^k}{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) }
 \end{equation}
-Eliminating ${\mathbf{b}}_{n + 1}^{k,tr}$ and ${\text{d}}{\mathbf{b}}_{n + 1}^{k,tr}$ in Equation \ref{Equ:thetan+1} by using Equations \ref{Equ:btrn+1} and \ref{Equ:dbtrn+1}, we obtain:
+Eliminating ${\mathbf{b}}_{n + 1}^{k,\rm tr}$ and ${\text{d}}{\mathbf{b}}_{n + 1}^{k,\rm tr}$ in Equation \ref{Equ:thetan+1} by using Equations \ref{Equ:btrn+1} and \ref{Equ:dbtrn+1}, we obtain:
 \begin{equation}
 \label{Equ:thetan+1}
-{\text{d}} \Delta \theta _{n + 1}^k =  - {\left( {\theta _{n + 1}^k} \right)^2}{\zeta ^k}{\mathbf{b}}_{n + 1}^k:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) }
+{\text{d}} \Delta \theta _{n + 1}^k =  - {\left( {\theta _{n + 1}^k} \right)^2}{\zeta ^k}{\mathbf{b}}_{n + 1}^k:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) }
 \end{equation}
 Substitution of Equation \ref{Equ:thetan+1} into \ref{Equ:dbn+1} provides:
 \begin{equation}
 \label{Equ:dbn+12}
-\text{d} \Delta \mathring {\mathbf{b}}_{n + 1}^{k(\log) } = \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) } - {\zeta ^k}\theta _{n + 1}^k{\mathbf{b}}_{n + 1}^k \otimes {\mathbf{b}}_{n + 1}^k:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{p(\log) }
+\text{d} \Delta \mathring {\mathbf{b}}_{n + 1}^{k(\log) } = \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) } - {\zeta ^k}\theta _{n + 1}^k{\mathbf{b}}_{n + 1}^k \otimes {\mathbf{b}}_{n + 1}^k:{\text{d}}\Delta \mathring {\bm{\upepsilon}}_{n + 1}^{\rm p(\log) }
 \end{equation}
 Therefore, $\mathbb{H}_{n + 1}^k$ in Equation \ref{Equ:dan+1} has an expression:
 \begin{equation}

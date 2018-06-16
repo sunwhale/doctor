@@ -102,26 +102,27 @@ In plasticity mechanics, the first principal invariant $I_1$ of the Cauchy stres
 
 \subsection{Strain decomposition}
 \noindent
-It is shown in \ref{Fig:Strain_decomposition} that the stress-strain curve can be obtained from a uniaxial tensile test.
+It is shown in \ref{Fig:strain_decomposition} that the stress-strain curve can be obtained from a uniaxial tensile test.
 Both elastic and inelastic regions are indicated.
 In elastic region, the stress is proportional to the strain if the stress in the specimen is below a certain value, i.e. the yield stress $\sigma_{y0}$, which is the elastic limit.
 As a material is loaded beyond its elastic limit, Hooke's law does not apply, the material no longer exhibits elastic behavior and the stress-strain relation becomes nonlinear. The material yields, begins to flow and residual, permanent deformation results after unloading.
 
 For strain hardening materials the yield stress increases with increasing plastic deformation to a value of $\sigma_y$.
 It is called hardening because the stress is increasing relative to perfect plastic behavior, also shown in the figure.
-\begin{figure}[!htp]
-\centering\scalebox{1.0}{\includegraphics{Rock_plasticity_compression_plain.pdf}}
-\caption{The classical decomposition of strain into elastic and plastic parts.}
-\label{Fig:Strain_decomposition}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=14cm]{strain_decomposition.pdf}
+	\caption{The classical decomposition of strain into elastic and plastic parts.}
+	\label{Fig:strain_decomposition}
 \end{figure}
-If, at a strain of $\varepsilon$, the loading were to be reversed, the material would cease to deform plastically (at least in the absence of time-dependent effects) and would show a linearly decreasing stress with strain such that the gradient of this part of the stress-strain curve would again be the Young's modulus, E, shown in \ref{Fig:Strain_decomposition}.
+If, at a strain of $\varepsilon$, the loading were to be reversed, the material would cease to deform plastically (at least in the absence of time-dependent effects) and would show a linearly decreasing stress with strain such that the gradient of this part of the stress-strain curve would again be the Young's modulus, E, shown in \ref{Fig:strain_decomposition}.
 Once a stress of zero is achieved (provided the material remains elastic on full reversal of the load), the strain remaining in the test specimen is the plastic strain, $\varepsilon_{\rm{p}}$.
 The recovered strain, $\varepsilon_e$, is the elastic strain and it can be seen that the total strain, $\varepsilon$, is the sum of the two
 \begin{equation}
 \varepsilon = \varepsilon_{\rm{e}} + \varepsilon_{\rm{p}}
 \end{equation}
 This is called the classical additive decomposition of strain.
-It is also apparent from \ref{Fig:Strain_decomposition} that the stress achieved at a strain of $\varepsilon$ is given by
+It is also apparent from \ref{Fig:strain_decomposition} that the stress achieved at a strain of $\varepsilon$ is given by
 \begin{equation}
 \sigma = E\varepsilon_{\rm{e}} = E(\varepsilon - \varepsilon_{\rm{p}})
 \end{equation}
@@ -237,17 +238,31 @@ d\boldsymbol{\sigma}: d{{\bm{\upepsilon }}^{\rm{p}}} \ge 0 \,.
 \end{equation}
 The above quantity is equal to zero for purely elastic cycles.
 Examination of the work done over a cycle of plastic loading-unloading can be used to justify the validity of the associated flow rule.
-The Prager consistency condition is needed to close the set of constitutive equations and to eliminate the unknown parameter $d\lambda$ from the system of equations.
-The consistency condition states that $df = 0$  at yield because  $f(\boldsymbol{\sigma},{{\bm{\upepsilon }}^{\rm{p}}}) = 0$ , and hence
-\begin{equation}
-df = \frac{\partial f}{\partial \boldsymbol{\sigma}}:d\boldsymbol{\sigma} + \frac{\partial f}{\partial \boldsymbol{\varepsilon}_p}:d\boldsymbol{\varepsilon}_p = 0 \,.
-\end{equation}
+% The Prager consistency condition is needed to close the set of constitutive equations and to eliminate the unknown parameter $d\lambda$ from the system of equations.
+% The consistency condition states that $df = 0$  at yield because  $f(\boldsymbol{\sigma},{{\bm{\upepsilon }}^{\rm{p}}}) = 0$ , and hence
+% \begin{equation}
+% df = \frac{\partial f}{\partial \boldsymbol{\sigma}}:d\boldsymbol{\sigma} + \frac{\partial f}{\partial \boldsymbol{\varepsilon}_p}:d\boldsymbol{\varepsilon}_p = 0 \,.
+% \end{equation}
 
 \subsection{Hardening rule}
 \noindent
 The hardening rule describes how the yield surface changes in position and size.
 Evolution equations of the back stress tensor allows by the change in position of the kinematic hardening into account.
 With this shift in the yield surface, the size and shape of the yield surface remain unchanged.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=14cm]{isotropic_hardening.pdf}
+	\caption{Isotropic hardening, in which the yield surface expands with plastic deformation, and the corresponding uniaxial stress–strain curve.}
+	\label{Fig:isotropic_hardening}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=14cm]{kinematic_hardening.pdf}
+	\caption{Kinematic hardening, in which the yield surface translates with plastic deformation, and the corresponding uniaxial stress–strain curve.}
+	\label{Fig:kinematic_hardening}
+\end{figure}
 
 In material models in which isotropic hardening is depicted, it is done by evolution equations describing an increase in the radius $k$ of the yield surface.
 A modeling that represents isotropic hardening is not suitable for cyclic stresses.
@@ -267,7 +282,7 @@ The yield function describing the yield surface must now also depend on the loca
 \begin{equation}
 F = \sqrt {\frac{3}{2}\left( {{\bf{s}} - {\bf{a}}} \right):\left( {{\bf{s}} - {\bf{a}}} \right)}  - Y,
 \end{equation}
-in which $\bf{a}$ is the kinematic hardening variable and is often called a back stress.
+in which $\bf{a}$ is the kinematic hardening variable and is often called the back stress.
 Because it is a variable defined in stress space, it has the same components as stress.
 A kinematic hardening model must include the evolution functions of back stress.
 A review of some kinematic hardening models is introduced as following.
@@ -425,8 +440,7 @@ The elastic strain and total stress are subjected to Hooke's law,
 {\dot\bfsigma} = {\mathbb{D}^{\rm{e}}}:{\dot\bfepsilon^e},
 \label{Equ:HookesLaw}
 \end{equation}
-where ${\mathbb{D}^{\rm{e}}}$ is the fourth-order isotropic elastic stiffness tensor. Hereafter, $(:)$ indicates the inner product between two tensors. $(\dot{\quad})$ denotes the differentiation with respect to time.
-
+where ${\mathbb{D}^{\rm{e}}}$ is the fourth-order isotropic elastic stiffness tensor. Hereafter, $(:)$ indicates the inner product between two tensors. $({\dot  \bullet })$ denotes the differentiation of $\bullet$ with respect to time.
 The evolution of the plastic strain can be determined from the flow rule as
 \begin{equation}
 {\dotbfepsilon}^{\rm{p}} = \dot \lambda \frac{{\partial F}}{{\partial {\bfsigma}}},
@@ -551,17 +565,17 @@ with
 % \noindent
 % In the article the non-proportional hardening is considered in an additional term of the isotropic hardening, as
 % \begin{equation}
-% Y = {Y_0} + {Y_{\Delta np}},
+% Y = {Y_0} + {Y_{\Delta \rm np}},
 % \end{equation}
-% where $Y_0$ denotes the yield stress for proportional loading and ${Y_{\Delta np}}$ is the non-proportional hardening defined by
+% where $Y_0$ denotes the yield stress for proportional loading and ${Y_{\Delta \rm np}}$ is the non-proportional hardening defined by
 % \begin{equation}
-% {\dot Y_{\Delta np}} = {\gamma _p}\left( {{Y_{\rm sat}} - {Y_{\Delta np}}} \right)\dot p.
+% {\dot Y_{\Delta \rm np}} = {\gamma _{\rm q}}\left( {{Y_{\rm sat}} - {Y_{\Delta \rm np}}} \right)\dot p.
 % \end{equation}
-% Integrating the above equation with the initial condition ${Y_{\Delta np}}(0)=0$ follows
+% Integrating the above equation with the initial condition ${Y_{\Delta \rm np}}(0)=0$ follows
 % \begin{equation}
-% {Y_{\Delta np}} = Y_{\rm sat}\left( 1-e^{- \gamma_p p} \right),
+% {Y_{\Delta \rm np}} = Y_{\rm sat}\left( 1-e^{- \gamma_{\rm p} p} \right),
 % \end{equation}
-% where $Y_{\rm sat}$ is the saturated value of ${Y_{\Delta np}}$ under a non-proportional loading path.
+% where $Y_{\rm sat}$ is the saturated value of ${Y_{\Delta \rm np}}$ under a non-proportional loading path.
 % Tanaka introduced a non-proportionality factor \cite{tanaka1994nonproportionality},
 % \begin{equation}
 % \phi  = \sqrt {1 - \frac{{\bfn:\mathbb{C}:\mathbb{C}:\bfn}}{{\mathbb{C}::\mathbb{C}}}}
@@ -579,37 +593,37 @@ with
 
 % According to Ref. \cite{fang2015cyclic}, the evolution of ${Y_{\Delta NS}}$ can be defined as
 % \begin{equation}
-% {\dot Y_{\Delta NS}} = {\gamma _q}\left( {{Y_{\Delta 0}} - {Y_{\Delta NS}}} \right)\dot q.
+% {\dot Y_{\Delta NS}} = {\gamma _{\rm q}}\left( {{Y_{\Delta 0}} - {Y_{\Delta NS}}} \right)\dot q.
 % \end{equation}
-% Noting that the strain memory effect is taken into account, $q$ is the radius of strain memory surface, ${\gamma _q}$ is a rate parameter.
-% If the material satisfies the Masing postulate,  ${\gamma _q}=0$. $Y_{\Delta 0} $ denotes the saturate value of $Y_{\Delta NS}$.
+% Noting that the strain memory effect is taken into account, $q$ is the radius of strain memory surface, ${\gamma _{\rm q}}$ is a rate parameter.
+% If the material satisfies the Masing postulate,  ${\gamma _{\rm q}}=0$. $Y_{\Delta 0} $ denotes the saturate value of $Y_{\Delta NS}$.
 
 \subsection{Non-proportional hardening}
 \noindent
 In this paper, we consider the non-proportional hardening as an additional term of isotropic hardening.
 Thus, the yield stress is suggested as:
 \begin{equation}
-Y = {Y_0} + {Y_{\Delta np}}
+Y = {Y_0} + {Y_{\Delta \rm np}}
 \end{equation}
-where $Y_0$ denotes the initial yield stress and ${Y_{\Delta np}}$ is the non-proportional hardening term.
+where $Y_0$ denotes the initial yield stress and ${Y_{\Delta \rm np}}$ is the non-proportional hardening term.
 
-The evolution of ${Y_{\Delta np}}$ is defined by:
+The evolution of ${Y_{\Delta \rm np}}$ is defined by:
 \begin{equation}
-{\dot Y_{\Delta np}} = {\gamma _p}\left( {{Y_{\Delta nps}} - {Y_{\Delta np}}} \right)\dot p
+{\dot Y_{\Delta \rm np}} = {\gamma _{\rm p}}\left( {{Y_{\Delta \rm nps}} - {Y_{\Delta \rm np}}} \right)\dot p
 \end{equation}
-we integrate the equation with initial condition ${Y_{\Delta np}}(0)=0$ and it gives:
+we integrate the equation with initial condition ${Y_{\Delta \rm np}}(0)=0$ and it gives:
 \begin{equation}
-{Y_{\Delta np}} = Y_{\Delta nps}\left( 1-e^{- \gamma_p p} \right)
+{Y_{\Delta \rm np}} = Y_{\Delta \rm nps}\left( 1-e^{- \gamma_{\rm p} p} \right)
 \end{equation}
-where $Y_{\Delta nps}$ is the saturated value of ${Y_{\Delta np}}$ under a certain loading path.
+where $Y_{\Delta \rm nps}$ is the saturated value of ${Y_{\Delta \rm np}}$ under a certain loading path.
 
-Because ${Y_{\Delta nps}}$ depends on the loading path, we introduce a linear function:
+Because ${Y_{\Delta \rm nps}}$ depends on the loading path, we introduce a linear function:
 \begin{equation}
-{Y_{\Delta nps}} = \phi {Y_{\Delta nonps}}
+{Y_{\Delta \rm nps}} = \phi {Y_{\Delta \rm nonps}}
 \end{equation}
 where $\phi$ is a non-proportionality parameter with the condition $0 \leq \phi \leq 1$.
 When $\phi = 0$, we have no non-proportional hardening.
-When $\phi = 1$, we have ${Y_{\Delta nps}} = {Y_{\Delta nonps}}$, then ${Y_{\Delta nonps}}$ represents the maximum value corresponding to a certain loading path.
+When $\phi = 1$, we have ${Y_{\Delta \rm nps}} = {Y_{\Delta \rm nonps}}$, then ${Y_{\Delta \rm nonps}}$ represents the maximum value corresponding to a certain loading path.
 
 We use the definition suggested by \cite{tanaka1994nonproportionality}:
 \begin{equation}
@@ -621,12 +635,12 @@ The evolution equation is defined as:
 \dot {\mathbb{C}} = {c_c}\left( {{\bf{n}} \otimes {\bf{n}} - \mathbb{C}} \right)\dot p
 \end{equation}
 
-As discussed by \cite{fang2015cyclic}, the evolution of ${Y_{\Delta nonps}}$ can be provide as:
+As discussed by \cite{fang2015cyclic}, the evolution of ${Y_{\Delta \rm nonps}}$ can be provide as:
 \begin{equation}
-{\dot Y_{\Delta nonps}} = {\gamma _q}\left( {{Y_{\Delta nonpss}} - {Y_{\Delta nonps}}} \right)\dot q
+{\dot Y_{\Delta \rm nonps}} = {\gamma _{\rm q}}\left( {{Y_{\Delta \rm sat}} - {Y_{\Delta \rm nonps}}} \right)\dot q
 \end{equation}
-noting that the account of the strain memory effect is counted, $q$ is the radius of strain memory surface, ${\gamma _q}$ is a rate parameter.
-Generally if the material performs Massing behavior, we can choose ${\gamma _q}=0$.
+noting that the account of the strain memory effect is counted, $q$ is the radius of strain memory surface, ${\gamma _{\rm q}}$ is a rate parameter.
+Generally if the material performs Massing behavior, we can choose ${\gamma _{\rm q}}=0$.
 
 Box 1 and Box 2 summarize the constitutive equations of the model as follows:
 
@@ -678,10 +692,10 @@ Box 2: Specification of the material functions.
 \[r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} + a_2^k({e^{ - b_2^kp}} - {e^{ - b_3^kp}})} \right]\]
 
 3. Isotropic hard/softening:
-\[Y = {Y_0} + {Y_{\Delta np}}\]
-\[{\dot Y_{\Delta np}} = {\gamma _p}\left( {{Y_{\Delta nps}} - {Y_{\Delta np}}} \right)\dot p\]
-\[{Y_{\Delta nps}} = \phi {Y_{\Delta nonps}}\]
-\[{\dot Y_{\Delta nonps}} = {\gamma _q}\left( {{Y_{\Delta nonpss}} - {Y_{\Delta nonps}}} \right)\dot q\]
+\[Y = {Y_0} + {Y_{\Delta \rm np}}\]
+\[{\dot Y_{\Delta \rm np}} = {\gamma _{\rm q}}\left( {{Y_{\Delta \rm nps}} - {Y_{\Delta \rm np}}} \right)\dot p\]
+\[{Y_{\Delta \rm nps}} = \phi {Y_{\Delta \rm nonps}}\]
+\[{\dot Y_{\Delta \rm nonps}} = {\gamma _{\rm q}}\left( {{Y_{\Delta \rm sat}} - {Y_{\Delta \rm nonps}}} \right)\dot q\]
 
 
 4. Non-proportionality parameter:
