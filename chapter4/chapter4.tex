@@ -518,7 +518,7 @@ is the normal direction of the yield surface. Here $\parallel\cdot\parallel$ is 
 
 \subsection{Cyclic hardening/softening}
 \noindent
-The characteristic stress-strain curve for cyclic loading is obtained from material testing subjected to alternating loads. Observations on stress-strain hysteresis loops of the austenite stainless steel showed that the peak stresses were not monotonic to plastic strain \cite{fang2015cyclic}. The steel demonstrated initial cyclic hardening behavior and then cyclic softening. Before the final failure occurs, the material showed secondary hardening. To describe such complex behavior $r^k$ should consist of two parts, $r_0^k$ and $r_{\Delta}^k$  \cite{fang2015cyclic}, that is,
+The characteristic stress-strain curve for cyclic loading is obtained from material testing subjected to alternating loads. Observations on stress-strain hysteresis loops of the austenite stainless steel showed that the peak stresses were not monotonic to plastic strain \cite{fang2015cyclic}. The steel demonstrated initial cyclic hardening behavior and then cyclic softening. Before the final failure occurs, the material showed secondary hardening. To describe such complex behavior $r^k$ should consist of two parts, $r_0^k$ and $r_{\Delta}^k$ \cite{fang2015cyclic}, that is,
 \begin{equation}
 \label{Equ:rk1}
 {r^k} = r_0^k + r_\Delta ^k,
@@ -578,11 +578,11 @@ with
 % where $Y_{\rm sat}$ is the saturated value of ${Y_{\Delta \rm np}}$ under a non-proportional loading path.
 % Tanaka introduced a non-proportionality factor \cite{tanaka1994nonproportionality},
 % \begin{equation}
-% \phi  = \sqrt {1 - \frac{{\bfn:\mathbb{C}:\mathbb{C}:\bfn}}{{\mathbb{C}::\mathbb{C}}}}
+% \phi  = \sqrt {1 - \frac{{\bfn:\mathbb{G}:\mathbb{G}:\bfn}}{{\mathbb{G}::\mathbb{G}}}}
 % \end{equation}
-% to quantify influence of the non-proportional load path to the material behavior.  $\mathbb{C}$ is a fourth-rank tensor and represents the internal dislocation structure \cite{tanaka1994nonproportionality}, as
+% to quantify influence of the non-proportional load path to the material behavior.  $\mathbb{G}$ is a fourth-rank tensor and represents the internal dislocation structure \cite{tanaka1994nonproportionality}, as
 % \begin{equation}
-% \dot {\mathbb{C}} = {c_c}\left( {\bfn \otimes \bfn - \mathbb{C}} \right)\dot p.
+% \dot {\mathbb{G}} = {c_c}\left( {\bfn \otimes \bfn - \mathbb{G}} \right)\dot p.
 % \end{equation}
 % Assuming ${Y_{\rm sat}}$ depending on the loading path follows the simplest form as
 % \begin{equation}
@@ -603,23 +603,23 @@ with
 In this paper, we consider the non-proportional hardening as an additional term of isotropic hardening.
 Thus, the yield stress is suggested as:
 \begin{equation}
-Y = {Y_0} + {Y_{\Delta \rm np}}
+Y = {Y_0} + {Y_{\Delta \rm np}},
 \end{equation}
 where $Y_0$ denotes the initial yield stress and ${Y_{\Delta \rm np}}$ is the non-proportional hardening term.
 
 The evolution of ${Y_{\Delta \rm np}}$ is defined by:
 \begin{equation}
-{\dot Y_{\Delta \rm np}} = {\gamma _{\rm p}}\left( {{Y_{\Delta \rm nps}} - {Y_{\Delta \rm np}}} \right)\dot p
+{\dot Y_{\Delta \rm np}} = {\gamma _{\rm p}}\left( {{Y_{\Delta \rm nps}} - {Y_{\Delta \rm np}}} \right)\dot p.
 \end{equation}
-we integrate the equation with initial condition ${Y_{\Delta \rm np}}(0)=0$ and it gives:
+We integrate the equation with initial condition ${Y_{\Delta \rm np}}(0)=0$ and it gives:
 \begin{equation}
-{Y_{\Delta \rm np}} = Y_{\Delta \rm nps}\left( 1-e^{- \gamma_{\rm p} p} \right)
+{Y_{\Delta \rm np}} = Y_{\Delta \rm nps}\left( 1-e^{- \gamma_{\rm p} p} \right),
 \end{equation}
 where $Y_{\Delta \rm nps}$ is the saturated value of ${Y_{\Delta \rm np}}$ under a certain loading path.
 
 Because ${Y_{\Delta \rm nps}}$ depends on the loading path, we introduce a linear function:
 \begin{equation}
-{Y_{\Delta \rm nps}} = \phi {Y_{\Delta \rm nonps}}
+{Y_{\Delta \rm nps}} = \phi {Y_{\Delta \rm nonps}},
 \end{equation}
 where $\phi$ is a non-proportionality parameter with the condition $0 \leq \phi \leq 1$.
 When $\phi = 0$, we have no non-proportional hardening.
@@ -627,17 +627,17 @@ When $\phi = 1$, we have ${Y_{\Delta \rm nps}} = {Y_{\Delta \rm nonps}}$, then $
 
 We use the definition suggested by \cite{tanaka1994nonproportionality}:
 \begin{equation}
-\phi  = \sqrt {1 - \frac{{{\bf{n}}:\mathbb{C}:\mathbb{C}:{\bf{n}}}}{{\mathbb{C}::\mathbb{C}}}}
+\phi  = \sqrt {1 - \frac{{{\bf{n}}:\mathbb{G}:\mathbb{G}:{\bf{n}}}}{{\mathbb{G}::\mathbb{G}}}},
 \end{equation}
-where $\mathbb{C}$ is a fourth-rank tensor and it represents the internal dislocation structure.
+where $\mathbb{G}$ is a fourth-rank tensor and it represents the internal dislocation structure.
 The evolution equation is defined as:
 \begin{equation}
-\dot {\mathbb{C}} = {c_c}\left( {{\bf{n}} \otimes {\bf{n}} - \mathbb{C}} \right)\dot p
+\dot {\mathbb{G}} = {c_c}\left( {{\bf{n}} \otimes {\bf{n}} - \mathbb{G}} \right)\dot p.
 \end{equation}
 
 As discussed by \cite{fang2015cyclic}, the evolution of ${Y_{\Delta \rm nonps}}$ can be provide as:
 \begin{equation}
-{\dot Y_{\Delta \rm nonps}} = {\gamma _{\rm q}}\left( {{Y_{\Delta \rm sat}} - {Y_{\Delta \rm nonps}}} \right)\dot q
+{\dot Y_{\Delta \rm nonps}} = {\gamma _{\rm q}}\left( {{Y_{\Delta \rm sat}} - {Y_{\Delta \rm nonps}}} \right)\dot q,
 \end{equation}
 noting that the account of the strain memory effect is counted, $q$ is the radius of strain memory surface, ${\gamma _{\rm q}}$ is a rate parameter.
 Generally if the material performs Massing behavior, we can choose ${\gamma _{\rm q}}=0$.
@@ -699,8 +699,8 @@ Box 2: Specification of the material functions.
 
 
 4. Non-proportionality parameter:
-\[\phi  = \sqrt {1 - \frac{{{\bf{n}}:\mathbb{C}:\mathbb{C}:{\bf{n}}}}{{\mathbb{C}::\mathbb{C}}}} \]
-\[\dot {\mathbb{C}} = {c_c}\left( {{\bf{n}} \otimes {\bf{n}} - \mathbb{C}} \right)\dot p\]
+\[\phi  = \sqrt {1 - \frac{{{\bf{n}}:\mathbb{G}:\mathbb{G}:{\bf{n}}}}{{\mathbb{G}::\mathbb{G}}}} \]
+\[\dot {\mathbb{G}} = {c_c}\left( {{\bf{n}} \otimes {\bf{n}} - \mathbb{G}} \right)\dot p\]
 
 \end{framed}
 
@@ -755,10 +755,10 @@ Back stress:
 \end{equation}
 Non-proportionality parameter:
 \begin{equation}
-{\phi _{n + 1}} = \sqrt {1 - \frac{{{{\bf{n}}_{n + 1}}:{\mathbb{C}_{n + 1}}:{\mathbb{C}_{n + 1}}:{{\bf{n}}_{n + 1}}}}{{{\mathbb{C}_{n + 1}}::{\mathbb{C}_{n + 1}}}}},
+{\phi _{n + 1}} = \sqrt {1 - \frac{{{{\bf{n}}_{n + 1}}:{\mathbb{G}_{n + 1}}:{\mathbb{G}_{n + 1}}:{{\bf{n}}_{n + 1}}}}{{{\mathbb{G}_{n + 1}}::{\mathbb{G}_{n + 1}}}}},
 \end{equation}
 \begin{equation}
-\Delta {\mathbb{C}_{n + 1}} = {c_c}\left( {{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}} - {\mathbb{C}_{n + 1}}} \right)\Delta {p_{n + 1}}.
+\Delta {\mathbb{G}_{n + 1}} = {c_c}\left( {{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}} - {\mathbb{G}_{n + 1}}} \right)\Delta {p_{n + 1}}.
 \end{equation}
 Dynamic recovery:
 \begin{equation}
@@ -778,38 +778,38 @@ Dynamic recovery:
 \noindent
 The problem considered here is stated as follows: given all constitutive variables at step $n$ and also $\Delta {{\bm{\upepsilon }}_{n + 1}}$, find $\bm{\upsigma}_{n+1}$  satisfying the discretized constitutive relations. Let us use return mapping, which consists of an elastic predictor and a plastic corrector. The elastic predictor is taken to be an elastic tentative stress:
 \begin{equation}
-{\bm{\upsigma }}_{n + 1}^{\rm{tr}} = {\mathbb{D}^{\rm{e}}}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_n^{\rm{p}}} \right)
+{\bm{\upsigma }}_{n + 1}^{\rm{tr}} = {\mathbb{D}^{\rm{e}}}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_n^{\rm{p}}} \right),
 \end{equation}
 where ${\mathbb{D}^{\rm{e}}} = \kappa {\bf{I}} \otimes {\bf{I}} + 2G\mathbb{I}$, $G$ is shear modules of material and $\kappa$ is Lame constant $\kappa  = K - \frac{2}{3}G$, ${\bf{I}}$ and $\mathbb{I}$ respectively indicate the second and fourth order identity, given in component form as ${I_{ij}} = {\delta _{ij}}$ and ${\mathbb{I}_{ijkl}} = {\delta _{ik}}{\delta _{jl}}$.
 
 Also we can derive the relation between stress and trial stress at state $n+1$ as:
 \begin{equation}
 \label{Equ:sigma1}
-{{\bm{\upsigma }}_{n + 1}^{} = {\mathbb{D}^{\rm{e}}}:\left( {{\bm{\upepsilon }}_{n + 1}^{} - {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right)} = {\bm{\upsigma }}_{n + 1}^{\rm{tr}} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{{\bm{\upsigma }}_{n + 1}^{} = {\mathbb{D}^{\rm{e}}}:\left( {{\bm{\upepsilon }}_{n + 1}^{} - {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right)} = {\bm{\upsigma }}_{n + 1}^{\rm{tr}} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Note that, because of elastic isotropy and plastic incompressibility, $\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}$ is a deviatoric tensor with $Tr\left( {\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right)=0$.
 
 The stress deviator is given by:
 \begin{equation}
-{\bf{s}} \equiv {\bm{\upsigma }} - \frac{1}{3}\left( {{\bm{\upsigma }}:{\bf{I}}} \right){\bf{I}} = {\mathbb{I}_{\rm{d}}}:{\bm{\upsigma }}
+{\bf{s}} \equiv {\bm{\upsigma }} - \frac{1}{3}\left( {{\bm{\upsigma }}:{\bf{I}}} \right){\bf{I}} = {\mathbb{I}_{\rm{d}}}:{\bm{\upsigma }},
 \end{equation}
 where ${\mathbb{I}_{\rm{d}}} = \mathbb{I} - \frac{1}{3}{\bf{I}} \otimes {\bf{I}}$ is the deviatoric projection tensor.
 
 Taking the deviatoric part of Equation (\ref{Equ:sigma1}), we have:
 \begin{equation}
-{{\bf{s}}_{n + 1}} = {\bf{s}}_{n + 1}^{\rm{tr}} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{{\bf{s}}_{n + 1}} = {\bf{s}}_{n + 1}^{\rm{tr}} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Both sides minus ${{\bf{a}}_{n + 1}}$, we obtain:
 \begin{equation}
 \label{Equ:sminusa1}
-{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}} = {\bf{s}}_{n + 1}^{\rm{tr}} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}} - {{\bf{a}}_{n + 1}}
+{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}} = {\bf{s}}_{n + 1}^{\rm{tr}} - 2G\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}} - {{\bf{a}}_{n + 1}}.
 \end{equation}
 
 A two steps radial return map method (see \ref{Fig:radial_return_map}) proposed by Mineo Kobayashi and Nobutada Ohno (2002) \cite{kobayashi2002implementation} are employed for integrating the present constitutive model. The backstress is written as:
 \begin{equation}
-{{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {r_{n + 1}^k{\bf{b}}_{n + 1}^k}
+{{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {r_{n + 1}^k{\bf{b}}_{n + 1}^k}.
 \end{equation}
 \begin{figure}[!htp]
 	\centering
@@ -821,29 +821,29 @@ A two steps radial return map method (see \ref{Fig:radial_return_map}) proposed 
 Then the tentative form of the backstress is determined from:
 \begin{equation}
 \label{Equ:btrn+1}
-{\bf{b}}_{n + 1}^{k,{\rm{tr}}} = {\bf{b}}_n^k + \frac{2}{3}{\zeta ^k}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{\bf{b}}_{n + 1}^{k,{\rm{tr}}} = {\bf{b}}_n^k + \frac{2}{3}{\zeta ^k}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Therefore, the normalized backstress ${\bf{b}}_{n + 1}^k$ can be written as:
 \begin{equation}
 \label{Equ:bn+1}
-{\bf{b}}_{n + 1}^k = \theta _{n + 1}^k\left( {{\bf{b}}_n^k + \frac{2}{3}{\zeta ^k}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right) = \theta _{n + 1}^k{\bf{b}}_{n + 1}^{k,{\rm{tr}}}
+{\bf{b}}_{n + 1}^k = \theta _{n + 1}^k\left( {{\bf{b}}_n^k + \frac{2}{3}{\zeta ^k}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right) = \theta _{n + 1}^k{\bf{b}}_{n + 1}^{k,{\rm{tr}}},
 \end{equation}
 where $\theta _{n + 1}^k$ is defined by the following equation and satisfies $0 < \theta _{n + 1}^k \leqslant 1$:
 \begin{equation}
 \label{Equ:thetan+1}
-\theta _{n + 1}^k = c_{n + 1}^k + H\left( {\bar f_{n + 1}^k} \right)\left( {\frac{1}{{\bar b_{n + 1}^{k,{\rm{tr}}}}} - c_{n + 1}^k} \right)
+\theta _{n + 1}^k = c_{n + 1}^k + H\left( {\bar f_{n + 1}^k} \right)\left( {\frac{1}{{\bar b_{n + 1}^{k,{\rm{tr}}}}} - c_{n + 1}^k} \right),
 \end{equation}
 $c_{n + 1}^k$ and ${\bar f_{n + 1}^k}$ are given as:
 \begin{equation}
-c_{n + 1}^k = \frac{1}{{1 + {\zeta ^k}\mu \Delta {p_{n + 1}} - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}}}
+c_{n + 1}^k = \frac{1}{{1 + {\zeta ^k}\mu \Delta {p_{n + 1}} - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}}},
 \end{equation}
 \begin{equation}
-\bar f_{n + 1}^k = {\left( {c_{n + 1}^k\bar b_{n + 1}^{k,{\rm{tr}}}} \right)^2} - 1
+\bar f_{n + 1}^k = {\left( {c_{n + 1}^k\bar b_{n + 1}^{k,{\rm{tr}}}} \right)^2} - 1,
 \end{equation}
 where
 \begin{equation}
-\bar b_{n + 1}^{k,{\rm{tr}}} = \sqrt {\frac{3}{2}{\bf{b}}_{n + 1}^{k,{\rm{tr}}}:{\bf{b}}_{n + 1}^{k,{\rm{tr}}}}
+\bar b_{n + 1}^{k,{\rm{tr}}} = \sqrt {\frac{3}{2}{\bf{b}}_{n + 1}^{k,{\rm{tr}}}:{\bf{b}}_{n + 1}^{k,{\rm{tr}}}}.
 \end{equation}
 
 Substituting ${{\bf{a}}_{n + 1}}$ into Equation (\ref{Equ:sminusa1}), we have:
@@ -852,17 +852,16 @@ Substituting ${{\bf{a}}_{n + 1}}$ into Equation (\ref{Equ:sminusa1}), we have:
 \begin{aligned}
 {{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}}}=
 {\bf{s}}_{n + 1}^{\rm{tr}} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k}
-- \left( {2G + \frac{2}{3}\sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}} } \right)\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+- \left( {2G + \frac{2}{3}\sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}} } \right)\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{aligned}
 \end{equation}
 
 Substitution of Equations (\ref{Equ:Fn+1}) to (\ref{Equ:nn+1}) and (\ref{Equ:sminusa2}) into the yield function ${F_{n + 1}} = 0$ provides:
 \begin{equation}
-\Delta {p_{n + 1}} = \frac{{\sqrt {\frac{3}{2}} \left\| {{\bf{s}}_{n + 1}^{\rm{tr}} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right\| - {Y_n}}}{{{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}} + 3G + \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}} }}
+\Delta {p_{n + 1}} = \frac{{\sqrt {\frac{3}{2}} \left\| {{\bf{s}}_{n + 1}^{\rm{tr}} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right\| - {Y_n}}}{{{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}} + 3G + \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}} }},
 \end{equation}
-
 \begin{equation}
-{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}} = \frac{{{Y_{n + 1}}\left( {{\bf{s}}_{n + 1}^{\rm{tr}} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right)}}{{\sqrt {\frac{3}{2}} \left\| {{\bf{s}}_{n + 1}^{\rm{tr}} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right\|}}
+{{\bf{s}}_{n + 1}} - {{\bf{a}}_{n + 1}} = \frac{{{Y_{n + 1}}\left( {{\bf{s}}_{n + 1}^{\rm{tr}} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right)}}{{\sqrt {\frac{3}{2}} \left\| {{\bf{s}}_{n + 1}^{\rm{tr}} - \sum\limits_{k = 1}^M {r_{n + 1}^k\theta _{n + 1}^k{\bf{b}}_n^k} } \right\|}}.
 \end{equation}
 
 \begin{figure}[ht]
@@ -876,49 +875,49 @@ Substitution of Equations (\ref{Equ:Fn+1}) to (\ref{Equ:nn+1}) and (\ref{Equ:smi
 \noindent
 To complete the algorithmic scheme discussed above we derive in the following the tangent moduli consistent with the proposed algorithm. The tangent moduli determine the incremental change of the stresses $\Delta {\bm{\upsigma }}$ along with the incremental change of the total strains $\Delta {\bm{\upepsilon }}$ determined through the global iteration algorithm according to:
 \begin{equation}
-\Delta {\bm{\upsigma }} = {\mathbb{D}^{\rm{ep}}}:\Delta {\bm{\upepsilon }}
+\Delta {\bm{\upsigma }} = {\mathbb{D}^{\rm{ep}}}:\Delta {\bm{\upepsilon }}.
 \end{equation}
 
 Considering Equation (\ref{Equ:dotak3}), we assume that the increment of deviatoric back stress has the following differential:
 \begin{equation}
 \label{Equ:dan+1}
-{\text{d}}\Delta {{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} :{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{\text{d}}\Delta {{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} :{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}},
 \end{equation}
 where $\mathbb{H}_{n + 1}^k( k = 1,2,3,...,M )$ are fourth-rank constitutive parameters.
 
 It is noted that, when ${F_{n + 1}} = 0$, ${\bf{n}}_{n + 1}$ defined by Equation (\ref{Equ:nn+1}) satisfies:
 \begin{equation}
 \label{Equ:nn1}
-{{\bf{n}}_{n + 1}}:{{\bf{n}}_{n + 1}} = 1
+{{\bf{n}}_{n + 1}}:{{\bf{n}}_{n + 1}} = 1.
 \end{equation}
 
 On the assumption that all constitutive variables are known at state $n$, and that $F_{n+1}=0$, let us differentiate Equations (\ref{Equ:sigman+1}), (\ref{Equ:epsilonpn+1}), (\ref{Equ:nn+1}) and (\ref{Equ:nn1}) to obtain:
 \begin{equation}
 \label{Equ:dsigman+1}
-{\text{d}}\Delta {{\bm{\upsigma }}_{n + 1}} = {\mathbb{D}^{\rm{e}}}:\left( {{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - {\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right)
+{\text{d}}\Delta {{\bm{\upsigma }}_{n + 1}} = {\mathbb{D}^{\rm{e}}}:\left( {{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - {\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right),
 \end{equation}
 \begin{equation}
 \label{Equ:depsilon+1}
-{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}} = \sqrt {\frac{3}{2}} \left( {{\text{d}}\Delta {p_{n + 1}}{{\bf{n}}_{n + 1}} + \Delta {p_{n + 1}}{\text{d}}{{\bf{n}}_{n + 1}}} \right)
+{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}} = \sqrt {\frac{3}{2}} \left( {{\text{d}}\Delta {p_{n + 1}}{{\bf{n}}_{n + 1}} + \Delta {p_{n + 1}}{\text{d}}{{\bf{n}}_{n + 1}}} \right),
 \end{equation}
 \begin{equation}
 \label{Equ:dnn+1}
-{\text{d}}{{\bf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{{{\text{d}}\Delta {{\bf{s}}_{n + 1}} - {\text{d}}\Delta {{\bf{a}}_{n + 1}}}}{{{Y_{n + 1}}}} - \frac{{{{\bf{n}}_{n + 1}}}}{{{Y_{n + 1}}}}{\left( {\frac{{\partial Y}}{{\partial p}}} \right)_{n + 1}}{\text{d}}\Delta {p_{n + 1}}
+{\text{d}}{{\bf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{{{\text{d}}\Delta {{\bf{s}}_{n + 1}} - {\text{d}}\Delta {{\bf{a}}_{n + 1}}}}{{{Y_{n + 1}}}} - \frac{{{{\bf{n}}_{n + 1}}}}{{{Y_{n + 1}}}}{\left( {\frac{{\partial Y}}{{\partial p}}} \right)_{n + 1}}{\text{d}}\Delta {p_{n + 1}},
 \end{equation}
 \begin{equation}
-{{\bf{n}}_{n + 1}}:{\text{d}}{{\bf{n}}_{n + 1}} = 0
+{{\bf{n}}_{n + 1}}:{\text{d}}{{\bf{n}}_{n + 1}} = 0.
 \end{equation}
 
 From Equation (\ref{Equ:sigma1}) we obtain:
 \begin{equation}
 \label{Equ:sn+1}
-{{\bf{s}}_{n + 1}} = 2G{\mathbb{I}_{\rm{d}}}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right)
+{{\bf{s}}_{n + 1}} = 2G{\mathbb{I}_{\rm{d}}}:\left( {{{\bm{\upepsilon }}_{n + 1}} - {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right).
 \end{equation}
 
 Differentiating Equation (\ref{Equ:sn+1}), we have:
 \begin{equation}
 \label{Equ:dsn+1}
-{\text{d}}\Delta {{\bf{s}}_{n + 1}} = 2G{\mathbb{I}_{\rm{d}}}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - 2G{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{\text{d}}\Delta {{\bf{s}}_{n + 1}} = 2G{\mathbb{I}_{\rm{d}}}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - 2G{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Substitution of Equations (\ref{Equ:dan+1}) and (\ref{Equ:dsn+1}) into (\ref{Equ:dnn+1}) provides:
@@ -926,45 +925,45 @@ Substitution of Equations (\ref{Equ:dan+1}) and (\ref{Equ:dsn+1}) into (\ref{Equ
 \label{Equ:dnn+12}
 \begin{aligned}
 {\text{d}}{{\bf{n}}_{n + 1}} = \sqrt {\frac{3}{2}} \frac{1}{{{Y_{n + 1}}}} \left[ {2G{\mathbb{I}_{\rm{d}}}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}} - \left( {2G\mathbb{I} + \sum\limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} } \right):{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}} \right.\\
-\left. { - \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}}\right]
+\left. { - \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}}\right],
 \end{aligned}
 \end{equation}
 noting that
 \begin{equation}
 \label{Equ:dpn+1}
-{\text{d}}\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}} {{\bf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{\text{d}}\Delta {p_{n + 1}} = \sqrt {\frac{2}{3}} {{\bf{n}}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Substituting Equations (\ref{Equ:dnn+12}) and (\ref{Equ:dpn+1}) into Equation (\ref{Equ:depsilon+1}) to eliminate ${\text{d}}{{\bf{n}}_{n + 1}}$ and ${\text{d}}\Delta {p_{n + 1}}$, and rearranging the resulting equation, we obtain:
 \begin{equation}
-{\mathbb{L}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}} = 2G{\mathbb{I}_{\rm{d}}}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}}
+{\mathbb{L}_{n + 1}}:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}} = 2G{\mathbb{I}_{\rm{d}}}:{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}},
 \end{equation}
 where
 \begin{equation}
 \label{Equ:Ln+1}
 \begin{aligned}
 \mathbb{L}_{n + 1} = \frac{2}{3}\frac{Y_{n + 1}}{\Delta {p_{n + 1}}} \left( \mathbb{I} - \bf{n}_{n + 1} \otimes \bf{n}_{n + 1} \right) + 2G\mathbb{I} + \sum \limits_{k = 1}^M {\mathbb{H}_{n + 1}^k} \\
-   + \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}}
+   + \frac{2}{3}{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}_{n + 1}}{{\bf{n}}_{n + 1}} \otimes {{\bf{n}}_{n + 1}}.
 \end{aligned}
 \end{equation}
 
 Elimination of ${\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}$ in Equation (\ref{Equ:dsigman+1}) by use of the Equation (\ref{Equ:Ln+1}) gives:
 \begin{equation}
-{\text{d}}\Delta {{\bm{\upsigma }}_{n + 1}} = \left( {{\mathbb{D}^{\rm{e}}} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_{\rm{d}}}} \right):{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}}
+{\text{d}}\Delta {{\bm{\upsigma }}_{n + 1}} = \left( {{\mathbb{D}^{\rm{e}}} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_{\rm{d}}}} \right):{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}}.
 \end{equation}
 
 Therefore, consistent tangent modulus $\frac{{{\text{d}}\Delta {{\bm{\upsigma }}_{n + 1}}}}{{{\text{d}}\Delta {{\bm{\upepsilon }}_{n + 1}}}}$ is derived as:
 \begin{equation}
-{\mathbb{D}^{\rm{ep}}} = {\mathbb{D}^{\rm{e}}} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_{\rm{d}}}
+{\mathbb{D}^{\rm{ep}}} = {\mathbb{D}^{\rm{e}}} - 4{G^2}\mathbb{L}_{n + 1}^{ - 1}:{\mathbb{I}_{\rm{d}}}.
 \end{equation}
 
 In order to obtain $\mathbb{H}_{n + 1}^k$, we differentiate Equations (\ref{Equ:an+1}) and (\ref{Equ:bn+1}), so that:
 \begin{equation}
-{\text{d}}{{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\left( {r_{n + 1}^k{\text{d}}{\bf{b}}_{n + 1}^k + {\bf{b}}_{n + 1}^k{\text{d}}r_{n + 1}^k} \right)}
+{\text{d}}{{\bf{a}}_{n + 1}} = \sum\limits_{k = 1}^M {\left( {r_{n + 1}^k{\text{d}}{\bf{b}}_{n + 1}^k + {\bf{b}}_{n + 1}^k{\text{d}}r_{n + 1}^k} \right)},
 \end{equation}
 \begin{equation}
 \label{Equ:dbn+1}
-{\text{d}}{\bf{b}}_{n + 1}^k = \frac{{{\bf{b}}_{n + 1}^k}}{{\theta _{n + 1}^k}}{\text{d}}\theta _{n + 1}^k + \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{\text{d}}{\bf{b}}_{n + 1}^k = \frac{{{\bf{b}}_{n + 1}^k}}{{\theta _{n + 1}^k}}{\text{d}}\theta _{n + 1}^k + \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Considering Equation (\ref{Equ:thetan+1}), we may derive $\theta _{n + 1}^k$ in two cases.
@@ -973,7 +972,7 @@ I. When $H\left( {\bar f_{n + 1}^k} \right) = 0$, we have $\theta _{n + 1}^k = c
 \begin{equation}
 \begin{aligned}
 {\text{d}}\theta _{n + 1}^k = {\text{d}}c_{n + 1}^k =  - {\left( {\theta _{n + 1}^k} \right)^2} \left[ {\zeta ^k}\mu {\text{d}}\Delta {p_{n + 1}} - \frac{1}{{r_{n + 1}^k}}\left( {1 - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}} \right)\right.\\
-\left.{{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}}{\text{d}}\Delta {p_{n + 1}} \right]
+\left.{{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}}{\text{d}}\Delta {p_{n + 1}} \right].
 \end{aligned}
 \end{equation}
 
@@ -981,38 +980,38 @@ Therefore, $\mathbb{H}_{n + 1}^k$ in Equation (\ref{Equ:dan+1}) has an expressio
 \begin{equation}
 \begin{aligned}
 \mathbb{H}_{n + 1}^k = \frac{2}{3}r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mathbb{I} + \sqrt {\frac{2}{3}} \left[ {{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}} - r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mu \right.\\
-\left. + \theta _{n + 1}^k\left( {1 - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}} \right){{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}} \right]{\bf{b}}_{n + 1}^k \otimes {{\bf{n}}_{n + 1}}
+\left. + \theta _{n + 1}^k\left( {1 - \frac{{\Delta r_{n + 1}^k}}{{r_{n + 1}^k}}} \right){{\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)}_{n + 1}} \right]{\bf{b}}_{n + 1}^k \otimes {{\bf{n}}_{n + 1}}.
 \end{aligned}
 \end{equation}
 
 II. When $H\left( {\bar f_{n + 1}^k} \right) = 1$, Equation (\ref{Equ:thetan+1}) becomes $\theta _{n + 1}^k = \frac{1}{{\bar b_{n + 1}^{k,{\rm{tr}}}}}$, then:
 \begin{equation}
 \label{Equ:thetan+1}
-{\text{d}}\theta _{n + 1}^k =  - \frac{3}{2}{\left( {\theta _{n + 1}^k} \right)^3}{\bf{b}}_{n + 1}^{k,{\rm{tr}}}:{\text{d}}{\bf{b}}_{n + 1}^{k,{\rm{tr}}}
+{\text{d}}\theta _{n + 1}^k =  - \frac{3}{2}{\left( {\theta _{n + 1}^k} \right)^3}{\bf{b}}_{n + 1}^{k,{\rm{tr}}}:{\text{d}}{\bf{b}}_{n + 1}^{k,{\rm{tr}}}.
 \end{equation}
 
 We differentiate Equation (\ref{Equ:btrn+1}), so that:
 \begin{equation}
 \label{Equ:dbtrn+1}
-{\text{d}}{\bf{b}}_{n + 1}^{k,{\rm{tr}}} = \frac{2}{3}{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{\text{d}}{\bf{b}}_{n + 1}^{k,{\rm{tr}}} = \frac{2}{3}{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Eliminating ${\bf{b}}_{n + 1}^{k,{\rm{tr}}}$ and ${\text{d}}{\bf{b}}_{n + 1}^{k,{\rm{tr}}}$ in Equation (\ref{Equ:thetan+1}) by using Equations (\ref{Equ:btrn+1}) and (\ref{Equ:dbtrn+1}), we obtain:
 \begin{equation}
 \label{Equ:thetan+1}
-{\text{d}}\theta _{n + 1}^k =  - {\left( {\theta _{n + 1}^k} \right)^2}{\zeta ^k}{\bf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{\text{d}}\theta _{n + 1}^k =  - {\left( {\theta _{n + 1}^k} \right)^2}{\zeta ^k}{\bf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Substitution of Equation (\ref{Equ:thetan+1}) into (\ref{Equ:dbn+1}) provides:
 \begin{equation}
 \label{Equ:dbn+12}
-{\text{d}}{\bf{b}}_{n + 1}^k = \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}} - {\zeta ^k}\theta _{n + 1}^k{\bf{b}}_{n + 1}^k \otimes {\bf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}
+{\text{d}}{\bf{b}}_{n + 1}^k = \frac{2}{3}\theta _{n + 1}^k{\zeta ^k}{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}} - {\zeta ^k}\theta _{n + 1}^k{\bf{b}}_{n + 1}^k \otimes {\bf{b}}_{n + 1}^k:{\text{d}}\Delta {\bm{\upepsilon }}_{n + 1}^{\rm{p}}.
 \end{equation}
 
 Therefore, $\mathbb{H}_{n + 1}^k$ in Equation (\ref{Equ:dan+1}) has an expression:
 \begin{equation}
 \begin{aligned}
 \mathbb{H}_{n + 1}^k = \frac{2}{3}r_{n + 1}^k\theta _{n + 1}^k{\zeta ^k}\mathbb{I} - r_{n + 1}^k{\zeta ^k}\theta _{n + 1}^k{\bf{b}}_{n + 1}^k \otimes {\bf{b}}_{n + 1}^k + \\
-\sqrt {\frac{2}{3}} {\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)_{n + 1}}{\bf{b}}_{n + 1}^k \otimes {{\bf{n}}_{n + 1}}
+\sqrt {\frac{2}{3}} {\left( {\frac{{\partial {r^k}}}{{\partial p}}} \right)_{n + 1}}{\bf{b}}_{n + 1}^k \otimes {{\bf{n}}_{n + 1}}.
 \end{aligned}
 \end{equation}
