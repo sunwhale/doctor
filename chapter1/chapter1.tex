@@ -1,53 +1,81 @@
-\chapter{Introduction}
+﻿\chapter{Introduction}
 \section{Background and motivations}
 \noindent
-Gas turbine components experience severe cyclic multi-axial mechanical loadings and thermal loadings in the high pressure compressor and turbine modules.
-The increasing operating temperatures in gas turbines are pushing materials closer to their operating limits.
-Therefore, it is necessary to characterize the deformation and fatigue behavior of materials under the more realistic conditions \cite{harrison1996modelling}.
-Inconel 718 is a nickel-base superalloy and possesses attractive high temperature mechanical properties such as exceptionally high temperature strength and good resistance to oxidation and creep.
-The alloy has been extensively used in aircraft engines like the fabrication of turbine discs because of these overall properties. Its working temperature ranges from 600$^{\circ}$C to 700$^{\circ}$C as a key hot-end component in the aero-engines.
-High pressure turbine disc inevitably withstands hostile environment with respect to load and temperature during its service. Therefore, the material is inclined to suffer strain-controlled high temperature LCF and TMF.
-These two factors may reduce the service life of the working components significantly.
-Therefore, the LCF behavior and TMF of the nickel-base superalloy are of major concern considering the safety and reliability of gas turbine engines.
+\subsection{Thermomechanical fatigue}
+\noindent
+Gas turbine components are exposed in high temperature and experience cyclic multi-axial thermo-mechanical loadings. The increasing performance requirements to modern gas turbines challenge the material operating limits. Quantified characterization of deformation and fatigue behavior of materials under realistic conditions becomes increasingly of importance for industrial application \cite{harrison1996modelling}, including variations of structure temperature, mechanical loads as well as environmental conditions. 
 
-There are several studies on the isothermal low cycle fatigue of the nickel-based superalloy published in past years.
+Inconel 718 is the most popular nickel-based superalloy in turbine industry. It is an oxidation- and corrosion-resistant material possessing optimal thermal and mechanical property. 
+It is used for both rotors and casings, so that the low cycle fatigue characterization of the material is of great significance for mechanical design. The operating temperature of Inconel 718 is limited to 650$^\circ$C for the life limited parts, such as discs and shafts.
+A turbine suffers from high temperature low cycle fatigue (LCF) as well as thermomechanical fatigue (TMF).
+The LCF and TMF behaviors of the nickel-based superalloy are the major concern for the safety and reliability of gas turbine engines.
+
+% Gas turbine components experience severe cyclic multiaxial mechanical and thermal loadings. The increasing operating temperature in gas turbines is pushing materials closer to their operating limits. Quantifying mechanical behavior and fatigue performance of the components under the more realistic conditions becomes necessary to design reliable long-term components \cite{Harrison1996}.
+
+In the past decades the Nickel-based superalloy Inconel 718 was extensively tested under isothermal loading conditions, especially by different aero engine makers. Engineering design was essentially based on uniaxial fatigue models, so that the influence of the loading multiaxiality was not clarified.
+For engineering applications numerous investigations on the isothermal low cycle fatigue of the nickel-based superalloy were performed \cite{Koch85, Morrow88, Mahobia2014, Chen2016175, William1995, kim1988elevated, nelson1992creep}.
+Many studies on the isothermal low cycle fatigue of the nickel-based superalloy were published in past years.
 Ye et al. (2004) \cite{ye2004low} investigated LCF behavior of nickel-based superalloy GH4145/SQ. The tests were under fully reversed total strain amplitude control conditions at 538$^{\circ}$C in laboratory air. The alloy exhibits a pronounced initial fatigue hardening followed by continuous fatigue softening to failure at high strain amplitudes. Bilinear behavior with a change of slope at a plastic strain amplitude of about $0.2\%$ was observed in cyclic stress-strain, Coffin-Manson and plastic strain energy-life plots.
 Mahobia et al. (2014) \cite{mahobia2014effect} studied LCF behavior of the alloy Inconel 718, with salt coating, showed drastic reduction in fatigue life at 650$^{\circ}$C. Fatigue life of the salt coated specimens was found to be drastically reduced at all the total strain amplitudes. In general there was cyclic softening both in the bare as well as salt coated specimens. Variation of fatigue life with plastic strain amplitude followed Coffin-Manson relationship.
 Chen et al. (2016) \cite{Chen2016175} operated total strain-controlled low cycle fatigue (LCF) tests of a nickel based superalloy GH4169 at 650$^{\circ}$C. Cyclic softening occurred during the LCF process and it was related to the total strain amplitude. The relationship between life-time and total strain amplitude was obtained by combining Basquin equation and Coffin-Manson equation.
 
-Uniaxial thermomechanical fatigue (TMF) tests \cite{remy2003thermal} were published and phenomenological fatigue models \cite{vose2013approach} were proposed to predict the material fatigue life under isothermal and thermo-mechanical loading conditions.
-Xiao (2006) \cite{Xiao2006157} studied the stress-controlled thermomechanical fatigue (TMF) behavior of IN 718 superalloy with different concentrations of boron (B) and carbon (C) with temperature varying between 350 and 650$^{\circ}$C at a stress ratio of 0.1. The IP-TMF life was observed to be much shorter than that of the OP-TMF, with a crossover occurring at the higher stress range.
+Generally life design of the turbine components is based on the isothermal fatigue concept, although the real loading history in turbine is essentially under varying temperature. It is assumed that the material fatigue at the higher temperature is more critical than that under the thermomechanical condition. From material testing view point, isothermal fatigue can be conducted more easily than the thermomechanical fatigue. However, experiments reveal that the varying temperature changes fatigue damage mechanisms and may accelerate material failure significantly. Recently quantifying thermomechanical fatigue damage becomes an important design issue, especially for high performance components.
+Thermomechanical fatigue (TMF) means fatigue under both cyclic mechanical loads as well as cyclic temperature. Under thermomechanical fatigue the material experiences different damage processes and the fatigue life is sensitive to the loading configuration. In past years many TMF results were published mainly for uniaxial loading \cite{Evans2008, Kulawinski2015, remy2003thermal, Bauer2009}. The major goal was to demonstrate effects of the loading phase angles and to correlate fatigue life with the phase angle. Phenomenological fatigue models were proposed in \cite{Vose2013} to predict the material fatigue life under isothermal and thermomechanical loading conditions. 
+
+% Uniaxial thermomechanical fatigue (TMF) tests \cite{remy2003thermal} were published and phenomenological fatigue models \cite{Vose2013} were proposed to predict the material fatigue life under isothermal and thermo-mechanical loading conditions.
+Xiao (2006) \cite{Xiao2006157} studied the stress-controlled thermomechanical fatigue (TMF) behavior of Inconel 718 superalloy with different concentrations of boron (B) and carbon (C) with temperature varying between 350$^{\circ}$C and 650$^{\circ}$C at a stress ratio of 0.1. The IP-TMF life was observed to be much shorter than that of the OP-TMF, with a crossover occurring at the higher stress range.
 Evans (2008) \cite{evans2008thermo} described the development of a thermo-mechanical fatigue test facility, the coil design and specimen gripping arrangement was modified from its original design to improve the thermal gradient.
-The experimental results shows that the in-phase cycle (300-680$^{\circ}$C) compared favourably with tests at 680$^{\circ}$C.
-The out-of-phase test gave shorter lives on a strain range basis than either 300 or 680$^{\circ}$C isothermal tests.
+The experimental results shows that the in-phase cycle (300$^{\circ}$C-680$^{\circ}$C) compared favourably with tests at 680$^{\circ}$C.
+The out-of-phase test gave shorter lives on a strain range basis than either 300$^{\circ}$C or 680$^{\circ}$C isothermal tests.
 These TMF failures were dominated by fatigue crack growth with evidence of closure.
-%Bauer (2009) \cite{bauer2009thermomechanical}
 
 However, these works are limited to the uniaxial loading condition.
-It is well known the deformation and damage mechanisms under multiaxial loads can significantly differ from those under uniaxial loading \cite{fang2015cyclic}\cite{kang2004uniaxial}\cite{chen2004modified}.
-Most components in aero gas turbine engines, in particular in turbine blades, typically experience significant variations in multiaxial states of stress, strain and temperatures under non-isothermal conditions.
+It is well known the deformation and damage mechanisms under multiaxial loads can significantly differ from those under uniaxial loading \cite{fang2015cyclic, kang2004uniaxial, chen2004modified}. Most components in turbine engines typically experience significant variations in multiaxial states of stress, strain and temperatures under non-isothermal conditions. There are few works on the multiaxial TMF fatigue life published \cite{Brookes2010}.
+% Most components in aero gas turbine engines, in particular in turbine blades, typically experience significant variations in multiaxial states of stress, strain and temperatures under non-isothermal conditions.
 
 There are few works on the multiaxial TMF fatigue life published.
 Brookes (2010) \cite{brookes2010axial} investigated the uniaxial, torsional and axial-torsional thermomechanical fatigue (TMF) behavior of the near-$\gamma$ TiAl-alloy TNB-V5 with temperature varying between 400 and 800$^{\circ}$C and mechanical strain amplitudes ranging from 0.15\% to 0.7\%. The non-proportional OP-TMF test has a shorter lifetime than the uniaxial OP-TMF test with the same Mises equivalent mechanical strain amplitude.
 Kulawinski (2015) \cite{Kulawinski201521} investigated the thermo-mechanical uniaxial and biaxial-planar fatigue behavior of a nickel base superalloy for in-phase and out-of-phase loading between 400$^{\circ}$C and 650$^{\circ}$C.
 
-The present papers introduce the experimental facility of a non-proportional thermomechanical fatigue test and discusses results of multiaxial TMF fatigue life.
-Finally both elastic-plastic behavior and fatigue life under TMF loading condition are investigated.
-It is shown that the TMF affects fatigue performance of the material significantly.
+Therefore, this study focuses on the thermomechanical fatigue under tension-torsion loading conditions and discusses multiaxial TMF fatigue. Both elastic-plastic behavior and fatigue life under multiaxial TMF loading condition are investigated. It is shown that the TMF affects fatigue performance of the material significantly and the TMF fatigue has to be considered with more information about the thermomechanical loads.
 
-Depending on the dominant parameters, fatigue models can be divided into several categories, stress-based models, stain-based models and energy-based models.
-Stress-based models are commonly for high cycle fatigue analysis.
-Stain and energy based models are usually used to describe low cycle fatigue.
-In addition, some models incorporate the critical plane in the fatigue criteria and the critical plane is dependent on the material, stress state and strain amplitude.
-Because of the different possible failure modes, no single analysis method is appropriate for all loading conditions.
-Accurate stress and strain distributions of the structural components are necessary for the fatigue parameter calculation.
-Therefore, the classical constitutive models need to be improved to take the multiaxial, thermomechanical and cyclic loading conditions into account.
+% \subsection{old}
+% Gas turbine components experience severe cyclic multi-axial mechanical loadings and thermal loadings in the high pressure compressor and turbine modules.
+% The increasing operating temperatures in gas turbines are pushing materials closer to their operating limits.
+% Therefore, it is necessary to characterize the deformation and fatigue behavior of materials under the more realistic conditions \cite{harrison1996modelling}.
+% Inconel 718 is a nickel-base superalloy and possesses attractive high temperature mechanical properties such as exceptionally high temperature strength and good resistance to oxidation and creep.
+% The alloy has been extensively used in aircraft engines like the fabrication of turbine discs because of these overall properties. Its working temperature ranges from 600$^{\circ}$C to 700$^{\circ}$C as a key hot-end component in the aero-engines.
+% High pressure turbine disc inevitably withstands hostile environment with respect to load and temperature during its service. Therefore, the material is inclined to suffer strain-controlled high temperature LCF and TMF.
+% These two factors may reduce the service life of the working components significantly.
+% Therefore, the LCF behavior and TMF of the nickel-base superalloy are of major concern considering the safety and reliability of gas turbine engines.
 
-Many constitutive models for the description of cyclic inelasticity have been developed in the literatures over
-the past few decades: Prager (1955) \cite{prager1955new}; Besseling (1959) \cite{besseling1959theory}; Mroz (1967) \cite{mroz1967description}; Chaboche (1991) \cite{Chaboche1991661}; Ohno and Wang (1993) \cite{Ohno1993375};
-McDowell (2000) \cite{McDowell2000293}; Kobayashi and Ohno (2002) \cite{kobayashi2002implementation}; Kang et al. (2003) \cite{Kang20031801}; Chen and Jiao (2004) \cite{Chen2004871}; Hassan et al. (2008) \cite{Hassan20081863};
-Abdel-Karim (2010b) \cite{AbdelKarim2010170}; Becker and Hackenberg (2011) \cite{Becker2011596}; Yu et al. (2012) \cite{Yu201288}; Khutia et al. (2013) \cite{Khutia201388}; Safari et al. (2013) \cite{Safari2013402}.
-Also some of the reviews are presented by Chaboche (2008) \cite{Chaboche20081642} and Abdel-Karim (2010a) \cite{AbdelKarim2010711} for a detailed discussion of some other models.
+
+\section{Development of cyclic plasticity}
+\noindent
+Predicting fatigue performance of mechanical components needs a reliable constitutive description of the material. There were numerous studies on low cycle fatigue of the nickel-based superalloy published. In the past decades numerous constitutive models for cyclic inelasticity have been published \cite{ohno1993kinematic, Pun2014138, AbdelKarim2000225, Kang2004299}, based on the concept introduced by Armstrong and Frederick \cite{armstrong1966mathematical}. Kobayashi et al. \cite{Kobayashi2008389} and Pereira and Lerch \cite{Pereira2001715} studied Inconel 718 behavior using the Johnson-Cook constitutive relation and, however, did not take the cyclic softening behavior into account. 
+
+Bai and Wierzbicki \cite{Bai20081071} modified the classical metal plasticity by taking the dependency of the Lode angle and stress triaxiality into account, which was extended by Algarni et al. \cite{Algarni2015140} to describe the evolution of yield surface under monotonic loading conditions. Becker and Hackenberg \cite{Becker2011596} suggested a limit surface concept and described the material behavior for a wide temperature range under monotonic and cyclic loading.
+Farrahi \cite{Farrahi2014245} applied two plasticity approaches including the spring-slider rule of Nagode and the hardening rule of Chaboche to simulate cyclic behaviors.
+Ohmenh\"{a}user (2014) \cite{Ohmenhauser2014631} adopted a two-layer rheological constitutive model for cyclic thermo-mechanical loading conditions.
+However, neither non-proportionality nor multi-axiality of the applied loads was considered under thermo-mechanical cyclic loading conditions.
+The alloy Inconel 718 exhibited a pronounced initial cyclic hardening then became continuous cyclic softening at high strain amplitudes. Experiments revealed that the conventional constitutive equations are not suitable to give correct stress and strain predictions for Inconel 718. The conventional constitutive models have to be improved to take the multi-axial, thermo-mechanical and cyclic loading conditions into account.
+
+Zhu et al. \cite{ZHU2016} introduced a cyclic elasto-viscoplastic constitutive model for thermo-mechanically coupled problems. The model introduced the energy conservation in viscoplastic deformations and considered heating exchange due to high strain rate as well as its effects to mechanical behavior of the material. The work is interesting for metal forming, but not related to thermo-mechanical fatigue, in which the description of materials mechanical behavior under complex loading condition is of importance. 
+Development of a reliable cyclic plasticity with experimental verification is necessary for predicting thermo-mechanical fatigue performance.
+
+% The present papers introduce the experimental facility of a non-proportional thermomechanical fatigue test and discusses results of multiaxial TMF fatigue life.
+% Finally both elastic-plastic behavior and fatigue life under TMF loading condition are investigated.
+% It is shown that the TMF affects fatigue performance of the material significantly.
+
+% Depending on the dominant parameters, fatigue models can be divided into several categories, stress-based models, stain-based models and energy-based models.
+% Stress-based models are commonly for high cycle fatigue analysis.
+% Stain and energy based models are usually used to describe low cycle fatigue.
+% In addition, some models incorporate the critical plane in the fatigue criteria and the critical plane is dependent on the material, stress state and strain amplitude.
+% Because of the different possible failure modes, no single analysis method is appropriate for all loading conditions.
+% Accurate stress and strain distributions of the structural components are necessary for the fatigue parameter calculation.
+% Therefore, the classical constitutive models need to be improved to take the multiaxial, thermomechanical and cyclic loading conditions into account.
+
+% Many constitutive models for the description of cyclic inelasticity have been developed in the literatures over the past few decades: Prager (1955) \cite{prager1955new}; Besseling (1959) \cite{besseling1959theory}; Mroz (1967) \cite{mroz1967description}; Chaboche (1991) \cite{Chaboche1991661}; Ohno and Wang (1993) \cite{Ohno1993375}; McDowell (2000) \cite{McDowell2000293}; Kobayashi and Ohno (2002) \cite{kobayashi2002implementation}; Kang et al. (2003) \cite{Kang20031801}; Chen and Jiao (2004) \cite{Chen2004871}; Hassan et al. (2008) \cite{Hassan20081863}; Abdel-Karim (2010b) \cite{AbdelKarim2010170}; Becker and Hackenberg (2011) \cite{Becker2011596}; Yu et al. (2012) \cite{Yu201288}; Khutia et al. (2013) \cite{Khutia201388}; Safari et al. (2013) \cite{Safari2013402}. Also some of the reviews are presented by Chaboche (2008) \cite{Chaboche20081642} and Abdel-Karim (2010a) \cite{AbdelKarim2010711} for a detailed discussion of some other models.
 
 Most of the models mentioned above are developed phenomenologically based on the macroscopic experimental results.
 For general application of a stable material, Armstrong and Frederick, Chaboche and Ohno-Wang models are capable to capture the essential phenomena.
@@ -58,25 +86,9 @@ Cyclic plastic deformation is an essential component of the fatigue damage proce
 Therefore, an understanding of multi-axial cyclic plastic deformation is often necessary, particularly in situations where significant plasticity exists such as in notches and in low cycle fatigue.
 However, none of the models can be generally and precisely enough to predict all of the features during cyclic deformation owing to the complexity of phenomena in cyclic deformation.
 
-\section{Constitutive law}
-\noindent
-Gas turbine components are exposed in high temperature and experience cyclic multi-axial thermo-mechanical loadings. The increasing performance requirements to modern gas turbines challenge  the material operating limits. Quantified characterization of deformation and fatigue behavior of materials under realistic conditions becomes increasingly of importance for industrial application \cite{harrison1996modelling}, including variations of structure temperature, mechanical loads as well as environmental conditions. Inconel 718 is the most popular nickel-based superalloy in turbine industry. It is an oxidation- and corrosion-resistant material possessing optimal thermal and mechanical property. It is used for both rotors and casings, so that the low cycle fatigue characterization of the material is of great significance for mechanical design. The operating temperature of Inconel 718 is limited to 650$^\circ$C for the life limited parts, such as discs and shafts.
-A turbine suffers from high temperature low cycle fatigue (LCF) as well as thermo-mechanical fatigue (TMF).
-The LCF and TMF behaviors of the nickel-based superalloy are the major concern for the safety and reliability of gas turbine engines.
+% The present work focuses on the multi-axial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 300$^\circ$C and 650$^\circ$C. Effects of non-proportional cyclic loading as well as thermo-mechanical coupling are studied. Inconel 718 was proven to be hardly influenced by the strain rate below 650$^\circ$C under realistic loading speed \cite{kim1988elevated, Schlesinger2017}, and the constitutive model is assumed to be rate-independent. However, experiments reveal complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermo-mechanical phase effect, non-masing effect etc. Quantitative description of the material behavior needs a constitutive model based on extensive experimental investigation. In the present work a modified cyclic plasticity model is suggested for the nickel-based superalloy Inconel 718 under multi-axial thermo-mechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermo-mechanical fatigue loading components.
 
-Predicting fatigue performance of mechanical components needs a reliable constitutive description of the material. There were numerous studies on low cycle fatigue of the nickel-based superalloy published. In the past decades numerous constitutive models for cyclic inelasticity have been published \cite{ohno1993kinematic, Pun2014138, AbdelKarim2000225, Kang2004299}, based on the concept introduced by Armstrong and Frederick \cite{armstrong1966mathematical}. Kobayashi et al. \cite{Kobayashi2008389} and Pereira and Lerch \cite{Pereira2001715} studied Inconel 718 behavior using the Johnson-Cook constitutive relation and, however, did not take the cyclic softening behavior into account.
-Bai and Wierzbicki \cite{Bai20081071} modified the classical metal plasticity by taking the dependency of the Lode angle and stress triaxiality into account, which was extended by Algarni et al.  \cite{Algarni2015140} to describe the evolution of yield surface under monotonic loading conditions. Becker and Hackenberg \cite{Becker2011596} suggested a limit surface concept and described the material behavior for a wide temperature range under monotonic and cyclic loading.
-Farrahi  \cite{Farrahi2014245} applied two plasticity approaches including the spring-slider rule of Nagode and the hardening rule of Chaboche to simulate cyclic behaviors.
-Ohmenh\"{a}user (2014) \cite{Ohmenhauser2014631} adopted a two-layer rheological constitutive model for cyclic thermo-mechanical loading conditions.
-However, neither non-proportionality nor multi-axiality of the applied loads was considered under thermo-mechanical cyclic loading conditions.
-The alloy Inconel 718 exhibited a pronounced initial cyclic hardening then became continuous cyclic softening at high strain amplitudes. Experiments revealed that the conventional constitutive equations are not suitable to give correct stress and strain predictions for Inconel 718. The conventional constitutive models have to be improved to take the multi-axial, thermo-mechanical and cyclic loading conditions into account.
-
-Zhu et al. \cite{ZHU2016} introduced a cyclic elasto-viscoplastic constitutive model for thermo-mechanically coupled problems. The model introduced the energy conservation in viscoplastic deformations and considered heating exchange due to high strain rate as well as its effects to mechanical behavior of the material. The work is interesting for metal forming, but not related to thermo-mechanical fatigue, in which the description of materials mechanical behavior under complex loading condition is of importance. 
-Development of a reliable cyclic plasticity with experimental verification is necessary for predicting thermo-mechanical fatigue performance.
-
-The present work focuses on the multi-axial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 300$^\circ$C and 650$^\circ$C. Effects of non-proportional cyclic loading as well as thermo-mechanical coupling are studied. Inconel 718 was proven to be hardly influenced by the strain rate below 650$^\circ$C under realistic loading speed \cite{kim1988elevated, Schlesinger2017}, and the constitutive model is assumed to be rate-independent. However,  experiments reveal complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermo-mechanical phase effect, non-masing effect etc. Quantitative description of the material behavior needs a constitutive model based on extensive experimental investigation. In the present work a modified cyclic plasticity model is suggested for the nickel-based superalloy Inconel 718 under multi-axial thermo-mechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermo-mechanical fatigue loading components.
-
-\section{TGMF}
+\section{Thermal gradient mechanical fatigue}
 \noindent
 % 飞机发动机推力的提高很大程度上依赖于涡轮前总温的提高。
 % 对于高温所带来的一系列问题，解决的办法主要有以下三个:
@@ -132,17 +144,7 @@ The test system needs to achieve high heating and cooling speed, so the power of
 %These realistic tests have the advantage that they can transfer data from laboratory tests to the operating conditions.
 %In addition, the heating and cooling rates achieved in the TGMF test apparatus allow very short test cycles so that the fatigue load of an entire flight can be applied to a test body within three to five minutes.
 
-\section{TMF}
-\noindent
-Gas turbine components experience severe cyclic multiaxial mechanical and thermal loadings. The increasing operating temperature in gas turbines is pushing materials closer to their operating limits. Quantifying mechanical behavior and fatigue performance of the components under the more realistic conditions becomes necessary to design reliable long-term components \cite{Harrison1996}.
 
-In the past decades the Nickel-based superalloy Inconel 718 was extensively tested under isothermal loading conditions, especially by different aero engine makers. Engineering design was essentially based on uniaxial fatigue models, so that the influence of the loading multiaxiality was not clarified.
-For engineering applications numerous investigations on the isothermal low cycle fatigue of the nickel-based superalloy were performed \cite{Koch85, Morrow88, Mahobia2014, Chen2016, William1995, kim1988elevated, nelson1992creep}.
-Generally life design of the turbine components is based on the isothermal fatigue concept, although the real loading history in turbine is essentially under varying temperature. It is assumed that the material fatigue at the higher temperature is more critical than that under the thermomechanical condition. From material testing view point, isothermal fatigue can be conducted more easily than the thermomechanical fatigue. However, experiments reveal that the varying temperature changes fatigue damage mechanisms and may accelerate material failure significantly. Recently quantifying thermomechanical fatigue damage becomes an important design issue, especially for high performance components.
-
-Thermomechanical fatigue (TMF) means fatigue under both cyclic mechanical loads as well as cyclic temperature. Under thermomechanical fatigue the material experiences different damage processes and the fatigue life is sensitive to the loading configuration. In past years many TMF results were published mainly for uniaxial loading \cite{Evans2008, Kulawinski2015, Remy2003, Bauer2009}. The major goal was to demonstrate effects of the loading phase angles and to correlate fatigue life with the phase angle. A phenomenological fatigue models was proposed  in \cite{Vose2013} to predict the material fatigue life under isothermal and thermomechanical loading conditions. It is well known the deformation and damage mechanisms under multiaxial loads can significantly differ from those under uniaxial loading \cite{Fang2015, Kang2004, Chen2004}. Most components in turbine engines typically experience significant variations in multiaxial states of stress, strain and temperatures under non-isothermal conditions. There are few works on the multiaxial TMF fatigue life published \cite{Brookes2010}.
-
-This chapter considers thermomechanical fatigue under tension-torsion loading conditions and discusses multiaxial TMF fatigue. Both elastic-plastic behavior and fatigue life under multiaxial TMF loading condition are investigated. It is shown that the TMF affects fatigue performance of the material significantly and the TMF fatigue has to be considered with more information about the thermomechanical loads.
 
 \section{Research objective}
 \noindent
