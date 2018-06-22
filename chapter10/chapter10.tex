@@ -1,36 +1,39 @@
 \chapter{Conclusions and outlooks}
 \noindent
-镍基单晶涡轮叶片TMF 是制约先进航空发动机研制的瓶颈难题。为解决这一问题，本文以Inconel 718为研究对象，开展了单调拉伸、等温疲劳、热机疲劳和热梯度机械疲劳的试验空心气冷涡轮叶片的多层次
-TMF 试验，完成了镍基单晶及TMF 损伤机理、本构建模和寿命建模研究，主要结论有：
+% 镍基单晶涡轮叶片TMF 是制约先进航空发动机研制的瓶颈难题。为解决这一问题，本文以Inconel 718为研究对象，开展了单调拉伸、等温疲劳、热机疲劳和热梯度机械疲劳的试验空心气冷涡轮叶片的多层次TMF 试验，完成了镍基单晶及TMF 损伤机理、本构建模和寿命建模研究，主要结论有：
 % 热机疲劳和热机械梯度疲劳在涡轮发动机中是非常重要的疲劳失效模式。
 Thermomechanical fatigue and thermal gradient mechanical fatigue are very important fatigue failure modes in turbine engines.
 Recently, lots of investigations about life estimation model under uniaxial TMF loading were reported. This thesis focuses on the cyclic plastic deformation and life prediction under multiaxial TMF loading. Furthermore, a radiation furnace was designed and developed for the thermal gradient mechanical fatigue test. A life prediction model was proposed for the TGMF loading.
 
 In the thesis, the multiaxial thermomechanical behavior of the Nickel-based superalloy Inconel 718 has been investigated experimentally and computationally.
+The experimental facility of non-proportional thermomechanical fatigue tests has been described. The induction coil has to be carefully calibrated from its original design to improve the thermal gradient and ensure the control stability of the axial-torsional extensometers. The experiments were performed under 650$^\circ$C isothermal and 300$^\circ$C to 650$^\circ$C thermomechanical loading conditions with proportional and non-proportional mechanical loading paths. 
+
 Based on the the Ohno-Wang's model, a constitutive model has been developed for multiaxial thermomechanical cyclic plasticity.
+Moreover, the constitutive model has been represented into the finite strain framework.
 An implicit computational integration algorithm for the constitutive model has been developed and implemented into the general purpose commercial finite element code ABAQUS. The computational predictions confirm that the model can describe elastic-plastic mechanical behavior under most different thermomechanical loading conditions.
-From the present experimental and computational investigation the following conclusions can be drawn:
+The kinematic hardening can represent the cyclic loading and the isotropic hardening can consider the non-proportional loading path effects in the constitutive model.
+Complex variations in the peak and valley stresses can be described by the kinematic hardening model properly. The numerical predictions presents good agreement with the experiments in varying temperatures.
+Computations confirm the significance of the non-proportional hardening under multiaxial loading conditions and agree with experiments under different loading conditions. Generally, the prediction of the constitutive model is reasonable under both proportional and non-proportional loadings.
+The results reveal the constitutive model can approach thermomechanical behavior reasonably under both axial and multiaxial thermomechanical loadings.
+
+Experimental results show that the TC-OP tests have a longer lifetime than the TC-IP tests within the Mises equivalent mechanical strain amplitude range from 0.6\% to 1\%.
+TMF lifetimes are strongly influenced by the strain path. At the same equivalent mechanical strain amplitude and the same in-phase temperature conditions, the NPR-IP tests have a shorter lifetime than the lifetime of TC-IP tests. However, the PRO-IP tests have the longest lifetime.
+Manson-Coffin fatigue parameters are determined on the isothermal fatigue tests at 650$^\circ$C. Based on Liu's strain energy model, a TMF life prediction model is proposed to consider influences from varying temperature as well as the non-proportional loads. The proposed TMF life prediction model shows a good agreement with the experimental and predicted fatigue lives.
+
+A radiation furnace was designed and developed for the thermal gradient mechanical fatigue test. The single lamp radiation test in a sealed cavity was carried out to determine the radiation efficiency of the single halogen lamp, the emissivity of the alloy surface and the natural convection heat transfer coefficient of air. The elliptical cylinder mirror reflection test was performed to obtain the reflection efficiency of the gold-plated mirror. Based on the radiation furnace, a TGMF testing system for the thin-walled tubular specimen was developed. The systems allow a cyclic and at the same time thermal and mechanical load with controlled temperature gradients on the wall of tubular specimens. The temperature gradient is achieved by heating the outer surface with the radiation furnace and simultaneously cooling the inner surface with compressed air. 
+
+The Nickel-based superalloy Inconel 718 was investigated experimentally under in-phase and out-of-phase thermal gradient mechanical loading conditions with the different mechanical strain amplitude in the temperature interval from 300$^\circ$C to 650$^\circ$C. The experimental results reveal that the temperature gradient has remarkable influence on the fatigue life. Comparing with the TMF lives, the TGMF lives decrease under both in-phase and out-of-phase loading conditions, and the reduction in fatigue lives of TC-IP-TGMF tests are more obvious than TC-OP-TGMF tests. The fatigue life predicted by the proposed TMF model are too much non-conservative for the TGMF tests. A correction term corresponding to the temperature gradient is modified on the present TMF model to consider the effect of the thermal gradient. The local stress-strain response of the specimen was computed with the present constitutive model. With the suggested TGMF model, most of the predicted fatigue lives are within the scatter band with a factor of 2.
+
+Effect of the thermal barrier coating on the lifetime of TGMF was studied qualitatively. Two tubular specimen were coated with the thermal barrier coating of 150$\rm \mu$m. The experimental results show that the thermal barrier coating results in an increment of TGMF life under the same mechanical strain amplitude and the temperature interval. 
+
+Throughout this study, the following work for further study is suggested as follows:
 \begin{itemize}
+\item The current constitutive relations are limited to the superalloy Inconel 718 at temperature under 650$^\circ$C. For higher temperatures, the viscoplasticity of the superalloy has to be considered in the constitutive model. 
 
-\item {The kinematic hardening can represent the cyclic loading and the isotropic hardening can consider the non-proportional loading path effects in the constitutive model.
-Complex variations in the peak and valley stresses can be described by the kinematic hardening model properly. The numerical predictions presents good agreement with the experiments in varying temperatures.}
+\item The experimental results reveal that the tensile and compressive yield stress is asymmetric under elevated temperature, which cannot be caught by the present constitutive model. To quantify this effect, more detailed analysis are necessary.
 
-\item {Computations confirm the significance of the non-proportional hardening under multiaxial loading conditions and agree with experiments under different loading conditions. Generally, the prediction of the constitutive model is reasonable under both proportional and non-proportional loadings.}
+\item In the present study, multiaxial TGMF are not investigated. Because the strain measurement through the developed radiation furnace is difficult. Digital Image Correlation (DIC) techniques can be used to measure the axial/torsional strain during the TGMF testing, but strain-controlled testing by using the DIC signal is still a challenge. Further investigation of multiaxial TGMF tests are needed to extend the present TGMF model to more general loadings.
 
-\item {The temperature-dependent material parameters are determined under isothermal conditions. The results reveal the constitutive model can approach thermomechanical behavior reasonably under both axial and multiaxial thermomechanical loadings.}
-
-\item{The complex loading path may induce additional strain hardening in the compressive normal stress, which cannot be caught by the present constitutive model. To quantify this effect, more detailed experiments are necessary.}
-
+\item The damage mechanism of the thermal barrier coating during the TGMF testing should be studied. More experiments and simulations are needed.
 \end{itemize}
 
-This paper has described the experimental facility of non-proportional thermomechanical fatigue tests. The machine had to be carefully calibrated from its original design to improve the thermal gradient and ensure the control stability of the axial-torsional extensometers. The Nickel-based superalloy Inconel 718 was investigated experimentally and computationally under 650$^\circ$C isothermal and 300$^\circ$C to 650$^\circ$C thermomechanical loading conditions with proportional and non-proportional mechanical loading paths. The main conclusions are as follows:
-
-\begin{itemize}
-\item Experimental results shows that the TC-OP tests have a longer lifetime than the TC-IP tests within the Mises equivalent mechanical strain amplitude range from 0.6\% to 1\%.
-
-\item TMF lifetimes are strongly influenced by the strain path. At the same equivalent mechanical strain amplitude and the same in-phase temperature conditions, the NPR-IP tests have a shorter lifetime than the lifetime of TC-IP tests. However, the PRO-IP tests have the longest lifetime.
-
-\item Manson-Coffin fatigue parameters are determined on the isothermal fatigue tests. The life predictions from the known fatigue models are unsatisfactory. The plots contains generally large scatterings, which implies improper fatigue variables in the models.
-
-\item A TMF life prediction model is proposed to consider influences from varying temperature as well as the non-proportional loads.
-\end{itemize}
