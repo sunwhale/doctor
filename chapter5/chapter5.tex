@@ -110,14 +110,14 @@ where $\nu$ and $E$ are Poisson's ratio and Young's modulus; ${\mathbf{I}}$ is t
 \end{equation}
 Inverse of Equation (\ref{Equ_5:De}), we have:
 \begin{equation}
-{\mathring {\bm{\uptau }}^{*}} = 2\mu {{\mathbf{D}}^{\rm{e}}} + \lambda {\rm{tr}}\left( {{{\mathbf{D}}^{\rm{e}}}} \right){\rm{ = }}{\mathbb{D}^{\rm{e}}}:{{\mathbf{D}}^{\rm{e}}},
+{\mathring {\bm{\uptau }}^{*}} = 2\mu {{\mathbf{D}}^{\rm{e}}} + \lambda {\rm{Tr}}\left( {{{\mathbf{D}}^{\rm{e}}}} \right){\rm{ = }}{\mathbb{D}^{\rm{e}}}:{{\mathbf{D}}^{\rm{e}}},
 \end{equation}
 where ${\mathbb{D}}^{\rm{e}}$ is the fourth-ordered isotropic elastic stiffness tensor, $\mu$ and $\lambda$ are the Lam\'{e} constants:
 \begin{equation}
 \mu  = \frac{E}{{2\left( {1 + \nu } \right)}},{\rm{  }}\lambda  = \frac{{E\nu }}{{\left( {1 + \nu } \right)\left( {1 - 2\nu } \right)}}.
 \end{equation}
 Hereafter, $\left(:\right)$ will indicate the inner product between two tensors, and the following symbols will be used: $H\left(\bullet\right)$ the Heaviside step function, $\left\|\bullet\right\|$ the Euclidean norm of second rank tensors, and $\left<\bullet\right>$ the Macauley bracket.\\
-We denotes $\bm{\uptau}'$ as the deviatoric part of $\bm{\uptau}$, i.e. ${\bm{\uptau}}' = {\bm{\uptau }} - \frac{1}{3}{\rm{tr}}\left( {\bm{\uptau }} \right){\mathbf{I}}$.
+We denotes $\bm{\uptau}'$ as the deviatoric part of $\bm{\uptau}$, i.e. ${\bm{\uptau}}' = {\bm{\uptau }} - \frac{1}{3}{\rm{Tr}}\left( {\bm{\uptau }} \right){\mathbf{I}}$.
 Thus, the objective rate of deviatoric stress ${\mathring {\bm{\uptau }}^{*}}$ is:
 \begin{equation}
 {\mathring {\bm{\uptau'}}^{*}} = 2\mu {{\mathbf{D}}^{\rm{e}}}.
@@ -344,7 +344,7 @@ Box 1: Summary of the constitutive equations.
 \[{\mathbf{D}} = {{\mathbf{D}}^{\rm{e}}} + {{\mathbf{D}}^{\rm{p}}}\]
 
 2. Hypo-elastic relation:
-\[{\mathring {\bm{\uptau }}^{*}} = 2\mu {{\mathbf{D}}^{\rm{e}}} + \lambda {\rm{tr}}\left( {{{\mathbf{D}}^{\rm{e}}}} \right){\rm{ = }}{\mathbb{D}^{\rm{e}}}:{{\mathbf{D}}^{\rm{e}}}\]
+\[{\mathring {\bm{\uptau }}^{*}} = 2\mu {{\mathbf{D}}^{\rm{e}}} + \lambda {\rm{Tr}}\left( {{{\mathbf{D}}^{\rm{e}}}} \right){\rm{ = }}{\mathbb{D}^{\rm{e}}}:{{\mathbf{D}}^{\rm{e}}}\]
 
 3. Yield function:
 \[F = \sqrt {\frac{3}{2}\left( {{\bm{\uptau}}' - {\mathbf{a}}} \right):\left( {{\bm{\uptau}}' - {\mathbf{a}}} \right)}  - Y\]
@@ -403,11 +403,11 @@ Box 2: Specification of the material functions.
 
 \section{Algorithmic formulation of the constitutive model}
 \noindent
-In the following, a fully implicit strain driven integration algorithm is developed for the constitutive model discussed in the previous section. It is ready for an implementation in a general Finite Element (FE) context where the proposed algorithm is applied locally at every integration point during each global iteration step.
+In the following, a fully implicit strain-driven integration algorithm is developed for the constitutive model discussed in the previous section. It is ready for the implementation in a general Finite Element (FE) context where the proposed algorithm is applied locally at every integration point during each global iteration step.
 
 \subsection{Backward Euler discretization}
 \noindent
-Backward Euler method is a first order fully implicit method. Consider the interval from a state $n$ to $n+1$, in the following, any quantity evaluated at state $n$ will be indicated by a subscript $n$, for quantities evaluated at state $n+1$ subscript $n+1$ are omitted, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$. The backward Euler method allows our constitutive equations to be discretized as the following.
+Backward Euler method is a first-order fully implicit method. Consider the interval from a state $n$ to $n+1$, in the following, any quantity evaluated at state $n$ will be indicated by a subscript $n$, for quantities evaluated at state $n+1$ subscript $n+1$ are omitted, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$. The backward Euler method allows our constitutive equations to be discretized as the following.
 %Hereafter, the subscripts $n$ and $n+1$ signify the values at $n$ and $n+1$ respectively, and $\Delta$ indicates the increments in the interval from $n$ to $n+1$.
 \begin{equation}
 {{\mathbf{L}}_{n + 1}} = \frac{{\left( {{{\mathbf{F}}_{n + 1}} - {{\mathbf{F}}_n}} \right)}}{{\Delta t}}{\mathbf{F}}_{n + 1}^{ - 1},
@@ -535,7 +535,7 @@ Also we can derive the relation between stress and trial stress at state $n+1$ a
 \label{Equ_5:tau1}
 {\bm{\uptau }}_{n + 1} = {\bm{\uptau }}_{n + 1}^{\rm tr} - {\mathbb{D}^{\rm{e}}}: {\mathbf{D}}_{n + 1}^{\rm p} \Delta t.
 \end{equation}
-Note that, because of elastic isotropy and plastic incompressibility, ${\mathbf{D}}_{n + 1}^{\rm p}$ is a deviatoric tensor with $Tr\left( {\mathbf{D}}_{n + 1}^{\rm p} \right)=0$.
+Note that, because of elastic isotropy and plastic incompressibility, ${\mathbf{D}}_{n + 1}^{\rm p}$ is a deviatoric tensor with $\rm{Tr}\left( {\mathbf{D}}_{n + 1}^{\rm p} \right)=0$.
 The stress deviator is given by:
 \begin{equation}
 {\bm{\uptau }}'_{n + 1} \equiv {\bm{\uptau }} - \frac{1}{3}\left( {{\bm{\uptau }}:{\mathbf{I}}} \right){\mathbf{I}} = {\mathbb{I}_{\rm d}}:{\bm{\uptau }},
@@ -752,4 +752,4 @@ Therefore, $\mathbb{H}_{n + 1}^k$ in Equation (\ref{Equ_5:dan+1}) has an express
 \end{equation}
 
 The FEM code ABAQUS have interfaces that allow the user to implement the user-defined constitutive equations and the user-defined material model is implemented in user subroutine UMAT.
-In this paper the implementation of material models in UMAT will use the implicit integral algorithm discussed above.
+In this paper, the implementation of material models in UMAT will use the implicit integral algorithm discussed above.
