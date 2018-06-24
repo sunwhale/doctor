@@ -819,7 +819,7 @@ with the result of fatigue life $N_{\rm{p}}$=71 cycles.
 
 \begin{table}[htbp]
   \centering
-  \caption{The measured stress-strain response of the NPR-IF test with equivalent strain range $\pm0.7\%$ (stress unit: MPa, strain unit: mm/mm, temperature unit: K, time unit: s).}
+  \caption{The measured stress-strain response of the NPR-IF test with equivalent strain range $\pm0.7\%$ (stress unit: MPa, strain unit: mm/mm, temperature unit: $^\circ$C, time unit: s).}
     \begin{tabular}{p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}}
     \toprule
     $t$   & $\varepsilon_x$ & $\gamma_{xy}$ & $\varepsilon_y$ & $\sigma_x$ & $\tau_{xy}$ & $T$ \\
@@ -864,7 +864,7 @@ with the result of fatigue life $N_{\rm{p}}$=71 cycles.
 
 \begin{table}[htbp]
   \centering
-  \caption{Stress and strain on the material plane (stress unit: MPa, strain unit: mm/mm, temperature unit: K, angle unit: $^\circ$). }
+  \caption{Stress and strain on the material plane (stress unit: MPa, strain unit: mm/mm, temperature unit: $^\circ$C, angle unit: $^\circ$). }
     \begin{tabular}{p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}}
     \toprule
     $\varphi$ & $\sigma_{\rm{n,max}}$ & $\Delta \sigma$ & $\Delta \varepsilon$ & $\tau_{\rm{n,max}}$ & $\Delta \tau$ & $\Delta \gamma$ & $T_{\sigma_{\rm{n,max}}}$ \\
@@ -988,18 +988,18 @@ As discussed in Ref.\cite{Vose2013}, the correction term A is defined as:
 A = {\left[ {1 + C\int_{{t_0}}^{{t_0} + {t_{cyc}}} {\eta \left( t \right)\exp \left( {\frac{{ - Q\left( t \right)}}{{RT\left( t \right)}}} \right){\rm{d}}t} } \right]^k},
 \label{Equ:A}
 \end{equation}
-assuming that the viscous deformation only affects the tensile strain energy, where $\eta \left( t \right)$ is stress triaxiality, $R$ is the ideal gas constant ($8.31\times10^{-3}$kJ/mol$\cdot$K), the time integral is from the start time $t_0$ of the cycle to the end time $t_0 + t_{cyc}$, $t_{cyc}$ is the period of the tests, $C$ and $k$ are material constants.
+assuming that the viscous deformation only affects the tensile strain energy, where $\eta \left( t \right)$ is stress triaxiality, $R$ is the ideal gas constant ($8.31\times10^{-3}$ kJ/mol$\cdot$K), the time integral is from the start time $t_0$ of the cycle to the end time $t_0 + t_{cyc}$, $t_{cyc}$ is the period of the tests, $C$ and $k$ are material constants.
 In Equation (\ref{Equ:A}), $Q$ is presented \cite{Warren2006,Warren2008} as
 \begin{equation}
 Q\left( t \right) = {Q_0} - \upsilon _0^*{\sigma _{\rm n}}\left( t \right)\left( {1 - \frac{{{\sigma _{\rm n}}\left( t \right)}}{{2{\sigma _{\rm{ult}}}}}} \right),
 \label{Equ:creep_activation_energy}
 \end{equation}
 where $Q_0$ is the intrinsic activation energy, $\upsilon _0^*$ represents the intrinsic activation volume, $\sigma_{ult}$ is the ultimate stress at the maximum temperature and $\sigma_{\rm n}(t)$ is the normal stress of the critical plane.
-As given in \cite{Warren2008}, the activation energy $Q_0$ is set to the value of 240kJ/mol and the intrinsic activation volume $\upsilon _0^*$ is used the value of $3.51\times10^{-4}\rm{m}^{3}/\rm{mol}$. The ultimate strength $\sigma_{\rm{ult}}$ of Inconel 718 at 650$^\circ$C was measured under monotonic tensile tests as $1305$MPa. The constants $k$, $B$ and $C$ are determined by the optimization method to minimize the life prediction mean-squared error. Finally, $k$ is set to 1.2, $B$ is set to 0.5 and $C$ is set to $1.29\times10^{12}s^{-1}$.
+As given in \cite{Warren2008}, the activation energy $Q_0$ is set to the value of 240 kJ/mol and the intrinsic activation volume $\upsilon _0^*$ is used the value of $3.51\times10^{-4}$ $\rm{m}^{3}/\rm{mol}$. The ultimate strength $\sigma_{\rm{ult}}$ of Inconel 718 at 650$^\circ$C was measured under monotonic tensile tests as $1305$ MPa. The constants $k$, $B$ and $C$ are determined by the optimization method to minimize the life prediction mean-squared error. Finally, $k$ is set to 1.2, $B$ is set to 0.5 and $C$ is set to $1.29\times10^{12}$ $s^{-1}$.
 
-% $Q_0$ = (240kJ/mol)
+% $Q_0$ = (240 kJ/mol)
 % $\upsilon _0^*$ = ($3.75\times10^{-4}\rm{m}^{3}/\rm{mol}$)
-% $\sigma_{ult} = 1300$MPa
+% $\sigma_{ult} = 1300$ MPa
 % $k = 1.2$
 % $C=1.2\times10^{12}\rm{s}^{-1}$
 
@@ -1029,17 +1029,13 @@ As given in \cite{Warren2008}, the activation energy $Q_0$ is set to the value o
 \ref{fig:PresentModel} shows the life assessment of the multiaxial TMF tests. In \ref{fig:PresentModel}(a), the fatigue damage parameters versus experimental fatigue lifetimes is displayed. The fatigue damage parameters show good correlation with experimental fatigue lifetimes under uniaxial TMF loading case as well as proportional and non-proportional TMF loading cases. In \ref{fig:PresentModel}(b), one can observe that based on the proposed model, most of the predicted fatigue lifetimes are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lifetimes.
 
 \ref{Fig:plot_fatigue_life_quantitative_evaluation_tmf} shows a quantitative assessment of fatigue life prediction results. The comparison between calculated $N_{\rm{p}}$ and experimental $N_{\rm{f}}$ fatigue lives has been made by means of two statistical parameters. The first of them is a mean dispersion of fatigue life:
-
-\[{T_{\rm{N}}} = {10^{\bar E}}\]
-
+\[{T_{\rm{N}}} = {10^{\bar E}},\]
 where $\bar E$ is given by:
-
-\[\bar E = \frac{1}{n}\sum\limits_{i = 1}^n {\log \left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)} \]
+\[\bar E = \frac{1}{n}\sum\limits_{i = 1}^n {\log \left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)}. \]
 where n is a number of the compared results. The second parameter is a life prediction mean-squared error
-
-\[{T_{\rm{RMS}}} = {10^{{E_{\rm{RMS}}}}}\]
+\[{T_{\rm{RMS}}} = {10^{{E_{\rm{RMS}}}}},\]
 where $E_{RMS}$ is given by:
-\[{E_{\rm{RMS}}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\log }^2}\left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)} } \]
+\[{E_{\rm{RMS}}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\log }^2}\left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)} }. \]
 
 $T_{\rm{N}}$ equals 1 when mean experimental and calculated fatigue lives are equal; more than 1 when the experimental life values are higher than the calculated ones; lower than 1 when the experimental life values are lower than the calculated ones. The $T_{\rm{N}}$ quantity is insensitive to the dispersion of life. It can assume the same value for the results with low and high statistical dispersion. Quantity $T_{\rm{RMS}}$ is a measure of statistical dispersion. It assumes the value equal to 1 when the mean and the statistical dispersion of experimental and computational life are identical. It is higher than 1 in other cases. $T_{\rm{RMS}}$ does not provide any information on whether the computational life is higher or lower than the experimental one.
 

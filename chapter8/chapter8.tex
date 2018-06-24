@@ -30,7 +30,7 @@ As introduced in chapter 2, induction heating (see \ref{Fig:heating_methods}(b))
 % 感应加热具有加热能力强、加热速度快，且具有低成本的优势，可以通过感应线圈的设计模拟复杂温度场，被广泛应用于金属材料高温疲劳试验。
 % 由于感应电流的趋肤效应，感应加热通常只能对工件表层进行加热，且感应频率越高，加热深度越浅。工件内部温度通过热传导实现升温。
 Due to the skin effect of the induced current, induction heating usually only heats the surface of the specimen, and the higher the induction frequency, the shallower the heating depth.
-In the present study, the heating depth of the induced current is about 1-2mm, and thus the inner and outer surfaces of the specimen are heated simultaneously.
+In the present study, the heating depth of the induced current is about 1-2 mm, and thus the inner and outer surfaces of the specimen are heated simultaneously.
 Considering the internal cooling process, the induction heating is not conducive to produce the temperature gradient between the internal and external surface of the specimen. Furthermore, considering a specimen covered with a thermal barrier coating (TBC) on its outer surface, the induction heating can only heat the metal part of the specimen, and the TBC (typically a ceramic material) will not be heated. This will cause the temperature inside the specimen to be higher than the outside temperature, which does not meet the temperature distribution in actual working condition \cite{BRENDEL2008234}.
 
 % 燃气加热是利用燃烧室中燃油燃烧时所产生的高温燃气对试件进行加热，在满足试件加热条件的同时，还可模拟燃气与零部件的热量交换、氧化、腐蚀等过程，并且对于试件的材料无特殊要求（金属、非金属复合材料等）。燃气加热能力强，可以将试件加热到很高温度。但是燃气加热需要搭建复杂的燃烧室设备及其控制系统，火焰加热受环境影响较大，试件的温度场均匀性较差，远远达不到TMF试验的要求。火焰喷射的优点在于接近真实发动机涡轮叶片的工作环境，但火焰的稳定性差，火焰形状难以控制，很难形成均匀的温度场\cite{MAUGET2017225}。
@@ -184,9 +184,10 @@ Conduction can only take place within an object or material, or between two obje
 An empirical relationship between the conduction rate in a material and the temperature gradient in the direction of energy flow, first formulated by Fourier who concluded that the heat flux resulting from thermal conduction is proportional to the magnitude of the temperature gradient and opposite to it in sign.
 For a three directional conduction, the differential form of Fourier's Law of thermal conduction may be expressed as:
 \begin{equation}
-{\bf{q}} =  - k\nabla T
+{\bf{q}} =  - k\nabla T,
 \end{equation}
-where $\bf{q}$ is the local heat flux density(W/m$^2$), $k$ is the material's conductivity(W/mK), $\nabla T$ is the temperature gradient(K/m).
+where $\bf{q}$ is the local heat flux density, $k$ is the material's conductivity, and $\nabla T$ is the temperature gradient.
+% where $\bf{q}$ is the local heat flux density in the unit of W/m$^2$, $k$ is the material's conductivity in the unit of W/m$\cdot$K, $\nabla T$ is the temperature gradient in the unit of K/m.
 The heat flux density is the amount of energy that flows through a unit area per unit time.
 The thermal conductivity, k, is often treated as a constant, though this is not always true.
 While the thermal conductivity of a material generally varies with temperature, the variation can be small over a significant range of temperatures for some common materials.
@@ -210,9 +211,9 @@ Convection is sometimes assumed to be described by Newton's law.
 Newton's law, which requires a heat transfer coefficient, states that the rate of heat loss of a body is proportional to the difference in temperatures between the body and its surroundings. %The constant of proportionality is the heat transfer coefficient.
 As shown in \ref{Thermal_boundary_layer}, the basic relationship for heat transfer by convection is:
 %The heat transfer rate can be written as,
-    \begin{equation}
-    q_y=hA(T_{\rm{s}}-T_{\infty})
-    \end{equation}
+\begin{equation}
+    q_y=hA(T_{\rm{s}}-T_{\infty}),
+\end{equation}
 where $q_y$ is the heat transferred per unit time, $h$ is the heat transfer coefficient, $T_{\rm{s}}$ is the object's surface temperature and $T_{\infty}$ is the fluid temperature.
 
 %And because heat transfer at the surface is by conduction,
@@ -330,7 +331,7 @@ or in terms of wavelength
 \begin{equation}
 u(\lambda,T)=\frac{\beta}{\lambda^5}\cdot\frac1{e^{hc/k_{\rm{B}}T\lambda}-1},
 \end{equation}
-where $h=6.626\times10^{-34}{\rm{J}}\cdot {\rm{s}}$ is Planck's constant, $b=2.898\times10^{-3}{\rm{m}} \cdot {\rm{K}}$ is Wien's displacement constant, $k_{\rm{B}}=1.381\times10^{-23}{\rm{J}} \cdot {\rm{K}}^{-1}$ is Boltzmann constant and $c$ is the speed of light.
+where $h=6.626\times10^{-34}$ ${\rm{J}}\cdot {\rm{s}}$ is Planck's constant, $b=2.898\times10^{-3}$ ${\rm{m}} \cdot {\rm{K}}$ is Wien's displacement constant, $k_{\rm{B}}=1.381\times10^{-23}$ ${\rm{J}} \cdot {\rm{K}}^{-1}$ is Boltzmann constant and $c$ is the speed of light.
 
 This formula mathematically follows from the calculation of the spectral distribution of energy in the quantized electromagnetic field which is in complete thermal equilibrium with the radiating object. The equation is derived as an infinite sum over all possible frequencies. The energy, $E=h \nu$, of each photon is multiplied by the number of states available at that frequency, and the probability that each of those states will be occupied.
 
@@ -339,7 +340,7 @@ Integrating the above equation over $\nu$ the power output given by the Stefan-B
 P = \sigma \cdot A \cdot T^4,
 \label{Equ:IntegratingOfStefanBoltzmann}
 \end{equation}
-where the constant of proportionality $\sigma=5.670\times10^{-8}\rm{W}\cdot \rm{m}^{-2}\cdot \rm{K}^{-1}$ is the Stefan-Boltzmann constant and $A$ is the radiating surface area.
+where the constant of proportionality $\sigma=5.670\times10^{-8}$ $\rm{W}\cdot \rm{m}^{-2}\cdot \rm{K}^{-1}$ is the Stefan-Boltzmann constant and $A$ is the radiating surface area.
 
 The wavelength $\lambda \,$, for which the emission intensity is highest, is given by Wien's displacement law as
 \begin{equation}
@@ -423,7 +424,7 @@ Unfortunately, the temperature-versus-voltage relationship of the thermocouple i
     \toprule
     Temperature range & -50 to 250$^{\circ}$C & 250 to 1200$^{\circ}$C & \multicolumn{1}{l}{1064 to 1664.5$^{\circ}$C} \\
     \midrule
-    Voltage range & -226 to 1923$\mu$V & 1923 to 13228$\mu$V & \multicolumn{1}{l}{11361 to 19739$\mu$V} \\
+    Voltage range & -226 to 1923 $\mu$V & 1923 to 13228 $\mu$V & \multicolumn{1}{l}{11361 to 19739 $\mu$V} \\
     \midrule
     $k_{0}=$ & 0.0000000 & 1.334584505$\times 10^{1}$ & \multicolumn{1}{l}{-8.199599416$\times 10^{1}$} \\
     $k_{1}=$ & 1.8891380$\times 10^{-1}$ & 1.472644300$^\circ$C$\times 10^{-1}$ & 1.553962042$\times 10^{-1}$ \\
@@ -447,11 +448,11 @@ Therefore, polynomials are used to present the temperature-versus-voltage and th
 Direct polynomials (see Equation (\ref{Equ:Direct_polynomials})) provide the thermoelectric voltage from a known temperature and inverse polynomials (see Equation (\ref{Equ:Inverse_polynomials})) provide the temperature from a known thermoelectric voltage.
 \begin{equation}
 \label{Equ:Direct_polynomials}
-E = {c_0} + {c_1}T + {c_2}{T^2} + ... + {c_n}{T^n} = \sum\limits_{i = 0}^n {{c_i}{T^i}}
+E = {c_0} + {c_1}T + {c_2}{T^2} + ... + {c_n}{T^n} = \sum\limits_{i = 0}^n {{c_i}{T^i}}.
 \end{equation}
 \begin{equation}
 \label{Equ:Inverse_polynomials}
-T = {k_0} + {k_1}E + {k_2}{E^2} + ... + {k_n}{E^n} = \sum\limits_{i = 0}^n {{k_i}{E^i}}
+T = {k_0} + {k_1}E + {k_2}{E^2} + ... + {k_n}{E^n} = \sum\limits_{i = 0}^n {{k_i}{E^i}}.
 \end{equation}
 Where, $T$ is temperature in degrees Celsius ($^{\circ} \rm{C}$), $E$ is thermocouple electric potential in microvolts (${\rm{\mu V}}$), $c_i,k_i$ are polynomial coefficients unique to each type thermocouple, $n$ is the maximum order of the polynomial.
 As n increases, the accuracy of the polynomial improves.
@@ -770,7 +771,7 @@ Through the experiments, the temperature-time curves of the 11 temperature measu
 
 Heat transfer in the test rig is governed by three effects: conduction through the metal, convection from the air, and radiative exchange between the lamp and parts of the metal surface. 
 For the transient thermal computation, the thermal conductivity, density, and specific heat capacity of the material should be defined.
-The material of the test rig is the stainless steel SS304 with a density of 7873kg/m$^3$ and a specific heat of 502J/$({\rm{kg}} \cdot {}^ \circ {\rm{C}})$. The density and specific heat capacity of the stainless steel SS304 are approximately considered as temperature independent, but the temperature dependence of thermal conductivity cannot be neglected. The thermal conductivity of the stainless steel SS304 at different temperatures are listed in Table \ref{Tab:SS304HeatTransfer}, and it is observed that the conductivity increases with the increasing temperature. 
+The material of the test rig is the stainless steel SS304 with a density of 7873 kg/m$^3$ and a specific heat of 502 J/$({\rm{kg}} \cdot {}^ \circ {\rm{C}})$. The density and specific heat capacity of the stainless steel SS304 are approximately considered as temperature independent, but the temperature dependence of thermal conductivity cannot be neglected. The thermal conductivity of the stainless steel SS304 at different temperatures are listed in Table \ref{Tab:SS304HeatTransfer}, and it is observed that the conductivity increases with the increasing temperature. 
 
 \begin{figure}[!htp]
   \centering
@@ -795,13 +796,13 @@ The material of the test rig is the stainless steel SS304 with a density of 7873
     \put(84,65){\fcolorbox{white}{white}{(f)}}
   \end{overpic}
 
-  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double ended halogen lamp with tube base. (b) Mesh of the FE-model. (c) Mesh of the FE-model. (d) Lamp power of 240W. (e) Lamp power of 350W. (f) Lamp power of 400W. }
+  \caption{Comparison of experimental and computational results of the single lamp radiation in the cylindrical cavity. (a) Double-ended halogen lamp with tube base. (b) Mesh of the FE-model. (c) Computational result of temperature. (d) Lamp power of 240 W. (e) Lamp power of 350 W. (f) Lamp power of 400 W. }
   \label{Fig:OneLightRadiationSimulation}
 \end{figure}
 
 A computational heat transfer model is created in the commercial finite element software ABAQUS.
 According to the symmetry of the test rig, the middle cross section of the cylinder is taken as the symmetry plane, and the FE-model is shown in \ref{Fig:OneLightRadiationSimulation}(b).
-The FE-model is dimensioned in meters, and the temperature is measured in $^\circ$C, so the Stefan Boltzmann constant is taken as $5.670\times10^{-8}{\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$ and absolute zero is set at 273.15$^\circ$C below zero.
+The FE-model is dimensioned in meters, and the temperature is measured in $^\circ$C, so the Stefan Boltzmann constant is taken as $5.670\times10^{-8}$ ${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$ and absolute zero is set at 273.15$^\circ$C below zero.
 The procedure consists of two heat transfer steps in which the thermal loading conditions are heating and cooling down.
 The boundary constraints on the cylindrical cavity
 Convection due to heat transfer from the air is applied at the internal and external surfaces of the cylindrical cavity.
@@ -832,12 +833,12 @@ The emissivities of the inner and outer surfaces of the cylindrical cavity are t
 % 以400W卤素灯为例，经过测量灯芯长度为68mm(see \ref{Fig:OneLightRadiation}(a))，灯芯色温2950K。根据Equation \ref{Equ:IntegratingOfStefanBoltzmann}我们可以计算灯芯表面辐射面积为：
 % 将灯芯等效为理想圆柱面，已知圆柱面的表面积93.16${\rm{mm}}^2$和长度68mm，因此，可以计算得出圆柱面的直径为0.436mm。
 
-Taking the 400W halogen lamp as an example, the measured filament length is about 68mm (see \ref{Fig:OneLightRadiationSimulation}(a)), and the color temperature of the filament is 2950K. According to the Equation (\ref{Equ:IntegratingOfStefanBoltzmann}), the radiating surface area of the filament can be calculated by:
+Taking the 400W halogen lamp as an example, the measured filament length is about 68 mm (see \ref{Fig:OneLightRadiationSimulation}(a)), and the color temperature of the filament is 2950K. According to the Equation (\ref{Equ:IntegratingOfStefanBoltzmann}), the radiating surface area of the filament can be calculated by:
 \begin{equation}
 A = \frac{P}{\sigma \cdot T^4} = \frac{400}{5.670\times10^{-8}\times2950^4}=9.316\times10^{-5} {\rm{m }}^2.
 \end{equation}
 The shape of the filament is a spiral coil. 
-For simplicity, the filament can be abstracted as a cylindrical surface with the area of 93.16mm$^2$ and the length of 68mm. Therefore, the diameter of the cylinder can be calculated as 0.436mm. The mesh of the filament is shown in \ref{Fig:OneLightRadiationSimulation}(a).
+For simplicity, the filament can be abstracted as a cylindrical surface with the area of 93.16 mm$^2$ and the length of 68 mm. Therefore, the diameter of the cylinder can be calculated as 0.436 mm. The mesh of the filament is shown in \ref{Fig:OneLightRadiationSimulation}(a).
 
 
 
@@ -848,10 +849,10 @@ For simplicity, the filament can be abstracted as a cylindrical surface with the
 
 During the test, the ambient temperature was measured as 23$^{\circ}$C, and the natural convection heat transfer coefficient of air ranged from 5 to 25 ${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$.
 In the FE-model, several heat transfer coefficients are unknown.
-Using the trial and error method, we determined the unknown coefficients with the emissivity of the inner wall surface (black coated) of 0.95, the emissivity of the outer wall surface (metallic surface) of 0.68, the radiation efficiency of 0.94, and the convective heat transfer coefficient of 5.6${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$.
+Using the trial and error method, we determined the unknown coefficients with the emissivity of the inner wall surface (black coated) of 0.95, the emissivity of the outer wall surface (metallic surface) of 0.68, the radiation efficiency of 0.94, and the convective heat transfer coefficient of 5.6 ${\rm{W/}}({\rm{m}^{2}} \cdot {}^ \circ {\rm{C}})$.
 Using the obtained heat transfer coefficients, the radiant heat transfer of the test rig with different power halogen lamps were computed through the finite element model. 
 \ref{Fig:OneLightRadiationSimulation}(c) shows the nodal temperature field of the test rig. 
-The temperatures at the middle section of the outer wall surface are shown in \ref{Fig:OneLightRadiationSimulation}(d),(e),(f) with the lamp power of 240W, 350W, and 400W, respectively.
+The temperatures at the middle section of the outer wall surface are shown in \ref{Fig:OneLightRadiationSimulation}(d),(e),(f) with the lamp power of 240 W, 350 W, and 400 W, respectively.
 We observed good agreement between the experimental and computational results.
 Therefore, the emissivities and convective heat transfer coefficient determined from the trial and error method are appropriate.
 
@@ -884,7 +885,7 @@ Because of this effect, the elliptical cylinder is most useful when coupled with
 % 真实的镜面无法保证完全光滑，光线会产生一定的漫反射，通过试验和计算，我们需要确定镜面的反射效率。
 
 The filament can be simplified as a line light source, due to its small diameter. As discussed above, if a line light source is located at one focus line of the elliptical cylinder mirror, the reflected light will pass through the other focus line.
-However, according to the computations in the previous section, if we consider the filament as a cylindrical surface, the diameter of the cylindrical surface is about 0.5mm. Not all of the reflected light is transferred to the other focus.
+However, according to the computations in the previous section, if we consider the filament as a cylindrical surface, the diameter of the cylindrical surface is about 0.5 mm. Not all of the reflected light is transferred to the other focus.
 Meanwhile, the real mirror is not completely smooth, and a part of the light is diffusely reflected. Therefore, we have to determine the reflection efficiency through the experiments and calculations.
 
 % 单盏卤素灯镜面反射辐射传热试验装置，如\ref{Fig:OneLightWithEllipseMirrorReflectionShow}(a)所示，包括椭圆柱面镜、受光平板、温度传感器及数据采集系统等。
@@ -1024,7 +1025,7 @@ It has been used in many projects for designing and analyzing all types of optic
 A simulation model is created in TracePro, as shown in \ref{Fig:tracepro}.
 The simulation model consists of three parts: the reflector, filament, and light-receiving plate.
 The upper and lower plate are ignored because they are coated with the black paint, most of the light is absorbed when they irradiate on the plate.
-For simplicity, the spiral coil-shaped filament is abstracted as a cylinder with a diameter of 1mm.
+For simplicity, the spiral coil-shaped filament is abstracted as a cylinder with a diameter of 1 mm.
 The rays are traced through the systems to find energy distributions on the light-receiving plate.
 
 The ray tracing results show that 27.7\% of the light emitted by the halogen lamp shined on the light-receiving plate and the irradiance distribution are plotted in \ref{Fig:irradiance_map_D1.0mm_S0.0mm_gray}.
@@ -1033,7 +1034,7 @@ The $x$ direction is the length of the plate and the $y$ direction is the height
 The transient heat transfer model was created in ABAQUS, and the irradiance distributions obtained by TracePro are used as the heat flux boundary conditions.
 The light-receiving plate was divided into 128$\times$128 meshes, as shown in \ref{Fig:OneLightWithReflection}(a). Thus, the irradiance distribution obtained by TracePro was also divided into 128$\times$128 areas with their geometries and positions corresponding to the meshes one by one. For simplicity, the heat flux on each area is assumed as a constant, then the heat flux on each area can be calculated by using its average value. Using this method, we can get the approximate heat flux boundary conditions. The larger the mesh density, the more accurate the calculation results. Through the calculations with different mesh densities, it is observed that the 128$\times$128 meshes are sufficiently accurate for our experiment. 
 
-During the test, the halogen lamp was turned on for 200s then turned off. The transient heat transfer results at the running time 200s are shown in \ref{Fig:OneLightWithReflection}(b). \ref{Fig:OneLightWithReflection}(c) and (d) illustrate the comparison of the experimental and computational temperatures along the horizontal and vertical directions, with different reflection efficiencies. We observed the best agreement between the experimental and computational results with the reflection efficiency of 0.95. Therefore, the reflection efficiency of the gold-coated reflector is determined as 0.95.
+During the test, the halogen lamp was turned on for 200 s then turned off. The transient heat transfer results at the running time 200 s are shown in \ref{Fig:OneLightWithReflection}(b). \ref{Fig:OneLightWithReflection}(c) and (d) illustrate the comparison of the experimental and computational temperatures along the horizontal and vertical directions, with different reflection efficiencies. We observed the best agreement between the experimental and computational results with the reflection efficiency of 0.95. Therefore, the reflection efficiency of the gold-coated reflector is determined as 0.95.
 
 \subsection{Extensometer}
 \noindent
@@ -1043,13 +1044,13 @@ There are many different types of high-temperature extensometers available.
 The type of extensometer is dependent on the type of testing and the type of heating system used.
 
 There are two observation windows on both side of the developed radiation furnace as shown in \ref{Fig:EpsilonExtensometer}(a).
-The distance between each observation window and the specimen outer surface is 160mm.
-Due to the long distance, Epsilon Model 3448 high-temperature extensometer was selected to match the radiation furnace.
+The distance between each observation window and the specimen outer surface is 160 mm.
+Due to the long distance, Epsilon-3448 high-temperature extensometer was selected to match the radiation furnace.
 It has two ceramic rods which are made of high purity alumina.
 The ceramic rods pass through the furnace and contact the specimen (see \ref{Fig:EpsilonExtensometer}(b)).
 % These are available in lengths as required to fit the furnace.
 The extensometer is typically used for high-temperature tension, compression, and fatigue testing.
-Its gauge length is 12mm with $\pm20\%$ full-scale range.
+Its gauge length is 12 mm with $\pm20\%$ full-scale range.
 
 \begin{figure}[!htp]
 	\centering
@@ -1071,7 +1072,7 @@ Its gauge length is 12mm with $\pm20\%$ full-scale range.
 	\begin{overpic}[width=8.0cm]{GainDeltaK.pdf}
 		\put(0,90){\fcolorbox{white}{white}{(b)}}
 	\end{overpic}
-\caption{Extensometer calibrator GWB-200JA.}
+\caption{(a) The extensometer calibrator. (b) Calibration of the extensometer.}
 \label{Fig:Calibration}
 \end{figure}
 
@@ -1110,18 +1111,18 @@ The elongation is read from the dial scale of the micrometer head. This can be u
 The design process of the radiant furnace is shown in the figure, including radiative heat transfer test/simulation, CAD design, manufacturing, assembly, and control system design.
 The results of radiative heat transfer experiments and numerical calculations for the single lamp have been introduced in the above sections.
 The radiation efficiency, specular reflection efficiency, and emissivity of the surface are determined.
-The length of the gauge section of the specimen used in TGMF test is 30cm, and the total length of the specimen is 120cm. Consequently, the double-ended halogen lamps with a length of 115cm were chosen. According to the heat conduction equation, the temperature gradient of the material is proportional to the heat flux vector. In order to achieve a large temperature gradient, a large heat flux is required. The developed radiant furnace consists of 16 halogen lamps, and the powers of the lamps can be chosen as 400W or 800W for different requirements of the TGMF tests.
+The length of the gauge section of the specimen used in TGMF test is 30 cm, and the total length of the specimen is 120 cm. Consequently, the double-ended halogen lamps with a length of 115 cm were chosen. According to the heat conduction equation, the temperature gradient of the material is proportional to the heat flux vector. In order to achieve a large temperature gradient, a large heat flux is required. The developed radiant furnace consists of 16 halogen lamps, and the powers of the lamps can be chosen as 400 W or 800 W for different requirements of the TGMF tests.
 
 CATIA is a multi-platform software suite for computer-aided design (CAD), computer-aided manufacturing (CAM) and computer-aided engineering (CAE).
 The parametric design, simulation assembly and shape optimization of the radiation furnace were performed by using the software CATIA.
-During the test, we must ensure that the relative position of the radiant furnace and the specimen remains unchanged. An aluminum alloy frame was used to create the support system of the radiation furnace. To reduce the effect of vibration, the support system is fixed on the column of the testing machine. The levelness of the support system is adjustable through a screw structure. \ref{Fig:radiation_furnace_show_2} shows the CAD model of the radiation furnace in CATIA. The dimension of the radiation furnace is about 380mm$\times$380mm$\times$210mm, and the dimension of the support system is 600mm$\times$800mm. The radiation furnace can match with most of the fatigue testing machines.
+During the test, we must ensure that the relative position of the radiant furnace and the specimen remains unchanged. An aluminum alloy frame was used to create the support system of the radiation furnace. To reduce the effect of vibration, the support system is fixed on the column of the testing machine. The levelness of the support system is adjustable through a screw structure. \ref{Fig:radiation_furnace_show_2} shows the CAD model of the radiation furnace in CATIA. The dimension of the radiation furnace is about 380 mm $\times$ 380 mm $\times$ 210 mm, and the dimension of the support system is 600 mm $\times$ 800 mm. The radiation furnace can match with most of the fatigue testing machines.
 
 \ref{Fig:radiation_furnace_show} shows that the radiation furnace includes two windows for observation. One window is for strain measurement, and the other window is for temperature measurement. 
 The strain measurement window can match with the high-temperature extensometer or digital image correlation (DIC) equipment.
 Moreover, the temperature measurement window can match with the thermocouple or infrared thermometer.
 A quartz glass tube is an optional accessory, as shown in \ref{Fig:radiation_furnace_show}. The quartz glass tube can change the irradiance distribution through its refraction effect. When the diameter of the specimen is small, the quartz tube can be used to further focus the light. Meanwhile, the quartz glass tube can form a sealed cavity, to reduce the effect of external air flow during the test. As discussed in the above section, points of the source that are not exactly at the focus line of the elliptical cylinder will be magnified and defocused at the image. In practice, the filament is not completely on the central axis of the halogen lamp due to manufacturing errors. Therefore, an adjustable lamp holder is developed to finely tune the position of the lamp, in order to make the filament coaxial with the focus line of the elliptic cylindrical mirror.
 
-In the present study, the lamp with the power of 400W was used. Thus, the radiation furnace has a total power of 6.4kW. A power regulator was used to control the voltage of the halogen lamps. The 16 lamps are connected in parallel to the power regulator to ensure the same voltage of each lamp at the same time. Therefore, a uniform radiation intensity in the circumferential direction of the specimen can be achieved.
+In the present study, the lamp with the power of 400 W was used. Thus, the radiation furnace has a total power of 6.4 kW. A power regulator was used to control the voltage of the halogen lamps. The 16 lamps are connected in parallel to the power regulator to ensure the same voltage of each lamp at the same time. Therefore, a uniform radiation intensity in the circumferential direction of the specimen can be achieved.
 
 Typical test data for a nickel-based superalloy tubular specimen are: heating, from 23$^\circ$C to 1400$^\circ$C in about 50 seconds, cooling from 1400$^\circ$C to 100$^\circ$C in about 20 seconds, stationary, a temperature gradient of 30$^\circ$C/mm.
 
@@ -1195,27 +1196,27 @@ The TGMF testing system for the thin-walled tubular specimen is shown in \ref{Fi
     \toprule
     Subsystem & Facility & Comments \\
     \midrule
-    Loading  & Fatigue testing machine & MTS 370, $\pm$250kN \\
+    Loading  & Fatigue testing machine & MTS 370, $\pm$250 kN \\
           & Digtal controller & FlexTest 40 \\
-          & Extensometer & gauge length 12mm, range $\pm$20\% \\
+          & Extensometer & gauge length 12 mm, range $\pm$20\% \\
           & Host computer &  TestSuite$^{\rm TM}$ Multipurpose Software\\
     \midrule
-    Heating & Halogen lamp & 400W/800W \\
+    Heating & Halogen lamp & 400 W/800 W \\
           & Thermocouple & K/S/R-type \\
           & Temperature input module & 8-channel \\
           & Infrared thermometer & measuring range -50 to 2000$^\circ$C \\
           & Reflector & elliptic cylinders \\
-          & Temperature controller & output 0-10V \\
-          & Power Regulator & AC 180V-460V, 100A \\
+          & Temperature controller & output 0-10 V \\
+          & Power Regulator & AC 180 V-460 V, 100 A \\
           & Alarm & 4 temperature monitors \\
     \midrule
-    Air cooling & Air compressor & 2.4kW \\
-          & Air dryer & maximum allowable pressure 16bar \\
-          & Metering valve & maximum volume flow 10m$^3$/h \\
-          & Air pressure gauge & measuring range 0-14bar \\
+    Air cooling & Air compressor & 2.4 kW \\
+          & Air dryer & maximum allowable pressure 16 bar \\
+          & Metering valve & maximum volume flow 10 m$^3$/h \\
+          & Air pressure gauge & measuring range 0 - 14 bar \\
           & Cooling passage & 4 manifolds, 32 lamp holders and flexible pipes \\
     \midrule
-    Water cooling & Water-cooling machine & 10kW, outlet water temperature 18$^\circ$C \\
+    Water cooling & Water-cooling machine & 10 kW, outlet water temperature 18$^\circ$C \\
           & Cooling passage & fixtures, cooling passages of the radiation furnace and flexible pipes \\
     \bottomrule
     \end{tabular}%
@@ -1236,16 +1237,16 @@ The TGMF testing system for the thin-walled tubular specimen is shown in \ref{Fi
 	\label{Fig:TGMF_Test_System}
 \end{figure}
 
-The loading subsystem consists of the MTS model 370 hydraulic servo fatigue testing systems, the digital controller, extensometer, and the host computer. The fatigue testing systems can provide a tension/compression mechanical load of ±250kN. The mechanical load is transmitted to specimen through a fixture. 
+The loading subsystem consists of the MTS model 370 hydraulic servo fatigue testing systems, the digital controller, extensometer, and the host computer. The fatigue testing systems can provide a tension/compression mechanical load of ±250 kN. The mechanical load is transmitted to specimen through a fixture. 
 To meet the test requirements, the fixture for the thin-walled tubular specimen was designed as shown in \ref{Fig:radiation_furnace_show}.
 The cooling air can enter the internal of the tubular specimen through the fixture.
 In order to reduce the additional bending moments and the bending stress in the specimen, the fixture must provide a sufficiently high degree of coaxiality. Meanwhile, the frame of the MTS model 370 testing systems provides an alignment device, and it can effectively reduce the additional bending moments in the specimen during the test.
 When the radiation furnace heats the specimen, it inevitably heats the fixture. Therefore, the fixture was made of a directionally solidified nickel base superalloy to ensure the strength of the fixture during the whole test process. A thread paste was used to avoid the sintering between the fixture and specimen.
-The extensometer is Epsilon-3448 with a gauge length of 10mm and a measuring range of $\pm$20\%, as introduced in the above section. The PID gains of the extensometer have to be carefully tuned for different materials.
+The extensometer is Epsilon-3448 with a gauge length of 10 mm and a measuring range of $\pm$20\%, as introduced in the above section. The PID gains of the extensometer have to be carefully tuned for different materials.
 
 The heating subsystem is used to apply a temperature load to the test specimen. The equipment includes the radiation furnace, power supply, temperature monitors, temperature controller and so on. The heating subsystem requires sufficient heating power and the ability to adjust the heating power according to a given temperature dynamically.
-The temperature of the specimen was measured by the thermocouples. In practice, the choice of the diameter of the thermocouple wire is significant. A thick thermocouple wire will cause a delay in the temperature measurement. It leads to a temperature deviation between the thermocouple and the specimen, and it affects the response of the feedback control system. In order to improve the accuracy of temperature measurement and increase the response speed of thermocouples, the diameter of the thermocouple wire should be as smaller as possible. Therefore, the thermocouple wires with the diameter of 0.25mm were used.
-However, K-type thermocouples will suffer from oxidation failure at high temperature over a long period. The smaller the diameter of the thermocouple, the shorter the oxidation failure time at high temperatures. Therefore, the K-type thermocouples with the diameter of 0.25mm should be used in the TGMF testing below 800$^\circ$C and the R and S-type thermocouples were used in the TGMF testing above 800$^\circ$C.
+The temperature of the specimen was measured by the thermocouples. In practice, the choice of the diameter of the thermocouple wire is significant. A thick thermocouple wire will cause a delay in the temperature measurement. It leads to a temperature deviation between the thermocouple and the specimen, and it affects the response of the feedback control system. In order to improve the accuracy of temperature measurement and increase the response speed of thermocouples, the diameter of the thermocouple wire should be as smaller as possible. Therefore, the thermocouple wires with the diameter of 0.25 mm were used.
+However, K-type thermocouples will suffer from oxidation failure at high temperature over a long period. The smaller the diameter of the thermocouple, the shorter the oxidation failure time at high temperatures. Therefore, the K-type thermocouples with the diameter of 0.25 mm should be used in the TGMF testing below 800$^\circ$C and the R and S-type thermocouples were used in the TGMF testing above 800$^\circ$C.
 
 The temperature controller was used to control the temperature of the specimen.
 The controller accepted the temperature sensor (thermocouple or infrared thermometer) as input and compare the actual temperature to the desired control temperature. It will then provide an output to the power regulator to control the luminance of the lamps. 
@@ -1254,12 +1255,12 @@ However, the emissivity of the specimen and the temperature range will influence
 
 The air cooling subsystem consists of two air compressors, an air dryer, metering valves, air pressure gauges and cooling passages. 
 The two air compressors were used to provide the cooling air of the specimen and the lamp holders, separately.
-Each air compressor has a power of 2.4kW and provides the compressed air of 0.4-0.8MPa. The compressed air with a pressure of 0.7MPa is filtered through the air dryer and output to the metering valve. The air dryer is used for removing water vapor from the compressed air.
+Each air compressor has a power of 2.4 kW and provides the compressed air of 0.4 - 0.8 MPa. The compressed air with a pressure of 0.7 MPa is filtered through the air dryer and output to the metering valve. The air dryer is used for removing water vapor from the compressed air.
 During the TGMF testing, the pressure and the volume flow of the compressed air have to be kept as constants. The metering valve was used to control the volume flow of the compressed air.
 The air cooling subsystem also provides compressed air for the lamp holders.
 The duration of the TGMF test is usually long, so the lamp holders have to be cooled to ensure that they can work properly.
 
-The water cooling subsystem consists of a 10kW industrial water-cooling machine, valves, and corresponding pipes. 
+The water cooling subsystem consists of a 10 kW industrial water-cooling machine, valves, and corresponding pipes. 
 The water was cooled by the machine and circulated through the pipes to cool the test equipment. 
 The equipment of the TGMF testing system needs to be cooled, such as the fixture system and the radiation furnace.
 
@@ -1420,7 +1421,7 @@ The implemented steps of the strain-controlled TGMF testing is shown in \ref{Fig
 	\begin{overpic}[width=15.0cm]{plot_thermal_stability_tgmf_deviation.pdf}
 		\put(88,65){\fcolorbox{white}{white}{(b)}}
 	\end{overpic}
-	\caption{Varying temperatures in a tubular specimen with the gauge length of 15mm, heated by the radiation furnace. (a) Temperature variations of three thermal elements during a loading cycle. (b) Temperature deviations in the axial direction.}
+	\caption{Varying temperatures in a tubular specimen with the gauge length of 15 mm, heated by the radiation furnace. (a) Temperature variations of three thermal elements during a loading cycle. (b) Temperature deviations in the axial direction.}
 	\label{Fig:thermal_stability_TGMF}
 \end{figure}
 
@@ -1429,7 +1430,7 @@ This will cause a temperature gradient along the axial direction of the specimen
 Unlike the induction heating, the axial temperature gradient of the specimen is difficult to adjust by modifying the radiation furnace.
 Therefore, the influence of the axial temperature gradients has to be considered in the computation.
 
-In order to obtain the temperature distribution of the specimen during the TGMF testing, temperatures at the upper, center and lower positions in the gauge section of the specimen were measured by the thermocouples wrapped around the specimen. \ref{Fig:temperature_monitors_tgmf} shows the locations of the thermocouples. In the study, the temperature range of the TGMF testing is from 300$^\circ$C to 650$^\circ$C. The cycle period was predetermined as 240s with a triangular shape temperature cycle, thus the heating and cooling rates were about 2.2$^\circ$C/s.
+In order to obtain the temperature distribution of the specimen during the TGMF testing, temperatures at the upper, center and lower positions in the gauge section of the specimen were measured by the thermocouples wrapped around the specimen. \ref{Fig:temperature_monitors_tgmf} shows the locations of the thermocouples. In the study, the temperature range of the TGMF testing is from 300$^\circ$C to 650$^\circ$C. The cycle period was predetermined as 240 s with a triangular shape temperature cycle, thus the heating and cooling rates were about 2.2$^\circ$C/s.
 \ref{Fig:thermal_stability_TGMF}(a) shows the dynamic temperature measurement during a stable TGMF cycle and \ref{Fig:thermal_stability_TGMF}(b) shows the temperature deviations between each thermocouple and the temperature command.
 It is observed that the maximum axial temperature gradients during the TMF test are less than $\pm30$$^\circ$C.
 
