@@ -76,7 +76,7 @@ For the TC-IP-TGMF test, an evident cyclic softening was observed during the ten
   \begin{overpic}[width=8.0cm]{plot_exp_pv_TCIPTGMFTBC.pdf}
     \put(84,13){\fcolorbox{white}{white}{(f)}}
   \end{overpic}
-  \caption{Experimental results of TGMF tests with temperature range 300$^\circ$C - 650$^\circ$C.
+  \caption{Experimental results of TGMF tests with varying temperature between 300$^\circ$C and 650$^\circ$C. The vertical coordinates is the axial stress $\sigma$, which is the nominal stress.
   (a) Half life stable hysteresis loops of TC-IP-TGMF tests.
   (b) Peak and valley stresses of TC-IP-TGMF tests.
   (c) Half life stable hysteresis loops of TC-OP-TGMF tests.
@@ -277,17 +277,9 @@ According to the measurement results of the sensors, the average pressure and te
 % 图\ref{Fig:plot_temperature_along_gauge_length}为试件内、外表面温度和轴向应力在标距段内沿轴向的分布，横坐标为距离试件中心截面的距离，在TGMF-IP循环过程中，图中所示的温度与应变为温度最高点（650$^{\circ}$C）时的值。
 % 此时，试件外表面与内表面的温差为12.5$^{\circ}$C，
 \noindent
-Under TC-IP-TGMF loading condition, the mechanical load and temperature simultaneously reach their respective maximum or minimum values.
-\ref{Fig:plot_temperature_along_gauge_length} shows the temperature and axial stress distribution of the internal and external surface along the axial direction when the temperature reached its maximum value.
-The horizontal axis is the distance from the center section of the test specimen ($y$-axis in \ref{Fig:FE_model}). 
+The computational results are shown in this section. \ref{Fig:plot_exp_fatigue_life_TMF_TGMF} (a) and (c) show the experimental and computational stress-strain responses of the TC-IP-TGMF and TC-OP-TGMF tests, respectively. The vertical coordinates are the nominal stress, and the horizontal coordinates are the nominal mechanical strain at the center cross-section of the specimen. Because of the thermal gradient, the cyclic plastic evolutions were asymmetric in the gauge section of the specimen during the TGMF tests. In \ref{Fig:plot_exp_fatigue_life_TMF_TGMF} (a) and (c), additional tensile strains were observed from the computational results of the TC-IP-TGMF tests, and additional compressive strains were found from the computational results of the TC-OP-TGMF tests. \ref{Fig:plot_exp_fatigue_life_TMF_TGMF} (b) and (d) show the experimental and computational peak, valley and mean nominal stresses of the TC-IP-TGMF and TC-OP-TGMF tests, respectively. The comparison of the experimental and computational results revealed that the proposed constitutive model could describe elastic-plastic mechanical behavior under the thermal gradient mechanical loading conditions. Therefore, the computed local stress-strain responses were used for the life assessment of TGMF.
 
-\begin{figure}[!htp]
-  \centering{\includegraphics[width=14cm]{FEM_result.pdf}}
-  \caption{Diagram of simulated axial temperature gradients and the resulting, thermally induced axial stress components at maximum temprature (650$^{\circ}$C) during TGMF tests.}
-  \label{Fig:FEM_result}
-\end{figure}
-
-\begin{figure}
+\begin{figure}[htbp]
   \centering
   \begin{overpic}[width=8.0cm]{plot_cmp_half_life_cycle_TCIPTGMF.pdf}
     \put(84,65){\fcolorbox{white}{white}{(a)}}
@@ -302,21 +294,36 @@ The horizontal axis is the distance from the center section of the test specimen
   \begin{overpic}[width=8.0cm]{plot_cmp_pv_TCOPTGMF.pdf}
     \put(84,13){\fcolorbox{white}{white}{(d)}}
   \end{overpic}
-  \caption{Comparison of fatigue lives of TMF and TGMF: (a) IP, (b) OP, (c) OP, (d) OP.}
+  \caption{Experimental and computational results under the thermal gradient mechanical loading conditions with varying temperature between 300$^\circ$C and 650$^\circ$C. (a) The hysteresis loops of TC-IP-TGMF tests. (b) Peak, valley and mean stress values of TC-IP-TGMF tests. (c) The hysteresis loops of TC-OP-TGMF tests. (d) Peak, valley and mean stress values of TC-OP-TGMF tests.}
   \label{Fig:plot_exp_fatigue_life_TMF_TGMF}
 \end{figure}
 
-\begin{figure}[!htp]
+\begin{figure}[htbp]
+  \centering{\includegraphics[width=14cm]{FEM_result.pdf}}
+  \caption{Diagram of simulated axial temperature gradients and the resulting, thermally induced axial stress components at maximum temprature (650$^{\circ}$C) during the TC-IP-TGMF test with the mechanical strain amplitude of 0.8\%.}
+  \label{Fig:FEM_result}
+\end{figure}
+
+\begin{figure}[htbp]
   \centering{\includegraphics[width=15cm]{plot_temperature_along_gauge_length.pdf}}
-  \caption{Diagram of simulated axial temperature gradients and the resulting, thermally induced axial stress components at maximum temprature (650$^\circ$C) during TGMF tests.}
+  \caption{Diagram of simulated axial temperature gradients and the resulting, thermally induced axial stress components at maximum temprature (650$^\circ$C) during the TC-IP-TGMF test with the mechanical strain amplitude of 0.8\%.}
   \label{Fig:plot_temperature_along_gauge_length}
 \end{figure}
 
-\begin{figure}[!htp]
+\begin{figure}[htbp]
   \centering{\includegraphics[width=15cm]{plot_temperature_along_radial_direction.pdf}}
-  \caption{Diagram of simulated radial temperature gradients and the resulting, thermally induced hoop stress components at maximum temprature (650$^\circ$C) during TGMF tests.}
+  \caption{Diagram of simulated radial temperature gradients and the resulting, thermally induced hoop stress components at maximum temprature (650$^\circ$C) during TC-IP-TGMF tests.}
   \label{Fig:plot_temperature_along_radial_direction}
 \end{figure}
+
+Under TC-IP-TGMF loading condition, the mechanical load and temperature simultaneously reach their respective maximum or minimum values. \ref{Fig:FEM_result} shows the computational results of TC-IP-TGMF test with the mechanical strain amplitude of 0.8\%. The maximum temperature occurs at the point B in \ref{Fig:FE_model}.
+\ref{Fig:plot_temperature_along_gauge_length} shows the temperature and axial stress distribution of the internal and external surface along the axial direction when the temperature reached its maximum value during the TC-IP-TGMF cycle.
+The horizontal axis is the distance from the center section of the test specimen ($y$-axis in \ref{Fig:FE_model}). The temperature gradients induce an axial stress deviation of ca. 25 MPa between the inner and outer surface of the specimen. 
+The temperature and axial stress distribution of the internal and external surface along the radial direction are displayed in \ref{Fig:plot_temperature_along_radial_direction}, when the temperature reached its maximum value during the TC-IP-TGMF cycle.
+The horizontal axis is the distance from the center axis to the outer surface of the test specimen ($r$-axis in \ref{Fig:FE_model}). 
+The temperature gradients induce a radial stress deviation of ca. 50 MPa between the inner and outer surface of the specimen. 
+
+
 
 
 \section{Fractography}
@@ -333,7 +340,7 @@ In \ref{Fig:fatigue_striations_TGMF}(a) and (b), the fracture surfaces under TC-
 \ref{Fig:crack_propagation}(c) and (d) show the stable crack propagation regions under TC-OP-TGMF loading with the mechanical strain amplitude of 0.65\% and 0.50\%, respectively.
 Well-developed fatigue striations are observed in \ref{Fig:fatigue_striations_TGMF}(c) and (d), which reveal transgranular crack growth is predominant during out-of-phase thermomechanical tests.
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
   \centering
     \begin{overpic}[width=8.0cm]{7206-1.jpg}
       \put(0,65){\fcolorbox{white}{white}{(a)}}
@@ -361,7 +368,7 @@ Well-developed fatigue striations are observed in \ref{Fig:fatigue_striations_TG
 % 高温氧化损伤的原因。
 % 而三种载荷条件下的瞬间失稳断裂区则非常相似，与拉伸试样的断口形貌相似。
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
   \centering
     \begin{overpic}[width=8.0cm]{7206-2.jpg}
       \put(0,65){\fcolorbox{white}{white}{(a)}}
@@ -445,7 +452,8 @@ The correction term of the temperature gradient is defined as:
 f\left( {T,\nabla T} \right) = \left( {1 + g\frac{{\left\| {\nabla T} \right\|}}{{{T_{{\rm{melt}}}} - {T_{{\sigma _{\rm n,\max }}}}}}} \right),
 \label{Equ:TGMF_term}
 \end{equation}
-where ${T_{{\rm{melt}}}}$ is the melting point of the material, and ${T_{{\sigma _{\rm n,\max }}}}$ is the temperature corresponding to the maximum normal stress, $g$ is a model parameter in the unit of mm. ${\left\| {\nabla T} \right\|}$ is the temperature gradient and given by:
+where ${T_{{\rm{melt}}}}$ is the melting point of the material, and ${T_{{\sigma _{\rm n,\max }}}}$ is the temperature corresponding to the maximum normal stress, $g$ is a model parameter in the unit of mm. For the Nickel-based superalloy Inconel 718, we set ${T_{{\rm{melt}}}}=1300$ $^\circ$C. The model parameter $g$ is determined by the optimization algorithm to minimize the life prediction
+mean-squared error, and $g$ is determined as 3.47 mm in the present work. ${\left\| {\nabla T} \right\|}$ is the temperature gradient and given by:
 \begin{equation}
 \left\| {\nabla T} \right\| = \sqrt {{{\left( {\frac{{\partial T}}{{\partial x}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial y}}} \right)}^2} + {{\left( {\frac{{\partial T}}{{\partial z}}} \right)}^2}}.
 \end{equation}
@@ -527,7 +535,7 @@ fracture surface of the TC-IP-TMGF-TBC specimen displays clear grain boundaries 
 
 \begin{figure}[!htp]
   \centering
-  \begin{overpic}[width=12.0cm]{plot_exp_fatigue_life_TGMF-TBC.pdf}
+  \begin{overpic}[width=14.0cm]{plot_exp_fatigue_life_TGMF-TBC.pdf}
   \end{overpic}
   \caption{Comparison of the fatigue lifetime under in-phase TGMF loading conditions with and without TBC.}
   \label{Fig:plot_exp_fatigue_life_TGMF-TBC}
