@@ -38,7 +38,8 @@
 % However, none of the models can be generally and precisely enough to predict all of the features during cyclic deformation owing to the complexity of phenomena in cyclic deformation.
 
 \noindent
-This chapter focuses on the multiaxial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 300$^\circ$C and 650$^\circ$C. Effects of non-proportional cyclic loading as well as thermomechanical coupling are studied. Inconel 718 was proven to be hardly influenced by the strain rate below 650$^\circ$C under realistic loading speed \cite{kim1988elevated, Schlesinger2017}, and the constitutive model is assumed to be rate-independent. However, experiments reveal the complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermomechanical phase effect, non-Masing effect, etc. Quantitative description of the material behavior needs a constitutive model based on the extensive experimental investigation. In the present work, a modified cyclic plasticity model is suggested for the Nickel-based superalloy Inconel 718 under multiaxial thermomechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermomechanical fatigue loading components.
+This chapter focuses on the multiaxial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 300$^\circ$C and 650$^\circ$C. Effects of non-proportional cyclic loading as well as thermomechanical coupling are studied. 
+The superalloy Inconel 718 is assumed to be rate-independent in the present work. In the turbine industry, the material is used up to a temperature of 650$^\circ$C for both rotating and casing parts. Extensive experiments \cite{kim1988elevated, Schlesinger2017} showed that the stress-strain responses upon 650$^\circ$C were hardly influenced by the strain rate. In the turbine industry, both rotating and casing parts of Inconel 718 are computed by using the rate-independent plasticity. For low cycle fatigue, the strain rate is low. For fatigue life assessment only the stabilized strains and stresses are needed. The rate-dependence is meaningful for creep fatigue in this case, but not for LCF. It is a common practice to use the rate-independent plasticity in fatigue life prediction. The rate-independent plasticity can be directly be used for thermomechanical fatigue assessment. On the other side, the fundamentals for the rate-dependent model are not so different from the rate-independent ones. However, experiments reveal the complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermomechanical phase effect, non-Masing effect, etc. Quantitative description of the material behavior needs a constitutive model based on the extensive experimental investigation. In the present work, a modified cyclic plasticity model is suggested for the Nickel-based superalloy Inconel 718 under multiaxial thermomechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermomechanical fatigue loading components.
 
 % Gas turbine components are exposed in high temperature and experience cyclic multiaxial thermomechanical loadings. The increasing performance requirements to modern gas turbines challenge  the material operating limits. Quantified characterization of deformation and fatigue behavior of materials under realistic conditions becomes increasingly of importance for industrial application \cite{harrison1996modelling}, including variations of structure temperature, mechanical loads as well as environmental conditions. Inconel 718 is the most popular nickel-based superalloy in turbine industry. It is an oxidation- and corrosion-resistant material possessing optimal thermal and mechanical property. It is used for both rotors and casings, so that the low cycle fatigue characterization of the material is of great significance for mechanical design. The operating temperature of Inconel 718 is limited to 650$^\circ$C for the life limited parts, such as discs and shafts.
 % A turbine suffers from high temperature low cycle fatigue (LCF) as well as thermomechanical fatigue (TMF).
@@ -56,90 +57,91 @@ This chapter focuses on the multiaxial cyclic behavior and the stress relaxation
 
 % The present work focuses on the multiaxial cyclic behavior and the stress relaxations of Inconel 718 at varying temperatures between 300$^\circ$C and 650$^\circ$C. Effects of non-proportional cyclic loading as well as thermomechanical coupling are studied. Inconel 718 was proven to be hardly influenced by the strain rate below 650$^\circ$C under realistic loading speed \cite{kim1988elevated, Schlesinger2017}, and the constitutive model is assumed to be rate-independent. However,  experiments reveal complex constitutive behavior of the material, such as cyclic hardening/softening, non-proportional hardening, thermomechanical phase effect, non-masing effect etc. Quantitative description of the material behavior needs a constitutive model based on extensive experimental investigation. In the present work a modified cyclic plasticity model is suggested for the nickel-based superalloy Inconel 718 under multiaxial thermomechanical cyclic loading conditions and can give a uniform description of the material modeling for both isothermal and thermomechanical fatigue loading components.
 
-\section{Continuum plasticity}
+\section{Fundamentals of continuum plasticity}
 \noindent
 Continuum plasticity is a solid mechanics theory that is used to describe the plastic behavior of materials.
 It is characterized by the assumption that a flow rule exists that can be used to determine the amount of plastic strain in the material.
-In the section, the fundamentals of time-independent phenomenological plasticity are introduced, such as invariants of the stress tensor, strain decomposition, yield surface, flow rule, Drucker postulates, consistency condition, isotropic and kinematic hardening.
+% In the section, the fundamentals of time-independent phenomenological plasticity are introduced, such as invariants of the stress tensor, strain decomposition, yield surface, flow rule, Drucker postulates, consistency condition, isotropic and kinematic hardening.
+In the section, the fundamentals of time-independent phenomenological plasticity are introduced, such as yield surface, flow rule, Drucker postulates, consistency condition, isotropic and kinematic hardening.
 
-\subsection{Invariants of the stress tensor}
-\noindent
-In continuum mechanics, the stress state at any material point can be represented by the stress tensor $\bm{\sigma}$.
-The stress tensor can be represented by a matrix of second order in an arbitrary coordinate system as:
-\begin{equation}
-\bm{\sigma} =
-  \begin{bmatrix}
-    \sigma_{1\,1}& \sigma_{1\,2}& \sigma_{1\,3}\\
-    \sigma_{2\,1}& \sigma_{2\,2}& \sigma_{2\,3}\\
-    \sigma_{3\,1}& \sigma_{3\,2}& \sigma_{3\,3}
-  \end{bmatrix}.
-\end{equation}
-Since the stress tensor is symmetric, only six stress components are independent.
-Thus, six independent stress components determine a stress state uniquely and visa versa.
-Using the above stress tensor, the three principal stresses can be determined using the characteristic equation
-\begin{equation}
-\det \left( {{\bm{\sigma }} - \sigma {\bf{I}}} \right) = 0,
-\end{equation}
-which can be expanded to
-\begin{equation}
-{\sigma ^3} - {I_1}{\sigma ^2} + {I_2}\sigma  - {I_3} = 0.
-\end{equation}
-where $\bf{I}$ is the second order identity tensor, ${I_1}$, ${I_2}$, and ${I_3}$ are the invariants of the stress tensor.
-In terms of the principal stresses, $\sigma_1$, $\sigma_2$ and $\sigma_3$, the invariants are
-\begin{equation}
-\begin{array}{*{20}{l}}
-{{I_1} = {\sigma _1} + {\sigma _2} + {\sigma _3}},\\
-{{I_2} = {\sigma _1}{\sigma _2} + {\sigma _2}{\sigma _3} + {\sigma _3}{\sigma _1}},\\
-{{I_3} = {\sigma _1}{\sigma _2}{\sigma _3}}.
-\end{array}
-\end{equation}
-In plasticity theory, it is customary to decompose the stress tensor as
-\begin{equation}
-{\bm{\sigma }} = {\bf{s}} + {\sigma _m}{\bf{I}},
-\end{equation}
-where $\sigma_m$ is the hydrostatic stress given by
-\begin{equation}
-{\sigma _m} = {\rm{Tr}}\left( {\bm{\sigma }} \right) = \frac{1}{3}\left( {{\sigma _1} + {\sigma _2} + {\sigma _3}} \right),
-\end{equation}
-and $\bf{s}$ is the deviatoric stress tensor.
-Using the deviatoric stress tensor, the deviatoric stress invariants can be defined as
-\begin{equation}
-\begin{array}{*{20}{l}}
-{{J_1} = {\rm{Tr}}\left( {\bf{s}} \right) = 0},\\
-{{J_2} = \frac{1}{2}{\bf{s}}:{\bf{s}} = \frac{1}{6}\left[ {{{\left( {{\sigma _1} - {\sigma _2}} \right)}^2} + {{\left( {{\sigma _2} - {\sigma _3}} \right)}^2} + {{\left( {{\sigma _3} - {\sigma _1}} \right)}^2}} \right]},\\
-{{J_3} = \det \left( {\bf{s}} \right) = {s_1}{s_2}{s_3}}.
-\end{array}
-\end{equation}
+% \subsection{Invariants of the stress tensor}
+% \noindent
+% In continuum mechanics, the stress state at any material point can be represented by the stress tensor $\bm{\sigma}$.
+% The stress tensor can be represented by a matrix of second order in an arbitrary coordinate system as:
+% \begin{equation}
+% \bm{\sigma} =
+%   \begin{bmatrix}
+%     \sigma_{1\,1}& \sigma_{1\,2}& \sigma_{1\,3}\\
+%     \sigma_{2\,1}& \sigma_{2\,2}& \sigma_{2\,3}\\
+%     \sigma_{3\,1}& \sigma_{3\,2}& \sigma_{3\,3}
+%   \end{bmatrix}.
+% \end{equation}
+% Since the stress tensor is symmetric, only six stress components are independent.
+% Thus, six independent stress components determine a stress state uniquely and visa versa.
+% Using the above stress tensor, the three principal stresses can be determined using the characteristic equation
+% \begin{equation}
+% \det \left( {{\bm{\sigma }} - \sigma {\bf{I}}} \right) = 0,
+% \end{equation}
+% which can be expanded to
+% \begin{equation}
+% {\sigma ^3} - {I_1}{\sigma ^2} + {I_2}\sigma  - {I_3} = 0.
+% \end{equation}
+% where $\bf{I}$ is the second order identity tensor, ${I_1}$, ${I_2}$, and ${I_3}$ are the invariants of the stress tensor.
+% In terms of the principal stresses, $\sigma_1$, $\sigma_2$ and $\sigma_3$, the invariants are
+% \begin{equation}
+% \begin{array}{*{20}{l}}
+% {{I_1} = {\sigma _1} + {\sigma _2} + {\sigma _3}},\\
+% {{I_2} = {\sigma _1}{\sigma _2} + {\sigma _2}{\sigma _3} + {\sigma _3}{\sigma _1}},\\
+% {{I_3} = {\sigma _1}{\sigma _2}{\sigma _3}}.
+% \end{array}
+% \end{equation}
+% In plasticity theory, it is customary to decompose the stress tensor as
+% \begin{equation}
+% {\bm{\sigma }} = {\bf{s}} + {\sigma _m}{\bf{I}},
+% \end{equation}
+% where $\sigma_m$ is the hydrostatic stress given by
+% \begin{equation}
+% {\sigma _m} = {\rm{Tr}}\left( {\bm{\sigma }} \right) = \frac{1}{3}\left( {{\sigma _1} + {\sigma _2} + {\sigma _3}} \right),
+% \end{equation}
+% and $\bf{s}$ is the deviatoric stress tensor.
+% Using the deviatoric stress tensor, the deviatoric stress invariants can be defined as
+% \begin{equation}
+% \begin{array}{*{20}{l}}
+% {{J_1} = {\rm{Tr}}\left( {\bf{s}} \right) = 0},\\
+% {{J_2} = \frac{1}{2}{\bf{s}}:{\bf{s}} = \frac{1}{6}\left[ {{{\left( {{\sigma _1} - {\sigma _2}} \right)}^2} + {{\left( {{\sigma _2} - {\sigma _3}} \right)}^2} + {{\left( {{\sigma _3} - {\sigma _1}} \right)}^2}} \right]},\\
+% {{J_3} = \det \left( {\bf{s}} \right) = {s_1}{s_2}{s_3}}.
+% \end{array}
+% \end{equation}
 
-In plasticity mechanics, the first principal invariant $I_1$ of the Cauchy stress $\boldsymbol{\sigma}$, and the second and third principal invariants $J_2$, $J_3$ of the deviatoric part $\boldsymbol{s}$ of the Cauchy stress are usually used to express the yield surface.
+% In plasticity mechanics, the first principal invariant $I_1$ of the Cauchy stress $\boldsymbol{\sigma}$, and the second and third principal invariants $J_2$, $J_3$ of the deviatoric part $\boldsymbol{s}$ of the Cauchy stress are usually used to express the yield surface.
 
 
-\subsection{Strain decomposition}
-\noindent
-It is shown in \ref{Fig:strain_decomposition} that the stress-strain curve can be obtained from a uniaxial tensile test.
-Both elastic and inelastic regions are indicated.
-In the elastic region, the stress is proportional to the strain if the stress in the specimen is below a certain value, i.e., the yield stress $\sigma_{y0}$, which is the elastic limit.
-As a material is loaded beyond its elastic limit, Hooke's law does not apply, the material no longer exhibits elastic behavior and the stress-strain relation becomes nonlinear. The material yields, begins to flow and residual, permanent deformation results after unloading.
+% \subsection{Strain decomposition}
+% \noindent
+% It is shown in \ref{Fig:strain_decomposition} that the stress-strain curve can be obtained from a uniaxial tensile test.
+% Both elastic and inelastic regions are indicated.
+% In the elastic region, the stress is proportional to the strain if the stress in the specimen is below a certain value, i.e., the yield stress $\sigma_{\rm y0}$, which is the elastic limit.
+% As a material is loaded beyond its elastic limit, Hooke's law does not apply, the material no longer exhibits elastic behavior and the stress-strain relation becomes nonlinear. The material yields, begins to flow and residual, permanent deformation results after unloading.
 
-For strain hardening materials the yield stress increases with increasing plastic deformation to a value of $\sigma_y$.
-It is called hardening because the stress is increasing relative to perfect plastic behavior, also shown in the figure.
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=14cm]{strain_decomposition.pdf}
-    \caption{The classical decomposition of strain into elastic and plastic parts.}
-    \label{Fig:strain_decomposition}
-\end{figure}
-If, at a strain of $\varepsilon$, the loading was to be reversed, the material would cease to deform plastically (at least in the absence of time-dependent effects) and would show a linearly decreasing stress with strain such that the gradient of this part of the stress-strain curve would again be the Young's modulus, E, shown in \ref{Fig:strain_decomposition}.
-Once a stress of zero is achieved (provided the material remains elastic on the full reversal of the load), the strain remaining in the test specimen is the plastic strain, $\varepsilon_{\rm{p}}$.
-The recovered strain, $\varepsilon_e$, is the elastic strain and it can be seen that the total strain, $\varepsilon$, is the sum of the two
-\begin{equation}
-\varepsilon = \varepsilon_{\rm{e}} + \varepsilon_{\rm{p}}
-\end{equation}
-This is called the classical additive decomposition of strain.
-It is also apparent from \ref{Fig:strain_decomposition} that the stress achieved at a strain of $\varepsilon$ is given by
-\begin{equation}
-\sigma = E\varepsilon_{\rm{e}} = E(\varepsilon - \varepsilon_{\rm{p}})
-\end{equation}
+% For strain hardening materials the yield stress increases with increasing plastic deformation to a value of $\sigma_{\rm y}$.
+% It is called hardening because the stress is increasing relative to perfect plastic behavior, also shown in the figure.
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=14cm]{strain_decomposition.pdf}
+%     \caption{The classical decomposition of strain into elastic and plastic parts.}
+%     \label{Fig:strain_decomposition}
+% \end{figure}
+% If, at a strain of $\varepsilon$, the loading was to be reversed, the material would cease to deform plastically (at least in the absence of time-dependent effects) and would show a linearly decreasing stress with strain such that the gradient of this part of the stress-strain curve would again be the Young's modulus, $E$, shown in \ref{Fig:strain_decomposition}.
+% Once a stress of zero is achieved (provided the material remains elastic on the full reversal of the load), the strain remaining in the test specimen is the plastic strain, $\varepsilon_{\rm{p}}$.
+% The recovered strain, $\varepsilon_{\rm e}$, is the elastic strain and it can be seen that the total strain, $\varepsilon$, is the sum of the two
+% \begin{equation}
+% \varepsilon = \varepsilon_{\rm{e}} + \varepsilon_{\rm{p}}
+% \end{equation}
+% This is called the classical additive decomposition of strain.
+% It is also apparent from \ref{Fig:strain_decomposition} that the stress achieved at a strain of $\varepsilon$ is given by
+% \begin{equation}
+% \sigma = E\varepsilon_{\rm{e}} = E(\varepsilon - \varepsilon_{\rm{p}})
+% \end{equation}
 
 \subsection{Yield criterion}
 \noindent
@@ -162,15 +164,15 @@ where ${\sigma _1},{\sigma _2},{\sigma _3}$ are the principal stresses.
 
 There are several possible yield criteria. The Tresca and von Mises yield criterions are commonly used for metallic materials. The Tresca yield criterion is also known as the maximum shear stress theory. It suggests that yielding of a ductile material begins when the maximum shear stress reaches a critical value. In terms of the principal stresses, the Tresca criterion is expressed as
 \begin{equation}
-\frac{1}{2}\max \left( {\left| {{\sigma _1} - {\sigma _2}} \right|,\left| {{\sigma _2} - {\sigma _3}} \right|,\left| {{\sigma _3} - {\sigma _1}} \right|} \right) = \tau_y,
+\frac{1}{2}\max \left( {\left| {{\sigma _1} - {\sigma _2}} \right|,\left| {{\sigma _2} - {\sigma _3}} \right|,\left| {{\sigma _3} - {\sigma _1}} \right|} \right) = \tau_{\rm y},
 \end{equation}
-where $\tau_y$ is the yield strength in shear.
+where $\tau_{\rm y}$ is the yield strength in shear.
 
 The von Mises yield criterion is also known as the maximum distortion energy criterion. It suggests that yielding of a ductile material begins when the second deviatoric stress invariant $J_2$ reaches a critical value. In terms of the principal stresses, the von Mises yield criterion is expressed as
 \begin{equation}
-{\left( {{\sigma _1} - {\sigma _2}} \right)^2} + {\left( {{\sigma _2} - {\sigma _3}} \right)^2} + {\left( {{\sigma _3} - {\sigma _1}} \right)^2} = 2\sigma _y^2,
+{\left( {{\sigma _1} - {\sigma _2}} \right)^2} + {\left( {{\sigma _2} - {\sigma _3}} \right)^2} + {\left( {{\sigma _3} - {\sigma _1}} \right)^2} = 2\sigma _{\rm y}^2,
 \end{equation}
-where $\sigma_y$ is the yield strength in tension.
+where $\sigma_{\rm y}$ is the yield strength in tension.
 
 \ref{Fig:YieldSurface3D} shows the Tresca and von Mises yield surfaces in the principal stress coordinate. 
 % There are many others including that of Drucker and the Gurson model for porous materials.
@@ -261,8 +263,11 @@ Examination of the work done over a cycle of plastic loading-unloading can be us
 \subsection{Hardening rule}
 \noindent
 The hardening rule describes how the yield surface changes in position and size.
+In material models, in which isotropic hardening is depicted, it is done by evolution equations describing an increase in the radius $k$ of the yield surface. In such cases, the yield surface is expanded as far as it finally only purely elastic state occurs.
+A modeling that represents isotropic hardening is not suitable for cyclic stresses.
 Evolution equations of the back stress tensor allows by the change in position of the kinematic hardening into account.
 With this shift in the yield surface, the size and shape of the yield surface remain unchanged.
+\ref{Fig:isotropic_hardening} and \ref{Fig:kinematic_hardening} show the schematic diagram of isotropic and kinematic hardening, respectively.
 
 \begin{figure}[htbp]
 	\centering
@@ -278,12 +283,7 @@ With this shift in the yield surface, the size and shape of the yield surface re
 	\label{Fig:kinematic_hardening}
 \end{figure}
 
-In material models in which isotropic hardening is depicted, it is done by evolution equations describing an increase in the radius $k$ of the yield surface.
-A modeling that represents isotropic hardening is not suitable for cyclic stresses.
-In such cases, the yield surface is expanded as far as it finally only purely elastic state occurs (elastic "Shake Down").
-The differences of the material models described in the next section consist kinematic hardening only in the respectively used hardening rules to take into account.
-
-\section{A review of some cyclic plasticity theories}
+\section{A review of cyclic plasticity theories}
 \subsection{Kinematic hardening models}
 \noindent
 In the case of monotonically increasing loading, it is often reasonable to assume that any hardening that occurs is isotropic.
@@ -304,8 +304,8 @@ A review of some kinematic hardening models is introduced as follows.
 %It is generally suggested that in the case of cyclic loading, isotropic hardening rules are not suitable to simulate the Bauschinger effect.
 %Hence the kinematic hardening model is used to represent Bauschinger effect.
 %It is assumed that the size of yield surface
-\subsection{Prager's model}
-\noindent
+% \subsection{Prager's model}
+% \noindent
 Prager (1949) \cite{prager1949recent} introduce a simple linear kinematic hardening model, in which the evolution of the back-stress is collinear with the evolution of the plastic strain:
 \begin{equation}
 {\dot{\bf a}} = \frac{2}{3}c{\bm{\dot \upepsilon }}^{\rm{p}},
@@ -434,12 +434,12 @@ Kang \cite{kang2004uniaxial} considered the Abdel-Karim and Ohno rule and incorp
 \end{equation}
 It is clear that, as $\mu_i=0$ this rule reduces to the modified Ohno-Wang rule defined by Equation (\ref{Eqn:Introduction2}) while it reduces to the Armstrong-Frederick rule when $\mu_i>0$.
 
-\subsection{Chen's model}
-\noindent
-Chen et al. \cite{chen2004modified} introduced a multiplying factor to the dynamic recovery term that considers non-proportionality of the plastic strain and back stress:
-\begin{equation}
-{{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - {{\left( {\frac{{{{\bar a}_i}}}{{{r_i}}}} \right)}^{{m_i}}}{{\left\langle {{\bf{n}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle }^{{\chi _i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^{\rm{p}}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right).
-\end{equation}
+% \subsection{Chen's model}
+% \noindent
+% Chen et al. \cite{chen2004modified} introduced a multiplying factor to the dynamic recovery term that considers non-proportionality of the plastic strain and back stress:
+% \begin{equation}
+% {{\dot{\bf a}}_i} = {\zeta _i}\left( {\frac{2}{3}{r_i}{{{\bm{\dot \upepsilon }}}^{\rm{p}}} - {{\left( {\frac{{{{\bar a}_i}}}{{{r_i}}}} \right)}^{{m_i}}}{{\left\langle {{\bf{n}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle }^{{\chi _i}}}\left\langle {{{{\bm{\dot \upepsilon }}}^{\rm{p}}}:\frac{{{{\bf{a}}_i}}}{{{{\bar a}_i}}}} \right\rangle {{\bf{a}}_i}} \right).
+% \end{equation}
 
 \section{The cyclic plasticity model}
 
@@ -718,7 +718,7 @@ Box 2: Specification of the material functions.
 
 \end{framed}
 
-\section{Algorithmic formulation of the constitutive model}
+\section{Integration algorithm}
 \noindent
 % In the following, a fully implicit strain-driven integration algorithm is developed for the constitutive model discussed in the previous section. It is ready for implementation in a general Finite Element (FE) context where the proposed algorithm is applied locally at every integration point during each global iteration step.
 The present constitutive model has included Tanaka non-proportional term and modified backstress equations for complex thermomechanical loads. The implicit algorithm of the constitutive equation becomes necessary and should provide the stress increment and the plastic strain increment, based on the given strain increment. The integration method is to be implemented into the commercial finite element codes, such as ABAQUS via the UMAT interface.

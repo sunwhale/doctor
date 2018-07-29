@@ -1,7 +1,7 @@
 \documentclass[a4paper,            % paper size
                12pTCt,             % font size
-               % twoside,            % two-sided
-               oneside,
+               twoside,            % two-sided
+               % oneside,
                pointlessnumbers,   % avoid trailing "." for chapter and figure numbers
                headinclude,        % include header and exclude
                footexclude,        % footer from text body
@@ -24,17 +24,17 @@
 % \usepackage[dvipdfm,               % generate pdf using dvipdfm
 \usepackage{url}
 \usepackage[% dvips,                 % generate pdf using dvips & ps2pdf
-            pdftitle={Computation of Fluid Dynamics and Conjugate Heat Transfer in Rotating Cavity},
+            pdftitle={Experimental and Computational Investigation of Multi-Axial Thermal Gradient Mechanical Fatigue in a Nickel-Based Superalloy},
             pdfauthor={Jingyu Sun},
-            pdfsubject={MSc. Thesis},
+            pdfsubject={Phd. Thesis},
             pdfkeywords={},
             unicode=false,
             pdfborder={0 0 0},     % no borders around links
             colorlinks,            % true colored links
-            linkcolor = blue,
-            anchorcolor=blue,
-            citecolor=blue,
-            urlcolor=blue,
+            linkcolor=black,
+            anchorcolor=black,
+            citecolor=black,
+            urlcolor=black,
             ]{hyperref}            % hypertext in the pdf-document
 \usepackage[sort&compress,square,comma,numbers]{natbib}
                                    % better citations
@@ -135,7 +135,7 @@
 % \begin{CJK*}{GBK}{song}
 \captionsetup[figure]{labelfont={bf},font={footnotesize},name={Figure},labelsep=period}
 
-\captionsetup[table]{labelfont={bf},font={footnotesize},name={Tabel},labelsep=period}
+\captionsetup[table]{labelfont={bf},font={footnotesize},name={Table},labelsep=period}
 
 \selectlanguage{english}           % select English as primary language
 % \selectlanguage{german}            % select German as primary language
@@ -146,14 +146,15 @@
 \pagestyle{plain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \include{title/title}                    % prescribed title page
+\include{title/title}                    % prescribed title page
 % \include{title/page2}                    % prescribed back side of the title page (if required)
 \cleardoublepage                         % move to the right
 % \include{dedication/dedication}          % dedication/motto (if desired)
-% \include{acknowledgements/acknowledgements}
+\include{acknowledgements/acknowledgements}
+\cleardoublepage  
 
-% \include{zusammenfassung/zusammenfassung}
-% \include{abstract/abstract}              % abstract (if required)
+\include{zusammenfassung/zusammenfassung}
+\include{abstract/abstract}              % abstract (if required)
 \cleardoublepage                         % move to the right for the table of contents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,22 +162,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}             %%
 \fancyhf{}                    %%
-\fancyhead[RE,RO]{\rightmark} %%
+% \fancyhead[CE,CO]{\rightmark} %%
+\fancyhead[RE]{\leftmark}     %% 在偶数页的右侧显示章名
+\fancyhead[LO]{\rightmark}    %% 在奇数页的左侧显示小节名
 \fancyfoot[CE,CO]{\thepage}   %%
 \fancypagestyle{plain}{       %%
 \fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-}
-
-\renewcommand\chaptermark[1]{\markright{\chaptername \thechapter.
-#1}{}}
+\renewcommand{\headrulewidth}{0pt}}
+% \renewcommand\chaptermark[1]{\markright{\chaptername \thechapter.#1}{}}
+% \renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
+% \renewcommand\subsectionmark[1]{\markright{\thesubsection\ #1}}
+\renewcommand\chaptermark[1]{\markboth{#1}{}}
 \renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
 \renewcommand\subsectionmark[1]{\markright{\thesubsection\ #1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents                         % table of contents
 % \addcontentsline{toc}{chapter}
 \listoffigures
-% \include{symbols/symbols}                % list of symbols (if required)
+\include{symbols/symbols}                % list of symbols (if required)
 % \include{abbreviations/abbreviations}    % list of abbreviations (if required)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,25 +189,27 @@
 \graphicspath{{F:/Cloud/GitHub/doctor/figs/}{F:/Cloud/GitHub/doctor/figs/origin/}{F:/Cloud/GitHub/doctor/figs/tracepro/}{F:/Cloud/GitHub/doctor/figs/independent/}{F:/Cloud/GitHub/doctor/figs/python/}{F:/Cloud/GitHub/doctor/figs/ppt/}{F:/Cloud/GitHub/doctor/figs/svg/}{F:/Cloud/GitHub/doctor/figs/sem/}{F:/Cloud/GitHub/doctor/figs/test/}{F:/Cloud/Database/IN718/SEM/}{F:/Cloud/GitHub/fatigue/figs/}{F:/Cloud/GitHub/furnace/figs/}{F:/Cloud/GitHub/tmf/figs/}{F:/Cloud/GitHub/tgmf/figs/}}
 % \graphicspath{{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/origin/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/python/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/ppt/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/svg/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/sem/}{/Users/SunJingyu/Documents/Cloud/GitHub/doctor/figs/test/}{/Users/SunJingyu/Documents/Cloud/Database/IN718/SEM/}{/Users/SunJingyu/Documents/Cloud/GitHub/fatigue/figs/}{/Users/SunJingyu/Documents/Cloud/GitHub/furnace/figs/}{/Users/SunJingyu/Documents/Cloud/GitHub/tmf/figs/}{/Users/SunJingyu/Documents/Cloud/GitHub/tgmf/figs/}}
 
-% \include{chapter1/chapter1}
+\include{chapter1/chapter1}
 \include{chapter3/chapter3}
-% \include{chapter4/chapter4}
-% \include{chapter5/chapter5}
-% \include{chapter6/chapter6}
-% \include{chapter7/chapter7}
-% \include{chapter8/chapter8}
-% \include{chapter9/chapter9}
+\include{chapter4/chapter4}
+\include{chapter5/chapter5}
+\include{chapter6/chapter6}
+\include{chapter7/chapter7}
+\include{chapter8/chapter8}
+\include{chapter9/chapter9}
+\include{chapter10/chapter10}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% \bibliographystyle{plain}            % bibliography style
 \bibliographystyle{unsrt}            % bibliography style
 % \bibliography{bibliography}          % personal bibliography file
-\bibliography{mybib}          % personal bibliography file
+\bibliography{mybib}                 % personal bibliography file
 
 % \include{myresume/myresume}                    % resume (if required)
 % \include{appendix1/appendix1}                  % preface/acknowledgements
 % \include{appendix2/appendix2}                  % preface/acknowledgements
 % \include{appendix3/appendix3}                  % preface/acknowledgements
 % \end{CJK*}
-\end{document}
+\end{document} 

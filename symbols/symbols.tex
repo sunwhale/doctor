@@ -1,5 +1,5 @@
 \addchap{Nomenclature}             % include list of symbols in the table of contents (without number)
-\sectionmark{Nomenclature}         % correct section headings
+% \sectionmark{Nomenclature}         % correct section headings
 \renewcommand\arraystretch{1.0}
 
 \begin{table}[htb]
@@ -9,13 +9,15 @@
     $\alpha$ & coefficient of thermal expansion \\
     $\bm{\upbeta}$ & back strain tensor \\
     $\gamma$ & engineering shear strain \\
-    $\gamma_{\rm{p}}, \gamma_{\rm{q}}$ & coefficients \\
+    $\gamma_{\rm{p}}, \gamma_{\rm{q}}$ & isotropic hardening parameters \\
     $\gamma'_{\rm{f}}$ & torsional fatigue ductility coefficient \\
     $\epsilon$ & emissivity \\
     $\varepsilon_{\rm{eng}}$  & engineering strain \\
+    $\varepsilon_{\rm{eq}}$  & equivalent mechanical strain \\
     $\varepsilon_{\rm{mech}}$ & mechanical strain \\
     $\varepsilon_{\rm{tot}}$ & total strain \\
     $\varepsilon_{\rm{th}}$ & thermal strain \\
+    $\varepsilon_{\rm{f}}$ & fracture elongation \\
     $\varepsilon'_{\rm{f}}$ & fatigue ductility coefficient \\
     $\bm{\upepsilon}$ & total strain tensor \\
     $\bm{\upepsilon}^{\rm{e}}$ & elastic strain tensor \\
@@ -23,19 +25,36 @@
     $\zeta$ & parameter in constitutive model \\
     $\eta$ & model constants \\
     $\theta$ & model constants \\
+    $\theta_{T-\varepsilon}$ & phase angle of the thermal loading and mechanical loading \\
+    $\theta_{T-\gamma}$ & phase angle of the thermal loading and torsional loading \\
+    $\theta_{\varepsilon-\gamma}$ & phase angle of the mechanical loading and torsional loading \\
     $\kappa$ & Lame constants \\
     $\lambda$ & plastic multiplier \\
-    $\mu$ & model constants \\
+    $\mu$ & model constants, dynamic viscosity \\
     $\nu$ & Poisson's ratio \\
     $\pi$ & circumference \\
     $\rho$ & density \\
+    $\sigma$ & stress, Stefan-Boltzmann constant \\
+    $\sigma_1$, $\sigma_2$, $\sigma_3$  & principal stresses \\
     $\sigma_{\rm{eng}}$  & engineering stress \\
+    $\sigma_{p=0.2}$  & yield stress \\
+    $\sigma_{\rm{ult}}$  & ultimate stress \\
+    $\sigma_{\rm{y}}$  & yield stress \\
+    $\sigma_{\rm{y0}}$  & initial yield stress \\
+    \end{tabular}%
+  \label{Tab:greek_1}%
+\end{table}%
+
+\begin{table}[htb]
+  \centering
+    \begin{tabular}{p{3cm}p{10.5cm}}
     $\sigma'_f$ & fatigue strength coefficient \\
     $\bm{\upsigma}$ & stress tensor \\
     $\tau$  & shear stress \\
     $\tau'_{\rm{f}}$ & torsional fatigue strength coefficient \\
     $\bm{\uptau}$ & Kirchhoff stress tensor \\
     $\bm{\uptau}'$ & deviatoric Kirchhoff stress tensor \\
+    $\phi$ & non-proportionality parameter \\
     $\varphi$ & angle of critical plane \\
     $\bm{\Omega}$ & spin tensor \\
     \end{tabular}%
@@ -47,18 +66,23 @@
     \begin{tabular}{p{3cm}p{10.5cm}}
     \textbf{Latin symbols} & \\
     $\bf{a}$ & back stress tensor \\
+    $a_1$ & kinematic hardening parameter \\
     $A$ & area, coefficient \\
+    $A_0$, $A_1$, $A_2$ & coefficients \\
     $b$ & fatigue strength exponent \\
     $b_0$ & torsional fatigue strength exponent \\
+    $b_1$, $b_2$ & kinematic hardening parameters \\
     $\bf{b}$ & normalized back stress tensor \\
     $\bf{B}$ & left Cauchy-Green tensor \\
     $c$ & fatigue ductility exponent, kinematic hardening coefficient \\
     $c_0$ & torsional fatigue ductility exponent \\
     $d$  & diameter \\
+    $d_{\rm i}$  & inner diameter \\
+    $d_{\rm o}$  & outer diameter \\
     $\bf{D}$ & stretching tensor \\
     $\mathbb{D}^{\rm{e}}$ & elastic stiffness tensor \\
     $\mathbb{D}^{\rm{ep}}$ & consistent tangent moduli \\
-    $E$   & Young's modulus \\
+    $E$   & Young's modulus, thermoelectric voltage \\
     $F$   & yield function, force \\
     $\bf{F}$ & deformation gradient \\
     $G$   & shear modulus \\
@@ -67,31 +91,52 @@
     $\mathbb{I}$ & unit tensor of rank four \\
     $\mathbb{I}_{\rm{d}}$ & deviatoric projection tensor of rank four \\
     $\bf{I}$ & unit tensor of rank two \\
+    $K$ & material plastic offset \\
+    $K'$ & cyclic strength coefficient \\
     $l$ & length \\
     $\bf{L}$ & velocity gradient \\
     $M$ & number of segment \\
+    $\bf{M}$ & coordinate transformation matrix \\
+    $n$ & monotonic strain hardening exponent \\
+    \end{tabular}%
+  \label{Tab:latin_1}%
+\end{table}%
+
+\begin{table}[htb]
+  \centering
+    \begin{tabular}{p{3cm}p{10.5cm}}
+    $n'$ & cyclic strain hardening exponent \\
     $\bf{n}$ & unit normal vector of yield surface \\
+    $Nu$ & Nusselt number \\
     $N_{\rm{f}}$ & experimental fatigue life \\
     $N_{\rm{p}}$ & predicted fatigue life \\
-    $p$   & accumulated plastic strain, fatigue damage parameter \\
+    $p$   & accumulated plastic strain, fatigue damage parameter, pressure \\
+    $Pr$ & Prandtl number \\
     $q$   & radius of the non-hardening surface \\
+    $r^k$, $r_0^k$, $r_{\Delta s}^k$   & kinematic hardening parameters \\
+    $R$ & specific gas constant \\
+    $Re$ & Reynolds number \\
     $R_{\varepsilon}$ & loading ratio of the mechanical strain \\
     $R_{\sigma}$ & loading ratio of the stress \\
     $\bf{R}$ & proper orthogonal rotation tensor \\
     $\bf{s}$ & deviatoric stress tensor \\
     $T$ & temperature, torque \\
+    $T_{\rm melt}$ & melting point of the material \\
+    ${T_{{\sigma _{\rm n,\max }}}}$ & temperature corresponding to the maximum normal stress \\
+    $T_{\rm s}$ & surface temperature \\
+    $T_{\infty}$ & reference temperature \\
+    $T_{\rm N}$, $T_{\rm RMS}$ & statistical parameters \\
+    $\mathscr{T}$ & time period \\
     $\bf{U}$ & right stretch tensor \\
+    ${\dot V}$ & volume flow \\
     $\bf{V}$ & left stretch tensor \\
     $\bf{W}$ & vorticity tensor \\
     $Y$ & yield stress \\
     $Y_0$ & initial yield stress \\
-    & \\
-    & \\
-    & \\
-    & \\
-    & \\
+    $Y_{\Delta \rm np}$, $Y_{\Delta \rm nps}$ & non-proportional hardening parameters \\
+    $Y_{\Delta \rm nonps}$, $Y_{\Delta \rm sat}$ & non-proportional hardening parameters \\
     \end{tabular}%
-  \label{Tab:latin_1}%
+  \label{Tab:latin_2}%
 \end{table}%
 
 \begin{table}[htb]
@@ -131,6 +176,19 @@
     ${\left(  \bullet  \right)^{\rm T}}$  & transpose of $\left(  \bullet  \right)$ \\
     ${\left(  \bullet  \right)^{ - 1}}$  & inverse of $\left(  \bullet  \right)$ \\
     $\mathop {\left(  \bullet  \right)}\limits^ \circ$  & objective rate of $\left(  \bullet  \right)$ \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
+    & \\
     & \\
     & \\
     & \\

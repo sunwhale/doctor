@@ -10,7 +10,7 @@ Table \ref{tab:ParametersCollection} lists the parameters of the constitutive mo
 % According to the functions of these parameters, they can be divided into the following categories: general elastic-plastic parameters, isotropic hardening parameters, kinematic hardening parameters and cyclic hardening/softening parameters. The parameters to describe the hardening induced by non-proportional loading path is introduced in the isotropic hardening.
 
 The material parameters of the constitutive model can be determined from the monotonic and cyclic experiments since several parameters are less interdependent on the others.
-Generally Young's modulus $E$, Poisson's ratio $\nu$ and initial yield stress $\sigma_{\rm p=0.2}$ can be identified from the monotonic tension and torsion tests;
+Generally Young's modulus $E$, Poisson's ratio $\nu$ and initial yield stress $Y_0$ can be identified from the monotonic tension and torsion tests;
 parameters $\zeta^k$ and $r_0^k$ are determined from monotonic tension test using the method provided by Jiang and Kurath \cite{Jiang1996387};
 parameters $r^k$ are determined from the uniaxial stable hysteresis loop curve using the same method;
 parameters $a_1^k$, $b_1^k$, $b_2^k$ are determined from the history curve of peak stress under uniaxial cyclic loading;
@@ -27,7 +27,7 @@ parameters $\mu$ and $c_c$ are suggested as the values proposed by Chaboche \cit
     \midrule
     $E$   & $\zeta^k$ & $c_c$ & $r_{\Delta \rm{s}}^k$ \\
     $\nu$ & $r_0^k$ & $Y_{\Delta \rm{sat}}$,$\gamma_{\rm{p}}$,$\gamma_{\rm{q}}$ & $a_1^k$,$b_1^k$,$b_2^k$ \\
-    $\sigma_{p=0.2}$ & $\mu$ &  & \\
+    $Y_0$ & $\mu$ &  & \\
     \bottomrule
     \end{tabular}%
   \label{tab:ParametersCollection}%
@@ -56,7 +56,7 @@ Because of the symmetry, Hooke's law for isotropic materials can then be express
 \label{Equ:HookesLawInEandNu}
 \end{eqnarray}
 where $E$ is the Young's modulus and $\nu$ is Poisson's ratio.
-In matrix form, Equation \ref{Equ:HookesLawInEandNu} can be written as:
+In matrix form, Equation (\ref{Equ:HookesLawInEandNu}) can be written as:
 \begin{eqnarray}
    \begin{bmatrix}\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ 2\varepsilon_{23} \\ 2\varepsilon_{31} \\ 2\varepsilon_{12} \end{bmatrix} =
    \begin{bmatrix}\varepsilon_{11} \\ \varepsilon_{22} \\ \varepsilon_{33} \\ \gamma_{23} \\ \gamma_{31} \\ \gamma_{12} \end{bmatrix} =
@@ -144,11 +144,11 @@ noting that the temperature is in the unit of $^\circ$C, Young's modulus $E$ is 
 
 \begin{table}[htbp]
   \centering
-  \caption{Young's modulus $E$, shear modulus $G$ and Poisson's ratio of Inconel 718 at different temperatures.}
+  \caption{Young's modulus $E$, shear modulus $G$ and Poisson's ratio $\nu$ of Inconel 718 at different temperatures.}
     \begin{tabular}{p{3cm}<{\centering}p{3cm}<{\centering}p{3cm}<{\centering}p{3cm}<{\centering}}
     \toprule
     Temperature & Young's modulus & Shear modulus & Poisson's ratio \\
-    $T$ [$^{\circ}$C] & $E$ [GPa] & $G$ [GPa] & $\mu$ [-] \\
+    $T$ [$^{\circ}$C] & $E$ [GPa] & $G$ [GPa] & $\nu$ [-] \\
     \midrule
     16    & 208.2  & 80.8  & 0.289 \\
     100   & 205.7  & 79.7  & 0.290 \\
@@ -166,14 +166,14 @@ noting that the temperature is in the unit of $^\circ$C, Young's modulus $E$ is 
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=14cm]{plot_elastic_by_temperature_in718.pdf}
-  \caption{Young's modulus $E$, shear modulus $G$ and Poisson's Ratio at different temperatures.}
+  \caption{Young's modulus $E$, shear modulus $G$ and Poisson's ratio $\nu$ at different temperatures.}
   \label{Fig:plot_elastic_by_temperature_in718}
 \end{figure}
 
 \subsection{Determination of $\zeta^k$ and $r_0^k$ from the monotonic stress-strain curves}
 \noindent
 The cyclic softening and multiaxial effect are absent in the monotonic tensile test.
-By neglecting the plastic strain amplitude effect, as introduced by Jiang and Kurath\cite{Jiang1996387} and Jiang and Sehitoglu\cite{jiang1996modeling}, material parameters ${\zeta ^k}( k = 1,2,3,...,M )$ and $r_0^k( k = 1,2,3,...,M )$ can be determined using the following equations, if no isotropic hardening is assumed:
+By neglecting the plastic strain amplitude effect, as introduced by Jiang and Kurath \cite{Jiang1996387} and Jiang and Sehitoglu \cite{jiang1996modeling}, material parameters ${\zeta ^k}( k = 1,2,3,...,M )$ and $r_0^k( k = 1,2,3,...,M )$ can be determined using the following equations, if no isotropic hardening is assumed:
 \begin{equation}
 {\zeta ^k} = \frac{1}{{\varepsilon _{\rm{p}}^k}},
 \label{Eqn:zetak}
@@ -183,7 +183,7 @@ r_0^k = \left( {\frac{{\sigma _{}^k - \sigma _{}^{k - 1}}}{{\varepsilon _{\rm{p}
 \end{equation}
 % where $\sigma^k( k = 0,1,2,...,M+1 )$ and $\varepsilon_p^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$-th point on the monotonic tensile stress vs. plastic strain curve, $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_p^0=0$.
 % For example, we select M points from the uniaxial tensile stress strain curve at 650$^\circ$C (see \ref{Fig:Determine_the_basic_material_constants}), and M=9 is found to represent the curve well.
-where $\sigma^k$ and $\varepsilon_p^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$-th point on the monotonic  stress-plastic strain curve, respectively. $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_p^0=0$. Generally, the uniaxial tensile stress-strain curve is represented in $M$ intervals, as shown in \ref{Fig:Determine_the_basic_material_constants}. In the present work, $M=9$ is proposed.
+where $\sigma^k$ and $\varepsilon_{\rm p}^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$-th point on the monotonic  stress-plastic strain curve, respectively. $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_{\rm p}^0=0$. Generally, the uniaxial tensile stress-strain curve is represented in $M$ intervals, as shown in \ref{Fig:Determine_the_basic_material_constants}. In the present work, $M=9$ is proposed.
 
 \begin{figure}[!htp]
   \centering
@@ -195,7 +195,7 @@ where $\sigma^k$ and $\varepsilon_p^k( k = 0,1,2,...,M+1 )$ denote the stress an
 \subsection{Determination of $r_{\Delta \rm{s}}^k$ from the cyclic stress-strain curves}
 \noindent
 In the constitutive model, the saturated value of $r^k$ has to be determined from the cyclic stress-strain curve, which can be obtained from the experimental stabilized hysteresis loop.
-The half fatigue life ($N_f/2$) cycle is assumed to be the stabilized hysteresis loop.
+The half fatigue life ($N_{\rm f}/2$) cycle is assumed to be the stabilized hysteresis loop.
 % In the constitutive model, $r^k$ is the saturated value.
 % To determine the values of $r^k$ cyclic stress-strain curve is needed.
 % The cyclic stress-strain curve can be obtained from the experimental stabilized hysteresis loop.
@@ -213,7 +213,7 @@ and function $f_{\rm{dec}}(\sigma,\varepsilon)$ is the alternating stress and st
 f_{\rm{dec}}(\sigma,\varepsilon)=|2\sigma-\sigma_{\max}|-|2\varepsilon-\varepsilon_{\max}|=0,
 \label{Equ:f_dec}
 \end{equation}
-where $\sigma_{\min}$ and $\sigma_{\max}$ are minimum value for increasing stress part and maximum value for decreasing stress part.
+where $\sigma_{\min}$ and $\sigma_{\max}$ are the minimum value for increasing stress part and the maximum value for decreasing stress part.
 
 By combining Equations (\ref{Equ:f_inc}) and (\ref{Equ:f_dec}) together we obtain the final alternating stress and strain curve, as illustrated in \ref{Fig:Alternating_Curve}:
 \begin{equation}
@@ -561,7 +561,7 @@ Along loading and unloading cycles, with evolution of $r_{\rm{s}}^k$ (Equation (
 \end{figure}
 
 More details from the experiments and computations reveal that the material is cyclic softening, as shown in \ref{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}(a), where the stress peak and valley values from the uniaxial cyclic tension test are summarized. The softening behavior becomes more severe as temperature increases.
-As mentioned earlier, in the present constitutive relation, cyclic softening is modeled by the kinematic hardening variable $r^k$, with its saturation value $r_{\rm{s}}^k$ smaller than its initial value $r_0$.
+As mentioned earlier, in the present constitutive relation, cyclic softening is modeled by the kinematic hardening variable $r^k$, with its saturation value $r_{\rm{s}}^k$ smaller than its initial value $r_0^k$.
 The figure confirms a good agreement between experiments and the constitutive model prediction in the whole loading and unloading cycles.
 
 The multiaxial non-proportional loading results are summarized in \ref{Fig:Circle_Exp_Sim} for the circular tension-torsion loading path CIRC under strain controlling at 300$^\circ$C, 550$^\circ$C and 650$^\circ$C, respectively. The cyclic stress curves are constructed by plotting the shear stress versus the tensile stress in the first cycle and the 200th cycle with the total strain amplitude of $1\%$, respectively. At 650$^\circ$C the computational prediction shows slight over-estimate near the maximum normal stress, while others reveal optimal agreement for both initial and cyclic loading.
@@ -676,6 +676,15 @@ The peak stresses of all temperature loading phases, i.e., IP, OP and 90$^\circ$
 However, for all valley stresses, the experimental results are observed approximately 50 MPa lower than the predictions.
 The reason is that the yield surface is assumed to be circular in the present constitutive model and the yield surface seems to stiff.
 As shown by Gil \cite{Gil1998}, the yield surface of Inconel 718 is a shift to the compression direction as temperature increase from room temperature to 650$^\circ$C.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=14.0cm]{plot_cmp_mean_TCTMF.pdf}
+  \caption{Variations of the mean stress in uniaxial TMF tests, comparing with computational predictions.}
+  \label{Fig:plot_cmp_mean_TCTMF}
+\end{figure}
+
+The nickel-based superalloy Inconel 718 is essentially cyclically softened, as learned from experiments \cite{Koch85,Morrow88,Socie2000}. From isothermal fatigue, the mean stress with loading ratio $R=-1$ is zero, and the peak-valley values are symmetric, as shown in the previous sections. For $R \ne -1$ the mean stress develops towards zero, regardless of temperature. In TMF the situation changes. In \ref{Fig:plot_cmp_mean_TCTMF} the uniaxial TMF tests with three different phase angles are summarized to have a systematical overview of the thermomechanical behavior of the material. As expected, under strain-controlled uniaxial cyclic loading with mean mechanical strain, all tests show the cyclic softening behavior, as well as the hysteresis loops, reach a stable state with increasing number of cycles. The decreases of the mean stresses were observed in the TC-IP test, whereas for TC-OP the mean stress increases. Due to the symmetry of temperature in the TC-90 (i.e., the temperatures are the same at maximum and minimum axial strain), the mean axial stress becomes stable in the entire life-cycle process. This observation implies that the temperature variation affects the cyclic behavior of the material, which has to be considered in both constitutive modeling and fatigue assessment additionally.
 
 %The agreement between the experiments and the computations is obvious.
 
@@ -1239,7 +1248,7 @@ In both tests, the slight deviations between computational predictions and exper
 %  \label{Fig:TMF_90}
 %\end{figure}
 
-\section{Summaries}
+\section{Summary}
 \noindent
 In the above chapters, the multiaxial thermomechanical behavior of the nickel-based superalloy Inconel 718 has been investigated experimentally and computationally.
 Based on the Ohno-Wang's model, a constitutive model has been developed for multiaxial thermomechanical cyclic plasticity.

@@ -360,18 +360,16 @@ It consists of two dissimilar metal wires, joined at one end.
 %When properly configured, thermocouples can provide temperature measurements over a wide range of temperatures.
 In contrast to most other methods of temperature measurement, thermocouples are self-powered and require no external form of excitation.
 The physical principle of the thermocouple is Seebeck effect.
-
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=6cm]{Seebeck_Voltage.pdf}
-	\caption{Schematic of Seebeck effect.}
-	\label{Fig:Seebeck_Voltage}
-\end{figure}
-In 1821 the German physicist Thomas Johann Seebeck discovered the continuous current flow in the thermoelectric circuit when two wires of dissimilar metals are joined at both ends, and one of the ends is heated, and that is the Seebeck effect.
-If this circuit is broken at the center (see \ref{Fig:Seebeck_Voltage}), the net open circuit voltage $e_{\rm AB}$ (the Seebeck voltage) is a function of the junction temperature and the composition of the two metals.
-This was because the electron energy levels in each metal shifted differently and a voltage difference between the junctions.
-We cannot measure the Seebeck voltage directly because we must first connect a voltmeter to the thermocouple, and the voltmeter leads themselves to create a new thermoelectric circuit.
-
+% \begin{figure}[!htp]
+% 	\centering
+% 	\includegraphics[width=6cm]{Seebeck_Voltage.pdf}
+% 	\caption{Schematic of Seebeck effect.}
+% 	\label{Fig:Seebeck_Voltage}
+% \end{figure}
+% In 1821 the German physicist Thomas Johann Seebeck discovered the continuous current flow in the thermoelectric circuit when two wires of dissimilar metals are joined at both ends, and one of the ends is heated, and that is the Seebeck effect.
+% If this circuit is broken at the center (see \ref{Fig:Seebeck_Voltage}), the net open circuit voltage $e_{\rm AB}$ (the Seebeck voltage) is a function of the junction temperature and the composition of the two metals.
+% This was because the electron energy levels in each metal shifted differently and a voltage difference between the junctions.
+% We cannot measure the Seebeck voltage directly because we must first connect a voltmeter to the thermocouple, and the voltmeter leads themselves to create a new thermoelectric circuit.
 A thermocouple is an electrical device consisting of two different conductors forming electrical junctions at differing temperatures. A thermocouple produces a temperature-dependent voltage as a result of the thermoelectric effect, and this voltage can be interpreted to measure temperature.
 The thermoelectric effect is the direct conversion of temperature differences to electric voltage and vice versa. A thermoelectric device creates a voltage when there is a different temperature on each side. Conversely, when a voltage is applied to it, it creates a temperature difference. At the atomic scale, an applied temperature gradient causes charge carriers in the material to diffuse from the hot side to the cold side.
 \begin{figure}[!htp]
@@ -601,7 +599,8 @@ Three types (K, R, S) of thermocouples are used in our temperature measurement s
 %The more the value of ${\bf{a}}$ approaches the boundary radius, the more the value of the plastic tangent module decreases until the stress-strain curve ends in a horizontal.
 %This hardening rule can be integrated analytically integrated
 
-\section{Design and development of the radiation furnace for TGMF tests}
+% \section{Design and development of the radiation furnace for TGMF tests}
+\section{Analysis and design of a radiation heating system}
 \noindent
 % http://www.dlr.de/wf/en/desktopdefault.aspx/tabid-2192/3209_read-5876/
 % Thermal gradients cause multiaxial loads in cooled components. With internal cooling, for example rotors in the first stage of a jet engine, the thermally induced stresses can not relax by macroscopic deformations. The stresses occurring on the component lead to multiaxial pressure loads on the hot surface and to multiaxial tensile loads on the cooled surface.
@@ -615,17 +614,15 @@ Three types (K, R, S) of thermocouples are used in our temperature measurement s
 In this section, the high-temperature radiation furnace is developed.
 It is used to heat the specimens with thermal barrier coating up to a high temperature.
 The furnace is matching with the MTS 809 axial/torsional fatigue testing machine.
-Specimen heating can be accomplished by various techniques including induction, direct resistance, radiant, or forced air heating.
-The forced air heating furnace can be used for all kinds of material. It has good temperature stability and mostly used in isothermal material tests, but it is not suitable for the experiments which need rapid temperature change.
-
-Induction heating is the process of heating an electrically conducting object (usually a metal) by electromagnetic induction, through heat generated in the object by eddy currents. An induction heater consists of an electromagnet and an electronic oscillator which passes a high-frequency alternating current (AC) through the electromagnet. The rapidly alternating magnetic field penetrates the object, generating electric currents inside the conductor called eddy currents. The eddy currents flow through the resistance of the material and heat it by Joule heating.
-
-An essential feature of the induction heating process is that the heat is generated inside the object itself, instead of by an external heat source via heat conduction. Thus objects can be very rapidly heated.
-Induction heating is convenient to match up an additional air cooling system, which commonly used in thermomechanical fatigue test, but induction heating method is not suitable for heating non-metallic materials.
+Halogen lamps are used to heat the specimen.
+% Specimen heating can be accomplished by various techniques including induction, direct resistance, radiant, or forced air heating.
+% The forced air heating furnace can be used for all kinds of material. It has good temperature stability and mostly used in isothermal material tests, but it is not suitable for the experiments which need rapid temperature change.
+% Induction heating is the process of heating an electrically conducting object (usually a metal) by electromagnetic induction, through heat generated in the object by eddy currents. An induction heater consists of an electromagnet and an electronic oscillator which passes a high-frequency alternating current (AC) through the electromagnet. The rapidly alternating magnetic field penetrates the object, generating electric currents inside the conductor called eddy currents. The eddy currents flow through the resistance of the material and heat it by Joule heating.
+% An essential feature of the induction heating process is that the heat is generated inside the object itself, instead of by an external heat source via heat conduction. Thus objects can be very rapidly heated.
+% Induction heating is convenient to match up an additional air cooling system, which commonly used in thermomechanical fatigue test, but induction heating method is not suitable for heating non-metallic materials.
 %光加热高温炉的原理是利用镜面反射，将光线汇聚在试件表面，通过光辐射传递能量，达到加热试件表面的目的。
 %光源通常选取卤素灯。
-
-A halogen lamp, also known as a quartz-halogen, is an incandescent lamp that has a small amount of a halogen such as iodine or bromine added.
+The halogen lamp, also known as the quartz-halogen, is an incandescent lamp that has a small amount of a halogen such as iodine or bromine added.
 %The combination of the halogen gas and the tungsten filament produces a halogen cycle chemical reaction which redeposits evaporated tungsten back onto the filament, increasing its life and maintaining the clarity of the envelope.
 %Because of this, a halogen lamp can be operated at a higher temperature than a standard gas-filled lamp of similar power and operating life, producing light of a higher luminous efficacy and color temperature.
 The small size of halogen lamps permits their use in compact optical systems for projectors and illumination.
@@ -644,16 +641,16 @@ According to the heat transfer theory, to determine the temperature distribution
 % 本节介绍了单盏卤素灯自由辐射的试验过程及数值计算结果。
 
 Three tests were carried out to determine the heat transfer parameters:
-
-1. Single lamp radiation test in a sealed cavity to determine the radiation efficiency of the single halogen lamp;
-
-2. Elliptical cylinder mirror reflection test, to determine the reflection efficiency of the gold-plated mirror, and the convection heat transfer coefficient of the surface;
-
-3. Heating test of the radiation furnace to verify the calculation results.
+\begin{enumerate}
+\item Single lamp radiation test in a sealed cavity to determine the radiation efficiency of the single halogen lamp;
+\item Elliptical cylinder mirror reflection test, to determine the reflection efficiency of the gold-plated mirror, and the convection heat transfer coefficient of the surface;
+\item Heating test of the radiation furnace to verify the calculation results.
 This section describes the test procedure and numerical results of the free radiation of a single halogen lamp.
+\end{enumerate}
 
 
-\subsection{Experiments and simulations of the single lamp radiation in the cylindrical cavity}
+% \subsection{Experiments and simulations of the single lamp radiation in the cylindrical cavity}
+\subsection{Experimental and computational investigation of a single lamp radiation in the cylindrical cavity}
 \noindent
 % 单盏卤素灯密封腔辐射试验装置设计如\ref{Fig:OneLightRadiation}(a)所示，包括圆柱形不锈钢壁面、上下盖板和灯头固定部件等，构成了一个圆柱形密封腔。
 % 所有零件都使用SS304不锈钢通过数控加工中心制作，空腔内壁采用耐高温黑色涂料均匀喷涂，确保空腔内壁各处的辐射发射率相同。
@@ -856,7 +853,8 @@ The temperatures at the middle section of the outer wall surface are shown in \r
 We observed good agreement between the experimental and computational results.
 Therefore, the emissivities and convective heat transfer coefficient determined from the trial and error method are appropriate.
 
-\subsection{Experiments and simulations of the radiation with elliptical cylinder reflector}
+% \subsection{Experiments and simulations of the radiation with elliptical cylinder reflector}
+\subsection{Experimental and computational investigation of a radiation heater with elliptical reflectors}
 \noindent
 Elliptical cylinder reflectors have two conjugate focus lines. Light from one focus line passes through the other after reflection (see \ref{Fig:EllipsoidalReflectors}).
 Deep elliptical cylinder surrounding a line source collect a much higher fraction of total emitted light than a spherical mirror or conventional lens system.
@@ -1226,7 +1224,7 @@ The TGMF testing system for the thin-walled tubular specimen is shown in \ref{Fi
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[width=16cm]{Heating_Specimen.jpg}
-	\caption{The specimen is heating by radiation.}
+	\caption{The specimen is heating by the radiation furnace.}
 	\label{Fig:Heating_Specimen}
 \end{figure}
 

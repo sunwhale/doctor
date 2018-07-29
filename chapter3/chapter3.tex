@@ -78,8 +78,8 @@ Moreover, uniform temperature distributions in the gage length of the tubular sp
 Both solid and thin-walled tubular specimens were designed by taking into the account of the available testing equipment and loading conditions, e.g., the gauge length of the extensometer, the height of the support frame of the extensometer, the height of the furnace and coil, and so on.
 The experiments confirmed that the specimen geometry influenced the temperature distribution in the gauge length.
 Consequently, the final geometries which presented in the above figures were determined by experimental and numerical analysis.
-The dimensions of solid and tubular specimens are adapt to the dimension ratios suggested by the standards ASTM E606 \cite{astm1998standard} and E2207 \cite{standard2007e2207}, respectively.
-A discussion of different multiaxial testing techniques can be found in Socie (2000) \cite{socie2000multiaxial}.
+The dimensions of solid and tubular specimens are adapt to the dimension ratios suggested by the standards ASTM E606 \cite{astm1998standard} and E2207 \cite{ASTME2207}, respectively.
+A discussion of different multiaxial testing techniques can be found in Socie (2000) \cite{Socie2000}.
 All specimens were manufactured by a CNC machining center, and the surfaces were polished before testing.
 
 
@@ -167,7 +167,7 @@ The gauge lengths of the axial and biaxial extensometers are 12 mm and 25 mm, re
 % The maximum temperature deviations along the 12 mm gauge length were $\pm5^{\circ}$C and along the 25 mm gauge length were $\pm8^{\circ}$C.
 
 \section{Monotonic tensile tests}
-\noindent 
+\noindent
 The monotonic tensile test is the fundamental material test in which a specimen is subjected to a controlled tension until failure.
 The purpose of the monotonic tensile tests is to determine the fundamental mechanical properties of Inconel 718 for using in the finite element calculations.
 The monotonic tensile tests were performed at 20$^{\circ}$C, 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C.
@@ -301,7 +301,7 @@ As a result, the material still retains reasonable strength at 650$^{\circ}$C.
 \subsection{Introduction of axial-torsional fatigue tests}
 \noindent
 Axial-torsional fatigue tests involved axial and torsional loading simultaneously with the predetermined phase relationship.
-The test procedure was in accordance with the standard ASTM E2207 \cite{unknown}.
+The test procedure was in accordance with the standard ASTM E2207 \cite{ASTME2207}.
 The standard deals with strain-controlled, axial, torsional, and combined in-phase and out-of-phase axial/torsional fatigue tests with thin-walled, circular cross-section, tubular specimens at isothermal, ambient and elevated temperature.
 Some concepts are defined as follows:
 
@@ -483,7 +483,7 @@ Triangular waveforms were applied at the predetermined strain rates over the str
 For uniaxial tests, the strain rates were below $1.0\times 10^{-3}$ $\rm{s}^{-1}$.
 The pure torsional and axial-torsional tests were performed at 300$^\circ$C, 550$^\circ$C and 650$^\circ$C.
 % A axial-torsional test involved axial and torsional loading simultaneously with a predetermined phase relationship.
-As introduced above, the procedure of axial-torsional test was in accordance with the standard ASTM E2207.
+As introduced above, the procedure of axial-torsional test was in accordance with the standard ASTM E2207 \cite{ASTME2207}.
 The process of the LCF tests was defined by using an MTS Multipurpose software (MPE).
 The strain path, temperature, strain rate were given to the software.
 Furthermore, a peak/valley compensation (PVC) method was used to obtain an accurate feedback value.
@@ -633,9 +633,9 @@ The temperature rate (heating and cooling) of TMF tests is generally within 10$^
 
 \subsection{Process of thermomechanical fatigue tests}
 \noindent
-ISO 12111 and ASTM E2368\cite{ASTME2005} are the standard practices for thermomechanical fatigue tests under uniaxial strain-controlled conditions.
+ISO 12111 and ASTM E2368 \cite{ASTME2005} are the standard practices for thermomechanical fatigue tests under uniaxial strain-controlled conditions.
 Unfortunately, there are no relevant standards for multiaxial thermomechanical fatigue tests.
-Therefore, multiaxial TMF tests were conducted with reference to ASTM E2207, which is the standard practice for strain-controlled axial-torsional fatigue tests with thin-walled tubular specimens.
+Therefore, multiaxial TMF tests were conducted with reference to ASTM E2207 \cite{ASTME2207}, which is the standard practice for strain-controlled axial-torsional fatigue tests with thin-walled tubular specimens.
 According to these standards, some concepts are defined as follows:
 
 % a thermomechanical fatigue cycle is defined as a condition where uniform temperature and strain fields over the specimen gage section are simultaneously varied and independently controlled.
@@ -697,16 +697,16 @@ According to these standards, some concepts are defined as follows:
 According to the standards discussed above, the implemented steps during the process of carrying out strain-controlled multiaxial TMF tests is shown in \ref{Fig:tmf_code}, in the form of a flow diagram.
 The implemented program consist of three steps:
 %calibration of the testing system, the setting up and performing procedures of the strain-controlled test.
-\begin{itemize}
+\begin{enumerate}
   \item Calibration,
   \item TMF test setup,
   \item TMF test.
-\end{itemize}
+\end{enumerate}
 
 The calibration of the testing system is necessary to ensure the accuracy and repeatability of the test results.
 As shown in \ref{Fig:tmf_code}, force transducer, extensometer and the temperature measurement are the three parts which have to be calibrated.
-The accuracy of the force transducer shall meet the ASTM E4 and E467 requirements ($F_{\rm error}\pm \leq 1\%$) during the tmf test duration.
-During the TMF testing, the axial and shear strains in the gage section of the specimen are measured with the high-temperature extensometers.
+The accuracy of the force transducer shall meet the ASTM E4 and E467 requirements ($F_{\rm error} \leq \pm 1\%$) during the TMF test duration.
+The axial and shear strains in the gage section of the specimen are measured with the high-temperature extensometers.
 The extensometers are calibrated in accordance with the recommendations of ASTM E83.
 The specimen temperature was measured by the thermocouples in contact with the specimen surface, and the temperature measurement system is calibrated in accordance with the recommendations of ASTM E220.
 
@@ -714,7 +714,7 @@ After the step of calibration, the setting up procedures of TMF test is conducte
 The TMF test setup consists of six steps: data acquisition, optimization of thermal stability, command/feedback phasing compensation, thermal strain compensation, thermal strain validation and preliminary measurements.
 
 As mentioned above, the MTS Model 809 servohydraulic testing machine is used in conjunction with the computer and controller to control the test and log the data obtained.
-The data is collected by the computerized system during the TMF test duration, such as cycle count, force, displacement, torque, rotation, mechanical strain, shear strain, temperature and so on. The sampling frequency is determined by the testing frequency to ensure more than 200 sampling points per cycle. At the same time, it is necessary to ensure that the temperature deviation between two sampling points is lower than 5$^\circ$.
+The data is collected by the computerized system during the TMF test duration, such as cycle count, force, displacement, torque, rotation, mechanical strain, shear strain, temperature and so on. The sampling frequency is determined by the testing frequency to ensure more than 200 sampling points per cycle. At the same time, it is necessary to ensure that the temperature deviation between two sampling points is lower than 5$^\circ$C.
 
 \begin{figure}[!htp]
   \centering
@@ -735,10 +735,10 @@ The data is collected by the computerized system during the TMF test duration, s
   \label{Fig:thermal_stability}
 \end{figure}
 
-Throughout the test, the specimen should be heated uniformly in the gauge section by the specified temperature command. In accordance with the recommendations of ASTM E2368-10\cite{ASTME2005}, the axial temperature gradient in the gauge section of the specimen not exceed $\pm$3 K or $\pm$1\% of the
+Throughout the test, the specimen should be heated uniformly in the gauge section by the specified temperature command. In accordance with the recommendations of ASTM E2368 \cite{ASTME2005}, the axial temperature gradient in the gauge section of the specimen not exceed $\pm$3 K or $\pm$1\% of the
 maximum cyclic temperature given in K, and the maximum allowable transverse temperature gradient is $\pm$7 K or $\pm$1\% of maximum cyclic temperature given in K.
 % 对于感应加热方式，其感应线圈的布置方式会对试样表面温度分布产生很大的影响。因为线圈的布置不仅需要考虑加热效果，而且要方便引伸计的安装。\cite{Hahner2006}。
-Axial temperature gradients of the specimen are influenced mainly by surface convection, heat conduction, electrical conductivity, induction frequency, water-cooled specimen grips, specimen geometry and coil configuration. Generally, only the coil configuration and the specimen geometry are variable. As shown in \ref{Fig:Specimen}(b), tubular specimens are used in combination with the induction heating device. The coil configuration has a significant influence on the temperature distribution of the specimen, at the same time, the installation of the extensometer has to be considered\cite{Hahner2006}.
+Axial temperature gradients of the specimen are influenced mainly by surface convection, heat conduction, electrical conductivity, induction frequency, water-cooled specimen grips, specimen geometry and coil configuration. Generally, only the coil configuration and the specimen geometry are variable. As shown in \ref{Fig:Specimen}(b), tubular specimens are used in combination with the induction heating device. The coil configuration has a significant influence on the temperature distribution of the specimen, at the same time, the installation of the extensometer has to be considered \cite{Hahner2006}.
 % 因此，需要在试验初期首先对试样上、中、下及环向位置测温，并通过调整线圈形状、位置及冷却角度来降低试样的温度梯度，以满足ASTM或ISO热机械疲劳试验方法标准的相关规定。
 In comparison with isothermal fatigue test, the thermomechanical fatigue test is carried out under varying temperature.
 In order to optimize the thermal stability during the TMF testing, temperatures at the upper, center, lower, and circumferential positions in the gauge section of the specimen were measured by the chromel-alumel (type K) thermocouples wrapped around the specimen. \ref{Fig:temperature_monitors} shows the locations of the thermocouples.
@@ -746,14 +746,13 @@ The axial and transverse temperature gradients of the specimen can be reduced by
 Consequently, the configuration of the coil was tuned iteratively to obtain the minimum temperature gradients.
 Furthermore, heating and cooling rates also influence the temperature gradients.
 In order to avoid considerable axial and transverse temperature gradients within the strain gauge of the specimen, in the present work, the heating and cooling rates were chosen about 2.92$^\circ$C/s with a triangular shape temperature cycle, thus the time of one cycle is about 180 s, and the frequency is about 0.0056 Hz.
-The temperature range for all TMF tests in the study is from 300$^\circ$C to 650$^\circ$C. \ref{Fig:thermal_stability}(a) shows the dynamic temperature measurement after the thermal stability optimization during a conducted TMF cycle. \ref{Fig:thermal_stability}(b) shows the temperature
-deviations between the upper/lower and middle monitor. It is concluded that the maximum axial temperature gradients during the TMF test are -10$^\circ$C to 15$^\circ$C.
+The temperature range for all TMF tests in the study is from 300$^\circ$C to 650$^\circ$C. \ref{Fig:thermal_stability}(a) shows the dynamic temperature measurement after the thermal stability optimization during a conducted TMF cycle. \ref{Fig:thermal_stability}(b) shows the temperature deviations between the upper/lower/middle monitor and the predetermined temperature command. It is concluded that the axial temperature gradients during the TMF test are between -10$^\circ$C and 15$^\circ$C.
 
-It should be noted that the thin-walled tubular specimen was used in the TMF tests. In the tubular specimen, the shear strain and shear stress are not constant in the cross-section, and the shear stress and shear strain are always the greatest at the outer diameter. Under elasto-plastic loading conditions, shear stress varies nonlinearly through the thin wall of the tubular specimen. As introduced above, according to ASTM E2207 \cite{ASTM2014}, the assumption of a uniformly distributed shear stress is recommended. The shear stresses reported in the TMF tests are calculated by Equation (\ref{Equ:shear_stress}). The effect of temperature variation on shear strain measurement can be neglected \cite{Bakis2014}. Consequently, the compensation of torsional thermal strain is not performed in the present work. The shear strains are obtained directly from the measurement results by the extensometer.
+It should be noted that the thin-walled tubular specimen was used in the TMF tests. In the tubular specimen, the shear strain and shear stress are not constant in the cross-section, and the maximum shear stress and shear strain always occur at the outer diameter. Under elasto-plastic loading conditions, the shear stress varies nonlinearly along the radial direction of the tubular specimen. As introduced above, according to ASTM E2207 \cite{ASTME2207}, the assumption of a uniformly distributed shear stress is recommended. The shear stresses reported in the TMF tests are calculated by Equation (\ref{Equ:shear_stress}). The effect of temperature variation on shear strain measurement can be neglected \cite{Bakis2014}. Consequently, the compensation of torsional thermal strain is not performed in the present work. The shear strains are obtained directly from the measurement results by the extensometer.
 
 % 本研究的TMF试验包括IP，OP和90$^\circ$相位，其中IP和OP条件下的载荷加载波形如图\ref{Fig:Thermomechanical_phase}所示。
 % 对于应变控制模式下的TMF试验，为了控制相位恒定并避免试样产生热应力，因此，在试验中的任意加载时刻都需要进行热应变补偿。补偿的方法分为两种：a）基于温度的应变补偿；b）基于时间的应变补偿。其中，基于温度的补偿方式为目前试验所普遍采用。
-Temperature-induced thermal expansion strain is generally called thermal strain, which is not constant during temperature cycling. Thermal strain will cause additional stress in the strain-controlled TMF test. Therefore, the thermal strain was actively compensated during the strain-controlled TMF test. Two common methods can be employed to compensate for the thermal strain: time-based and temperature-based compensation. In this study, temperature-based compensation was used to achieve the desired mechanical strain. The thermal strain is assumed as a function of specimen temperature:
+Temperature induced thermal expansion strain is generally called thermal strain, which is not constant during temperature cycling. Thermal strain will cause additional stress in the strain-controlled TMF test. Therefore, the thermal strain was actively compensated during the strain-controlled TMF test. Two common methods can be employed to compensate for the thermal strain: time-based and temperature-based compensation. In this study, temperature-based compensation was used to achieve the desired mechanical strain. The thermal strain is assumed as a function of specimen temperature:
 \begin{equation}
 \varepsilon_{\rm{th}}=A_0+A_1 T+A_2 T^2,
 \label{Equ:thermal_strain_fitting}
@@ -866,7 +865,7 @@ Fatigue tests with three different phase angles of the thermal loading and mecha
 
 As shown in \ref{Fig:plot_exp_PROTMF}, the experimental results of the PRO-IP TMF tests show the similar cyclic softening behavior of the uniaxial TC-IP tests and the shear stress response is consistent with the axial stress response. In \ref{Fig:plot_exp_PROTMF}(d) and (f), a decrease of mean stress is present in both axial and hoop directions.
 
-\ref{Fig:plot_exp_NPRTMF} shows the experimental results of NPR-IP TMF tests. Unlike the results of PRO-IP TMF tests, for equivalent strain amplitudes $\geqslant$0.8\%, cyclic hardening was present in the first three cycles in both axial and torsional directions. Afterward, continuous cyclic softening follows for the major part of the fatigue life. Furthermore, compared to the PRO-IP data, both axial and shear stress amplitudes due to the same equivalent strain amplitudes are higher than the case of PRO-IP loading tests, as shown in \ref{Fig:plot_exp_NPRTMF}(d) and (f). Consequently, it was concluded that the additional non-proportional hardening occurred in the mechanical non-proportional loading condition. In \ref{Fig:plot_exp_NPRTMF}(f), dissimilarly to the axial stress cases, the mean shear stress under NPR-IP loading hardly changes.
+\ref{Fig:plot_exp_NPRTMF} shows the experimental results of NPR-IP TMF tests. Unlike the results of PRO-IP TMF tests, for equivalent strain amplitude $\Delta \varepsilon_{\rm eq}/2\geqslant$0.8\%, cyclic hardening was present in the first three cycles in both axial and torsional directions. Afterward, continuous cyclic softening follows for the major part of the fatigue life. Furthermore, compared to the PRO-IP data, both axial and shear stress amplitudes due to the same equivalent strain amplitudes are higher than the case of PRO-IP loading tests, as shown in \ref{Fig:plot_exp_NPRTMF}(d) and (f). Consequently, it was concluded that the additional non-proportional hardening occurred in the mechanical non-proportional loading condition. In \ref{Fig:plot_exp_NPRTMF}(f), dissimilarly to the axial stress cases, the mean shear stress under NPR-IP loading hardly changes.
 
 \begin{figure}[!htp]
   \centering

@@ -231,7 +231,7 @@ where $K'$ is the cyclic strength coefficient and $n'$ is the cyclic strain hard
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=14cm]{plot_monotonic_cyclic_osgood.pdf}
-  \caption{Monotonic and cyclic stress-strain curve with Ramberg-Osgood relationship for Inconel 718.}
+  \caption{Monotonic and cyclic stress-strain curves with Ramberg-Osgood relationship for Inconel 718.}
   \label{Fig:plot_monotonic_cyclic_osgood}
 \end{figure}
 
@@ -475,7 +475,7 @@ k_0 =  {\frac{{\frac{{{{\tau '}_{\rm f}}}}{G}{{\left( {2{N_{\rm f}}} \right)}^{{
 
 \subsection{Smith-Watson-Topper model}
 \noindent
-The SWT model \cite{Socie2000} is based on the principal strain range and the maximum stress on the plane of the principal
+The SWT model \cite{smith1970stress} is based on the principal strain range and the maximum stress on the plane of the principal
 strain range, that is,
 \begin{equation}
 {\sigma _{\rm n, \max}}\frac{{\Delta \varepsilon }}{2} = \frac{{{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + {\sigma '_{\rm f}}{\varepsilon '_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
@@ -484,7 +484,7 @@ strain range, that is,
 
 \subsection{Liu's strain energy models}
 \noindent
-The normal strain energy based model suggested by Liu \cite{Socie2000} can be written as
+The normal strain energy based model suggested by Liu \cite{Liu1993} can be written as
 \begin{equation}
 {\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)_{\max }} + \left( {\Delta \tau \Delta \gamma } \right) = \frac{{4{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + 4{{\sigma '}_{\rm f}}{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
 \label{Equ:Liu1_model}
@@ -498,7 +498,7 @@ The critical plane is calculated from the shear strain energy.
 
 \subsection{Chu-Conle-Bonnen model}
 \noindent
-An additional energy-based fatigue model suggested by Chu et al. \cite{Socie2000} is expressed as
+An additional energy-based fatigue model suggested by Chu et al. \cite{Chu1993} is expressed as
 \begin{equation}
 {\left( {{\tau _{\rm n}}\frac{{\Delta \gamma }}{2} + {\sigma _{\rm n }}\frac{{\Delta \varepsilon }}{2}} \right)_{\max }} = 1.02\frac{{{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + 1.04{{\sigma '}_{\rm f}}{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
 \label{Equ:CCB_model}
@@ -522,7 +522,7 @@ If the coordinate system is changed due to a rotation so do the tensor component
 \begin{figure}
 \centering
 \includegraphics[width=10cm]{rotation_of_coordinate.pdf}
-\caption{Rotation of the Cartesian coordinate system.}
+\caption{Rotations of the Cartesian coordinate system.}
 \label{Fig:rotation_of_coordinate}
 \end{figure}
 \ref{Fig:rotation_of_coordinate} shows the original Cartesian coordinate system ($x_1,x_2,x_3$) and the new coordinate system ($x'_1,x'_2,x'_3$).
@@ -778,7 +778,7 @@ with the result of fatigue life $N_{\rm{p}}$=231 cycles.
 As shown in \ref{Fig:plot_values_with_angle}(b), for the Fatemi-Socie's model, the maximum value of the shear strain range is also found on the plane with the angle $\varphi=0^\circ$, with the corresponding maximum normal stress ${{\sigma _{{\rm{n}},\max }}}$=780.4 MPa.
 Then the fatigue damage parameter of Fatemi-Socie's model can be calculated as:
 \[{p_{{\rm{FS}}}} = \frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{{\rm{n}},\max }}}}{{{\sigma _y}}}} \right){\rm{ = }}\frac{{0.02416}}{2}\left( {1 + {\rm{0}}{\rm{.214}} \times \frac{{780.4}}{{1064}}} \right) = 0.013935,\]
-where the constant $k$ is obtained by Equation (\ref{Equ:k_in_FS_model}) as 0.214, and ${\sigma _y}$ is the yield stress which can be found in Table \ref{tab:General_material_mechanical_properties}.
+where the constant $k$ is obtained by Equation (\ref{Equ:k_in_FS_model}) as 0.214, and ${\sigma _{\rm y}}$ is the yield stress which can be found in Table \ref{tab:General_material_mechanical_properties}.
 The fatigue life is computed from Equation (\ref{Equ:FS_model}):
 \[0.013935 = \frac{{{{\tau '}_{\rm f}}}}{G}{\left( {2{N_{\rm f}}} \right)^{{b_0}}} + {{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{{c_0}}},\]
 and the fatigue life $N_{\rm{p}}$=294 cycles.
@@ -946,43 +946,37 @@ Whereas the fatigue life models are essentially based on the material properties
 \noindent
 All the models presented in the previous sections are based on isothermal fatigue tests. Effects of varying temperature are not considered directly. Thermomechanical fatigue tests reveal that the material failure depends on interactions between temperature and mechanical stresses. For instance, the stress variation in TMF is asymmetric even for symmetric strain-controlled tests with $R_{\varepsilon}=-1$. It follows that the mean stress varies with loading progress. To clarify thermomechanical fatigue, it is necessary to include more details from the TMF tests into the fatigue life model.
 
-\subsection{The modified strain energy model for thermomechanical fatigue}
-\noindent
+% \subsection{The modified strain energy model for thermomechanical fatigue}
+% \noindent
 % 由于热机械疲劳实验对设备要求较高并且需要耗费较多的人力、时间以及实验经费，目前为止材料的热机械疲劳数据相当有限。因此，如果能够采用相对容易实现的等温低周疲劳来预测热机械疲劳的寿命将产生巨大的经济效益。为了探索Inconel 718合金利用等温疲劳数据预测热机械寿命的可行性，在本研究中选取了几种常用的多轴疲劳寿命预测模型。在这一部分将着重介绍将等温疲劳数据代入上述三种模型中进行热机械疲劳寿命预测的结果并对其寿命预测能力进行比较。
 % 在本节中，对单轴等温和热机械疲劳测试以及所有应力状态下的双轴平面等温疲劳测试都给出了寿命预测。 因此，应用了文献的寿命模型，并提出了基于应力-应变方法的新的寿命模型。
-The experimental data of running time, stress, strain and temperature at half number of cycles to failure were used to determine lifetimes.
-Based on the above discussion of the experimental results, thermomechanical loading will result in the evolution of the mean stress even for a mechanical strain ratio $R_{\varepsilon}=-1$. Therefore, the stress ratio ${R_\sigma }$ is defined as:
+The material under TMF loading reveals different mechanical behavior, as discussed in the previous sections. 
+The experimental data of the stress, strain and temperature of the half life cycle were used to determine lifetimes.
+Based on the above discussion of the experimental results, thermomechanical loading  will result in the evolution of the mean stress even for mechanical strain ratio $R_{\varepsilon}=-1$. The stress ratio,
 \begin{equation}
 {R_\sigma } = \frac{{{\sigma _{\rm n,\max }} - \Delta {\sigma _{\rm n}}}}{{{\sigma _{\rm n,\max }}}},
 \end{equation}
-as expected, under isothermal loading conditions ${R_\sigma }=-1$, under in-phase thermomechanical loading conditions ${R_\sigma }<-1$ and under out-of-phase thermomechanical loading conditions ${R_\sigma }>-1$.
-Socie \cite{Socie2000} proposed a Walker-like correction term \cite{Walker1970} to account the mean stress dependency for Liu's Model I virtual strain energy model as:
+is equal to $R_{\varepsilon}$ under isothermal loading. Due to changes of the stress-strain curve for different temperature, $R_{\varepsilon}\ne R_{\sigma}$. Under in-phase thermomechanical loading conditions ${R_\sigma }<-1$ and under out-of-phase thermomechanical loading conditions ${R_\sigma }>-1$.
+Socie \cite{Socie2000} proposed a Walker-like correction term \cite{Walker1970} to account the mean stress dependency for Liu's Model I virtual strain energy model, as
 \begin{equation}
 \left[ {{{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)}_{\max }} + \left( {\Delta \tau \Delta \gamma } \right)} \right]\left( {\frac{2}{{1 - {R_\sigma }}}} \right)
 = \frac{{4{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + 4{{\sigma '}_{\rm f}}{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
 \label{Equ:LiuModelwithStressRatio}
 \end{equation}
 
-V\"{o}se \cite{Vose2013} proposed a phenomenological fatigue model to approach both isothermal and thermomechanical lifetime of Inconel 718. They introduced an Arrhenius-like time integral to describe the viscous deformation effects as:
-\begin{equation}
-{\left( {1 + {C_5}\int {\exp \left[ {\frac{{ - Q}}{{RT}}} \right]} {\rm{d}}t} \right)^k}.
-\end{equation}
-
+Effects of temperature were not considered in the modification. In fact, temperature changes thermal expansion and affects tension strain energy. 
+Based on such considerations, Equation (\ref{Equ:LiuModelwithStressRatio}) is modified into
+% V\"{o}se \cite{Vose2013} proposed a phenomenological fatigue model to approach both isothermal and thermomechanical lifetime of Inconel 718. They introduced an Arrhenius-like time integral to describe the viscous deformation effects as:
 % \begin{equation}
-% \begin{aligned}
-% \Delta {\varepsilon _{mech}}{\left( {1 - {R_\sigma }} \right)^{m - 1}}{2^{1 - m}}{\left( {1 + {C_5}\int {\exp \left[ {\frac{{ - Q}}{{RT}}} \right]} {\rm{d}}t} \right)^k}\\
-%  = {C_1}{\left( {{N_{\rm f}}} \right)^{{C_2}}} + {C_3}{\left( {{N_{\rm f}}} \right)^{{C_4}}}
-% \end{aligned}
+% {\left( {1 + {C_5}\int {\exp \left[ {\frac{{ - Q}}{{RT}}} \right]} {\rm{d}}t} \right)^k}.
 % \end{equation}
-
-A new lifetime model based on the Liu's Model I virtual strain energy approach is presented as:
 \begin{equation}
 \left[ {A{{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)}_{\max }} + B\left( {\Delta \tau \Delta \gamma } \right)} \right]\left( {\frac{2}{{1 - {R_\sigma }}}} \right)
 = \frac{{4{{\sigma '}_{\rm f}}^2}}{E}{\left( {2{N_{\rm f}}} \right)^{2b}} + 4{{\sigma '}_{\rm f}}{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{b + c}}.
 \label{Equ:TMF_model}
 \end{equation}
-In Equation (\ref{Equ:TMF_model}), $A$ is a correction term according to the virtual tension strain energy ${{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)}_{\max }}$ and $B$ is a material constant in regard to the virtual shear strain energy ${\Delta \tau \Delta \gamma }$.
-As discussed in Ref.\cite{Vose2013}, the correction term A is defined as:
+Above $A$ is a correction term for the tension strain energy ${{\left( {\Delta {\sigma _{\rm n}}\Delta {\varepsilon _{\rm n}}} \right)}_{\max }}$ and $B$ is the weight factor for the shear strain energy ${\Delta \tau \Delta \gamma }$.
+As discussed by V\"{o}se \cite{Vose2013}, the correction term A is defined as
 \begin{equation}
 A = {\left[ {1 + C\int_{{t_0}}^{{t_0} + {t_{cyc}}} {\eta \left( t \right)\exp \left( {\frac{{ - Q\left( t \right)}}{{RT\left( t \right)}}} \right){\rm{d}}t} } \right]^k},
 \label{Equ:A}
@@ -994,7 +988,7 @@ Q\left( t \right) = {Q_0} - \upsilon _0^*{\sigma _{\rm n}}\left( t \right)\left(
 \label{Equ:creep_activation_energy}
 \end{equation}
 where $Q_0$ is the intrinsic activation energy, $\upsilon _0^*$ represents the intrinsic activation volume, $\sigma_{\rm ult}$ is the ultimate stress at the maximum temperature and $\sigma_{\rm n}(t)$ is the normal stress of the critical plane.
-As given in \cite{Warren2008}, the activation energy $Q_0$ is set to the value of 240 kJ/mol and the intrinsic activation volume $\upsilon _0^*$ is used the value of $3.51\times10^{-4}$ $\rm{m}^{3}/\rm{mol}$. The ultimate strength $\sigma_{\rm{ult}}$ of Inconel 718 at 650$^\circ$C was measured under monotonic tensile tests as $1305$ MPa. The constants $k$, $B$ and $C$ are determined by the optimization method to minimize the life prediction mean-squared error. Finally, $k$ is set to 1.2, $B$ is set to 0.49 and $C$ is set to $1.29\times10^{12}$ $\rm{s}^{-1}$.
+As given in the Ref. \cite{Warren2008}, the activation energy $Q_0$ is set to the value of 240 kJ/mol and the intrinsic activation volume $\upsilon _0^*$ is used the value of $3.51\times10^{-4}$ $\rm{m}^{3}/\rm{mol}$. The ultimate strength $\sigma_{\rm{ult}}$ of Inconel 718 at 650$^\circ$C was measured under monotonic tensile tests as $1305$ MPa. The constants $k$, $B$ and $C$ are determined by the optimization method to minimize the life prediction mean-squared error. Finally, $k$ is set to 1.2, $B$ is set to 0.49 and $C$ is set to $1.29\times10^{12}$ $\rm{s}^{-1}$.
 
 % $Q_0$ = (240 kJ/mol)
 % $\upsilon _0^*$ = ($3.75\times10^{-4}\rm{m}^{3}/\rm{mol}$)
@@ -1025,18 +1019,44 @@ As given in \cite{Warren2008}, the activation energy $Q_0$ is set to the value o
   \label{fig:PresentModel}
 \end{figure}
 
-\ref{fig:PresentModel} shows the life assessment of the multiaxial TMF tests. In \ref{fig:PresentModel}(a), the fatigue damage parameters versus experimental fatigue lifetimes is displayed. The fatigue damage parameters show good correlation with experimental fatigue lifetimes under uniaxial TMF loading case as well as proportional and non-proportional TMF loading cases. In \ref{fig:PresentModel}(b), one can observe that based on the proposed model, most of the predicted fatigue lifetimes are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lifetimes.
+% \ref{fig:PresentModel} shows the life assessment of the multiaxial TMF tests. In \ref{fig:PresentModel}(a), the fatigue damage parameters versus experimental fatigue lifetimes is displayed. The fatigue damage parameters show good correlation with experimental fatigue lifetimes under uniaxial TMF loading case as well as proportional and non-proportional TMF loading cases. In \ref{fig:PresentModel}(b), one can observe that based on the proposed model, most of the predicted fatigue lifetimes are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lifetimes.
 
-\ref{Fig:plot_fatigue_life_quantitative_evaluation_tmf} shows a quantitative assessment of fatigue life prediction results. The comparison between calculated $N_{\rm{p}}$ and experimental $N_{\rm{f}}$ fatigue lives has been made by means of two statistical parameters. The first of them is a mean dispersion of fatigue life:
-\[{T_{\rm{N}}} = {10^{\bar E}},\]
-where $\bar E$ is given by:
-\[\bar E = \frac{1}{n}\sum\limits_{i = 1}^n {\log \left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)}. \]
-where n is a number of the compared results. The second parameter is a life prediction mean-squared error
-\[{T_{\rm{RMS}}} = {10^{{E_{\rm{RMS}}}}},\]
-where $E_{RMS}$ is given by:
-\[{E_{\rm{RMS}}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\log }^2}\left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)} }. \]
+\ref{fig:PresentModel} shows the life assessment of the multiaxial TMF tests based on the suggested life model (Equation (\ref{Equ:TMF_model})). In \ref{fig:PresentModel}(a), the fatigue damage parameter versus experimental fatigue lifetime is displayed. The fatigue damage parameter shows a good correlation with the experimental fatigue lifetime under uniaxial TMF loading case as well as proportional and non-proportional TMF loading conditions. In \ref{fig:PresentModel}(b), one can observe that, based on the proposed model, most of the predicted fatigue lifetimes are within the scatter band with a factor of 2. It shows a good agreement with the experimental and predicted fatigue lifetimes.
 
-$T_{\rm{N}}$ equals 1 when mean experimental and calculated fatigue lives are equal; more than 1 when the experimental life values are higher than the calculated ones; lower than 1 when the experimental life values are lower than the calculated ones. The $T_{\rm{N}}$ quantity is insensitive to the dispersion of life. It can assume the same value for the results with low and high statistical dispersion. Quantity $T_{\rm{RMS}}$ is a measure of statistical dispersion. It assumes the value equal to 1 when the mean and the statistical dispersion of experimental and computational life are identical. It is higher than 1 in other cases. $T_{\rm{RMS}}$ does not provide any information on whether the computational life is higher or lower than the experimental one.
+% \ref{Fig:plot_fatigue_life_quantitative_evaluation_tmf} shows a quantitative assessment of fatigue life prediction results. The comparison between calculated $N_{\rm{p}}$ and experimental $N_{\rm{f}}$ fatigue lives has been made by means of two statistical parameters. The first of them is a mean dispersion of fatigue life:
+% \[{T_{\rm{N}}} = {10^{\bar E}},\]
+% where $\bar E$ is given by:
+% \[\bar E = \frac{1}{n}\sum\limits_{i = 1}^n {\log \left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)}. \]
+% where n is a number of the compared results. The second parameter is a life prediction mean-squared error
+% \[{T_{\rm{RMS}}} = {10^{{E_{\rm{RMS}}}}},\]
+% where $E_{RMS}$ is given by:
+% \[{E_{\rm{RMS}}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {{{\log }^2}\left( {\frac{{{N_{{\rm{f}},i}}}}{{{N_{{\rm{p}},i}}}}} \right)} }. \]
+
+% $T_{\rm{N}}$ equals 1 when mean experimental and calculated fatigue lives are equal; more than 1 when the experimental life values are higher than the calculated ones; lower than 1 when the experimental life values are lower than the calculated ones. The $T_{\rm{N}}$ quantity is insensitive to the dispersion of life. It can assume the same value for the results with low and high statistical dispersion. Quantity $T_{\rm{RMS}}$ is a measure of statistical dispersion. It assumes the value equal to 1 when the mean and the statistical dispersion of experimental and computational life are identical. It is higher than 1 in other cases. $T_{\rm{RMS}}$ does not provide any information on whether the computational life is higher or lower than the experimental one.
+
+\ref{Fig:plot_fatigue_life_quantitative_evaluation_tmf} shows a quantitative assessment of fatigue life prediction results. According to the Refs. \cite{KAROLCZUK201439,WALAT201473,SKIBICKI201718}, two statistical parameters are used to evaluate the conformity of the predicted $N_{\rm p}$ and experimental $N_{\rm f}$ fatigue lives. The mean scatter of fatigue life,
+\begin{equation}
+{T_{\rm N}} = {10^{\bar E}}
+\label{Equ:TN}
+\end{equation}
+with
+\begin{equation}
+\bar E = \frac{1}{n}\sum\limits_{i = 1}^n {\log \left( {\frac{{{N_{{\rm f},i}}}}{{{N_{{\rm p},i}}}}} \right)},
+\end{equation}
+illustrates the comparison of the mean value of experimental and predicted lives. Above $n$ is the total number of the compared results, and the subscript $i$ indicates the $i$th. result. $T_{\rm N} = 1$ shows the mean value of experimental and predicted lives are identical. $T_{\rm N} > 1$ means the predicted fatigue lives are conservative, and $T_{\rm N} < 1$ means the predicted fatigue lives are non-conservative. The statistical parameter $T_{\rm N}$ does not provide any information on the dispersion of fatigue life.
+
+The other parameter is the root mean square error of the fatigue life,
+\begin{equation}
+{T_{\rm RMS}} = {10^{{E_{\rm RMS}}}},
+\label{Equ:TRMS}
+\end{equation}
+with
+\begin{equation}
+{E_{\rm RMS}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {\left[{{\log }}\left( {\frac{{{N_{{\rm f},i}}}}{{{N_{{\rm p},i}}}}} \right) \right]^2}}.
+\end{equation}
+The root mean square error is applied to measure the differences between fatigue lives obtained from predictions and the results from experiments. $T_{\rm RMS} = 1$ represents the mean value and the statistical dispersion of experimental and predicted lives are equal. In other cases, $T_{\rm RMS}$ is larger than 1, and the larger value of $T_{\rm RMS}$ represents the more dispersion between the experimental and predicted lives.
+
+The results in \ref{Fig:plot_fatigue_life_quantitative_evaluation_tmf} illustrate that the Zamrik model generates the best mean value in comparing with all other models, while the present model possesses the least scattering. Combining the two parameters, the present model provides the best result in predicting the fatigue life for all experiments.
 
 \begin{figure}[!htp]
 \centering
@@ -1046,11 +1066,11 @@ $T_{\rm{N}}$ equals 1 when mean experimental and calculated fatigue lives are eq
 \begin{overpic}[width=8.0cm]{plot_fatigue_life_quantitative_evaluation_tmf_TRMS.pdf}
 \put(14,65){\fcolorbox{white}{white}{(b)}}
 \end{overpic}
-\caption{The quantitative evaluation of the fatigue life prediction results: (a) $T_{\rm{N}}$, (b) $T_{\rm{RMS}}$.}
+\caption{The quantitative evaluation of the TMF life prediction results: (a) $T_{\rm{N}}$, (b) $T_{\rm{RMS}}$.}
 \label{Fig:plot_fatigue_life_quantitative_evaluation_tmf}
 \end{figure}
 
-\section{Summaries}
+\section{Summary}
 \noindent
 % This chapter has described the experimental facility of non-proportional thermomechanical fatigue tests. 
 In this chapter, the Nickel-based superalloy Inconel 718 was investigated experimentally and computationally under 650$^\circ$C isothermal and 300$^\circ$C to 650$^\circ$C thermomechanical loading conditions with proportional and non-proportional mechanical loading paths. The main summaries are as follows:
