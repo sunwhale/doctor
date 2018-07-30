@@ -122,7 +122,7 @@ For experiments which are conducted at different temperatures, Young's modulus, 
 % It is obvious that with the increase of temperature, the Young's modulus and shear modulus show a certain decline.
 \ref{Fig:plot_elastic_by_temperature_in718} shows variations of elasticity modulus, shear modulus and Poisson's ratio as functions of temperature. The curves are independent of mechanical loading. The Young's modulus and shear modulus are observed to decrease with the increasing temperature. However, the Poisson's ratio does not vary monotonically with temperature.
 
-Cubic polynomials are proposed to fit the Young's modulus and Poisson's ratio (see the solid and dash line in the \ref{Fig:plot_elastic_by_temperature_in718}).
+Cubic polynomials are proposed to fit the Young's modulus and Poisson's ratio (see the solid line in the \ref{Fig:plot_elastic_by_temperature_in718}).
 The advantage of the cubic polynomial is the good precision and the efficiency in programming.
 In the temperature range 20$^{\circ}$C to 700$^{\circ}$C, the values of Young's modulus $E$ and Poisson's ratio $\nu$ of Inconel 718 can be calculated as:
 \begin{equation}
@@ -183,12 +183,12 @@ r_0^k = \left( {\frac{{\sigma _{}^k - \sigma _{}^{k - 1}}}{{\varepsilon _{\rm{p}
 \end{equation}
 % where $\sigma^k( k = 0,1,2,...,M+1 )$ and $\varepsilon_p^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$-th point on the monotonic tensile stress vs. plastic strain curve, $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_p^0=0$.
 % For example, we select M points from the uniaxial tensile stress strain curve at 650$^\circ$C (see \ref{Fig:Determine_the_basic_material_constants}), and M=9 is found to represent the curve well.
-where $\sigma^k$ and $\varepsilon_{\rm p}^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$-th point on the monotonic  stress-plastic strain curve, respectively. $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_{\rm p}^0=0$. Generally, the uniaxial tensile stress-strain curve is represented in $M$ intervals, as shown in \ref{Fig:Determine_the_basic_material_constants}. In the present work, $M=9$ is proposed.
+where $\sigma^k$ and $\varepsilon_{\rm p}^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$-th point on the monotonic stress-plastic strain curve, respectively. $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_{\rm p}^0=0$. Generally, the uniaxial tensile stress-strain curve is represented in $M$ intervals, as shown in \ref{Fig:Determine_the_basic_material_constants}. In the present work, $M=9$ is proposed.
 
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=14cm]{Determine_the_basic_material_constants.pdf}
-  \caption{The material constants $\zeta^k$ and $r_0^k$ are determined by monotonic tensile stress-strain curves of Inconel 718 at 650$^\circ$C.}
+  \caption{The material constants $\zeta^k$ and $r_0^k$ are determined by the monotonic tensile stress-strain curve.}
   \label{Fig:Determine_the_basic_material_constants}
 \end{figure}
 
@@ -213,7 +213,7 @@ and function $f_{\rm{dec}}(\sigma,\varepsilon)$ is the alternating stress and st
 f_{\rm{dec}}(\sigma,\varepsilon)=|2\sigma-\sigma_{\max}|-|2\varepsilon-\varepsilon_{\max}|=0,
 \label{Equ:f_dec}
 \end{equation}
-where $\sigma_{\min}$ and $\sigma_{\max}$ are the minimum value for increasing stress part and the maximum value for decreasing stress part.
+where $\sigma_{\min}$ and $\sigma_{\max}$ are the minimum value of increasing stress part and the maximum value of decreasing stress part.
 
 By combining Equations (\ref{Equ:f_inc}) and (\ref{Equ:f_dec}) together we obtain the final alternating stress and strain curve, as illustrated in \ref{Fig:Alternating_Curve}:
 \begin{equation}
@@ -222,7 +222,7 @@ f(\sigma,\varepsilon)=\frac{1}{2}(f_{\rm{inc}}\left(\sigma,\varepsilon)+f_{\rm{d
 \begin{figure}[!htp]
 \centering
   \includegraphics[width=14cm]{plot_alternating_curve.pdf}
-  \caption{Calculation of the alternating stress-strain curve from the hysteresis loop at 650$^\circ$C.}
+  \caption{Calculation of the alternating stress-strain curve from the hysteresis loop.}
   \label{Fig:Alternating_Curve}
 \end{figure}
 % By combining Equation \ref{Equ:rk1} and \ref{Equ:rdeltak1}, $r^k$ can be expressed as:
@@ -241,7 +241,7 @@ f(\sigma,\varepsilon)=\frac{1}{2}(f_{\rm{inc}}\left(\sigma,\varepsilon)+f_{\rm{d
 \begin{figure}[!htp]
 \centering
 \includegraphics[width=14cm]{Determine_rsk.pdf}
-\caption{The material constants $r_{\rm{s}}^k$ and $r_{\Delta \rm{s}}^k$ are determined by monotonic tensile and calculated alternating stress-strain curves of Inconel 718 at 650$^\circ$C.}
+\caption{The material constants $r_{\rm{s}}^k$ and $r_{\Delta \rm{s}}^k$ are determined by the monotonic tensile and calculated alternating stress-strain curves.}
 \label{Fig:Determine_rsk}
 \end{figure}
 % From the calculated alternating stress-strain curve the same procedure for determining the material constants $\zeta^k$ and $r_0^k$ are used to determine the saturated values $r^k_{\rm{s}}$ and $r^k_{\Delta \rm{s}}$.

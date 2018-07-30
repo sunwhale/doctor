@@ -56,6 +56,7 @@
 \usepackage{caption}
 \usepackage{mathrsfs}
 \usepackage{array}
+\usepackage{color,xcolor}
 \input{package}
 \input{pythonlisting}
 
@@ -173,7 +174,7 @@
 % \renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
 % \renewcommand\subsectionmark[1]{\markright{\thesubsection\ #1}}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
-\renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
+\renewcommand\sectionmark[1]{\markright{#1}}
 \renewcommand\subsectionmark[1]{\markright{\thesubsection\ #1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents                         % table of contents
@@ -181,7 +182,7 @@
 \listoffigures
 \include{symbols/symbols}                % list of symbols (if required)
 % \include{abbreviations/abbreviations}    % list of abbreviations (if required)
-
+\renewcommand\sectionmark[1]{\markright{\thesection\ #1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
