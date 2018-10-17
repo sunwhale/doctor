@@ -94,8 +94,8 @@ The specimen was heated to a specific temperature and held an hour to ensure tha
 For each temperature, the specimen was loaded and unloaded below one-third of the yield stress.
 The stress-strain curves at different temperatures are shown in \ref{Fig:E_Test_Show}, where the horizontal axial is the total logarithmic strain and the vertical axial is the true stress.
 Young's modulus can be obtained by computing the slope of the stress-strain curves.
-
-Shear modulus can be obtained by pure torsional tests, and the solid specimen was used.
+ 
+Shear modulus can be obtained by pure torsional tests, and the solid specimen (see \ref{Fig:Specimen}) was used.
 The experiential procedure was similar to the test procedure for measuring Young's modulus at different temperatures.
 Under elastic loading conditions, shear stress varies linearly through the section of the specimen.
 The maximum shear stress occurs at the outer diameter of the specimen can be obtained as:
@@ -316,7 +316,10 @@ Results in \ref{Fig:plot_determination_of_rk} reveal significant deviations betw
 % Similar to most constitutive models, we need series of parameters in describing the mechanical behavior of the material under different temperatures.
 % According to the isothermal uniaxial monotonic tension tests and the cyclic stress-strain hysteresis curve, we can obtain the material constants of Inconel 718 at 300$^\circ$C, 550$^\circ$C and 650$^\circ$C as shown in Table \ref{tab:General_material_mechanical_properties} and Table \ref{tab:3}, where $k=9$ is prescribed in order to simulate the cyclic hard/softening more accurately.
 In this section, the model parameters are determined under isothermal conditions.
-Temperature dependency of material parameters should be considered when anisothermal cyclic tests are calculated.
+% Temperature dependency of material parameters should be considered when anisothermal cyclic tests are calculated.
+As mentioned in chapter 3, under the low temperature rate, the temperature derivative item is neglected.
+And the computational results show a good agreement with the experimental results without the temperature derivative item.
+It can be concluded that the proposed constitutive model can generate a reasonable stress strain response with the temperature rate lower than 3.89$^\circ$C/s. For the high temperature rate computations, further experiments and modifications of the model are needed.
 According to isothermal uniaxial monotonic tension tests and cyclic stress-strain hysteresis curves at different temperatures, the material constants at 300$^\circ$C, 550$^\circ$C and 650$^\circ$C are identified and summarized and Table \ref{Tab:ModelParameters} with $M=9$. 
 In the present constitutive model, the parameters $\mu$, $\gamma_{\rm{p}}$, $\gamma_{\rm{q}}$, $Y_{\Delta {\rm{sat}}}$ and $c_c$ are assumed to be temperature independent, while the parameters $E$, $\nu$, $r_0^k$, $r_{\Delta \rm{s}}^k$, $a_1^k$, $b_1^k$ and $b_2^k$ are considered as the temperature dependent parameters.
 As introduced above, the Young's modulus $E$ and Poisson's ratio $\nu$ of Inconel 718 can be calculated by the cubic polynomials (see Equation (\ref{Equ:polynomial_of_E}) and (\ref{Equ:polynomial_of_nu})).
@@ -324,11 +327,15 @@ As introduced above, the Young's modulus $E$ and Poisson's ratio $\nu$ of Incone
 The temperature dependent parameters $r_0^k$, $r_{\Delta \rm{s}}^k$, $a_1^k$, $b_1^k$ and $b_2^k$ in the present constitutive model are plotted in \ref{Fig:plot_umat_parameters}. In \ref{Fig:plot_umat_parameters}(a) and (b), the parameters $r_0^k$ and $r_{\Delta \rm{s}}^k$ show a monotonic decrease with the temperature increase. And as shown in \ref{Fig:plot_umat_parameters}(c) and (d), $a_1^k$ increases with the increasing temperature while $b_1^k$ decreases with the increasing temperature and the variation of $b_2^k$ with temperature are not monotonous.
 
 Becker and Hackenberg \cite{Becker2011596} proposed that the temperature dependent parameters $p_T$ can be interpolated between $T_1$ and $T_2$ according to
-\[p_T = {10^{{{\log }_{10}}\left[ {{p_{{T_1}}}} \right] + \frac{{{{\log }_{10}}\left[ {{p_{{T_1}}}/{p_{{T_2}}}} \right]}}{{{{\log }_{10}}\left[ {{T_2}/{T_1}} \right]}}{{\log }_{10}}\left[ {T/{T_1}} \right]}},\]
+\begin{equation}
+p_T = {10^{{{\log }_{10}}\left[ {{p_{{T_1}}}} \right] + \frac{{{{\log }_{10}}\left[ {{p_{{T_1}}}/{p_{{T_2}}}} \right]}}{{{{\log }_{10}}\left[ {{T_2}/{T_1}} \right]}}{{\log }_{10}}\left[ {T/{T_1}} \right]}},
+\end{equation}
 where ${{p_{{T_1}}}}$ is the parameter value at $T_1$ and ${{p_{{T_2}}}}$ is the parameter value at $T_2$.
 
 However, in the present constitutive model, the linear relationship can be observed between the most parameters and temperature, as shown in \ref{Fig:plot_umat_parameters}. Therefore, the temperature dependence of the parameters is suggested to be linearly interpolated in intervals. For an intermediate temperature $T$, the temperature dependent parameters $p_T$ are given by
-\[{p_T} = {p_{{T_1}}} + \frac{{{p_{{T_2}}} - {p_{{T_1}}}}}{{{T_2} - {T_1}}}{T}.\]
+\begin{equation}
+{p_T} = {p_{{T_1}}} + \frac{{{p_{{T_2}}} - {p_{{T_1}}}}}{{{T_2} - {T_1}}}{T}.
+\end{equation}
 
 In order to verify whether the model parameters calculated by the linear interpolation method are appropriate, a tension-compression isothermal fatigue test was carried out at 400$^\circ$C with the strain range of $\pm1.0\%$.
 \ref{Fig:plot_cmp_TCIF400} shows the computational stress-strain response and peak-valley stress curve at the intermediate temperature $T=400^\circ$C by using the linearly interpolated temperature dependent parameters. The computational result shows a good agreement with the experimental result. Consequently, the linear interpolation method is used in the following computations.
@@ -485,13 +492,13 @@ Significant variables of the ABAQUS-UMAT interface used are listed in Table \ref
 \noindent
 In this section, we create the uniaxial tension calculation model and the axisymmetric tension-torsion calculation model in ABAQUS.
 ABAQUS/Standard is a general-purpose finite element program, and the user-defined material model is implemented in user subroutine UMAT.
-As introduced above, the user subroutine UMAT which implemented by the implicit integral algorithm is not only can be used in 1D elements but also can be used in 2D or 3D elements.
+As introduced above, the user subroutine UMAT, which is implemented by the implicit integral algorithm, is not only can be used in 1D elements but also can be used in 2D or 3D elements.
 As shown in \ref{Fig:Compuation_model}, simplifications are introduced.
 %that one 3D element is used in the uniaxial model and 25 2D elements are used in the axisymmetric model.
 The uniaxial calculation can be treated as the one-dimensional problem so only one 3D element is used and the size of the element is $1 \times 1 \times 1$, considering the length unit as the millimeter.
 Similarly, the axisymmetric tension-torsion calculation is a typical biaxial stress state. Therefore the 8-node axisymmetric displacement/temperature element is suitable for this simulation.
-We take out a cross-section in the specimen gauge length with the same inner and outer radius as the hollow round specimen.
-
+We take out an axisymmetric section in the specimen gauge length with the same inner and outer radius as the hollow round specimen.
+In the axisymmetric FE-model, the axial displacement and rotation of the the bottom surface are fixed, and the movement and rotation are loaded on the top surface.
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=16cm]{compuation_model.pdf}
@@ -556,7 +563,7 @@ Along loading and unloading cycles, with evolution of $r_{\rm{s}}^k$ (Equation (
     \begin{overpic}[width=8.0cm]{plot_cmp_150th_life_cycle_TCIF_Circle.pdf}
       \put(84,65){\fcolorbox{white}{white}{(b)}}
     \end{overpic}
-\caption{Comparison between experiments and computations for the isothermal non-proportional cyclic loading path CIRC at 300$^\circ$C, 550$^\circ$C, 650$^\circ$C, respectively. (a) The first loading cycle. (b) The 200th cycle.}
+\caption{Comparison between experiments and computations for the CIR-IF tests at 300$^\circ$C, 550$^\circ$C, 650$^\circ$C, respectively. (a) The first loading cycle. (b) The 200th cycle.}
 \label{Fig:Circle_Exp_Sim}
 \end{figure}
 
@@ -580,11 +587,11 @@ The alloy exhibits an obvious continuous cyclic softening at the higher temperat
     \begin{overpic}[width=8.0cm]{plot_cmp_pv_TCIF_2.pdf}
       \put(84,65){\fcolorbox{white}{white}{(b)}}
     \end{overpic}
-\caption{Peak stress variations for the circular loading path CIRC at 300$^\circ$C, 550$^\circ$C and 650$^\circ$C, respectively. (a) Prediction based on Equation (\ref{Equ:fangrdeltak}) \cite{fang2015cyclic}. (b) The present model.}
+\caption{Peak stress variations for the CIR-IF tests at 300$^\circ$C, 550$^\circ$C and 650$^\circ$C, respectively. (a) Prediction based on Equation (\ref{Equ:fangrdeltak}) \cite{fang2015cyclic}. (b) The present model.}
 \label{Fig:IN718_Isothermal_Axial+-1_PV_Exp_vs_Sim_1}
 \end{figure}
 
-To study effects of the complex non-proportional loading path, stress variations for the loading cross path CROS (\ref{Fig:LoadPath}(d)) are plotted in \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}. Symbols denote experimental record, and solid curves stand for computational predictions. Due to prompt changes in the loading direction, the curves become non-symmetric. In the figure both computational results with and without non-proportional hardening term are present. The obvious disagreement between computations and experiments is observed at the stress peaks. However, the improvement of the non-proportional hardening in the model is significant, as shown in \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}. The non-proportional hardening term is meaningful for the constitutive modeling.
+To study effects of the complex non-proportional loading path, stress variations for the CRO-IF test (\ref{Fig:LoadPath}(d)) are plotted in \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}. Symbols denote experimental record, and solid curves stand for computational predictions. Due to prompt changes in the loading direction, the curves become non-symmetric. In the figure both computational results with and without non-proportional hardening term are present. The obvious disagreement between computations and experiments is observed at the stress peaks. However, the improvement of the non-proportional hardening in the model is significant, as shown in \ref{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}. The non-proportional hardening term is necessary for the constitutive modeling.
 
 \begin{figure}[!htp]
   \centering
@@ -600,7 +607,7 @@ To study effects of the complex non-proportional loading path, stress variations
     \begin{overpic}[width=8.0cm]{plot_cmp_half_life_cycle_XPath_Y200_Mises.pdf}
       \put(16,65){\fcolorbox{white}{white}{(d)}}
     \end{overpic}
-\caption{Comparison between experimental results and computational predictions for the cross loading path CROS at 300$^\circ$C. (a)(c) Without non-proportional hardening term. (b)(d) With the non-proportional hardening factor $Y_{\Delta{\rm{sat}}}$=200 MPa.}
+\caption{Comparison between experimental results and computational predictions of the CRO-IF test at 300$^\circ$C. (a)(c) Without non-proportional hardening term. (b)(d) With the non-proportional hardening factor $Y_{\Delta{\rm{sat}}}$=200 MPa.}
 \label{Fig:IN718_Isothermal_300C_7049_XPath_Exp_vs_Sim}
 \end{figure}
 
@@ -663,7 +670,7 @@ To study effects of the complex non-proportional loading path, stress variations
 \subsection{Uniaxial thermomechanical fatigue tests}
 \noindent
 Under thermomechanical loading conditions, both mechanical loads, and temperature, vary, which cause different deformation and damage mechanisms in the material.
-In the present section both experimental and computational results for the varying temperature between 300$^\circ$C and 650$^\circ$C are considered. Tests are controlled by the tensile and shear strains simultaneously, by a constant given equivalent strain amplitude of 1\%. In computations the model parameters determined for the isothermal cyclic tests are used, that is, the thermomechanical coupling is assumed not to affect the constitutive model explicitly.
+In the present section both experimental and computational results for the varying temperature between 300$^\circ$C and 650$^\circ$C are considered. Tests are controlled by the tensile and shear strains simultaneously, by a constant given equivalent strain amplitude of 1\%. In computations the model parameters determined for the isothermal cyclic tests are used.
 
 In \ref{Fig:TMF_IP} the hysteresis loops of the stabilized stress-strain cycles are shown, in which the in-phase (IP), the out-of-phase (OP) and 90$^\circ$-phase temperature loads are considered, respectively.
 The IP-phase loops show similar features as those of the isothermal loading.
@@ -674,7 +681,7 @@ The stress-strain loops for the stabilized cycles, i.e., the $N_f$/2-th cycle, i
 Furthermore, \ref{Fig:TMF_IP}(b) shows that the peak and valley stress of the computational prediction in comparing with the experiments.
 The peak stresses of all temperature loading phases, i.e., IP, OP and 90$^\circ$-phase, confirm a good agreement between the experiments and computations.
 However, for all valley stresses, the experimental results are observed approximately 50 MPa lower than the predictions.
-The reason is that the yield surface is assumed to be circular in the present constitutive model and the yield surface seems to stiff.
+The reason is that the yield surface is assumed to be circular in the present constitutive model.
 As shown by Gil \cite{Gil1998}, the yield surface of Inconel 718 is a shift to the compression direction as temperature increase from room temperature to 650$^\circ$C.
 
 \begin{figure}[!ht]
@@ -684,7 +691,7 @@ As shown by Gil \cite{Gil1998}, the yield surface of Inconel 718 is a shift to t
   \label{Fig:plot_cmp_mean_TCTMF}
 \end{figure}
 
-The nickel-based superalloy Inconel 718 is essentially cyclically softened, as learned from experiments \cite{Koch85,Morrow88,Socie2000}. From isothermal fatigue, the mean stress with loading ratio $R=-1$ is zero, and the peak-valley values are symmetric, as shown in the previous sections. For $R \ne -1$ the mean stress develops towards zero, regardless of temperature. In TMF the situation changes. In \ref{Fig:plot_cmp_mean_TCTMF} the uniaxial TMF tests with three different phase angles are summarized to have a systematical overview of the thermomechanical behavior of the material. As expected, under strain-controlled uniaxial cyclic loading with mean mechanical strain, all tests show the cyclic softening behavior, as well as the hysteresis loops, reach a stable state with increasing number of cycles. The decreases of the mean stresses were observed in the TC-IP test, whereas for TC-OP the mean stress increases. Due to the symmetry of temperature in the TC-90 (i.e., the temperatures are the same at maximum and minimum axial strain), the mean axial stress becomes stable in the entire life-cycle process. This observation implies that the temperature variation affects the cyclic behavior of the material, which has to be considered in both constitutive modeling and fatigue assessment additionally.
+The nickel-based superalloy Inconel 718 is essentially cyclically softened, as learned from experiments \cite{Koch85,Morrow88,Socie2000}. From isothermal fatigue, the mean stress with loading ratio $R=-1$ is zero, and the peak-valley values are symmetric, as shown in the previous sections. For $R \ne -1$ the mean stress develops towards zero, regardless of temperature. In TMF the situation changes. In \ref{Fig:plot_cmp_mean_TCTMF} the uniaxial TMF tests with three different phase angles are summarized to have a systematical overview of the thermomechanical behavior of the material. As expected, under strain-controlled uniaxial cyclic loading, all tests show the cyclic softening behavior, as well as the hysteresis loops, reach a stable state with increasing number of cycles. The decreases of the mean stresses were observed in the TC-IP test, whereas for TC-OP the mean stress increases. Due to the symmetry of temperature in the TC-90 (i.e., the temperatures are the same at maximum and minimum axial strain), the mean axial stress becomes stable in the entire life-cycle process. This observation implies that the temperature variation affects the cyclic behavior of the material, which has to be considered in both constitutive modeling and fatigue assessment additionally.
 
 %The agreement between the experiments and the computations is obvious.
 
@@ -749,7 +756,7 @@ The nickel-based superalloy Inconel 718 is essentially cyclically softened, as l
 
 \subsection{Multiaxial thermomechanical fatigue tests}
 \noindent
-Multiaxial thermomechanical material behavior was not studied systematically in literature. Effects of multiaxial loads and temperature were not discussed. In the article both proportional loading path PRO (\ref{Fig:LoadPath}(a)) and non-proportional diamond loading path NPR (\ref{Fig:LoadPath}(c)) are investigated. Experimental results are shown in \ref{Fig:TMF_Prop45} and \ref{Fig:TMF_Diamond}, together with computational predictions.
+Multiaxial thermomechanical material behavior was not studied systematically in literature. Effects of multiaxial loads and temperature were not discussed. In the study, both proportional loading path PRO (\ref{Fig:LoadPath}(a)) and non-proportional diamond loading path NPR (\ref{Fig:LoadPath}(c)) are investigated. Experimental results are shown in \ref{Fig:TMF_Prop45} and \ref{Fig:TMF_Diamond}, together with computational predictions.
 
 In both tests, the temperature varies between 300$^\circ$C and 650$^\circ$C, the equivalent mechanical strain amplitude $\Delta\varepsilon_{\rm{eq}}/2=1\%$, the phase angle between axial strain and temperature is zero degree for the in-phase loading (IP).
 The torsional and axial stress curve reveals cyclic softening for all tested multiaxial loading cases.

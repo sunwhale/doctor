@@ -147,7 +147,7 @@ The test system has to be tuned to achieve the experimental requirements so that
 The values of proportional, integral, and derivative gains of the PID controller can be determined by the PID tuning process.
 Especially, for the axial/torsional extensometer, the PID gains have to be carefully tuned.
 It is found that the stability of the strain control loop is dependent on the mass flow of the cooling water.
-The mass flow of the cooling water has to be less than 1.5 l/min. Otherwise, the strain control loop will be instability.
+The mass flow of the cooling water has to be less than 1.5 l/min. Otherwise, the strain control loop will be instable.
 
 The induction heating device is used for isothermal and thermomechanical fatigue tests.
 As shown in \ref{Fig:Equipment}, the inductor is made of copper coil.
@@ -168,7 +168,7 @@ The gauge lengths of the axial and biaxial extensometers are 12 mm and 25 mm, re
 
 \section{Monotonic tensile tests}
 \noindent
-The monotonic tensile test is the fundamental material test in which a specimen is subjected to a controlled tension until failure.
+The monotonic tensile test is the fundamental material test in which a specimen is subjected to a controlled elongation until failure.
 The purpose of the monotonic tensile tests is to determine the fundamental mechanical properties of Inconel 718 for using in the finite element calculations.
 The monotonic tensile tests were performed at 20$^{\circ}$C, 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C.
 The experimental procedure was in accordance with the standard ASTM E21.
@@ -181,7 +181,7 @@ The aim is to ensure the temperature distribution of the specimen has reached eq
 % At the beginning of each test with force kept constant at zero and the specimen was heated to the intended temperature and held on for an hour to ensure the temperature distribution of the specimen became stabilization.
 
 \begin{figure}[!htp]
-\centering{\includegraphics[width=14cm]{Furnace653_1.jpg}}
+\centering{\includegraphics[width=13cm]{Furnace653_1.jpg}}
 \caption{MTS Model 653 resistance furnace.}
 \label{Fig:Furnace653_1}
 \end{figure}
@@ -191,6 +191,7 @@ The aim is to ensure the temperature distribution of the specimen has reached eq
 For the duration of each test, the temperature deviations between the predetermined and measured values were less than $\pm1.5^{\circ}$C.
 The tensile tests were performed under displacement-controlled and the strain rates were about $1.0\times 10^{-4}$ $\rm{s}^{-1}$.
 The extensometer was removed after the axial strain had reached 6\%.
+After that only the actuator displacement and the force were recorded. The fracture elongation was calculated from the actuator displacement.
 The monotonic tensile test conditions are listed in Table \ref{tab:TensionLoadingConditions}.
 \begin{table}[htbp]
   \centering
@@ -229,7 +230,7 @@ Noting that, it is recommended to use true stress $\sigma$ and logarithmic strai
 \end{equation}
 
 \ref{Fig:plot_monotonic_tensile} shows the variation of the Inconel 718 tension stress-strain curves with different temperatures 20$^{\circ}$C, 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C.
-The fundamental material properties of Inconel 718 at different temperatures can be determined from the experimental data, such as Young's modulus, yield strength, ultimate stress and fracture elongation (see Table \ref{tab:General_material_mechanical_properties}).
+The fundamental material properties of Inconel 718 at different temperatures can be determined from the experimental data, such as Young's modulus, yield strength, ultimate tensile stress and fracture elongation (see Table \ref{tab:General_material_mechanical_properties}).
 There is a considerable decline in Young's modulus, yield strength and ultimate stress with the increase of temperature.
 %With the increase of temperature, the Young's modulus and yield strength show a certain decline.
 However, the fracture elongation was insensitivity with the temperature.
@@ -322,7 +323,7 @@ Thus, we have $\gamma = (d/2)\theta/ L_{\rm{g}}$.
 
 Biaxial strain amplitude ratio $\lambda$, is defined as the ratio of the shear strain amplitude $\gamma_{\rm{a}}$ to the axial strain amplitude $\varepsilon_{\rm{a}}$, that is, $\gamma_{\rm{a}}/\varepsilon_{\rm{a}}$.
 
-Axial stress $\sigma$, refers to the engineering stress, which is the ratio of force, $F$, to specimen original cross-sectional area, A, that is, $\sigma=F/A$.
+Axial stress $\sigma$, refers to the engineering stress, which is the ratio of force, $F$, to specimen original cross-sectional area, $A_0$, that is, $\sigma=F/A_0$.
 
 Shear stress $\tau$, refers to engineering shear stress, acting in the orthogonal tangential and axial directions of the gage section and is a result of the applied torsional moment, (Torque) $T$, to the thin-walled tubular specimen. The shear stress, like the shear strain, is always the greatest at the outer diameter. Under elastic loading conditions, shear stress also varies linearly through the thin wall of the tubular specimen. However, under elasto-plastic loading conditions, shear stress tends to vary in a nonlinear fashion. Most strain-controlled axial-torsional fatigue tests are conducted under elasto-plastic loading conditions. Therefore, an assumption of a uniformly distributed shear stress is recommended. The relationship between such shear stress applied to the mean diameter of the gage section and the torsional moment, $T$, is
 \begin{equation}
@@ -334,7 +335,7 @@ where, $\tau$ is the shear stress, $d_{\rm{o}}$ and $d_{\rm{i}}$ are the outer a
 \subsection{Strain paths}
 \noindent
 \ref{Fig:LoadPath} shows schematically and exemplary six fully reversed mechanical strain paths for uniaxial tension-compression (\ref{Fig:LoadPath}(a)), pure torsional (\ref{Fig:LoadPath}(b)), and axial–torsional (\ref{Fig:LoadPath}(c,d,e,f)) tests.
-For convenience, hereafter, the six strain path which shown in \ref{Fig:LoadPath} from (a) to (f) are denoted as 'TC', 'TOR', 'CRO', 'PRO', 'NPR' and 'CIR', respectively.
+For convenience, hereafter, the six strain paths which are shown in \ref{Fig:LoadPath} from (a) to (f) are denoted as 'TC', 'TOR', 'CRO', 'PRO', 'NPR' and 'CIR', respectively.
 \begin{figure}[ht]
   \begin{minipage}[t]{0.33\linewidth}
     \centering
@@ -372,7 +373,7 @@ For convenience, hereafter, the six strain path which shown in \ref{Fig:LoadPath
 \end{figure}
 The strain paths are described by the mechanical strain $\varepsilon_{\rm{mech}}$ and equivalent shear strain $\gamma/\sqrt{3}$ in a cycle.
 \ref{Fig:LoadPath}(c) represents a 45$^\circ$ proportional loading with the ratio $\varepsilon_{\rm{mech}}/(\gamma/\sqrt{3})=1$. \ref{Fig:LoadPath}(e) shows a diamond non-proportional strain path (i.e. the ratio of mechanical strain amplitude and shear strain amplitude is 1). \ref{Fig:LoadPath}(f) shows a circle non-proportional strain path (i.e. the phase between mechanical and torsional strain is 90$^\circ$).
-Loading ratio $R_\varepsilon$ means the ratio of minimum mechanical strain to the maximum mechanical strain in a loading cycle. Under the axial-torsional condition, the loading ratio is calculated from the principal strains.
+Loading ratio $R_\varepsilon$ means the ratio of minimum mechanical strain to the maximum mechanical strain in a loading cycle. Under the axial-torsional condition, the loading ratio is calculated from the axial strains.
 All isothermal LCF tests were carried out with the given loading ratio $R_{\varepsilon}=\varepsilon_{{\rm{mech}},\min}/\varepsilon_{{\rm{mech}},\max}=-1$.
 The tension-compression tests were performed on solid specimens (see \ref{Fig:Specimen}(a)), while the pure torsional, and axial–torsional tests were performed on tubular specimens (see \ref{Fig:Specimen}(b)).
 
@@ -487,7 +488,7 @@ As introduced above, the procedure of axial-torsional test was in accordance wit
 The process of the LCF tests was defined by using an MTS Multipurpose software (MPE).
 The strain path, temperature, strain rate were given to the software.
 Furthermore, a peak/valley compensation (PVC) method was used to obtain an accurate feedback value.
-Failure was deemed to have occurred if the peak load dropped 15\% from its stabilized value. A 30\% load drop in comparing with the stabilized peak value was defined as failure, corresponding to nucleation of macrocracks.
+Failure was deemed to have occurred if the peak load dropped 15\% from its stabilized value. A 30\% load drop in comparing with the stabilized peak value was defined as failure.
 Finally, the tests were stopped at the 200,000 cycle if no failure was detected.
 
 
@@ -567,7 +568,7 @@ It can be observed that Inconel 718 occurred cyclic softening at 650$^\circ$C fo
   \begin{overpic}[width=8.0cm]{plot_exp_pv_CIRC-IF_torsional.pdf}
   \put(84,13){(d)}
   \end{overpic}
-  \caption{Experimental results of isothermal circle path tests at temperatures 300$^\circ$C, 550$^\circ$C, and 650$^\circ$C: (a) axial stress-strain loops, (b) axial peak-valley stresses, (c) torsional stress-strain loops, (d) torsional peak-valley stresses.}
+  \caption{Experimental results of CIR-IF tests at temperatures 300$^\circ$C, 550$^\circ$C, and 650$^\circ$C: (a) axial stress-strain loops, (b) axial peak-valley stresses, (c) torsional stress-strain loops, (d) torsional peak-valley stresses.}
   \label{Fig:plot_exp_pv_CIRC-IF}
 \end{figure}
 
@@ -669,11 +670,11 @@ According to these standards, some concepts are defined as follows:
   %     As shown in \ref{Fig:Thermomechanical_phase}, the vertical coordinates are strain $\varepsilon$ and temperature $T$.
   \item {\em Thermal strain}, $\varepsilon_{\rm{th}}$, is induced by temperature and assumed to be linear proportional to temperature increment,
   \begin{equation}
-  \varepsilon_{\rm{th}}=\alpha\Delta T.
+  \varepsilon_{\rm{th}}=\alpha\left(T\right)\Delta T.
   \label{Equ:thermal_strain}
   \end{equation}
   The thermal strain is generally isotropic.
-  \item {\em Mechanical strain}, $\varepsilon_{\rm{mech}}$, is resulting from applied load and directly related with material deformation and damage. Under tension-torsion loading conditions, the mechanical deformation in testing is characterized by the maximum principal strain.
+  \item {\em Mechanical strain}, $\varepsilon_{\rm{mech}}$, is resulting from applied load and directly related with material deformation and damage. Under tension-torsion loading conditions, the mechanical deformation in testing is characterized by the maximum axial strain.
   \item {\em Total strain}, $\varepsilon_{\rm{tot}}$, is measured by the extensometer and denotes the sum of the thermal and mechanical strains,
   \begin{equation}
   \varepsilon_{\rm{tot}}=\varepsilon_{\rm{mech}}+\varepsilon_{\rm{th}}.
@@ -684,13 +685,13 @@ According to these standards, some concepts are defined as follows:
   \begin{equation}
   R_{\varepsilon}=\varepsilon_{\rm{mech,min}}/\varepsilon_{\rm{mech,max}}.
   \end{equation}
-  Under axial-torsional loading condition, the mechanical strains are the principal strains.
-  \item {\em Phase angle of the thermal loading and mechanical loading}, $\theta_{T-\varepsilon}$, represents the time difference between maximum values of temperature and mechanical strain.
-  \item {\em Phase angle of the thermal loading and torsional loading}, $\theta_{T-\gamma}$, represents the time difference between maximum values of temperature and shear strain.
-  \item {\em Phase angle of the mechanical loading and torsional loading}, $\theta_{\varepsilon-\gamma}$, represents the time difference between maximum values of mechanical strain and shear strain.
+  Under axial-torsional loading condition, the mechanical strains are the axial strains.
+  \item {\em Phase angle of the thermal loading and mechanical loading}, $\theta_{T-\varepsilon}$, represents the phase difference between maximum values of temperature and mechanical strain.
+  \item {\em Phase angle of the thermal loading and torsional loading}, $\theta_{T-\gamma}$, represents the phase difference between maximum values of temperature and shear strain.
+  \item {\em Phase angle of the mechanical loading and torsional loading}, $\theta_{\varepsilon-\gamma}$, represents the phase difference between maximum values of mechanical strain and shear strain.
   \item {\em Equivalent mechanical strain}, $\varepsilon_{\rm{eq}}$, is calculated by the von Mises relation\cite{Pol1991Cyclic},
   \begin{equation}
-  \varepsilon_{\rm{eq}}=\sqrt {\varepsilon_{\rm{mech}}^2 + {\gamma ^2}/3}.
+  \varepsilon_{\rm{eq}}\left(t\right)=\sqrt {\varepsilon_{\rm{mech}}^2\left(t\right) + {\gamma ^2}\left(t\right)/3}.
   \end{equation}
 \end{itemize}
 
@@ -861,7 +862,7 @@ In \ref{Fig:LoadPath}, three strain loading paths are shown schematically for un
 
 \subsection{Experimental results}
 \noindent
-Fatigue tests with three different phase angles of the thermal loading and mechanical loading should give a systematical overview of the thermomechanical behavior of the material. \ref{Fig:plot_exp_TCTMF} illustrates half-life hysteresis loops and the evolution of the peak, valley and mean stresses for TC-IP, TC-OP, and TC-90 TMF tests. As expected, under strain-controlled uniaxial cyclic loading with mean mechanical strain, all fatigue tests show the cyclic softening behavior, and the hysteresis loops reach a stable state with increasing number of cycles. The decreases of mean stresses were observed during the TC-IP loading tests, whereas for TC-OP loading the opposite is the case. Furthermore, due to the symmetry of temperature in the TC-90 loading (i.e., the temperatures are the same at maximum and minimum axial strain), the mean axial stress is constant during the entire life-cycle process.
+Fatigue tests with three different phase angles of the thermal loading and mechanical loading should give a systematical overview of the thermomechanical behavior of the material. \ref{Fig:plot_exp_TCTMF} illustrates half-life hysteresis loops and the evolution of the peak, valley and mean stresses for TC-IP, TC-OP, and TC-90 TMF tests. As expected, under strain-controlled uniaxial cyclic loading, all fatigue tests show the cyclic softening behavior, and the hysteresis loops reach a stable state with increasing number of cycles. The decreases of mean stresses were observed during the TC-IP loading tests, whereas for TC-OP loading the opposite is the case. Furthermore, due to the symmetry of temperature in the TC-90 loading (i.e., the temperatures are the same at maximum and minimum axial strain), the mean axial stress is constant during the entire life-cycle process.
 
 As shown in \ref{Fig:plot_exp_PROTMF}, the experimental results of the PRO-IP TMF tests show the similar cyclic softening behavior of the uniaxial TC-IP tests and the shear stress response is consistent with the axial stress response. In \ref{Fig:plot_exp_PROTMF}(d) and (f), a decrease of mean stress is present in both axial and hoop directions.
 

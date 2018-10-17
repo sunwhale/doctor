@@ -147,9 +147,9 @@
 \pagestyle{plain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\include{title/title}                    % prescribed title page
+% \include{title/title}                    % prescribed title page
 % \include{title/page2}                    % prescribed back side of the title page (if required)
-\cleardoublepage                         % move to the right
+% \cleardoublepage                         % move to the right
 % \include{dedication/dedication}          % dedication/motto (if desired)
 \include{acknowledgements/acknowledgements}
 \cleardoublepage  
@@ -164,8 +164,8 @@
 \pagestyle{fancy}             %%
 \fancyhf{}                    %%
 % \fancyhead[CE,CO]{\rightmark} %%
-\fancyhead[RE]{\leftmark}     %% 在偶数页的右侧显示章名
-\fancyhead[LO]{\rightmark}    %% 在奇数页的左侧显示小节名
+\fancyhead[LE]{\leftmark}     %% 在偶数页的右侧显示章名
+\fancyhead[RO]{\rightmark}    %% 在奇数页的左侧显示小节名
 \fancyfoot[CE,CO]{\thepage}   %%
 \fancypagestyle{plain}{       %%
 \fancyhf{}

@@ -150,10 +150,10 @@ The fatigue lives of IF and TMF tests are summarized in Table \ref{Tab:TestMatri
 
 \begin{table*}[htbp]
   \centering
-  \caption{Experimental conditions and results of isothermal and thermomechanical fatigue tests.} \vspace{0.1cm}
+  \caption{Experimental conditions and results of isothermal (650$^\circ$C) and thermomechanical (300-650$^\circ$C) fatigue tests.} \vspace{0.1cm}
     \begin{tabular}{p{2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{2.5cm}p{1cm}p{1cm}p{1cm}p{1cm}}
     \hline
-    Test Type & $\pm \varepsilon _{\rm m}$ & $\pm \gamma/ \sqrt 3$ & $\varepsilon _{\rm eq}$ & $\dot \varepsilon _{\rm eq}$ & $\theta_{T-\varepsilon}$ & $\theta_{T-\gamma}$ & $\theta_{\varepsilon-\gamma}$ & $N_{\rm f}$ \\
+    Test Type & $\pm \varepsilon _{\rm mech}$ & $\pm \gamma/ \sqrt 3$ & $\varepsilon _{\rm eq}$ & $\dot \varepsilon _{\rm eq}$ & $\theta_{T-\varepsilon}$ & $\theta_{T-\gamma}$ & $\theta_{\varepsilon-\gamma}$ & $N_{\rm f}$ \\
           & [\%]  & [\%]  & [\%]  & [s$^{-1}$] & [$^\circ$] & [$^\circ$] & [$^\circ$] & [cycle]\\
     \hline
     TC-IF & 1.00  & -     & 1.00  & $1\times 10^{-3}$ & -     & -     & -     & 231 \\
@@ -194,7 +194,7 @@ The fatigue lives of IF and TMF tests are summarized in Table \ref{Tab:TestMatri
 
 \subsection{Isothermal fatigue tests}
 \noindent
-The results of the TC-IF tests are analyzed firstly to identify the primary material properties. \ref{Fig:plot_exp_half_life_cycle} shows the obtained cyclic stress-strain curves, the values of stress and strain have been determined from the half-life cycles. In comparison with the monotonic loading case, the stress-strain relationship for both monotonic and cyclic loadings is described by the known Ramberg-Osgood model, as shown in \ref{Fig:plot_monotonic_cyclic_osgood}. It confirms that the strain hardening can be expressed in the power-law function fairly well. The material demonstrates significant cyclic softening, of which the monotonic stress-strain curve can be expressed by the conventional Ramberg-Osgood model, as
+The results of the TC-IF tests are analyzed firstly to identify the primary material properties. \ref{Fig:plot_exp_half_life_cycle} shows the obtained cyclic stress-strain curves, the values of stress and strain have been determined from the half-life cycles. In comparison with the monotonic loading case, the stress-strain relationship for both monotonic and cyclic loadings is described by the known Ramberg-Osgood model, as shown in \ref{Fig:plot_monotonic_cyclic_osgood}. It confirms that the strain hardening can be expressed in the power-law function fairly well. The material demonstrates significant cyclic softening. The monotonic stress-strain curve can be expressed by the conventional Ramberg-Osgood model, as
 \begin{equation}
 {\varepsilon } = \frac{{\sigma }}{{E}} + {\left( {\frac{{\sigma }}{{K}}} \right)^{1/n}},
 \end{equation}
@@ -211,7 +211,7 @@ where $K'$ is the cyclic strength coefficient and $n'$ is the cyclic strain hard
   \caption{Basic properties of Nickel-based superalloy Inconel 718 at 650$^{\circ}$C.}
     \begin{tabular}{llllllll}
     \hline
-          & $E$     & $K'$     & $n'$     & $\sigma_{\rm f}$    & $b$     & $\varepsilon_{\rm f}$    & $c$ \\
+          & $E$     & $K'$     & $n'$     & $\sigma'_{\rm f}$    & $b$     & $\varepsilon'_{\rm f}$    & $c$ \\
     \hline
     NASA \cite{kim1988elevated, nelson1992creep}  & 162.6 GPa & 1827 MPa  & 0.16723 & 1348 MPa & -0.10052 & 0.12445 & -0.55218 \\
     BHU \cite{Mahobia2014}   & 177.2 GPa & 1420 MPa  & 0.11332 & 985 MPa & -0.03917 & 0.24721 & -0.55682 \\
@@ -224,31 +224,31 @@ where $K'$ is the cyclic strength coefficient and $n'$ is the cyclic strain hard
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=14cm]{plot_exp_half_life_cycle-TC-IF.pdf}
-  \caption{Comparison of the stress-strain hysteresis loops of the half life cycle $N_{\rm f}/2$ between experiments and Ramberg-Osgood model, with strain ranges of $\pm0.4\%, \pm0.6\%, \pm0.8\%$ and $\pm1.0\%$.}
+  \caption{Comparison of the stress-strain hysteresis loops of the half life cycle $N_{\rm f}/2$ between experiments and Ramberg-Osgood model, with strain ranges of $\pm0.4\%, \pm0.6\%, \pm0.8\%$ and $\pm1.0\%$ at 650$^{\circ}$C.}
   \label{Fig:plot_exp_half_life_cycle}
 \end{figure}
 
 \begin{figure}[!htp]
   \centering
   \includegraphics[width=14cm]{plot_monotonic_cyclic_osgood.pdf}
-  \caption{Monotonic and cyclic stress-strain curves with Ramberg-Osgood relationship for Inconel 718.}
+  \caption{Monotonic and cyclic stress-strain curves with Ramberg-Osgood relationship for Inconel 718 at 650$^{\circ}$C.}
   \label{Fig:plot_monotonic_cyclic_osgood}
 \end{figure}
 
 \begin{figure}[!htp]
   \centering{\includegraphics[width=14cm]{plot_exp_coffin_manson.pdf}}
-  \caption{Manson-Coffin plots of the isothermal fatigue tests.}
+  \caption{Manson-Coffin plots of the isothermal fatigue tests at 650$^{\circ}$C.}
   \label{Fig:Baseline}
 \end{figure}
 
-\ref{Fig:Baseline} shows comparison of experimental results by Kim \cite{kim1988elevated} and Nelson \cite{nelson1992creep}, Mohabia \cite{Mahobia2014} as well as the data from the present work. The partially significant difference is observed in the three series of testing, which may be induced by different material providers. Heat treatments and processing of all the three series of specimens are similar. From this observation, one may expect obvious deviations in fatigue performance for the same nominal superalloy Inconel 718.
+\ref{Fig:Baseline} shows comparison of experimental results by NASA \cite{kim1988elevated,nelson1992creep} and BHU \cite{Mahobia2014} as well as the data from the present work. The partially significant difference is observed in the three series of testing, which may be induced by different material providers. Heat treatments and processing of all the three series of specimens are similar. From this observation, one may expect obvious deviations in fatigue performance for the same nominal superalloy Inconel 718.
 
 The Manson-Coffin model is popular in engineering fatigue life assessment, in which the applied strain amplitude $\Delta \varepsilon/2$ is decomposed into elastic strain amplitude ($\Delta \varepsilon_{\rm e}/2$) and plastic strain amplitude ($\Delta \varepsilon_{\rm p}/2$). The fatigue life, in terms of number of reversals to failure ($2N_{\rm f}$), is determined from
 \begin{equation}
 \frac{{\Delta \varepsilon }}{2} = \frac{{\Delta {\varepsilon _{\rm e}}}}{2} + \frac{{\Delta {\varepsilon _{\rm p}}}}{2} = \frac{{{{\sigma '}_{\rm f}}}}{E}{\left( {2{N_{\rm f}}} \right)^b} + {\varepsilon '_{\rm f}}{\left( {2{N_{\rm f}}} \right)^c},
 \label{Equ:CoffinManson}
 \end{equation}
-where ${{{\sigma '}_{\rm f}}}$ is the fatigue strength coefficient, $b$ is the fatigue strength exponent, ${{{\varepsilon '}_{\rm f}}}$ is the fatigue ductility coefficient, and $c$ is the fatigue ductility exponent. The model parameters can be determined from uniaxial fatigue data in combining with the Ramberg-Osgood model. The results are summarized in Table \ref{tab:MechanicalProperties} for all three series of experiments.
+where ${{{\sigma '}_{\rm f}}}$ is the fatigue strength coefficient, $b$ is the fatigue strength exponent, ${{{\varepsilon '}_{\rm f}}}$ is the fatigue ductility coefficient, and $c$ is the fatigue ductility exponent. The model parameters can be determined from uniaxial fatigue data. The results are summarized in Table \ref{tab:MechanicalProperties} for all three series of experiments.
 
 \subsection{Thermomechanical fatigue tests}
 \noindent
@@ -256,7 +256,8 @@ where ${{{\sigma '}_{\rm f}}}$ is the fatigue strength coefficient, $b$ is the f
 In contrast, the lifetimes under uniaxial thermomechanical 90$^\circ$ phase loadings and proportional thermomechanical in-phase loadings are longer than under isothermal loadings.
 
 For uniaxial thermomechanical fatigue tests, the mechanical strain amplitude vs. lifetime curves under the in-phase and out-of-phase loading conditions intersect with each other. The position of the crossover point is about 0.6\% of the mechanical strain amplitude.
-At the mechanical strain amplitude bigger than 0.6\%, the in-phase thermomechanical fatigue tends to have a lower fatigue lifetime. Oppositely, the in-phase thermomechanical fatigue lifetimes are longer than the out-of-phase at the mechanical strain amplitude smaller than 0.6\%.
+At the mechanical strain amplitude bigger than 0.6\%, the in-phase thermomechanical fatigue tends to have a lower fatigue lifetime. 
+% Oppositely, the in-phase thermomechanical fatigue lifetimes are longer than the out-of-phase at the mechanical strain amplitude smaller than 0.6\%.
 
 % \ref{Fig:plot_monotonic_cyclic_osgood} shows the Mises equivalent strain amplitude vs. number of cycles to failure under four loading conditions: uniaxial in phase IP TMF, uniaxial out of phase OP TMF, proportional axial-torsional IP TMF and non-proportional axial torsional (diamond path) IP TMF.
 
@@ -435,7 +436,7 @@ Based on the critical plane concepts \cite{Brown2006}, Wang and Brown \cite{Wang
 \frac{{\Delta \hat \gamma }}{2} = \frac{{\Delta {\gamma _{\max}}}}{2} + S\Delta {\varepsilon _{\rm n}},
 \label{Equ:ShearStrainBM}
 \end{equation}
-where ${{\Delta \hat \gamma }}/{2}$ is the equivalent shear strain range \cite{Wang1993}. $\Delta {\varepsilon _{\rm n}}$ represents the normal strain acting on the plane with the maximum shear strain range $\Delta {\gamma _{\max}}$. The material dependent parameter $S$ represents the influence of the normal strain on the crack propagation.
+where ${{\Delta \hat \gamma }}/{2}$ is the equivalent shear strain amplitude \cite{Wang1993}. $\Delta {\varepsilon _{\rm n}}$ represents the normal strain acting on the plane with the maximum shear strain range $\Delta {\gamma _{\max}}$. The material dependent parameter $S$ represents the influence of the normal strain on the crack propagation.
 The fatigue endurance is determined from
 \begin{equation}
 \frac{{\Delta \hat \gamma }}{2} = A\frac{{{{\sigma '}_{\rm f}}}}{E}{\left( {2{N_{\rm f}}} \right)^b} + B{{\varepsilon '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^c},
@@ -457,9 +458,10 @@ where
 $\sigma _{\rm n,\max}$ is the maximum normal stress on the critical plane suffering from the maximum shear strain range $\Delta {\gamma _{\max}}$, and $k$ is a material parameter. The sensitivity of the material to the normal stress is reflected in the ratio $k/\sigma_y$.
 The fatigue life model oriented to the shear-based damage is illustrated as
 \begin{equation}
-\frac{{\Delta \hat \gamma }}{2} = \frac{{{{\tau '}_{\rm f}}}}{G}{\left( {2{N_{\rm f}}} \right)^{{b_0}}} + {{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{{c_0}}}.
+\frac{{\Delta \hat \gamma }}{2} = \frac{{{{\tau '}_{\rm f}}}}{G}{\left( {2{N_{\rm f}}} \right)^{{b_0}}} + {{\gamma '}_{\rm f}}{\left( {2{N_{\rm f}}} \right)^{{c_0}}},
 \label{Equ:FS_model}
 \end{equation}
+where ${{\tau '}_{\rm f}}$ is the torsional fatigue strength coefficient, ${b_0}$ is the torsional fatigue strength exponent, ${{\gamma '}_{\rm f}}$ is the torsional fatigue ductility coefficient and ${c_0}$ is the torsional fatigue ductility exponent. Approximations were suggested as ${{\tau '}_{\rm f}}\approx {{\sigma '}_{\rm f}}/\sqrt{3}$, ${{\gamma '}_{\rm f}}\approx \sqrt{3} {{\sigma '}_{\rm f}}$, ${b_0}\approx b$, ${c_0}\approx c$.
 Furthermore, McClaflin and Fatemi \cite{McClaflin2004} proposed that the sensitivity parameter $k$ is varied with fatigue life and can be related to the tension and torsion property, that is,
 \begin{equation}
 k =  \frac{{k_0 {\sigma _y}}}{{{{\sigma '}_{\rm f}}{{\left( {2{N_{\rm f}}} \right)}^b}}}
@@ -513,7 +515,7 @@ Zamrik and Renauld \cite{Zamrik2000} suggested an explicit fatigue model incorpo
 {\left( {1 + \frac{{{t_{\rm{h}}}}}{{{t_{\rm{c}}}}}} \right)^C} \exp \left[ {\frac{{ - Q}}{{R\left( {{T_{\max }} - {T_0}} \right)}}} \right],
 \label{Equ:Zamrik_model}
 \end{equation}
-where $\sigma _{\rm eq,\max }$ denotes maximum equivalent tensile stress in mid-life hysteresis loop, $\varepsilon _{\rm eq,ten}$ is maximum equivalent strain in mid-life hysteresis loop for which the stress is tensile, $\sigma _{\rm ult}$ is ultimate strength, $\varepsilon _{\rm f}$ is failure elongation , $t_{\rm{h}}$ is length of compressive hold-time, $t_{\rm{c}}$ is length of total cycle time including hold-time, $Q$ is activation energy for high temperature damage, $R$ is gas constant, $T_{\max}$ is maximum temperature in TMF cycle and $T_0$ is a reference temperature, $A$,$B$ and $C$ are model coefficients. In the present work, the TMF tests did not have the holding time which means $t_{\rm{c}}=0$.
+where $\sigma _{\rm eq,\max }$ denotes maximum equivalent tensile stress in mid-life hysteresis loop, $\varepsilon _{\rm eq,ten}$ is maximum equivalent strain in mid-life hysteresis loop for which the stress is tensile, $\sigma _{\rm ult}$ is ultimate strength, $\varepsilon _{\rm f}$ is failure elongation , $t_{\rm{h}}$ is length of compressive hold-time, $t_{\rm{c}}$ is length of total cycle time including hold-time, $Q$ is activation energy for high temperature damage, $R$ is gas constant, $T_{\max}$ is maximum temperature in TMF cycle and $T_0$ is a reference temperature, $A$,$B$ and $C$ are model coefficients. In the present work, the TMF tests did not have the holding time which means $t_{\rm{h}}=0$.
 
 \subsection{Stress components relative to a generic material plane}
 \noindent
@@ -699,7 +701,7 @@ As shown in \ref{Fig:stress_on_material_plane}, during the loading cycle, the no
 \begin{equation}
 \Delta \sigma  = \frac{1}{2}\left( {{\sigma _{{\rm{n,max}}}} - {\sigma _{{\rm{n,min}}}}} \right).
 \end{equation}
-Contrary to the normal stress, the shear stress ${{\tau _{{{n}}}}(t)}$ relative to the material plane $\Gamma$ is consider as a vector. It varies in both direction and magnitude during the loading cycle.
+Contrary to the normal stress, the shear stress ${{\tau _{{{n}}}}(t)}$ relative to the material plane $\Gamma$ is a vector. It varies in both direction and magnitude during the loading cycle.
 Thus, the maximum, minimum values and amplitude of the shear stress ${{\tau _{{{n}}}}(t)}$ are much more complicated to obtain.
 Due to the complexity of the problem, many different definitions have been proposed and validated, such as the Longest Chord Method\cite{Lemaitre1990Mechanics}, the Longest Projection Method, the Minimum Circumscribed Circle Method, the Minimum Circumscribed Ellipse Method and so on.
 
@@ -730,7 +732,7 @@ Similarly, the maximum normal strain, minimum normal strain and the amplitude of
 \noindent
 Identifying the range of stress, strain and the maximum values during cycling is the most fundamental element of the fatigue models.
 In this chapter, we introduced Brown-Miller's model, Fatemi-Socie's model, Smith-Watson-Topper's model, Chu-Conle-Bonnen's model, Liu's Energy model and Zamrik's model.
-Except the Zamrik's model, the right-hand sides of the fatigue models in Equations (\ref{Equ:BM_model}), (\ref{Equ:FS_model}), (\ref{Equ:SWT_model}), (\ref{Equ:Liu1_model}) and (\ref{Equ:CCB_model}) which are also called the fatigue damage parameters, are given by:
+Except the Zamrik's model, the left-hand sides of the fatigue models in Equations (\ref{Equ:BM_model}), (\ref{Equ:FS_model}), (\ref{Equ:SWT_model}), (\ref{Equ:Liu1_model}) and (\ref{Equ:CCB_model}) which are also called the fatigue damage parameters, are given by:
 \begin{eqnarray*}
 p_{\rm{BM}}&=&\frac{{\Delta {\gamma _{\max}}}}{2} + S\Delta {\varepsilon _{\rm n}}, \\
 p_{\rm{FS}}&=&\frac{{\Delta {\gamma _{\max }}}}{2}\left( {1 + k\frac{{{\sigma _{\rm n,\max}}}}{{{\sigma _y}}}} \right), \\
@@ -1052,7 +1054,7 @@ The other parameter is the root mean square error of the fatigue life,
 \end{equation}
 with
 \begin{equation}
-{E_{\rm RMS}} = \sqrt {\frac{1}{n}\sum\limits_{i = 1}^n {\left[{{\log }}\left( {\frac{{{N_{{\rm f},i}}}}{{{N_{{\rm p},i}}}}} \right) \right]^2}}.
+{E_{\rm RMS}} = \sqrt {\frac{1}{n-1}\sum\limits_{i = 1}^n {\left[{{\log }}\left( {\frac{{{N_{{\rm f},i}}}}{{{N_{{\rm p},i}}}}} \right) \right]^2}}.
 \end{equation}
 The root mean square error is applied to measure the differences between fatigue lives obtained from predictions and the results from experiments. $T_{\rm RMS} = 1$ represents the mean value and the statistical dispersion of experimental and predicted lives are equal. In other cases, $T_{\rm RMS}$ is larger than 1, and the larger value of $T_{\rm RMS}$ represents the more dispersion between the experimental and predicted lives.
 

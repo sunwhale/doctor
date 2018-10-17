@@ -11,7 +11,7 @@ The motion of the body is decried by the deformation gradient $\mathbf{F}$:
 \end{equation}
 Let $\mathbf{L}$ be the velocity gradient, the following decomposition holds:
 \begin{equation}
-{\mathbf{L}} = \frac{{\partial {\dot {\bf{x}}}}}{{\partial {\mathbf{X}}}} = {\dot {\bf{F}}}{{\mathbf{F}}^{ - 1}}.
+{\mathbf{L}} = \frac{{\partial {\dot {\bf{x}}}}}{{\partial {\mathbf{x}}}} = {\dot {\bf{F}}}{{\mathbf{F}}^{ - 1}}.
 \end{equation}
 Throughout, a superposed dot $\left(\dot{\ }\right)$ denotes the material time derivative of a scalar or tensor field.\\
 %$\left(\dot{\ }\right)$ the differentiation with respect to time,
@@ -752,4 +752,4 @@ Therefore, $\mathbb{H}_{n + 1}^k$ in Equation (\ref{Equ_5:dan+1}) has an express
 \end{equation}
 
 The FEM code ABAQUS have interfaces that allow the user to implement the user-defined constitutive equations and the user-defined material model is implemented in user subroutine UMAT.
-In this paper, the implementation of material models in UMAT will use the implicit integral algorithm discussed above.
+In this study, the constitutive model was implemented into the subroutine UMAT by using the implicit integral algorithm discussed above.
